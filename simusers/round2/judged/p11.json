@@ -1,0 +1,116 @@
+{
+ "persona_id": "p11",
+ "issues": [
+  {
+   "ref": "i4",
+   "type": "dead_end",
+   "severity": "P2",
+   "quote": "Is that something on the statement?",
+   "note": "The reply never answers the person's question about where to find the interest rate on a statement."
+  },
+  {
+   "ref": "i4",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "I mean any loan or card balance besides the mortgage: student loans, a car loan, credit cards.",
+   "note": "The opening 'I mean' reads as a correction of the person's answer, which is confusing when she gave a valid answer."
+  },
+  {
+   "ref": "a5",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "There is a 21% chance you are still alive at 95, and a 6% chance you reach 100.",
+   "note": "The user said they were lost, but the reply gives survival odds and life-expectancy years with no plain explanation of what they mean for her plan."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 35,
+    "truth": 35,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "MI",
+    "truth": "MI",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 52000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 17000.0,
+    "truth": 17000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 28000.0,
+    "truth": 28000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 38000.0,
+    "truth": 38000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

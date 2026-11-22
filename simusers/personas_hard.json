@@ -1,0 +1,358 @@
+[
+ {
+  "id": "h01",
+  "name": "Ruth",
+  "personality": "a widow, 61, quiet and a little sad, answers briefly; mentions her late husband once; does not want a partner assumed",
+  "goal": "See if she can stop work at 64 on her own",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "what if I stop at 62 instead",
+   "will I get anything from my husband's Social Security",
+   "what if I sell the house and rent",
+   "how safe is my spending"
+  ],
+  "truth": {
+   "age": 61,
+   "partner_age": null,
+   "state": "OH",
+   "retire_age": 64,
+   "job": "school secretary",
+   "pay_per_year": 52000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 180000,
+    "roth": 20000,
+    "taxable": 25000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 240000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 42000,
+   "notes": "widowed 3 years ago; late husband's survivor benefit may apply"
+  }
+ },
+ {
+  "id": "h02",
+  "name": "Tasha",
+  "personality": "a single parent of two, always rushed, answers in few words, worries about money for the kids",
+  "goal": "Know if she is on track and what college for the kids does to it",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "what if I put 300 a month into college savings",
+   "what if I retire at 65 instead of 67",
+   "what happens if I lose my job for a year",
+   "what should I do first"
+  ],
+  "truth": {
+   "age": 38,
+   "partner_age": null,
+   "state": "NC",
+   "retire_age": 67,
+   "job": "dental hygienist",
+   "pay_per_year": 74000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 42000,
+    "roth": 0,
+    "taxable": 6000,
+    "cash": 9000
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 1650
+   },
+   "children_ages": [
+    9,
+    12
+   ],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 11000
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 62000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "h03",
+  "name": "Hal and Bea",
+  "personality": "a couple, he is 62 and she is 52; they answer together, one message may carry both of their facts",
+  "goal": "Work out when he can stop and she keeps going",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "what if I retire at 64 but Bea keeps working to 62",
+   "when can Bea claim Social Security",
+   "what if Bea retires with me",
+   "what if we pay off the mortgage first"
+  ],
+  "truth": {
+   "age": 62,
+   "partner_age": 52,
+   "state": "MN",
+   "retire_age": 64,
+   "job": "engineer",
+   "pay_per_year": 135000,
+   "partner_pay_per_year": 70000,
+   "savings": {
+    "pretax": 520000,
+    "roth": 90000,
+    "taxable": 110000,
+    "cash": 40000
+   },
+   "home": {
+    "owns": true,
+    "value": 430000,
+    "mortgage_balance": 85000,
+    "mortgage_payment_month": 1900,
+    "rent_month": 0
+   },
+   "children_ages": [
+    15
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 96000,
+   "notes": "he retires at 64; she works to 62 per plan"
+  }
+ },
+ {
+  "id": "h04",
+  "name": "Walt",
+  "personality": "already retired and collecting Social Security; practical, wants to know if his money lasts",
+  "goal": "Check that his savings last for life now that he is claiming",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "what if I spend 6000 more a year",
+   "what if I get a 3 percent lower return",
+   "what if I need long term care",
+   "when does my money run out if it does"
+  ],
+  "truth": {
+   "age": 68,
+   "partner_age": null,
+   "state": "FL",
+   "retire_age": 68,
+   "job": "retired machinist",
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 310000,
+    "roth": 0,
+    "taxable": 60000,
+    "cash": 40000
+   },
+   "home": {
+    "owns": true,
+    "value": 280000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "label": "union pension",
+     "per_year": 14400
+    }
+   ],
+   "spending_now_per_year": 58000,
+   "notes": "retired at 65; claims Social Security now; about 2400 a month"
+  }
+ },
+ {
+  "id": "h05",
+  "name": "Gil",
+  "personality": "gives ranges instead of exact numbers: says 'between X and Y', never one figure at first; will pick a midpoint if asked",
+  "goal": "See if retiring at 63 works",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "what if I retire at 65",
+   "what if my savings are at the low end of my range",
+   "what if I spend 5000 less",
+   "how sure is this"
+  ],
+  "truth": {
+   "age": 54,
+   "partner_age": null,
+   "state": "AZ",
+   "retire_age": 63,
+   "job": "sales manager",
+   "pay_per_year": 110000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 330000,
+    "roth": 40000,
+    "taxable": 50000,
+    "cash": 20000
+   },
+   "home": {
+    "owns": true,
+    "value": 350000,
+    "mortgage_balance": 120000,
+    "mortgage_payment_month": 1700,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 84000,
+   "notes": "says pay is between 100 and 120 thousand; says spending is between 7 and 8 thousand a month; midpoint is fine"
+  }
+ },
+ {
+  "id": "h06",
+  "name": "Ines",
+  "personality": "keeps correcting herself: states a figure, then corrects it, then corrects it again; the last stated value is the true one",
+  "goal": "Find out if she can retire at 62",
+  "whatif": "",
+  "correction": "Correct your savings TWICE during intake, ending on the true figure; correct your age once.",
+  "plan_asks": [
+   "what if I retire at 60",
+   "what if I work until 65",
+   "actually my pay is a bit lower, 88000",
+   "what if I save 1000 more a month"
+  ],
+  "truth": {
+   "age": 57,
+   "partner_age": null,
+   "state": "WA",
+   "retire_age": 62,
+   "job": "pharmacist",
+   "pay_per_year": 92000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 410000,
+    "roth": 60000,
+    "taxable": 70000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 520000,
+    "mortgage_balance": 190000,
+    "mortgage_payment_month": 2300,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 70000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "h07",
+  "name": "Omar",
+  "personality": "answers 'I don't know' or 'not sure' to most questions, even simple ones; only gives a number when the app offers a choice or a typical figure",
+  "goal": "Get a rough idea if he is doing okay",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "I don't know what to ask. is this good",
+   "what if I wait longer to retire",
+   "what does the plan assume about me",
+   "what should I do"
+  ],
+  "truth": {
+   "age": 45,
+   "partner_age": 44,
+   "state": "VA",
+   "retire_age": 65,
+   "job": "project manager",
+   "pay_per_year": 98000,
+   "partner_pay_per_year": 55000,
+   "savings": {
+    "pretax": 120000,
+    "roth": 15000,
+    "taxable": 20000,
+    "cash": 15000
+   },
+   "home": {
+    "owns": true,
+    "value": 380000,
+    "mortgage_balance": 210000,
+    "mortgage_payment_month": 1800,
+    "rent_month": 0
+   },
+   "children_ages": [
+    10,
+    7
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 88000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "h08",
+  "name": "Kit",
+  "personality": "writes in short fragments with typos, no punctuation, drops verbs: 'retir 65 maybe', 'sav 200k', 'wife 49'",
+  "goal": "Is 65 ok",
+  "whatif": "",
+  "correction": "",
+  "plan_asks": [
+   "wat if retir 62",
+   "wat if i sav 500 more per mnth",
+   "how mch can i spnd",
+   "wat shuld i do frst"
+  ],
+  "truth": {
+   "age": 53,
+   "partner_age": 49,
+   "state": "TN",
+   "retire_age": 65,
+   "job": "plumber",
+   "pay_per_year": 85000,
+   "partner_pay_per_year": 40000,
+   "savings": {
+    "pretax": 140000,
+    "roth": 10000,
+    "taxable": 20000,
+    "cash": 18000
+   },
+   "home": {
+    "owns": true,
+    "value": 240000,
+    "mortgage_balance": 90000,
+    "mortgage_payment_month": 1250,
+    "rent_month": 0
+   },
+   "children_ages": [
+    14
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 70000,
+   "notes": ""
+  }
+ }
+]

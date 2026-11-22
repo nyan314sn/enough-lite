@@ -1,0 +1,116 @@
+[p2] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[p2] ANSWER "That's about right"
+[p2] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[p2] ANSWER '$2,900'
+[p2] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[p2] ANSWER '$2,900'
+[p2] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[p2] ANSWER 'No other debts'
+[p2] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[p2] ANSWER '$5,000 a month'
+[p2] ready after 5 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 10.8 s
+--- chart 0 box {'x': 29, 'y': 2061.28125, 'width': 332, 'height': 210}
+taps: [(0.15, None, ''), (0.4, None, ''), (0.65, None, ''), (0.9, None, '')]
+--- chart 1 box {'x': 29, 'y': 321.6875, 'width': 332, 'height': 200}
+taps: [(0.15, None, '$0 | $10M | $20M | $30M | Retire at 62'), (0.4, None, '$0 | $10M | $20M | $30M | Retire at 62'), (0.65, None, '$0 | $10M | $20M | $30M | Retire at 62'), (0.9, None, '$0 | $10M | $20M | $30M | Retire at 62')]
+--- chart 2 box {'x': 29, 'y': 336.9375, 'width': 332, 'height': 170}
+taps: [(0.15, '45', " payments: $22,500. Children and college: $37,500. In today's dollars."), (0.4, '62', " food, transport, care: $25,500. You retire at 62. In today's dollars."), (0.65, '78', "ear. Basics: home, food, transport, care: $25,500. In today's dollars."), (0.9, '95', "481. Basics: home, food, transport, care: $25,500. In today's dollars.")]
+chips after Ideas: ['Retire 2 years later', 'Save 5% more of pay', 'Retire at 60', 'Another child', 'Get a dog', 'Markets fall 30%'] sizes [44, 44, 44, 44, 44, 44]
+Retire at 60 -> You asked: | Retire at 60 |  | If you retire at 60, you can count on $174,100 a year, safe in 90 of 100 scenarios (your plan: $200,100). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ‚ñ¥ 
+buttons: ['‚Üê Change my answers', 'Start over', 'Your plan: retire at 62, can count on $200,100 a year, basics safe in 100 of 100\nshow ‚ñ∏', 'Retire at 60\n‚ñº $26,000 a year\nless', '‚Üê Back to my plan', 'Show this What If ‚ñ¥', 'Retire 2 years later', 'Save 5% more of pay', '‚úì Retire at 60\n(already tried)', 'Another child', 'Get a dog', 'Markets fall 30%']
+Another child -> You asked: | Another child |  | If you have another child, you can count on $188,800 a year, safe in 90 of 100 scenarios (your plan: $200,100). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). I added about $13,
+buttons: ['‚Üê Change my answers', 'Start over', 'Your plan: retire at 62, can count on $200,100 a year, basics safe in 100 of 100\nshow ‚ñ∏', 'Retire at 60\n‚ñº $26,000 a year\nless', 'Another child\n‚ñº $11,300 a year\nless', '‚Üê Back to my plan', 'Show this What If ‚ñ¥', 'Show this What If ‚ñ¥', 'Retire 2 years later', 'Save 5% more of pay', '‚úì Retire at 60\n(already tried)', '‚úì Another child\n(already tried)']
+small targets: [['Skip to content', 129, 39], ['IRS news release: 401(k) limit', 296, 38], ['SSA: Delayed retirement credit', 187, 18], ['SSA: Benefit reduction for ear', 251, 18], ['Medicare.gov: When does Medica', 308, 18], ['IRS news release: 401(k) limit', 296, 38], ['SSA: Delayed retirement credit', 187, 18], ['SSA: Benefit reduction for ear', 251, 18], ['Medicare.gov: When does Medica', 308, 18]] overflow [390, 390]
+Traceback (most recent call last):
+  File "docs\loop\rules_audit\t_phone2.py", line 36, in <module>
+    tb.click(); pg.wait_for_timeout(600); shot(pg, "p2_team", full=False)
+    ~~~~~~~~^^
+  File "<python>\Lib\site-packages\playwright\sync_api\_generated.py", line 18032, in click
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.click(
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        )
+        ^
+    )
+    ^
+  File "<python>\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "<python>\Lib\site-packages\playwright\_impl\_locator.py", line 165, in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python>\Lib\site-packages\playwright\_impl\_frame.py", line 594, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "<python>\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "<python>\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("button", name=re.compile(r"advisory team", re.IGNORECASE)).first
+    - locator resolved to <button type="button" aria-expanded="false" aria-controls="team-body">Ö</button>
+  - attempting click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <input value="" id="ask-input" maxlength="500" autocomplete="off" placeholder="Ask a rule question, or type a What If such as ìretire at 60î"/> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 20ms
+    2 ◊ waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    14 ◊ waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <input value="" id="ask-input" maxlength="500" autocomplete="off" placeholder="Ask a rule question, or type a What If such as ìretire at 60î"/> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <button class="chip" type="button" title="Retire at 64">Retire 2 years later</button> from <div class="plan-main">Ö</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+

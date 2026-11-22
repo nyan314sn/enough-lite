@@ -1,0 +1,1608 @@
+[
+ {
+  "id": "p01",
+  "name": "Dana",
+  "personality": "careless typer with lots of typos and no capital letters",
+  "goal": "Find out if retiring at 62 works",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 51,
+   "partner_age": null,
+   "state": "TX",
+   "retire_age": 62,
+   "job": "nurse",
+   "pay_per_year": 78000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 210000,
+    "roth": 30000,
+    "taxable": 15000,
+    "cash": 12000
+   },
+   "home": {
+    "owns": true,
+    "value": 310000,
+    "mortgage_balance": 140000,
+    "mortgage_payment_month": 1450,
+    "rent_month": 0
+   },
+   "children_ages": [
+    17
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 64000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p02",
+  "name": "Marcus",
+  "personality": "careless typer who drops words and mashes numbers together",
+  "goal": "Know if he can retire at 60",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 48,
+   "partner_age": null,
+   "state": "GA",
+   "retire_age": 60,
+   "job": "electrician",
+   "pay_per_year": 82000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 150000,
+    "roth": 0,
+    "taxable": 40000,
+    "cash": 20000
+   },
+   "home": {
+    "owns": true,
+    "value": 260000,
+    "mortgage_balance": 95000,
+    "mortgage_payment_month": 1200,
+    "rent_month": 0
+   },
+   "children_ages": [
+    12,
+    15
+   ],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 14000,
+     "rate": 0.07
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 66000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p03",
+  "name": "Priya",
+  "personality": "careless typer on a phone, autocorrect errors, abbreviations",
+  "goal": "See if she is on track at 40",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 40,
+   "partner_age": null,
+   "state": "CA",
+   "retire_age": 60,
+   "job": "software engineer",
+   "pay_per_year": 145000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 180000,
+    "roth": 90000,
+    "taxable": 60000,
+    "cash": 35000
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 3100
+   },
+   "children_ages": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 2
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 95000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p04",
+  "name": "Tom",
+  "personality": "careless typer who sometimes writes numbers as words ('sixty five thousand')",
+  "goal": "Check if he can leave work at 65",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 57,
+   "partner_age": null,
+   "state": "OH",
+   "retire_age": 65,
+   "job": "teacher",
+   "pay_per_year": 65000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 320000,
+    "roth": 0,
+    "taxable": 25000,
+    "cash": 18000
+   },
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 30000,
+     "start_age": 65
+    }
+   ],
+   "spending_now_per_year": 52000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p05",
+  "name": "Elena",
+  "personality": "corrects herself mid-conversation ('actually 45, not 40')",
+  "goal": "Retire at 58 if possible",
+  "whatif": "",
+  "correction": "Says she is 40 first, then 'actually 45, not 40'; later says pay is 125k not 120k",
+  "truth": {
+   "age": 45,
+   "partner_age": null,
+   "state": "NY",
+   "retire_age": 58,
+   "job": "accountant",
+   "pay_per_year": 120000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 260000,
+    "roth": 70000,
+    "taxable": 30000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 520000,
+    "mortgage_balance": 310000,
+    "mortgage_payment_month": 2600,
+    "rent_month": 0
+   },
+   "children_ages": [
+    9
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 88000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p06",
+  "name": "Ray",
+  "personality": "corrects himself often, gives a wrong figure then fixes it",
+  "goal": "Retire at 63",
+  "whatif": "",
+  "correction": "Gives savings as 300k then says 'sorry, 400k'",
+  "truth": {
+   "age": 54,
+   "partner_age": null,
+   "state": "FL",
+   "retire_age": 63,
+   "job": "sales manager",
+   "pay_per_year": 92000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 400000,
+    "roth": 0,
+    "taxable": 80000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 380000,
+    "mortgage_balance": 60000,
+    "mortgage_payment_month": 1300,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 9000,
+     "rate": 0.22
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 70000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p07",
+  "name": "Hannah and Luke",
+  "personality": "a couple; she corrects him and he corrects her",
+  "goal": "Both retire at 62",
+  "whatif": "",
+  "correction": "Luke first says 3 kids, Hannah says actually 2",
+  "truth": {
+   "age": 44,
+   "partner_age": 42,
+   "state": "WA",
+   "retire_age": 62,
+   "job": "",
+   "pay_per_year": 100000,
+   "partner_pay_per_year": 85000,
+   "savings": {
+    "pretax": 300000,
+    "roth": 60000,
+    "taxable": 40000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 640000,
+    "mortgage_balance": 420000,
+    "mortgage_payment_month": 3300,
+    "rent_month": 0
+   },
+   "children_ages": [
+    8,
+    5
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 110000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p08",
+  "name": "Greg",
+  "personality": "corrects himself and then corrects the correction",
+  "goal": "Retire at 67",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 62,
+   "partner_age": null,
+   "state": "AZ",
+   "retire_age": 67,
+   "job": "machinist",
+   "pay_per_year": 70000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 500000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 20000
+   },
+   "home": {
+    "owns": true,
+    "value": 350000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 18000,
+     "start_age": 65
+    }
+   ],
+   "spending_now_per_year": 55000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p09",
+  "name": "Linda",
+  "personality": "doesn't know her numbers, says 'no idea, maybe 300k?'",
+  "goal": "Learn if she is ok to retire at 65",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 58,
+   "partner_age": null,
+   "state": "PA",
+   "retire_age": 65,
+   "job": "office manager",
+   "pay_per_year": 60000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 180000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 9000
+   },
+   "home": {
+    "owns": true,
+    "value": 190000,
+    "mortgage_balance": 40000,
+    "mortgage_payment_month": 900,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 48000,
+   "notes": "Really has 180k in a 401k and 9k cash; unsure"
+  }
+ },
+ {
+  "id": "p10",
+  "name": "Carlos",
+  "personality": "doesn't know his numbers, guesses ranges",
+  "goal": "Retire early at 55 if he can",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 47,
+   "partner_age": null,
+   "state": "NJ",
+   "retire_age": 55,
+   "job": "contractor",
+   "pay_per_year": 105000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 95000,
+    "roth": 40000,
+    "taxable": 20000,
+    "cash": 15000
+   },
+   "home": {
+    "owns": true,
+    "value": 430000,
+    "mortgage_balance": 260000,
+    "mortgage_payment_month": 2300,
+    "rent_month": 0
+   },
+   "children_ages": [
+    10,
+    13
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 80000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p11",
+  "name": "Beth",
+  "personality": "doesn't know much about money at all",
+  "goal": "Get a plain answer on whether she is behind",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 35,
+   "partner_age": null,
+   "state": "MI",
+   "retire_age": 62,
+   "job": "dental assistant",
+   "pay_per_year": 52000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 14000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 3000
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 1100
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "student",
+     "balance": 28000,
+     "rate": 0.055
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 38000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p12",
+  "name": "Walt",
+  "personality": "doesn't know what he has; his late wife handled it",
+  "goal": "Know if he can stop working at 66",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 64,
+   "partner_age": null,
+   "state": "VA",
+   "retire_age": 66,
+   "job": "engineer",
+   "pay_per_year": 88000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 420000,
+    "roth": 0,
+    "taxable": 110000,
+    "cash": 40000
+   },
+   "home": {
+    "owns": true,
+    "value": 450000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 24000,
+     "start_age": 66
+    }
+   ],
+   "spending_now_per_year": 68000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p13",
+  "name": "Nina",
+  "personality": "skeptic who asks 'why?' about every question and every number",
+  "goal": "Decide whether to trust the app",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 50,
+   "partner_age": null,
+   "state": "IL",
+   "retire_age": 62,
+   "job": "HR director",
+   "pay_per_year": 110000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 380000,
+    "roth": 50000,
+    "taxable": 90000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 400000,
+    "mortgage_balance": 150000,
+    "mortgage_payment_month": 1900,
+    "rent_month": 0
+   },
+   "children_ages": [
+    16
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 82000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p14",
+  "name": "Frank",
+  "personality": "a gruff skeptic who challenges the estimates",
+  "goal": "Check the app's logic on Social Security",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 59,
+   "partner_age": null,
+   "state": "NC",
+   "retire_age": 64,
+   "job": "bus driver",
+   "pay_per_year": 76000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 290000,
+    "roth": 0,
+    "taxable": 60000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 280000,
+    "mortgage_balance": 30000,
+    "mortgage_payment_month": 1000,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 14000,
+     "start_age": 62
+    }
+   ],
+   "spending_now_per_year": 60000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p15",
+  "name": "Mei",
+  "personality": "polite skeptic who asks why an assumption was made",
+  "goal": "Understand where each number comes from",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 38,
+   "partner_age": null,
+   "state": "MA",
+   "retire_age": 60,
+   "job": "physician assistant",
+   "pay_per_year": 170000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 210000,
+    "roth": 120000,
+    "taxable": 80000,
+    "cash": 50000
+   },
+   "home": {
+    "owns": true,
+    "value": 780000,
+    "mortgage_balance": 560000,
+    "mortgage_payment_month": 3900,
+    "rent_month": 0
+   },
+   "children_ages": [
+    3
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 120000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p16",
+  "name": "Sam and Jo",
+  "personality": "a couple who contradict each other on retirement age and spending",
+  "goal": "Agree on one retirement age",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 50,
+   "partner_age": 48,
+   "state": "CO",
+   "retire_age": 62,
+   "job": "",
+   "pay_per_year": 95000,
+   "partner_pay_per_year": 70000,
+   "savings": {
+    "pretax": 350000,
+    "roth": 40000,
+    "taxable": 50000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 560000,
+    "mortgage_balance": 230000,
+    "mortgage_payment_month": 2200,
+    "rent_month": 0
+   },
+   "children_ages": [
+    14
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 90000,
+   "notes": "He wants 60, she wants 65; they settle on 62"
+  }
+ },
+ {
+  "id": "p17",
+  "name": "Aisha and Omar",
+  "personality": "a couple where one answers and the other interrupts with different numbers",
+  "goal": "See how long the money lasts",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 56,
+   "partner_age": 54,
+   "state": "TX",
+   "retire_age": 65,
+   "job": "",
+   "pay_per_year": 90000,
+   "partner_pay_per_year": 60000,
+   "savings": {
+    "pretax": 500000,
+    "roth": 80000,
+    "taxable": 60000,
+    "cash": 40000
+   },
+   "home": {
+    "owns": true,
+    "value": 420000,
+    "mortgage_balance": 70000,
+    "mortgage_payment_month": 1500,
+    "rent_month": 0
+   },
+   "children_ages": [
+    19
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 2
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 85000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p18",
+  "name": "Pat and Chris",
+  "personality": "a couple who disagree about how much they save",
+  "goal": "Find out if they should save more",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 41,
+   "partner_age": 39,
+   "state": "OR",
+   "retire_age": 63,
+   "job": "",
+   "pay_per_year": 110000,
+   "partner_pay_per_year": 90000,
+   "savings": {
+    "pretax": 150000,
+    "roth": 50000,
+    "taxable": 20000,
+    "cash": 18000
+   },
+   "home": {
+    "owns": true,
+    "value": 500000,
+    "mortgage_balance": 380000,
+    "mortgage_payment_month": 2700,
+    "rent_month": 0
+   },
+   "children_ages": [
+    6,
+    3
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 95000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p19",
+  "name": "Joe",
+  "personality": "terse, answers in one word or a bare number",
+  "goal": "Quick check: retire at 65",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 60,
+   "partner_age": null,
+   "state": "SC",
+   "retire_age": 65,
+   "job": "",
+   "pay_per_year": 58000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 160000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 8000
+   },
+   "home": {
+    "owns": true,
+    "value": 170000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 44000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p20",
+  "name": "Kim",
+  "personality": "terse, one or two words, often 'idk' or 'yes'",
+  "goal": "Retire at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 52,
+   "partner_age": null,
+   "state": "WI",
+   "retire_age": 62,
+   "job": "",
+   "pay_per_year": 72000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 210000,
+    "roth": 10000,
+    "taxable": 0,
+    "cash": 12000
+   },
+   "home": {
+    "owns": true,
+    "value": 230000,
+    "mortgage_balance": 70000,
+    "mortgage_payment_month": 1050,
+    "rent_month": 0
+   },
+   "children_ages": [
+    17
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 56000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p21",
+  "name": "Ben",
+  "personality": "terse, only digits and 'k'",
+  "goal": "Ask when he can quit",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 45,
+   "partner_age": null,
+   "state": "UT",
+   "retire_age": 58,
+   "job": "",
+   "pay_per_year": 130000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 260000,
+    "roth": 100000,
+    "taxable": 50000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 490000,
+    "mortgage_balance": 300000,
+    "mortgage_payment_month": 2150,
+    "rent_month": 0
+   },
+   "children_ages": [
+    11,
+    9,
+    6
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 90000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p22",
+  "name": "Rosa",
+  "personality": "rambling paragraphs full of family stories, with facts buried inside",
+  "goal": "Know if she can retire and help her mother",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 53,
+   "partner_age": null,
+   "state": "NM",
+   "retire_age": 63,
+   "job": "school secretary",
+   "pay_per_year": 67000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 205000,
+    "roth": 0,
+    "taxable": 15000,
+    "cash": 14000
+   },
+   "home": {
+    "owns": true,
+    "value": 240000,
+    "mortgage_balance": 85000,
+    "mortgage_payment_month": 1100,
+    "rent_month": 0
+   },
+   "children_ages": [
+    16
+   ],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 54000,
+   "notes": "Helps her mother $6,000 a year"
+  }
+ },
+ {
+  "id": "p23",
+  "name": "Doug",
+  "personality": "rambling, tells long stories about his job and his boat, gives numbers sideways",
+  "goal": "Figure out if his boat habit is affordable at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 55,
+   "partner_age": null,
+   "state": "ME",
+   "retire_age": 62,
+   "job": "plumber",
+   "pay_per_year": 98000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 430000,
+    "roth": 0,
+    "taxable": 70000,
+    "cash": 35000
+   },
+   "home": {
+    "owns": true,
+    "value": 330000,
+    "mortgage_balance": 45000,
+    "mortgage_payment_month": 1300,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 78000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p24",
+  "name": "Gail",
+  "personality": "rambling, many facts in one message, including some about her husband",
+  "goal": "Plan with her husband for 64",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 58,
+   "partner_age": 61,
+   "state": "MN",
+   "retire_age": 64,
+   "job": "",
+   "pay_per_year": 80000,
+   "partner_pay_per_year": 40000,
+   "savings": {
+    "pretax": 370000,
+    "roth": 60000,
+    "taxable": 30000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 350000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 2
+    }
+   ],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 20000,
+     "start_age": 62
+    }
+   ],
+   "spending_now_per_year": 70000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p25",
+  "name": "Tyrell",
+  "personality": "asks things like 'what's a Roth?' and 'what does 401k mean?' mid-intake",
+  "goal": "Learn while he answers; retire at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 37,
+   "partner_age": null,
+   "state": "TN",
+   "retire_age": 62,
+   "job": "logistics coordinator",
+   "pay_per_year": 85000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 40000,
+    "roth": 15000,
+    "taxable": 8000,
+    "cash": 10000
+   },
+   "home": {
+    "owns": true,
+    "value": 240000,
+    "mortgage_balance": 190000,
+    "mortgage_payment_month": 1400,
+    "rent_month": 0
+   },
+   "children_ages": [
+    4
+   ],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "student",
+     "balance": 19000,
+     "rate": 0.05
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 62000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p26",
+  "name": "Susan",
+  "personality": "asks 'what is a mortgage balance vs. payment?' and 'what is Medicare?' mid-intake",
+  "goal": "Understand terms and retire at 66",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 61,
+   "partner_age": null,
+   "state": "KY",
+   "retire_age": 66,
+   "job": "",
+   "pay_per_year": 64000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 230000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 16000
+   },
+   "home": {
+    "owns": true,
+    "value": 200000,
+    "mortgage_balance": 35000,
+    "mortgage_payment_month": 800,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 50000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p27",
+  "name": "Ivan",
+  "personality": "asks 'is this advice?' and 'who sees my data?' mid-intake",
+  "goal": "Check privacy, then plan to retire at 60",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 49,
+   "partner_age": null,
+   "state": "WA",
+   "retire_age": 60,
+   "job": "engineer",
+   "pay_per_year": 140000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 520000,
+    "roth": 160000,
+    "taxable": 120000,
+    "cash": 45000
+   },
+   "home": {
+    "owns": true,
+    "value": 720000,
+    "mortgage_balance": 300000,
+    "mortgage_payment_month": 2700,
+    "rent_month": 0
+   },
+   "children_ages": [
+    13
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 100000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p28",
+  "name": "Olivia",
+  "personality": "changes her mind about her retirement age twice",
+  "goal": "Find an age that works: starts at 60, then 65, then settles on 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 46,
+   "partner_age": null,
+   "state": "CA",
+   "retire_age": 62,
+   "job": "marketing manager",
+   "pay_per_year": 115000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 250000,
+    "roth": 60000,
+    "taxable": 40000,
+    "cash": 28000
+   },
+   "home": {
+    "owns": true,
+    "value": 610000,
+    "mortgage_balance": 380000,
+    "mortgage_payment_month": 2900,
+    "rent_month": 0
+   },
+   "children_ages": [
+    10
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 90000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p29",
+  "name": "Harold",
+  "personality": "changes his mind on retirement age after seeing the plan",
+  "goal": "See which age works",
+  "whatif": "what if I retire at 66 instead",
+  "correction": "",
+  "truth": {
+   "age": 56,
+   "partner_age": null,
+   "state": "FL",
+   "retire_age": 62,
+   "job": "",
+   "pay_per_year": 74000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 260000,
+    "roth": 0,
+    "taxable": 40000,
+    "cash": 20000
+   },
+   "home": {
+    "owns": true,
+    "value": 300000,
+    "mortgage_balance": 20000,
+    "mortgage_payment_month": 950,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 58000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p30",
+  "name": "Zoe",
+  "personality": "changes her mind about retiring early, then wants to work part-time",
+  "goal": "Retire at 55, then says 60",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 42,
+   "partner_age": null,
+   "state": "CO",
+   "retire_age": 55,
+   "job": "UX designer",
+   "pay_per_year": 125000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 170000,
+    "roth": 75000,
+    "taxable": 55000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 2400
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 85000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p31",
+  "name": "Vince",
+  "personality": "pastes a messy bank-statement line like 'CHK 4821 PAYROLL ACME INC 3,412.18 DEPOSIT'",
+  "goal": "Know if he can retire at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 50,
+   "partner_age": null,
+   "state": "IL",
+   "retire_age": 62,
+   "job": "warehouse supervisor",
+   "pay_per_year": 88000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 240000,
+    "roth": 0,
+    "taxable": 30000,
+    "cash": 15000
+   },
+   "home": {
+    "owns": true,
+    "value": 260000,
+    "mortgage_balance": 110000,
+    "mortgage_payment_month": 1250,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 66000,
+   "notes": "Net paycheck is about $3,400 twice a month"
+  }
+ },
+ {
+  "id": "p32",
+  "name": "Monique",
+  "personality": "pastes a messy line from a 401k statement ('VANGUARD TARGET 2040 BAL $212,540.77')",
+  "goal": "Check readiness at 60",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 52,
+   "partner_age": null,
+   "state": "GA",
+   "retire_age": 60,
+   "job": "project manager",
+   "pay_per_year": 95000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 212540,
+    "roth": 0,
+    "taxable": 20000,
+    "cash": 15000
+   },
+   "home": {
+    "owns": true,
+    "value": 330000,
+    "mortgage_balance": 120000,
+    "mortgage_payment_month": 1500,
+    "rent_month": 0
+   },
+   "children_ages": [
+    18
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 70000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p33",
+  "name": "Dev",
+  "personality": "asks once for something off-topic (a recipe, a poem or a stock tip)",
+  "goal": "Plan, with one off-topic request",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 43,
+   "partner_age": null,
+   "state": "TX",
+   "retire_age": 60,
+   "job": "data analyst",
+   "pay_per_year": 135000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 240000,
+    "roth": 90000,
+    "taxable": 50000,
+    "cash": 30000
+   },
+   "home": {
+    "owns": true,
+    "value": 450000,
+    "mortgage_balance": 290000,
+    "mortgage_payment_month": 2300,
+    "rent_month": 0
+   },
+   "children_ages": [
+    7
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 92000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p34",
+  "name": "Carol",
+  "personality": "asks once about the weather or the election, then returns",
+  "goal": "Retire at 65",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 55,
+   "partner_age": null,
+   "state": "OH",
+   "retire_age": 65,
+   "job": "librarian",
+   "pay_per_year": 70000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 280000,
+    "roth": 0,
+    "taxable": 20000,
+    "cash": 15000
+   },
+   "home": {
+    "owns": true,
+    "value": 180000,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 22000,
+     "start_age": 62
+    }
+   ],
+   "spending_now_per_year": 54000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p35",
+  "name": "Leo",
+  "personality": "asks the app once to write his resignation letter",
+  "goal": "Retire at 61",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 51,
+   "partner_age": null,
+   "state": "NV",
+   "retire_age": 61,
+   "job": "casino manager",
+   "pay_per_year": 102000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 310000,
+    "roth": 70000,
+    "taxable": 45000,
+    "cash": 28000
+   },
+   "home": {
+    "owns": true,
+    "value": 420000,
+    "mortgage_balance": 200000,
+    "mortgage_payment_month": 1950,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 80000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p36",
+  "name": "Alex",
+  "personality": "tests a What If, then corrects an input on the plan page",
+  "goal": "Try retiring at 60, then say pay is actually higher",
+  "whatif": "what if I retire at 60",
+  "correction": "my pay is actually $118,000",
+  "truth": {
+   "age": 47,
+   "partner_age": null,
+   "state": "VA",
+   "retire_age": 62,
+   "job": "",
+   "pay_per_year": 100000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 280000,
+    "roth": 50000,
+    "taxable": 50000,
+    "cash": 25000
+   },
+   "home": {
+    "owns": true,
+    "value": 480000,
+    "mortgage_balance": 240000,
+    "mortgage_payment_month": 2200,
+    "rent_month": 0
+   },
+   "children_ages": [
+    12
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 82000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p37",
+  "name": "Marta",
+  "personality": "tests a What If about saving more, then corrects the number of kids",
+  "goal": "Try saving more, then says she has 3 kids not 2",
+  "whatif": "what if I save 15% of my pay",
+  "correction": "we actually have 3 kids now",
+  "truth": {
+   "age": 39,
+   "partner_age": null,
+   "state": "IL",
+   "retire_age": 63,
+   "job": "",
+   "pay_per_year": 92000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 120000,
+    "roth": 35000,
+    "taxable": 15000,
+    "cash": 18000
+   },
+   "home": {
+    "owns": true,
+    "value": 350000,
+    "mortgage_balance": 250000,
+    "mortgage_payment_month": 1850,
+    "rent_month": 0
+   },
+   "children_ages": [
+    7,
+    4,
+    1
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 72000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p38",
+  "name": "Kurt",
+  "personality": "tests a What If about paying off debt, then corrects his savings",
+  "goal": "Pay off the card?",
+  "whatif": "what if I pay off my credit card",
+  "correction": "my savings are really about $150,000 not 130",
+  "truth": {
+   "age": 44,
+   "partner_age": null,
+   "state": "PA",
+   "retire_age": 63,
+   "job": "",
+   "pay_per_year": 86000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 130000,
+    "roth": 0,
+    "taxable": 10000,
+    "cash": 6000
+   },
+   "home": {
+    "owns": true,
+    "value": 260000,
+    "mortgage_balance": 170000,
+    "mortgage_payment_month": 1500,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 16000,
+     "rate": 0.24
+    },
+    {
+     "kind": "car",
+     "balance": 11000,
+     "rate": 0.06
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 68000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "p39",
+  "name": "Ruth",
+  "personality": "low savings, high worry, short sentences",
+  "goal": "See if it's too late",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 62,
+   "partner_age": null,
+   "state": "WV",
+   "retire_age": 67,
+   "job": "",
+   "pay_per_year": 38000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 41000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 4000
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 850
+   },
+   "children_ages": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 33000,
+   "notes": "Social Security matters most to her"
+  }
+ },
+ {
+  "id": "p40",
+  "name": "Victor",
+  "personality": "high earner with big savings and a pension, asks careful questions",
+  "goal": "Check if he can retire at 58",
+  "whatif": "what if I downsize my home",
+  "correction": "",
+  "truth": {
+   "age": 50,
+   "partner_age": null,
+   "state": "CT",
+   "retire_age": 58,
+   "job": "surgeon",
+   "pay_per_year": 260000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 1200000,
+    "roth": 300000,
+    "taxable": 600000,
+    "cash": 100000
+   },
+   "home": {
+    "owns": true,
+    "value": 1300000,
+    "mortgage_balance": 400000,
+    "mortgage_payment_month": 4800,
+    "rent_month": 0
+   },
+   "children_ages": [
+    15,
+    12
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [
+    {
+     "per_year": 36000,
+     "start_age": 60
+    }
+   ],
+   "spending_now_per_year": 160000,
+   "notes": ""
+  }
+ }
+]

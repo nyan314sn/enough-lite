@@ -1,0 +1,24 @@
+{
+ "year": 2027,
+ "bend_points_monthly": [
+  1340,
+  8077
+ ],
+ "factors": [
+  0.9,
+  0.32,
+  0.15
+ ],
+ "wage_base": 192300,
+ "full_retirement_age": 67,
+ "early_reduction_at_62": 0.3,
+ "delayed_credit_per_year": 0.08,
+ "spouse_max_share": 0.5,
+ "sources": {
+  "pia": "https://www.ssa.gov/oact/cola/piaformula.html",
+  "wage_base": "https://www.ssa.gov/oact/cola/cbb.html",
+  "early": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+  "delayed": "https://www.ssa.gov/benefits/retirement/planner/delayret.html"
+ },
+ "method": "Rough estimate: average indexed monthly earnings = today's pay (capped at the wage base) / 12, through the 2027 PIA formula; claiming age adjusts by the SSA early and delayed rules. A real estimate needs the person's earnings record at ssa.gov/myaccount."
+}

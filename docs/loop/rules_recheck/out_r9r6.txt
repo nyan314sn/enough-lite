@@ -1,0 +1,37 @@
+[ex] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER '$2,900'
+[ex] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER 'No other debts'
+[ex] BOT: 'Enough said:\nThanks. I noted that you have no other debts. I estimated your spending now at $166,000 a year. Is that about right?' CHIPS=["Yes, that's about right", '$4,000 a month', '$6,000 a month', '$9,000 a month']
+[ex] ANSWER "Yes, that's about right"
+[ex] ready after 3 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 10.7 s
+--- R9 yes path
+ask: You asked: | I may inherit $300,000 |  | Change that detail and rebuild your plan? |  | Yes, rebuild | No |  | AI cost $0.0000
+after yes -> You asked: | Yes, rebuild |  | Your plan was updated: that detail. |  | AI cost $0.0026
+HEAD: You can count on $114,800 a year: $44,500 for basics and $70,300 for the rest.
+inherit mentions: [' $10,000 a year for health cover (an assumption). Assumptions  You asked: I may inherit $300,000  Change that detail and rebuild your plan?  AI cost $0.0000  You asked: Yes, rebuild  Your']
+--- R6 variations
+R6 'what if my pay grows 3% a year' -> You asked: | what if my pay grows 3% a year |  | I did not find a change in that that the plan can model: a retirement age, spending, saving, a Social Security claiming age, part-time work, a move, a child or pet, a debt, or a market fall. |  | What if I retire at 59 | What if I save $500 more a month |  | AI cost $0.0000 | btns: ['What if I retire at 59', 'What if I save $500 more a month']
+R6 'what if stocks return 3% a year' -> You asked: | what if stocks return 3% a year |  | I can't set market returns or prices myself. The closest What If I can run is a market fall or a bad first decade. |  | What if markets fall 30% | What if we have a bad first decade |  | AI cost $0.0000 | btns: ['What if markets fall 30%', 'What if we have a bad first decade']
+R6 'plan to age 95' -> You asked: | plan to age 95 |  | Change your age to 95 and rebuild your plan? |  | Yes, rebuild | No |  | AI cost $0.0000 | btns: ['Yes, rebuild', 'No']
+R6 'what if inflation is higher' -> You asked: | what if inflation is higher |  | I can't set market returns or prices myself. The closest What If I can run is a market fall or a bad first decade. |  | What if markets fall 30% | What if we have a bad first decade |  | AI cost $0.0000 | btns: ['What if markets fall 30%', 'What if we have a bad first decade']
+R6 'change when Social Security starts' -> You asked: | change when Social Security starts |  | At what age should Social Security start in your plan? It can start from 62, and it stops growing at 70. A later start pays more each year. |  | Set my Social Security start age to 62 | Set my Social Security start age to 65 | Set my Social Security start age to 67 | Set my Social Security start age to 70 |  | AI cost $0.0000 | btns: ['Set my Social Security start age to 62', 'Set my Social Security start age to 65', 'Set my Social Security start age to 67', 'Set my Social Security start age to 70']
+R6 'what is my yearly saving assumption and can I change it' -> You asked: | what is my yearly saving assumption and can I change it |  | The plan uses what you told me: you retire at 62 (you said); your spending goal is $114,800 a year (assumed); your savings are $552,000 pre-tax (401(k) or IRA), $92,000 Roth, $184,000 taxable, $92,000 cash (you said); your Social Security is $82,000 a year at 67 (each at their own age), claimed at 70 (estimate); your pay is $310,000 a year (you | btns: ['Change an answer', 'Explain my plan', 'Try a What If']
+--- R18 jargon scan of plan page
+   \btoken 0
+   Monte Carlo 0
+   \blibrary\b 0
+   \bthe tool\b 0
+   \bnoted that your\b.*\bis noted 0
+   tax-advantaged 0
+   \bthe model\b 0
+   percentile 0
+   \bscenarios?\b 5
+   market paths 4
+   \bis noted\b 0
+   stochastic 0
+   \bAI cost 9
+sentences over 40 words: [(41, '3 Follow the simple plan: stocks at 110 minus your age, Social Security at 70  This simple plan kept your basics safest and left the most to spend in the tests,'), (93, 'What each choice is worth Choices that change what you can count on Choice\tAdds a year to what you can count on\t Try it  Retire 1 year later, at 63\t+$8,500\tTry '), (70, 'Savings by age Middle path Range, weak to strong markets $0 $2M $4M $6M 45 55 65 75 85 95 Retire at 62 See the numbers Age\tLow\tMiddle\tHigh 45\t$920,000\t$920,000\t'), (56, "$0 $125k $250k 50 60 70 80 90 50 College, 13-year-old, 2031-2034 53 College, 10-year-old, 2034-2037 57 Children's costs end 2038 57 College, 6-year-old, 2038-20"), (50, 'AI cost $0.0026  You asked: what if my pay grows 3% a year  I did not find a change in that that the plan can model: a retirement age, spending, saving, a Socia'), (79, 'AI cost $0.0000  You asked: what is my yearly saving assumption and can I change it  The plan uses what you told me: you retire at 62 (you said); your spending '), (48, 'Change an answer Explain my plan Try a What If  AI cost $0.0000  WORTH TRYING Retire 2 years later Save 5% more of pay Retire at 60 Another child Get a dog Mark')]
+errors []

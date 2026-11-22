@@ -1,0 +1,11 @@
+{
+  "fake": true,
+  "note": "EXAMPLE, not real. Made up to test impact_summary.py.",
+  "session_id": "EXAMPLE-1",
+  "tester": "EXAMPLE, not real: a 55-year-old nurse",
+  "ratings": {"clarity": 4, "trust": 3, "usefulness": 5, "look": 4, "reuse": 4},
+  "open": {"confusing": "EXAMPLE: the word wishes", "liked": "EXAMPLE: one clear answer", "change": "EXAMPLE: show how sure it is"},
+  "compare": {"choice": "better", "note": "EXAMPLE: faster than my spreadsheet"},
+  "quote": "EXAMPLE, not real: I would have put this off for another year.",
+  "saved_at": "2026-11-22T10:00:00Z"
+}

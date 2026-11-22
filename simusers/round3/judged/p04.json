@@ -1,0 +1,116 @@
+{
+ "persona_id": "p04",
+ "issues": [
+  {
+   "ref": "i2",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "Your answer moved some typical figures, so I updated them: spending in retirement at $41,600 a year.",
+   "note": "The $41,600 retirement spending is an estimate derived from the new current spending, but the reply does not plainly call it an estimate or say how it was calculated."
+  },
+  {
+   "ref": "i5",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "Thanks. I noted that you have no children. Next I need when you want to retire.",
+   "note": "The user asked whether they still need to say what they want to see at the end, and the reply skipped that question without answering it."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 57,
+    "truth": 57,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "OH",
+    "truth": "OH",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 65000.0,
+    "truth": 65000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 363000.0,
+    "truth": 363000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 30000.0,
+    "truth": 30000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 52000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

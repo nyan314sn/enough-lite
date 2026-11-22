@@ -1,0 +1,326 @@
+{
+ "items": {
+  "S049": {
+   "verdict": "questionable",
+   "reason": "The plan is plausible but thin: it sets a spending goal above the safe level, duplicates the same action, and its verdict field reads 'close' rather than a clear sign-off, while the household's $29k median wealth and high-cost retirement assumptions leave little margin.",
+   "input_tokens": 4308,
+   "output_tokens": 104,
+   "usd": 0.0004828000000000001,
+   "label": "39F, +partner 40, $53k pay, rent"
+  },
+  "S261": {
+   "verdict": "questionable",
+   "reason": "The plan is internally consistent and honest about the shortfall, but it leans on a rule-of-thumb strategy that gives basics only 42 of 100 odds, dismisses the long-term care gap with a vague claim-age review, and relies on a $10,000 pre-Medicare health cost assumption without much support.",
+   "input_tokens": 4475,
+   "output_tokens": 119,
+   "usd": 0.0005070000000000001,
+   "label": "34F, +partner 36, $14k pay, rent"
+  },
+  "S204": {
+   "verdict": "questionable",
+   "reason": "The plan is internally coherent and flags the basics shortfall honestly, but it leans on a loosely matched 'similar household' and rule-of-thumb benchmark, its life-cover advice is oddly justified for a 68-year-old couple with no children, and it never seriously tests cutting spending or delaying to shore up the 23-of-100 basics score.",
+   "input_tokens": 4046,
+   "output_tokens": 133,
+   "usd": 0.0004711,
+   "label": "68M, +partner 64, $30k pay, own"
+  },
+  "S219": {
+   "verdict": "questionable",
+   "reason": "The plan is internally consistent and honestly flags the shortfall, but it leans on a rule-of-thumb strategy that fails the 90-of-100 basics threshold (88) and sets a $52,600 safe spend that the low-confidence flags and thin $44k-savings base make hard to rely on without a fuller review.",
+   "input_tokens": 4043,
+   "output_tokens": 122,
+   "usd": 0.00046530000000000003,
+   "label": "60M, +partner 59, $50k pay, own"
+  },
+  "S184": {
+   "verdict": "questionable",
+   "reason": "The plan treats the $19,000 basics as fully covered by $30,000 Social Security with only $24,100 cash and a 24% credit card, ignoring that the household has no investment portfolio to draw on, sustaining 100% success is implausible at 95 with long-term care unfunded, and the cited 'works' verdict and 'rule of thumb' claims conflict with the stated figures.",
+   "input_tokens": 3878,
+   "output_tokens": 144,
+   "usd": 0.00045980000000000006,
+   "label": "64F, +partner 69, retired, rent"
+  },
+  "S250": {
+   "verdict": "questionable",
+   "reason": "The plan's headline figures are internally inconsistent (the stated $62,000 counts basics in 96 of 100 scenarios yet the wants text cites 90, and the chosen neighbor strategy assumes a 50% stock share with no clear basis), and the tax-free withdrawal estimate of $0 is unsupported despite 32% pretax savings and a $183,600 student loan not being addressed in the plan.",
+   "input_tokens": 4451,
+   "output_tokens": 153,
+   "usd": 0.0005216,
+   "label": "26M, +partner 23, $48k pay, rent"
+  },
+  "S201": {
+   "verdict": "wrong",
+   "reason": "The plan treats $51,500 as safe with basics paid in 100 scenarios while the household has only $14,300 in cash and no investments, so the stated income (Social Security plus pensions) and the claimed safe spending are inconsistent with the savings profile, and the advice to pay debt and build an emergency fund ignores that the household has almost no liquid reserves and faces a large long-term care gap.",
+   "input_tokens": 3882,
+   "output_tokens": 146,
+   "usd": 0.00046120000000000004,
+   "label": "76F, +partner 75, retired, own"
+  },
+  "S120": {
+   "verdict": "questionable",
+   "reason": "The plan is broadly sound with 100% basics coverage and a 92,600 safe level, but it duplicates the spending-goal action, lists an odd 'close' verdict, ignores the partner's earlier retirement at 61 in the headline, and recommends delaying Social Security to 67 without weighing the couple's health and the $68,300 benefit against the stated retire age of 66.",
+   "input_tokens": 4905,
+   "output_tokens": 142,
+   "usd": 0.0005615,
+   "label": "44F, +partner 46, 4 kids, $103k pay, own"
+  },
+  "S278": {
+   "verdict": "wrong",
+   "reason": "The plan claims basics are fully covered and the $20,000 goal is met in 100 of 100 scenarios, yet the household has only $1,100 in cash and no investments, so it cannot fund $20,000 a year from savings; the $23,500 safe-spending figure ignores that the $9,500 pension is not inflation-adjusted and the ~$18,600 Social Security plus pension cannot cover the cost rise at 85, and the 0.5-month emergency fund and 100/100 success rate are contradicted by the profile.",
+   "input_tokens": 3494,
+   "output_tokens": 190,
+   "usd": 0.0004444,
+   "label": "76M, retired, own"
+  },
+  "S265": {
+   "verdict": "questionable",
+   "reason": "The plan's own figures show basics paid in only 65 of 100 scenarios and rely on a loosely matched neighbor household, but the core conclusion that spending must be cut is directionally supported by the profile's modest savings relative to a $42,000 spending goal.",
+   "input_tokens": 4459,
+   "output_tokens": 103,
+   "usd": 0.0004974000000000001,
+   "label": "60F, $74k pay, own"
+  },
+  "S187": {
+   "verdict": "questionable",
+   "reason": "The plan's math is internally consistent and sensible, but it duplicates the same action with two different spending figures ($37,500 vs $38,000 framing and a repeated bullet), its claim that $37,500 is safe conflicts with the 58-of-100 goal survival, and it omits the $7,551 emergency-fund gap from its action list despite a near-zero cash cushion.",
+   "input_tokens": 4458,
+   "output_tokens": 140,
+   "usd": 0.0005158000000000001,
+   "label": "43F, $78k pay, own"
+  },
+  "S092": {
+   "verdict": "questionable",
+   "reason": "The plan is internally inconsistent: it says basics are paid in only 74 of 100 scenarios (below the 90 threshold, so falls_short is correct), yet recommends a $48,000 goal and a $47,100 'safe' spend that still fails 10 of 100 scenarios and cites a neighbor case with the same 74 result, while ignoring the household's large pre-tax savings relative to spending and not addressing health-cost and long-term-care risk for a partner in fair health.",
+   "input_tokens": 4343,
+   "output_tokens": 175,
+   "usd": 0.0005218,
+   "label": "60M, +partner 63, $30k pay, own"
+  },
+  "E09_single_mom_2_kids": {
+   "verdict": "wrong",
+   "reason": "The plan promises $29,500 a year while basics are paid in only 92 of 100 scenarios yet the stated goal of $40,000 lasts in just 38, and it recommends contributions and spending figures that are unreconciled with the $52,000 income, $2,500 cash, and $8,000 pretax savings, while the 'actions' duplicate each other and the $100,000 inheritance and $40,000 goal are mismatched with the stated low-confidence result.",
+   "input_tokens": 4686,
+   "output_tokens": 168,
+   "usd": 0.0005526000000000001,
+   "label": "Age 34, single parent, two kids, renting"
+  },
+  "S098": {
+   "verdict": "questionable",
+   "reason": "The plan is internally consistent with a nearly empty portfolio, but it ignores the $625,000 home equity as a possible retirement resource and gives no concrete path to raising savings from a $1,900 cash balance, so its advice is thin for a 39-year-old with $78,500 income and a 62 retirement target.",
+   "input_tokens": 4628,
+   "output_tokens": 120,
+   "usd": 0.0005228,
+   "label": "39F, $78k pay, own"
+  },
+  "S279": {
+   "verdict": "questionable",
+   "reason": "The plan is internally inconsistent: it says claim_age 70 and already_claiming true while the chosen strategy claims at 73, it recommends a 37% stock share with an unclear basis, and the $19,700 safe spending leaves almost no margin against $33,900 in cash with no pretax, Roth, or taxable savings to support a 21-year horizon.",
+   "input_tokens": 3335,
+   "output_tokens": 135,
+   "usd": 0.00040100000000000004,
+   "label": "73F, retired, own"
+  },
+  "S299": {
+   "verdict": "questionable",
+   "reason": "The plan's arithmetic and basics coverage look plausible, but it relies on a neighbor household with $3.26M saved as its strategy basis, ignores the $10,000 pre-Medicare health cost gap for a partner aged 65 (who is already past 65 and so should be on Medicare, leaving the figure unclear), omits long-term care risk, and its stated 'neighbors' are a weak match for this household's $66k pretax and $63k Roth savings.",
+   "input_tokens": 3907,
+   "output_tokens": 169,
+   "usd": 0.0004752,
+   "label": "72M, +partner 65, retired, own"
+  },
+  "S127": {
+   "verdict": "questionable",
+   "reason": "{\"verdict\": \"questionable\", \"reason\": \"The plan's headline numbers and recommendations are internally consistent, but it relies on a thin, low-confidence analog, the $38,900 safe spending figure is no",
+   "input_tokens": 3878,
+   "output_tokens": 131,
+   "usd": 0.0004533,
+   "label": "76F, retired, own"
+  },
+  "S232": {
+   "verdict": "questionable",
+   "reason": "The plan's headline \"$74,100 counted on\" is labeled safe in 90 of 100 scenarios but its own needs score and goal-lasts figure (94 of 100) are only marginally supported, the $0 life cover gap and thin 1.5-month emergency fund are left unfixed as actions beyond the plan's core, and the pre-Medicare health cost assumption and claim-at-67 choice are defended only by a rule of thumb rather than the household's specifics.",
+   "input_tokens": 4528,
+   "output_tokens": 173,
+   "usd": 0.0005393,
+   "label": "46F, +partner 52, 3 kids, $71k pay, own"
+  },
+  "S037": {
+   "verdict": "questionable",
+   "reason": "The plan's core figures are internally consistent, but it treats $36,000 as fully covered while the profile shows no long-term care budget, a partner in fair health, a 23% chance of a survivor alive at 95, and a mortgage and health cost path that depend on assumptions the household has not confirmed.",
+   "input_tokens": 3536,
+   "output_tokens": 114,
+   "usd": 0.0004106,
+   "label": "75F, +partner 78, retired, own"
+  },
+  "S111": {
+   "verdict": "questionable",
+   "reason": "The plan's own numbers show the $42,000 goal lasts in only 13 of 100 scenarios and the basics are paid in 99 of 100, so the headline 'close' and the claim that little is needed to fix things understate how thin the margin is, while the 'safe' $38,200 figure is essentially the rule-of-thumb output with no clear justification given the $271k-equivalent savings and 95-year horizon.",
+   "input_tokens": 4012,
+   "output_tokens": 153,
+   "usd": 0.00047770000000000006,
+   "label": "63F, +partner 64, retired, rent"
+  },
+  "S076": {
+   "verdict": "wrong",
+   "reason": "The plan's wants figure of $14,400 a year is a single household-level number that ignores the $100,000 inheritance and $77,000 cash, and it cites a neighbor strategy from a 25-year-old with $88,000 saved (a mismatch with this profile's $88,000 in total savings but different allocation logic), while the 'fast' heuristic with a 50% stock share and a 25% basics-paid score produces a recommendation to cut spending to $14,000 that a careful planner would not endorse without a far fuller analysis.",
+   "input_tokens": 4696,
+   "output_tokens": 190,
+   "usd": 0.0005646000000000001,
+   "label": "25M, $67k pay, rent"
+  },
+  "S016": {
+   "verdict": "wrong",
+   "reason": "With only $52,700 in cash and no retirement accounts, the plan claims $78,000 a year is secure for 90 of 100 scenarios, which the savings cannot support; the median wealth chart shows depletion to zero by age 75, and the plan also gives duplicate, contradictory action advice while ignoring the $100,000 whole life policy's cash value and a spending goal of $95,000 that it admits falls short.",
+   "input_tokens": 4453,
+   "output_tokens": 154,
+   "usd": 0.0005223000000000001,
+   "label": "51M, +partner 44, $68k pay, own"
+  },
+  "S088": {
+   "verdict": "questionable",
+   "reason": "The plan is plausible but leans on a rule-of-thumb stock allocation and a $68,000 'count on' figure that is thin against only $322,000 saved and a 92-year horizon, with the 401(k) catch-up limit and debt payoff math not fully reconciled with the profile.",
+   "input_tokens": 4301,
+   "output_tokens": 112,
+   "usd": 0.00048610000000000005,
+   "label": "48F, $144k pay, rent"
+  },
+  "S048": {
+   "verdict": "wrong",
+   "reason": "The plan claims $104,500 a year is safely countable from only $73,500 in cash and no retirement accounts, which is implausible and contradicts the profile's savings, while its own neighbor simulations show a far lower safe amount (around $92,000-$105,000 only for households with much more saved) and the plan ignores that the household has no investments to support that income beyond Social Security of $49,600.",
+   "input_tokens": 4048,
+   "output_tokens": 143,
+   "usd": 0.00047630000000000003,
+   "label": "49F, $214k pay, own"
+  },
+  "S068": {
+   "verdict": "wrong",
+   "reason": "With $23,600 in cash and no investments, a $58,000 spending goal and basics of $38,400 are unsupported, and the plan's own numbers show basics paid in 0 of 100 scenarios, yet it presents a rule-of-thumb fallback as reasonable and never flags that the household's basics are unfunded in every scenario.",
+   "input_tokens": 4224,
+   "output_tokens": 128,
+   "usd": 0.0004864,
+   "label": "56F, $75k pay, rent"
+  },
+  "S125": {
+   "verdict": "questionable",
+   "reason": "The plan is plausible given the $2.39M pretax savings and $22,500 Social Security, but it ignores the $0 margin for wishes, the omitted long-term care cost (about $129,575 a year for roughly 3 years), and the 'rule of thumb' basis is not well justified for a 73-year-old with no partner and no insurance.",
+   "input_tokens": 3768,
+   "output_tokens": 267,
+   "usd": 0.0005103,
+   "label": "73M, retired, own"
+  },
+  "S067": {
+   "verdict": "wrong",
+   "reason": "With only $53,000 in savings, a $15,000 spending goal, and basics paid in 0 of 100 scenarios, the plan presents an unsafe picture as workable and its actions are duplicated and incoherent (claiming Social Security at 62 for a $17,500 benefit, a 49% stock allocation, and a 'safe level' of $10,600 that the plan itself says fails), so a careful planner would not sign off on it.",
+   "input_tokens": 3993,
+   "output_tokens": 159,
+   "usd": 0.00047880000000000004,
+   "label": "61M, retired, own"
+  },
+  "S011": {
+   "verdict": "questionable",
+   "reason": "Basics are fully covered at 100 of 100 and the plan correctly flags the $83,000 goal as falling short, but the actions are duplicated, the plan ignores the $4,740 post-85 health cost rise in its headline, and the 'wants' figure of $72,100 leaves the spending goal unresolved without a clear funding path.",
+   "input_tokens": 3873,
+   "output_tokens": 128,
+   "usd": 0.0004513,
+   "label": "66F, $130k pay, own"
+  },
+  "S267": {
+   "verdict": "questionable",
+   "reason": "The plan is coherent in flagging that the $90,000 goal fails in every scenario and that only about $36,400 is countable, but it leans on a low-confidence rule-of-thumb basis, sets no clear path to close the gap, and its \"Medicare at 65\" action and $10,000 pre-Medicare health assumption are presented without a firm defense of the figures.",
+   "input_tokens": 4148,
+   "output_tokens": 138,
+   "usd": 0.00048380000000000005,
+   "label": "63F, retired, own"
+  },
+  "S122": {
+   "verdict": "questionable",
+   "reason": "The plan rightly flags the $6,200 gap to safe spending, but it asserts basics are paid in 100 of 100 scenarios while the $37,000 goal fails in every scenario, and it never addresses that the household has only $36,300 in cash and no investment portfolio, leaving the 'wants' and withdrawal logic thinly supported.",
+   "input_tokens": 3612,
+   "output_tokens": 131,
+   "usd": 0.0004267,
+   "label": "70F, +partner 73, retired, own"
+  },
+  "E15_age_79_working": {
+   "verdict": "wrong",
+   "reason": "The plan runs a 79-year-old with $170,000 in savings and $24,000 in Social Security through a retirement at 80 that leaves basics paid in only 7 of 100 scenarios and money gone by 87, yet it still presents a $52,000 spending goal and a 75% stock mix with no serious warning, and it leans on a loosely matched 'similar household' as its guide.",
+   "input_tokens": 3698,
+   "output_tokens": 143,
+   "usd": 0.00044130000000000005,
+   "label": "Age 79, still working, wants to stop at 80"
+  },
+  "S294": {
+   "verdict": "wrong",
+   "reason": "With about $66,000 in total savings and $16,300 of Social Security, basics ($21,900) are paid in 0 of 100 scenarios and the plan still recommends a $37,000 spending goal, while its own 'safe' figure is $17,700; the rule-of-thumb stock share and the 'reasonable' framing do not match a household that cannot cover basics.",
+   "input_tokens": 3786,
+   "output_tokens": 137,
+   "usd": 0.0004471,
+   "label": "68M, $30k pay, own"
+  },
+  "S073": {
+   "verdict": "wrong",
+   "reason": "With only $6,300 in cash, a $13,200 car loan at 9%, and $15,200 in Social Security against $23,700 in basics, the plan's 'count on $9,400 a year' and its action to pay off the car loan first (which would drain nearly all cash) ignore the household's near-zero liquidity and unsafe basics, and it wrongly labels spending goals and a 'safe level' as if the household could fund them.)",
+   "input_tokens": 3838,
+   "output_tokens": 158,
+   "usd": 0.0004628000000000001,
+   "label": "80F, $25k pay, own"
+  },
+  "S072": {
+   "verdict": "wrong",
+   "reason": "The plan recommends a retirement age of 76 and claiming Social Security at 70 for a 75-year-old already claiming, yet the headline says counted spending of $40,500 falls short of $58,500 basics with 0 of 100 scenarios paying the basics, while the 'wants' figure ignores that basics must be paid first, and it asserts the rule-of-thumb strategy as the chosen plan despite basics failing in every scenario, which a careful planner would not sign off on given the household's $192,000 median-wealth trajectory depleting by 81.",
+   "input_tokens": 3829,
+   "output_tokens": 198,
+   "usd": 0.00048190000000000006,
+   "label": "75M, +partner 71, $60k pay, rent"
+  },
+  "S209": {
+   "verdict": "reasonable",
+   "reason": "The plan honestly flags that basics (paid in 0 of 100 scenarios) are not covered by the $20,600 safe spending, and its actions to lower the goal, pay off high-rate debt, and add life cover fit the profile, including the children and dog; the thin savings make the low confidence appropriate.",
+   "input_tokens": 4786,
+   "output_tokens": 118,
+   "usd": 0.0005376000000000001,
+   "label": "35F, +partner 41, 2 kids, $30k pay, rent"
+  },
+  "S237": {
+   "verdict": "questionable",
+   "reason": "The plan's direction (basics far underfunded, spending goal too high, debt and emergency fund first) is defensible, but the 'falls_short' verdict and 'wants' figure conflict with the $18,700 headline, the actions are duplicated, and the neighbor strategy shown is not a clear, well-supported fit for this household.",
+   "input_tokens": 4744,
+   "output_tokens": 125,
+   "usd": 0.0005369000000000001,
+   "label": "33M, +partner 38, $14k pay, rent"
+  },
+  "S192": {
+   "verdict": "questionable",
+   "reason": "The plan's internal logic is mostly consistent, but it recommends claiming Social Security at 67 without comparing the delayed-credit option to 70 given the household's health and a spending gap, leans on a weak neighbor match (basics safe only 57 of 100), and the life-insurance and $31,000 goal figures are not clearly reconciled with the $33,500 pay and $26,300 benefit.)",
+   "input_tokens": 4035,
+   "output_tokens": 150,
+   "usd": 0.00047850000000000003,
+   "label": "66M, +partner 63, $34k pay, own"
+  },
+  "S208": {
+   "verdict": "questionable",
+   "reason": "The plan is directionally sound in flagging that basics are unfunded and spending is too high, but it hides the real problem: with $23,600 in cash and no savings contributions, the household is nearly unfunded, so the advice to retire at 63 and claim at 63 is not defensible without stronger caveats, and the 'similar household' comparisons are weak matches.",
+   "input_tokens": 4428,
+   "output_tokens": 133,
+   "usd": 0.0005093000000000001,
+   "label": "61M, +partner 58, $45k pay, own"
+  },
+  "S181": {
+   "verdict": "wrong",
+   "reason": "The plan claims the basics are covered in 100 of 100 scenarios with $23,300 cash and $2,400 taxable, ignoring the stated $10,000 pre-Medicare premiums, a 39-year horizon, and that the household has almost no investable assets, so the safe-spending and sustainability figures are not credible.",
+   "input_tokens": 3918,
+   "output_tokens": 124,
+   "usd": 0.0004538,
+   "label": "63M, +partner 56, retired, rent"
+  },
+  "S206": {
+   "verdict": "questionable",
+   "reason": "The plan's numbers are internally inconsistent: it lists 'Set your spending goal nearer the safe level' twice, says basics are paid in only 73 of 100 scenarios while calling the $31,500 safe level a sign-off figure, and its neighbor benchmark (S206) is a much smaller $47,000 saver, so the plan's basis and recommendations are thin and hard to defend without fixes.",
+   "input_tokens": 4784,
+   "output_tokens": 151,
+   "usd": 0.0005539,
+   "label": "24F, +partner 29, $38k pay, own"
+  }
+ },
+ "usd": 0.019531900000000005,
+ "model": "claude-haiku-5-5"
+}

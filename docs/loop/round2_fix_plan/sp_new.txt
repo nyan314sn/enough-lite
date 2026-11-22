@@ -1,0 +1,147 @@
+MATCH_MIN_YEARS = config.MATCH_MIN_YEARS_LEFT
+RETIRE_MAX = 70            # never suggest retiring past 70
+SPEND_LESS_SHARE = 0.10    # the "spend less" starting point: a tenth of spending, at least $1,000
+SAVE_MORE_SHARE = 0.05     # the "save more" starting point: a twentieth of pay more a year, said as a sum a month
+GOAL_CUT_SHARE = 0.85      # the "smaller goal" starting point: 85% of the goal, never below the basics
+HELPS_MIN = 500            # count-on must rise by at least this (and 5%) for a change to count as a help
+
+
+def _spend_less(p, x: float):
+    """Spend x a year less now (a real cut). Retirement spending follows unless the person gave it."""
+    from .. import household
+    newp = p.model_copy(deep=True)
+    newp.spending_now_per_year = max(0.0, (p.spending_now_per_year or 0) - x)
+    newp.sources["spending_now_per_year"] = "you said"
+    if p.sources.get("spending_per_year") != "you said" and (p.retire_age or 65) > (p.age or 45):
+        newp.spending_per_year = None
+        newp.sources.pop("spending_per_year", None)
+    if newp.sources.get("social_security_per_year") == "estimate":
+        newp.social_security_per_year = None
+    return household.complete(newp)
+
+
+def _tries(p, m: dict) -> list[dict]:
+    """Single changes worth testing, each as a What If text and the change it makes (the What If parser reads the same
+    text the same way): retire one or two years later (never past 70), spend less now, save more, claim Social
+    Security at 70, a smaller goal. The person's own age is kept."""
+    from .. import pipeline
+    age, ra = p.age or 45, p.retire_age or 65
+    working = ra > age and p.household_pay() > 0
+    goal = p.spending_per_year or 0
+    out = []
+    if working:
+        for k in (1, 2):
+            if ra + k <= RETIRE_MAX:
+                out.append({"key": "retire", "text": f"Retire at {ra + k}", "ch": {"retire_age": ra + k}})
+        now = p.spending_now_per_year or 0
+        if now > 0:
+            x = min(max(1000, round(SPEND_LESS_SHARE * now, -3)), round(0.5 * now, -3))
+            out.append({"key": "spend_now", "text": f"Spend ${x:,.0f} a year less now", "spend_now_less": x})
+        month = max(100, round(SAVE_MORE_SHARE * p.household_pay() / 12, -2))
+        txt = f"Save ${month:,.0f} a month more"
+        ch = pipeline.parse_whatif(txt, p)
+        if ch and all(k in pipeline.AFFECTS or k.startswith("_") for k in ch):
+            out.append({"key": "save", "text": txt, "ch": ch})
+    claim, _, already = plan_claims(p, m)
+    if not already and claim is not None and claim < 70:
+        out.append({"key": "claim", "text": "Claim Social Security at 70", "ch": {"claim_age": 70}})
+    basics = (m.get("inputs") or {}).get("basics_per_year") or 0
+    new_goal = max(round(GOAL_CUT_SHARE * goal, -3), round(basics, -3))
+    if goal and new_goal < goal - 999:
+        cut = goal - new_goal
+        txt = f"Spend ${cut:,.0f} a year less"
+        parsed = pipeline.parse_whatif(txt, p)
+        if parsed.get("spending_per_year") != new_goal or working:
+            # the plain form for a goal: "Spend $X a year" (for someone working, "less" is a cut to spending now)
+            txt = f"Spend ${new_goal:,.0f} a year" + (" in retirement" if working else "")
+        out.append({"key": "goal", "text": txt, "ch": {"spending_per_year": new_goal}})
+    return out
+
+
+def _apply_try(p, t):
+    """The profile after one change, or several at once (a combination). None when it cannot run."""
+    from .. import pipeline
+    parts = t if isinstance(t, list) else [t]
+    ch: dict = {}
+    for x in parts:
+        ch.update(x.get("ch") or {})
+    newp, notes = pipeline.apply_whatif(p, ch) if ch else (p.model_copy(deep=True), {})
+    if notes.get("_say"):
+        return None
+    for x in parts:
+        if x.get("spend_now_less"):
+            newp = _spend_less(newp, x["spend_now_less"])
+    return newp
+
+
+def _join_texts(texts: list[str]) -> str:
+    out = [texts[0]] + [t[0].lower() + t[1:] for t in texts[1:]]
+    return out[0] if len(out) == 1 else ", ".join(out[:-1]) + " and " + out[-1]
+
+
+async def starting_points(ctx: RunCtx) -> list[dict]:
+    """When the basics are not safe: changes worked out on the person's own numbers (their age kept), kept only when
+    they help (more scenarios pay the basics, or more to count on). When no single change makes the basics safe, the
+    helpful ones are tried together. Each has a What If text for the same change. Those that make the basics safe
+    come first."""
+    from .. import pipeline
+    p, m = ctx.profile, ctx.results["markets"]
+    base_paid, base_safe = m.get("basics_paid_of_100") or 0, m.get("safe_spending_per_year") or 0
+
+    async def run(t):
+        try:
+            newp = _apply_try(p, t)
+            if newp is None:
+                return None
+            c2 = RunCtx(profile=newp, use_ai=False, options=False, session=ctx.session)
+            await pipeline.run_plan(c2)
+            return c2.results["markets"]
+        except Exception:      # a starting point is a help, never a reason for the plan to fail
+            return None
+
+    def point(t, m2):
+        paid, safe = m2.get("basics_paid_of_100") or 0, m2.get("safe_spending_per_year") or 0
+        helps = paid > base_paid or (safe >= 1.05 * base_safe and safe - base_safe >= HELPS_MIN)
+        if not helps or (paid == 0 and safe <= 0):
+            return None
+        parts = t if isinstance(t, list) else [t]
+        text = _join_texts([x["text"] for x in parts])
+        res = f"basics paid in {paid} of 100 (now {base_paid}), and {money(safe)} a year to count on (now {money(base_safe)})"
+        return {"title": text, "whatif_text": text, "paid_of_100": paid, "count_on_per_year": safe, "result": res,
+                "makes_basics_safe": paid >= BASICS_SAFE, "keys": [x["key"] for x in parts]}
+
+    tries = _tries(p, m)
+    out = []
+    for t in tries:
+        m2 = await run(t)
+        x = point(t, m2) if m2 else None
+        if x:
+            out.append(x)
+    if out and not any(x["makes_basics_safe"] for x in out):
+        # together: the latest retirement tried, with spending less now, a later claim and a smaller goal where each helped
+        helped = {k for x in out for k in x["keys"]}
+        best_retire = max((t for t in tries if t["key"] == "retire"), key=lambda t: t["ch"]["retire_age"], default=None)
+        pool = [t for t in tries if t["key"] in helped and t["key"] in ("spend_now", "claim", "goal")]
+        combo = ([best_retire] + pool) if (best_retire is not None and pool) else (pool if len(pool) >= 2 else None)
+        if combo:
+            m2 = await run(combo)
+            x = point(combo, m2) if m2 else None
+            if x:
+                out.append(x)
+    out.sort(key=lambda x: (not x["makes_basics_safe"], -x["paid_of_100"], -x["count_on_per_year"]))
+    # one "retire later" is enough: the better of the two
+    seen_retire, kept = False, []
+    for x in out:
+        if x["keys"] == ["retire"]:
+            if seen_retire:
+                continue
+            seen_retire = True
+        kept.append(x)
+    kept = kept[:3]
+    for x in kept:
+        ctx.extra_facts += [x["paid_of_100"], x["count_on_per_year"], base_paid, base_safe]
+    for t in tries:
+        ctx.extra_facts += [v for v in (t.get("ch") or {}).values() if isinstance(v, (int, float))] + [t.get("spend_now_less") or 0]
+    return [{k: v for k, v in x.items() if k != "keys"} for x in kept]
+
+

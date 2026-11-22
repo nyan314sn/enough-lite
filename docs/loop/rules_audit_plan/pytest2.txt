@@ -1,0 +1,40 @@
+...........................................................F............ [ 27%]
+.............F..................F.....................................s. [ 54%]
+........................................................................ [ 81%]
+................................................                         [100%]
+================================== FAILURES ===================================
+____________________________ test_save_more_forms _____________________________
+
+    def test_save_more_forms():
+        r = ask("save a bit more, say an extra $200 a month", WORKING)
+>       assert r["kind"] == "whatif" and "$2,400 more a year" in r["text"]
+E       AssertionError: assert ('whatif' == 'whatif'
+E         
+E           whatif and '$2,400 more a year' in 'If you save $2,400 a year more and spend that much less now (about $37,346 a year saved in all, 21% of pay), you can ...aid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 90 of 100 (your plan: 86 of 100).')
+
+tests\test_round3_ask.py:110: AssertionError
+______________________________ test_saving_forms ______________________________
+
+    def test_saving_forms():
+        r = ask("what if I save 500 more per month", WORKING)
+>       assert r["kind"] == "whatif" and "$6,000 more a year" in r["text"]
+E       AssertionError: assert ('whatif' == 'whatif'
+E         
+E           whatif and '$6,000 more a year' in 'If you save $6,000 a year more and spend that much less now (about $41,824 a year saved in all, 23% of pay), you can ...aid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 94 of 100 (your plan: 86 of 100).')
+
+tests\test_round2_ask.py:58: AssertionError
+_______________ test_no_past_retirement_age_for_someone_retired _______________
+
+    def test_no_past_retirement_age_for_someone_retired():
+        r = ask("retire at 60", RETIRED)
+>       assert r["kind"] == "clarify" and "already 71" in r["text"]
+E       AssertionError: assert ('clarify' == 'clarify'
+E         
+E           clarify and 'already 71' in 'You have already retired, so there is no retirement age to test. These What Ifs can change your plan:')
+
+tests\test_round2_ask.py:185: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_round3_ask.py::test_save_more_forms - AssertionError: asser...
+FAILED tests/test_round2_ask.py::test_saving_forms - AssertionError: assert (...
+FAILED tests/test_round2_ask.py::test_no_past_retirement_age_for_someone_retired
+3 failed, 260 passed, 1 skipped in 439.41s (0:07:19)

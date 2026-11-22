@@ -1,0 +1,144 @@
+{
+ "persona_id": "p38",
+ "issues": [
+  {
+   "ref": "i7",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "Got it: savings of $16,000, not $150,000.",
+   "note": "The user's split (130k + 10k + 6k) totals $146,000, but the app echoes $16,000, a wrong figure stored or confirmed to the user."
+  },
+  {
+   "ref": "i7",
+   "type": "contradiction",
+   "severity": "P1",
+   "quote": "Your accounts add to $146,000, so I used that, not $150,000.",
+   "note": "This contradicts the echoed '$16,000' in the same reply and never states plainly that the Roth amount is now zero."
+  },
+  {
+   "ref": "a1",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "[HTTP 0] connection failed",
+   "note": "The user asked for a credit card payoff what-if and got no result or explanation, leaving them stuck."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 44,
+    "truth": 44,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "PA",
+    "truth": "PA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 63,
+    "truth": 63,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 86000.0,
+    "truth": 86000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 16000.0,
+    "truth": 146000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 170000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": false,
+    "got": 16000.0,
+    "truth": 27000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 68000.0,
+    "truth": 68000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.6923076923076923,
+  "why": [
+   {
+    "field": "savings_total",
+    "cause": "app_misparsed",
+    "note": "User corrected savings to $146k (pre-tax $130k, taxable $10k, cash $6k) in turn i6-i7, but app stored $16,000."
+   },
+   {
+    "field": "home_owns",
+    "cause": "person_never_said",
+    "note": "Own-or-rent was asked in turn i4, but user replied 'ok' and never stated ownership."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "App never asked about the mortgage and stored 0 instead of the $170k balance."
+   },
+   {
+    "field": "debts_total",
+    "cause": "person_never_said",
+    "note": "User never mentioned the $11,000 car loan, so the $27k total was never captured."
+   }
+  ]
+ }
+}

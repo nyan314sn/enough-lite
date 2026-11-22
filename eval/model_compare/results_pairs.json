@@ -1,0 +1,66 @@
+{
+ "n": 40,
+ "identical_text": 12,
+ "all": {
+  "plain_words": {
+   "tie": 24,
+   "anthropic": 7,
+   "openai": 9
+  },
+  "numbers_right": {
+   "tie": 29,
+   "openai": 10,
+   "anthropic": 1
+  },
+  "actionable": {
+   "tie": 16,
+   "openai": 13,
+   "anthropic": 11
+  },
+  "honest_shortfall": {
+   "tie": 36,
+   "openai": 2,
+   "anthropic": 2
+  },
+  "no_bad_advice": {
+   "tie": 39,
+   "openai": 1
+  },
+  "overall": {
+   "tie": 14,
+   "anthropic": 11,
+   "openai": 15
+  }
+ },
+ "non_identical": {
+  "plain_words": {
+   "anthropic": 7,
+   "tie": 12,
+   "openai": 9
+  },
+  "numbers_right": {
+   "tie": 17,
+   "openai": 10,
+   "anthropic": 1
+  },
+  "actionable": {
+   "tie": 4,
+   "openai": 13,
+   "anthropic": 11
+  },
+  "honest_shortfall": {
+   "tie": 24,
+   "openai": 2,
+   "anthropic": 2
+  },
+  "no_bad_advice": {
+   "tie": 27,
+   "openai": 1
+  },
+  "overall": {
+   "anthropic": 11,
+   "openai": 15,
+   "tie": 2
+  }
+ }
+}

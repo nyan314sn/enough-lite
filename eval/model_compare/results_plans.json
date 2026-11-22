@@ -1,0 +1,3396 @@
+{
+ "summary": {
+  "n_common": 80,
+  "number_diffs": {},
+  "arms": {
+   "anthropic": {
+    "all": {
+     "n": 80,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 16,
+     "adviser_second_try": 25,
+     "plans_with_any_agent_template": 35,
+     "agent_templates_total": 37,
+     "agents_total": 480,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 11.010000000000002,
+     "sec_p90": 36.432,
+     "sec_max": 69.2,
+     "sec_mean": 17.0125,
+     "tok_in_per_plan": 128.625,
+     "tok_cached_per_plan": 14043.2125,
+     "tok_out_per_plan": 1833.825,
+     "usd_per_plan_app": 0.0022885875
+    },
+    "comfortable": {
+     "n": 28,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 0,
+     "adviser_second_try": 11,
+     "plans_with_any_agent_template": 15,
+     "agent_templates_total": 17,
+     "agents_total": 168,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 9.825,
+     "sec_p90": 11.775,
+     "sec_max": 13.27,
+     "sec_mean": 9.724285714285713,
+     "tok_in_per_plan": 130.64285714285714,
+     "tok_cached_per_plan": 13993.892857142857,
+     "tok_out_per_plan": 1944.4285714285713,
+     "usd_per_plan_app": 0.0024101785714285714
+    },
+    "average": {
+     "n": 21,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 0,
+     "adviser_second_try": 11,
+     "plans_with_any_agent_template": 2,
+     "agent_templates_total": 2,
+     "agents_total": 126,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 10.43,
+     "sec_p90": 12.81,
+     "sec_max": 14.17,
+     "sec_mean": 10.742857142857144,
+     "tok_in_per_plan": 134.76190476190476,
+     "tok_cached_per_plan": 14802.190476190477,
+     "tok_out_per_plan": 2080.714285714286,
+     "usd_per_plan_app": 0.0025811904761904765
+    },
+    "struggling": {
+     "n": 31,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 16,
+     "adviser_second_try": 3,
+     "plans_with_any_agent_template": 18,
+     "agent_templates_total": 18,
+     "agents_total": 186,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 30.02,
+     "sec_p90": 38.15,
+     "sec_max": 69.2,
+     "sec_mean": 27.84258064516129,
+     "tok_in_per_plan": 122.64516129032258,
+     "tok_cached_per_plan": 13573.612903225807,
+     "tok_out_per_plan": 1566.6774193548388,
+     "usd_per_plan_app": 0.0019805483870967743
+    }
+   },
+   "openai": {
+    "all": {
+     "n": 80,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 41,
+     "adviser_second_try": 14,
+     "plans_with_any_agent_template": 50,
+     "agent_templates_total": 52,
+     "agents_total": 480,
+     "jargon_hits": 2,
+     "plans_with_jargon": 2,
+     "sec_median": 22.060000000000002,
+     "sec_p90": 34.468,
+     "sec_max": 72.06,
+     "sec_mean": 23.736875,
+     "tok_in_per_plan": 2525.275,
+     "tok_cached_per_plan": 1699.55,
+     "tok_out_per_plan": 1382.5375,
+     "usd_per_plan_app": 0.0015885125
+    },
+    "comfortable": {
+     "n": 28,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 10,
+     "adviser_second_try": 6,
+     "plans_with_any_agent_template": 16,
+     "agent_templates_total": 17,
+     "agents_total": 168,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 19.86,
+     "sec_p90": 24.06,
+     "sec_max": 24.09,
+     "sec_mean": 19.586785714285714,
+     "tok_in_per_plan": 3021.535714285714,
+     "tok_cached_per_plan": 1716.9285714285713,
+     "tok_out_per_plan": 1694.8214285714287,
+     "usd_per_plan_app": 0.0018459642857142856
+    },
+    "average": {
+     "n": 21,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 6,
+     "adviser_second_try": 6,
+     "plans_with_any_agent_template": 7,
+     "agent_templates_total": 7,
+     "agents_total": 126,
+     "jargon_hits": 0,
+     "plans_with_jargon": 0,
+     "sec_median": 19.06,
+     "sec_p90": 24.06,
+     "sec_max": 24.2,
+     "sec_mean": 19.403809523809525,
+     "tok_in_per_plan": 2399.6666666666665,
+     "tok_cached_per_plan": 1692.7619047619048,
+     "tok_out_per_plan": 1722.2380952380952,
+     "usd_per_plan_app": 0.001805095238095238
+    },
+    "struggling": {
+     "n": 31,
+     "failed_runs": 0,
+     "number_check_pass": 1.0,
+     "core_checks_all_pass": 1.0,
+     "adviser_template": 25,
+     "adviser_second_try": 2,
+     "plans_with_any_agent_template": 27,
+     "agent_templates_total": 28,
+     "agents_total": 186,
+     "jargon_hits": 2,
+     "plans_with_jargon": 2,
+     "sec_median": 27.19,
+     "sec_p90": 44.4,
+     "sec_max": 72.06,
+     "sec_mean": 30.420645161290324,
+     "tok_in_per_plan": 2162.1290322580644,
+     "tok_cached_per_plan": 1688.4516129032259,
+     "tok_out_per_plan": 870.3548387096774,
+     "usd_per_plan_app": 0.001209258064516129
+    }
+   }
+  },
+  "tier_counts": {
+   "comfortable": 28,
+   "average": 21,
+   "struggling": 31
+  },
+  "both_ai_text": 39
+ },
+ "rows": {
+  "anthropic": {
+   "S219": {
+    "status": "ok",
+    "seconds": 12.2,
+    "usd": 0.00211,
+    "tokens": {
+     "input": 134,
+     "cached": 20034,
+     "output": 2298
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S080": {
+    "status": "ok",
+    "seconds": 36.4,
+    "usd": 0.00173,
+    "tokens": {
+     "input": 118,
+     "cached": 13018,
+     "output": 1385
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S256": {
+    "status": "ok",
+    "seconds": 17.37,
+    "usd": 0.002876,
+    "tokens": {
+     "input": 134,
+     "cached": 13543,
+     "output": 2300
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S082": {
+    "status": "ok",
+    "seconds": 7.76,
+    "usd": 0.002125,
+    "tokens": {
+     "input": 120,
+     "cached": 12185,
+     "output": 1642
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S132": {
+    "status": "ok",
+    "seconds": 8.66,
+    "usd": 0.002293,
+    "tokens": {
+     "input": 144,
+     "cached": 16264,
+     "output": 1839
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S268": {
+    "status": "ok",
+    "seconds": 12.02,
+    "usd": 0.003004,
+    "tokens": {
+     "input": 134,
+     "cached": 13946,
+     "output": 2294
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S227": {
+    "status": "ok",
+    "seconds": 12.25,
+    "usd": 0.002947,
+    "tokens": {
+     "input": 146,
+     "cached": 15377,
+     "output": 2340
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S211": {
+    "status": "ok",
+    "seconds": 37.61,
+    "usd": 0.001695,
+    "tokens": {
+     "input": 106,
+     "cached": 11001,
+     "output": 1338
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S007": {
+    "status": "ok",
+    "seconds": 69.2,
+    "usd": 0.001686,
+    "tokens": {
+     "input": 118,
+     "cached": 13556,
+     "output": 1239
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S009": {
+    "status": "ok",
+    "seconds": 11.21,
+    "usd": 0.002745,
+    "tokens": {
+     "input": 146,
+     "cached": 15538,
+     "output": 2327
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S154": {
+    "status": "ok",
+    "seconds": 7.52,
+    "usd": 0.00196,
+    "tokens": {
+     "input": 120,
+     "cached": 11753,
+     "output": 1591
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S014": {
+    "status": "ok",
+    "seconds": 9.74,
+    "usd": 0.002238,
+    "tokens": {
+     "input": 132,
+     "cached": 14568,
+     "output": 1761
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S208": {
+    "status": "ok",
+    "seconds": 33.15,
+    "usd": 0.001888,
+    "tokens": {
+     "input": 118,
+     "cached": 13386,
+     "output": 1396
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S195": {
+    "status": "ok",
+    "seconds": 31.64,
+    "usd": 0.002141,
+    "tokens": {
+     "input": 120,
+     "cached": 12070,
+     "output": 1714
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S199": {
+    "status": "ok",
+    "seconds": 39.3,
+    "usd": 0.001598,
+    "tokens": {
+     "input": 118,
+     "cached": 13209,
+     "output": 1249
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S081": {
+    "status": "ok",
+    "seconds": 10.51,
+    "usd": 0.002494,
+    "tokens": {
+     "input": 144,
+     "cached": 16954,
+     "output": 1902
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S073": {
+    "status": "ok",
+    "seconds": 12.71,
+    "usd": 0.002871,
+    "tokens": {
+     "input": 146,
+     "cached": 15908,
+     "output": 2190
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S040": {
+    "status": "ok",
+    "seconds": 30.02,
+    "usd": 0.001559,
+    "tokens": {
+     "input": 106,
+     "cached": 10997,
+     "output": 1155
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S068": {
+    "status": "ok",
+    "seconds": 20.0,
+    "usd": 0.002253,
+    "tokens": {
+     "input": 120,
+     "cached": 11870,
+     "output": 1925
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S018": {
+    "status": "ok",
+    "seconds": 29.73,
+    "usd": 0.00155,
+    "tokens": {
+     "input": 106,
+     "cached": 10967,
+     "output": 1184
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S078": {
+    "status": "ok",
+    "seconds": 38.15,
+    "usd": 0.00159,
+    "tokens": {
+     "input": 118,
+     "cached": 13275,
+     "output": 1243
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S257": {
+    "status": "ok",
+    "seconds": 9.84,
+    "usd": 0.002633,
+    "tokens": {
+     "input": 134,
+     "cached": 13236,
+     "output": 2187
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S186": {
+    "status": "ok",
+    "seconds": 10.19,
+    "usd": 0.002842,
+    "tokens": {
+     "input": 146,
+     "cached": 16157,
+     "output": 2201
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S048": {
+    "status": "ok",
+    "seconds": 8.34,
+    "usd": 0.002113,
+    "tokens": {
+     "input": 120,
+     "cached": 12117,
+     "output": 1639
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S083": {
+    "status": "ok",
+    "seconds": 11.33,
+    "usd": 0.002971,
+    "tokens": {
+     "input": 146,
+     "cached": 16253,
+     "output": 2279
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S267": {
+    "status": "ok",
+    "seconds": 10.43,
+    "usd": 0.002815,
+    "tokens": {
+     "input": 134,
+     "cached": 13515,
+     "output": 2318
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S238": {
+    "status": "ok",
+    "seconds": 34.88,
+    "usd": 0.001696,
+    "tokens": {
+     "input": 106,
+     "cached": 11503,
+     "output": 1237
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S223": {
+    "status": "ok",
+    "seconds": 10.13,
+    "usd": 0.002903,
+    "tokens": {
+     "input": 146,
+     "cached": 16240,
+     "output": 2181
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S117": {
+    "status": "ok",
+    "seconds": 7.15,
+    "usd": 0.002133,
+    "tokens": {
+     "input": 120,
+     "cached": 11968,
+     "output": 1781
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S076": {
+    "status": "ok",
+    "seconds": 37.85,
+    "usd": 0.00158,
+    "tokens": {
+     "input": 118,
+     "cached": 13183,
+     "output": 1220
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S148": {
+    "status": "ok",
+    "seconds": 37.96,
+    "usd": 0.001709,
+    "tokens": {
+     "input": 118,
+     "cached": 13637,
+     "output": 1290
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S004": {
+    "status": "ok",
+    "seconds": 23.19,
+    "usd": 0.00212,
+    "tokens": {
+     "input": 120,
+     "cached": 12063,
+     "output": 1681
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S069": {
+    "status": "ok",
+    "seconds": 12.12,
+    "usd": 0.003005,
+    "tokens": {
+     "input": 158,
+     "cached": 17972,
+     "output": 2407
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S126": {
+    "status": "ok",
+    "seconds": 8.82,
+    "usd": 0.002203,
+    "tokens": {
+     "input": 120,
+     "cached": 12042,
+     "output": 1820
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S013": {
+    "status": "ok",
+    "seconds": 10.15,
+    "usd": 0.002733,
+    "tokens": {
+     "input": 134,
+     "cached": 13568,
+     "output": 2178
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S167": {
+    "status": "ok",
+    "seconds": 9.18,
+    "usd": 0.002178,
+    "tokens": {
+     "input": 120,
+     "cached": 12149,
+     "output": 1685
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S124": {
+    "status": "ok",
+    "seconds": 27.72,
+    "usd": 0.002458,
+    "tokens": {
+     "input": 132,
+     "cached": 15520,
+     "output": 1798
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S159": {
+    "status": "ok",
+    "seconds": 10.33,
+    "usd": 0.00279,
+    "tokens": {
+     "input": 134,
+     "cached": 13260,
+     "output": 2271
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S232": {
+    "status": "ok",
+    "seconds": 10.54,
+    "usd": 0.002944,
+    "tokens": {
+     "input": 134,
+     "cached": 13974,
+     "output": 2160
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S200": {
+    "status": "ok",
+    "seconds": 8.98,
+    "usd": 0.002182,
+    "tokens": {
+     "input": 120,
+     "cached": 11967,
+     "output": 1754
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S283": {
+    "status": "ok",
+    "seconds": 7.7,
+    "usd": 0.002035,
+    "tokens": {
+     "input": 120,
+     "cached": 12099,
+     "output": 1550
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S250": {
+    "status": "ok",
+    "seconds": 13.27,
+    "usd": 0.002902,
+    "tokens": {
+     "input": 134,
+     "cached": 13786,
+     "output": 2346
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S157": {
+    "status": "ok",
+    "seconds": 9.64,
+    "usd": 0.002336,
+    "tokens": {
+     "input": 120,
+     "cached": 12630,
+     "output": 1764
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S235": {
+    "status": "ok",
+    "seconds": 24.15,
+    "usd": 0.002707,
+    "tokens": {
+     "input": 144,
+     "cached": 17982,
+     "output": 2172
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S056": {
+    "status": "ok",
+    "seconds": 11.21,
+    "usd": 0.003115,
+    "tokens": {
+     "input": 134,
+     "cached": 13939,
+     "output": 2365
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S299": {
+    "status": "ok",
+    "seconds": 8.03,
+    "usd": 0.002165,
+    "tokens": {
+     "input": 120,
+     "cached": 12251,
+     "output": 1703
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 2,
+    "agents": 6,
+    "jargon": []
+   },
+   "S037": {
+    "status": "ok",
+    "seconds": 7.9,
+    "usd": 0.002162,
+    "tokens": {
+     "input": 120,
+     "cached": 11990,
+     "output": 1800
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S206": {
+    "status": "ok",
+    "seconds": 36.18,
+    "usd": 0.001665,
+    "tokens": {
+     "input": 118,
+     "cached": 13391,
+     "output": 1333
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E25_underwater_mortgage_arm": {
+    "status": "ok",
+    "seconds": 10.81,
+    "usd": 0.002789,
+    "tokens": {
+     "input": 134,
+     "cached": 13406,
+     "output": 2226
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E23_wants_guaranteed_income": {
+    "status": "ok",
+    "seconds": 9.21,
+    "usd": 0.002204,
+    "tokens": {
+     "input": 132,
+     "cached": 13582,
+     "output": 1915
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E09_single_mom_2_kids": {
+    "status": "ok",
+    "seconds": 14.17,
+    "usd": 0.002829,
+    "tokens": {
+     "input": 146,
+     "cached": 17246,
+     "output": 2336
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E12_early_retiree_45": {
+    "status": "ok",
+    "seconds": 10.36,
+    "usd": 0.002413,
+    "tokens": {
+     "input": 132,
+     "cached": 14301,
+     "output": 1942
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E18_low_income_retired": {
+    "status": "ok",
+    "seconds": 8.49,
+    "usd": 0.00217,
+    "tokens": {
+     "input": 132,
+     "cached": 14035,
+     "output": 1804
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E14_age_79_retired": {
+    "status": "ok",
+    "seconds": 7.41,
+    "usd": 0.002022,
+    "tokens": {
+     "input": 120,
+     "cached": 11814,
+     "output": 1676
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E27_max_contributions_high_earner": {
+    "status": "ok",
+    "seconds": 13.35,
+    "usd": 0.002233,
+    "tokens": {
+     "input": 132,
+     "cached": 14343,
+     "output": 1778
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E16_bracket_gains": {
+    "status": "ok",
+    "seconds": 9.19,
+    "usd": 0.002082,
+    "tokens": {
+     "input": 120,
+     "cached": 11897,
+     "output": 1637
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E10_renter_growing_student_loan": {
+    "status": "ok",
+    "seconds": 36.72,
+    "usd": 0.001649,
+    "tokens": {
+     "input": 118,
+     "cached": 13186,
+     "output": 1360
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E11_growing_card_debt": {
+    "status": "ok",
+    "seconds": 30.02,
+    "usd": 0.002284,
+    "tokens": {
+     "input": 132,
+     "cached": 14692,
+     "output": 1771
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $11,150)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E20_couple_both_retired": {
+    "status": "ok",
+    "seconds": 7.8,
+    "usd": 0.002079,
+    "tokens": {
+     "input": 120,
+     "cached": 12075,
+     "output": 1660
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E15_age_79_working": {
+    "status": "ok",
+    "seconds": 8.98,
+    "usd": 0.002154,
+    "tokens": {
+     "input": 120,
+     "cached": 11871,
+     "output": 1754
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E03_no_savings": {
+    "status": "ok",
+    "seconds": 24.51,
+    "usd": 0.002131,
+    "tokens": {
+     "input": 132,
+     "cached": 14162,
+     "output": 1748
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E05_very_wealthy": {
+    "status": "ok",
+    "seconds": 11.67,
+    "usd": 0.002491,
+    "tokens": {
+     "input": 144,
+     "cached": 16706,
+     "output": 1962
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E13_early_retiree_45_underfunded": {
+    "status": "ok",
+    "seconds": 40.41,
+    "usd": 0.00164,
+    "tokens": {
+     "input": 118,
+     "cached": 12907,
+     "output": 1303
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E26_heloc_and_boat": {
+    "status": "ok",
+    "seconds": 9.48,
+    "usd": 0.002538,
+    "tokens": {
+     "input": 132,
+     "cached": 14482,
+     "output": 1980
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "N08_pension_takes_lump_sum": {
+    "status": "ok",
+    "seconds": 8.89,
+    "usd": 0.002179,
+    "tokens": {
+     "input": 120,
+     "cached": 11959,
+     "output": 1715
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_doctor": {
+    "status": "ok",
+    "seconds": 9.76,
+    "usd": 0.002187,
+    "tokens": {
+     "input": 120,
+     "cached": 14041,
+     "output": 1791
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e27": {
+    "status": "ok",
+    "seconds": 10.12,
+    "usd": 0.002023,
+    "tokens": {
+     "input": 132,
+     "cached": 15789,
+     "output": 1734
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s039": {
+    "status": "ok",
+    "seconds": 8.62,
+    "usd": 0.002109,
+    "tokens": {
+     "input": 120,
+     "cached": 11932,
+     "output": 1717
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s071": {
+    "status": "ok",
+    "seconds": 9.81,
+    "usd": 0.002442,
+    "tokens": {
+     "input": 132,
+     "cached": 15201,
+     "output": 1825
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e20": {
+    "status": "ok",
+    "seconds": 7.88,
+    "usd": 0.001383,
+    "tokens": {
+     "input": 120,
+     "cached": 18526,
+     "output": 1763
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 2,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e24": {
+    "status": "ok",
+    "seconds": 11.57,
+    "usd": 0.003043,
+    "tokens": {
+     "input": 146,
+     "cached": 16386,
+     "output": 2301
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s011": {
+    "status": "ok",
+    "seconds": 11.33,
+    "usd": 0.00282,
+    "tokens": {
+     "input": 134,
+     "cached": 13377,
+     "output": 2331
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e28": {
+    "status": "ok",
+    "seconds": 10.07,
+    "usd": 0.002292,
+    "tokens": {
+     "input": 132,
+     "cached": 14009,
+     "output": 1816
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s083": {
+    "status": "ok",
+    "seconds": 12.81,
+    "usd": 0.003065,
+    "tokens": {
+     "input": 146,
+     "cached": 16253,
+     "output": 2452
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_young": {
+    "status": "ok",
+    "seconds": 9.68,
+    "usd": 0.002431,
+    "tokens": {
+     "input": 132,
+     "cached": 15159,
+     "output": 1866
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e09": {
+    "status": "ok",
+    "seconds": 12.31,
+    "usd": 0.002771,
+    "tokens": {
+     "input": 146,
+     "cached": 17246,
+     "output": 2257
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s055": {
+    "status": "ok",
+    "seconds": 35.38,
+    "usd": 0.001841,
+    "tokens": {
+     "input": 118,
+     "cached": 13108,
+     "output": 1402
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e18": {
+    "status": "ok",
+    "seconds": 8.03,
+    "usd": 0.002032,
+    "tokens": {
+     "input": 132,
+     "cached": 14035,
+     "output": 1561
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e11": {
+    "status": "ok",
+    "seconds": 27.4,
+    "usd": 0.00147,
+    "tokens": {
+     "input": 132,
+     "cached": 21469,
+     "output": 1721
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s059": {
+    "status": "ok",
+    "seconds": 10.4,
+    "usd": 0.002843,
+    "tokens": {
+     "input": 146,
+     "cached": 16451,
+     "output": 2170
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   }
+  },
+  "openai": {
+   "S219": {
+    "status": "ok",
+    "seconds": 24.2,
+    "usd": 0.00116,
+    "tokens": {
+     "input": 1862,
+     "cached": 5804,
+     "output": 1322
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $24,750)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S080": {
+    "status": "ok",
+    "seconds": 34.42,
+    "usd": 0.000948,
+    "tokens": {
+     "input": 882,
+     "cached": 2237,
+     "output": 502
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S256": {
+    "status": "ok",
+    "seconds": 22.85,
+    "usd": 0.001995,
+    "tokens": {
+     "input": 2829,
+     "cached": 0,
+     "output": 1969
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $12,450)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": [
+     "withdrawal rate"
+    ]
+   },
+   "S082": {
+    "status": "ok",
+    "seconds": 14.81,
+    "usd": 0.001707,
+    "tokens": {
+     "input": 1727,
+     "cached": 0,
+     "output": 1664
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S132": {
+    "status": "ok",
+    "seconds": 9.49,
+    "usd": 0.001422,
+    "tokens": {
+     "input": 5054,
+     "cached": 1210,
+     "output": 696
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S268": {
+    "status": "ok",
+    "seconds": 24.09,
+    "usd": 0.001644,
+    "tokens": {
+     "input": 1872,
+     "cached": 1159,
+     "output": 1321
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $23,775)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S227": {
+    "status": "ok",
+    "seconds": 19.63,
+    "usd": 0.001994,
+    "tokens": {
+     "input": 3837,
+     "cached": 0,
+     "output": 2043
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $25,300, $3,498)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S211": {
+    "status": "ok",
+    "seconds": 37.58,
+    "usd": 0.001046,
+    "tokens": {
+     "input": 882,
+     "cached": 2436,
+     "output": 605
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S007": {
+    "status": "ok",
+    "seconds": 72.06,
+    "usd": 0.000955,
+    "tokens": {
+     "input": 756,
+     "cached": 1139,
+     "output": 504
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S009": {
+    "status": "ok",
+    "seconds": 24.06,
+    "usd": 0.001756,
+    "tokens": {
+     "input": 4889,
+     "cached": 1122,
+     "output": 1572
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $4,925)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S154": {
+    "status": "ok",
+    "seconds": 14.99,
+    "usd": 0.001691,
+    "tokens": {
+     "input": 4715,
+     "cached": 0,
+     "output": 1562
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S014": {
+    "status": "ok",
+    "seconds": 22.56,
+    "usd": 0.002029,
+    "tokens": {
+     "input": 2123,
+     "cached": 3288,
+     "output": 2101
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S208": {
+    "status": "ok",
+    "seconds": 33.54,
+    "usd": 0.000989,
+    "tokens": {
+     "input": 756,
+     "cached": 1153,
+     "output": 559
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S195": {
+    "status": "ok",
+    "seconds": 39.33,
+    "usd": 0.001024,
+    "tokens": {
+     "input": 2818,
+     "cached": 1053,
+     "output": 533
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S199": {
+    "status": "ok",
+    "seconds": 26.75,
+    "usd": 0.000959,
+    "tokens": {
+     "input": 1807,
+     "cached": 2172,
+     "output": 555
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S081": {
+    "status": "ok",
+    "seconds": 20.98,
+    "usd": 0.002125,
+    "tokens": {
+     "input": 1979,
+     "cached": 2211,
+     "output": 2313
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S073": {
+    "status": "ok",
+    "seconds": 24.05,
+    "usd": 0.002009,
+    "tokens": {
+     "input": 2016,
+     "cached": 1050,
+     "output": 1911
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $8,825)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S040": {
+    "status": "ok",
+    "seconds": 23.69,
+    "usd": 0.001359,
+    "tokens": {
+     "input": 1871,
+     "cached": 1116,
+     "output": 768
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $19,250)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S068": {
+    "status": "ok",
+    "seconds": 24.05,
+    "usd": 0.001115,
+    "tokens": {
+     "input": 3850,
+     "cached": 0,
+     "output": 536
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S018": {
+    "status": "ok",
+    "seconds": 24.7,
+    "usd": 0.000967,
+    "tokens": {
+     "input": 1807,
+     "cached": 2410,
+     "output": 519
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S078": {
+    "status": "ok",
+    "seconds": 44.4,
+    "usd": 0.000991,
+    "tokens": {
+     "input": 1807,
+     "cached": 2250,
+     "output": 607
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S257": {
+    "status": "ok",
+    "seconds": 24.08,
+    "usd": 0.002058,
+    "tokens": {
+     "input": 6024,
+     "cached": 1123,
+     "output": 1953
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $5,675)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S186": {
+    "status": "ok",
+    "seconds": 19.74,
+    "usd": 0.002118,
+    "tokens": {
+     "input": 1978,
+     "cached": 1065,
+     "output": 1841
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S048": {
+    "status": "ok",
+    "seconds": 21.17,
+    "usd": 0.00211,
+    "tokens": {
+     "input": 2123,
+     "cached": 3295,
+     "output": 2269
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S083": {
+    "status": "ok",
+    "seconds": 24.08,
+    "usd": 0.001703,
+    "tokens": {
+     "input": 1933,
+     "cached": 2343,
+     "output": 1459
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $21,100)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S267": {
+    "status": "ok",
+    "seconds": 24.06,
+    "usd": 0.001011,
+    "tokens": {
+     "input": 2671,
+     "cached": 1049,
+     "output": 531
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S238": {
+    "status": "ok",
+    "seconds": 33.67,
+    "usd": 0.001061,
+    "tokens": {
+     "input": 1872,
+     "cached": 2647,
+     "output": 568
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S223": {
+    "status": "ok",
+    "seconds": 18.13,
+    "usd": 0.001803,
+    "tokens": {
+     "input": 1134,
+     "cached": 3407,
+     "output": 1562
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $23,500)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S117": {
+    "status": "ok",
+    "seconds": 15.61,
+    "usd": 0.00179,
+    "tokens": {
+     "input": 3852,
+     "cached": 0,
+     "output": 1658
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S076": {
+    "status": "ok",
+    "seconds": 51.79,
+    "usd": 0.000944,
+    "tokens": {
+     "input": 1806,
+     "cached": 2122,
+     "output": 529
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 2,
+    "agents": 6,
+    "jargon": [
+     "the model"
+    ]
+   },
+   "S148": {
+    "status": "ok",
+    "seconds": 34.9,
+    "usd": 0.000973,
+    "tokens": {
+     "input": 756,
+     "cached": 1137,
+     "output": 525
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S004": {
+    "status": "ok",
+    "seconds": 24.95,
+    "usd": 0.000912,
+    "tokens": {
+     "input": 2767,
+     "cached": 1037,
+     "output": 535
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S069": {
+    "status": "ok",
+    "seconds": 24.06,
+    "usd": 0.001996,
+    "tokens": {
+     "input": 4152,
+     "cached": 1166,
+     "output": 1693
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $4,750)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S126": {
+    "status": "ok",
+    "seconds": 19.5,
+    "usd": 0.001852,
+    "tokens": {
+     "input": 1979,
+     "cached": 2072,
+     "output": 1855
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S013": {
+    "status": "ok",
+    "seconds": 22.82,
+    "usd": 0.002328,
+    "tokens": {
+     "input": 1853,
+     "cached": 0,
+     "output": 2410
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S167": {
+    "status": "ok",
+    "seconds": 15.7,
+    "usd": 0.001665,
+    "tokens": {
+     "input": 1008,
+     "cached": 2127,
+     "output": 1407
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S124": {
+    "status": "ok",
+    "seconds": 44.93,
+    "usd": 0.001034,
+    "tokens": {
+     "input": 882,
+     "cached": 2604,
+     "output": 506
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S159": {
+    "status": "ok",
+    "seconds": 20.97,
+    "usd": 0.002421,
+    "tokens": {
+     "input": 6183,
+     "cached": 1134,
+     "output": 2069
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S232": {
+    "status": "ok",
+    "seconds": 23.88,
+    "usd": 0.001883,
+    "tokens": {
+     "input": 1008,
+     "cached": 2485,
+     "output": 1705
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $26,125)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S200": {
+    "status": "ok",
+    "seconds": 19.24,
+    "usd": 0.001948,
+    "tokens": {
+     "input": 3005,
+     "cached": 1048,
+     "output": 1848
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S283": {
+    "status": "ok",
+    "seconds": 16.94,
+    "usd": 0.001816,
+    "tokens": {
+     "input": 1979,
+     "cached": 2238,
+     "output": 1797
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S250": {
+    "status": "ok",
+    "seconds": 22.18,
+    "usd": 0.00171,
+    "tokens": {
+     "input": 1933,
+     "cached": 2231,
+     "output": 1476
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $15,725, 2,529)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S157": {
+    "status": "ok",
+    "seconds": 16.77,
+    "usd": 0.001814,
+    "tokens": {
+     "input": 1933,
+     "cached": 2400,
+     "output": 1559
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S235": {
+    "status": "ok",
+    "seconds": 31.7,
+    "usd": 0.000894,
+    "tokens": {
+     "input": 1629,
+     "cached": 0,
+     "output": 513
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S056": {
+    "status": "ok",
+    "seconds": 20.33,
+    "usd": 0.00197,
+    "tokens": {
+     "input": 1008,
+     "cached": 2318,
+     "output": 1841
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S299": {
+    "status": "ok",
+    "seconds": 18.47,
+    "usd": 0.00184,
+    "tokens": {
+     "input": 1979,
+     "cached": 2183,
+     "output": 1777
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "S037": {
+    "status": "ok",
+    "seconds": 17.69,
+    "usd": 0.001699,
+    "tokens": {
+     "input": 2873,
+     "cached": 1025,
+     "output": 1660
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "S206": {
+    "status": "ok",
+    "seconds": 37.87,
+    "usd": 0.000971,
+    "tokens": {
+     "input": 1933,
+     "cached": 3405,
+     "output": 492
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E25_underwater_mortgage_arm": {
+    "status": "ok",
+    "seconds": 22.82,
+    "usd": 0.002559,
+    "tokens": {
+     "input": 4064,
+     "cached": 0,
+     "output": 2355
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E23_wants_guaranteed_income": {
+    "status": "ok",
+    "seconds": 16.73,
+    "usd": 0.00163,
+    "tokens": {
+     "input": 3420,
+     "cached": 0,
+     "output": 1648
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E09_single_mom_2_kids": {
+    "status": "ok",
+    "seconds": 18.87,
+    "usd": 0.001831,
+    "tokens": {
+     "input": 1806,
+     "cached": 1070,
+     "output": 1787
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $11,525)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E12_early_retiree_45": {
+    "status": "ok",
+    "seconds": 16.82,
+    "usd": 0.001866,
+    "tokens": {
+     "input": 3993,
+     "cached": 0,
+     "output": 1511
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E18_low_income_retired": {
+    "status": "ok",
+    "seconds": 16.98,
+    "usd": 0.001894,
+    "tokens": {
+     "input": 4841,
+     "cached": 1108,
+     "output": 1852
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E14_age_79_retired": {
+    "status": "ok",
+    "seconds": 10.25,
+    "usd": 0.00119,
+    "tokens": {
+     "input": 3770,
+     "cached": 1129,
+     "output": 701
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E27_max_contributions_high_earner": {
+    "status": "ok",
+    "seconds": 18.32,
+    "usd": 0.001916,
+    "tokens": {
+     "input": 3014,
+     "cached": 1162,
+     "output": 1762
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E16_bracket_gains": {
+    "status": "ok",
+    "seconds": 19.19,
+    "usd": 0.001919,
+    "tokens": {
+     "input": 2975,
+     "cached": 1157,
+     "output": 1804
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E10_renter_growing_student_loan": {
+    "status": "ok",
+    "seconds": 33.27,
+    "usd": 0.000941,
+    "tokens": {
+     "input": 1806,
+     "cached": 2113,
+     "output": 523
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E11_growing_card_debt": {
+    "status": "ok",
+    "seconds": 26.88,
+    "usd": 0.000939,
+    "tokens": {
+     "input": 1871,
+     "cached": 2113,
+     "output": 497
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E20_couple_both_retired": {
+    "status": "ok",
+    "seconds": 17.35,
+    "usd": 0.001888,
+    "tokens": {
+     "input": 2997,
+     "cached": 1052,
+     "output": 1755
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E15_age_79_working": {
+    "status": "ok",
+    "seconds": 22.5,
+    "usd": 0.002183,
+    "tokens": {
+     "input": 4101,
+     "cached": 1147,
+     "output": 2140
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E03_no_savings": {
+    "status": "ok",
+    "seconds": 25.07,
+    "usd": 0.00108,
+    "tokens": {
+     "input": 5772,
+     "cached": 0,
+     "output": 531
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E05_very_wealthy": {
+    "status": "ok",
+    "seconds": 17.89,
+    "usd": 0.001952,
+    "tokens": {
+     "input": 2863,
+     "cached": 0,
+     "output": 1907
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "E13_early_retiree_45_underfunded": {
+    "status": "ok",
+    "seconds": 29.54,
+    "usd": 0.001178,
+    "tokens": {
+     "input": 2991,
+     "cached": 1169,
+     "output": 570
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "E26_heloc_and_boat": {
+    "status": "ok",
+    "seconds": 20.51,
+    "usd": 0.002107,
+    "tokens": {
+     "input": 2018,
+     "cached": 1058,
+     "output": 2081
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "N08_pension_takes_lump_sum": {
+    "status": "ok",
+    "seconds": 14.36,
+    "usd": 0.001678,
+    "tokens": {
+     "input": 1736,
+     "cached": 0,
+     "output": 1554
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_doctor": {
+    "status": "ok",
+    "seconds": 24.04,
+    "usd": 0.001179,
+    "tokens": {
+     "input": 882,
+     "cached": 2374,
+     "output": 809
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e27": {
+    "status": "ok",
+    "seconds": 19.2,
+    "usd": 0.00193,
+    "tokens": {
+     "input": 2888,
+     "cached": 1155,
+     "output": 2064
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s039": {
+    "status": "ok",
+    "seconds": 15.49,
+    "usd": 0.001911,
+    "tokens": {
+     "input": 4106,
+     "cached": 1126,
+     "output": 1603
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s071": {
+    "status": "ok",
+    "seconds": 16.48,
+    "usd": 0.001926,
+    "tokens": {
+     "input": 1134,
+     "cached": 3662,
+     "output": 1674
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e20": {
+    "status": "ok",
+    "seconds": 20.48,
+    "usd": 0.001665,
+    "tokens": {
+     "input": 2997,
+     "cached": 5721,
+     "output": 2157
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e24": {
+    "status": "ok",
+    "seconds": 18.97,
+    "usd": 0.002212,
+    "tokens": {
+     "input": 1998,
+     "cached": 1123,
+     "output": 1858
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai (second try)",
+    "adviser_template": false,
+    "adviser_second_try": true,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s011": {
+    "status": "ok",
+    "seconds": 21.05,
+    "usd": 0.002306,
+    "tokens": {
+     "input": 3127,
+     "cached": 1167,
+     "output": 2317
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $21,275)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e28": {
+    "status": "ok",
+    "seconds": 21.94,
+    "usd": 0.002095,
+    "tokens": {
+     "input": 5081,
+     "cached": 2418,
+     "output": 2146
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s083": {
+    "status": "ok",
+    "seconds": 19.06,
+    "usd": 0.001421,
+    "tokens": {
+     "input": 1807,
+     "cached": 6001,
+     "output": 1820
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed; no time for a second try: $21,100)",
+    "adviser_template": true,
+    "adviser_second_try": true,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_young": {
+    "status": "ok",
+    "seconds": 18.8,
+    "usd": 0.001985,
+    "tokens": {
+     "input": 1681,
+     "cached": 0,
+     "output": 2016
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e09": {
+    "status": "ok",
+    "seconds": 15.74,
+    "usd": 0.001261,
+    "tokens": {
+     "input": 1680,
+     "cached": 4795,
+     "output": 1565
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s055": {
+    "status": "ok",
+    "seconds": 33.71,
+    "usd": 0.000969,
+    "tokens": {
+     "input": 756,
+     "cached": 1031,
+     "output": 587
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e18": {
+    "status": "ok",
+    "seconds": 7.94,
+    "usd": 0.000998,
+    "tokens": {
+     "input": 3606,
+     "cached": 2315,
+     "output": 762
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "ai",
+    "adviser_template": false,
+    "adviser_second_try": false,
+    "agent_templates": 0,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_e11": {
+    "status": "ok",
+    "seconds": 27.19,
+    "usd": 0.000511,
+    "tokens": {
+     "input": 1871,
+     "cached": 6929,
+     "output": 509
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 1,
+    "agents": 6,
+    "jargon": []
+   },
+   "sample_s059": {
+    "status": "ok",
+    "seconds": 24.05,
+    "usd": 0.001752,
+    "tokens": {
+     "input": 1978,
+     "cached": 2398,
+     "output": 1538
+    },
+    "number_check": true,
+    "number_detail": "",
+    "core_ok": true,
+    "failed_core": [],
+    "text_source": "template (number check failed twice: $8,775)",
+    "adviser_template": true,
+    "adviser_second_try": false,
+    "agent_templates": 2,
+    "agents": 6,
+    "jargon": []
+   }
+  }
+ }
+}

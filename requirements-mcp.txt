@@ -1,0 +1,4 @@
+# Optional: only for mcp_server.py (Enough for AI assistants). The web app does not need these.
+# Install on top of requirements.txt:  pip install -r requirements-mcp.txt
+mcp==2.3.0
+fastmcp==4.1.6

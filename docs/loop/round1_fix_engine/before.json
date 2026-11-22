@@ -1,0 +1,402 @@
+{
+ "h01_single_young": {
+  "count_on": 44000.0,
+  "verdict": "close",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 31700.0,
+  "fed_tax": 6290,
+  "after_tax": 58356,
+  "save_now": 8356,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $44,000 a year: $34,400 for basics and $9,600 for the rest."
+ },
+ "h02_doctor_couple": {
+  "count_on": 205100.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 98,
+  "ss": 102900.0,
+  "fed_tax": 110362,
+  "after_tax": 350019,
+  "save_now": 150019,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 67",
+   "Keep about 68% of savings in stocks now"
+  ],
+  "headline": "You can count on $205,100 a year: $42,200 for basics and $162,900 for the rest."
+ },
+ "h03_teacher_pension": {
+  "count_on": 63100.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 36500.0,
+  "fed_tax": 9590,
+  "after_tax": 64910,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 67",
+   "Keep about 55% of savings in stocks now"
+  ],
+  "headline": "You can count on $63,100 a year: $29,800 for basics and $33,300 for the rest."
+ },
+ "h04_renter_loans": {
+  "count_on": 28900.0,
+  "verdict": "falls_short",
+  "basics_paid": 23,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 29200.0,
+  "fed_tax": 5192,
+  "after_tax": 49146,
+  "save_now": 1146,
+  "strategy": "Similar household E10_renter_growing_student_loan",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Pay off your high-rate debt first",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $28,900 a year, less than your basics of $36,800. Basics come first, so the plan starts by closing that gap."
+ },
+ "h05_couple_mortgage": {
+  "count_on": 73900.0,
+  "verdict": "falls_short",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 97,
+  "ss": 69800.0,
+  "fed_tax": 16979,
+  "after_tax": 127979,
+  "save_now": 22979,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 67"
+  ],
+  "headline": "You can count on $73,900 a year: $39,600 for basics and $34,300 for the rest."
+ },
+ "h06_retiree_72": {
+  "count_on": 64600.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 70,
+  "pclaim": null,
+  "already": true,
+  "horizon": 93,
+  "ss": 36000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Keep about 38% of savings in stocks now",
+   "Check your plan once a year",
+   "Draw on taxable savings first"
+  ],
+  "headline": "You can count on $64,600 a year: $24,700 for basics and $39,900 for the rest."
+ },
+ "h07_retiree_no_savings": {
+  "count_on": 20300.0,
+  "verdict": "falls_short",
+  "basics_paid": 0,
+  "claim": 68,
+  "pclaim": null,
+  "already": true,
+  "horizon": 93,
+  "ss": 22000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $20,300 a year, less than your basics of $28,000. Basics come first, so the plan starts by closing that gap."
+ },
+ "h08_low_income_low_savings": {
+  "count_on": 18400.0,
+  "verdict": "falls_short",
+  "basics_paid": 0,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 94,
+  "ss": 19600.0,
+  "fed_tax": 1592,
+  "after_tax": 26938,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $18,400 a year, less than your basics of $26,000. Basics come first, so the plan starts by closing that gap."
+ },
+ "h09_high_income_single": {
+  "count_on": 141800.0,
+  "verdict": "falls_short",
+  "basics_paid": 100,
+  "claim": 69,
+  "pclaim": null,
+  "already": false,
+  "horizon": 94,
+  "ss": 63300.0,
+  "fed_tax": 119446,
+  "after_tax": 284692,
+  "save_now": 54692,
+  "strategy": "Similar household E22_legacy_goal",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 69"
+  ],
+  "headline": "You can count on $141,800 a year: $29,800 for basics and $112,000 for the rest."
+ },
+ "h10_ss_stated_late": {
+  "count_on": 82300.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 70,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 49600.0,
+  "fed_tax": 15090,
+  "after_tax": 86496,
+  "save_now": 1496,
+  "strategy": "Similar household E16_bracket_gains",
+  "actions": [
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 70",
+   "Keep about 25% of savings in stocks now"
+  ],
+  "headline": "You can count on $82,300 a year: $38,900 for basics and $43,400 for the rest."
+ },
+ "h11_partner_longer": {
+  "count_on": 98400.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 69,
+  "pclaim": 69,
+  "already": false,
+  "horizon": 100,
+  "ss": 87800.0,
+  "fed_tax": 21379,
+  "after_tax": 139325,
+  "save_now": 29325,
+  "strategy": "Similar household S096",
+  "actions": [
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 69",
+   "Keep about 59% of savings in stocks now"
+  ],
+  "headline": "You can count on $98,400 a year: $50,300 for basics and $48,100 for the rest."
+ },
+ "h12_match_debt": {
+  "count_on": 92900.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 70,
+  "pclaim": 70,
+  "already": false,
+  "horizon": 99,
+  "ss": 84600.0,
+  "fed_tax": 15879,
+  "after_tax": 121872,
+  "save_now": 33372,
+  "strategy": "Similar household S148",
+  "actions": [
+   "Pay off your high-rate debt first",
+   "Save enough to get the full employer match",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $92,900 a year: $58,400 for basics and $34,500 for the rest."
+ },
+ "h13_kids_pets": {
+  "count_on": 48400.0,
+  "verdict": "falls_short",
+  "basics_paid": 100,
+  "claim": 65,
+  "pclaim": 65,
+  "already": false,
+  "horizon": 98,
+  "ss": 50800.0,
+  "fed_tax": 10504,
+  "after_tax": 101008,
+  "save_now": 11008,
+  "strategy": "Rule of thumb, claiming at 65",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $48,400 a year: $38,300 for basics and $10,100 for the rest."
+ },
+ "h14_near_retire_pension_couple": {
+  "count_on": 99400.0,
+  "verdict": "close",
+  "basics_paid": 100,
+  "claim": 70,
+  "pclaim": 70,
+  "already": false,
+  "horizon": 97,
+  "ss": 81700.0,
+  "fed_tax": 16979,
+  "after_tax": 123227,
+  "save_now": 3227,
+  "strategy": "Similar household S114",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 70"
+  ],
+  "headline": "You can count on $99,400 a year: $60,000 for basics and $39,400 for the rest."
+ },
+ "h15_early_retire_claim62": {
+  "count_on": 51800.0,
+  "verdict": "falls_short",
+  "basics_paid": 100,
+  "claim": 62,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 17900.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household p8",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Plan to claim Social Security at 62",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $51,800 a year: $35,400 for basics and $16,400 for the rest."
+ },
+ "h16_wealthy_retire_now": {
+  "count_on": 113400.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 97,
+  "ss": 55000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Plan to claim Social Security at 67",
+   "Keep about 44% of savings in stocks now",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $113,400 a year: $49,400 for basics and $64,000 for the rest."
+ },
+ "gap25": {
+  "count_on": 48700.0,
+  "verdict": "falls_short",
+  "basics_paid": 80,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 119,
+  "ss": 38400.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household E01_age_gap_25",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Plan to claim Social Security at 67",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $48,700 a year, less than your basics of $52,000. Basics come first, so the plan starts by closing that gap."
+ },
+ "gap25_noclaim": {
+  "count_on": 54300.0,
+  "verdict": "falls_short",
+  "basics_paid": 97,
+  "claim": 70,
+  "pclaim": 70,
+  "already": false,
+  "horizon": 119,
+  "ss": 47600.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household E28_couple_one_retired",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Plan to claim Social Security at 70",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $54,300 a year, about your basics. There is little room above them yet."
+ },
+ "fire_35_45": {
+  "count_on": 42500.0,
+  "verdict": "falls_short",
+  "basics_paid": 100,
+  "claim": 62,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 33800.0,
+  "fed_tax": 24375,
+  "after_tax": 114150,
+  "save_now": 44150,
+  "strategy": "Similar household E12_early_retiree_45",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 62"
+  ],
+  "headline": "You can count on $42,500 a year: $32,300 for basics and $10,200 for the rest."
+ },
+ "single_parent": {
+  "count_on": 25200.0,
+  "verdict": "falls_short",
+  "basics_paid": 0,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 28500.0,
+  "fed_tax": 4952,
+  "after_tax": 48809,
+  "save_now": 3809,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $25,200 a year, less than your basics of $40,000. Basics come first, so the plan starts by closing that gap."
+ }
+}

@@ -1,0 +1,130 @@
+{
+ "persona_id": "p24",
+ "issues": [
+  {
+   "ref": "a2",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "If you retire at 62, you can count on $69,800 a year",
+   "note": "The user asked what happens if her husband Dave retires at 62, but the app applied a retirement age of 62 to Gail herself, changing the wrong input."
+  },
+  {
+   "ref": "a2",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "If you retire at 62, you can count on $69,800 a year, safe in 90 of 100 scenarios",
+   "note": "The reply never says whose retirement age changed or that partner retirement timing is not modelled, so the user cannot tell what the number means."
+  },
+  {
+   "ref": "a3",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "If you retire at 64, you can count on $79,100 a year, safe in 90 of 100 scenarios",
+   "note": "The user asked whether Ray's retirement age affects her number and about his pension, but the reply only repeats the earlier 64 result and answers neither question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 58,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": 61,
+    "truth": 61,
+    "source": "you said"
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "MN",
+    "truth": "MN",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 64,
+    "truth": 64,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 80000.0,
+    "truth": 80000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": true,
+    "got": 40000.0,
+    "truth": 40000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 485000.0,
+    "truth": 485000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 2,
+    "truth": 2,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 20062.0,
+    "truth": 20000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

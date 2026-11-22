@@ -1,0 +1,127 @@
+{
+ "persona_id": "p08",
+ "issues": [
+  {
+   "ref": "i4",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "I noted that you owe $12,000 in car debt.",
+   "note": "The user said it was about 12k or possibly 9k and would check the statement, but the app stored $12,000 without saying the figure was uncertain."
+  },
+  {
+   "ref": "i5",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "Thanks. I noted that you have no children.",
+   "note": "The user said to scratch the truck loan and then reversed that, but the app never acknowledged the debt's status, so it is still stored unflagged."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "AZ",
+    "truth": "AZ",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 67,
+    "truth": 67,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 520000.0,
+    "truth": 520000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": false,
+    "got": 12000.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": false,
+    "got": 0,
+    "truth": 18000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 55000.0,
+    "truth": 55000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8461538461538461,
+  "why": [
+   {
+    "field": "debts_total",
+    "cause": "correction_lost",
+    "note": "Greg said 'scratch the truck loan' at i5, but the app acknowledged only 'no children' and kept the $12,000 car debt. The profile truth is no debts."
+   },
+   {
+    "field": "pension_per_year",
+    "cause": "never_asked",
+    "note": "The app never asked about pensions, and Greg never mentioned the $18,000/year pension. The truth value comes from the simulated profile."
+   }
+  ]
+ }
+}

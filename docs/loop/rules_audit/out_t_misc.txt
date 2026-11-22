@@ -1,0 +1,28 @@
+XSS flags: [None, None] | bot: ur pay at $62,000 a year, typical for a plumber, retirement at 65, spending now at $46,000 a year and 4 more. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+[ms] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[ms] ANSWER "That's about right"
+[ms] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[ms] ANSWER '$2,900'
+[ms] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ms] ANSWER '$2,900'
+[ms] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ms] ANSWER 'No other debts'
+[ms] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[ms] ANSWER '$5,000 a month'
+[ms] ready after 5 turns
+after 'Add health' pen: build aria-disabled: false | why: Check the figures, then build. | bot: Reading your answer []
+after Escape: build aria-disabled: false | why: Check the figures, then build.
+after chip Fair: build disabled? false | bot: Enough said:
+Thanks. I noted that your health is noted. Are you male or female? This only picks the right life table.
+INHERIT bot: Enough said:
+Thanks. I noted that an expected inheritance is noted. Are you male or female? This only picks the right life table. ['Male', 'Female', 'Skip']
+Goals panel: Goals | Not added, using typical | ✎ | Health | 2 | Reset | Costs | 2 | Reset
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 10.7 s
+headline: You can count on $203,800 a year: $48,000 for basics and $155,800 for the rest.
+ASK 'tell me exactly what to do' took 5.5s -> You asked: | tell me exactly what to do |  | The plan says this plan works. You can retire at 62, and the basics of $48,000 a year are covered for the full 100 years in the plan's runs. Stay on track by saving about $182,071 a year, and keep up 401(k) and IRA contributions. Your 401(k) limit for 2027 is $25,500, and at ages 60 to 63 the catch-up limit is $11,750, for a total of $37,250. The IRA li
+ASK 'what rules apply to my 401(k) at 60?' took 5.0s -> You asked: | what rules apply to my 401(k) at 60? |  | At 60 you can put more into your 401(k) each year. For 2027, the catch-up limit for ages 60 to 63 is $11,750, so the total limit is $37,250 (the regular $25,500 plus $11,750). This is higher than the $8,500 catch-up that applies from age 50. You can keep this higher limit until you turn 63. Your plan keeps working at a retirement age of 62, so
+ASK 'explain my plan' took 0.9s -> You asked: | explain my plan |  | You can count on $203,800 a year, or about $16,983 a month, safe in 90 of 100 scenarios, with the basics included. Your basics cost about $48,000 a year. They are paid in all 100 scenarios. Your spending goal is $48,000 a year, and the plan meets it in 100 of 100 scenarios. Above the basics, about $155,800 a year may be left for wishes, so there is room beyond you
+WHATIF inherit -> You asked: | what if I inherit 300000 next year |  | I did not find a change in that that the plan can model: a retirement age, spending, saving, a Social Security claiming age, part-time work, a move, a child or pet, a debt, or a market fall. |  | What if I retire at 59 | What if I save $500 more a month |  | AI cost $0.0000
+assume -> You asked: | what does the plan assume |  | The plan uses what you told me: you retire at 62 (you said); your spending goal is $48,000 a year (assumed); your savings are $552,000 pre-tax (401(k) or IRA), $92,000 Roth, $184,000 taxable, $92,000 cash (you said); your Social Security is $82,000 a year at 67 (each at their own age), claimed at 68 (estimate); your pay is $310,000 a year (you said). It plans to age 98. All figures are in today's dollars: what money buys now, not the larger sums prices will reach. Pay stays at today's level until you retire, with no raises. |  | Change an answer | Explain my plan | Try a What If |  | AI cost $0.0000
+errors []

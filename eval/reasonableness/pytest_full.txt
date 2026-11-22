@@ -1,0 +1,279 @@
+﻿........................................................................ [  7%]
+........................................s............................... [ 14%]
+........................................................................ [ 21%]
+........................................................................ [ 29%]
+........................................................................ [ 36%]
+........................................s..................F............ [ 43%]
+...............................................FFFFFFFFFFFFFF......F.... [ 50%]
+........................................................................ [ 58%]
+........................................................................ [ 65%]
+........................................................................ [ 72%]
+........................................................................ [ 79%]
+........................................................................ [ 87%]
+........................................................................ [ 94%]
+........................................................                 [100%]
+================================== FAILURES ===================================
+________ test_r12_chat_what_if_names_the_same_plan_figure_as_the_plan _________
+
+client = <starlette.testclient.TestClient object at 0x0000023EA7D667A0>
+
+    def test_r12_chat_what_if_names_the_same_plan_figure_as_the_plan(client):
+        """R12: the chat's 'baseline plan: $X' is the plan's own count-on figure."""
+        plan, ctx = plan_of("S021")
+        prof = ctx.profile.model_dump()
+        j = _ask(client, "what if I retire at 64", prof)
+        assert j["kind"] == "whatif"
+        m = re.search(r"your plan:\s*\$([\d,]+)", j["text"])
+>       assert m, j["text"]
+E       AssertionError: If you retire at 64, you can count on $51,700 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). Your basics are paid in 100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 0 of 100 (baseline plan: 0 of 100).
+E       assert None
+
+tests\test_product_rules.py:425: AssertionError
+_________________ test_r8_each_lever_is_judged_at_the_margin __________________
+
+client = <starlette.testclient.TestClient object at 0x0000023EA7D67020>
+
+    def test_r8_each_lever_is_judged_at_the_margin(client):
+        """R8: a lever's What If runs the plan with the change and reports the plan without it beside it ('baseline plan: $X')."""
+        plan, ctx = plan_of("S021")
+        prof = ctx.profile.model_dump()
+        levers = [x for x in plan["levers"] if x.get("whatif_text")][:3]
+        assert levers
+        for x in levers:
+            j = _ask(client, x["whatif_text"], prof)
+            assert j["kind"] == "whatif", (x["whatif_text"], j.get("kind"), j.get("text"))
+>           assert re.search(r"your plan:\s*\$[\d,]+", j["text"]) or "your plan" in j["text"].lower(), j["text"]
+E           AssertionError: If you spend $53,000 a year, you can count on $52,900 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). Your basics are paid in 100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 89 of 100 (baseline plan: 0 of 100).
+E           assert (None or 'your plan' in 'if you spend $53,000 a year, you can count on $52,900 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). y...100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 89 of 100 (baseline plan: 0 of 100).')
+E            +  where None = <function search at 0x0000023E95233950>('your plan:\\s*\\$[\\d,]+', 'If you spend $53,000 a year, you can count on $52,900 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). Y...100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 89 of 100 (baseline plan: 0 of 100).')
+E            +    where <function search at 0x0000023E95233950> = re.search
+E            +  and   'if you spend $53,000 a year, you can count on $52,900 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). y...100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 89 of 100 (baseline plan: 0 of 100).' = <built-in method lower of str object at 0x0000023EA81C2040>()
+E            +    where <built-in method lower of str object at 0x0000023EA81C2040> = 'If you spend $53,000 a year, you can count on $52,900 a year, safe in 90 of 100 scenarios (baseline plan: $52,900). Y...100 of 100 scenarios (baseline plan: 100 of 100), and your spending goal lasts in 89 of 100 (baseline plan: 0 of 100).'.lower
+
+tests\test_product_rules.py:861: AssertionError
+_______ test_r15_the_theme_is_light_with_navy_text_and_no_black_or_pink _______
+
+    def test_r15_the_theme_is_light_with_navy_text_and_no_black_or_pink():
+        """R15: backgrounds are light, text is navy, and no colour anywhere in the stylesheet is pink or near-black as a background."""
+        c = _root_colors()
+        for k in ("bg", "surface", "surface-2"):
+>           assert _lum(c[k]) > 0.85, (k, c[k])
+                        ^^^^
+E           KeyError: 'bg'
+
+tests\test_product_rules.py:901: KeyError
+_________________ test_r15_green_is_safe_and_amber_is_at_risk _________________
+
+    def test_r15_green_is_safe_and_amber_is_at_risk():
+        c = _root_colors()
+>       gh, _ = _hue_sat(c["good"])
+                         ^^^^^^^^^
+E       KeyError: 'good'
+
+tests\test_product_rules.py:914: KeyError
+______________ test_r20_text_colours_meet_contrast_4_5[text-bg] _______________
+
+fg = 'text', bg = 'bg'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'text'
+
+tests\test_product_rules.py:926: KeyError
+____________ test_r20_text_colours_meet_contrast_4_5[text-surface] ____________
+
+fg = 'text', bg = 'surface'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'text'
+
+tests\test_product_rules.py:926: KeyError
+___________ test_r20_text_colours_meet_contrast_4_5[text-2-surface] ___________
+
+fg = 'text-2', bg = 'surface'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'text-2'
+
+tests\test_product_rules.py:926: KeyError
+___________ test_r20_text_colours_meet_contrast_4_5[muted-surface] ____________
+
+fg = 'muted', bg = 'surface'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'muted'
+
+tests\test_product_rules.py:926: KeyError
+______________ test_r20_text_colours_meet_contrast_4_5[muted-bg] ______________
+
+fg = 'muted', bg = 'bg'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'muted'
+
+tests\test_product_rules.py:926: KeyError
+_________ test_r20_text_colours_meet_contrast_4_5[accent-ink-accent] __________
+
+fg = 'accent-ink', bg = 'accent'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'accent-ink'
+
+tests\test_product_rules.py:926: KeyError
+___________ test_r20_text_colours_meet_contrast_4_5[accent-surface] ___________
+
+fg = 'accent', bg = 'surface'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'accent'
+
+tests\test_product_rules.py:926: KeyError
+___________ test_r20_text_colours_meet_contrast_4_5[good-good-soft] ___________
+
+fg = 'good', bg = 'good-soft'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'good'
+
+tests\test_product_rules.py:926: KeyError
+___________ test_r20_text_colours_meet_contrast_4_5[warn-warn-soft] ___________
+
+fg = 'warn', bg = 'warn-soft'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'warn'
+
+tests\test_product_rules.py:926: KeyError
+_________ test_r20_text_colours_meet_contrast_4_5[danger-danger-soft] _________
+
+fg = 'danger', bg = 'danger-soft'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'danger'
+
+tests\test_product_rules.py:926: KeyError
+________ test_r20_text_colours_meet_contrast_4_5[accent-2-accent-soft] ________
+
+fg = 'accent-2', bg = 'accent-soft'
+
+    @pytest.mark.parametrize("fg,bg", [("text", "bg"), ("text", "surface"), ("text-2", "surface"), ("muted", "surface"), ("muted", "bg"),
+                                        ("accent-ink", "accent"), ("accent", "surface"), ("good", "good-soft"), ("warn", "warn-soft"),
+                                        ("danger", "danger-soft"), ("accent-2", "accent-soft")])
+    def test_r20_text_colours_meet_contrast_4_5(fg, bg):
+        """R20: every text and background pair the theme defines reads at WCAG AA (4.5 to 1)."""
+        c = _root_colors()
+>       assert _contrast(c[fg], c[bg]) >= 4.5, (fg, bg, round(_contrast(c[fg], c[bg]), 2))
+                         ^^^^^
+E       KeyError: 'accent-2'
+
+tests\test_product_rules.py:926: KeyError
+____ test_r24_every_import_is_in_requirements_and_the_web_app_is_prebuilt _____
+
+    def test_r24_every_import_is_in_requirements_and_the_web_app_is_prebuilt():
+        """R24: a fresh clone needs only requirements.txt (no npm): each third-party import maps to a listed package, the built
+        web app is in web/dist, and the README gives the run steps."""
+        req = (LITE / "requirements.txt").read_text().lower()
+        provides = {"fastapi": "fastapi", "starlette": "fastapi", "uvicorn": "uvicorn", "numpy": "numpy", "dotenv": "python-dotenv",
+                    "pydantic": "pydantic-ai-slim", "pydantic_ai": "pydantic-ai-slim", "anthropic": "pydantic-ai-slim", "httpx": "httpx"}
+        stdlib = set(sys.stdlib_module_names)
+        mods = set()
+        for f in list((LITE / "app").rglob("*.py")) + [LITE / "run.py"]:
+            for node in ast.walk(ast.parse(f.read_text(encoding="utf-8"))):
+                if isinstance(node, ast.Import):
+                    mods |= {a.name.split(".")[0] for a in node.names}
+                elif isinstance(node, ast.ImportFrom) and node.level == 0 and node.module:
+                    mods.add(node.module.split(".")[0])
+        third = {m for m in mods if m not in stdlib and m != "app"}
+        unknown = sorted(m for m in third if m not in provides)
+>       assert not unknown, f"imports with no listed package: {unknown}"
+E       AssertionError: imports with no listed package: ['openai']
+E       assert not ['openai']
+
+tests\test_product_rules.py:1133: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_product_rules.py::test_r12_chat_what_if_names_the_same_plan_figure_as_the_plan
+FAILED tests/test_product_rules.py::test_r8_each_lever_is_judged_at_the_margin
+FAILED tests/test_product_rules.py::test_r15_the_theme_is_light_with_navy_text_and_no_black_or_pink
+FAILED tests/test_product_rules.py::test_r15_green_is_safe_and_amber_is_at_risk
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[text-bg]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[text-surface]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[text-2-surface]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[muted-surface]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[muted-bg]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[accent-ink-accent]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[accent-surface]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[good-good-soft]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[warn-warn-soft]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[danger-danger-soft]
+FAILED tests/test_product_rules.py::test_r20_text_colours_meet_contrast_4_5[accent-2-accent-soft]
+FAILED tests/test_product_rules.py::test_r24_every_import_is_in_requirements_and_the_web_app_is_prebuilt
+16 failed, 974 passed, 2 skipped in 1966.85s (0:32:46)

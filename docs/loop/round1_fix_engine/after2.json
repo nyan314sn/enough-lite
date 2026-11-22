@@ -1,0 +1,402 @@
+{
+ "h01_single_young": {
+  "count_on": 46500.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 68,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 34300.0,
+  "fed_tax": 5312,
+  "after_tax": 59333,
+  "save_now": 9333,
+  "strategy": "Rule of thumb, claiming at 68",
+  "actions": [
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 68"
+  ],
+  "headline": "You can count on $46,500 a year: $34,400 for basics and $12,100 for the rest."
+ },
+ "h02_doctor_couple": {
+  "count_on": 205600.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 98,
+  "ss": 103000.0,
+  "fed_tax": 97402,
+  "after_tax": 366787,
+  "save_now": 166787,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 67",
+   "Keep about 68% of savings in stocks now"
+  ],
+  "headline": "You can count on $205,600 a year: $42,200 for basics and $163,400 for the rest."
+ },
+ "h03_teacher_pension": {
+  "count_on": 63800.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 63,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 27400.0,
+  "fed_tax": 7720,
+  "after_tax": 67247,
+  "save_now": 2247,
+  "strategy": "Rule of thumb, claiming at 63",
+  "actions": [
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 63",
+   "Keep about 55% of savings in stocks now"
+  ],
+  "headline": "You can count on $63,800 a year: $29,800 for basics and $34,000 for the rest."
+ },
+ "h04_renter_loans": {
+  "count_on": 33800.0,
+  "verdict": "falls_short",
+  "basics_paid": 56,
+  "claim": 70,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 36200.0,
+  "fed_tax": 4448,
+  "after_tax": 50196,
+  "save_now": 2196,
+  "strategy": "Rule of thumb, claiming at 70",
+  "actions": [
+   "Make your basics safe first",
+   "Pay off your high-rate debt first",
+   "Build an emergency fund of three months"
+  ],
+  "headline": "You can count on $33,800 a year, less than your basics of $36,800. On your numbers the plan does not work yet. The starting points below show what would change that. That is less than your Social Security of $36,200 a year because of income tax on it, health costs on top of your spending and the years before it starts."
+ },
+ "h05_couple_mortgage": {
+  "count_on": 68100.0,
+  "verdict": "below_goal",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 97,
+  "ss": 69900.0,
+  "fed_tax": 9059,
+  "after_tax": 136328,
+  "save_now": 31328,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 67"
+  ],
+  "headline": "You can count on $68,100 a year: $39,600 for basics and $28,500 for the rest. That is less than your Social Security of $69,900 a year because of income tax on it, health costs on top of your spending, the drop to one benefit after the first death and the years before it starts."
+ },
+ "h06_retiree_72": {
+  "count_on": 64500.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": null,
+  "already": true,
+  "horizon": 93,
+  "ss": 36000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Keep about 38% of savings in stocks now",
+   "Check your plan once a year",
+   "Draw on taxable savings first"
+  ],
+  "headline": "You can count on $64,500 a year: $24,700 for basics and $39,800 for the rest."
+ },
+ "h07_retiree_no_savings": {
+  "count_on": 20800.0,
+  "verdict": "falls_short",
+  "basics_paid": 0,
+  "claim": 66,
+  "pclaim": null,
+  "already": true,
+  "horizon": 93,
+  "ss": 22000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Make your basics safe first",
+   "Build an emergency fund of three months",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $20,800 a year, less than your basics of $28,000. On your numbers the plan does not work yet. That is less than your Social Security of $22,000 a year because of health costs on top of your spending."
+ },
+ "h08_low_income_low_savings": {
+  "count_on": 18700.0,
+  "verdict": "falls_short",
+  "basics_paid": 0,
+  "claim": 67,
+  "pclaim": null,
+  "already": false,
+  "horizon": 94,
+  "ss": 19600.0,
+  "fed_tax": 1220,
+  "after_tax": 27472,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Make your basics safe first",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $18,700 a year, less than your basics of $26,000. On your numbers the plan does not work yet. The starting points below show what would change that. That is less than your Social Security of $19,600 a year because of health costs on top of your spending."
+ },
+ "h09_high_income_single": {
+  "count_on": 145100.0,
+  "verdict": "below_goal",
+  "basics_paid": 100,
+  "claim": 69,
+  "pclaim": null,
+  "already": false,
+  "horizon": 94,
+  "ss": 63400.0,
+  "fed_tax": 107546,
+  "after_tax": 299025,
+  "save_now": 69025,
+  "strategy": "Similar household E22_legacy_goal",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 69"
+  ],
+  "headline": "You can count on $145,100 a year: $29,800 for basics and $115,300 for the rest."
+ },
+ "h10_ss_stated_late": {
+  "count_on": 83400.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 70,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 49600.0,
+  "fed_tax": 12670,
+  "after_tax": 88916,
+  "save_now": 3916,
+  "strategy": "Similar household E16_bracket_gains",
+  "actions": [
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 70",
+   "Keep about 25% of savings in stocks now"
+  ],
+  "headline": "You can count on $83,400 a year: $38,900 for basics and $44,500 for the rest."
+ },
+ "h11_partner_longer": {
+  "count_on": 82200.0,
+  "verdict": "close",
+  "basics_paid": 100,
+  "claim": 68,
+  "pclaim": 68,
+  "already": false,
+  "horizon": 100,
+  "ss": 81800.0,
+  "fed_tax": 17419,
+  "after_tax": 143838,
+  "save_now": 33838,
+  "strategy": "Rule of thumb, claiming at 68",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 68"
+  ],
+  "headline": "You can count on $82,200 a year: $50,300 for basics and $31,900 for the rest."
+ },
+ "h12_match_debt": {
+  "count_on": 82900.0,
+  "verdict": "works",
+  "basics_paid": 100,
+  "claim": 68,
+  "pclaim": 68,
+  "already": false,
+  "horizon": 99,
+  "ss": 73700.0,
+  "fed_tax": 11699,
+  "after_tax": 126448,
+  "save_now": 37948,
+  "strategy": "Rule of thumb, claiming at 68",
+  "actions": [
+   "Pay off your high-rate debt first",
+   "Save enough to get the full employer match",
+   "Build an emergency fund of three months"
+  ],
+  "headline": "You can count on $82,900 a year: $58,400 for basics and $24,500 for the rest."
+ },
+ "h13_kids_pets": {
+  "count_on": 49900.0,
+  "verdict": "below_goal",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 98,
+  "ss": 58700.0,
+  "fed_tax": 2404,
+  "after_tax": 109597,
+  "save_now": 19597,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $49,900 a year: $38,300 for basics and $11,600 for the rest. That is less than your Social Security of $58,700 a year because of income tax on it, health costs on top of your spending, the drop to one benefit after the first death and the years before it starts."
+ },
+ "h14_near_retire_pension_couple": {
+  "count_on": 90000.0,
+  "verdict": "close",
+  "basics_paid": 100,
+  "claim": 69,
+  "pclaim": 69,
+  "already": false,
+  "horizon": 97,
+  "ss": 76500.0,
+  "fed_tax": 13459,
+  "after_tax": 127545,
+  "save_now": 7545,
+  "strategy": "Rule of thumb, claiming at 69",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Use the catch-up limit in your 401(k)",
+   "Plan to claim Social Security at 69"
+  ],
+  "headline": "You can count on $90,000 a year: $60,000 for basics and $30,000 for the rest."
+ },
+ "h15_early_retire_claim62": {
+  "count_on": 51800.0,
+  "verdict": "below_goal",
+  "basics_paid": 100,
+  "claim": 62,
+  "pclaim": null,
+  "already": false,
+  "horizon": 93,
+  "ss": 17900.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household p8",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Plan to claim Social Security at 62",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $51,800 a year: $35,400 for basics and $16,400 for the rest."
+ },
+ "h16_wealthy_retire_now": {
+  "count_on": 106300.0,
+  "verdict": "close",
+  "basics_paid": 100,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 97,
+  "ss": 55000.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Rule of thumb",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Plan to claim Social Security at 67",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $106,300 a year: $49,400 for basics and $56,900 for the rest."
+ },
+ "gap25": {
+  "count_on": 36000.0,
+  "verdict": "falls_short",
+  "basics_paid": 42,
+  "claim": 67,
+  "pclaim": 67,
+  "already": false,
+  "horizon": 119,
+  "ss": 38500.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household S181",
+  "actions": [
+   "Make your basics safe first",
+   "Plan to claim Social Security at 67",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $36,000 a year, less than your basics of $52,000. On your numbers the plan does not work yet. The starting points below show what would change that. That is less than your Social Security of $38,500 a year because of health costs on top of your spending, the drop to one benefit after the first death and the years before it starts."
+ },
+ "gap25_noclaim": {
+  "count_on": 40700.0,
+  "verdict": "falls_short",
+  "basics_paid": 45,
+  "claim": 70,
+  "pclaim": 70,
+  "already": false,
+  "horizon": 119,
+  "ss": 44600.0,
+  "fed_tax": 0,
+  "after_tax": 0,
+  "save_now": 0,
+  "strategy": "Similar household E01_age_gap_25",
+  "actions": [
+   "Make your basics safe first",
+   "Plan to claim Social Security at 70",
+   "Check your plan once a year"
+  ],
+  "headline": "You can count on $40,700 a year, less than your basics of $52,000. On your numbers the plan does not work yet. That is less than your Social Security of $44,600 a year because of health costs on top of your spending, the drop to one benefit after the first death and the years before it starts."
+ },
+ "fire_35_45": {
+  "count_on": 40600.0,
+  "verdict": "below_goal",
+  "basics_paid": 100,
+  "claim": 62,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 28400.0,
+  "fed_tax": 20775,
+  "after_tax": 117750,
+  "save_now": 47750,
+  "strategy": "Similar household E12_early_retiree_45",
+  "actions": [
+   "Set your spending goal nearer the safe level",
+   "Save a little more each year until you retire",
+   "Plan to claim Social Security at 62"
+  ],
+  "headline": "You can count on $40,600 a year: $32,300 for basics and $8,300 for the rest."
+ },
+ "single_parent": {
+  "count_on": 29200.0,
+  "verdict": "falls_short",
+  "basics_paid": 13,
+  "claim": 66,
+  "pclaim": null,
+  "already": false,
+  "horizon": 95,
+  "ss": 26600.0,
+  "fed_tax": -1276,
+  "after_tax": 55412,
+  "save_now": 10412,
+  "strategy": "Similar household E09_single_mom_2_kids",
+  "actions": [
+   "Make your basics safe first",
+   "Build an emergency fund of three months",
+   "Save a little more each year until you retire"
+  ],
+  "headline": "You can count on $29,200 a year, less than your basics of $40,000. On your numbers the plan does not work yet. The starting points below show what would change that."
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "persona_id": "p15",
+ "issues": [
+  {
+   "ref": "i7",
+   "type": "misunderstanding",
+   "severity": "P1",
+   "quote": "Thanks. I noted that you have no other debts.",
+   "note": "The person twice asked why 65 and $102,000 were picked, and the reply ignores that question and moves on to children."
+  },
+  {
+   "ref": "i8",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "I updated the typical figures: children's ages of 6.",
+   "note": "The garbled wording ('children's ages of 6' for one child) makes it unclear what was assumed, though the child's age is then asked directly."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 38,
+    "truth": 38,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "MA",
+    "truth": "MA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 170000.0,
+    "truth": 170000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 460000.0,
+    "truth": 460000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 560000.0,
+    "truth": 560000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     3
+    ],
+    "truth": [
+     3
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 120000.0,
+    "truth": 120000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

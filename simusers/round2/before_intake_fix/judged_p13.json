@@ -1,0 +1,129 @@
+{
+ "persona_id": "p13",
+ "issues": [
+  {
+   "ref": "i10",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your answers live in this browser tab. The server uses them only to read your messages",
+   "note": "The reply repeats the privacy paragraph and never says what the savings figure does or whether the person sees it first, so the person is stuck in a loop."
+  },
+  {
+   "ref": "i11",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your answers live in this browser tab. The server uses them only to read your messages",
+   "note": "Second time the person asked the same question; the app repeats the same paragraph and the same savings question without answering, leaving them stuck."
+  },
+  {
+   "ref": "i12",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+   "note": "Third repetition: the app ignores the explicit question about what the savings figure does and whether it is shown first, and re-asks the same savings question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 50,
+    "truth": 50,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "IL",
+    "truth": "IL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 62,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 50980.0,
+    "truth": 110000,
+    "source": "assumed"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 550000.0,
+    "truth": 550000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "estimate"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 150000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     16
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 44000,
+    "truth": 82000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6153846153846154,
+  "why": {
+   "field": "retire_age",
+   "cause": "assumed_default",
+   "note": "App applied a typical retirement age of 65. The person never gave one, and the app never asked it directly."
+  }
+ }
+}

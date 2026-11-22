@@ -1,0 +1,111 @@
+{
+ "persona_id": "p28",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 46,
+    "truth": 46,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CA",
+    "truth": "CA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 115000.0,
+    "truth": 115000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 378000.0,
+    "truth": 378000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 380000.0,
+    "truth": 380000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     10
+    ],
+    "truth": [
+     10
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "simulator_inconsistent",
+    "note": "Truth is 62, but the simulated user never stated 62 at intake. They said 60, then 65 ('more realistic'), and clicked 65 at i6. The app stored 65, which matches the transcript."
+   }
+  ]
+ }
+}

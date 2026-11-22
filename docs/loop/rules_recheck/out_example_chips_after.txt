@@ -1,0 +1,6 @@
+step 0 | e panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right? ["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+step 1 |  taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+step 2 | ge payment. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%. ['No other debts', 'Student loans', 'Car loan', 'Credit card']
+step 3 | Enough said: Thanks. I noted that you have no other debts. I estimated your spending now at $166,000 a year. Is that about right? ["Yes, that's about right", '$4,000 a month', '$6,000 a month', '$9,000 a month']
+READY True | last: s, so I updated them: spending in retirement at $116,100 a year. I assumed you will spend about 80% of today's $166,000, not counting the mortgage, in retirement, $116,100 a year. Is that about right?
+errors []

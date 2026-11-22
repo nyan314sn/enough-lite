@@ -1,0 +1,70 @@
+===== idk =====
+FIRST: Enough said:
+Thanks. I noted that you live in Georgia and you are 50. Until you tell me otherwise, I use typical figures for the rest: your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $37,000 a year and 4 more. Each is marked in the panel, so you can change it. What do you do for work, or what do you earn a year before tax?
+ANSWER "I don't know"
+  BOT: Enough said:
+Fine. For your pay I will use $50,980 a year, a typical figure, marked in the panel so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ANSWER 'skip'
+  BOT: Enough said:
+Fine. I will use $115,000 for your savings, the typical figure for your age, marked so you can change it. I split your $115,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?
+ANSWER "I don't know"
+  BOT: Enough said:
+Fine. I keep my split of your $115,000: 60% pre-tax, 10% Roth, 20% taxable, 10% cash. It stays marked estimate, so you can change it. Do you own your home or rent?
+ANSWER 'skip'
+  BOT: Enough said:
+Fine. I will use typical housing costs for your state, about $19,920 a year, marked estimate. Tell me later if you rent or own. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.
+ANSWER "I don't know"
+  BOT: Enough said:
+Fine. I will count no other debts for now; you can add it in the panel. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ANSWER 'skip'
+  BOT: Enough said:
+Fine. I will count no children, so no child costs are counted. Add them in the panel if you have any. At what age do you want to stop working?
+ANSWER "I don't know"
+  BOT: Enough said:
+Fine. For your retirement I will use age 65, a typical figure, marked in the panel so you can change it. If you'd rather, I can build your plan now with typical numbers for the rest. I estimated your spending now at $37,000 a year. Is that about right?
+ANSWER 'skip'
+  BOT: Enough said:
+Fine. For your spending I will use $37,000 a year, a typical figure, marked in the panel so you can change it. I estimated your spending in retirement at $36,300 a year from your take-home pay. Is that about right?
+GROUP Saving :: Saving | Estimate: $115,000 saved | ✎
+GROUP Home & debts :: Home & debts | 2 | Reset | Home | Not given. Typical housing costs used: about $19,920 a year | ✎ | estimate | You skipped this. The plan uses the typical housing cost for your state (Census). Tell me if you rent or own. | Other debts | None counted | ✎ | you 
+GROUP Pensions & income :: Pensions & income | Estimate: Social Security $25,600 a year at 67; no pension counted | ✎
+GROUP Insurance :: Insurance | None counted | ✎
+GROUP Goals :: Goals | None counted | ✎
+GROUP Health :: Health | Estimate: good health | ✎
+GROUP Costs :: Costs | Estimate: $37,000 a year | ✎
+===== long =====
+BOT: Enough said:
+Thanks. I noted 20 facts from your message. They are in the panel on the right, where you can check and change each one. The ones that drive your plan most: you are 47, your pay is $88,000 a year, you have saved $395,000 and you want to retire at 62. I filled in 8 more with typical figures, each marked in the panel so you can change it. I assumed you will spend about 80% of today's $84,000, not counting the mortgage, in retirement, $53,300 a year. Is that about right?
+PANEL Savings :: Savings | $350,000 pre-tax (401(k) or IRA), $45,000 cash | ✎ | you said | $350k pre-tax, $45k cash | Yearly saving | About $40,951 a year ($15,900 into a 401(k) or IRA, a
+PANEL Other debts :: Other debts | Car loan $14,000, at 5%, $264 a month (assumed) | ✎ | you said | A rate or payment you did not give is assumed: car payment. | Pensions & income | 2 | Reset
+PANEL Spending split :: (none)
+PANEL Money to leave behind :: Money to leave behind | A wish noted, no amount | ✎ | you said | Not counted in the plan. Give an amount if you want one. | Big planned costs | None | ✎ | assumed | Assum
+PANEL Home :: Home & debts | 3 | Reset | Home | Own, $310,000 left on the mortgage, $2,150 a month, worth $620,000 | ✎ | you said | Mortgage paid off | Paid off in 2042, costs fall by 
+PANEL Children :: Children | 1 child, ages 12 | ✎ | you said | College: child 1, age 12 | public in-state, you pay 100% | ✎ | you said | Pets | 1 cat | ✎ | you said | Work & pay | 6 | Rese
+PANEL College :: College: child 1, age 12 | public in-state, you pay 100% | ✎ | you said | Pets | 1 cat | ✎ | you said | Work & pay | 6 | Reset | Your job | dental hygienist | ✎ | you sai
+===== parent =====
+BOT: Enough said:
+Thanks. I noted that you work as a nurse, you are single, you have 2 children, aged 8 and 5, you live in Colorado, you are 38, you have saved $48,000, you rent, at $2,300 a month, your pay is $92,000 a year, you want to retire at 63 and the 8-year-old goes to a public in-state college and the 5-year-old goes to a private college. I filled in 8 more with typical figures, each marked in the panel so you can change it. I split your $48,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?
+PANEL College: child 1, age 8 | public in-state, you pay 100% |
+PANEL College: child 2, age 5 | private, you pay 100% |
+CHIPS ["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+===== edit =====
+READY True
+CHAT CHANGE bot: Enough said:
+I do not change a figure you gave without your yes. Change your pay from $400,000 to $90,000? CHIPS ['Yes', 'No']
+  panel pay: ['Your pay | $400,000 a year | ✎ ']
+  after No: Enough said:
+Fine. I kept your pay at $400,000. I assumed you will spend about 80% of today's $60,000 in retirement, $48,000 a year. Is that about right? | pay ['Your pay | $400,000 a year | ✎ ']
+  after Yes: Enough said:
+Changed: your pay is now $90,000. Your answer moved some typical figures, so I updated them: Social Security at $38,100 a year. I assumed you will spend about 80% of today's $60,000 in retirement, $48,000 a year. Is that about right? | pay ['Your pay | $90,000 a year | ✎ ']
+EDITOR Retirement age=40: error=['That is below the age now (45). Use 45 or more, or set the pay to 0 if you have stopped work.'] bot='Enough said:\nChanged: your pay is now $90,000. Your answer moved some typical figures, so I updated them: Social Securit' editor_open=1
+EDITOR Your age=abc: error=['Use a whole number of years, such as 45.'] bot='Enough said:\nChanged: your pay is now $90,000. Your answer moved some typical figures, so I updated them: Social Securit' editor_open=1
+EDITOR Retirement age=62: error=[] bot='Reading your answer' editor_open=0
+PAY EDIT SAVED bot: Enough said:
+I have retirement at 62, as you say. I assumed you will spend about 80% of today's $60,000 in retirement, $48,000 a year. Is that about right?
+===== misc =====
+INHERIT bot: Enough said:
+Thanks. I noted that you may inherit $300,000, shown for information and not counted in the plan. I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?
+PANEL Possible inheritance | $300,000, not counted (information only) | ✎ | you said | Counted only if you say to count it. | Insurance | None cou
+HEALTH bot: Enough said:
+Thanks. I noted that you are in fair health. I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?

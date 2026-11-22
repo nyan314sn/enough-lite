@@ -1,0 +1,341 @@
+== h02 t5 prevQ: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you kno
+ U: Car loan, about 11k left. I don't know the rate off the top of my head. 
+ new_assumed: ['emergency_months: 0.4 months of spending in cash (estimate)', 'spending_now_per_year: $264,000 a year, about $22,000 a month (estimate)', 'spending_per_year: $211,200 a year (assumed)']
+ A: Thanks. I noted that you owe $11,000 in car debt and your monthly costs are transport $11,000 and debt $11,000, $22,000 a month in all. Your answer moved some typical figures, so I updated them: spending now at $264,000 a year and spending in retirement at $21
+
+== h05 t8 prevQ: About how much does your household spend in a year now, all in?
+ U: Somewhere between 7 and 8 thousand a month, I'd guess. Groceries, utilities, car, all of it. 
+ new_assumed: ['spending_per_year: $61,200 a year (assumed)']
+ A: I used the middle of that range, $90,000 a year. It is a guess; give your real figure any time. I read two figures for your spending now: $90,000 and $96,000. Which is right? Thanks. I noted that you spend $90,000 a year now. You gave a range, so I used the mi
+
+== h06 t3 prevQ: What is the monthly mortgage payment?
+ U: Mortgage payment is 2,300 a month. Sorry, I'd guess the 2,423 the app came up with is a bit high for me, so 2,
+ new_assumed: ['mortgage_end: Paid off in 2028, costs fall by about $17,600 a year (estimate)', 'spending_per_year: $41,900 a year (assumed)']
+ A: Got it: $46,000 left on the mortgage, not $190,000. Thanks. I noted that you spend $70,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $41,900 a year.
+
+== h06 t6 prevQ: About how much do you earn a year as a pharmacist, before tax?
+ U: I earn about 92,000 a year before tax. Also, I'm not sure the mortgage balance is right now, I said 190,000 ea
+ new_assumed: ['mortgage_end: Paid off in 2035, costs fall by about $17,600 a year (estimate)', 'social_security_per_year: $38,800 a year at 67 (estimate)', 'spending_per_year: $56,000 a year (assumed)']
+ A: Got it: $190,000 left on the mortgage, not $46,000. Thanks. I noted that your pay is $92,000 a year. Your answer moved some typical figures, so I updated them: spending in retirement at $56,000 a year and Social Security at $38,800 a year.
+
+== h07 t2 prevQ: Which state do you live in?
+ U: Hmm, I'm not sure which one applies. I think it's Virginia? I'd have to double check. 
+ new_assumed: ['spending_now_per_year: $37,000 a year, about $3,083 a month (estimate)', 'spending_per_year: $34,600 a year (estimate)']
+ A: Thanks. I noted that you live in Virginia. Your answer moved some typical figures, so I updated them: spending now at $37,000 a year and spending in retirement at $34,600 a year.
+
+== h07 t3 prevQ: What do you do for work, or what do you earn a year before tax?
+ U: I'm not sure exactly. I'm a project manager, I think. Maybe around $100k? I'd have to check my pay stub. 
+ new_assumed: ['social_security_per_year: $40,800 a year at 67 (estimate)', 'spending_now_per_year: $67,000 a year, about $5,583 a month (estimate)', 'spending_per_year: $54,000 a year (estimate)']
+ A: Thanks. I noted that you work as a project manager and your pay is $100,000 a year. Your answer moved some typical figures, so I updated them: spending now at $67,000 a year, spending in retirement at $54,000 a year and Social Security at $40,800 a year.
+
+== h07 t4 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: I'm not sure, honestly. I'd have to look at my statements. I think the 401k is somewhere around the low hundre
+ new_assumed: ['savings: $69,000 pre-tax (401(k) or IRA), $11,500 Roth, $23,000 taxable, $11,500 cash (assumed)']
+ A: Fine. I will use $115,000 for your savings, the typical figure for your age, marked so you can change it.
+
+== h07 t5 prevQ: I split your $115,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 
+ U: I'm not sure about that split, honestly. The 401k is probably the biggest part, but I really don't know the re
+ new_assumed: []
+ A: Fine. I will keep that as it is, marked as typical, so you can change it later in the panel.
+
+== h07 t6 prevQ: Do you own your home or rent?
+ U: I'm not sure, but I think I own it with a mortgage? I'd have to check the statement for the exact amount. 
+ new_assumed: ['home: Own, mortgage payment $1,996 a month, value not given (estimate)']
+ A: Thanks. I noted that you own your home. Your answer moved some typical figures, so I updated them: your mortgage payment at about $1,996 a month, typical for your state.
+
+== h07 t7 prevQ: About how much is left on the mortgage, and what is the monthly payment? For example: $180
+ U: I'm not sure, honestly. I'd have to check the statement. I think the payment is somewhere around $1,800 a mont
+ new_assumed: []
+ A: Thanks. I noted that you own your home, with a payment of $1,800 a month.
+
+== h07 t9 prevQ: Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ U: I'm not sure, honestly. I think we have two kids, maybe around 10 and 7? I'd have to check. No pets, I think. 
+ new_assumed: ['spending_now_per_year: $75,000 a year, about $6,250 a month (estimate)', 'spending_per_year: $59,000 a year (estimate)']
+ A: Thanks. I noted that you have 2 children, aged 10 and 7. Your answer moved some typical figures, so I updated them: spending now at $75,000 a year and spending in retirement at $59,000 a year.
+
+== h07 t10 prevQ: At what age do you want to stop working?
+ U: I'm not sure, honestly. Maybe around 65? I'd have to think about it more. 
+ new_assumed: []
+ A: Thanks. I noted that you want to retire at 65.
+
+== h07 t11 prevQ: About how much does your household spend in a year now, all in?
+ U: I'm not sure, honestly. Maybe around $7,300 a month? I'd have to add up my bills to know for sure. 
+ new_assumed: ['spending_per_year: $70,100 a year (assumed)']
+ A: Thanks. I noted that you spend $87,600 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $70,100 a year.
+
+== p03 t7 prevQ: About how much does your household spend in a year now, all in?
+ U: Spending is about 95k a year I think? rent alone is 3100 a month so it adds up lol. not sure exact tho 
+ new_assumed: ['spending_per_year: $76,000 a year (assumed)']
+ A: Thanks. I noted that you rent, at $3,100 a month and you spend $95,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $76,000 a year.
+
+== p05 t4 prevQ: What is the monthly mortgage payment?
+ U: Good question. The monthly payment is $2,600, not the $3,094 you guessed. I think that's the principal and int
+ new_assumed: ['mortgage_end: Paid off in 2040, costs fall by about $17,800 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $310,000 left on the mortgage and a payment of $2,600 a month, worth about $520,000.
+
+== p06 t3 prevQ: What is the monthly mortgage payment?
+ U: Honestly I don't know the exact monthly payment, I think it's around 1,300. Wait, sorry, let me check: it's 1,
+ new_assumed: ['mortgage_end: Paid off in 2031, costs fall by about $7,300 a year (estimate)']
+ A: Understood: $1,976 is not right. What should it be? You can also take a typical figure. Thanks. I noted that you own your home, with $60,000 left on the mortgage and a payment of $1,300 a month.
+
+== p06 t6 prevQ: About how much does your household spend in a year now, all in?
+ U: Honestly I'm not sure, I'd guess around 70,000 a year. Wait, sorry, let me think about it: with the mortgage a
+ new_assumed: ['spending_per_year: $50,200 a year (assumed)']
+ A: Thanks. I noted that you own your home, with $60,000 left on the mortgage and a payment of $1,300 a month and you spend $70,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $50,200 a year.
+
+== p09 t2 prevQ: I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 
+ U: No idea, honestly. Maybe it's mostly in my 401k? I really don't know the split. 
+ new_assumed: []
+ A: Fine. I will keep that as it is, marked as typical, so you can change it later in the panel.
+
+== p09 t6 prevQ: Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ U: No kids, and no pets either. Is it weird that I still don't know if my savings are 300k? I'd rather find out t
+ new_assumed: []
+ A: Thanks. I noted that you have no children. I can't tell yet. The plan answers that by comparing what you have with what your spending needs, year by year. I still need your spending and your pay.
+
+== p09 t7 prevQ: About how much does your household spend in a year now, all in?
+ U: Hmm, I don't really know that one either. Maybe around 4,000 a month? I pay the mortgage and then just whateve
+ new_assumed: ['spending_per_year: $36,000 a year (assumed)']
+ A: Thanks. I noted that you spend $48,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $36,000 a year.
+
+== p09 t8 prevQ: I estimated your pay at $68,000 a year from typical pay for your job and state. Is that ab
+ U: Hmm, I'm not sure. I think I make around 60,000 a year before taxes. Is that what you mean by pay? 
+ new_assumed: ['social_security_per_year: $28,500 a year at 67 (estimate)']
+ A: Thanks. I noted that your pay is $60,000 a year. I mean your pay from work before tax, for a year. A rough figure is fine. Your answer moved some typical figures, so I updated them: Social Security at $28,500 a year.
+
+== p10 t2 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: I'm not sure exactly, I'd guess somewhere around 150 to 200 thousand. Probably a bit more than that if I count
+ new_assumed: ['savings: $105,000 pre-tax (401(k) or IRA), $17,500 Roth, $35,000 taxable, $17,500 cash (assumed)']
+ A: I used the middle of that range, $175,000. It is a guess; give your real figure any time. Thanks. I noted that you have saved $175,000 and your pay is $132,000 a year.
+
+== p10 t3 prevQ: I split your $175,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 
+ U: Hmm, I don't really know the split. I'd guess most of it is in the 401(k), but I'm not sure about the rest. Al
+ new_assumed: ['social_security_per_year: $40,700 a year at 67 (estimate)', 'spending_now_per_year: $71,000 a year, about $5,917 a month (estimate)', 'spending_per_year: $57,000 a year (estimate)']
+ A: Got it: pay of $105,000 a year, not $132,000. Your answer moved some typical figures, so I updated them: spending now at $71,000 a year, spending in retirement at $57,000 a year and Social Security at $40,700 a year.
+
+== p10 t4 prevQ: Do you own your home or rent?
+ U: I own it with a mortgage, I think. Maybe around 250 or 270 left on it? Not sure exactly. The house is worth so
+ new_assumed: ['home: Own, mortgage payment $3,070 a month, value not given (estimate)']
+ A: Thanks. I noted that you own your home. Your answer moved some typical figures, so I updated them: your mortgage payment at about $3,070 a month, typical for your state.
+
+== p10 t5 prevQ: About how much is left on the mortgage, and what is the monthly payment? For example: $180
+ U: I'm not sure of the exact number. I said 250 to 270 before, so call it around 260. The monthly payment I don't
+ new_assumed: ['mortgage_end: Paid off in 2039, costs fall by about $11,900 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $260,000 left on the mortgage and a payment of $2,300 a month. Your answer moved some typical figures, so I updated them: a 5% mortgage rate, which sets when the mortgage ends.
+
+== p10 t8 prevQ: About how much does your household spend in a year now, all in?
+ U: I'm honestly not sure. My guess would be somewhere around 80 thousand a year, maybe a bit less? I never really
+ new_assumed: ['spending_per_year: $64,000 a year (assumed)']
+ A: Thanks. I noted that you spend $80,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $64,000 a year.
+
+== p11 t4 prevQ: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you kno
+ U: Student loans, I think it's about $28,000. I don't know the interest rate though, sorry. 
+ new_assumed: []
+ A: Thanks. I noted that you owe $28,000 in student debt.
+
+== p11 t5 prevQ: Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ U: No kids, no pets. Is the student loan rate something I can find somewhere? I really don't know it. 
+ new_assumed: []
+ A: Thanks. I noted that you have no children. Each question asks for a rough figure from your own life. Answer in your own words; I will say what I understood.
+
+== p11 t8 prevQ: About how much does your household spend in a year now, all in?
+ U: I'm really not sure. Is there a way to figure that out without going through every receipt? I'd rather just pi
+ new_assumed: []
+ A: Fine. For your spending I will use $37,000 a year, a typical figure, marked in the panel so you can change it. A Build my plan button appears under the chat once I have the essentials. I still need your pay. Or press 'Build my plan with typical numbers for the
+
+== p11 t9 prevQ: About how much do you earn a year as a dental assistant, before tax?
+ U: I think I make about $52,000 a year before taxes? I'm not totally sure though. Also my spending is probably lo
+ new_assumed: ['social_security_per_year: $26,000 a year at 67 (estimate)']
+ A: Thanks. I noted that your pay is $52,000 a year, you spend $38,000 a year now and your spending in retirement is $37,000 a year. Your answer moved some typical figures, so I updated them: Social Security at $26,000 a year.
+
+== p12 t3 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: I'm not sure, honestly. My wife kept all that. I think the 401(k) is the big one, maybe around four hundred th
+ new_assumed: []
+ A: Thanks. I noted that you have saved $400,000.
+
+== p12 t7 prevQ: Which one would you like to change?
+ U: Look, I'm getting frustrated. I've told you twice I'm a widower, no partner. And I never said anything about m
+ new_assumed: ['social_security_per_year: $37,500 a year at 67 (estimate)', 'spending_now_per_year: $60,000 a year, about $5,000 a month (estimate)', 'spending_per_year: $48,000 a year (estimate)']
+ A: Thanks. I noted that your pay is $88,000 a year. Your answer moved some typical figures, so I updated them: spending now at $60,000 a year, spending in retirement at $48,000 a year and Social Security at $37,500 a year.
+
+== p12 t9 prevQ: Which one would you like to change?
+ U: I'm still missing the home and pension part. I own my house outright, worth about $450,000, no mortgage. I als
+ new_assumed: []
+ A: Thanks. I noted that you have no children, you own your home with no mortgage, worth about $450,000, you have no other debts and you have a pension of $24,000 a year.
+
+== p13 t2 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: Why are you guessing my pay and retirement age at all? I never gave you those. Savings is about $550k total, t
+ new_assumed: ['savings: $330,000 pre-tax (401(k) or IRA), $55,000 Roth, $110,000 taxable, $55,000 cash (assumed)']
+ A: Thanks. I noted that you have saved $550,000. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messa
+
+== p13 t10 prevQ: I estimated your pay at $108,000 a year from typical pay for your job and state. Is that a
+ U: No, it's not about right. I make $110,000 a year. Why did you guess $108,000 when you could have just asked me
+ new_assumed: ['social_security_per_year: $42,300 a year at 67 (estimate)']
+ A: That $108,000 is my estimate of your pay, not something you told me. I took the typical pay for your job and state. It is marked as an estimate in the panel. Tell me the right figure and I will use it. Thanks. I noted that your pay is $110,000 a year. Your ans
+
+== p14 t4 prevQ: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you kno
+ U: No other debts. And stop guessing at my mortgage rate, I don't know it offhand and you're not going to make on
+ new_assumed: []
+ A: Thanks. I noted that you have no other debts.
+
+== p14 t5 prevQ: Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ U: No kids, no pets. And I'm not sure why you'd need that for a retirement plan, but fine. Next question. 
+ new_assumed: []
+ A: Thanks. I noted that you have no children. It is the goal the plan tests: whether your money lasts if you stop then. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.
+
+== p14 t6 prevQ: About how much does your household spend in a year now, all in?
+ U: Spending is about 60 thousand a year, all in. And don't "estimate it for me", I gave you the number. Also, you
+ new_assumed: ['spending_per_year: $43,400 a year (assumed)']
+ A: Thanks. I noted that you spend $60,000 a year now. I mean everything the household pays for in a normal year: rent or mortgage, food, car, insurance, health care and the rest. A rough monthly figure is fine. Your answer moved some typical figures, so I updated
+
+== p15 t2 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: Before I pick one, why did it fill in "typical figures" for the rest? I'd like to know which ones it guessed, 
+ new_assumed: ['savings: $276,000 pre-tax (401(k) or IRA), $46,000 Roth, $92,000 taxable, $46,000 cash (assumed)']
+ A: Thanks. I noted that you have saved $460,000. Your savings are the money the plan draws on once you stop working. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.
+
+== p15 t3 prevQ: I split your $460,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 
+ U: Not quite. My actual split is $210,000 pre-tax, $120,000 Roth, $80,000 taxable and $50,000 cash. Why did it as
+ new_assumed: []
+ A: Thanks. I noted that you have saved $460,000 ($210,000 pre-tax, $120,000 Roth, $80,000 taxable and $50,000 cash). Each answer changes your plan: what you can count on and what is safe to spend.
+
+== p15 t4 prevQ: Do you own your home or rent?
+ U: I own it with a mortgage. But first, you still haven't answered my question about what else it guessed. Which 
+ new_assumed: ['home: Own, mortgage payment $2,867 a month, value not given (estimate)']
+ A: Thanks. I noted that you own your home. Housing is most people's biggest cost. A mortgage ends; rent does not. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. Your answer moved some typical figures, so I updated
+
+== p15 t5 prevQ: About how much is left on the mortgage, and what is the monthly payment? For example: $180
+ U: Thanks, but I still want the answer to my question first. You guessed my mortgage payment at $2,867 a month, a
+ new_assumed: ['mortgage_end: Paid off in 2045, costs fall by about $33,800 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $560,000 left on the mortgage and a payment of $3,900 a month. The balance and the payment tell the plan when the mortgage ends and your costs fall. If you'd rather not say, type skip and I will use a typical figure
+
+== p15 t6 prevQ: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you kno
+ U: No other debts. But I still haven't gotten a straight answer about the 5% mortgage rate you just set. Where di
+ new_assumed: []
+ A: Thanks. I noted that you have no other debts. Debts cost interest and take part of your pay until they are paid off. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.
+
+== p15 t7 prevQ: Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+ U: I still haven't had a straight answer on the 5% rate or the other guessed figures. Before I answer about kids,
+ new_assumed: ['spending_now_per_year: $113,000 a year, about $9,417 a month (estimate)', 'spending_per_year: $91,000 a year (estimate)']
+ A: Thanks. I noted that you have 1 child, aged 3. Your plan will answer that with your own numbers. It needs a few more answers first. Your answer moved some typical figures, so I updated them: spending now at $113,000 a year and spending in retirement at $91,000
+
+== p15 t8 prevQ: About how much does your household spend in a year now, all in?
+ U: I still haven't gotten a straight answer about where the $113,000 spending figure came from, or the 5% rate. I
+ new_assumed: ['spending_per_year: $69,000 a year (assumed)']
+ A: That $113,000 is my estimate of your spending now, not something you told me. I estimated it from your pay and state, less what a household like yours typically saves. It is marked as an estimate in the panel. Tell me the right figure and I will use it. Thanks
+
+== p15 t9 prevQ: I estimated your pay at $169,000 a year from typical pay for your job and state. Is that a
+ U: Not quite. My actual pay is $170,000 a year. But I still want a straight answer on where the 5% mortgage rate 
+ new_assumed: []
+ A: That $170,000 is my estimate of your pay, not something you told me. I took the typical pay for your job and state. It is marked as an estimate in the panel. Tell me the right figure and I will use it.
+
+== p15 t10 prevQ: I estimated your pay at $169,000 a year from typical pay for your job and state. Is that a
+ U: Not quite, and I'm still waiting on the source for that 5% mortgage rate. Please tell me exactly which figures
+ new_assumed: ['social_security_per_year: $51,300 a year at 67 (estimate)']
+ A: Thanks. I noted that your pay is $170,000 a year and your spending in retirement is $69,000 a year. I mean your pay from work before tax, for a year. A rough figure is fine. Your answer moved some typical figures, so I updated them: Social Security at $51,300 
+
+== p16 t5 prevQ: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you kno
+ U: No, nothing else. Just the mortgage. Also, the mortgage rate in the app is a guess, I don't know ours offhand.
+ new_assumed: []
+ A: Thanks. I noted that you have no other debts. A Build my plan button appears under the chat once I have the essentials. I still need when you want to retire. Or press 'Build my plan with typical numbers for the rest' to make it now.
+
+== p22 t7 prevQ: You mentioned a pension. About how much will it pay, a month or a year, and from what age?
+ U: Oh, the pension, that's my mother's, not mine. I don't have one through the district, just the 403(b). Mom get
+ new_assumed: []
+ A: That $403 came from me, not from you: it is a typical figure, marked in the panel. Tell me the right figure and I will use it. Thanks. I noted that there is no pension.
+
+== p22 t8 prevQ: I estimated your pay at $44,000 a year from typical pay for your job and state. Is that ab
+ U: Oh, no, it's not right at all. I make sixty-seven thousand a year, I checked my last paystub, the district gav
+ new_assumed: ['social_security_per_year: $30,800 a year at 67 (estimate)']
+ A: That $403 came from me, not from you: it is a typical figure, marked in the panel. Tell me the right figure and I will use it. Thanks. I noted that your pay is $67,000 a year. Your answer moved some typical figures, so I updated them: Social Security at $30,80
+
+== p23 t13 prevQ: I estimated your pay at $64,000 a year from typical pay for your job and state. Is that ab
+ U: Nope, not even close. I clear about ninety-eight grand a year most years, sometimes more if there's a big emer
+ new_assumed: ['social_security_per_year: $40,500 a year at 67 (estimate)']
+ A: Thanks. I noted that your pay is $98,000 a year. Your answer moved some typical figures, so I updated them: Social Security at $40,500 a year.
+
+== p25 t4 prevQ: What is the monthly mortgage payment?
+ U: Ah, I actually know this one. It's $1,400 a month. The app guessed $1,589, so that's off. Also, what does "mor
+ new_assumed: ['mortgage_end: Paid off in 2043, costs fall by about $11,000 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $190,000 left on the mortgage and a payment of $1,400 a month. I mean how much you still owe on the mortgage, and what you pay each month.
+
+== p26 t7 prevQ: About how much does your household spend in a year now, all in?
+ U: I'm not sure exactly. Maybe around $50,000 a year, all in? Is that a reasonable guess? I don't track it closel
+ new_assumed: ['spending_per_year: $37,100 a year (assumed)']
+ A: Thanks. I noted that you spend $50,000 a year now. It depends on the rest of your situation. Your plan will show whether it matters for you. Your answer moved some typical figures, so I updated them: spending in retirement at $37,100 a year.
+
+== p26 t8 prevQ: About how much do you earn a year as a full time, before tax?
+ U: About $64,000 a year before tax. And what's Medicare? I keep seeing it on forms and I'm not sure if I need to 
+ new_assumed: ['social_security_per_year: $29,800 a year at 67 (estimate)']
+ A: Thanks. I noted that your pay is $64,000 a year. Medicare is the federal health insurance for people 65 and older. Before 65, retirees pay for their own cover, which the plan counts as a cost. Your answer moved some typical figures, so I updated them: Social S
+
+== p27 t6 prevQ: I split your $150,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 
+ U: No, that's not right. I never gave you a total of $150,000 either. My savings are about $845,000 in all: $520,
+ new_assumed: []
+ A: Got it: savings of $845,000, not $150,000. That $150,000 came from me, not from you: it is a typical figure, marked in the panel. Tell me the right figure and I will use it.
+
+== p27 t7 prevQ: Do you own your home or rent?
+ U: I own it with a mortgage. Worth around $720,000, with $300,000 still owed, and the payment is $2,700 a month. 
+ new_assumed: ['mortgage_end: Paid off in 2039, costs fall by about $22,400 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $300,000 left on the mortgage and a payment of $2,700 a month, worth about $720,000. I covered that above: your answers stay in this browser tab, and an AI model reads each message so it can be understood. Your answ
+
+== p27 t10 prevQ: How old is your child?
+ U: Thirteen. And the app got it wrong, so please fix the children's age to 13 before anything else. I also still 
+ new_assumed: []
+ A: I have 1 child, ages 13, as you say. Children's ages tell the plan when their costs end and when college comes. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.
+
+== p27 t12 prevQ: About how much does your household spend in a year now, all in?
+ U: I'd rather give you the real number than a button guess. My household spends $100,000 a year, all in. Also, yo
+ new_assumed: ['spending_per_year: $80,000 a year (assumed)']
+ A: Thanks. I noted that you spend $100,000 a year now. Spending is what your money must cover, now and in retirement. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. Your answer moved some typical figures, so I upd
+
+== p30 t7 prevQ: About how much does your household spend in a year now, all in?
+ U: Hmm, I'm not sure of the exact number. Probably around $85,000 a year all in, rent included. Can you tell me w
+ new_assumed: ['spending_per_year: $68,000 a year (assumed)']
+ A: Thanks. I noted that you spend $85,000 a year now. A Build my plan button appears under the chat once I have the essentials. I still need your pay. Or press 'Build my plan with typical numbers for the rest' to make it now. Your answer moved some typical figure
+
+== p31 t2 prevQ: Which state do you live in?
+ U: Illinois. And I'm not sure about filling in typical numbers, my real figures are different from what you guess
+ new_assumed: ['spending_now_per_year: $37,000 a year, about $3,083 a month (estimate)', 'spending_per_year: $35,400 a year (estimate)']
+ A: Thanks. I noted that you live in Illinois. Your answer moved some typical figures, so I updated them: spending now at $37,000 a year and spending in retirement at $35,400 a year.
+
+== p31 t4 prevQ: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+ U: I already gave you my real pay, it's $88,000 a year, not a range. And please stop guessing my spending, I'll t
+ new_assumed: ['social_security_per_year: $37,500 a year at 67 (estimate)', 'spending_now_per_year: $60,000 a year, about $5,000 a month (estimate)', 'spending_per_year: $48,000 a year (estimate)']
+ A: Got it: pay of $88,000 a year, not $75,000. Thanks. I noted that you have saved $285,000 ($240,000 pre-tax, $30,000 taxable and $15,000 cash). Your answer moved some typical figures, so I updated them: spending now at $60,000 a year, spending in retirement at 
+
+== p31 t5 prevQ: Do you own your home or rent?
+ U: I own it with a mortgage. I'm not sure about the spending numbers you keep changing, so please don't move them
+ new_assumed: ['mortgage_end: Paid off in 2036, costs fall by about $4,100 a year (estimate)', 'spending_per_year: $49,500 a year (assumed)']
+ A: Thanks. I noted that you own your home, with $110,000 left on the mortgage and a payment of $1,250 a month and you spend $66,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $49,500 a year and a 5% mortgage r
+
+== p33 t4 prevQ: About how much is left on the mortgage, and what is the monthly payment? For example: $180
+ U: I'm not sure of the exact number, but the mortgage is about $290,000 left and the payment is $2,300 a month. 
+ new_assumed: ['mortgage_end: Paid off in 2041, costs fall by about $18,700 a year (estimate)']
+ A: Thanks. I noted that you own your home, with $290,000 left on the mortgage and a payment of $2,300 a month. Your answer moved some typical figures, so I updated them: a 5% mortgage rate, which sets when the mortgage ends.
+
+== p34 t5 prevQ: About how much does your household spend in a year now, all in?
+ U: Spending is about $54,000 a year, so $4,500 a month. I'd rather not guess on that one. 
+ new_assumed: ['spending_per_year: $43,200 a year (assumed)']
+ A: Thanks. I noted that you spend $54,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $43,200 a year.
+
+== p35 t6 prevQ: About how much does your household spend in a year now, all in?
+ U: I'm not sure of the exact number. Probably around 80k a year, all in, including the mortgage. 
+ new_assumed: ['spending_per_year: $64,000 a year (assumed)']
+ A: Thanks. I noted that you spend $80,000 a year now. Your answer moved some typical figures, so I updated them: spending in retirement at $64,000 a year.
+
+== p38 t7 prevQ: About how much does your household spend in a year now, all in?
+ U: I actually spend about $68,000 a year all in, not the $61,000 you guessed. And the $4,000 you put in Roth is w
+ new_assumed: ['spending_per_year: $54,400 a year (assumed)']
+ A: Got it: savings of $16,000, not $150,000. That $61,000 is my estimate of your spending now, not something you told me. I estimated it from your pay and state, less what a household like yours typically saves. It is marked as an estimate in the panel. Tell me t
+
+== p39 t3 prevQ: What do you do for work, or what do you earn a year before tax?
+ U: Under $50k, I think. I work at a front desk and it's about $38,000 a year before tax. I don't know my job titl
+ new_assumed: ['social_security_per_year: $21,500 a year at 67 (estimate)']
+ A: Thanks. I noted that you work as a front desk, your pay is $38,000 a year, you spend $33,000 a year now and your spending in retirement is $37,000 a year. Your answer moved some typical figures, so I updated them: Social Security at $21,500 a year.
+
+== p39 t6 prevQ: Give the four amounts in one message, for example: pre-tax 400k, Roth 100k, taxable 200k, 
+ U: pre-tax 41k, Roth 0, taxable 0, cash 4k. That's it. Is that the total? I'm not sure it's right. 
+ new_assumed: []
+ A: Got it: savings of $45,000, not $50,000. I mean how your savings divide between pre-tax accounts like a 401(k), Roth accounts, ordinary investment accounts and cash.
+
+skip turns 68

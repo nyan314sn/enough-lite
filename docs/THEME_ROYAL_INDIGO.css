@@ -1,0 +1,88 @@
+/* ============================================================================
+   ROYAL INDIGO DESIGN SYSTEM — COLOR TOKENS (the owner's chosen theme, 2026-11-22)
+   Default (:root) = Light Mode (also the report and slide deck theme)
+   [data-theme="dark"] = Deep Space Indigo Dark Mode
+   Reference copy; the app's live tokens are in web/src/styles.css.
+   ============================================================================ */
+
+:root {
+  /* 1. Surfaces & backgrounds. Keep data-heavy cards and tables pure white. */
+  --bg-canvas: #F7F7FC;           /* main background, secondary slide backgrounds */
+  --bg-surface: #FFFFFF;          /* cards, tables, modals, AI chat response cards */
+  --bg-subtle: #F1F1F9;           /* sticky table headers, zebra rows, hover, inputs */
+  --bg-user-bubble: #EEF2FF;      /* user chat bubble fill */
+  --border-user-bubble: #C7D2FE;  /* 1px border for the user chat bubble */
+
+  /* 2. Brand & interactive accents. Indigo only, so they never collide with green/red status colours. */
+  --brand-primary: #1E1B4B;       /* Midnight Indigo: headlines, dark hero slides, nav anchors */
+  --brand-accent: #4F46E5;        /* Electric Indigo: primary buttons, AI badges, active tabs, focus rings */
+  --brand-accent-hover: #4338CA;  /* hover/pressed */
+  --brand-accent-tint: rgba(79, 70, 229, 0.10); /* active nav items, AI callout boxes */
+
+  /* 3. Typography & borders. Prefer 1px hairlines to heavy shadows. */
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-subtle: #E2E2F0;
+  --border-strong: #CBD5E1;
+
+  /* 4. Status colours. Only for math/performance deltas and alerts; never for spending or asset categories. */
+  --status-gain: #15803D;
+  --status-gain-bg: #DCFCE7;
+  --status-loss: #BE123C;         /* deficit, shortfall (muted, non-panic) */
+  --status-loss-bg: #FFE4E6;
+  --status-warn: #B45309;
+  --status-warn-bg: #FEF3C7;
+  --status-info: #4F46E5;
+  --status-info-bg: #EEF2FF;
+
+  /* 5. 8-series chart palette. Lines/areas: 2px stroke + vertical gradient 18% -> 0% alpha. Pills: solid text/dot on a 10% fill. */
+  --chart-1: #4F46E5; --chart-1-tint: rgba(79, 70, 229, 0.10);    /* Electric Indigo: primary metric */
+  --chart-2: #0D9488; --chart-2-tint: rgba(13, 148, 136, 0.10);   /* Teal Emerald */
+  --chart-3: #9333EA; --chart-3-tint: rgba(147, 51, 234, 0.10);   /* Royal Violet: retirement / 401(k) */
+  --chart-4: #D97706; --chart-4-tint: rgba(217, 119, 6, 0.10);    /* Warm Amber */
+  --chart-5: #E11D48; --chart-5-tint: rgba(225, 29, 72, 0.10);    /* Coral Rose: liabilities / debt / spend */
+  --chart-6: #0284C7; --chart-6-tint: rgba(2, 132, 199, 0.10);    /* Cerulean Sky: cash */
+  --chart-7: #DB2777; --chart-7-tint: rgba(219, 39, 119, 0.10);   /* Orchid Pink: alternatives / custom goals */
+  --chart-8: #64748B; --chart-8-tint: rgba(100, 116, 139, 0.10);  /* Cool Slate: benchmarks / other */
+}
+
+/* Dark mode ("Deep Space Indigo"): <html data-theme="dark">. Indigo-tinted slate, never pure black. */
+[data-theme="dark"] {
+  --bg-canvas: #090914;
+  --bg-surface: #131326;
+  --bg-subtle: #1C1C36;
+  --bg-user-bubble: #1E1B4B;
+  --border-user-bubble: #3730A3;
+
+  --brand-primary: #EEF2FF;
+  --brand-accent: #818CF8;
+  --brand-accent-hover: #A5B4FC;
+  --brand-accent-tint: rgba(129, 140, 248, 0.15);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-subtle: #282846;
+  --border-strong: #3B3B64;
+
+  --status-gain: #4ADE80;  --status-gain-bg: rgba(74, 222, 128, 0.15);
+  --status-loss: #FB7185;  --status-loss-bg: rgba(251, 113, 133, 0.15);
+  --status-warn: #FBBF24;  --status-warn-bg: rgba(251, 191, 36, 0.15);
+  --status-info: #818CF8;  --status-info-bg: rgba(129, 140, 248, 0.15);
+
+  --chart-1: #818CF8; --chart-1-tint: rgba(129, 140, 248, 0.15);
+  --chart-2: #2DD4BF; --chart-2-tint: rgba(45, 212, 191, 0.15);
+  --chart-3: #C084FC; --chart-3-tint: rgba(192, 132, 252, 0.15);
+  --chart-4: #FBBF24; --chart-4-tint: rgba(251, 191, 36, 0.15);
+  --chart-5: #FB7185; --chart-5-tint: rgba(251, 113, 133, 0.15);
+  --chart-6: #38BDF8; --chart-6-tint: rgba(56, 189, 248, 0.15);
+  --chart-7: #F472B6; --chart-7-tint: rgba(244, 114, 182, 0.15);
+  --chart-8: #94A3B8; --chart-8-tint: rgba(148, 163, 184, 0.15);
+}
+
+/* Utility patterns */
+.tabular-figures { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+.finance-card { background-color: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 12px; color: var(--text-primary); }
+.finance-table-th { background-color: var(--bg-subtle); color: var(--text-muted); border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }

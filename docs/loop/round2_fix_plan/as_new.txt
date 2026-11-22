@@ -1,0 +1,101 @@
+def ss_basis(p, m: dict) -> dict:
+    """The Social Security figure in your answers (the panel) beside the one this plan uses. They differ when the plan
+    starts it at another age than the one the answers were read at (67 unless you chose an age)."""
+    claim, pclaim, already = plan_claims(p, m)
+    panel = round(float(p.social_security_per_year or 0))
+    plan = round(float(m.get("social_security_per_year") or 0))
+    panel_age = p.claim_age if p.claim_age is not None else (household_claim(p) if p.sources.get("social_security_per_year") == "estimate" else 67)
+    return {"panel_per_year": panel, "plan_per_year": plan, "panel_age": panel_age, "claim_age": claim, "partner_claim_age": pclaim,
+            "already": already, "same": abs(panel - plan) < 100 or already}
+
+
+def household_claim(p) -> int:
+    from .. import household
+    return household.claim_age(p)
+
+
+def _when(claim, pclaim) -> str:
+    if pclaim is not None and pclaim != claim:
+        return f"from {claim} for you and {pclaim} for your partner"
+    return f"from {claim}"
+
+
+def assumptions(ctx: RunCtx) -> list[str]:
+    """The plan's assumptions in plain sentences, with the numbers the code used, most important first: today's
+    dollars, returns, saving, Social Security, the survivor, health cover before Medicare, tax, the life table."""
+    from ..tools import estimates, simulate as sim
+    p, m = ctx.profile, ctx.results["markets"]
+    lon = ctx.results["longevity"]
+    age, ra = p.age or 45, p.retire_age or 65
+    out = ["All figures are in today's dollars: what money buys now, not the larger sums prices will reach."]
+    out.append(f"Savings grow on average {sim.STOCK_MU * 100:.1f}% a year above inflation in stocks and {sim.BOND_MU * 100:.1f}% in bonds, "
+               "with good and bad years. The plan tests many possible market paths. These are planning figures, not a forecast.")
+    if any(not x.inflation_adjusted for x in p.pensions):
+        out.append(f"A pension with no yearly rise for prices loses about {sim.INFLATION * 100:.1f}% of its value each year.")
+    # saving until retirement: the figure the answers show as "Yearly saving"
+    if ra > age:
+        sv = saving_used(ctx)
+        acc = sv["accounts_per_year"]
+        tag = " (assumed: 10% of pay)" if sv["assumed"] else ""
+        parts = []
+        if acc:
+            parts.append(f"{money(acc)} into a 401(k) or IRA{tag}")
+        if sv["match_per_year"]:
+            parts.append(f"{money(sv['match_per_year'])} from your employer's match")
+        if sv["other_per_year"]:
+            parts.append(f"{money(sv['other_per_year'])} of other saving")
+        if sv["unspent_pay_per_year"] > 0:
+            parts.append(f"{money(sv['unspent_pay_per_year'])} of take-home pay left after your spending, which the plan assumes you save")
+        if sv["unspent_pay_per_year"] < 0:
+            out.append(f"Until you retire you save about {money(sv['per_year'])} a year: what your take-home pay leaves after your "
+                       "spending now, which is less than the 10% of pay assumed. If that is wrong, change 'Yearly saving' or your "
+                       "spending now in your answers.")
+        elif parts:
+            out.append(f"Until you retire you save about {money(sv['per_year'])} a year: " + ", ".join(parts) +
+                       ". If that is wrong, change 'Yearly saving' in your answers.")
+        out.append("Pay stays at today's level until you retire, with no raises.")
+    aside = p.notes.get("spending_now_per_year_set_aside") or p.notes.get("spending_per_year_set_aside")
+    if aside:
+        out.append(aside)
+    if ra <= age and (p.notes.get("spending_per_year") or "").startswith("The same as you spend now"):
+        out.append("You are retired, so the plan uses what you spend now as your spending.")
+    # Social Security: the basis, then the age it starts in this plan
+    b = ss_basis(p, m)
+    if b["already"] and b["claim_age"] is not None:
+        out.append(f"You already get Social Security (from {b['claim_age']}): the plan uses the {money(b['panel_per_year'])} a year you gave.")
+    elif b["claim_age"] is not None:
+        if p.sources.get("social_security_per_year") == "estimate":
+            first = (f"Social Security is a rough estimate from today's pay, for work from about 22 until you retire "
+                     f"(with fewer than {estimates.FULL_CAREER_YEARS} years of work, the missing years count as zero). "
+                     "Your own figure is at ssa.gov/myaccount.")
+        else:
+            first = "Social Security uses the figure you gave" + ("." if p.claim_age is not None else ", read as the benefit at 67.")
+        when = _when(b["claim_age"], b["partner_claim_age"])
+        if b["same"]:
+            out.append(first + f" It starts {when}: {money(b['plan_per_year'])} a year.")
+        else:
+            out.append(first + f" Your answers show {money(b['panel_per_year'])} a year from {b['panel_age']}. This plan starts it "
+                       f"{when}, which pays about {money(b['plan_per_year'])} a year.")
+        if b["partner_claim_age"] is not None:
+            out.append("A partner with little pay of their own gets half of the other's benefit at 67, less if started sooner.")
+    if m.get("social_security_survivor_per_year") and p.has_partner:
+        out.append(f"After the first death (at the shorter life expectancy), Social Security falls to the larger of your two benefits, "
+                   f"about {money(m['social_security_survivor_per_year'])} a year, and spending falls to "
+                   f"{round(config.SURVIVOR_SPEND_SHARE * 100)}% of what the two of you spend.")
+    if age < costs.MEDICARE_AGE:
+        out.append(f"If you retire before Medicare starts at 65, health cover costs about {money(costs.PRE_MEDICARE_PREMIUM)} a person "
+                   "a year until then (an assumption). Other health costs follow CMS figures by age.")
+    state_ss = "" if tax_mod.state_exempts_ss(p.state) else " Your state taxes part of it too."
+    work = ""
+    if ra > age and p.household_pay() > 0:
+        kids = any((c.age or 99) < costs.CHILD_CREDIT_AGE for c in p.children)
+        work = " While you work, 401(k) saving comes off taxable pay" + (" and the child tax credit applies." if kids else ".")
+    out.append("Tax uses the 2027 federal brackets, the standard deduction and your state's rates." + work +
+               " In retirement the plan counts 85% of Social Security as taxable, the most the law allows, so the tax may be "
+               "a little high." + state_ss)
+    out.append(f"The plan runs {horizon_text(p, lon)}. There is about a 1 in 4 chance that "
+               + ("one of you" if p.has_partner else "you") + " will live that long (US life table, SOA 2024). "
+               "People with more money tend to live longer than that table says.")
+    return out
+
+

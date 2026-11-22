@@ -1,0 +1,2667 @@
+{
+ "as_of": "2026-11-20",
+ "release": "May 2025",
+ "source": {
+  "name": "BLS Occupational Employment and Wage Statistics (OEWS), May 2025; titles from O*NET 30.0",
+  "url": "https://api.bls.gov/publicAPI/v1/timeseries/data/",
+  "retrieved_at": "2026-11-20T05:23:37Z"
+ },
+ "national_all_median": 50980,
+ "state_index": {
+  "AL": 0.8958,
+  "AK": 1.1965,
+  "AZ": 0.982,
+  "AR": 0.8558,
+  "CA": 1.1424,
+  "CO": 1.173,
+  "CT": 1.1709,
+  "DE": 1.0237,
+  "DC": 1.7956,
+  "FL": 0.9392,
+  "GA": 0.9449,
+  "HI": 1.1047,
+  "ID": 0.941,
+  "IL": 1.0192,
+  "IN": 0.9388,
+  "IA": 0.9521,
+  "KS": 0.9417,
+  "KY": 0.9204,
+  "LA": 0.8929,
+  "ME": 1.0088,
+  "MD": 1.1673,
+  "MA": 1.2474,
+  "MI": 0.9665,
+  "MN": 1.1165,
+  "MS": 0.787,
+  "MO": 0.9376,
+  "MT": 0.9561,
+  "NE": 0.9608,
+  "NV": 0.9349,
+  "NH": 1.0961,
+  "NJ": 1.1489,
+  "NM": 0.926,
+  "NY": 1.1705,
+  "NC": 0.941,
+  "ND": 1.0294,
+  "OH": 0.9686,
+  "OK": 0.8945,
+  "OR": 1.1181,
+  "PA": 0.9747,
+  "RI": 1.1138,
+  "SC": 0.9119,
+  "SD": 0.9235,
+  "TN": 0.9294,
+  "TX": 0.9537,
+  "UT": 0.9829,
+  "VT": 1.1061,
+  "VA": 1.0924,
+  "WA": 1.2356,
+  "WV": 0.8886,
+  "WI": 0.9861,
+  "WY": 0.9861,
+  "GU": 0.7189,
+  "PR": 0.5626,
+  "VI": 0.8409
+ },
+ "places": {
+  "AL": "Alabama",
+  "AK": "Alaska",
+  "AZ": "Arizona",
+  "AR": "Arkansas",
+  "CA": "California",
+  "CO": "Colorado",
+  "CT": "Connecticut",
+  "DE": "Delaware",
+  "DC": "District of Columbia",
+  "FL": "Florida",
+  "GA": "Georgia",
+  "HI": "Hawaii",
+  "ID": "Idaho",
+  "IL": "Illinois",
+  "IN": "Indiana",
+  "IA": "Iowa",
+  "KS": "Kansas",
+  "KY": "Kentucky",
+  "LA": "Louisiana",
+  "ME": "Maine",
+  "MD": "Maryland",
+  "MA": "Massachusetts",
+  "MI": "Michigan",
+  "MN": "Minnesota",
+  "MS": "Mississippi",
+  "MO": "Missouri",
+  "MT": "Montana",
+  "NE": "Nebraska",
+  "NV": "Nevada",
+  "NH": "New Hampshire",
+  "NJ": "New Jersey",
+  "NM": "New Mexico",
+  "NY": "New York",
+  "NC": "North Carolina",
+  "ND": "North Dakota",
+  "OH": "Ohio",
+  "OK": "Oklahoma",
+  "OR": "Oregon",
+  "PA": "Pennsylvania",
+  "RI": "Rhode Island",
+  "SC": "South Carolina",
+  "SD": "South Dakota",
+  "TN": "Tennessee",
+  "TX": "Texas",
+  "UT": "Utah",
+  "VT": "Vermont",
+  "VA": "Virginia",
+  "WA": "Washington",
+  "WV": "West Virginia",
+  "WI": "Wisconsin",
+  "WY": "Wyoming",
+  "GU": "Guam",
+  "PR": "Puerto Rico",
+  "VI": "the Virgin Islands"
+ },
+ "occupations": {
+  "15-1252": {
+   "title": "Software Developers",
+   "p25_median_p75": [
+    105210,
+    135980,
+    171980
+   ]
+  },
+  "29-1141": {
+   "title": "Registered Nurses",
+   "p25_median_p75": [
+    80330,
+    97550,
+    112350
+   ]
+  },
+  "41-2031": {
+   "title": "Retail Salespersons",
+   "p25_median_p75": [
+    29900,
+    35410,
+    38670
+   ]
+  },
+  "53-7062": {
+   "title": "Laborers and Freight, Stock, and Material Movers, Hand",
+   "p25_median_p75": [
+    36090,
+    40240,
+    46920
+   ]
+  },
+  "11-1011": {
+   "title": "Chief Executives",
+   "p25_median_p75": [
+    129540,
+    213990,
+    356200
+   ]
+  },
+  "41-4012": {
+   "title": "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",
+   "p25_median_p75": [
+    50470,
+    72080,
+    99640
+   ]
+  },
+  "21-2011": {
+   "title": "Clergy",
+   "p25_median_p75": [
+    48260,
+    60810,
+    76640
+   ]
+  },
+  "29-1215": {
+   "title": "Family Medicine Physicians",
+   "p25_median_p75": [
+    162420,
+    244180,
+    334270
+   ]
+  },
+  "35-3023": {
+   "title": "Fast Food and Counter Workers",
+   "p25_median_p75": [
+    27700,
+    31200,
+    36070
+   ]
+  },
+  "13-2051": {
+   "title": "Financial and Investment Analysts",
+   "p25_median_p75": [
+    79290,
+    102740,
+    133340
+   ]
+  },
+  "15-1244": {
+   "title": "Network and Computer Systems Administrators",
+   "p25_median_p75": [
+    78010,
+    99130,
+    126640
+   ]
+  },
+  "39-2021": {
+   "title": "Animal Caretakers",
+   "p25_median_p75": [
+    29820,
+    35360,
+    40050
+   ]
+  },
+  "43-6014": {
+   "title": "Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",
+   "p25_median_p75": [
+    38830,
+    47540,
+    58000
+   ]
+  },
+  "53-3032": {
+   "title": "Heavy and Tractor-Trailer Truck Drivers",
+   "p25_median_p75": [
+    47960,
+    58640,
+    69120
+   ]
+  },
+  "11-1021": {
+   "title": "General and Operations Managers",
+   "p25_median_p75": [
+    72320,
+    105770,
+    167280
+   ]
+  },
+  "13-1071": {
+   "title": "Human Resources Specialists",
+   "p25_median_p75": [
+    58610,
+    75940,
+    99380
+   ]
+  },
+  "13-1161": {
+   "title": "Market Research Analysts and Marketing Specialists",
+   "p25_median_p75": [
+    58350,
+    78760,
+    108310
+   ]
+  },
+  "15-2051": {
+   "title": "Data Scientists",
+   "p25_median_p75": [
+    85660,
+    120230,
+    158880
+   ]
+  },
+  "23-1011": {
+   "title": "Lawyers",
+   "p25_median_p75": [
+    102990,
+    159670,
+    221370
+   ]
+  },
+  "27-3043": {
+   "title": "Writers and Authors",
+   "p25_median_p75": [
+    58230,
+    76910,
+    101950
+   ]
+  },
+  "33-3051": {
+   "title": "Police and Sheriff's Patrol Officers",
+   "p25_median_p75": [
+    59290,
+    76210,
+    97600
+   ]
+  },
+  "35-3031": {
+   "title": "Waiters and Waitresses",
+   "p25_median_p75": [
+    27750,
+    35230,
+    47110
+   ]
+  },
+  "37-2012": {
+   "title": "Maids and Housekeeping Cleaners",
+   "p25_median_p75": [
+    30350,
+    35510,
+    39590
+   ]
+  },
+  "39-9031": {
+   "title": "Exercise Trainers and Group Fitness Instructors",
+   "p25_median_p75": [
+    35280,
+    47160,
+    61730
+   ]
+  },
+  "43-4051": {
+   "title": "Customer Service Representatives",
+   "p25_median_p75": [
+    36870,
+    44770,
+    51780
+   ]
+  },
+  "45-2092": {
+   "title": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+   "p25_median_p75": [
+    34320,
+    35660,
+    38840
+   ]
+  },
+  "49-9071": {
+   "title": "Maintenance and Repair Workers, General",
+   "p25_median_p75": [
+    40840,
+    49590,
+    62620
+   ]
+  },
+  "53-3033": {
+   "title": "Light Truck Drivers",
+   "p25_median_p75": [
+    37270,
+    44860,
+    52310
+   ]
+  },
+  "19-1042": {
+   "title": "Medical Scientists, Except Epidemiologists",
+   "p25_median_p75": [
+    79840,
+    103410,
+    139380
+   ]
+  },
+  "25-1199": {
+   "title": "Postsecondary Teachers, All Other",
+   "p25_median_p75": [
+    59290,
+    77640,
+    106770
+   ]
+  },
+  "25-2021": {
+   "title": "Elementary School Teachers, Except Special Education",
+   "p25_median_p75": [
+    57710,
+    63970,
+    81450
+   ]
+  },
+  "29-2034": {
+   "title": "Radiologic Technologists and Technicians",
+   "p25_median_p75": [
+    64810,
+    80110,
+    98750
+   ]
+  },
+  "35-2014": {
+   "title": "Cooks, Restaurant",
+   "p25_median_p75": [
+    34010,
+    37390,
+    44620
+   ]
+  },
+  "37-3011": {
+   "title": "Landscaping and Groundskeeping Workers",
+   "p25_median_p75": [
+    36190,
+    39150,
+    46830
+   ]
+  },
+  "39-5012": {
+   "title": "Hairdressers, Hairstylists, and Cosmetologists",
+   "p25_median_p75": [
+    30120,
+    35790,
+    48830
+   ]
+  },
+  "39-9011": {
+   "title": "Childcare Workers",
+   "p25_median_p75": [
+    29360,
+    34980,
+    38570
+   ]
+  },
+  "43-5052": {
+   "title": "Postal Service Mail Carriers",
+   "p25_median_p75": [
+    48940,
+    60550,
+    81000
+   ]
+  },
+  "49-3023": {
+   "title": "Automotive Service Technicians and Mechanics",
+   "p25_median_p75": [
+    38900,
+    50620,
+    70430
+   ]
+  },
+  "53-3053": {
+   "title": "Shuttle Drivers and Chauffeurs",
+   "p25_median_p75": [
+    32710,
+    37290,
+    45700
+   ]
+  },
+  "11-2021": {
+   "title": "Marketing Managers",
+   "p25_median_p75": [
+    123020,
+    166790,
+    216410
+   ]
+  },
+  "11-3021": {
+   "title": "Computer and Information Systems Managers",
+   "p25_median_p75": [
+    138060,
+    175140,
+    220730
+   ]
+  },
+  "11-9051": {
+   "title": "Food Service Managers",
+   "p25_median_p75": [
+    56870,
+    69390,
+    86800
+   ]
+  },
+  "13-1111": {
+   "title": "Management Analysts",
+   "p25_median_p75": [
+    77950,
+    101860,
+    133370
+   ]
+  },
+  "13-2011": {
+   "title": "Accountants and Auditors",
+   "p25_median_p75": [
+    67020,
+    83680,
+    109810
+   ]
+  },
+  "13-2052": {
+   "title": "Personal Financial Advisors",
+   "p25_median_p75": [
+    72440,
+    105070,
+    176790
+   ]
+  },
+  "15-1232": {
+   "title": "Computer User Support Specialists",
+   "p25_median_p75": [
+    49000,
+    61860,
+    79040
+   ]
+  },
+  "25-2031": {
+   "title": "Secondary School Teachers, Except Special and Career/Technical Education",
+   "p25_median_p75": [
+    59980,
+    72040,
+    92570
+   ]
+  },
+  "27-3031": {
+   "title": "Public Relations Specialists",
+   "p25_median_p75": [
+    56260,
+    74750,
+    100370
+   ]
+  },
+  "29-2072": {
+   "title": "Medical Records Specialists",
+   "p25_median_p75": [
+    43490,
+    51140,
+    64820
+   ]
+  },
+  "31-1131": {
+   "title": "Nursing Assistants",
+   "p25_median_p75": [
+    37260,
+    42260,
+    47220
+   ]
+  },
+  "33-9032": {
+   "title": "Security Guards",
+   "p25_median_p75": [
+    35210,
+    38020,
+    46200
+   ]
+  },
+  "37-2011": {
+   "title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+   "p25_median_p75": [
+    32240,
+    36840,
+    44060
+   ]
+  },
+  "43-9061": {
+   "title": "Office Clerks, General",
+   "p25_median_p75": [
+    36350,
+    45010,
+    54300
+   ]
+  },
+  "47-2061": {
+   "title": "Construction Laborers",
+   "p25_median_p75": [
+    38620,
+    47120,
+    59740
+   ]
+  },
+  "11-3031": {
+   "title": "Financial Managers",
+   "p25_median_p75": [
+    125490,
+    166570,
+    219980
+   ]
+  },
+  "11-9032": {
+   "title": "Education Administrators, Kindergarten through Secondary",
+   "p25_median_p75": [
+    86040,
+    105870,
+    134630
+   ]
+  },
+  "11-9111": {
+   "title": "Medical and Health Services Managers",
+   "p25_median_p75": [
+    94700,
+    123860,
+    166100
+   ]
+  },
+  "13-1081": {
+   "title": "Logisticians",
+   "p25_median_p75": [
+    64440,
+    82320,
+    106190
+   ]
+  },
+  "15-1212": {
+   "title": "Information Security Analysts",
+   "p25_median_p75": [
+    97810,
+    129180,
+    163500
+   ]
+  },
+  "15-1255": {
+   "title": "Web and Digital Interface Designers",
+   "p25_median_p75": [
+    73290,
+    104000,
+    158820
+   ]
+  },
+  "27-2021": {
+   "title": "Athletes and Sports Competitors",
+   "p25_median_p75": [
+    36790,
+    66710,
+    109880
+   ]
+  },
+  "35-1011": {
+   "title": "Chefs and Head Cooks",
+   "p25_median_p75": [
+    48440,
+    62470,
+    78750
+   ]
+  },
+  "35-9021": {
+   "title": "Dishwashers",
+   "p25_median_p75": [
+    29690,
+    34810,
+    37440
+   ]
+  },
+  "41-1011": {
+   "title": "First-Line Supervisors of Retail Sales Workers",
+   "p25_median_p75": [
+    38590,
+    48520,
+    62130
+   ]
+  },
+  "41-3031": {
+   "title": "Securities, Commodities, and Financial Services Sales Agents",
+   "p25_median_p75": [
+    56540,
+    78660,
+    129950
+   ]
+  },
+  "43-5071": {
+   "title": "Shipping, Receiving, and Inventory Clerks",
+   "p25_median_p75": [
+    38200,
+    45260,
+    51570
+   ]
+  },
+  "47-2073": {
+   "title": "Operating Engineers and Other Construction Equipment Operators",
+   "p25_median_p75": [
+    48680,
+    59850,
+    77170
+   ]
+  },
+  "47-5071": {
+   "title": "Roustabouts, Oil and Gas",
+   "p25_median_p75": [
+    38850,
+    46960,
+    58120
+   ]
+  },
+  "49-9021": {
+   "title": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+   "p25_median_p75": [
+    48360,
+    61010,
+    77060
+   ]
+  },
+  "53-7081": {
+   "title": "Refuse and Recyclable Material Collectors",
+   "p25_median_p75": [
+    39080,
+    49690,
+    62020
+   ]
+  },
+  "11-9021": {
+   "title": "Construction Managers",
+   "p25_median_p75": [
+    88550,
+    114990,
+    151640
+   ]
+  },
+  "11-9141": {
+   "title": "Property, Real Estate, and Community Association Managers",
+   "p25_median_p75": [
+    50720,
+    69990,
+    97910
+   ]
+  },
+  "11-9151": {
+   "title": "Social and Community Service Managers",
+   "p25_median_p75": [
+    64290,
+    80390,
+    103200
+   ]
+  },
+  "13-1151": {
+   "title": "Training and Development Specialists",
+   "p25_median_p75": [
+    50110,
+    69280,
+    95050
+   ]
+  },
+  "13-2072": {
+   "title": "Loan Officers",
+   "p25_median_p75": [
+    52730,
+    76690,
+    104080
+   ]
+  },
+  "25-4012": {
+   "title": "Curators",
+   "p25_median_p75": [
+    48870,
+    63420,
+    83080
+   ]
+  },
+  "27-1013": {
+   "title": "Fine Artists, Including Painters, Sculptors, and Illustrators",
+   "p25_median_p75": [
+    37560,
+    55490,
+    83200
+   ]
+  },
+  "27-1024": {
+   "title": "Graphic Designers",
+   "p25_median_p75": [
+    49040,
+    62960,
+    81830
+   ]
+  },
+  "27-2012": {
+   "title": "Producers and Directors",
+   "p25_median_p75": [
+    62670,
+    90360,
+    134800
+   ]
+  },
+  "27-3023": {
+   "title": "News Analysts, Reporters, and Journalists",
+   "p25_median_p75": [
+    45370,
+    62200,
+    98450
+   ]
+  },
+  "27-3099": {
+   "title": "Media and Communication Workers, All Other",
+   "p25_median_p75": [
+    49790,
+    73620,
+    103820
+   ]
+  },
+  "29-1127": {
+   "title": "Speech-Language Pathologists",
+   "p25_median_p75": [
+    77730,
+    97870,
+    114570
+   ]
+  },
+  "29-1214": {
+   "title": "Emergency Medicine Physicians",
+   "p25_median_p75": [
+    184830,
+    335550,
+    418890
+   ]
+  },
+  "29-1218": {
+   "title": "Obstetricians and Gynecologists",
+   "p25_median_p75": [
+    179810,
+    292910,
+    369390
+   ]
+  },
+  "29-2056": {
+   "title": "Veterinary Technologists and Technicians",
+   "p25_median_p75": [
+    38910,
+    47380,
+    57650
+   ]
+  },
+  "29-2061": {
+   "title": "Licensed Practical and Licensed Vocational Nurses",
+   "p25_median_p75": [
+    59000,
+    64400,
+    76030
+   ]
+  },
+  "33-3012": {
+   "title": "Correctional Officers and Jailers",
+   "p25_median_p75": [
+    48640,
+    58940,
+    75850
+   ]
+  },
+  "39-3011": {
+   "title": "Gambling Dealers",
+   "p25_median_p75": [
+    25810,
+    34320,
+    49180
+   ]
+  },
+  "39-3031": {
+   "title": "Ushers, Lobby Attendants, and Ticket Takers",
+   "p25_median_p75": [
+    28310,
+    32910,
+    36940
+   ]
+  },
+  "39-4031": {
+   "title": "Morticians, Undertakers, and Funeral Arrangers",
+   "p25_median_p75": [
+    42430,
+    55010,
+    72010
+   ]
+  },
+  "39-5092": {
+   "title": "Manicurists and Pedicurists",
+   "p25_median_p75": [
+    34010,
+    35760,
+    41650
+   ]
+  },
+  "39-5094": {
+   "title": "Skincare Specialists",
+   "p25_median_p75": [
+    36040,
+    45330,
+    59700
+   ]
+  },
+  "39-9032": {
+   "title": "Recreation Workers",
+   "p25_median_p75": [
+    31780,
+    36560,
+    43470
+   ]
+  },
+  "41-2011": {
+   "title": "Cashiers",
+   "p25_median_p75": [
+    28720,
+    32880,
+    36330
+   ]
+  },
+  "41-9022": {
+   "title": "Real Estate Sales Agents",
+   "p25_median_p75": [
+    40040,
+    52830,
+    82020
+   ]
+  },
+  "43-3071": {
+   "title": "Tellers",
+   "p25_median_p75": [
+    37040,
+    43030,
+    46580
+   ]
+  },
+  "43-4171": {
+   "title": "Receptionists and Information Clerks",
+   "p25_median_p75": [
+    33960,
+    38010,
+    45130
+   ]
+  },
+  "47-2031": {
+   "title": "Carpenters",
+   "p25_median_p75": [
+    48510,
+    60580,
+    76830
+   ]
+  },
+  "49-3011": {
+   "title": "Aircraft Mechanics and Service Technicians",
+   "p25_median_p75": [
+    62630,
+    79870,
+    99130
+   ]
+  },
+  "49-3021": {
+   "title": "Automotive Body and Related Repairers",
+   "p25_median_p75": [
+    45750,
+    54890,
+    69200
+   ]
+  },
+  "49-9051": {
+   "title": "Electrical Power-Line Installers and Repairers",
+   "p25_median_p75": [
+    67270,
+    95320,
+    109740
+   ]
+  },
+  "49-9052": {
+   "title": "Telecommunications Line Installers and Repairers",
+   "p25_median_p75": [
+    54310,
+    74330,
+    95850
+   ]
+  },
+  "51-4041": {
+   "title": "Machinists",
+   "p25_median_p75": [
+    47570,
+    58750,
+    67700
+   ]
+  },
+  "51-6052": {
+   "title": "Tailors, Dressmakers, and Custom Sewers",
+   "p25_median_p75": [
+    35230,
+    41640,
+    50200
+   ]
+  },
+  "51-9061": {
+   "title": "Inspectors, Testers, Sorters, Samplers, and Weighers",
+   "p25_median_p75": [
+    39890,
+    48570,
+    61440
+   ]
+  },
+  "53-2012": {
+   "title": "Commercial Pilots",
+   "p25_median_p75": [
+    84540,
+    123220,
+    190440
+   ]
+  },
+  "11-2022": {
+   "title": "Sales Managers",
+   "p25_median_p75": [
+    100360,
+    148270,
+    207340
+   ]
+  },
+  "11-9013": {
+   "title": "Farmers, Ranchers, and Other Agricultural Managers",
+   "p25_median_p75": [
+    66300,
+    89900,
+    118860
+   ]
+  },
+  "11-9081": {
+   "title": "Lodging Managers",
+   "p25_median_p75": [
+    49530,
+    69250,
+    94030
+   ]
+  },
+  "13-1031": {
+   "title": "Claims Adjusters, Examiners, and Investigators",
+   "p25_median_p75": [
+    61160,
+    78000,
+    98030
+   ]
+  },
+  "13-1082": {
+   "title": "Project Management Specialists",
+   "p25_median_p75": [
+    78440,
+    102320,
+    133100
+   ]
+  },
+  "13-1121": {
+   "title": "Meeting, Convention, and Event Planners",
+   "p25_median_p75": [
+    46970,
+    61160,
+    78790
+   ]
+  },
+  "13-1131": {
+   "title": "Fundraisers",
+   "p25_median_p75": [
+    57480,
+    72550,
+    92180
+   ]
+  },
+  "15-1211": {
+   "title": "Computer Systems Analysts",
+   "p25_median_p75": [
+    82860,
+    105850,
+    134110
+   ]
+  },
+  "17-3019": {
+   "title": "Drafters, All Other",
+   "p25_median_p75": [
+    51650,
+    63520,
+    79700
+   ]
+  },
+  "19-1029": {
+   "title": "Biological Scientists, All Other",
+   "p25_median_p75": [
+    76800,
+    98920,
+    127670
+   ]
+  },
+  "19-3051": {
+   "title": "Urban and Regional Planners",
+   "p25_median_p75": [
+    72020,
+    89320,
+    110030
+   ]
+  },
+  "21-1012": {
+   "title": "Educational, Guidance, and Career Counselors and Advisors",
+   "p25_median_p75": [
+    51270,
+    64330,
+    82870
+   ]
+  },
+  "21-1021": {
+   "title": "Child, Family, and School Social Workers",
+   "p25_median_p75": [
+    48270,
+    59550,
+    76070
+   ]
+  },
+  "25-2011": {
+   "title": "Preschool Teachers, Except Special Education",
+   "p25_median_p75": [
+    34530,
+    38140,
+    47550
+   ]
+  },
+  "27-2022": {
+   "title": "Coaches and Scouts",
+   "p25_median_p75": [
+    35330,
+    47320,
+    64710
+   ]
+  },
+  "27-2023": {
+   "title": "Umpires, Referees, and Other Sports Officials",
+   "p25_median_p75": [
+    32260,
+    40710,
+    57160
+   ]
+  },
+  "27-3041": {
+   "title": "Editors",
+   "p25_median_p75": [
+    57300,
+    77920,
+    106100
+   ]
+  },
+  "27-4032": {
+   "title": "Film and Video Editors",
+   "p25_median_p75": [
+    52720,
+    75420,
+    105310
+   ]
+  },
+  "29-1071": {
+   "title": "Physician Assistants",
+   "p25_median_p75": [
+    120670,
+    135880,
+    163980
+   ]
+  },
+  "29-1123": {
+   "title": "Physical Therapists",
+   "p25_median_p75": [
+    86160,
+    102760,
+    121160
+   ]
+  },
+  "29-1131": {
+   "title": "Veterinarians",
+   "p25_median_p75": [
+    101460,
+    130100,
+    166120
+   ]
+  },
+  "29-1216": {
+   "title": "General Internal Medicine Physicians",
+   "p25_median_p75": [
+    124470,
+    256560,
+    374850
+   ]
+  },
+  "29-1221": {
+   "title": "Pediatricians, General",
+   "p25_median_p75": [
+    138290,
+    210040,
+    273700
+   ]
+  },
+  "29-1242": {
+   "title": "Orthopedic Surgeons, Except Pediatric",
+   "p25_median_p75": [
+    180610,
+    358550,
+    530700
+   ]
+  },
+  "29-2042": {
+   "title": "Emergency Medical Technicians",
+   "p25_median_p75": [
+    37960,
+    44470,
+    50100
+   ]
+  },
+  "29-2055": {
+   "title": "Surgical Technologists",
+   "p25_median_p75": [
+    54690,
+    64650,
+    79750
+   ]
+  },
+  "33-2011": {
+   "title": "Firefighters",
+   "p25_median_p75": [
+    44490,
+    59280,
+    77250
+   ]
+  },
+  "33-3021": {
+   "title": "Detectives and Criminal Investigators",
+   "p25_median_p75": [
+    69330,
+    93790,
+    120520
+   ]
+  },
+  "33-9093": {
+   "title": "Transportation Security Screeners",
+   "p25_median_p75": [
+    57050,
+    66770,
+    72820
+   ]
+  },
+  "35-1012": {
+   "title": "First-Line Supervisors of Food Preparation and Serving Workers",
+   "p25_median_p75": [
+    35980,
+    44080,
+    54570
+   ]
+  },
+  "35-2021": {
+   "title": "Food Preparation Workers",
+   "p25_median_p75": [
+    29950,
+    35320,
+    38550
+   ]
+  },
+  "35-3011": {
+   "title": "Bartenders",
+   "p25_median_p75": [
+    27400,
+    34340,
+    47570
+   ]
+  },
+  "35-9031": {
+   "title": "Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop",
+   "p25_median_p75": [
+    27570,
+    31200,
+    36250
+   ]
+  },
+  "37-3013": {
+   "title": "Tree Trimmers and Pruners",
+   "p25_median_p75": [
+    44840,
+    50960,
+    63900
+   ]
+  },
+  "39-3091": {
+   "title": "Amusement and Recreation Attendants",
+   "p25_median_p75": [
+    27660,
+    32150,
+    36590
+   ]
+  },
+  "39-6011": {
+   "title": "Baggage Porters and Bellhops",
+   "p25_median_p75": [
+    31200,
+    37080,
+    44130
+   ]
+  },
+  "41-3011": {
+   "title": "Advertising Sales Agents",
+   "p25_median_p75": [
+    47020,
+    64820,
+    99990
+   ]
+  },
+  "41-3021": {
+   "title": "Insurance Sales Agents",
+   "p25_median_p75": [
+    46870,
+    62280,
+    96950
+   ]
+  },
+  "43-1011": {
+   "title": "First-Line Supervisors of Office and Administrative Support Workers",
+   "p25_median_p75": [
+    55950,
+    69500,
+    85090
+   ]
+  },
+  "43-3031": {
+   "title": "Bookkeeping, Accounting, and Auditing Clerks",
+   "p25_median_p75": [
+    43520,
+    50670,
+    61470
+   ]
+  },
+  "43-4081": {
+   "title": "Hotel, Motel, and Resort Desk Clerks",
+   "p25_median_p75": [
+    29810,
+    35070,
+    38100
+   ]
+  },
+  "43-5021": {
+   "title": "Couriers and Messengers",
+   "p25_median_p75": [
+    36070,
+    39200,
+    45280
+   ]
+  },
+  "43-5031": {
+   "title": "Public Safety Telecommunicators",
+   "p25_median_p75": [
+    45210,
+    53040,
+    64260
+   ]
+  },
+  "43-6011": {
+   "title": "Executive Secretaries and Executive Administrative Assistants",
+   "p25_median_p75": [
+    61390,
+    76590,
+    94390
+   ]
+  },
+  "43-9021": {
+   "title": "Data Entry Keyers",
+   "p25_median_p75": [
+    35760,
+    41340,
+    48410
+   ]
+  },
+  "45-4029": {
+   "title": "Logging Workers, All Other",
+   "p25_median_p75": [
+    41900,
+    50840,
+    61450
+   ]
+  },
+  "47-2021": {
+   "title": "Brickmasons and Blockmasons",
+   "p25_median_p75": [
+    51110,
+    62120,
+    79350
+   ]
+  },
+  "47-2051": {
+   "title": "Cement Masons and Concrete Finishers",
+   "p25_median_p75": [
+    47010,
+    57020,
+    66870
+   ]
+  },
+  "47-2081": {
+   "title": "Drywall and Ceiling Tile Installers",
+   "p25_median_p75": [
+    47440,
+    58930,
+    74230
+   ]
+  },
+  "47-2141": {
+   "title": "Painters, Construction and Maintenance",
+   "p25_median_p75": [
+    44640,
+    49400,
+    61660
+   ]
+  },
+  "47-2152": {
+   "title": "Plumbers, Pipefitters, and Steamfitters",
+   "p25_median_p75": [
+    50190,
+    63800,
+    85110
+   ]
+  },
+  "47-5049": {
+   "title": "Underground Mining Machine Operators, All Other",
+   "p25_median_p75": [
+    51670,
+    70130,
+    83120
+   ]
+  },
+  "49-3031": {
+   "title": "Bus and Truck Mechanics and Diesel Engine Specialists",
+   "p25_median_p75": [
+    50540,
+    61770,
+    75470
+   ]
+  },
+  "51-1011": {
+   "title": "First-Line Supervisors of Production and Operating Workers",
+   "p25_median_p75": [
+    58630,
+    74450,
+    91680
+   ]
+  },
+  "51-4121": {
+   "title": "Welders, Cutters, Solderers, and Brazers",
+   "p25_median_p75": [
+    46790,
+    53750,
+    63010
+   ]
+  },
+  "51-8031": {
+   "title": "Water and Wastewater Treatment Plant and System Operators",
+   "p25_median_p75": [
+    48040,
+    60020,
+    74780
+   ]
+  },
+  "53-2011": {
+   "title": "Airline Pilots, Copilots, and Flight Engineers",
+   "p25_median_p75": [
+    182280,
+    232140,
+    384440
+   ]
+  },
+  "53-2031": {
+   "title": "Flight Attendants",
+   "p25_median_p75": [
+    51760,
+    63580,
+    95640
+   ]
+  },
+  "53-3052": {
+   "title": "Bus Drivers, Transit and Intercity",
+   "p25_median_p75": [
+    47530,
+    59050,
+    70700
+   ]
+  },
+  "53-3054": {
+   "title": "Taxi Drivers",
+   "p25_median_p75": [
+    37790,
+    42100,
+    60960
+   ]
+  },
+  "53-4031": {
+   "title": "Railroad Conductors and Yardmasters",
+   "p25_median_p75": [
+    65610,
+    78000,
+    83820
+   ]
+  },
+  "53-5011": {
+   "title": "Sailors and Marine Oilers",
+   "p25_median_p75": [
+    41430,
+    51520,
+    67590
+   ]
+  },
+  "53-5021": {
+   "title": "Captains, Mates, and Pilots of Water Vessels",
+   "p25_median_p75": [
+    63880,
+    92460,
+    127180
+   ]
+  },
+  "53-6021": {
+   "title": "Parking Attendants",
+   "p25_median_p75": [
+    29960,
+    35150,
+    37670
+   ]
+  },
+  "53-6031": {
+   "title": "Automotive and Watercraft Service Attendants",
+   "p25_median_p75": [
+    31300,
+    35670,
+    39320
+   ]
+  },
+  "53-7051": {
+   "title": "Industrial Truck and Tractor Operators",
+   "p25_median_p75": [
+    40030,
+    46420,
+    54770
+   ]
+  },
+  "11-2011": {
+   "title": "Advertising and Promotions Managers",
+   "p25_median_p75": [
+    91370,
+    133660,
+    201050
+   ]
+  },
+  "11-2032": {
+   "title": "Public Relations Managers",
+   "p25_median_p75": [
+    106580,
+    146910,
+    204520
+   ]
+  },
+  "13-1041": {
+   "title": "Compliance Officers",
+   "p25_median_p75": [
+    61280,
+    80730,
+    109010
+   ]
+  },
+  "13-2053": {
+   "title": "Insurance Underwriters",
+   "p25_median_p75": [
+    64620,
+    81370,
+    110390
+   ]
+  },
+  "13-2082": {
+   "title": "Tax Preparers",
+   "p25_median_p75": [
+    38910,
+    54920,
+    76300
+   ]
+  },
+  "15-1241": {
+   "title": "Computer Network Architects",
+   "p25_median_p75": [
+    104620,
+    134050,
+    168200
+   ]
+  }
+ },
+ "phrases": {
+  "doctor": "29-1215",
+  "physician": "29-1215",
+  "md": "29-1215",
+  "family doctor": "29-1215",
+  "family physician": "29-1215",
+  "general practitioner": "29-1215",
+  "gp": "29-1215",
+  "primary care doctor": "29-1215",
+  "primary care physician": "29-1215",
+  "medical doctor": "29-1215",
+  "internist": "29-1216",
+  "internal medicine doctor": "29-1216",
+  "hospitalist": "29-1216",
+  "surgeon": "29-1249",
+  "orthopedic surgeon": "29-1242",
+  "orthopaedic surgeon": "29-1242",
+  "orthopedist": "29-1242",
+  "anesthesiologist": "29-1211",
+  "cardiologist": "29-1212",
+  "dermatologist": "29-1213",
+  "emergency physician": "29-1214",
+  "emergency room doctor": "29-1214",
+  "er doctor": "29-1214",
+  "emergency medicine doctor": "29-1214",
+  "neurologist": "29-1217",
+  "ob-gyn": "29-1218",
+  "obgyn": "29-1218",
+  "gynecologist": "29-1218",
+  "obstetrician": "29-1218",
+  "pediatrician": "29-1221",
+  "kids doctor": "29-1221",
+  "childrens doctor": "29-1221",
+  "pathologist": "29-1222",
+  "psychiatrist": "29-1223",
+  "radiologist": "29-1224",
+  "ophthalmologist": "29-1241",
+  "eye doctor": "29-1241",
+  "dentist": "29-1021",
+  "orthodontist": "29-1023",
+  "oral surgeon": "29-1022",
+  "optometrist": "29-1041",
+  "chiropractor": "29-1011",
+  "podiatrist": "29-1081",
+  "veterinarian": "29-1131",
+  "vet": "29-1131",
+  "animal doctor": "29-1131",
+  "pharmacist": "29-1051",
+  "physician assistant": "29-1071",
+  "pa": "29-1071",
+  "pa-c": "29-1071",
+  "nurse practitioner": "29-1171",
+  "np": "29-1171",
+  "nurse": "29-1141",
+  "rn": "29-1141",
+  "registered nurse": "29-1141",
+  "icu nurse": "29-1141",
+  "er nurse": "29-1141",
+  "emergency nurse": "29-1141",
+  "travel nurse": "29-1141",
+  "staff nurse": "29-1141",
+  "hospital nurse": "29-1141",
+  "night nurse": "29-1141",
+  "surgical nurse": "29-1141",
+  "pediatric nurse": "29-1141",
+  "school nurse": "29-1141",
+  "charge nurse": "29-1141",
+  "nurse manager": "29-1141",
+  "crna": "29-1151",
+  "nurse anesthetist": "29-1151",
+  "midwife": "29-1161",
+  "nurse midwife": "29-1161",
+  "lpn": "29-2061",
+  "lvn": "29-2061",
+  "licensed practical nurse": "29-2061",
+  "licensed vocational nurse": "29-2061",
+  "cna": "31-1131",
+  "nursing assistant": "31-1131",
+  "nurses aide": "31-1131",
+  "nurse aide": "31-1131",
+  "patient care tech": "31-1131",
+  "patient care technician": "31-1131",
+  "home health aide": "31-1121",
+  "home health worker": "31-1121",
+  "caregiver": "31-1122",
+  "personal care aide": "31-1122",
+  "care aide": "31-1122",
+  "carer": "31-1122",
+  "home aide": "31-1122",
+  "personal care assistant": "31-1122",
+  "medical assistant": "31-9092",
+  "dental hygienist": "29-1292",
+  "hygienist": "29-1292",
+  "dental assistant": "31-9091",
+  "paramedic": "29-2043",
+  "emt": "29-2042",
+  "emergency medical technician": "29-2042",
+  "ambulance worker": "29-2042",
+  "physical therapist": "29-1123",
+  "pt": "29-1123",
+  "physiotherapist": "29-1123",
+  "physical therapist assistant": "31-2021",
+  "pta": "31-2021",
+  "occupational therapist": "29-1122",
+  "ot": "29-1122",
+  "speech therapist": "29-1127",
+  "speech pathologist": "29-1127",
+  "speech language pathologist": "29-1127",
+  "slp": "29-1127",
+  "respiratory therapist": "29-1126",
+  "massage therapist": "31-9011",
+  "masseuse": "31-9011",
+  "radiology tech": "29-2034",
+  "radiologic technologist": "29-2034",
+  "x-ray tech": "29-2034",
+  "xray tech": "29-2034",
+  "mri tech": "29-2034",
+  "ultrasound tech": "29-2034",
+  "sonographer": "29-2034",
+  "lab tech": "29-2011",
+  "medical lab technician": "29-2011",
+  "lab technician": "29-2011",
+  "medical technologist": "29-2011",
+  "clinical lab": "29-2011",
+  "phlebotomist": "31-9097",
+  "pharmacy tech": "29-2052",
+  "pharmacy technician": "29-2052",
+  "dietitian": "29-1031",
+  "nutritionist": "29-1031",
+  "psychologist": "19-3033",
+  "clinical psychologist": "19-3033",
+  "therapist": "21-1014",
+  "counselor": "21-1014",
+  "counsellor": "21-1014",
+  "mental health counselor": "21-1014",
+  "mental health therapist": "21-1014",
+  "psychotherapist": "21-1014",
+  "marriage and family therapist": "21-1013",
+  "couples therapist": "21-1013",
+  "school counselor": "21-1012",
+  "guidance counselor": "21-1012",
+  "college counselor": "21-1012",
+  "social worker": "21-1021",
+  "case worker": "21-1021",
+  "caseworker": "21-1021",
+  "medical social worker": "21-1022",
+  "hospital social worker": "21-1022",
+  "health administrator": "11-9111",
+  "hospital administrator": "11-9111",
+  "healthcare manager": "11-9111",
+  "healthcare administrator": "11-9111",
+  "medical office manager": "11-9111",
+  "teacher": "25-2021",
+  "elementary teacher": "25-2021",
+  "elementary school teacher": "25-2021",
+  "grade school teacher": "25-2021",
+  "primary school teacher": "25-2021",
+  "3rd grade teacher": "25-2021",
+  "fifth grade teacher": "25-2021",
+  "kindergarten teacher": "25-2012",
+  "preschool teacher": "25-2011",
+  "pre-k teacher": "25-2011",
+  "pre k teacher": "25-2011",
+  "middle school teacher": "25-2022",
+  "junior high teacher": "25-2022",
+  "high school teacher": "25-2031",
+  "secondary school teacher": "25-2031",
+  "high school english teacher": "25-2031",
+  "high school math teacher": "25-2031",
+  "high school science teacher": "25-2031",
+  "high school history teacher": "25-2031",
+  "special education teacher": "25-2056",
+  "special ed teacher": "25-2056",
+  "sped teacher": "25-2056",
+  "teaching assistant": "25-9042",
+  "teachers aide": "25-9042",
+  "paraprofessional": "25-9042",
+  "classroom aide": "25-9042",
+  "para": "25-9042",
+  "substitute teacher": "25-3031",
+  "sub teacher": "25-3031",
+  "tutor": "25-3041",
+  "professor": "25-1199",
+  "college professor": "25-1199",
+  "university professor": "25-1199",
+  "lecturer": "25-1199",
+  "adjunct": "25-1199",
+  "adjunct professor": "25-1199",
+  "instructor": "25-1199",
+  "principal": "11-9032",
+  "school principal": "11-9032",
+  "assistant principal": "11-9032",
+  "vice principal": "11-9032",
+  "headmaster": "11-9032",
+  "librarian": "25-4022",
+  "coach": "27-2022",
+  "sports coach": "27-2022",
+  "athletic coach": "27-2022",
+  "daycare worker": "39-9011",
+  "childcare worker": "39-9011",
+  "child care worker": "39-9011",
+  "daycare teacher": "39-9011",
+  "nanny": "39-9011",
+  "babysitter": "39-9011",
+  "au pair": "39-9011",
+  "lawyer": "23-1011",
+  "attorney": "23-1011",
+  "counsel": "23-1011",
+  "litigator": "23-1011",
+  "corporate lawyer": "23-1011",
+  "general counsel": "23-1011",
+  "solicitor": "23-1011",
+  "barrister": "23-1011",
+  "paralegal": "23-2011",
+  "legal assistant": "23-2011",
+  "judge": "23-1023",
+  "magistrate": "23-1023",
+  "legal secretary": "43-6012",
+  "accountant": "13-2011",
+  "cpa": "13-2011",
+  "auditor": "13-2011",
+  "staff accountant": "13-2011",
+  "senior accountant": "13-2011",
+  "controller": "13-2011",
+  "bookkeeper": "43-3031",
+  "accounting clerk": "43-3031",
+  "bookkeeping": "43-3031",
+  "financial advisor": "13-2052",
+  "financial planner": "13-2052",
+  "wealth manager": "13-2052",
+  "wealth advisor": "13-2052",
+  "investment advisor": "13-2052",
+  "financial adviser": "13-2052",
+  "financial analyst": "13-2051",
+  "investment analyst": "13-2051",
+  "equity analyst": "13-2051",
+  "analyst": "13-2051",
+  "investment banker": "13-2051",
+  "banker": "13-2051",
+  "private equity": "13-2051",
+  "hedge fund": "13-2051",
+  "asset manager": "13-2051",
+  "financial manager": "11-3031",
+  "finance manager": "11-3031",
+  "cfo": "11-3031",
+  "chief financial officer": "11-3031",
+  "treasurer": "11-3031",
+  "loan officer": "13-2072",
+  "mortgage officer": "13-2072",
+  "mortgage broker": "13-2072",
+  "lender": "13-2072",
+  "bank teller": "43-3071",
+  "teller": "43-3071",
+  "insurance agent": "41-3021",
+  "insurance broker": "41-3021",
+  "insurance salesperson": "41-3021",
+  "insurance adjuster": "13-1031",
+  "claims adjuster": "13-1031",
+  "claims examiner": "13-1031",
+  "underwriter": "13-2053",
+  "insurance underwriter": "13-2053",
+  "tax preparer": "13-2082",
+  "tax accountant": "13-2082",
+  "actuary": "15-2011",
+  "economist": "19-3011",
+  "real estate agent": "41-9022",
+  "realtor": "41-9022",
+  "real estate salesperson": "41-9022",
+  "real estate sales": "41-9022",
+  "real estate broker": "41-9021",
+  "stockbroker": "41-3031",
+  "stock broker": "41-3031",
+  "securities broker": "41-3031",
+  "trader": "41-3031",
+  "financial sales": "41-3031",
+  "software engineer": "15-1252",
+  "software developer": "15-1252",
+  "developer": "15-1252",
+  "programmer": "15-1252",
+  "coder": "15-1252",
+  "swe": "15-1252",
+  "software": "15-1252",
+  "full stack developer": "15-1252",
+  "backend engineer": "15-1252",
+  "frontend engineer": "15-1252",
+  "app developer": "15-1252",
+  "mobile developer": "15-1252",
+  "devops engineer": "15-1252",
+  "ios developer": "15-1252",
+  "android developer": "15-1252",
+  "computer programmer": "15-1251",
+  "web developer": "15-1254",
+  "web designer": "15-1254",
+  "ux designer": "15-1255",
+  "ui designer": "15-1255",
+  "ux ui designer": "15-1255",
+  "product designer": "15-1255",
+  "digital designer": "15-1255",
+  "data scientist": "15-2051",
+  "machine learning engineer": "15-2051",
+  "ml engineer": "15-2051",
+  "ai engineer": "15-2051",
+  "ai researcher": "15-2051",
+  "data analyst": "15-2051",
+  "business intelligence analyst": "15-2051",
+  "bi analyst": "15-2051",
+  "systems analyst": "15-1211",
+  "computer systems analyst": "15-1211",
+  "it analyst": "15-1211",
+  "cybersecurity": "15-1212",
+  "cyber security": "15-1212",
+  "security analyst": "15-1212",
+  "information security": "15-1212",
+  "infosec": "15-1212",
+  "network engineer": "15-1241",
+  "network architect": "15-1241",
+  "sysadmin": "15-1244",
+  "system administrator": "15-1244",
+  "systems administrator": "15-1244",
+  "network administrator": "15-1244",
+  "it admin": "15-1244",
+  "it administrator": "15-1244",
+  "it professional": "15-1244",
+  "it": "15-1244",
+  "it manager": "15-1244",
+  "database administrator": "15-1242",
+  "dba": "15-1242",
+  "tech support": "15-1232",
+  "help desk": "15-1232",
+  "it support": "15-1232",
+  "computer support": "15-1232",
+  "helpdesk": "15-1232",
+  "desktop support": "15-1232",
+  "it director": "11-3021",
+  "cto": "11-3021",
+  "chief technology officer": "11-3021",
+  "engineering manager": "11-3021",
+  "software manager": "11-3021",
+  "it project manager": "11-3021",
+  "engineer": "17-2141",
+  "mechanical engineer": "17-2141",
+  "civil engineer": "17-2051",
+  "electrical engineer": "17-2071",
+  "electronics engineer": "17-2072",
+  "chemical engineer": "17-2041",
+  "aerospace engineer": "17-2011",
+  "industrial engineer": "17-2112",
+  "manufacturing engineer": "17-2112",
+  "biomedical engineer": "17-2031",
+  "bioengineer": "17-2031",
+  "environmental engineer": "17-2081",
+  "petroleum engineer": "17-2171",
+  "materials engineer": "17-2131",
+  "computer hardware engineer": "17-2061",
+  "hardware engineer": "17-2061",
+  "drafter": "17-3019",
+  "cad drafter": "17-3019",
+  "draftsman": "17-3019",
+  "surveyor": "17-1022",
+  "architect": "17-1011",
+  "landscape architect": "17-1012",
+  "urban planner": "19-3051",
+  "city planner": "19-3051",
+  "planner": "19-3051",
+  "chemist": "19-2031",
+  "biologist": "19-1029",
+  "life scientist": "19-1029",
+  "wildlife biologist": "19-1029",
+  "medical scientist": "19-1042",
+  "research scientist": "19-1042",
+  "scientist": "19-1042",
+  "researcher": "19-1042",
+  "lab scientist": "19-1042",
+  "postdoc": "19-1042",
+  "phd researcher": "19-1042",
+  "physicist": "19-2012",
+  "geologist": "19-2042",
+  "geoscientist": "19-2042",
+  "environmental scientist": "19-2041",
+  "statistician": "15-2041",
+  "mathematician": "15-2021",
+  "operations research analyst": "15-2031",
+  "manager": "11-1021",
+  "general manager": "11-1021",
+  "operations manager": "11-1021",
+  "business manager": "11-1021",
+  "director": "11-1021",
+  "senior manager": "11-1021",
+  "middle manager": "11-1021",
+  "supervisor": "11-1021",
+  "ceo": "11-1011",
+  "chief executive": "11-1011",
+  "president": "11-1011",
+  "executive": "11-1011",
+  "business owner": "11-1011",
+  "owner": "11-1011",
+  "company owner": "11-1011",
+  "founder": "11-1011",
+  "entrepreneur": "11-1011",
+  "small business owner": "11-1011",
+  "self-employed business owner": "11-1011",
+  "marketing manager": "11-2021",
+  "brand manager": "11-2021",
+  "marketing director": "11-2021",
+  "head of marketing": "11-2021",
+  "sales manager": "11-2022",
+  "sales director": "11-2022",
+  "regional sales manager": "11-2022",
+  "advertising manager": "11-2011",
+  "promotions manager": "11-2011",
+  "pr manager": "11-2032",
+  "public relations manager": "11-2032",
+  "product manager": "11-2021",
+  "program manager": "11-2021",
+  "project manager": "13-1082",
+  "project management": "13-1082",
+  "pmp": "13-1082",
+  "operations analyst": "13-1111",
+  "business analyst": "13-1111",
+  "management consultant": "13-1111",
+  "consultant": "13-1111",
+  "strategy consultant": "13-1111",
+  "management analyst": "13-1111",
+  "hr": "13-1071",
+  "human resources": "13-1071",
+  "hr specialist": "13-1071",
+  "hr manager": "13-1071",
+  "recruiter": "13-1071",
+  "talent acquisition": "13-1071",
+  "headhunter": "13-1071",
+  "hr recruiter": "13-1071",
+  "training specialist": "13-1151",
+  "corporate trainer": "13-1151",
+  "trainer": "13-1151",
+  "learning and development": "13-1151",
+  "compliance officer": "13-1041",
+  "compliance analyst": "13-1041",
+  "buyer": "13-1023",
+  "purchasing agent": "13-1023",
+  "purchasing": "13-1023",
+  "procurement": "13-1023",
+  "procurement specialist": "13-1023",
+  "logistics": "13-1081",
+  "logistician": "13-1081",
+  "supply chain": "13-1081",
+  "supply chain analyst": "13-1081",
+  "supply chain manager": "13-1081",
+  "event planner": "13-1121",
+  "meeting planner": "13-1121",
+  "wedding planner": "13-1121",
+  "market research analyst": "13-1161",
+  "marketing analyst": "13-1161",
+  "marketing specialist": "13-1161",
+  "marketing": "13-1161",
+  "digital marketer": "13-1161",
+  "seo specialist": "13-1161",
+  "social media manager": "13-1161",
+  "marketing coordinator": "13-1161",
+  "public relations": "27-3031",
+  "pr specialist": "27-3031",
+  "communications specialist": "27-3031",
+  "communications": "27-3031",
+  "publicist": "27-3031",
+  "comms": "27-3031",
+  "fundraiser": "13-1131",
+  "development officer": "13-1131",
+  "development director": "13-1131",
+  "nonprofit director": "11-9151",
+  "executive director": "11-9151",
+  "nonprofit manager": "11-9151",
+  "program director": "11-9151",
+  "construction manager": "11-9021",
+  "general contractor": "11-9021",
+  "contractor": "11-9021",
+  "site manager": "11-9021",
+  "property manager": "11-9141",
+  "real estate manager": "11-9141",
+  "building manager": "11-9141",
+  "apartment manager": "11-9141",
+  "restaurant manager": "11-9051",
+  "food service manager": "11-9051",
+  "kitchen manager": "11-9051",
+  "cafe manager": "11-9051",
+  "bar manager": "11-9051",
+  "restaurant owner": "11-9051",
+  "hotel manager": "11-9081",
+  "lodging manager": "11-9081",
+  "hotel general manager": "11-9081",
+  "farmer": "11-9013",
+  "rancher": "11-9013",
+  "farm owner": "11-9013",
+  "administrative assistant": "43-6014",
+  "admin assistant": "43-6014",
+  "admin": "43-6014",
+  "secretary": "43-6014",
+  "office assistant": "43-6014",
+  "office admin": "43-6014",
+  "administrative": "43-6014",
+  "assistant": "43-6014",
+  "administrative coordinator": "43-6014",
+  "executive assistant": "43-6011",
+  "personal assistant to ceo": "43-6011",
+  "executive admin": "43-6011",
+  "receptionist": "43-4171",
+  "front desk": "43-4171",
+  "front desk clerk": "43-4171",
+  "front office": "43-4171",
+  "office manager": "43-1011",
+  "administrative manager": "43-1011",
+  "office supervisor": "43-1011",
+  "office worker": "43-9061",
+  "office clerk": "43-9061",
+  "clerk": "43-9061",
+  "clerical": "43-9061",
+  "office job": "43-9061",
+  "general office": "43-9061",
+  "data entry": "43-9021",
+  "data entry clerk": "43-9021",
+  "typist": "43-9021",
+  "customer service": "43-4051",
+  "customer service rep": "43-4051",
+  "customer service representative": "43-4051",
+  "call center": "43-4051",
+  "call center agent": "43-4051",
+  "customer support": "43-4051",
+  "csr": "43-4051",
+  "support agent": "43-4051",
+  "hotel clerk": "43-4081",
+  "hotel front desk": "43-4081",
+  "hotel receptionist": "43-4081",
+  "bank clerk": "43-3071",
+  "bank employee": "43-3071",
+  "shipping clerk": "43-5071",
+  "receiving clerk": "43-5071",
+  "inventory clerk": "43-5071",
+  "stock clerk": "43-5071",
+  "shipping and receiving": "43-5071",
+  "dispatcher": "43-5031",
+  "911 dispatcher": "43-5031",
+  "emergency dispatcher": "43-5031",
+  "mail carrier": "43-5052",
+  "letter carrier": "43-5052",
+  "postal worker": "43-5052",
+  "postman": "43-5052",
+  "postal carrier": "43-5052",
+  "usps": "43-5052",
+  "post office": "43-5052",
+  "courier": "43-5021",
+  "bike messenger": "43-5021",
+  "messenger": "43-5021",
+  "sales rep": "41-4012",
+  "sales representative": "41-4012",
+  "salesperson": "41-4012",
+  "sales": "41-4012",
+  "sales agent": "41-4012",
+  "account executive": "41-4012",
+  "account manager": "41-4012",
+  "business development": "41-4012",
+  "b2b sales": "41-4012",
+  "outside sales": "41-4012",
+  "inside sales": "41-4012",
+  "retail": "41-2031",
+  "retail worker": "41-2031",
+  "retail associate": "41-2031",
+  "sales clerk": "41-2031",
+  "store clerk": "41-2031",
+  "shop assistant": "41-2031",
+  "shop worker": "41-2031",
+  "sales associate": "41-2031",
+  "retail sales": "41-2031",
+  "store associate": "41-2031",
+  "cashier": "41-2011",
+  "checkout": "41-2011",
+  "checkout clerk": "41-2011",
+  "grocery cashier": "41-2011",
+  "store manager": "41-1011",
+  "retail manager": "41-1011",
+  "shop manager": "41-1011",
+  "assistant manager": "41-1011",
+  "grocery manager": "41-1011",
+  "advertising sales": "41-3011",
+  "ad sales": "41-3011",
+  "media sales": "41-3011",
+  "travel agent": "41-3041",
+  "telemarketer": "41-9041",
+  "car salesman": "41-2031",
+  "car sales": "41-2031",
+  "auto sales": "41-2031",
+  "car dealer": "41-2031",
+  "automotive sales": "41-2031",
+  "writer": "27-3043",
+  "author": "27-3043",
+  "copywriter": "27-3043",
+  "content writer": "27-3043",
+  "novelist": "27-3043",
+  "blogger": "27-3043",
+  "screenwriter": "27-3043",
+  "freelance writer": "27-3043",
+  "journalist": "27-3023",
+  "reporter": "27-3023",
+  "news reporter": "27-3023",
+  "correspondent": "27-3023",
+  "editor": "27-3041",
+  "copy editor": "27-3041",
+  "managing editor": "27-3041",
+  "technical writer": "27-3042",
+  "translator": "27-3091",
+  "interpreter": "27-3091",
+  "graphic designer": "27-1024",
+  "designer": "27-1024",
+  "illustrator": "27-1024",
+  "graphic artist": "27-1024",
+  "interior designer": "27-1025",
+  "fashion designer": "27-1022",
+  "industrial designer": "27-1021",
+  "product design engineer": "27-1021",
+  "art director": "27-1011",
+  "photographer": "27-4021",
+  "wedding photographer": "27-4021",
+  "videographer": "27-4032",
+  "video editor": "27-4032",
+  "film editor": "27-4032",
+  "camera operator": "27-4031",
+  "cameraman": "27-4031",
+  "producer": "27-2012",
+  "film producer": "27-2012",
+  "tv producer": "27-2012",
+  "director producer": "27-2012",
+  "actor": "27-2011",
+  "actress": "27-2011",
+  "performer": "27-2011",
+  "musician": "27-2042",
+  "singer": "27-2042",
+  "band member": "27-2042",
+  "drummer": "27-2042",
+  "guitarist": "27-2042",
+  "pianist": "27-2042",
+  "dj": "27-2091",
+  "disc jockey": "27-2091",
+  "dancer": "27-2031",
+  "artist": "27-1013",
+  "painter artist": "27-1013",
+  "sculptor": "27-1013",
+  "fine artist": "27-1013",
+  "athlete": "27-2021",
+  "professional athlete": "27-2021",
+  "sportsman": "27-2021",
+  "footballer": "27-2021",
+  "player": "27-2021",
+  "police officer": "33-3051",
+  "policeman": "33-3051",
+  "cop": "33-3051",
+  "police": "33-3051",
+  "patrol officer": "33-3051",
+  "sheriff deputy": "33-3051",
+  "deputy sheriff": "33-3051",
+  "law enforcement": "33-3051",
+  "detective": "33-3021",
+  "investigator": "33-3021",
+  "criminal investigator": "33-3021",
+  "private investigator": "33-9021",
+  "pi": "33-9021",
+  "firefighter": "33-2011",
+  "fireman": "33-2011",
+  "fire fighter": "33-2011",
+  "corrections officer": "33-3012",
+  "correctional officer": "33-3012",
+  "prison guard": "33-3012",
+  "jailer": "33-3012",
+  "security guard": "33-9032",
+  "security officer": "33-9032",
+  "guard": "33-9032",
+  "bouncer": "33-9032",
+  "security": "33-9032",
+  "night watchman": "33-9032",
+  "tsa agent": "33-9093",
+  "tsa officer": "33-9093",
+  "airport screener": "33-9093",
+  "lifeguard": "33-9092",
+  "probation officer": "21-1092",
+  "parole officer": "21-1092",
+  "court clerk": "43-4031",
+  "clergy": "21-2011",
+  "pastor": "21-2011",
+  "priest": "21-2011",
+  "minister": "21-2011",
+  "rabbi": "21-2011",
+  "imam": "21-2011",
+  "preacher": "21-2011",
+  "reverend": "21-2011",
+  "chaplain": "21-2011",
+  "church pastor": "21-2011",
+  "legislator": "11-1031",
+  "politician": "11-1031",
+  "congressman": "11-1031",
+  "senator": "11-1031",
+  "state representative": "11-1031",
+  "city council": "11-1031",
+  "elected official": "11-1031",
+  "electrician": "47-2111",
+  "plumber": "47-2152",
+  "pipefitter": "47-2152",
+  "steamfitter": "47-2152",
+  "carpenter": "47-2031",
+  "woodworker": "47-2031",
+  "framer": "47-2031",
+  "finish carpenter": "47-2031",
+  "construction worker": "47-2061",
+  "construction laborer": "47-2061",
+  "laborer": "47-2061",
+  "day laborer": "47-2061",
+  "builder": "47-2061",
+  "construction": "47-2061",
+  "roofer": "47-2181",
+  "painter": "47-2141",
+  "house painter": "47-2141",
+  "painter and decorator": "47-2141",
+  "mason": "47-2021",
+  "bricklayer": "47-2021",
+  "brick mason": "47-2021",
+  "drywall": "47-2081",
+  "drywall installer": "47-2081",
+  "sheetrock": "47-2081",
+  "tile setter": "47-2044",
+  "tile installer": "47-2044",
+  "concrete worker": "47-2051",
+  "cement mason": "47-2051",
+  "concrete finisher": "47-2051",
+  "heavy equipment operator": "47-2073",
+  "crane operator": "47-2073",
+  "excavator operator": "47-2073",
+  "bulldozer": "47-2073",
+  "equipment operator": "47-2073",
+  "hvac": "49-9021",
+  "hvac technician": "49-9021",
+  "heating and cooling": "49-9021",
+  "air conditioning technician": "49-9021",
+  "hvac tech": "49-9021",
+  "mechanic": "49-3023",
+  "auto mechanic": "49-3023",
+  "car mechanic": "49-3023",
+  "automotive technician": "49-3023",
+  "auto technician": "49-3023",
+  "car repair": "49-3023",
+  "garage mechanic": "49-3023",
+  "diesel mechanic": "49-3031",
+  "truck mechanic": "49-3031",
+  "bus mechanic": "49-3031",
+  "aircraft mechanic": "49-3011",
+  "airplane mechanic": "49-3011",
+  "a&p mechanic": "49-3011",
+  "avionics": "49-3011",
+  "auto body": "49-3021",
+  "auto body repair": "49-3021",
+  "body shop": "49-3021",
+  "collision repair": "49-3021",
+  "handyman": "49-9071",
+  "maintenance": "49-9071",
+  "maintenance worker": "49-9071",
+  "maintenance man": "49-9071",
+  "repairman": "49-9071",
+  "building maintenance": "49-9071",
+  "facilities maintenance": "49-9071",
+  "maintenance technician": "49-9071",
+  "appliance repair": "49-9031",
+  "appliance technician": "49-9031",
+  "industrial mechanic": "49-9041",
+  "millwright": "49-9041",
+  "lineman": "49-9051",
+  "line worker": "49-9051",
+  "power line worker": "49-9051",
+  "utility lineman": "49-9051",
+  "cable installer": "49-9052",
+  "telecom technician": "49-9052",
+  "cable technician": "49-9052",
+  "telecommunications technician": "49-9052",
+  "elevator mechanic": "47-4021",
+  "elevator installer": "47-4021",
+  "solar installer": "47-2231",
+  "welder": "51-4121",
+  "welding": "51-4121",
+  "fabricator": "51-4121",
+  "machinist": "51-4041",
+  "cnc operator": "51-4041",
+  "cnc machinist": "51-4041",
+  "tool and die": "51-4041",
+  "factory worker": "51-2092",
+  "production worker": "51-2092",
+  "assembler": "51-2092",
+  "assembly line": "51-2092",
+  "assembly line worker": "51-2092",
+  "manufacturing worker": "51-2092",
+  "manufacturing": "51-2092",
+  "plant worker": "51-2092",
+  "factory": "51-2092",
+  "production supervisor": "51-1011",
+  "factory supervisor": "51-1011",
+  "shift supervisor manufacturing": "51-1011",
+  "baker": "51-3011",
+  "pastry chef": "51-3011",
+  "butcher": "51-3021",
+  "meat cutter": "51-3021",
+  "seamstress": "51-6052",
+  "tailor": "51-6052",
+  "sewer": "51-6052",
+  "dressmaker": "51-6052",
+  "printer": "51-5112",
+  "print shop": "51-5112",
+  "quality inspector": "51-9061",
+  "quality control": "51-9061",
+  "qc inspector": "51-9061",
+  "inspector": "51-9061",
+  "water treatment": "51-8031",
+  "wastewater operator": "51-8031",
+  "water plant operator": "51-8031",
+  "power plant operator": "51-8013",
+  "truck driver": "53-3032",
+  "trucker": "53-3032",
+  "semi driver": "53-3032",
+  "long haul driver": "53-3032",
+  "cdl driver": "53-3032",
+  "tractor trailer driver": "53-3032",
+  "over the road driver": "53-3032",
+  "otr driver": "53-3032",
+  "driver cdl": "53-3032",
+  "delivery driver": "53-3033",
+  "delivery": "53-3033",
+  "van driver": "53-3033",
+  "courier driver": "53-3033",
+  "amazon driver": "53-3033",
+  "ups driver": "53-3033",
+  "fedex driver": "53-3033",
+  "driver": "53-3033",
+  "uber driver": "53-3053",
+  "lyft driver": "53-3053",
+  "rideshare driver": "53-3053",
+  "rideshare": "53-3053",
+  "chauffeur": "53-3053",
+  "limo driver": "53-3053",
+  "limousine driver": "53-3053",
+  "taxi driver": "53-3054",
+  "cab driver": "53-3054",
+  "cabbie": "53-3054",
+  "bus driver": "53-3052",
+  "city bus driver": "53-3052",
+  "transit driver": "53-3052",
+  "school bus driver": "53-3051",
+  "pilot": "53-2012",
+  "commercial pilot": "53-2012",
+  "helicopter pilot": "53-2012",
+  "charter pilot": "53-2012",
+  "airline pilot": "53-2011",
+  "airline captain": "53-2011",
+  "first officer": "53-2011",
+  "flight attendant": "53-2031",
+  "stewardess": "53-2031",
+  "cabin crew": "53-2031",
+  "air traffic controller": "53-2021",
+  "train conductor": "53-4031",
+  "conductor": "53-4031",
+  "railroad conductor": "53-4031",
+  "train engineer": "53-4011",
+  "locomotive engineer": "53-4011",
+  "sailor": "53-5011",
+  "deckhand": "53-5011",
+  "merchant marine": "53-5011",
+  "ship captain": "53-5021",
+  "boat captain": "53-5021",
+  "captain": "53-5021",
+  "warehouse": "53-7062",
+  "warehouse worker": "53-7062",
+  "stocker": "53-7062",
+  "stock associate": "53-7062",
+  "order picker": "53-7062",
+  "picker packer": "53-7062",
+  "packer": "53-7062",
+  "fulfillment": "53-7062",
+  "fulfillment center": "53-7062",
+  "amazon warehouse": "53-7062",
+  "shelf stocker": "53-7062",
+  "freight handler": "53-7062",
+  "forklift": "53-7051",
+  "forklift operator": "53-7051",
+  "forklift driver": "53-7051",
+  "garbage collector": "53-7081",
+  "trash collector": "53-7081",
+  "sanitation worker": "53-7081",
+  "refuse collector": "53-7081",
+  "waste collector": "53-7081",
+  "mover": "53-7062",
+  "moving company": "53-7062",
+  "furniture mover": "53-7062",
+  "parking attendant": "53-6021",
+  "valet": "53-6021",
+  "valet parking": "53-6021",
+  "gas station attendant": "53-6031",
+  "gas attendant": "53-6031",
+  "car wash attendant": "53-6031",
+  "waiter": "35-3031",
+  "waitress": "35-3031",
+  "server": "35-3031",
+  "wait staff": "35-3031",
+  "waitstaff": "35-3031",
+  "restaurant server": "35-3031",
+  "food server": "35-3031",
+  "table server": "35-3031",
+  "bartender": "35-3011",
+  "barkeep": "35-3011",
+  "mixologist": "35-3011",
+  "barista": "35-3023",
+  "coffee shop": "35-3023",
+  "coffee shop worker": "35-3023",
+  "fast food": "35-3023",
+  "fast food worker": "35-3023",
+  "fast food cook": "35-3023",
+  "counter worker": "35-3023",
+  "mcdonalds": "35-3023",
+  "starbucks": "35-3023",
+  "counter attendant": "35-3023",
+  "cook": "35-2014",
+  "line cook": "35-2014",
+  "short order cook": "35-2014",
+  "prep cook": "35-2014",
+  "restaurant cook": "35-2014",
+  "kitchen worker": "35-2014",
+  "cooking": "35-2014",
+  "chef": "35-1011",
+  "head chef": "35-1011",
+  "executive chef": "35-1011",
+  "sous chef": "35-1011",
+  "head cook": "35-1011",
+  "food prep": "35-2021",
+  "food preparation": "35-2021",
+  "kitchen prep": "35-2021",
+  "dishwasher": "35-9021",
+  "kitchen porter": "35-9021",
+  "bus boy": "35-9021",
+  "busser": "35-9021",
+  "busboy": "35-9021",
+  "host": "35-9031",
+  "hostess": "35-9031",
+  "restaurant host": "35-9031",
+  "food service supervisor": "35-1012",
+  "kitchen supervisor": "35-1012",
+  "head waiter": "35-1012",
+  "janitor": "37-2011",
+  "custodian": "37-2011",
+  "cleaner": "37-2011",
+  "building cleaner": "37-2011",
+  "commercial cleaner": "37-2011",
+  "office cleaner": "37-2011",
+  "maid": "37-2012",
+  "housekeeper": "37-2012",
+  "house cleaner": "37-2012",
+  "hotel housekeeper": "37-2012",
+  "cleaning lady": "37-2012",
+  "domestic cleaner": "37-2012",
+  "housekeeping": "37-2012",
+  "cleaning service": "37-2012",
+  "landscaper": "37-3011",
+  "groundskeeper": "37-3011",
+  "gardener": "37-3011",
+  "lawn care": "37-3011",
+  "lawn service": "37-3011",
+  "grounds maintenance": "37-3011",
+  "lawn maintenance": "37-3011",
+  "tree trimmer": "37-3013",
+  "arborist": "37-3013",
+  "tree surgeon": "37-3013",
+  "pest control": "37-2021",
+  "exterminator": "37-2021",
+  "hairdresser": "39-5012",
+  "hair stylist": "39-5012",
+  "stylist": "39-5012",
+  "hairstylist": "39-5012",
+  "cosmetologist": "39-5012",
+  "salon": "39-5012",
+  "hair dresser": "39-5012",
+  "barber": "39-5011",
+  "nail tech": "39-5092",
+  "nail technician": "39-5092",
+  "manicurist": "39-5092",
+  "nail salon": "39-5092",
+  "esthetician": "39-5094",
+  "aesthetician": "39-5094",
+  "skincare": "39-5094",
+  "skin care specialist": "39-5094",
+  "makeup artist": "39-5091",
+  "personal trainer": "39-9031",
+  "fitness trainer": "39-9031",
+  "fitness instructor": "39-9031",
+  "gym instructor": "39-9031",
+  "yoga instructor": "39-9031",
+  "yoga teacher": "39-9031",
+  "pilates instructor": "39-9031",
+  "group fitness": "39-9031",
+  "recreation worker": "39-9032",
+  "camp counselor": "39-9032",
+  "activities director": "39-9032",
+  "recreation leader": "39-9032",
+  "tour guide": "39-7011",
+  "guide": "39-7011",
+  "animal caretaker": "39-2021",
+  "dog walker": "39-2021",
+  "pet sitter": "39-2021",
+  "kennel": "39-2021",
+  "kennel worker": "39-2021",
+  "dog groomer": "39-2021",
+  "groomer": "39-2021",
+  "pet groomer": "39-2021",
+  "zookeeper": "39-2021",
+  "funeral director": "39-4031",
+  "mortician": "39-4031",
+  "undertaker": "39-4031",
+  "funeral home": "39-4031",
+  "concierge": "39-6012",
+  "bellhop": "39-6011",
+  "bellman": "39-6011",
+  "porter": "39-6011",
+  "usher": "39-3031",
+  "ticket taker": "39-3031",
+  "movie theater": "39-3031",
+  "theater usher": "39-3031",
+  "casino dealer": "39-3011",
+  "dealer": "39-3011",
+  "croupier": "39-3011",
+  "blackjack dealer": "39-3011",
+  "amusement park worker": "39-3091",
+  "ride operator": "39-3091",
+  "theme park": "39-3091",
+  "real estate appraiser": "13-2023",
+  "appraiser": "13-2023",
+  "farm worker": "45-2092",
+  "farmhand": "45-2092",
+  "farm laborer": "45-2092",
+  "field worker": "45-2092",
+  "agricultural worker": "45-2092",
+  "fruit picker": "45-2092",
+  "crop worker": "45-2092",
+  "migrant worker": "45-2092",
+  "fisherman": "45-3031",
+  "commercial fisherman": "45-3031",
+  "fisher": "45-3031",
+  "logger": "45-4029",
+  "lumberjack": "45-4029",
+  "timber": "45-4029",
+  "oil rig worker": "47-5071",
+  "oil field worker": "47-5071",
+  "roughneck": "47-5071",
+  "oilfield": "47-5071",
+  "drilling": "47-5071",
+  "miner": "47-5049",
+  "coal miner": "47-5049",
+  "mining": "47-5049",
+  "exercise physiologist": "29-1128",
+  "athletic trainer": "29-9091",
+  "genetic counselor": "29-9092",
+  "medical records": "29-2072",
+  "medical coder": "29-2072",
+  "medical biller": "29-2072",
+  "health information tech": "29-2072",
+  "medical billing": "29-2072",
+  "medical coding": "29-2072",
+  "medical transcriptionist": "31-9094",
+  "surgical tech": "29-2055",
+  "surgical technologist": "29-2055",
+  "scrub tech": "29-2055",
+  "veterinary technician": "29-2056",
+  "vet tech": "29-2056",
+  "vet assistant": "29-2056",
+  "veterinary assistant": "29-2056",
+  "audiologist": "29-1181",
+  "acupuncturist": "29-1291",
+  "optician": "29-2081",
+  "sports referee": "27-2023",
+  "umpire": "27-2023",
+  "referee": "27-2023",
+  "curator": "25-4012",
+  "museum curator": "25-4012",
+  "museum worker": "25-4012",
+  "archivist": "25-4012",
+  "influencer": "27-3099",
+  "content creator": "27-3099",
+  "youtuber": "27-3099",
+  "streamer": "27-3099"
+ },
+ "no_pay_phrases": [
+  "stay at home",
+  "stay-at-home",
+  "stay at home mom",
+  "stay at home dad",
+  "stay at home parent",
+  "stay at home wife",
+  "stay at home husband",
+  "stay at home spouse",
+  "homemaker",
+  "housewife",
+  "house husband",
+  "full time parent",
+  "full-time parent",
+  "at home parent",
+  "raising kids",
+  "raising children",
+  "retired",
+  "retiree",
+  "pensioner",
+  "semi retired",
+  "not working",
+  "not employed",
+  "unemployed",
+  "between jobs",
+  "out of work",
+  "no job",
+  "student",
+  "full time student",
+  "unpaid",
+  "no income",
+  "volunteer"
+ ]
+}

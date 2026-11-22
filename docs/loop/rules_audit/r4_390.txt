@@ -1,0 +1,21 @@
+[r4] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[r4] ANSWER "That's about right"
+[r4] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[r4] ANSWER '$2,900'
+[r4] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[r4] ANSWER '$2,900'
+[r4] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[r4] ANSWER 'No other debts'
+[r4] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[r4] ANSWER '$5,000 a month'
+[r4] ready after 5 turns
+page1 small targets: [['Skip to content', 129, 39]]
+page1 axe: []
+LABEL: Lead → Research: Which official rules matter most at age 45?
+LABEL: Lead → Research: Which official rules matter most at age 45?
+lines: ['intake M166.0 101.0 L166.0 125.0 L54.0 125.0 L54.0 134.0', 'longevity M166.0 101.0 L166.0 125.0 L166.0 125.0 L166.0 134.0', 'markets M166.0 101.0 L166.0 125.0 L278.0 125.0 L278.0 134.0', 'family M166.0 101.0 L166.0 125.0 L105.2 125.0 L105.2 238.1 L54.0 238.1 L54.0 247.1', 'tax M166.0 101.0 L166.0 125.0 L105.2 125.0 L105.2 238.1 L166.0 238.1 L166.0 247.1', 'research M166.0 101.0 L166.0 125.0 L105.2 125.0 L105.2 238.1 L278.0 238.1 L278.0 247.1']
+plan small targets: [['Skip to content', 129, 39]]
+plan axe: []
+overflow: [390, 390]
+savings age by x: [(0.05, '45'), (0.1, '45'), (0.15, '45'), (0.2, '51'), (0.25, '57'), (0.3, '65'), (0.35, '71'), (0.4, '77'), (0.45, '85'), (0.5, '91'), (0.55, '99'), (0.6, '99'), (0.65, '99'), (0.7, '99'), (0.75, '99'), (0.8, '99'), (0.85, '99'), (0.9, '99'), (0.95, '99')]
+errors []

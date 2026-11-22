@@ -1,0 +1,116 @@
+{
+ "persona_id": "p29",
+ "issues": [
+  {
+   "ref": "a3",
+   "type": "contradiction",
+   "severity": "P1",
+   "quote": "The plan does not show whether working longer would make the goal last",
+   "note": "Turn a1 already showed that retiring at 66 makes the spending goal last in 96 of 100 scenarios, so this reply contradicts the plan's own earlier output."
+  },
+  {
+   "ref": "a3",
+   "type": "dead_end",
+   "severity": "P2",
+   "quote": "so I can\u2019t say how much longer you would need to work.",
+   "note": "The reply does not offer to run a What If at a later retirement age, which is the obvious next step for the user's question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 56,
+    "truth": 56,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "FL",
+    "truth": "FL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 74000.0,
+    "truth": 74000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 320000.0,
+    "truth": 320000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 20000.0,
+    "truth": 20000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 58000.0,
+    "truth": 58000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

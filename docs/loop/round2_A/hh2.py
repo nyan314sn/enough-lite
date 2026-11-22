@@ -1,0 +1,22 @@
+"""New varied households for round 2 (A)."""
+def S(pretax=0, roth=0, taxable=0, cash=0):
+    return {"pretax": pretax, "roth": roth, "taxable": taxable, "cash": cash}
+
+N = {
+ "n01_single_parent": dict(age=36, state="OH", pay_per_year=55000, retire_age=67, savings=S(15000, 0, 2000, 4000), spending_per_year=38000, spending_now_per_year=44000, children=[{"age": 4}, {"age": 9}], home={"owns": False, "rent": 1300}),
+ "n02_gap10_couple": dict(age=55, has_partner=True, partner_age=45, state="NY", pay_per_year=120000, partner_pay_per_year=90000, retire_age=62, partner_retire_age=62, savings=S(500000, 80000, 100000, 50000), spending_per_year=110000, spending_now_per_year=135000, home={"owns": True, "value": 650000}),
+ "n03_widow_70": dict(age=70, state="FL", pay_per_year=0, retire_age=70, savings=S(300000, 40000, 60000, 30000), spending_per_year=42000, spending_now_per_year=42000, social_security_per_year=26000, claim_age=67, home={"owns": True, "value": 280000}),
+ "n04_already_claiming": dict(age=66, state="WA", pay_per_year=0, retire_age=66, savings=S(250000, 0, 50000, 20000), spending_per_year=48000, spending_now_per_year=50000, social_security_per_year=21000, claim_age=62, pensions=[{"who": "you", "per_year": 12000, "start_age": 62, "inflation_adjusted": False}]),
+ "n05_falls_short": dict(age=52, state="TX", pay_per_year=48000, retire_age=62, savings=S(20000, 0, 0, 5000), spending_per_year=40000, spending_now_per_year=42000, home={"owns": False, "rent": 1200}),
+ "n06_high_earner_max401k": dict(age=45, state="NJ", pay_per_year=320000, retire_age=60, savings=S(700000, 100000, 300000, 80000), spending_per_year=150000, spending_now_per_year=190000, saving={"contrib_you": 25500}, home={"owns": True, "value": 900000, "mortgage_balance": 300000, "mortgage_payment": 2900, "mortgage_rate": 0.04}),
+ "n07_state_taxes_ss_CO": dict(age=68, state="CO", pay_per_year=0, retire_age=68, savings=S(500000, 50000, 100000, 40000), spending_per_year=62000, spending_now_per_year=62000, social_security_per_year=34000, claim_age=67),
+ "n08_age25": dict(age=25, state="MA", pay_per_year=62000, retire_age=65, savings=S(4000, 0, 0, 3000), spending_per_year=38000, spending_now_per_year=42000, home={"owns": False, "rent": 1800}),
+ "n09_both_retired_gap": dict(age=70, has_partner=True, partner_age=63, state="MN", pay_per_year=0, partner_pay_per_year=0, retire_age=70, partner_retire_age=63, savings=S(650000, 60000, 150000, 40000), spending_per_year=75000, spending_now_per_year=75000, social_security_per_year=38000, claim_age=67),
+ "n10_partner_claim70": dict(age=60, has_partner=True, partner_age=58, state="PA", pay_per_year=85000, partner_pay_per_year=60000, retire_age=63, partner_retire_age=63, claim_age=62, partner_claim_age=70, savings=S(350000, 40000, 50000, 30000), spending_per_year=80000, spending_now_per_year=95000),
+ "n11_ctc_phaseout": dict(age=40, has_partner=True, partner_age=40, state="CA", pay_per_year=300000, partner_pay_per_year=250000, retire_age=62, savings=S(500000, 100000, 200000, 80000), spending_per_year=220000, spending_now_per_year=280000, children=[{"age": 8}, {"age": 5}], saving={"contrib_you": 25500, "contrib_partner": 25500}),
+ "n12_spousal_only": dict(age=63, has_partner=True, partner_age=60, state="NC", pay_per_year=90000, partner_pay_per_year=0, retire_age=65, savings=S(400000, 50000, 80000, 40000), spending_per_year=70000, spending_now_per_year=80000),
+ "n13_retiree78_CT": dict(age=78, state="CT", pay_per_year=0, retire_age=78, savings=S(450000, 50000, 100000, 40000), spending_per_year=55000, spending_now_per_year=60000, social_security_per_year=30000, claim_age=70, pensions=[{"who": "you", "per_year": 20000, "start_age": 65, "inflation_adjusted": True}]),
+ "n14_partner_older": dict(age=50, has_partner=True, partner_age=60, state="GA", pay_per_year=100000, partner_pay_per_year=40000, retire_age=65, partner_retire_age=65, savings=S(250000, 20000, 40000, 30000), spending_per_year=75000, spending_now_per_year=90000),
+ "n15_low_income_parent": dict(age=30, state="MS", pay_per_year=22000, retire_age=67, savings=S(1000, 0, 0, 500), spending_per_year=20000, spending_now_per_year=21000, children=[{"age": 3}], home={"owns": False, "rent": 750}),
+ "n16_widower_kids": dict(age=42, state="VA", pay_per_year=90000, retire_age=65, savings=S(120000, 10000, 20000, 15000), spending_per_year=60000, spending_now_per_year=70000, children=[{"age": 12}, {"age": 15}, {"age": 17}], saving={"contrib_you": 10000}),
+}

@@ -1,0 +1,302 @@
+{
+ "as_of": "2026-11-20",
+ "note": "Short verbatim passages from official sources, copied from the full app's data/sources/*.txt; used by the Research agent's keyword retrieval.",
+ "passages": [
+  {
+   "id": "ira-limit-2027",
+   "topic": "ira",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "The limit on annual contributions to an Individual Retirement Account remains $7,500. The IRA catch‑up contribution limit for individuals aged 50 and over, which was amended under the SECURE 2.0 Act of 2022 (SECURE 2.0) to include an annual cost‑of‑living adjustment, remains $1,100."
+  },
+  {
+   "id": "ira-deduction-rule",
+   "topic": "ira",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "Taxpayers can deduct contributions to a traditional IRA if they meet certain conditions. If, during the year, either the taxpayer or the taxpayer’s spouse was covered by a retirement plan at work, the deduction may be reduced or phased out until it is eliminated, depending on filing status and income. If neither the taxpayer nor the spouse is covered by a retirement plan at work, the phase-outs of the deduction do not apply."
+  },
+  {
+   "id": "ira-deduction-phaseout-2027",
+   "topic": "ira",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "For single taxpayers covered by a workplace retirement plan, the phase-out range is increased to between $83,000 and $93,000, up from between $81,000 and $91,000 for 2026. For married couples filing jointly, if the spouse making the IRA contribution is covered by a workplace retirement plan, the phase-out range is increased to between $133,000 and $153,000, up from between $129,000 and $149,000 for 2026."
+  },
+  {
+   "id": "ira-roth-income-2027",
+   "topic": "ira",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "The income phase-out range for taxpayers making contributions to a Roth IRA is increased to between $158,000 and $173,000 for singles and heads of household, up from between $153,000 and $168,000 for 2026. For married couples filing jointly, the income phase-out range is increased to between $250,000 and $260,000, up from between $242,000 and $252,000 for 2026. The phase-out range for a married individual filing a separate return who makes contributions to a Roth IRA is not subject to an annual cost-of-living adjustment and remains between $0 and $10,000."
+  },
+  {
+   "id": "401k-deferral-2027",
+   "topic": "401k",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 457 plans, and the federal government’s Thrift Savings Plan is increased to $25,500, up from $24,500 for 2026."
+  },
+  {
+   "id": "401k-catchup-50",
+   "topic": "401k",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "The catch-up contribution limit that generally applies for employees aged 50 and over who participate in most 401(k), 403(b), governmental 457 plans, and the federal government’s Thrift Savings Plan is increased to $8,500, up from $8,000 for 2026. Therefore, participants in most 401(k), 403(b), governmental 457 plans and the federal government’s Thrift Savings Plan who are 50 and older generally can contribute up to $34,000 each year, starting in 2027."
+  },
+  {
+   "id": "401k-catchup-60-63",
+   "topic": "401k",
+   "title": "IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500",
+   "url": "https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+   "source_file": "data/sources/irs_news_401k_limits_2027.txt",
+   "text": "Under a change made in SECURE 2.0, a higher catch-up contribution limit applies for employees aged 60, 61, 62 and 63 who participate in these plans. For 2027, this higher catch-up contribution limit is $11,750 instead of the $8,500 noted above."
+  },
+  {
+   "id": "ssa-early-62",
+   "topic": "social_security",
+   "title": "SSA: Benefit reduction for early retirement",
+   "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+   "source_file": "data/sources/ssa_benefit_reduction.txt",
+   "text": "You can start receiving your Social Security retirement benefits as early as age 62. However, you are entitled to full benefits only when you reach your full retirement age. If you delay taking your benefits from your full retirement age up to age 70, your benefit amount will increase."
+  },
+  {
+   "id": "ssa-early-reduction",
+   "topic": "social_security",
+   "title": "SSA: Benefit reduction for early retirement",
+   "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+   "source_file": "data/sources/ssa_benefit_reduction.txt",
+   "text": "If you start receiving benefits early, your benefits will be reduced a small percentage for each month before your full retirement age"
+  },
+  {
+   "id": "ssa-early-30pct",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10035, Retirement Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10035.pdf",
+   "source_file": "data/sources/ssa_retirement_benefits_booklet.txt",
+   "text": "For example, if you turn age 62 in 2026, your benefit would be about 30% lower than it would be at your full retirement age of 67."
+  },
+  {
+   "id": "ssa-fra-1960",
+   "topic": "social_security",
+   "title": "SSA: Full retirement age by birth year",
+   "url": "https://www.ssa.gov/benefits/retirement/planner/ageincrease.html",
+   "source_file": "data/sources/ssa_full_retirement_age.txt",
+   "text": "The law raised the full retirement age beginning with people born in 1938 or later. The retirement age gradually increases by a few months for every birth year, until it reaches 67 for people born in 1960 and later."
+  },
+  {
+   "id": "ssa-fra-table",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10035, Retirement Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10035.pdf",
+   "source_file": "data/sources/ssa_retirement_benefits_booklet.txt",
+   "text": "The full retirement age is 66 if you were born from 1943 to 1954. The full retirement age increases gradually if you were born from 1955 to 1960 until it reaches 67. For anyone born 1960 or later, full retirement benefits are payable at age 67."
+  },
+  {
+   "id": "ssa-delayed-to-70",
+   "topic": "social_security",
+   "title": "SSA: Delayed retirement credits",
+   "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html",
+   "source_file": "data/sources/ssa_delayed_credits.txt",
+   "text": "Social Security retirement benefits are increased by a certain percentage for each month you delay starting your benefits beyond full retirement age . The benefit increase stops when you reach age 70."
+  },
+  {
+   "id": "ssa-delayed-8pct",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10035, Retirement Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10035.pdf",
+   "source_file": "data/sources/ssa_retirement_benefits_booklet.txt",
+   "text": "Also, your benefit will increase from the time you reach full retirement age, until you start to receive benefits, or until you reach age 70. We’ll add 8% to your benefit for each full year you delay receiving Social Security benefits beyond full retirement age."
+  },
+  {
+   "id": "ssa-spouse-50pct",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10035, Retirement Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10035.pdf",
+   "source_file": "data/sources/ssa_retirement_benefits_booklet.txt",
+   "text": "If spouses receive Social Security retirement benefits before they reach full retirement age, we reduce the benefit. The amount we reduce the benefit by depends on when the person reaches full retirement age. For example, if full retirement age is 67, a spouse can get 32.5% of the worker’s unreduced benefit at age 62. The benefit increases the longer you wait to receive benefits, up to the maximum of 50% at full retirement age."
+  },
+  {
+   "id": "ssa-survivor-amounts",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10084, Survivors Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10084.pdf",
+   "source_file": "data/sources/ssa_survivors_booklet.txt",
+   "text": "Surviving spouse, at full retirement age or older, generally gets 100% of the worker’s basic benefit amount. • Surviving spouse, age 60 or older, but younger than full retirement age, gets between 71% and 99% of the worker’s basic benefit amount. • Surviving spouse, any age, with a child younger than age 16, gets 75% of the worker’s benefit amount."
+  },
+  {
+   "id": "ssa-survivor-age",
+   "topic": "social_security",
+   "title": "SSA Publication 05-10084, Survivors Benefits",
+   "url": "https://www.ssa.gov/pubs/EN-05-10084.pdf",
+   "source_file": "data/sources/ssa_survivors_booklet.txt",
+   "text": "The full retirement age for survivors born from 1945 and 1956 is 66. The full retirement age for survivors increases gradually if you were born from 1957 to 1962. For anyone born 1962 or later, full survivors’ benefits are payable at age 67. This is different from the full retirement age for retirement benefits, which is 67 for people born in 1960 or later. Your surviving spouse can get reduced benefits as early as age 60. If your surviving spouse has a disability, benefits can begin as early as age 50."
+  },
+  {
+   "id": "ssa-wage-base-2027",
+   "topic": "social_security",
+   "title": "SSA: Contribution and benefit base (wage base)",
+   "url": "https://www.ssa.gov/oact/cola/cbb.html",
+   "source_file": "data/sources/ssa_wage_base.txt",
+   "text": "We call this annual limit the contribution and benefit base. This amount is also commonly referred to as the taxable maximum. For earnings in 2027, this base is $192,300 ."
+  },
+  {
+   "id": "medicare-enroll-65",
+   "topic": "medicare",
+   "title": "Medicare.gov: When does Medicare coverage start?",
+   "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start",
+   "source_file": "data/sources/medicare_gov_when_coverage_starts.txt",
+   "text": "Generally, when you turn 65. This is called your Initial Enrollment Period. It lasts for 7 months, starting 3 months before you turn 65, and ending 3 months after the month you turn 65."
+  },
+  {
+   "id": "medicare-late-penalty",
+   "topic": "medicare",
+   "title": "Medicare.gov: When does Medicare coverage start?",
+   "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start",
+   "source_file": "data/sources/medicare_gov_when_coverage_starts.txt",
+   "text": "If you miss your 7-month Initial Enrollment Period, you may have to wait to sign up and pay a monthly late enrollment penalty for as long as you have Part B coverage. The penalty goes up the longer you wait."
+  },
+  {
+   "id": "medicare-coverage-start",
+   "topic": "medicare",
+   "title": "Medicare.gov: When does Medicare coverage start?",
+   "url": "https://www.medicare.gov/basics/get-started-with-medicare/sign-up/when-does-medicare-coverage-start",
+   "source_file": "data/sources/medicare_gov_when_coverage_starts.txt",
+   "text": "The date your coverage starts depends on which month you sign up during your Initial Enrollment Period. Coverage always starts on the first of the month. If you qualify for premium-free Part A: Your Part A coverage starts the month you turn 65. (If your birthday is on the first of the month, coverage starts the month before you turn 65.)"
+  },
+  {
+   "id": "medicare-partb-penalty",
+   "topic": "medicare",
+   "title": "CMS Medicare & You handbook",
+   "url": "https://www.medicare.gov/Pubs/pdf/10050-Medicare-and-You.pdf",
+   "source_file": "data/sources/medicare_and_you.txt",
+   "text": "Your monthly Part B premium may go up 10% for each full 12 months in the period that you could’ve had Part B, but didn’t sign up."
+  },
+  {
+   "id": "medicare-delay-ss",
+   "topic": "medicare",
+   "title": "SSA: Delayed retirement credits",
+   "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html",
+   "source_file": "data/sources/ssa_delayed_credits.txt",
+   "text": "If you decide to delay your retirement, be sure to sign up for just Medicare at age 65 . If you do not sign up at age 65, in some circumstances your Medicare coverage may be delayed and cost more ."
+  },
+  {
+   "id": "medicare-partb-premium-2027",
+   "topic": "medicare",
+   "title": "CMS fact sheet: 2027 Medicare Parts A & B premiums and deductibles",
+   "url": "https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles",
+   "source_file": "data/sources/cms_medicare_premiums_factsheet.txt",
+   "text": "The standard monthly premium for Medicare Part B enrollees will be $209.40 for 2027, an increase of $6.50 from $202.90 in 2026. The annual deductible for all Medicare Part B beneficiaries will be $292 in 2027, an increase of $9 from the annual deductible of $283 in 2026."
+  },
+  {
+   "id": "medicare-irmaa-lookback",
+   "topic": "medicare",
+   "title": "CMS Medicare & You handbook",
+   "url": "https://www.medicare.gov/Pubs/pdf/10050-Medicare-and-You.pdf",
+   "source_file": "data/sources/medicare_and_you.txt",
+   "text": "Medicare uses the modified adjusted gross income reported on your IRS tax return from 2 years ago to determine if you’ll pay an extra charge, called the Income-Related Monthly Adjustment Amount (IRMAA)."
+  },
+  {
+   "id": "medicare-irmaa-percent",
+   "topic": "medicare",
+   "title": "SSA: Medicare Part B income-related monthly adjustment amount (IRMAA)",
+   "url": "https://www.ssa.gov/benefits/medicare/medicare-premiums.html",
+   "source_file": "data/sources/ssa_irmaa.txt",
+   "text": "If we determine you're a higher-income beneficiary, you'll pay a larger percentage of the total cost of Part B based on the income you normally report to the Internal Revenue Service (IRS). You'll pay monthly Part B premiums equal to 35%, 50%, 65%, 80%, or 85% of the total cost, depending on what you report to the IRS."
+  },
+  {
+   "id": "rmd-rbd",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "If you are the owner of a traditional IRA, you must generally start receiving distributions from your IRA by April 1 of the year following the year in which you reach your applicable required beginning date."
+  },
+  {
+   "id": "rmd-age-73",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "If you reach age 72 after December 31, 2022, you must begin receiving required minimum distributions by April 1 of the year following the year you reach the age 73."
+  },
+  {
+   "id": "rmd-later-years",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "The required minimum distribution for any year after the year you reach age 73 must be made by December 31 of that later year."
+  },
+  {
+   "id": "rmd-uniform-table",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "Table III (Uniform Lifetime). Use Table III if you are the IRA owner and your spouse isn’t the sole designated beneficiary or if your spouse is the sole designated beneficiary of your IRA and not more than 10 years younger than you."
+  },
+  {
+   "id": "rmd-penalty-25pct",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "If distributions are less than the required minimum distribution for the year, discussed earlier under When Must You Withdraw Assets? (Required Minimum Distributions) , you may have to pay a 25% excise tax for that year on the amount not distributed as required."
+  },
+  {
+   "id": "rmd-roth-none",
+   "topic": "rmd",
+   "title": "IRS Publication 590-B, Distributions from Individual Retirement Arrangements (IRAs)",
+   "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+   "source_file": "data/sources/irs_pub_590b.txt",
+   "text": "No. If you are the original owner of a Roth IRA, you don't have to take distributions regardless of your age."
+  },
+  {
+   "id": "tax-standard-deduction-2027",
+   "topic": "tax",
+   "title": "IRS news release: tax inflation adjustments for tax year 2027",
+   "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+   "source_file": "data/sources/irs_ir_2027_inflation.txt",
+   "text": "For tax year 2027, the standard deduction increases to $33,200 for married couples filing jointly, up $1,000 from 2026. For single taxpayers and married individuals filing separately, the standard deduction rises to $16,600 for tax year 2027, and for heads of households, the standard deduction will be $24,925."
+  },
+  {
+   "id": "tax-brackets-top-2027",
+   "topic": "tax",
+   "title": "IRS news release: tax inflation adjustments for tax year 2027",
+   "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+   "source_file": "data/sources/irs_ir_2027_inflation.txt",
+   "text": "For tax year 2027, the top tax rate remains 37% for individual single taxpayers with incomes greater than $661,375 ($793,650 for married couples filing jointly)."
+  },
+  {
+   "id": "tax-brackets-lower-2027",
+   "topic": "tax",
+   "title": "IRS news release: tax inflation adjustments for tax year 2027",
+   "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts",
+   "source_file": "data/sources/irs_ir_2027_inflation.txt",
+   "text": "The other rates are: 35% for incomes over $264,550 ($529,100 for married couples filing jointly); 32% for incomes over $208,325 ($416,650 for married couples filing jointly); 24% for incomes over $109,125 ($218,250 for married couples filing jointly); 22% for incomes over $52,025 ($104,050 for married couples filing jointly); 12% for incomes over $12,800 ($25,600 for married couples filing jointly)."
+  },
+  {
+   "id": "medicaid-eligibility",
+   "topic": "medicaid",
+   "title": "HealthCare.gov: Medicaid expansion and what it means for you",
+   "url": "https://www.healthcare.gov/medicaid-chip/medicaid-expansion-and-you/",
+   "source_file": "data/sources/hcgov_medicaid_expansion.txt",
+   "text": "In all states: You can qualify for Medicaid based on income, household size, disability, family status, and other factors. Eligibility rules differ between states."
+  },
+  {
+   "id": "medicaid-expansion",
+   "topic": "medicaid",
+   "title": "HealthCare.gov: Medicaid expansion and what it means for you",
+   "url": "https://www.healthcare.gov/medicaid-chip/medicaid-expansion-and-you/",
+   "source_file": "data/sources/hcgov_medicaid_expansion.txt",
+   "text": "In states that have expanded Medicaid coverage: You can qualify based on your income alone."
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "persona_id": "p01",
+ "issues": [
+  {
+   "ref": "i9",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "I updated the typical figures: spending in retirement at $44,400 a year.",
+   "note": "The retirement spending figure is derived from the user's $64k, but the reply only calls it a typical figure and does not say it is an estimate the user can change."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 51,
+    "truth": 51,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 93000.0,
+    "truth": 78000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 267000.0,
+    "truth": 267000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 140000.0,
+    "truth": 140000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     17
+    ],
+    "truth": [
+     17
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 1,
+    "truth": 1,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 64000.0,
+    "truth": 64000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pay_per_year",
+    "cause": "correction_lost",
+    "note": "User clicked 'Type my real pay' at i10, but no amount was given or stored. The $93,000 typical estimate stayed in place; the true $78,000 never reached the profile."
+   }
+  ]
+ }
+}

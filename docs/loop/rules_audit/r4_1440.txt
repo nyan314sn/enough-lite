@@ -1,0 +1,21 @@
+[r4] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[r4] ANSWER "That's about right"
+[r4] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[r4] ANSWER '$2,900'
+[r4] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[r4] ANSWER '$2,900'
+[r4] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[r4] ANSWER 'No other debts'
+[r4] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[r4] ANSWER '$5,000 a month'
+[r4] ready after 5 turns
+page1 small targets: [['Skip to content', 129, 39], ["That's about right", 131, 36], ['Same as now', 104, 36], ['Less, about 60%', 122, 36], ['A set figure', 95, 36], ['Send', 68, 41], ['Household10', 429, 38], ['Work & pay4', 429, 38], ['Saving6', 429, 38], ['Home & debts3', 429, 38], ['InsuranceNone counted', 443, 38], ['GoalsNone counted', 443, 38], ['HealthEstimate: good health', 443, 38], ['Costs2', 429, 38]]
+page1 axe: []
+LABEL: Lead → Research: Which official rules matter most at age 45?
+LABEL: Lead → Research: Which official rules matter most at age 45?
+lines: ['intake M153.0 101.0 L153.0 125.0 L49.7 125.0 L49.7 134.0', 'longevity M153.0 101.0 L153.0 125.0 L153.0 125.0 L153.0 134.0', 'markets M153.0 101.0 L153.0 125.0 L256.3 125.0 L256.3 134.0', 'family M153.0 101.0 L153.0 125.0 L96.5 125.0 L96.5 238.1 L49.7 238.1 L49.7 247.1', 'tax M153.0 101.0 L153.0 125.0 L96.5 125.0 L96.5 238.1 L153.0 238.1 L153.0 247.1', 'research M153.0 101.0 L153.0 125.0 L96.5 125.0 L96.5 238.1 L256.3 238.1 L256.3 247.1']
+plan small targets: [['Skip to content', 129, 39], ['← Change my answers', 125, 18], ['Retire 2 years later', 134, 32], ['Save 5% more of pay', 149, 32], ['Retire at 60', 92, 32], ['Another child', 105, 32], ['Get a dog', 84, 32], ['Markets fall 30%', 122, 32], ['Ask', 58, 41]]
+plan axe: []
+overflow: [1440, 1440]
+savings age by x: [(0.05, '45'), (0.1, '49'), (0.15, '55'), (0.2, '61'), (0.25, '67'), (0.3, '73'), (0.35, '79'), (0.4, '85'), (0.45, '91'), (0.5, '97'), (0.55, '99'), (0.6, '99'), (0.65, '99'), (0.7, '99'), (0.75, '99'), (0.8, '99'), (0.85, '99'), (0.9, '99'), (0.95, '99')]
+errors []

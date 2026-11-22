@@ -1,0 +1,41 @@
+{
+ "note": "Where each data file in app/data came from (paths relative to the full app's hw-Final-2 folder). Each file keeps its own source URLs inside.",
+ "files": {
+  "mortality.json": {
+   "copied_from": "data/mortality.json",
+   "change": "none (verbatim copy)"
+  },
+  "life_costs.json": {
+   "copied_from": "data/life_costs.json",
+   "change": "none (verbatim copy)"
+  },
+  "tax_rules.json": {
+   "copied_from": "data/tax_rules.json",
+   "change": "none (verbatim copy)"
+  },
+  "state_tax.json": {
+   "copied_from": "data/state_tax.json",
+   "change": "kept name, top rate and effective-rate grid per state"
+  },
+  "wages.json": {
+   "copied_from": "data/reference/wages_oews.json + data/reference/occupation_synonyms.json",
+   "change": "kept national 25th/50th/75th pay per occupation, state pay ratio, job phrases"
+  },
+  "basics.json": {
+   "copied_from": "data/reference/basics_benchmark.json + data/health_costs.json",
+   "change": "kept state and US rows (no counties), food, transport, health out-of-pocket by age, Medicare Part B and D premiums"
+  },
+  "social_security.json": {
+   "copied_from": "written by hand from data/sources/ssa_pia_formula.txt, ssa_wage_base.txt, ssa_benefit_reduction.txt, ssa_delayed_credits.txt",
+   "change": "figures only"
+  },
+  "households.json": {
+   "copied_from": "output/synth_tree/raw/*.json (347 fast plans) and output/synth_tree_full/raw/*.json (120 full plans), profiles from output/synth_run3/personas.jsonl.gz and data/profiles; parsing as in docs/LITE_NEIGHBOR_CHECK.md",
+   "change": "kept matching features, plan a decisions (stock share by age, claim age offset, products) and outcomes"
+  },
+  "passages.json": {
+   "copied_from": "verbatim passages from data/sources/*.txt with URLs from data/sources/catalog.json",
+   "change": "selection only"
+  }
+ }
+}

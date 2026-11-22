@@ -1,0 +1,107 @@
+{
+ "persona_id": "h05",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 54,
+    "truth": 54,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "AZ",
+    "truth": "AZ",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 63,
+    "truth": 63,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 120000.0,
+    "truth": 110000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 425000.0,
+    "truth": 440000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 140000.0,
+    "truth": 120000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 84000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "mortgage_balance",
+    "cause": "app_misparsed",
+    "note": "Person gave a range of 100 to 140 thousand. App stored the top of the range, $140,000, not the midpoint of $120,000 it used for savings and spending."
+   }
+  ]
+ }
+}

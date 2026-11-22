@@ -1,0 +1,102 @@
+{
+ "persona_id": "p11",
+ "issues": [
+  {
+   "ref": "a3",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "Rough estimate from pay, claiming at 67.",
+   "note": "The fragment is terse and does not plainly say that 67 is the Social Security claiming age the estimate uses, or that the plan still needs money for ages 62 to 67."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 35,
+    "truth": 35,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "MI",
+    "truth": "MI",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 52000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 17000.0,
+    "truth": 17000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 28000.0,
+    "truth": 28000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 38000.0,
+    "truth": 38000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

@@ -1,0 +1,129 @@
+{
+ "persona_id": "p06",
+ "issues": [
+  {
+   "ref": "a4",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "If stocks fall 80% this year, you can count on $44,600 a year",
+   "note": "The user gave a stock allocation (about 80% or 60% in stocks), not a market drop of 80%, so the app ran the wrong scenario."
+  },
+  {
+   "ref": "a4",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "Your answers do not change. This tests how the plan holds up if that happens",
+   "note": "The user asked what to do first to make retiring at 63 more likely, and the reply gives no action or recommendation."
+  },
+  {
+   "ref": "a4",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "the other scenarios still vary as before",
+   "note": "The reply uses scenario-count jargon without explaining what the 90 of 100 and 27 of 100 numbers mean for the user's risk question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 54,
+    "truth": 54,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "FL",
+    "truth": "FL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 63,
+    "truth": 63,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 92000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 400000.0,
+    "truth": 510000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 60000.0,
+    "truth": 60000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 9000.0,
+    "truth": 9000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "savings_total",
+    "cause": "app_misparsed",
+    "note": "Person stated 400k pretax plus 80k taxable (turns i1, a2), but the app stored only the 400k pretax figure. The 30k cash was never stated, so it is a secondary gap (person_never_said)."
+   }
+  ]
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "qa": {
+  "anthropic": {
+   "by_cat": {
+    "rule": {
+     "n": 12,
+     "kind_ok": 11,
+     "judge_correct": 4,
+     "handled_correct": 4
+    },
+    "plan_question": {
+     "n": 8,
+     "kind_ok": 8,
+     "judge_correct": 3,
+     "handled_correct": 3
+    },
+    "whatif": {
+     "n": 20,
+     "kind_ok": 8,
+     "judge_correct": 11,
+     "handled_correct": 6
+    },
+    "change": {
+     "n": 5,
+     "kind_ok": 4,
+     "judge_correct": 4,
+     "handled_correct": 4
+    },
+    "refuse": {
+     "n": 10,
+     "kind_ok": 7,
+     "judge_correct": 8,
+     "handled_correct": 7
+    },
+    "offtopic": {
+     "n": 2,
+     "kind_ok": 2,
+     "judge_correct": 1,
+     "handled_correct": 1
+    }
+   },
+   "total": {
+    "n": 57,
+    "kind_ok": 40,
+    "judge_correct": 31,
+    "handled_correct": 25
+   },
+   "verdicts": {
+    "wrong": 13,
+    "correct": 31,
+    "partly": 13
+   },
+   "http_errors": 0,
+   "secs_median": 1.1,
+   "usd": 0.023364
+  },
+  "openai": {
+   "by_cat": {
+    "rule": {
+     "n": 12,
+     "kind_ok": 11,
+     "judge_correct": 3,
+     "handled_correct": 3
+    },
+    "plan_question": {
+     "n": 8,
+     "kind_ok": 8,
+     "judge_correct": 1,
+     "handled_correct": 1
+    },
+    "whatif": {
+     "n": 20,
+     "kind_ok": 8,
+     "judge_correct": 10,
+     "handled_correct": 6
+    },
+    "change": {
+     "n": 5,
+     "kind_ok": 4,
+     "judge_correct": 4,
+     "handled_correct": 4
+    },
+    "refuse": {
+     "n": 10,
+     "kind_ok": 7,
+     "judge_correct": 8,
+     "handled_correct": 7
+    },
+    "offtopic": {
+     "n": 2,
+     "kind_ok": 2,
+     "judge_correct": 1,
+     "handled_correct": 1
+    }
+   },
+   "total": {
+    "n": 57,
+    "kind_ok": 40,
+    "judge_correct": 27,
+    "handled_correct": 22
+   },
+   "verdicts": {
+    "wrong": 16,
+    "partly": 14,
+    "correct": 27
+   },
+   "http_errors": 0,
+   "secs_median": 1.27,
+   "usd": 0.015513
+  }
+ },
+ "sims": {
+  "anthropic": {
+   "personas": 24,
+   "status": {
+    "done": 24
+   },
+   "reached_plan": 22,
+   "plan_ok": 22,
+   "turns_mean": 8.409090909090908,
+   "turns_median": 8.0,
+   "field_accuracy": 0.9356913183279743,
+   "fields": 311,
+   "persona_mean_share": 0.9358592796092796,
+   "wrong_causes": {
+    "simulator_inconsistent": 3,
+    "never_asked": 2,
+    "person_never_said": 8,
+    "app_misparsed": 2,
+    "correction_lost": 1,
+    "person_guessed_wrong": 1,
+    "other": 2,
+    "assumed_default": 1
+   },
+   "issues_total": 22,
+   "P0": 6,
+   "P1": 10,
+   "issue_types": {
+    "unstated_assumption/P1": 2,
+    "misunderstanding/P1": 2,
+    "confusing/P2": 3,
+    "unstated_assumption/P2": 2,
+    "ignored_correction/P0": 4,
+    "contradiction/P0": 1,
+    "misunderstanding/P0": 1,
+    "contradiction/P1": 1,
+    "dead_end/P1": 2,
+    "confusing/P1": 3,
+    "dead_end/P2": 1
+   },
+   "made_up_figures": 11,
+   "app_misparsed": 2,
+   "unstated_assumption_issues": 4,
+   "field_acc_by_field": {
+    "age": "23/24",
+    "state": "23/24",
+    "retire_age": "21/24",
+    "pay_per_year": "19/24",
+    "savings_total": "21/24",
+    "home_owns": "23/24",
+    "mortgage_balance": "19/20",
+    "children": "23/24",
+    "pets": "23/24",
+    "pension_per_year": "23/24",
+    "spending_now": "22/24"
+   },
+   "plan_turn_kinds": {
+    "answer": 29,
+    "clarify": 7,
+    "whatif": 14,
+    "change": 2,
+    "error": 2
+   },
+   "usd_app_sum": 0.108964
+  },
+  "openai": {
+   "personas": 24,
+   "status": {
+    "done": 23,
+    "error": 1
+   },
+   "reached_plan": 22,
+   "plan_ok": 21,
+   "turns_mean": 8.363636363636363,
+   "turns_median": 8.0,
+   "field_accuracy": 0.9228295819935691,
+   "fields": 311,
+   "persona_mean_share": 0.9228861416361417,
+   "wrong_causes": {
+    "assumed_default": 7,
+    "never_asked": 8,
+    "person_never_said": 2,
+    "person_guessed_wrong": 1,
+    "correction_lost": 1,
+    "app_misparsed": 1
+   },
+   "issues_total": 32,
+   "P0": 14,
+   "P1": 14,
+   "issue_types": {
+    "confusing/P1": 3,
+    "misunderstanding/P1": 4,
+    "dead_end/P0": 13,
+    "dead_end/P1": 3,
+    "confusing/P2": 2,
+    "repeated_question/P1": 1,
+    "misunderstanding/P0": 1,
+    "repeated_question/P2": 1,
+    "contradiction/P1": 1,
+    "dead_end/P2": 1,
+    "unstated_assumption/P1": 2
+   },
+   "made_up_figures": 17,
+   "app_misparsed": 1,
+   "unstated_assumption_issues": 2,
+   "field_acc_by_field": {
+    "state": "23/24",
+    "retire_age": "22/24",
+    "pay_per_year": "20/24",
+    "savings_total": "20/24",
+    "home_owns": "23/24",
+    "mortgage_balance": "17/20",
+    "children": "21/24",
+    "pets": "22/24",
+    "debts_total": "23/24",
+    "spending_now": "21/24"
+   },
+   "plan_turn_kinds": {
+    "clarify": 14,
+    "answer": 22,
+    "error": 2,
+    "whatif": 10,
+    "change": 2
+   },
+   "usd_app_sum": 0.063521
+  }
+ }
+}

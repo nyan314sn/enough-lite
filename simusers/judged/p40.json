@@ -1,0 +1,121 @@
+{
+ "persona_id": "p40",
+ "issues": [
+  {
+   "ref": "i6",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "I updated the typical figures: spending in retirement at $128,000 a year.",
+   "note": "The $128,000 retirement spending is a derived estimate, and the reply calls it a 'typical figure' without saying it was computed from the $160,000 the person just gave."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 50,
+    "truth": 50,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CT",
+    "truth": "CT",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 58,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 260000.0,
+    "truth": 260000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 2200000.0,
+    "truth": 2200000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 400000.0,
+    "truth": 400000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     12,
+     15
+    ],
+    "truth": [
+     12,
+     15
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": false,
+    "got": 0,
+    "truth": 36000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 160000.0,
+    "truth": 160000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pension_per_year",
+    "cause": "never_asked",
+    "note": "The intake never asked about pensions. The user first mentioned the $36,000 pension in turn a3, and the app did not store it, so the plan still shows 0."
+   }
+  ]
+ }
+}

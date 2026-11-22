@@ -1,0 +1,96 @@
+===== old_chipper
+FIRST: Enough said:
+Thanks. I noted that you work as a plumber, you have a partner, you live in Ohio, you are 40 and your partner is 38 and you own your home. Until you tell me otherwise, I use typical figures for the rest: your pay at $62,000 a year, typical for a plumber, no pay for your partner, retirement at 65 and 6 more. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+[0] Q: ' retirement at 65 and 6 more. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?' CHIPS=['About $50k', 'About $250k', 'About $750k', 'About $2 million']
+   -> About $50k
+   BOT: Enough said:
+Thanks. I noted that you have saved $50,000. I split your $50,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?
+[1] Q: 'said:\nThanks. I noted that you have saved $50,000. I split your $50,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+   -> That's about right
+   BOT: Enough said:
+Good. I will use $30,000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash as your own figure for savings. Does your wife work? If so, what do they earn a year before tax?
+[2] Q: '30,000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash as your own figure for savings. Does your wife work? If so, what do they earn a year before tax?' CHIPS=['Not working', 'Retired', 'Type an amount']
+   -> Not working
+   BOT: Enough said:
+Thanks. I noted that your partner has no pay. About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month.
+[3] Q: 'h said:\nThanks. I noted that your partner has no pay. About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month.' CHIPS=['Not sure, estimate it', "It's paid off"]
+   -> Not sure, estimate it
+   BOT: Enough said:
+I used a typical mortgage for now: about $261,000 left, $1,525 a month, marked estimate. Change it in the panel if you know better. Your answer moved some typical figures, so I updated them: spending now at $49,000 a year, spending in retirement at $39,600 a year and a 5% mortgage rate, which sets when the mortgage ends. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if y
+[4] Q: 'ch sets when the mortgage ends. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+   -> No other debts
+   BOT: Enough said:
+Thanks. I noted that you have no other debts. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+[5] Q: 'Enough said:\nThanks. I noted that you have no other debts. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.' CHIPS=['No children', '1 child', '2 children', '3 children']
+   -> No children
+   BOT: Enough said:
+Thanks. I noted that you have no children. At what age do you want to stop working?
+[6] Q: 'Enough said:\nThanks. I noted that you have no children. At what age do you want to stop working?' CHIPS=['60', '62', '65', '67', '70']
+   -> 60
+   BOT: Enough said:
+Thanks. I noted that you want to retire at 60. If you'd rather, I can build your plan now with typical numbers for the rest. I estimated your spending now at $49,000 a year. Is that about right?
+[7] Q: " want to retire at 60. If you'd rather, I can build your plan now with typical numbers for the rest. I estimated your spending now at $49,000 a year. Is that about right?" CHIPS=["Yes, that's about right", '$4,000 a month', '$6,000 a month', '$9,000 a month', 'Build my plan with typical numbers for the rest']
+   -> Yes, that's about right
+   BOT: Enough said:
+Good. I will use $49,000 a year for your spending now. Your answer moved some typical figures, so I updated them: spending in retirement at $30,500 a year. I estimated your pay at $62,000 a year from typical pay for your job and state. Is that about right?
+[8] Q: 'figures, so I updated them: spending in retirement at $30,500 a year. I estimated your pay at $62,000 a year from typical pay for your job and state. Is that about right?' CHIPS=["That's about right", 'Type my real pay', 'Build my plan with typical numbers for the rest']
+   -> Type my real pay
+   BOT: Enough said:
+Sure, let's change your pay. That's enough to build your plan. Check the figures on the right, change any that are wrong, then press Build my plan under your family picture (on a phone, at the bottom of the screen). I will ask you to check the figures once before building. What is your pay now, before tax?
+READY True
+GROUP Saving :: Saving | 6 | Reset | Savings | $30,000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash | ✎ | you said | $30k pre-tax, $5k Roth, $10k taxable, $5k cash | Yearly saving | About $5,912 a year, what take-home pay leaves after spending, less than the 10% of pay assumed | ✎ | typical | Assumed you save 10% of pay un
+GROUP Home & debts :: Home & debts | 3 | Reset | Home | Own, $261,000 left on the mortgage, $1,525 a month (estimate), value not given | ✎ | estimate | A typical mortgage: a 30-year loan taken out at about 35, at 5%, with the monthly payment typical for your state (Census) or from your home's value. Please give your own figures. | Mortgage paid off |
+GROUP Pensions & income :: Pensions & income | Estimate: Social Security $43,700 a year at 67 (each at their own age); no pension counted | ✎
+GROUP Insurance :: Insurance | None counted | ✎
+GROUP Goals :: Goals | None counted | ✎
+GROUP Health :: Health | Estimate: good health | ✎
+GROUP Costs :: Costs | 2 | Reset | Spending now | $49,000 a year, about $4,083 a month | ✎ | you said | Spending in retirement | $30,500 a year | ✎ | assumed | Assumed: check this | About 80% of what you spend now, a common starting point. Say the same, less, or a figure.
+GROUP Work & pay :: Work & pay | 4 | Reset | Your job | plumber | ✎ | you said | Your pay | $62,000 a year | ✎ | estimate | Typical pay for plumbers, pipefitters, and steamfitters (BLS, May 2025), adjusted for pay levels in your state. | Partner's pay | No pay | ✎ | you said | Retirement age | 60 | ✎ | you said
+GROUP Household :: Household | 6 | Reset | Your age | 40 | ✎ | you said | Partner's age | 38 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | assumed | Assumed: check this | Only used to pick the right life table. | Partner's sex (life table only) | Female | ✎ | you said | State | Ohio | ✎ | you said | C
+errors []
+===== new_nurse
+FIRST: Enough said:
+Thanks. I noted that you work as a nurse, you have a partner, you live in Texas, you are 33 and your partner is 35 and you rent. Until you tell me otherwise, I use typical figures for the rest: your pay at $93,000 a year, typical for a nurse, your partner's pay at $80,000 a year, retirement at 65 and 5 more. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?
+[0] Q: ' retirement at 65 and 5 more. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?' CHIPS=['About $50k', 'About $250k', 'About $750k', 'About $2 million']
+   -> About $50k
+   BOT: Enough said:
+Thanks. I noted that you have saved $50,000. I split your $50,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?
+[1] Q: 'said:\nThanks. I noted that you have saved $50,000. I split your $50,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+   -> That's about right
+   BOT: Enough said:
+Good. I will use $30,000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash as your own figure for savings. Does your partner work? If so, what do they earn a year before tax?
+[2] Q: '000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash as your own figure for savings. Does your partner work? If so, what do they earn a year before tax?' CHIPS=['Not working', 'Retired', 'Use typical for their job', 'Type an amount']
+   -> Use typical for their job
+   BOT: Enough said:
+I estimated your partner's pay at $80,000 a year, marked estimate in the panel. Change it if you know better. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.
+[3] Q: '. Change it if you know better. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+   -> No other debts
+   BOT: Enough said:
+Thanks. I noted that you have no other debts. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+[4] Q: 'Enough said:\nThanks. I noted that you have no other debts. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.' CHIPS=['No children', '1 child', '2 children', '3 children']
+   -> No children
+   BOT: Enough said:
+Thanks. I noted that you have no children. At what age do you want to stop working?
+[5] Q: 'Enough said:\nThanks. I noted that you have no children. At what age do you want to stop working?' CHIPS=['60', '62', '65', '67', '70']
+   -> 60
+   BOT: Enough said:
+Thanks. I noted that you want to retire at 60. I estimated your spending now at $113,000 a year. Is that about right?
+[6] Q: 'Enough said:\nThanks. I noted that you want to retire at 60. I estimated your spending now at $113,000 a year. Is that about right?' CHIPS=["Yes, that's about right", '$4,000 a month', '$6,000 a month', '$9,000 a month']
+   -> Yes, that's about right
+   BOT: Enough said:
+Good. I will use $113,000 a year for your spending now. Your answer moved some typical figures, so I updated them: spending in retirement at $90,400 a year. If you'd rather, I can build your plan now with typical numbers for the rest. I estimated your pay at $93,000 a year from typical pay for your job and state. Is that about right?
+[7] Q: ' rather, I can build your plan now with typical numbers for the rest. I estimated your pay at $93,000 a year from typical pay for your job and state. Is that about right?' CHIPS=["That's about right", 'Type my real pay', 'Build my plan with typical numbers for the rest']
+   -> Type my real pay
+   BOT: Enough said:
+Sure, let's change your pay. That's enough to build your plan. Check the figures on the right, change any that are wrong, then press Build my plan under your family picture (on a phone, at the bottom of the screen). I will ask you to check the figures once before building. What is your pay now, before tax?
+READY True
+GROUP Saving :: Saving | 6 | Reset | Savings | $30,000 pre-tax (401(k) or IRA), $5,000 Roth, $10,000 taxable, $5,000 cash | ✎ | you said | $30k pre-tax, $5k Roth, $10k taxable, $5k cash | Yearly saving | About $30,732 a year ($17,300 into a 401(k) or IRA, an assumed 10% of pay; $13,432 of take-home pay left after spending) | ✎ | typical | Assum
+GROUP Home & debts :: Home & debts | 2 | Reset | Home | Rent, amount not given | ✎ | you said | Other debts | None counted | ✎ | you said
+GROUP Pensions & income :: Pensions & income | Estimate: Social Security $74,000 a year at 67 (each at their own age); no pension counted | ✎
+GROUP Insurance :: Insurance | None counted | ✎
+GROUP Goals :: Goals | None counted | ✎
+GROUP Health :: Health | Estimate: good health | ✎
+GROUP Costs :: Costs | 2 | Reset | Spending now | $113,000 a year, about $9,417 a month | ✎ | you said | Spending in retirement | $90,400 a year | ✎ | assumed | Assumed: check this | About 80% of what you spend now, a common starting point. Say the same, less, or a figure.
+GROUP Work & pay :: Work & pay | 6 | Reset | Your job | nurse | ✎ | you said | Partner's job | accountant | ✎ | you said | Your pay | $93,000 a year | ✎ | estimate | Typical pay for registered nurses (BLS, May 2025), adjusted for pay levels in your state. | Partner's pay | $80,000 a year | ✎ | estimate | Typical pay for accountants and auditors (BL
+GROUP Household :: Household | 6 | Reset | Your age | 33 | ✎ | you said | Partner's age | 35 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | typical | Only used to pick the right life table. | Partner's sex (life table only) | Not given, the average of the two tables | ✎ | typical | State | Texas | ✎ | 
+errors []

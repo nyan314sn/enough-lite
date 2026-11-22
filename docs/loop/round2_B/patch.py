@@ -1,0 +1,5 @@
+s = open("lib.py", encoding="utf-8").read()
+s = s.replace("""    try: pg.wait_for_function("!document.querySelector('.turn .spinner')", timeout=wait)
+    except Exception: pass""", """    try: pg.locator(".turn .spinner").first.wait_for(state="detached", timeout=wait)
+    except Exception: pass""")
+open("lib.py", "w", encoding="utf-8").write(s)

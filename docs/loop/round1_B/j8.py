@@ -1,0 +1,33 @@
+from lib import *
+with sync_playwright() as p:
+    b, pg = new(p)
+    pg.route("**/api/intake", lambda r: r.fulfill(status=500, body='{"detail":"internal"}'))
+    say(pg, "I'm 44, a dentist in Connecticut, single, I make $210,000, retire at 60")
+    print("INTAKE ERR:", pg.locator(".alert").all_inner_texts(), "| draft:", repr(pg.locator("#chat-input").input_value()))
+    shot(pg,"j8_intake_err_vp",full=False)
+    pg.unroute("**/api/intake")
+    pg.get_by_role("button", name="Try again").click(); pg.wait_for_timeout(3000)
+    print("canbuild:", auto(pg, log=True))
+    pg.route("**/api/plan", lambda r: r.fulfill(status=500, body='{"detail":"nope"}'))
+    pg.get_by_role("button", name="Build my plan", exact=True).first.click(); pg.wait_for_timeout(2500)
+    print("PLAN ERR:", pg.locator(".alert").all_inner_texts())
+    shot(pg,"j8_plan_err_vp",full=False)
+    print("ask box during plan error:", pg.locator(".ask").count(), "| Change my answers btn:", pg.get_by_role("button", name="Change my answers").count())
+    pg.unroute("**/api/plan")
+    pg.locator(".alert").get_by_role("button", name="Try again").click()
+    pg.wait_for_selector("[data-testid=plan-headline]", timeout=120000); pg.wait_for_timeout(500)
+    print("recovered:", pg.locator("[data-testid=plan-headline]").inner_text())
+    pg.evaluate("document.activeElement.blur(); window.scrollTo(0,0)")
+    seq=[]
+    for i in range(34):
+        pg.keyboard.press("Tab")
+        seq.append(pg.evaluate(r"(()=>{const e=document.activeElement;const r=e.getBoundingClientRect();const cs=getComputedStyle(e);return (e.getAttribute('aria-label')||e.innerText||e.id||e.tagName).slice(0,30).replace(/[\r\n]+/g,' ')+' | outline:'+cs.outlineStyle+' '+cs.outlineWidth+' shadow:'+(cs.boxShadow!='none')+' y='+Math.round(r.top)})()"))
+    print("\n".join(seq))
+    print("axe 1440 plan", axe(pg,"p"))
+    pg.get_by_role("button", name=re.compile("^Retire at")).first.click()
+    pg.wait_for_function("!document.querySelector('.turn .spinner')", timeout=90000); pg.wait_for_timeout(600)
+    print("axe 1440 wi", axe(pg,"w"))
+    for w,h in [(820,1000),(1100,800),(1440,700)]:
+        pg.set_viewport_size({"width":w,"height":h}); pg.wait_for_timeout(500); shot(pg,f"j8_{w}_vp",full=False); print("overflow",w, overflow(pg))
+    print(pg.errors)
+    b.close()

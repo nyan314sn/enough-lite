@@ -1,0 +1,106 @@
+{
+ "persona_id": "h02",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 38,
+    "truth": 38,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "NC",
+    "truth": "NC",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 67,
+    "truth": 67,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 74000.0,
+    "truth": 74000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 57000.0,
+    "truth": 57000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     9,
+     12
+    ],
+    "truth": [
+     9,
+     12
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 11000.0,
+    "truth": 11000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 264000.0,
+    "truth": 62000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.9166666666666666,
+  "why": [
+   {
+    "field": "spending_now",
+    "cause": "app_misparsed",
+    "note": "Tasha gave the $11k car loan as a balance and rent as $1,650/month, but the app treated the $11k balance as a monthly cost and built $264k/year from it. Her true spending of $62k/year was never stated."
+   }
+  ]
+ }
+}

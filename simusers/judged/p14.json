@@ -1,0 +1,107 @@
+{
+ "persona_id": "p14",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 59,
+    "truth": 59,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "NC",
+    "truth": "NC",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 64,
+    "truth": 64,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 76000.0,
+    "truth": 76000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 375000.0,
+    "truth": 375000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 30000.0,
+    "truth": 30000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": false,
+    "got": 0,
+    "truth": 14000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 60000.0,
+    "truth": 60000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pension_per_year",
+    "cause": "never_asked",
+    "note": "The transcript never asks about pensions or other retirement income, and the user never mentions the $14,000 pension starting at 62. The stored value is null-defaulted to 0, and the plan omits the pension entirely."
+   }
+  ]
+ }
+}

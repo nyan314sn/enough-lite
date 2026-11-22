@@ -1,0 +1,55 @@
+[ex] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[ex] ANSWER "That's about right"
+[ex] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[ex] ANSWER '$2,900'
+[ex] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER '$2,900'
+[ex] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER 'No other debts'
+[ex] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[ex] ANSWER '$5,000 a month'
+[ex] ready after 5 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 10.7 s
+HEADLINE: You can count on $175,600 a year: $30,000 for basics and $145,600 for the rest.
+ASSUMPTIONS: Assumptions | All figures are in today's dollars: what money buys now, not the larger sums prices will reach. | Savings grow on average 5.0% a year above inflation in stocks and 1.8% in bonds, with good and bad years. The plan tests many possible market paths. These are planning figures, not a forecast. They are fixed, so every plan is tested on the same markets; to see a bad stretch, try a What If such as markets fall 30%. | Until you retire you save about $182,071 a year: $31,000 into a 401(k) or IRA (assumed: 10% of pay), $151,071 of take-home pay left after your spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers. | Pay stays at today's level until you retire, with no raises. This is fixed: raises are not certain, so the plan does not count on them. If your pay changes, change it in your answers. |  | Change the retirement age (62)Change when Social Security starts (69) |  | More assumptions (7)
+CHANGE BUTTONS: ['Change the retirement age (62)', 'Change when Social Security starts (69)']
+ANALYSIS: The analysis |  | 2,000 market paths, in today's dollars. Chances, not promises. |  | How sure is it? |  | Spending $205,900 a year lasts in 75 of 100 market paths; $160,800 lasts in 95. |  | What could go wrong? |  | Your $176,000 a year holds up in most market paths under each of these. In the worst 1 in 10: |  | Stocks do badly for 10 years: savings run out when you are 89; you would cut about $82,000 a year for 10 years. | Prices rise faster for 10 years: savings run out when you are 94; you would cut about $82,000 a year for 5 years. | You both live 10 years longer together: savings run out when you are 96; you would cut about $82,000 a year for 3 years. |  | In all three, your basics stay paid in every path. |  | What each choice is worth | Choices that change what you can count on | Choice	Adds a year to what you can count on	 | Try it |  | Retire 1 year later, at 63	+$14,000	Try this | : Retire 1 year later, at 63 |  | Claim Social Security at 70	+$700	Try this | : Claim Social Security at 70 |  | Save $100 a month more	+$700	Try this | : Save $100 a month more | Where the money comes from |  | Pay covers your spending until you retire; after that Social Security, any pension and your savings do. |  | Where each year's spending comes from | Pay | Social Security | From savings | Spending | $0 | $113k | $226k | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95
+CHART0 tip: Age 51: spending $72,534
+Pay
+$191,575
+Saved: $119,041 more than you spend
+CHART0 tip: Age 59: spending $43,389
+Pay
+$162,430
+Saved: $119,041 more than you spend
+CHART0 tip: Age 73: spending $30,000
+Social Security
+$85,092
+Saved: $55,092 more than you spend
+ASK 'what if I retire at 63' -> You asked: | what if I retire at 63 |  | If you retire at 63, you can count on $189,600 a year, safe in 90 of 100 scenarios (your plan: $175,600). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement | Medicare.gov: When does Medicare coverage start? |  | AI cost $0.0014
+ASK 'what if I retire at 64' -> You asked: | what if I retire at 64 |  | If you retire at 64, you can count on $204,500 a year, safe in 90 of 100 scenarios (your plan: $175,600). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement | Medicare.gov: When does Medicare coverage start? |  | AI cost $0.0014
+ASK 'what if I retire at 65' -> You asked: | what if I retire at 65 |  | If you retire at 65, you can count on $220,700 a year, safe in 90 of 100 scenarios (your plan: $175,600). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement |  | AI cost $0.0014
+ASK 'waht if I save 500 more a month' -> You asked: | waht if I save 500 more a month |  | If you save $6,000 a year more and spend that much less now (about $188,071 a year saved in all, 61% of pay), you can count on $179,100 a year, safe in 90 of 100 scenarios (your plan: $175,600). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement | Medic
+ASK 'Save 15% of my pay' -> You asked: | Save 15% of my pay |  | If you save $15,500 a year more and spend that much less now (about $197,571 a year saved in all, 64% of pay), you can count on $184,900 a year, safe in 90 of 100 scenarios (your plan: $175,600). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 100 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement | Medicare.gov: Whe
+ASK 'what if my wife stops working' -> You asked: | what if my wife stops working |  | Your answers show no pay for your wife, so the plan does not change if she stops working. If that is wrong, add their pay in your answers first. |  | What if I retire at 59 | What if I save $500 more a month | What if markets fall 30% |  | AI cost $0.0000
+ASK 'what does the plan assume' -> You asked: | what does the plan assume |  | The plan uses what you told me: you retire at 62 (you said); your spending goal is $30,000 a year (assumed); your savings are $552,000 pre-tax (401(k) or IRA), $92,000 Roth, $184,000 taxable, $92,000 cash (you said); your Social Security is $82,000 a year at 67 (each at their own age), claimed at 69 (estimate); your pay is $310,000 a year (you said). It plans to age 99. All figures are in today's dollars: what money buys now, not the larger sums prices will reach. Pay stays at today's level until you retire, with no raises. This is fixed: raises are 
+!! STEP FAILED ex: TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".assumption-changes button").filter(has_text="Social Security").first
+
+[retired] BOT: ' in 3 more with typical figures, each marked in the panel so you can change it. I split your $640,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[retired] ANSWER "That's about right"
+[retired] BOT: 'Enough said:\nGood. I will treat that as your own figure. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[retired] ANSWER 'No other debts'
+[retired] BOT: 'Enough said:\nThanks. I noted that you have no other debts. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.' CHIPS=['No children', '1 child', '2 children', '3 children']
+[retired] ANSWER 'No children'
+[retired] ready after 3 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 9.7 s
+R HEADLINE: You can count on $64,800 a year: $40,500 for basics and $24,300 for the rest.
+R IDEAS: ['Spend $500 less a month', 'Markets fall 30%', '✓\nMarkets\n, finished. Tests your money.']
+R ASK 'retire at 65' -> You asked: | retire at 65 |  | You have already retired, so there is no retirement age to test. These What Ifs can change your plan: |  | What if I spend $500 less a month | What if markets fall 30%
+R ASK 'waht if I save 500 more a month' -> You asked: | waht if I save 500 more a month |  | You have retired, so there is no pay to save from: the plan draws on your savings now. Spending less does what saving more would. These What Ifs can change your plan: |  | What if I spend $500 less a month | What if I claim Social Security at 70 | What if markets fall 30% |  | AI cost $0.0000
+R ASK 'what if I retire at 70' -> You asked: | what if I retire at 70 |  | You have already retired, so there is no retirement age to test. These What Ifs can change your plan: |  | What if I spend $500 less a month | What if markets fall 30%
+errors []

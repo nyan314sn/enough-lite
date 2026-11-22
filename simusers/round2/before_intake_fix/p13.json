@@ -1,0 +1,2635 @@
+{
+ "persona_id": "p13",
+ "name": "Nina",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "Why do you need to know anything about me before you can plan anything? I'm 50, if that's the first thing you want. Who's asking, and what happens with this info?",
+   "clicked": null,
+   "reply": "Thanks. I noted that you are 50. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. Until you tell me otherwise, I use typical figures for the rest: your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $39,000 a year, spending in retirement at $33,000 a year, Social Security at $25,600 a year, saving 10% of pay and a balanced investing mix. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "Which state do you live in?",
+    "quick_answers": [
+     "Connecticut",
+     "New York",
+     "California",
+     "Texas",
+     "Florida"
+    ]
+   },
+   "missing": [
+    "state",
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "pay_per_year: $50,980 a year (assumed)",
+    "retire_age: 65 (assumed)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $25,600 a year (estimate)",
+    "spending_now_per_year: $39,000 a year, about $3,250 a month (estimate)",
+    "spending_per_year: $33,000 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$39,000 a year, about $3,250 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$33,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 2,
+   "user": "Why would you use typical figures for me instead of asking? And why is Illinois the first thing you need? I'm not giving you my state until you explain what it changes.",
+   "clicked": null,
+   "reply": "Your state sets your taxes and the typical cost of living, which the plan uses for your basics. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.",
+   "question": {
+    "text": "Which state do you live in?",
+    "quick_answers": [
+     "Connecticut",
+     "New York",
+     "California",
+     "Texas",
+     "Florida"
+    ]
+   },
+   "missing": [
+    "state",
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$39,000 a year, about $3,250 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$33,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 3,
+   "user": "Illinois. But I want to know why it matters first. Taxes differ by state, sure, but how much does it change a plan like this? And why did you pick my pay and spending as \"typical\" before asking me?",
+   "clicked": null,
+   "reply": "Thanks. I noted that you live in Illinois. Your state sets your taxes and the typical cost of living, which the plan uses for your basics. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. I updated the typical figures: spending now at $37,000 a year and spending in retirement at $35,400 a year.",
+   "question": {
+    "text": "What do you do for work, or what do you earn a year before tax?",
+    "quick_answers": [
+     "Under $50k",
+     "$50k to $100k",
+     "$100k to $200k",
+     "Over $200k"
+    ]
+   },
+   "missing": [
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "spending_now_per_year: $37,000 a year, about $3,083 a month (estimate)",
+    "spending_per_year: $35,400 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 4,
+   "user": "Why do you need my income exactly? And why did you change my spending figures just now without asking me? I'm not clicking a range until I know what the plan does with it.",
+   "clicked": null,
+   "reply": "Your pay sets your taxes, how much you can save, and your Social Security. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it.",
+   "question": {
+    "text": "What do you do for work, or what do you earn a year before tax?",
+    "quick_answers": [
+     "Under $50k",
+     "$50k to $100k",
+     "$100k to $200k",
+     "Over $200k"
+    ]
+   },
+   "missing": [
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 5,
+   "user": "Why does it need my job title too? And why did the spending figures change again without you asking me? I'm not picking a range. Tell me exactly what the plan does with my pay number, and whether I can see the figures before they go in.",
+   "clicked": null,
+   "reply": "Your pay sets your taxes, how much you can save, and your Social Security. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "What do you do for work, or what do you earn a year before tax?",
+    "quick_answers": [
+     "Under $50k",
+     "$50k to $100k",
+     "$100k to $200k",
+     "Over $200k",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 6,
+   "user": "Why does it need my job title too? You asked what I do for work, and I still don't know why that matters. And you still haven't told me why my spending figures keep changing without me asking. I'm not picking a range. Tell me exactly what the plan does with my pay number, and whether I can see the figures before they go in.",
+   "clicked": null,
+   "reply": "A rough figure is fine. If you don't know one, type skip and I will use a typical figure, marked so you can change it.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 7,
+   "user": "Why do you keep dodging my questions? You still haven't answered why my pay matters or why my spending figures keep changing. Before I give you a savings number, tell me exactly what the plan does with it and whether I get to see it first.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 8,
+   "user": "Why is it repeating the privacy answer instead of telling me what my pay number does? And why does it keep giving me numbers I never picked? I'm not clicking a range. Tell me what the plan does with the savings figure first, and whether I can see it before it goes in.",
+   "clicked": null,
+   "reply": "A Build my plan button appears under the chat once I have the essentials. I still need your savings, your home, any debts, whether you have children, when you want to retire and your spending. Or press 'Build my plan with typical numbers for the rest' to make it now. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 9,
+   "user": "Why are you still asking the same question? Before I type a savings number, tell me what the plan does with it and whether I see it first. I won't click a range.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 10,
+   "user": "Why is it repeating the same answer again? I asked what the savings number does, and whether I see it before it goes anywhere. Answer that first. I'm not clicking any of those buttons.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 11,
+   "user": "Why is it still repeating the same question and the same privacy answer? I asked twice now what the savings number does and whether I see it before it goes anywhere. Answer that first. I'm not clicking any of those buttons.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 12,
+   "user": "Why are you still asking the same thing? I've asked twice what the savings number does and whether I see it before it goes anywhere, and you keep pasting the same privacy paragraph. Answer that first. I'm not clicking any of those buttons.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 13,
+   "user": "Why are you still looping on the same question? I've asked three times now what the savings number does and whether I see it before it goes anywhere, and you keep sending the privacy paragraph. Answer that directly. Also, you still haven't said why my spending figures changed on their own. I'm not clicking any of those buttons.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 14,
+   "user": "Why are you still looping on the same question? I've asked four times now what the savings number does and whether I see it before it goes anywhere. Answer that, or tell me you can't. Also, my spending figures changed twice without me asking. Why?",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 15,
+   "user": "Why are you still looping on the same question? I've asked five times now what the savings number does and whether I see it before it goes anywhere. You still haven't answered that. Either answer it or admit you can't. And I'm not clicking a range.",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 16,
+   "user": "Enough. You've repeated the same privacy paragraph and the same savings question five times, and you still haven't told me what the savings number does or whether I see it before it's used. I'm not clicking a range. Either answer that directly or tell me you can't, and explain why my spending figures changed on their own.",
+   "clicked": null,
+   "reply": "Your savings are the money the plan draws on once you stop working. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 17,
+   "user": "Finally, a straight answer. But you still haven't said whether I see the number before it's used, or why my spending figures changed on their own. Answer those two first. And my savings are about $500k total, $380k pretax, $50k Roth, $90k taxable, $30k cash. I'm not clicking a range.",
+   "clicked": null,
+   "reply": "Thanks. I noted that you have saved $550,000 ($380,000 pre-tax, $50,000 Roth, $90,000 taxable and $30,000 cash). Your accounts add to $550,000, so I used that, not $500,000. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough.",
+   "question": {
+    "text": "Do you own your home or rent?",
+    "quick_answers": [
+     "I own it outright",
+     "I own it with a mortgage",
+     "I rent",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$380,000 pre-tax (401(k) or IRA), $50,000 Roth, $90,000 taxable, $30,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "9.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$37,000 a year, about $3,083 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$35,400 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 18,
+   "user": "Wait, why did you say my total was $550,000? I said about $500,000 and then listed the pieces, which add to $550,000. Fine, that's correct, but I'm not sure why you corrected me like I'd made a mistake. And you still haven't told me why my spending figures changed on their own, or whether I see the numbers before they're used. Answer those first.\n\nAlso, I own my home with a mortgage. I'm not clicking a button for that.",
+   "clicked": null,
+   "reply": "Thanks. I noted that you own your home. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. I updated the typical figures: spending now at $44,000 a year, spending in retirement at $43,600 a year and your mortgage payment at about $2,270 a month, typical for your state.",
+   "question": {
+    "text": "About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month.",
+    "quick_answers": [
+     "Not sure, estimate it",
+     "It's paid off",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "mortgage",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [
+    "home: Own, mortgage payment $2,270 a month, value not given (estimate)",
+    "spending_now_per_year: $44,000 a year, about $3,667 a month (estimate)",
+    "spending_per_year: $43,600 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "50",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Illinois",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$380,000 pre-tax (401(k) or IRA), $50,000 Roth, $90,000 taxable, $30,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "8.2 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, mortgage payment $2,270 a month, value not given",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$44,000 a year, about $3,667 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,600 a year",
+     "estimate"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [],
+ "started": 1795282911.9978108,
+ "final_profile": {
+  "age": 50,
+  "partner_age": null,
+  "has_partner": false,
+  "state": "IL",
+  "retire_age": 65,
+  "pay_per_year": 50980.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 380000.0,
+   "roth": 50000.0,
+   "taxable": 90000.0,
+   "cash": 30000.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": true,
+   "value": 0.0,
+   "mortgage_balance": 0.0,
+   "mortgage_payment": 2270.0,
+   "rent": 0.0,
+   "mortgage_rate": null
+  },
+  "children": [],
+  "pets": [],
+  "spending_per_year": 43600,
+  "social_security_per_year": 25600.0,
+  "risk": "balanced",
+  "job": null,
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "state": "you said",
+   "savings": "you said",
+   "home": "estimate",
+   "retire_age": "assumed",
+   "risk": "assumed",
+   "pay_per_year": "assumed",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_now_per_year": "estimate",
+   "spending_per_year": "estimate",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "told": "{\"pay_per_year\": \"your pay at $50,980 a year, the typical US pay\", \"retire_age\": \"retirement at 65\", \"spending_now_per_year\": \"spending now at $44,000 a year\", \"spending_per_year\": \"spending in retirement at $43,600 a year\", \"social_security_per_year\": \"Social Security at $25,600 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\", \"mortgage_payment\": \"your mortgage payment at about $2,270 a month, typical for your state\"}",
+   "stuck": "0",
+   "escape_told": "yes",
+   "skipped_pay_per_year": "yes",
+   "mortgage": "yes",
+   "home": "Typical monthly owner costs with a mortgage in your state (Census). Please give your own payment.",
+   "retire_age": "A common goal. Change it to test another age.",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "pay_per_year": "The typical pay of all US workers (BLS). Please give yours.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_now_per_year": "Estimated as your take-home pay less what you save, and no less than typical basics.",
+   "spending_per_year": "Estimated as 70% of your take-home pay, and no less than typical basics.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "mortgage",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 8.2,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 44000,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: Why are you still looping on the same question? I've asked five times now what the savings number does and whether I see it before it goes anywhere. You still haven't answered that. Either answer it or admit you can't. And I'm not clicking a range.",
+   "app: Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figures are enough. If you'd rather, I can b",
+   "you: Enough. You've repeated the same privacy paragraph and the same savings question five times and you still haven't told me what the savings number does or whether I see it before it's used. I'm not clicking a range. Either answer that directly or tell me you can't, and explain why my spending figures",
+   "app: Your savings are the money the plan draws on once you stop working. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. If you'd rather, I can build your plan now with typical numbers for the rest. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+   "you: Finally, a straight answer. But you still haven't said whether I see the number before it's used, or why my spending figures changed on their own. Answer those two first. And my savings are about $500k total, $380k pretax, $50k Roth, $90k taxable, $30k cash. I'm not clicking a range.",
+   "app: Thanks. I noted that you have saved $550,000 ($380,000 pre-tax, $50,000 Roth, $90,000 taxable and $30,000 cash). Your accounts add to $550,000, so I used that, not $500,000. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your message",
+   "you: Wait, why did you say my total was $550,000? I said about $500,000 and then listed the pieces, which add to $550,000. Fine, that's correct, but I'm not sure why you corrected me like I'd made a mistake. And you still haven't told me why my spending figures changed on their own, or whether I see the ",
+   "app: Thanks. I noted that you own your home. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: each one is sent to an AI model, Claude, run by Anthropic, so it can be understood. Leave out names and account numbers; rough figu"
+  ],
+  "turns": 18
+ },
+ "reached_missing_empty": false,
+ "turns_to_plan": null,
+ "app_cost_usd": 0.005372,
+ "app_tokens": 74921,
+ "seconds": 45.1
+}

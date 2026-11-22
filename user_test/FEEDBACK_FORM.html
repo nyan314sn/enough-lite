@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enough Lite: your feedback</title>
+<style>
+:root{--bg:#f3f5f8;--surface:#fff;--line:#dce2ea;--line-2:#c5cfdb;--text:#14233b;--text-2:#3a4c66;--muted:#566780;--accent:#0f6b78;--accent-2:#0b5560;--accent-soft:#e3f1f3;--accent-ink:#fff;--good:#2b7a57;--good-soft:#e5f3ec;--radius:12px;--shadow:0 1px 2px rgba(20,35,59,.06),0 2px 8px rgba(20,35,59,.04);--font:"Inter","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 var(--font)}
+main{max-width:680px;margin:0 auto;padding:32px 20px 64px}
+h1{font-size:1.6rem;margin:0 0 6px}
+p.lead{color:var(--text-2);margin:0 0 24px}
+fieldset,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;margin:0 0 16px}
+legend{font-weight:600;padding:0 6px}
+.scale{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.scale label{flex:1;min-width:52px;text-align:center;position:relative}
+.scale input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.scale span{display:block;padding:10px 0;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);font-weight:600}
+.scale input:checked+span{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.scale input:focus-visible+span{outline:3px solid var(--accent-2);outline-offset:2px}
+.ends{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;margin-top:4px}
+.q{margin-bottom:18px}.q:last-child{margin-bottom:0}
+label.f{display:block;font-weight:600;margin-bottom:4px}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;background:#fff}
+textarea{min-height:80px;resize:vertical}
+textarea:focus,input[type=text]:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}
+.opts label{display:block;padding:6px 0}
+button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:12px 22px;cursor:pointer}
+button:hover{background:var(--accent-2)}
+button:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
+#msg{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--good-soft);color:var(--good);display:none}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+<h1>How was Enough Lite?</h1>
+<p class="lead">Thank you. This takes about three minutes. Be blunt: a harsh answer helps more than a kind one. Do not type real names or account numbers. Nothing leaves this computer. When you press Save, the page makes a file on this machine.</p>
+
+<form id="f">
+<div class="card">
+  <label class="f" for="sid">Session ID (the person running the test will tell you)</label>
+  <input type="text" id="sid" autocomplete="off">
+  <div class="q" style="margin-top:14px">
+    <label class="f" for="who">In a few words, who are you? (optional, no name; for example "a 52-year-old teacher")</label>
+    <input type="text" id="who" autocomplete="off">
+  </div>
+</div>
+
+<fieldset data-key="clarity"><legend>1. How clear was it?</legend>
+  <div class="scale"></div><div class="ends"><span>1 = very confusing</span><span>5 = very clear</span></div></fieldset>
+<fieldset data-key="trust"><legend>2. How much did you trust the answer?</legend>
+  <div class="scale"></div><div class="ends"><span>1 = not at all</span><span>5 = completely</span></div></fieldset>
+<fieldset data-key="usefulness"><legend>3. How useful was it to you?</legend>
+  <div class="scale"></div><div class="ends"><span>1 = useless</span><span>5 = very useful</span></div></fieldset>
+<fieldset data-key="look"><legend>4. How did it look?</legend>
+  <div class="scale"></div><div class="ends"><span>1 = poor</span><span>5 = very good</span></div></fieldset>
+<fieldset data-key="reuse"><legend>5. How likely are you to use it again?</legend>
+  <div class="scale"></div><div class="ends"><span>1 = never</span><span>5 = certainly</span></div></fieldset>
+
+<div class="card">
+  <div class="q"><label class="f" for="confusing">What confused you, or made you stop?</label><textarea id="confusing"></textarea></div>
+  <div class="q"><label class="f" for="liked">What was the best part?</label><textarea id="liked"></textarea></div>
+  <div class="q"><label class="f" for="change">If you could change one thing, what would it be?</label><textarea id="change"></textarea></div>
+</div>
+
+<fieldset><legend>Compared with how you would do this today, this was:</legend>
+  <div class="opts">
+    <label><input type="radio" name="cmp" value="much better"> Much better</label>
+    <label><input type="radio" name="cmp" value="better"> Better</label>
+    <label><input type="radio" name="cmp" value="about the same"> About the same</label>
+    <label><input type="radio" name="cmp" value="worse"> Worse</label>
+    <label><input type="radio" name="cmp" value="much worse"> Much worse</label>
+    <label><input type="radio" name="cmp" value="not sure"> Not sure</label>
+  </div>
+  <div class="q" style="margin-top:10px"><label class="f" for="cmpnote">Why? (time, cost, trust, effort)</label><textarea id="cmpnote"></textarea></div>
+</fieldset>
+
+<div class="card">
+  <label class="f" for="quote">In your own words: what would you tell a friend about it?</label>
+  <textarea id="quote"></textarea>
+  <small>The person running the test may quote this in a class report, without your name.</small>
+</div>
+
+<button type="submit">Save my answers</button>
+<div id="msg" role="status"></div>
+</form>
+</main>
+<script>
+(function () {
+  document.querySelectorAll("fieldset[data-key]").forEach(function (fs) {
+    var k = fs.dataset.key, box = fs.querySelector(".scale");
+    for (var i = 1; i <= 5; i++) {
+      var l = document.createElement("label");
+      l.innerHTML = '<input type="radio" name="' + k + '" value="' + i + '" aria-label="' + i + ' out of 5"><span>' + i + '</span>';
+      box.appendChild(l);
+    }
+  });
+  function rating(k) { var r = document.querySelector('input[name="' + k + '"]:checked'); return r ? Number(r.value) : null; }
+  function val(id) { return document.getElementById(id).value.trim(); }
+  document.getElementById("f").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var cmp = document.querySelector('input[name="cmp"]:checked');
+    var sid = val("sid") || "unknown";
+    var data = {
+      session_id: sid, tester: val("who"),
+      ratings: { clarity: rating("clarity"), trust: rating("trust"), usefulness: rating("usefulness"), look: rating("look"), reuse: rating("reuse") },
+      open: { confusing: val("confusing"), liked: val("liked"), change: val("change") },
+      compare: { choice: cmp ? cmp.value : "", note: val("cmpnote") },
+      quote: val("quote"),
+      saved_at: new Date().toISOString()
+    };
+    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "feedback_" + sid.replace(/[^A-Za-z0-9_-]/g, "_") + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+    var m = document.getElementById("msg");
+    m.style.display = "block";
+    m.textContent = "Saved as " + a.download + " in your Downloads folder. Please give the file to the person running the test. Thank you.";
+  });
+})();
+</script>
+</body>
+</html>

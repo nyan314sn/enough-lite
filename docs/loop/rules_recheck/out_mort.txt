@@ -1,0 +1,20 @@
+  at: , $184,000 taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+== mode chip
+  after: Enough said:
+Thanks. I noted that you own your home, with $420,000 left on the mortgage, worth about $850,000. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"] ready False
+  at: , $184,000 taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+== mode typed_yes
+  after: Enough said:
+Thanks. I noted that you own your home, with $420,000 left on the mortgage, worth about $850,000. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"] ready False
+  at: , $184,000 taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+== mode typed_yes_plain
+  after: Enough said:
+Thanks. I noted that you own your home, with $420,000 left on the mortgage, worth about $850,000. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"] ready False
+  at: , $184,000 taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+== mode number
+  after: Enough said:
+Thanks. I noted that you own your home, with $420,000 left on the mortgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%. ['No other debts', 'Student loans', 'Car loan', 'Credit card'] ready False
+  at: , $184,000 taxable, $92,000 cash as your own figure for savings. I estimated your monthly mortgage payment at $2,772. Is that about right? Or type your payment. ["Yes, that's about right"]
+== mode skip
+  after: Enough said:
+I used a typical mortgage for now: about $420,000 left, $2,772 a month, marked estimate. Change it in the panel if you know better. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%. ['No other debts', 'Student loans', 'Car loan', 'Credit card'] ready False

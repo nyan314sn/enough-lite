@@ -1,0 +1,4939 @@
+[
+ {
+  "id": "S219",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "60M, +partner 59, $50k pay, own",
+  "profile": {
+   "age": 60,
+   "partner_age": 59,
+   "has_partner": true,
+   "state": "FL",
+   "retire_age": 70,
+   "pay_per_year": 49500,
+   "partner_pay_per_year": 95500,
+   "savings": {
+    "pretax": 33700,
+    "roth": 11700,
+    "taxable": 0,
+    "cash": 5600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 230000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 87000,
+   "social_security_per_year": 52500,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 62,
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 13600
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1490,
+    "transport": 1770,
+    "food": 1645,
+    "health": 1275,
+    "other": 2070
+   },
+   "spending_now_per_year": 99000
+  }
+ },
+ {
+  "id": "S080",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "38F, $22k pay, own",
+  "profile": {
+   "age": 38,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "IN",
+   "retire_age": 62,
+   "pay_per_year": 21500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 2100,
+    "cash": 8000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 460000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 19000,
+   "social_security_per_year": 7500,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 1400,
+     "rate": 0.2794,
+     "monthly_payment": 45
+    },
+    {
+     "kind": "other",
+     "balance": 4100,
+     "rate": 0.11,
+     "monthly_payment": 105
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 24100
+  }
+ },
+ {
+  "id": "S256",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "25M, $39k pay, own",
+  "profile": {
+   "age": 25,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OK",
+   "retire_age": 70,
+   "pay_per_year": 39000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 5900,
+    "cash": 3200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 540000,
+    "mortgage_balance": 317600,
+    "mortgage_payment": 2165,
+    "rent": 0,
+    "mortgage_rate": 0.038
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 26000,
+   "social_security_per_year": 2600,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 3200,
+     "rate": 0.2787,
+     "monthly_payment": 105
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 3205,
+    "transport": 500,
+    "food": 110,
+    "health": 85,
+    "other": 145,
+    "debt": 105
+   },
+   "spending_now_per_year": 49800
+  }
+ },
+ {
+  "id": "S082",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "73M, +partner 74, retired, own",
+  "profile": {
+   "age": 73,
+   "partner_age": 74,
+   "has_partner": true,
+   "state": "ID",
+   "retire_age": 73,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 9800
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 30000,
+   "social_security_per_year": 32300,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 74,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 10500,
+     "rate": 0.045,
+     "monthly_payment": 165
+    },
+    {
+     "kind": "other",
+     "balance": 4400,
+     "rate": 0.11,
+     "monthly_payment": 115
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 27100
+  }
+ },
+ {
+  "id": "S132",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "78M, +partner 77, retired, rent",
+  "profile": {
+   "age": 78,
+   "partner_age": 77,
+   "has_partner": true,
+   "state": "NC",
+   "retire_age": 78,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 51900
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 390
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 23000,
+   "social_security_per_year": 37900,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 77,
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 24800
+  }
+ },
+ {
+  "id": "S268",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "54M, +partner 53, $82k pay, own",
+  "profile": {
+   "age": 54,
+   "partner_age": 53,
+   "has_partner": true,
+   "state": "GA",
+   "retire_age": 65,
+   "pay_per_year": 82500,
+   "partner_pay_per_year": 53500,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 16900
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 830000,
+    "mortgage_balance": 37400,
+    "mortgage_payment": 1635,
+    "rent": 0,
+    "mortgage_rate": 0.045
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 56000,
+   "social_security_per_year": 50900,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 67,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 39700,
+     "rate": 0.06,
+     "monthly_payment": 660
+    },
+    {
+     "kind": "car",
+     "balance": 5400,
+     "rate": 0.06,
+     "monthly_payment": 90
+    },
+    {
+     "kind": "credit_card",
+     "balance": 10100,
+     "rate": 0.2661,
+     "monthly_payment": 325
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 3680,
+    "transport": 1715,
+    "food": 505,
+    "health": 370,
+    "other": 585,
+    "debt": 1070
+   },
+   "spending_now_per_year": 95100,
+   "emergency_months": 2.0
+  }
+ },
+ {
+  "id": "S227",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "57F, +partner 56, $78k pay, own",
+  "profile": {
+   "age": 57,
+   "partner_age": 56,
+   "has_partner": true,
+   "state": "FL",
+   "retire_age": 69,
+   "pay_per_year": 78500,
+   "partner_pay_per_year": 37500,
+   "savings": {
+    "pretax": 13800,
+    "roth": 400,
+    "taxable": 0,
+    "cash": 3200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 620000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 92000,
+   "social_security_per_year": 46200,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "good",
+   "partner_retire_age": 60,
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 101200
+  }
+ },
+ {
+  "id": "S211",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "44M, +partner 36, 1 kids, $180k pay, own",
+  "profile": {
+   "age": 44,
+   "partner_age": 36,
+   "has_partner": true,
+   "state": "VA",
+   "retire_age": 60,
+   "pay_per_year": 180000,
+   "partner_pay_per_year": 30500,
+   "savings": {
+    "pretax": 3900,
+    "roth": 900,
+    "taxable": 0,
+    "cash": 21100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 355000,
+    "mortgage_balance": 177800,
+    "mortgage_payment": 1290,
+    "rent": 0,
+    "mortgage_rate": 0.028
+   },
+   "children": [
+    {
+     "age": 12,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 133000,
+   "social_security_per_year": 61800,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 66,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 7600,
+     "rate": 0.2591,
+     "monthly_payment": 240
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 2680,
+    "transport": 2635,
+    "food": 2600,
+    "health": 1390,
+    "childcare": 120,
+    "other": 3450,
+    "debt": 240
+   },
+   "spending_now_per_year": 157400
+  }
+ },
+ {
+  "id": "S007",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "24F, +partner 20, $49k pay, rent",
+  "profile": {
+   "age": 24,
+   "partner_age": 20,
+   "has_partner": true,
+   "state": "PA",
+   "retire_age": 64,
+   "pay_per_year": 49000,
+   "partner_pay_per_year": 45500,
+   "savings": {
+    "pretax": 13000,
+    "roth": 600,
+    "taxable": 31000,
+    "cash": 28100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1545
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 67000,
+   "social_security_per_year": 22800,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "good",
+   "partner_retire_age": 67,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 26600,
+     "rate": 0.075,
+     "monthly_payment": 830
+    },
+    {
+     "kind": "car",
+     "balance": 13300,
+     "rate": 0.06,
+     "monthly_payment": 220
+    },
+    {
+     "kind": "credit_card",
+     "balance": 3100,
+     "rate": 0.2513,
+     "monthly_payment": 95
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "part_time": {
+    "per_year": 12000,
+    "until_age": 69
+   },
+   "spending_now_per_year": 80200
+  }
+ },
+ {
+  "id": "S009",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "71F, retired, rent",
+  "profile": {
+   "age": 71,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "TX",
+   "retire_age": 71,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 47700,
+    "roth": 5200,
+    "taxable": 0,
+    "cash": 4200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 495
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 20000,
+   "social_security_per_year": 21200,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 590,
+    "transport": 540,
+    "food": 165,
+    "health": 120,
+    "other": 225
+   },
+   "spending_now_per_year": 19700
+  }
+ },
+ {
+  "id": "S154",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "80F, retired, own",
+  "profile": {
+   "age": 80,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "MO",
+   "retire_age": 80,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 6100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 325000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 19000,
+   "social_security_per_year": 28500,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 16200
+  }
+ },
+ {
+  "id": "S014",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "53M, $55k pay, own",
+  "profile": {
+   "age": 53,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "PA",
+   "retire_age": 72,
+   "pay_per_year": 55000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 29200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 290000,
+    "mortgage_balance": 132600,
+    "mortgage_payment": 965,
+    "rent": 0,
+    "mortgage_rate": 0.032
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 42000,
+   "social_security_per_year": 22600,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 3600,
+     "rate": 0.2134,
+     "monthly_payment": 100
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "New roof",
+      "amount": 20000,
+      "year": 2030
+     }
+    ]
+   },
+   "spending_now_per_year": 46900
+  }
+ },
+ {
+  "id": "S208",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "61M, +partner 58, $45k pay, own",
+  "profile": {
+   "age": 61,
+   "partner_age": 58,
+   "has_partner": true,
+   "state": "AZ",
+   "retire_age": 63,
+   "pay_per_year": 45000,
+   "partner_pay_per_year": 41000,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 23600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 145000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 72000,
+   "social_security_per_year": 38600,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 69,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 2800,
+     "rate": 0.2758,
+     "monthly_payment": 95
+    },
+    {
+     "kind": "other",
+     "balance": 8000,
+     "rate": 0.11,
+     "monthly_payment": 205
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "inheritance": {
+    "amount": 50000,
+    "year": 2035,
+    "count": false
+   },
+   "budget": {
+    "housing": 860,
+    "transport": 1250,
+    "food": 1245,
+    "health": 1005,
+    "other": 1570,
+    "debt": 300
+   },
+   "spending_now_per_year": 74800
+  }
+ },
+ {
+  "id": "S195",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "41F, $69k pay, rent",
+  "profile": {
+   "age": 41,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OR",
+   "retire_age": 66,
+   "pay_per_year": 69000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 11300,
+    "roth": 5700,
+    "taxable": 0,
+    "cash": 27300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1210
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 35000,
+   "social_security_per_year": 26100,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 38200,
+     "rate": 0.2116,
+     "monthly_payment": 1055
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 51000,
+   "emergency_months": 6.5
+  }
+ },
+ {
+  "id": "S199",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "26M, +partner 22, $22k pay, own",
+  "profile": {
+   "age": 26,
+   "partner_age": 22,
+   "has_partner": true,
+   "state": "MA",
+   "retire_age": 66,
+   "pay_per_year": 21500,
+   "partner_pay_per_year": 30500,
+   "savings": {
+    "pretax": 800,
+    "roth": 200,
+    "taxable": 9500,
+    "cash": 42000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 120000,
+    "mortgage_balance": 96200,
+    "mortgage_payment": 755,
+    "rent": 0,
+    "mortgage_rate": 0.065
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 23000,
+   "social_security_per_year": 18000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 62,
+   "debts": [
+    {
+     "kind": "student",
+     "balance": 14100,
+     "rate": 0.045,
+     "monthly_payment": 145
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 2900
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1210,
+    "transport": 810,
+    "food": 410,
+    "health": 320,
+    "other": 525,
+    "debt": 145
+   },
+   "spending_now_per_year": 41000
+  }
+ },
+ {
+  "id": "S081",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "70M, +partner 65, retired, own",
+  "profile": {
+   "age": 70,
+   "partner_age": 65,
+   "has_partner": true,
+   "state": "CA",
+   "retire_age": 70,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 27100,
+    "roth": 3500,
+    "taxable": 0,
+    "cash": 19600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 172400,
+    "mortgage_payment": 1080,
+    "rent": 0,
+    "mortgage_rate": 0.032
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 52000,
+   "social_security_per_year": 39800,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 65,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 800,
+     "rate": 0.2204,
+     "monthly_payment": 35
+    }
+   ],
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 10000,
+     "start_age": 62,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1575,
+    "transport": 1135,
+    "food": 440,
+    "health": 315,
+    "other": 545,
+    "debt": 35
+   },
+   "spending_now_per_year": 48500
+  }
+ },
+ {
+  "id": "S073",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "80F, $25k pay, own",
+  "profile": {
+   "age": 80,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "MI",
+   "retire_age": 81,
+   "pay_per_year": 25000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 6300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 125000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 28000,
+   "social_security_per_year": 15200,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 13200,
+     "rate": 0.09,
+     "monthly_payment": 330
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 35300
+  }
+ },
+ {
+  "id": "S040",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "51M, 2 kids, $86k pay, own",
+  "profile": {
+   "age": 51,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "FL",
+   "retire_age": 66,
+   "pay_per_year": 86500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 4500,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 8400
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 430000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [
+    {
+     "age": 10,
+     "college": true,
+     "college_type": "public"
+    },
+    {
+     "age": 13,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 67000,
+   "social_security_per_year": 30500,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 2700,
+     "rate": 0.045,
+     "monthly_payment": 80
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "term",
+    "life_face": 260000
+   },
+   "budget": {
+    "housing": 1820,
+    "transport": 1350,
+    "food": 990,
+    "health": 550,
+    "childcare": 245,
+    "other": 1380,
+    "debt": 80
+   },
+   "spending_now_per_year": 77000
+  }
+ },
+ {
+  "id": "S068",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "56F, $75k pay, rent",
+  "profile": {
+   "age": 56,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "MO",
+   "retire_age": 63,
+   "pay_per_year": 75000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 23600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1520
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 58000,
+   "social_security_per_year": 27600,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 6000,
+    "parents_years": 3
+   },
+   "budget": {
+    "housing": 1850,
+    "transport": 1020,
+    "food": 690,
+    "health": 505,
+    "other": 890
+   },
+   "spending_now_per_year": 59500,
+   "emergency_months": 5.0
+  }
+ },
+ {
+  "id": "S018",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "36M, +partner 30, 3 kids, $58k pay, own",
+  "profile": {
+   "age": 36,
+   "partner_age": 30,
+   "has_partner": true,
+   "state": "MI",
+   "retire_age": 65,
+   "pay_per_year": 58000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 9500,
+    "cash": 14100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 535000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [
+    {
+     "age": 5,
+     "college": true,
+     "college_type": "public"
+    },
+    {
+     "age": 15,
+     "college": true,
+     "college_type": "public"
+    },
+    {
+     "age": 16,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 41000,
+   "social_security_per_year": 15300,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "good",
+   "partner_retire_age": 30,
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   }
+  }
+ },
+ {
+  "id": "S078",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "22M, +partner 20, $40k pay, rent",
+  "profile": {
+   "age": 22,
+   "partner_age": 20,
+   "has_partner": true,
+   "state": "AZ",
+   "retire_age": 67,
+   "pay_per_year": 40000,
+   "partner_pay_per_year": 30000,
+   "savings": {
+    "pretax": 3500,
+    "roth": 3100,
+    "taxable": 0,
+    "cash": 3900
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1210
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 50000,
+   "social_security_per_year": 18500,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 64,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 4100,
+     "rate": 0.2019,
+     "monthly_payment": 110
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 2100,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "part_time": {
+    "per_year": 12000,
+    "until_age": 70
+   },
+   "spending_now_per_year": 50000
+  }
+ },
+ {
+  "id": "S257",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "67F, retired, own",
+  "profile": {
+   "age": 67,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "WA",
+   "retire_age": 67,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 4500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 235000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 26000,
+   "social_security_per_year": 30600,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 495,
+    "transport": 1005,
+    "food": 125,
+    "health": 90,
+    "other": 175
+   },
+   "spending_now_per_year": 22700
+  }
+ },
+ {
+  "id": "S186",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "76F, retired, own",
+  "profile": {
+   "age": 76,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "MO",
+   "retire_age": 76,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 27800,
+    "cash": 3000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 125000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 72000,
+   "social_security_per_year": 16500,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "fair",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 3200,
+     "rate": 0.2284,
+     "monthly_payment": 95
+    }
+   ],
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 57500,
+     "start_age": 74,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 840,
+    "transport": 610,
+    "food": 1140,
+    "health": 835,
+    "other": 1475,
+    "debt": 95
+   },
+   "spending_now_per_year": 59900
+  }
+ },
+ {
+  "id": "S048",
+  "source": "cases",
+  "group": "scf",
+  "savings": "low",
+  "label": "49F, $214k pay, own",
+  "profile": {
+   "age": 49,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "CA",
+   "retire_age": 68,
+   "pay_per_year": 213500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 73500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 325000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 63000,
+   "social_security_per_year": 49600,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 2700,
+     "rate": 0.2107,
+     "monthly_payment": 75
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1695,
+    "transport": 765,
+    "food": 1260,
+    "health": 900,
+    "other": 1800,
+    "debt": 75
+   },
+   "spending_now_per_year": 77900
+  }
+ },
+ {
+  "id": "S083",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "40F, +partner 41, $58k pay, own",
+  "profile": {
+   "age": 40,
+   "partner_age": 41,
+   "has_partner": true,
+   "state": "NY",
+   "retire_age": 65,
+   "pay_per_year": 58500,
+   "partner_pay_per_year": 54000,
+   "savings": {
+    "pretax": 85700,
+    "roth": 96200,
+    "taxable": 0,
+    "cash": 18500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 230000,
+    "mortgage_balance": 81700,
+    "mortgage_payment": 825,
+    "rent": 0,
+    "mortgage_rate": 0.028
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 85000,
+   "social_security_per_year": 38600,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "fair",
+   "partner_retire_age": 66,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 4900,
+     "rate": 0.06,
+     "monthly_payment": 115
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 2400
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Car replacement",
+      "amount": 35000,
+      "year": 2035
+     }
+    ]
+   },
+   "budget": {
+    "housing": 1845,
+    "transport": 1465,
+    "food": 1235,
+    "health": 895,
+    "other": 1480,
+    "debt": 115
+   },
+   "spending_now_per_year": 84400
+  }
+ },
+ {
+  "id": "S267",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "63F, retired, own",
+  "profile": {
+   "age": 63,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "PA",
+   "retire_age": 63,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 224700,
+    "roth": 59600,
+    "taxable": 0,
+    "cash": 7300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 215000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 90000,
+   "social_security_per_year": 23800,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 24500,
+     "start_age": 58,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 18000,
+    "parents_years": 5
+   },
+   "budget": {
+    "housing": 1205,
+    "transport": 760,
+    "food": 1180,
+    "health": 875,
+    "other": 1585
+   },
+   "spending_now_per_year": 67300
+  }
+ },
+ {
+  "id": "S238",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "45M, +partner 40, 1 kids, $72k pay, own",
+  "profile": {
+   "age": 45,
+   "partner_age": 40,
+   "has_partner": true,
+   "state": "AL",
+   "retire_age": 65,
+   "pay_per_year": 72000,
+   "partner_pay_per_year": 38500,
+   "savings": {
+    "pretax": 44700,
+    "roth": 11400,
+    "taxable": 0,
+    "cash": 30100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 615000,
+    "mortgage_balance": 327000,
+    "mortgage_payment": 3005,
+    "rent": 0,
+    "mortgage_rate": 0.065
+   },
+   "children": [
+    {
+     "age": 6,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 55000,
+   "social_security_per_year": 44800,
+   "risk": "growth",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 61,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 10700,
+     "rate": 0.09,
+     "monthly_payment": 265
+    },
+    {
+     "kind": "car",
+     "balance": 1900,
+     "rate": 0.045,
+     "monthly_payment": 35
+    },
+    {
+     "kind": "student",
+     "balance": 52500,
+     "rate": 0.035,
+     "monthly_payment": 520
+    },
+    {
+     "kind": "credit_card",
+     "balance": 2300,
+     "rate": 0.2192,
+     "monthly_payment": 65
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "whole",
+    "life_face": 100000
+   },
+   "goals": {
+    "legacy": 40000,
+    "big_costs": [
+     {
+      "label": "Car replacement",
+      "amount": 35000,
+      "year": 2030
+     }
+    ]
+   }
+  }
+ },
+ {
+  "id": "S223",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "65F, $218k pay, rent",
+  "profile": {
+   "age": 65,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "MO",
+   "retire_age": 72,
+   "pay_per_year": 217500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 691800,
+    "roth": 394900,
+    "taxable": 0,
+    "cash": 10500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 2520
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 78000,
+   "social_security_per_year": 50100,
+   "risk": "careful",
+   "sex": "female",
+   "health": "poor",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 9600,
+     "rate": 0.09,
+     "monthly_payment": 240
+    },
+    {
+     "kind": "credit_card",
+     "balance": 700,
+     "rate": 0.1982,
+     "monthly_payment": 35
+    }
+   ],
+   "saving": {
+    "contrib_you": 6000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 3060,
+    "transport": 1045,
+    "food": 1140,
+    "health": 835,
+    "other": 1475,
+    "debt": 275
+   },
+   "spending_now_per_year": 94000,
+   "emergency_months": 1.5
+  }
+ },
+ {
+  "id": "S117",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "77F, retired, own",
+  "profile": {
+   "age": 77,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "KY",
+   "retire_age": 77,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 16300,
+    "roth": 8900,
+    "taxable": 40500,
+    "cash": 21400
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 180000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 68000,
+   "social_security_per_year": 25200,
+   "risk": "growth",
+   "sex": "female",
+   "health": "poor",
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 36500,
+     "start_age": 68,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 60500
+  }
+ },
+ {
+  "id": "S076",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "25M, $67k pay, rent",
+  "profile": {
+   "age": 25,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "TX",
+   "retire_age": 65,
+   "pay_per_year": 67000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 4200,
+    "roth": 1900,
+    "taxable": 5200,
+    "cash": 77000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1685
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 48000,
+   "social_security_per_year": 4400,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 6400,
+     "rate": 0.09,
+     "monthly_payment": 160
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "inheritance": {
+    "amount": 100000,
+    "year": 2034,
+    "count": false
+   },
+   "spending_now_per_year": 53600
+  }
+ },
+ {
+  "id": "S148",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "37M, +partner 33, 1 kids, $75k pay, rent",
+  "profile": {
+   "age": 37,
+   "partner_age": 33,
+   "has_partner": true,
+   "state": "IL",
+   "retire_age": 62,
+   "pay_per_year": 75000,
+   "partner_pay_per_year": 29500,
+   "savings": {
+    "pretax": 57400,
+    "roth": 23800,
+    "taxable": 0,
+    "cash": 26600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1630
+   },
+   "children": [
+    {
+     "age": 1,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 60000,
+   "social_security_per_year": 33500,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 67,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 2500,
+     "rate": 0.2791,
+     "monthly_payment": 80
+    }
+   ],
+   "saving": {
+    "contrib_you": 3600,
+    "contrib_partner": 4100,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "whole",
+    "life_face": 250000
+   },
+   "goals": {
+    "legacy": 50000,
+    "big_costs": [
+     {
+      "label": "Kitchen remodel",
+      "amount": 45000,
+      "year": 2036
+     }
+    ]
+   },
+   "spending_now_per_year": 70900
+  }
+ },
+ {
+  "id": "S004",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "57F, $22k pay, own",
+  "profile": {
+   "age": 57,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "NJ",
+   "retire_age": 65,
+   "pay_per_year": 22000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 19800,
+    "roth": 4300,
+    "taxable": 0,
+    "cash": 52400
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 90000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 18000,
+   "social_security_per_year": 14400,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 1000,
+     "rate": 0.2326,
+     "monthly_payment": 35
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "whole",
+    "life_face": 100000
+   },
+   "budget": {
+    "housing": 395,
+    "transport": 585,
+    "food": 215,
+    "health": 155,
+    "other": 300,
+    "debt": 35
+   },
+   "spending_now_per_year": 20200
+  }
+ },
+ {
+  "id": "S069",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "50M, $22k pay, own",
+  "profile": {
+   "age": 50,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "TX",
+   "retire_age": 66,
+   "pay_per_year": 22000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 70300,
+    "roth": 32500,
+    "taxable": 0,
+    "cash": 2500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 90000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 15000,
+   "social_security_per_year": 14400,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 2100,
+     "rate": 0.1951,
+     "monthly_payment": 55
+    }
+   ],
+   "saving": {
+    "contrib_you": 1200,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   }
+  }
+ },
+ {
+  "id": "S126",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "65F, +partner 67, retired, own",
+  "profile": {
+   "age": 65,
+   "partner_age": 67,
+   "has_partner": true,
+   "state": "TN",
+   "retire_age": 65,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 461700,
+    "roth": 76200,
+    "taxable": 0,
+    "cash": 42200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 165000,
+    "mortgage_balance": 96700,
+    "mortgage_payment": 845,
+    "rent": 0,
+    "mortgage_rate": 0.065
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 51000,
+   "social_security_per_year": 23200,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "excellent",
+   "partner_retire_age": 67,
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1205,
+    "transport": 1045,
+    "food": 550,
+    "health": 410,
+    "other": 625
+   },
+   "spending_now_per_year": 46000,
+   "emergency_months": 11.0
+  }
+ },
+ {
+  "id": "S013",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "77F, +partner 73, retired, own",
+  "profile": {
+   "age": 77,
+   "partner_age": 73,
+   "has_partner": true,
+   "state": "CA",
+   "retire_age": 77,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 345200,
+    "roth": 96000,
+    "taxable": 13100,
+    "cash": 10700
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 370000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 60000,
+   "social_security_per_year": 41700,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "good",
+   "partner_retire_age": 73,
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 23500,
+     "start_age": 68,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1200,
+    "transport": 1170,
+    "food": 635,
+    "health": 460,
+    "other": 790
+   },
+   "spending_now_per_year": 51100
+  }
+ },
+ {
+  "id": "S167",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "33M, +partner 38, $28k pay, own",
+  "profile": {
+   "age": 33,
+   "partner_age": 38,
+   "has_partner": true,
+   "state": "IL",
+   "retire_age": 64,
+   "pay_per_year": 28500,
+   "partner_pay_per_year": 35500,
+   "savings": {
+    "pretax": 60600,
+    "roth": 2900,
+    "taxable": 5800,
+    "cash": 71500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 220000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 29000,
+   "social_security_per_year": 24100,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 61,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 10300,
+     "rate": 0.06,
+     "monthly_payment": 170
+    }
+   ],
+   "saving": {
+    "contrib_you": 3800,
+    "contrib_partner": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 850,
+    "transport": 1060,
+    "food": 410,
+    "health": 295,
+    "other": 470,
+    "debt": 170
+   },
+   "spending_now_per_year": 39100
+  }
+ },
+ {
+  "id": "S124",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "40M, +partner 35, 2 kids, $66k pay, rent",
+  "profile": {
+   "age": 40,
+   "partner_age": 35,
+   "has_partner": true,
+   "state": "VA",
+   "retire_age": 64,
+   "pay_per_year": 66000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 63800,
+    "roth": 13000,
+    "taxable": 0,
+    "cash": 13200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 645
+   },
+   "children": [
+    {
+     "age": 8,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 16,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 33000,
+   "social_security_per_year": 27200,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "good",
+   "partner_retire_age": 35,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 9700,
+     "rate": 0.045,
+     "monthly_payment": 180
+    },
+    {
+     "kind": "student",
+     "balance": 76600,
+     "rate": 0.065,
+     "monthly_payment": 870
+    },
+    {
+     "kind": "credit_card",
+     "balance": 3400,
+     "rate": 0.2333,
+     "monthly_payment": 100
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "part_time": {
+    "per_year": 20000,
+    "until_age": 72
+   },
+   "budget": {
+    "housing": 780,
+    "transport": 1640,
+    "food": 315,
+    "health": 150,
+    "childcare": 245,
+    "other": 310,
+    "debt": 1150
+   },
+   "spending_now_per_year": 55100
+  }
+ },
+ {
+  "id": "S159",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "55M, $190k pay, own",
+  "profile": {
+   "age": 55,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "CO",
+   "retire_age": 66,
+   "pay_per_year": 190500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 93400,
+    "roth": 37600,
+    "taxable": 0,
+    "cash": 7100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 650000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 80000,
+   "social_security_per_year": 47000,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 75800
+  }
+ },
+ {
+  "id": "S232",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "46F, +partner 52, 3 kids, $71k pay, own",
+  "profile": {
+   "age": 46,
+   "partner_age": 52,
+   "has_partner": true,
+   "state": "PA",
+   "retire_age": 63,
+   "pay_per_year": 71000,
+   "partner_pay_per_year": 92500,
+   "savings": {
+    "pretax": 179400,
+    "roth": 68900,
+    "taxable": 0,
+    "cash": 13500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 475000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [
+    {
+     "age": 6,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 10,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 10,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 72000,
+   "social_security_per_year": 57100,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "fair",
+   "partner_retire_age": 72,
+   "debts": [
+    {
+     "kind": "student",
+     "balance": 86800,
+     "rate": 0.055,
+     "monthly_payment": 160
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 4400
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 104500,
+   "emergency_months": 1.5
+  }
+ },
+ {
+  "id": "S200",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "66F, +partner 74, $41k pay, own",
+  "profile": {
+   "age": 66,
+   "partner_age": 74,
+   "has_partner": true,
+   "state": "NC",
+   "retire_age": 72,
+   "pay_per_year": 41000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 335600,
+    "roth": 132600,
+    "taxable": 0,
+    "cash": 28300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 245000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 46000,
+   "social_security_per_year": 33100,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "fair",
+   "partner_retire_age": 74,
+   "saving": {
+    "contrib_you": 3900
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1025,
+    "transport": 1205,
+    "food": 1035,
+    "health": 785,
+    "other": 1205
+   },
+   "spending_now_per_year": 63100
+  }
+ },
+ {
+  "id": "S283",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "77F, +partner 80, retired, own",
+  "profile": {
+   "age": 77,
+   "partner_age": 80,
+   "has_partner": true,
+   "state": "FL",
+   "retire_age": 77,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 18500,
+    "roth": 2200,
+    "taxable": 0,
+    "cash": 59700
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 455000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 40000,
+   "social_security_per_year": 42500,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "fair",
+   "partner_retire_age": 80,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 8300,
+     "rate": 0.045,
+     "monthly_payment": 155
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1570,
+    "transport": 1080,
+    "food": 215,
+    "health": 165,
+    "other": 270,
+    "debt": 155
+   },
+   "spending_now_per_year": 41500
+  }
+ },
+ {
+  "id": "S250",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "26M, +partner 23, $48k pay, rent",
+  "profile": {
+   "age": 26,
+   "partner_age": 23,
+   "has_partner": true,
+   "state": "OH",
+   "retire_age": 67,
+   "pay_per_year": 48500,
+   "partner_pay_per_year": 21500,
+   "savings": {
+    "pretax": 250400,
+    "roth": 532100,
+    "taxable": 0,
+    "cash": 9500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1300
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 57000,
+   "social_security_per_year": 18200,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 65,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 12900,
+     "rate": 0.045,
+     "monthly_payment": 205
+    },
+    {
+     "kind": "student",
+     "balance": 183600,
+     "rate": 0.065,
+     "monthly_payment": null
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "legacy": 360000
+   },
+   "budget": {
+    "housing": 1690,
+    "transport": 1110,
+    "food": 750,
+    "health": 595,
+    "other": 890,
+    "debt": 205
+   },
+   "spending_now_per_year": 62900
+  }
+ },
+ {
+  "id": "S157",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "36M, +partner 38, 2 kids, $76k pay, own",
+  "profile": {
+   "age": 36,
+   "partner_age": 38,
+   "has_partner": true,
+   "state": "CA",
+   "retire_age": 66,
+   "pay_per_year": 76000,
+   "partner_pay_per_year": 36500,
+   "savings": {
+    "pretax": 220500,
+    "roth": 70700,
+    "taxable": 4400,
+    "cash": 15800
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [
+    {
+     "age": 0,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 8,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 80000,
+   "social_security_per_year": 34700,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "fair",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 66,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 7700,
+     "rate": 0.09,
+     "monthly_payment": 245
+    },
+    {
+     "kind": "car",
+     "balance": 3600,
+     "rate": 0.045,
+     "monthly_payment": 110
+    }
+   ],
+   "saving": {
+    "contrib_you": 3600,
+    "contrib_partner": 3200,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "term",
+    "life_face": 150000
+   }
+  }
+ },
+ {
+  "id": "S235",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "60M, +partner 59, $33k pay, own",
+  "profile": {
+   "age": 60,
+   "partner_age": 59,
+   "has_partner": true,
+   "state": "KS",
+   "retire_age": 63,
+   "pay_per_year": 33000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 103600,
+    "roth": 14500,
+    "taxable": 0,
+    "cash": 14100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 495000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 29000,
+   "social_security_per_year": 26200,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 59,
+   "saving": {
+    "contrib_you": 9200,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "legacy": 70000
+   },
+   "spending_now_per_year": 38100
+  }
+ },
+ {
+  "id": "S056",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "53M, $90k pay, own",
+  "profile": {
+   "age": 53,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "TN",
+   "retire_age": 64,
+   "pay_per_year": 89500,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 553600,
+    "roth": 46100,
+    "taxable": 0,
+    "cash": 14600
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 160000,
+    "mortgage_balance": 129100,
+    "mortgage_payment": 1165,
+    "rent": 0,
+    "mortgage_rate": 0.07
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 64000,
+   "social_security_per_year": 31200,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 4900,
+     "rate": 0.045,
+     "monthly_payment": 145
+    },
+    {
+     "kind": "car",
+     "balance": 9600,
+     "rate": 0.075,
+     "monthly_payment": 230
+    },
+    {
+     "kind": "credit_card",
+     "balance": 1200,
+     "rate": 0.2265,
+     "monthly_payment": 35
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 6000,
+    "parents_years": 8
+   },
+   "budget": {
+    "housing": 1710,
+    "transport": 890,
+    "food": 945,
+    "health": 690,
+    "other": 1235,
+    "debt": 415
+   },
+   "spending_now_per_year": 70600
+  }
+ },
+ {
+  "id": "S299",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "72M, +partner 65, retired, own",
+  "profile": {
+   "age": 72,
+   "partner_age": 65,
+   "has_partner": true,
+   "state": "PA",
+   "retire_age": 72,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 66400,
+    "roth": 63400,
+    "taxable": 0,
+    "cash": 18800
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 87100,
+    "mortgage_payment": 990,
+    "rent": 0,
+    "mortgage_rate": 0.055
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 22000,
+   "social_security_per_year": 25600,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 65,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 4600,
+     "rate": 0.09,
+     "monthly_payment": 95
+    },
+    {
+     "kind": "credit_card",
+     "balance": 11100,
+     "rate": 0.2082,
+     "monthly_payment": 305
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 36100
+  }
+ },
+ {
+  "id": "S037",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "75F, +partner 78, retired, own",
+  "profile": {
+   "age": 75,
+   "partner_age": 78,
+   "has_partner": true,
+   "state": "NC",
+   "retire_age": 75,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 12600,
+    "roth": 2600,
+    "taxable": 343700,
+    "cash": 24300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 600000,
+    "mortgage_balance": 261300,
+    "mortgage_payment": 1940,
+    "rent": 0,
+    "mortgage_rate": 0.038
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "cat",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 36000,
+   "social_security_per_year": 38200,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 78,
+   "insurance": {
+    "life_kind": "none"
+   }
+  }
+ },
+ {
+  "id": "S206",
+  "source": "cases",
+  "group": "scf",
+  "savings": "high",
+  "label": "24F, +partner 29, $38k pay, own",
+  "profile": {
+   "age": 24,
+   "partner_age": 29,
+   "has_partner": true,
+   "state": "TX",
+   "retire_age": 65,
+   "pay_per_year": 37500,
+   "partner_pay_per_year": 41500,
+   "savings": {
+    "pretax": 28400,
+    "roth": 6200,
+    "taxable": 45600,
+    "cash": 14200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 365000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 44000,
+   "social_security_per_year": 21100,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "excellent",
+   "partner_sex": "male",
+   "partner_health": "good",
+   "partner_retire_age": 62,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 2800,
+     "rate": 0.075,
+     "monthly_payment": 50
+    },
+    {
+     "kind": "student",
+     "balance": 19700,
+     "rate": 0.035,
+     "monthly_payment": 195
+    }
+   ],
+   "saving": {
+    "contrib_you": 4300,
+    "contrib_partner": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   }
+  }
+ },
+ {
+  "id": "E25_underwater_mortgage_arm",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 44, mortgage larger than the home is worth",
+  "profile": {
+   "age": 44,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 65,
+   "pay_per_year": 74000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 40000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 6000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 240000,
+    "mortgage_balance": 265000,
+    "mortgage_payment": 1855,
+    "rent": 0,
+    "mortgage_rate": 0.0725
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 55000,
+   "social_security_per_year": 29000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 4000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Wedding",
+      "amount": 30000,
+      "year": 2031
+     }
+    ]
+   },
+   "spending_now_per_year": 56200
+  }
+ },
+ {
+  "id": "E23_wants_guaranteed_income",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 63 who wants guaranteed income",
+  "profile": {
+   "age": 63,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 63,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 480000,
+    "roth": 60000,
+    "taxable": 0,
+    "cash": 50000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 310000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 64000,
+   "social_security_per_year": 28000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 12000,
+    "parents_years": 8
+   }
+  }
+ },
+ {
+  "id": "E09_single_mom_2_kids",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 34, single parent, two kids, renting",
+  "profile": {
+   "age": 34,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "GA",
+   "retire_age": 66,
+   "pay_per_year": 52000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 8000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 2500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1040
+   },
+   "children": [
+    {
+     "age": 3,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 7,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 40000,
+   "social_security_per_year": 24000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 1500,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "inheritance": {
+    "amount": 100000,
+    "year": 2030,
+    "count": true
+   },
+   "spending_now_per_year": 46100
+  }
+ },
+ {
+  "id": "E12_early_retiree_45",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 45, wants to retire now on $60k",
+  "profile": {
+   "age": 45,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "WA",
+   "retire_age": 46,
+   "pay_per_year": 120000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 300000,
+    "roth": 120000,
+    "taxable": 500000,
+    "cash": 60000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 450000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 60000,
+   "social_security_per_year": 30000,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 23000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1340,
+    "food": 1035,
+    "transport": 1285,
+    "health": 760,
+    "other": 1455
+   },
+   "spending_now_per_year": 70500
+  }
+ },
+ {
+  "id": "E18_low_income_retired",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 68, retired on Social Security only",
+  "profile": {
+   "age": 68,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "WV",
+   "retire_age": 68,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 3000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 430
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 21000,
+   "social_security_per_year": 17000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 20000
+  }
+ },
+ {
+  "id": "E14_age_79_retired",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 79, retired, modest savings",
+  "profile": {
+   "age": 79,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "AZ",
+   "retire_age": 79,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 320000,
+    "roth": 60000,
+    "taxable": 0,
+    "cash": 40000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 300000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 52000,
+   "social_security_per_year": 30000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 930,
+    "food": 700,
+    "transport": 910,
+    "health": 560,
+    "other": 1015
+   },
+   "spending_now_per_year": 49400
+  }
+ },
+ {
+  "id": "E27_max_contributions_high_earner",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 41, saves the legal maximum everywhere",
+  "profile": {
+   "age": 41,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "CA",
+   "retire_age": 60,
+   "pay_per_year": 310000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 620000,
+    "roth": 150000,
+    "taxable": 350000,
+    "cash": 80000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 1200000,
+    "mortgage_balance": 620000,
+    "mortgage_payment": 3020,
+    "rent": 0,
+    "mortgage_rate": 0.0325
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 180000,
+   "social_security_per_year": 50000,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 37400,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 6280,
+    "food": 1260,
+    "transport": 1545,
+    "health": 900,
+    "other": 1800
+   },
+   "spending_now_per_year": 141400
+  }
+ },
+ {
+  "id": "E16_bracket_gains",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 62, high bracket with a large brokerage account and low basis",
+  "profile": {
+   "age": 62,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "CA",
+   "retire_age": 64,
+   "pay_per_year": 380000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 900000,
+    "roth": 150000,
+    "taxable": 3200000,
+    "cash": 100000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 1600000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 220000,
+   "social_security_per_year": 48000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 25500,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 3825,
+    "food": 1260,
+    "transport": 1545,
+    "health": 900,
+    "other": 1800
+   },
+   "spending_now_per_year": 112000
+  }
+ },
+ {
+  "id": "E10_renter_growing_student_loan",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 29 renter, student loan that grows (payment below interest)",
+  "profile": {
+   "age": 29,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "NY",
+   "retire_age": 65,
+   "pay_per_year": 62000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 9000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 3000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1445
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 52000,
+   "social_security_per_year": 25000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "student",
+     "balance": 95000,
+     "rate": 0.0675,
+     "monthly_payment": 250
+    }
+   ],
+   "saving": {
+    "contrib_you": 3000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "New roof",
+      "amount": 20000,
+      "year": 2028
+     }
+    ]
+   },
+   "budget": {
+    "housing": 1750,
+    "food": 415,
+    "transport": 510,
+    "health": 300,
+    "other": 575,
+    "debt": 250
+   },
+   "spending_now_per_year": 45600
+  }
+ },
+ {
+  "id": "E11_growing_card_debt",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 45, credit cards at 26% with payments below the interest",
+  "profile": {
+   "age": 45,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 66,
+   "pay_per_year": 58000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 15000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1025
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 44000,
+   "social_security_per_year": 26000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 28000,
+     "rate": 0.26,
+     "monthly_payment": 400
+    },
+    {
+     "kind": "other",
+     "balance": 9000,
+     "rate": 0.14,
+     "monthly_payment": 120
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 6000,
+    "parents_years": 3
+   },
+   "spending_now_per_year": 44600
+  }
+ },
+ {
+  "id": "E20_couple_both_retired",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 71 and 68, both retired, one pension",
+  "profile": {
+   "age": 71,
+   "partner_age": 68,
+   "has_partner": true,
+   "state": "NC",
+   "retire_age": 71,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 770000,
+    "roth": 90000,
+    "taxable": 200000,
+    "cash": 60000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 410000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 85000,
+   "social_security_per_year": 56000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_retire_age": 68,
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 24000,
+     "start_age": 65,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1485,
+    "food": 1225,
+    "transport": 1665,
+    "health": 930,
+    "other": 1425
+   },
+   "spending_now_per_year": 80800
+  }
+ },
+ {
+  "id": "E15_age_79_working",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 79, still working, wants to stop at 80",
+  "profile": {
+   "age": 79,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 80,
+   "pay_per_year": 48000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 150000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 20000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1575
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 52000,
+   "social_security_per_year": 24000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1965,
+    "food": 665,
+    "transport": 850,
+    "health": 520,
+    "other": 900
+   },
+   "spending_now_per_year": 58800
+  }
+ },
+ {
+  "id": "E03_no_savings",
+  "source": "cases",
+  "group": "edge",
+  "savings": "low",
+  "label": "Age 40, no savings, steady job",
+  "profile": {
+   "age": 40,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 67,
+   "pay_per_year": 60000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 0
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1230
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 45000,
+   "social_security_per_year": 26000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1540,
+    "food": 520,
+    "transport": 665,
+    "health": 405,
+    "other": 705
+   },
+   "spending_now_per_year": 46000
+  }
+ },
+ {
+  "id": "E05_very_wealthy",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 50, very wealthy: $18M, wants $400k a year",
+  "profile": {
+   "age": 50,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "NY",
+   "retire_age": 60,
+   "pay_per_year": 650000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 5000000,
+    "roth": 1000000,
+    "taxable": 9000000,
+    "cash": 400000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 3500000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 400000,
+   "social_security_per_year": 50000,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "saving": {
+    "contrib_you": 25500,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "legacy": 3000000
+   },
+   "budget": {
+    "housing": 7945,
+    "food": 1270,
+    "transport": 1560,
+    "health": 915,
+    "other": 1755
+   },
+   "spending_now_per_year": 161300
+  }
+ },
+ {
+  "id": "E13_early_retiree_45_underfunded",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 45, wants to retire at 50 with $150k saved",
+  "profile": {
+   "age": 45,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 50,
+   "pay_per_year": 95000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 135000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 15000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1715
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 70000,
+   "social_security_per_year": 30000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 10000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "part_time": {
+    "per_year": 20000,
+    "until_age": 57
+   },
+   "budget": {
+    "housing": 2140,
+    "food": 725,
+    "transport": 930,
+    "health": 565,
+    "other": 980
+   },
+   "spending_now_per_year": 64100
+  }
+ },
+ {
+  "id": "E26_heloc_and_boat",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 57 with a home equity line, a boat and an RV",
+  "profile": {
+   "age": 57,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 63,
+   "pay_per_year": 130000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 420000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 30000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 640000,
+    "mortgage_balance": 150000,
+    "mortgage_payment": 1000,
+    "rent": 0,
+    "mortgage_rate": 0.036
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 90000,
+   "social_security_per_year": 38000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "other",
+     "balance": 60000,
+     "rate": 0.0825,
+     "monthly_payment": 410
+    }
+   ],
+   "saving": {
+    "contrib_you": 20000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   }
+  }
+ },
+ {
+  "id": "N08_pension_takes_lump_sum",
+  "source": "cases",
+  "group": "edge",
+  "savings": "high",
+  "label": "Age 60, same pension taken as a $470,000 lump sum rolled into an IRA",
+  "profile": {
+   "age": 60,
+   "partner_age": 58,
+   "has_partner": true,
+   "state": "MI",
+   "retire_age": 62,
+   "pay_per_year": 92000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 653000,
+    "roth": 40000,
+    "taxable": 0,
+    "cash": 40000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 380000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 70000,
+   "social_security_per_year": 44000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_retire_age": 58,
+   "saving": {
+    "contrib_you": 12000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1380,
+    "food": 885,
+    "transport": 1230,
+    "health": 700,
+    "other": 1060
+   },
+   "spending_now_per_year": 63100,
+   "emergency_months": 7.5
+  }
+ },
+ {
+  "id": "sample_doctor",
+  "source": "samples",
+  "group": "sample",
+  "savings": "comfortable",
+  "label": "Doctor couple, 3 kids, CT",
+  "profile": {
+   "age": 45,
+   "partner_age": 43,
+   "has_partner": true,
+   "state": "CT",
+   "retire_age": 62,
+   "pay_per_year": 310000,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 520000,
+    "roth": 60000,
+    "taxable": 240000,
+    "cash": 100000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 850000,
+    "mortgage_balance": 420000,
+    "mortgage_payment": 2600,
+    "rent": 0,
+    "mortgage_rate": 0.04
+   },
+   "children": [
+    {
+     "age": 13,
+     "college": true,
+     "college_type": "public"
+    },
+    {
+     "age": 10,
+     "college": true,
+     "college_type": "private"
+    },
+    {
+     "age": 6,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 2
+    }
+   ],
+   "spending_per_year": 105000,
+   "social_security_per_year": 62000,
+   "risk": "balanced",
+   "job": "doctor",
+   "health": "good",
+   "saving": {
+    "contrib_you": 23000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "term",
+    "life_face": 1500000
+   },
+   "spending_now_per_year": 160000
+  }
+ },
+ {
+  "id": "sample_e27",
+  "source": "samples",
+  "group": "sample",
+  "savings": "comfortable",
+  "label": "Single high earner, 41, CA",
+  "profile": {
+   "age": 41,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "CA",
+   "retire_age": 60,
+   "pay_per_year": 310000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 620000,
+    "roth": 150000,
+    "taxable": 350000,
+    "cash": 80000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 1200000,
+    "mortgage_balance": 620000,
+    "mortgage_payment": 3020,
+    "rent": 0,
+    "mortgage_rate": 0.0325
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 110000,
+   "social_security_per_year": 50000,
+   "risk": "growth",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 37400,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 6280,
+    "food": 1260,
+    "transport": 1545,
+    "health": 900,
+    "other": 1800
+   },
+   "spending_now_per_year": 141400
+  }
+ },
+ {
+  "id": "sample_s039",
+  "source": "samples",
+  "group": "sample",
+  "savings": "comfortable",
+  "label": "Retired couple, large savings, TX",
+  "profile": {
+   "age": 67,
+   "partner_age": 62,
+   "has_partner": true,
+   "state": "TX",
+   "retire_age": 67,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 2219400,
+    "roth": 1015200,
+    "taxable": 0,
+    "cash": 41200
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 445000,
+    "mortgage_balance": 247300,
+    "mortgage_payment": 1145,
+    "rent": 0,
+    "mortgage_rate": 0.028
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 142000,
+   "social_security_per_year": 27600,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "fair",
+   "partner_retire_age": 62,
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 126600
+  }
+ },
+ {
+  "id": "sample_s071",
+  "source": "samples",
+  "group": "sample",
+  "savings": "comfortable",
+  "label": "Couple in their 50s, one teen, PA",
+  "profile": {
+   "age": 50,
+   "partner_age": 44,
+   "has_partner": true,
+   "state": "PA",
+   "retire_age": 62,
+   "pay_per_year": 94500,
+   "partner_pay_per_year": 68000,
+   "savings": {
+    "pretax": 792400,
+    "roth": 208400,
+    "taxable": 0,
+    "cash": 55500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 705000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [
+    {
+     "age": 17,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 99000,
+   "social_security_per_year": 57300,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_health": "excellent",
+   "partner_retire_age": 66,
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 1400,
+     "rate": 0.2796,
+     "monthly_payment": 45
+    }
+   ],
+   "saving": {
+    "contrib_you": 4500,
+    "contrib_partner": 1500,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "term",
+    "life_face": 280000
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Car replacement",
+      "amount": 35000,
+      "year": 2030
+     }
+    ]
+   },
+   "part_time": {
+    "per_year": 12000,
+    "until_age": 66
+   },
+   "budget": {
+    "housing": 2425,
+    "transport": 1905,
+    "food": 1645,
+    "health": 885,
+    "childcare": 120,
+    "other": 2130,
+    "debt": 45
+   },
+   "spending_now_per_year": 109900
+  }
+ },
+ {
+  "id": "sample_e20",
+  "source": "samples",
+  "group": "sample",
+  "savings": "comfortable",
+  "label": "Retired couple, 71 and 68, NC",
+  "profile": {
+   "age": 71,
+   "partner_age": 68,
+   "has_partner": true,
+   "state": "NC",
+   "retire_age": 71,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 0,
+   "savings": {
+    "pretax": 770000,
+    "roth": 90000,
+    "taxable": 200000,
+    "cash": 60000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 410000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 85000,
+   "social_security_per_year": 56000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_retire_age": 68,
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 24000,
+     "start_age": 65,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1485,
+    "food": 1225,
+    "transport": 1665,
+    "health": 930,
+    "other": 1425
+   },
+   "spending_now_per_year": 80800
+  }
+ },
+ {
+  "id": "sample_e24",
+  "source": "samples",
+  "group": "sample",
+  "savings": "average",
+  "label": "Couple, two teens, college soon, OH",
+  "profile": {
+   "age": 49,
+   "partner_age": 50,
+   "has_partner": true,
+   "state": "OH",
+   "retire_age": 65,
+   "pay_per_year": 110000,
+   "partner_pay_per_year": 95000,
+   "savings": {
+    "pretax": 410000,
+    "roth": 0,
+    "taxable": 40000,
+    "cash": 25000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 500000,
+    "mortgage_balance": 210000,
+    "mortgage_payment": 1245,
+    "rent": 0,
+    "mortgage_rate": 0.0375
+   },
+   "children": [
+    {
+     "age": 15,
+     "college": true,
+     "college_type": "private"
+    },
+    {
+     "age": 17,
+     "college": true,
+     "college_type": "private"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 85000,
+   "social_security_per_year": 68000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_retire_age": 66,
+   "saving": {
+    "contrib_you": 14000,
+    "contrib_partner": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 3350,
+    "food": 2090,
+    "transport": 2660,
+    "health": 1065,
+    "childcare": 240,
+    "other": 2030
+   },
+   "spending_now_per_year": 137200
+  }
+ },
+ {
+  "id": "sample_s011",
+  "source": "samples",
+  "group": "sample",
+  "savings": "average",
+  "label": "Single, 66, still working, FL",
+  "profile": {
+   "age": 66,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "FL",
+   "retire_age": 69,
+   "pay_per_year": 130000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 632800,
+    "roth": 52600,
+    "taxable": 0,
+    "cash": 17300
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 640000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 83000,
+   "social_security_per_year": 39900,
+   "risk": "careful",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Family trip",
+      "amount": 15000,
+      "year": 2029
+     }
+    ]
+   },
+   "budget": {
+    "housing": 2670,
+    "transport": 685,
+    "food": 1165,
+    "health": 890,
+    "other": 1680
+   },
+   "spending_now_per_year": 85100
+  }
+ },
+ {
+  "id": "sample_e28",
+  "source": "samples",
+  "group": "sample",
+  "savings": "average",
+  "label": "Couple, one retired, TN",
+  "profile": {
+   "age": 66,
+   "partner_age": 58,
+   "has_partner": true,
+   "state": "TN",
+   "retire_age": 66,
+   "pay_per_year": 0,
+   "partner_pay_per_year": 85000,
+   "savings": {
+    "pretax": 550000,
+    "roth": 60000,
+    "taxable": 0,
+    "cash": 30000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 380000,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 0
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 90000,
+   "social_security_per_year": 66000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "partner_sex": "female",
+   "partner_retire_age": 64,
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 9000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 64700
+  }
+ },
+ {
+  "id": "sample_s083",
+  "source": "samples",
+  "group": "sample",
+  "savings": "average",
+  "label": "Couple in their 40s, modest savings, NY",
+  "profile": {
+   "age": 40,
+   "partner_age": 41,
+   "has_partner": true,
+   "state": "NY",
+   "retire_age": 65,
+   "pay_per_year": 58500,
+   "partner_pay_per_year": 54000,
+   "savings": {
+    "pretax": 85700,
+    "roth": 96200,
+    "taxable": 0,
+    "cash": 18500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 230000,
+    "mortgage_balance": 81700,
+    "mortgage_payment": 825,
+    "rent": 0,
+    "mortgage_rate": 0.028
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 85000,
+   "social_security_per_year": 38600,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "partner_sex": "male",
+   "partner_health": "fair",
+   "partner_retire_age": 66,
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 4900,
+     "rate": 0.06,
+     "monthly_payment": 115
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "contrib_partner": 2400
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Car replacement",
+      "amount": 35000,
+      "year": 2035
+     }
+    ]
+   },
+   "budget": {
+    "housing": 1845,
+    "transport": 1465,
+    "food": 1235,
+    "health": 895,
+    "other": 1480,
+    "debt": 115
+   },
+   "spending_now_per_year": 84400
+  }
+ },
+ {
+  "id": "sample_young",
+  "source": "samples",
+  "group": "sample",
+  "savings": "average",
+  "label": "Young couple, 2 small kids, TX",
+  "profile": {
+   "age": 34,
+   "partner_age": 33,
+   "has_partner": true,
+   "state": "TX",
+   "retire_age": 65,
+   "pay_per_year": 78000,
+   "partner_pay_per_year": 52000,
+   "savings": {
+    "pretax": 61000,
+    "roth": 14000,
+    "taxable": 6000,
+    "cash": 15000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": true,
+    "value": 340000,
+    "mortgage_balance": 270000,
+    "mortgage_payment": 1750,
+    "rent": 0,
+    "mortgage_rate": 0.05
+   },
+   "children": [
+    {
+     "age": 4,
+     "college": true,
+     "college_type": "public"
+    },
+    {
+     "age": 1,
+     "college": true,
+     "college_type": "public"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 88000,
+   "social_security_per_year": 46000,
+   "risk": "balanced",
+   "health": "good",
+   "saving": {
+    "contrib_you": 6000,
+    "contrib_partner": 3000,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "term",
+    "life_face": 500000
+   },
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 14000,
+     "rate": 0.07,
+     "monthly_payment": 380
+    }
+   ],
+   "spending_now_per_year": 96000
+  }
+ },
+ {
+  "id": "sample_e09",
+  "source": "samples",
+  "group": "sample",
+  "savings": "struggling",
+  "label": "Single parent, 2 kids, renting, GA",
+  "profile": {
+   "age": 34,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "GA",
+   "retire_age": 66,
+   "pay_per_year": 52000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 8000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 2500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1040
+   },
+   "children": [
+    {
+     "age": 3,
+     "college": false,
+     "college_type": "none"
+    },
+    {
+     "age": 7,
+     "college": false,
+     "college_type": "none"
+    }
+   ],
+   "pets": [],
+   "spending_per_year": 40000,
+   "social_security_per_year": 24000,
+   "risk": "balanced",
+   "sex": "female",
+   "health": "good",
+   "saving": {
+    "contrib_you": 1500,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "inheritance": {
+    "amount": 100000,
+    "year": 2030,
+    "count": true
+   },
+   "spending_now_per_year": 46100
+  }
+ },
+ {
+  "id": "sample_s055",
+  "source": "samples",
+  "group": "sample",
+  "savings": "struggling",
+  "label": "Renter in their 50s, little savings, FL",
+  "profile": {
+   "age": 56,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "FL",
+   "retire_age": 59,
+   "pay_per_year": 52000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 13800
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1515
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 39000,
+   "social_security_per_year": 21900,
+   "risk": "growth",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 7100,
+     "rate": 0.09,
+     "monthly_payment": 150
+    }
+   ],
+   "saving": {
+    "contrib_you": 0
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "big_costs": [
+     {
+      "label": "Kitchen remodel",
+      "amount": 45000,
+      "year": 2034
+     }
+    ]
+   },
+   "part_time": {
+    "per_year": 20000,
+    "until_age": 65
+   },
+   "spending_now_per_year": 44900,
+   "emergency_months": 3.5
+  }
+ },
+ {
+  "id": "sample_e18",
+  "source": "samples",
+  "group": "sample",
+  "savings": "struggling",
+  "label": "Retiree on Social Security only, WV",
+  "profile": {
+   "age": 68,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "WV",
+   "retire_age": 68,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 3000
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 430
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 21000,
+   "social_security_per_year": 17000,
+   "risk": "careful",
+   "sex": "male",
+   "health": "good",
+   "insurance": {
+    "life_kind": "none"
+   },
+   "spending_now_per_year": 20000
+  }
+ },
+ {
+  "id": "sample_e11",
+  "source": "samples",
+  "group": "sample",
+  "savings": "struggling",
+  "label": "Single, 45, heavy credit card debt, OH",
+  "profile": {
+   "age": 45,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "OH",
+   "retire_age": 66,
+   "pay_per_year": 58000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 15000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 500
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 1025
+   },
+   "children": [],
+   "pets": [],
+   "spending_per_year": 44000,
+   "social_security_per_year": 26000,
+   "risk": "balanced",
+   "sex": "male",
+   "health": "good",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 28000,
+     "rate": 0.26,
+     "monthly_payment": 400
+    },
+    {
+     "kind": "other",
+     "balance": 9000,
+     "rate": 0.14,
+     "monthly_payment": 120
+    }
+   ],
+   "saving": {
+    "contrib_you": 0,
+    "match_rate": 0.5,
+    "match_cap": 0.06
+   },
+   "insurance": {
+    "life_kind": "none"
+   },
+   "goals": {
+    "parents_per_year": 6000,
+    "parents_years": 3
+   },
+   "spending_now_per_year": 44600
+  }
+ },
+ {
+  "id": "sample_s059",
+  "source": "samples",
+  "group": "sample",
+  "savings": "struggling",
+  "label": "Retired renter, 75, little savings, GA",
+  "profile": {
+   "age": 75,
+   "partner_age": null,
+   "has_partner": false,
+   "state": "GA",
+   "retire_age": 75,
+   "pay_per_year": 0,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 0,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 7100
+   },
+   "savings_known": true,
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment": 0,
+    "rent": 995
+   },
+   "children": [],
+   "pets": [
+    {
+     "kind": "dog",
+     "count": 1
+    }
+   ],
+   "spending_per_year": 36000,
+   "social_security_per_year": 16500,
+   "risk": "careful",
+   "sex": "female",
+   "health": "fair",
+   "debts": [
+    {
+     "kind": "credit_card",
+     "balance": 1000,
+     "rate": 0.257,
+     "monthly_payment": 35
+    }
+   ],
+   "pensions": [
+    {
+     "who": "you",
+     "per_year": 16500,
+     "start_age": 67,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    },
+    {
+     "who": "you",
+     "per_year": 12500,
+     "start_age": 75,
+     "inflation_adjusted": false,
+     "survivor_share": 0.5
+    }
+   ],
+   "insurance": {
+    "life_kind": "none"
+   },
+   "budget": {
+    "housing": 1195,
+    "transport": 580,
+    "food": 365,
+    "health": 265,
+    "other": 485,
+    "debt": 35
+   },
+   "spending_now_per_year": 35100,
+   "emergency_months": 2.5
+  }
+ }
+]

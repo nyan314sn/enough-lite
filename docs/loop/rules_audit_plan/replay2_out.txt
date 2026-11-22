@@ -1,0 +1,21 @@
+[ex] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[ex] ANSWER "That's about right"
+[ex] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[ex] ANSWER '$2,900'
+[ex] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER '$2,900'
+[ex] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER 'No other debts'
+[ex] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[ex] ANSWER '$5,000 a month'
+[ex] ready after 5 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 11.2 s
+HEADLINE: You can count on $175,600 a year: $30,000 for basics and $145,600 for the rest.
+CLAIM BTN -> You asked: | Change my Social Security start age |  | At what age should Social Security start in your plan? It can start from 62, and it stops growing at 70. A later start pays more each year. |  | Set my Social Security start age to 62 | Set my Social Security start age to 65 | Set my Social Security start age to 67 | Set my Social Security start age to 70 |  | AI cost $0.0000
+CLAIM 70 -> You asked: | Set my Social Security start age to 70 |  | Change the age your Social Security starts to 70 and rebuild your plan? |  | Yes, rebuild | No |  | AI cost $0.0000
+CLAIM YES -> You asked: | Yes, rebuild |  | Your plan was updated: the age your Social Security starts to 70. |  | AI cost $0.0025
+HEADLINE after: You can count on $176,300 a year: $30,000 for basics and $146,300 for the rest.
+CHANGE BUTTONS after: ['Change the retirement age (62)', 'Change when Social Security starts (70)']
+RETIRE BTN -> You asked: | Change my retirement age |  | Sure, let's change your retirement age. At what age do you want to stop working? |  | Keep 62 | 60 | 62 | 65 | 67 | 70 |  | AI cost $0.0000
+errors []

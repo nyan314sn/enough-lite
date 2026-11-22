@@ -1,0 +1,62 @@
+original40 n 40 reached 40 acc 95.8 issues 41 P0 8 P1 22 dead_end 16 P0dead 3 ignored_corr 1 planturns min/avg/max 1 3.9 5
+hard8 n 8 reached 8 acc 91.5 issues 3 P0 0 P1 3 dead_end 2 P0dead 0 ignored_corr 0 planturns min/avg/max 4 4 4
+all n 48 reached 48 acc 95.1 issues 44 P0 8 P1 25 dead_end 18 P0dead 3 ignored_corr 1 planturns min/avg/max 1 3.9 5
+
+NOT REACHED
+
+PLAN-CHAT ISSUES AND ALL P0/P1
+h04 a1 P1 dead_end | I can't run that one as asked. | A 6,000-a-year spending increase is a supported What If (the reply lists 'spending'), yet the app refuses without saying why and offers unrelated buttons.
+h04 a3 P1 dead_end | I can't run that one as asked. | The long-term care question gets the same generic refusal and copied buttons, without saying why it cannot be modelled or what similar scenario it could run.
+p06 a4 P0 misunderstanding | If stocks fall 80% this year, you can count on $44,600 a year | The user gave a stock allocation (about 80% or 60% in stocks), not a market drop of 80%, so the app ran the wrong scenario.
+p06 a4 P1 dead_end | Your answers do not change. This tests how the plan holds up if that happens | The user asked what to do first to make retiring at 63 more likely, and the reply gives no action or recommendation.
+p08 i5 P0 ignored_correction | How much is left, and at what rate? | The user explicitly retracted the car loan (truck paid off, no debts), but the app ignored that and asked for the balance and rate as if the 4k debt still existed.
+p14 a4 P0 dead_end | From the source: "We call this annual limit the contribution and benefit base." | The reply repeats the same irrelevant quote from a3 and does not answer whether the $49,200 includes Social Security or give the split, so the person is stuck.
+p14 a4 P1 confusing | This amount is also commonly referred to as the taxable maximum. For earnings in 2027, this base is $192,300. | The quoted Social Security wage-base jargon is unrelated to the question and is hard for an ordinary person to act on.
+p16 a4 P1 dead_end | I can't run that one as asked. | The reply gives no explanation of how the plan treats Social Security or what waiting to 65 does, which is what the user asked. It only lists other things the app could run.
+p18 a4 P1 dead_end | I can't run that one as asked. | The reply gives no safe-in-all-100 figure and no first change, and does not say why it cannot answer, though the listed options and buttons partly move things forward.
+p21 a4 P1 dead_end | 50? | The user asked about retiring at 50, but the reply repeats the earlier plan summary for the current age without answering the question or offering a What If for 50.
+p24 a2 P0 misunderstanding | If you retire at 62, you can count on $69,800 a year | The user asked what happens if her husband Dave retires at 62, but the app applied a retirement age of 62 to Gail herself, changing the wrong input.
+p24 a2 P1 confusing | If you retire at 62, you can count on $69,800 a year, safe in 90 of 100 scenarios | The reply never says whose retirement age changed or that partner retirement timing is not modelled, so the user cannot tell what the number means.
+p24 a3 P1 dead_end | If you retire at 64, you can count on $79,100 a year, safe in 90 of 100 scenarios | The user asked whether Ray's retirement age affects her number and about his pension, but the reply only repeats the earlier 64 result and answers neither question.
+p25 a1 P1 repeated_question | At what age? Name it and I will run it, for example: what if I retire at 59. | The user already said retire at 62 and asked for a 10% 401k increase, so asking for the age again is redundant.
+p25 a1 P1 dead_end | At what age? Name it and I will run it | The reply does not run the 10% more-savings What If or explain what the $5,300 'rest' figure means, so the user's two questions go unanswered.
+p26 a5 P1 dead_end | Use it as a guide, not as advice. The numbers are chances from 100 paths markets might take, not promises | The user asked directly what the plan assumes about spending, savings and Social Security start, but the reply gives only a generic disclaimer and none of those figures.
+p27 a4 P1 unstated_assumption | The plan says your spending goal of $80,000 a year already works. | The $80,000 retirement spending was an app assumption the user never confirmed, and the reply presents it as the user's goal without saying so.
+p27 a4 P1 contradiction | The plan figures do not test a goal of 60, so I cannot name the single biggest change for it. | The user stated retiring at 60, which the app stored, so saying the plan does not test 60 contradicts the user's own input and confuses the question.
+p29 a5 P1 dead_end | Social Security can start from 62, and the benefit stops rising at 70. Pick an age from 62 to 70. | The reply answers neither the $37,400 vs $43,900 question nor the request to list the plan's assumptions about age, pay and claiming age.
+p35 a3 P1 dead_end | I don't have a source for that. I can still change an answer, try a What If, or explain your plan. | The user asked whether the $59,300 figure includes the mortgage payment, and the reply does not answer that question or explain what the plan counts.
+p37 a4 P1 dead_end | If you save $10,000 more a year (about 21% of pay in all), you can count on $35,100 a year | The user asked what to do first to start the extra saving and whether to change 401(k) contributions, but the reply only repeats the same what-if figures and answers neither question.
+p38 i7 P0 misunderstanding | Got it: savings of $16,000, not $150,000. | The user's split (130k + 10k + 6k) totals $146,000, but the app echoes $16,000, a wrong figure stored or confirmed to the user.
+p38 a1 P0 dead_end | [HTTP 0] connection failed | The user asked for a credit card payoff what-if and got no result or explanation, leaving them stuck.
+p39 i3 P0 misunderstanding | your spending in retirement is $37,000 a year | The person corrected only current spending to $33,000. The app moved retirement spending from $30,000 to $37,000, copying the old current figure, and did not flag the change.
+p39 a1 P0 dead_end | [HTTP 0] connection failed | The app returned a connection error, so the person's question about claiming Social Security at 70 got no answer and she has no next step.
+
+APPLIED/CHANGE turns
+
+Unanswered what-ifs (intent whatif but kind != whatif)
+h01 2 answer U: I see the numbers changed when I picked 62. I'm not sure what I'd get from my husband's So | A: I am sorry about your husband. I plan for you on your own, so only your age counts.
+h03 2 clarify U: Thanks, that helps. Quick question on the same plan: when could Bea start taking Social Se | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+h04 1 clarify U: I saw the headline. Here's my question: what if I spend 6,000 more a year? Does the money  | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+h04 2 clarify U: What if I get a 3 percent lower return on my savings? I want to see if the money still las | A: I can't set market returns or prices myself. The closest What If I can run is a market fall or a bad first dec
+h05 1 answer U: Hmm, I've just seen the plan. Could you run it again with me retiring at 65 instead of 63? | A: I can't give you a new plan run from the figures I have, so I can't say how much retiring at 65 would change t
+h05 2 answer U: I'd like to ask about my savings. Could you run it with my savings at the low end of what  | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+h07 1 answer U: I don't know what to ask, honestly. Is this good? | A: Not yet. The plan says the goal falls short. You have $115,000 saved and plan to retire at 65. At your current
+h07 2 clarify U: I'm not sure what to make of the numbers. Can you tell me what happens if I wait longer to | A: At what age? Name it and I will run it, for example: what if I retire at 62.
+p01 2 clarify U: what if i try 58 instead and see the diff | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+p04 2 clarify U: Ok thats good. Now what about sixty two, like I was saying before. Would I still be ok the | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+p06 2 clarify U: Okay, that's helpful. Now can you try what happens if I save a bit more each year, say an  | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+p11 2 clarify U: Okay, that helps a little. I don't really get the "in 100 scenarios" part though. Can you  | A: I can't run that one as asked. I can run a different retirement age, spending or saving, a Social Security cla
+p13 2 answer U: Wait, why does retiring at 58 drop my spending goal from 69 to 4? That seems like a huge j | A: You can count on about $51,500 a year in 90 of 100 scenarios, $24,200 more than the basics. Your basics cost a
+p15 1 answer U: Hi. Before I change anything, I want to understand the $63,600 Social Security figure. Whe | A: $63,600 is your Social Security a year, from the figure you gave or the plan's estimate. 60, is retirement age
+p16 2 answer U: Okay, that's helpful. Sam's 60 looks shakier than I expected. Can we try 62 instead? Let's | A: The plan figures I have only test the plan at retirement age 65 and Social Security claim age 69. They do not 
+p17 1 clarify U: We're Aisha and Omar, both working, married. I'm 56 and Omar is 54. We want to see how lon | A: At what age? Name it and I will run it, for example: what if I retire at 62.
+p17 2 answer U: Thanks. Let's try 60 for me, and Omar can say what he wants too. Actually, I think we're m | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+p19 1 clarify U: 65 | A: I am not sure what 65 is. Which figure do you mean? Say it in a sentence, for example: my retirement age is 65
+p21 1 clarify U: Ben's personality: terse, digits and 'k' only. Goal: test a What If about quitting early.  | A: At what age? Name it and I will run it, for example: what if I retire at 55.
+p21 2 clarify U: 50 | A: I am not sure what 50 is. Which figure do you mean? Say it in a sentence, for example: my retirement age is 65
+p25 1 clarify U: I looked at the plan and I'm not sure what the $5,300 "rest" means. Can I try retiring at  | A: At what age? Name it and I will run it, for example: what if I retire at 59.
+p26 1 answer U: Hi, I'm Susan. I'm 61 and live in Kentucky. I was hoping to retire at 66. Before I try any | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+p27 1 answer U: Hmm, before I type my details, who sees my data? And is this advice or just a calculator?  | A: Your answers live in this browser tab. The server uses them only to read your messages and build your plan, an
+p30 2 clarify U: Okay, that's pretty grim. What if I work part-time instead, say until 60? Does that change | A: Part-time work needs a yearly amount, so I can't run it as asked; the closest What If I can run is retiring at
+p40 1 answer U: Thanks for the plan. I'm curious about one thing before I get into the details. The headli | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+whatif intents 92

@@ -1,0 +1,149 @@
+{
+ "persona_id": "p21",
+ "issues": [
+  {
+   "ref": "i10",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "I assumed you will spend about 80% of today's $90,000, not counting the mortgage, in retirement, $56,800 a year.",
+   "note": "$56,800 is about 63% of $90,000, and 80% of the mortgage-excluded figure would be about $51,000, so the stated basis does not match the number."
+  },
+  {
+   "ref": "a2",
+   "type": "dead_end",
+   "severity": "P2",
+   "quote": "Your plan was updated: your retirement age went from 58 to 50 and your spending in retirement went from $56,800 a year to $70,000 a year.",
+   "note": "The reply confirms the change but shows no plan result (such as whether age 50 is affordable) and offers no next step."
+  },
+  {
+   "ref": "a3",
+   "type": "misunderstanding",
+   "severity": "P1",
+   "quote": "That is your baseline plan now: you spend $70,000 a year.",
+   "note": "The user asked whether retiring at 50 works, but the reply restates spending and never says if age 50 is feasible."
+  },
+  {
+   "ref": "a3",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "That is your baseline plan now: you spend $70,000 a year. Try a different one",
+   "note": "The phrase 'baseline plan' is vague and does not state a result an ordinary person can act on."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 45,
+    "truth": 45,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "UT",
+    "truth": "UT",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 50,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 150000.0,
+    "truth": 130000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 435000.0,
+    "truth": 435000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 300000.0,
+    "truth": 300000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     6,
+     9,
+     11
+    ],
+    "truth": [
+     6,
+     9,
+     11
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8461538461538461,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "simulator_inconsistent",
+    "note": "Truth is 58 (he said 58 at i9). He said 50 at a1 with no stated change, so the simulated person contradicted the truth profile."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "Person never stated pay. App used the midpoint of the $100k to $200k bucket ($150,000), labeled as a guess. Truth is $130,000."
+   }
+  ]
+ }
+}

@@ -1,0 +1,281 @@
+{
+ "sample_e09": {
+  "id": "sample_e09",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "sample_e24": {
+  "id": "sample_e24",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "S009": {
+  "id": "S009",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S267": {
+  "id": "S267",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "sample_s083": {
+  "id": "sample_s083",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S223": {
+  "id": "S223",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "E23_wants_guaranteed_income": {
+  "id": "E23_wants_guaranteed_income",
+  "A_is": "openai",
+  "identical": false
+ },
+ "sample_e11": {
+  "id": "sample_e11",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S232": {
+  "id": "S232",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "sample_s055": {
+  "id": "sample_s055",
+  "A_is": "openai",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S048": {
+  "id": "S048",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S040": {
+  "id": "S040",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "E20_couple_both_retired": {
+  "id": "E20_couple_both_retired",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S200": {
+  "id": "S200",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S007": {
+  "id": "S007",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S069": {
+  "id": "S069",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "S124": {
+  "id": "S124",
+  "A_is": "openai",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S081": {
+  "id": "S081",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S083": {
+  "id": "S083",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S268": {
+  "id": "S268",
+  "A_is": "openai",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S076": {
+  "id": "S076",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "E09_single_mom_2_kids": {
+  "id": "E09_single_mom_2_kids",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S256": {
+  "id": "S256",
+  "A_is": "openai",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "E15_age_79_working": {
+  "id": "E15_age_79_working",
+  "A_is": "openai",
+  "identical": false
+ },
+ "sample_e20": {
+  "id": "sample_e20",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "sample_s071": {
+  "id": "sample_s071",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "sample_e18": {
+  "id": "sample_e18",
+  "A_is": "openai",
+  "identical": false
+ },
+ "sample_s039": {
+  "id": "sample_s039",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S018": {
+  "id": "S018",
+  "A_is": "anthropic",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "S132": {
+  "id": "S132",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "E05_very_wealthy": {
+  "id": "E05_very_wealthy",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "S206": {
+  "id": "S206",
+  "A_is": "openai",
+  "identical": true,
+  "plain_words": "tie",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "tie"
+ },
+ "sample_s011": {
+  "id": "sample_s011",
+  "A_is": "openai",
+  "identical": false
+ },
+ "E16_bracket_gains": {
+  "id": "E16_bracket_gains",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "S235": {
+  "id": "S235",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "N08_pension_takes_lump_sum": {
+  "id": "N08_pension_takes_lump_sum",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "S056": {
+  "id": "S056",
+  "A_is": "openai",
+  "identical": false,
+  "plain_words": "B",
+  "numbers_right": "tie",
+  "actionable": "tie",
+  "honest_shortfall": "tie",
+  "no_bad_advice": "tie",
+  "overall": "B",
+  "reason": "The texts are identical except for one headline sentence, which B words a little more smoothly and naturally."
+ },
+ "E18_low_income_retired": {
+  "id": "E18_low_income_retired",
+  "A_is": "openai",
+  "identical": false
+ },
+ "S250": {
+  "id": "S250",
+  "A_is": "anthropic",
+  "identical": false
+ },
+ "sample_e28": {
+  "id": "sample_e28",
+  "A_is": "openai",
+  "identical": false
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "persona_id": "p33",
+ "issues": [
+  {
+   "ref": "a2",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "From the source: \"Under a change made in SECURE 2.0, a higher catch-up contribution limit applies for employees aged 60, 63\"",
+   "note": "The reply does not answer which number to trust or what would keep the goal at 60, so the person is left with no next step."
+  },
+  {
+   "ref": "a2",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "For 2027, this higher catch-up contribution limit is $11,750 instead of the $8,500 noted above.",
+   "note": "A dense regulatory quote about contribution limits is jargon-heavy and unrelated to the ordinary person's question about the 55 vs 60 tradeoff."
+  },
+  {
+   "ref": "a2",
+   "type": "misunderstanding",
+   "severity": "P1",
+   "quote": "From the source: \"Under a change made in SECURE 2.0...\"",
+   "note": "The app seems to have treated a question about plan results as a request for a regulatory citation, so it answered the wrong question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 43,
+    "truth": 43,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 135000.0,
+    "truth": 135000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 410000.0,
+    "truth": 410000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 290000.0,
+    "truth": 290000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     7
+    ],
+    "truth": [
+     7
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 92000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

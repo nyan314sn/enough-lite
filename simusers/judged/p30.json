@@ -1,0 +1,109 @@
+{
+ "persona_id": "p30",
+ "issues": [
+  {
+   "ref": "i1",
+   "type": "misunderstanding",
+   "severity": "P2",
+   "quote": "you want to retire at 55",
+   "note": "The user said she is thinking about 55 but might push it to 60; the app recorded a firm goal and dropped the uncertainty."
+  },
+  {
+   "ref": "a3",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "\"N of 100\" means this: we ran your plan through 100 different paths that markets might take",
+   "note": "The reply explains the 'N of 100' odds but never answers why the $45,300 figure differs from her $85,000 spending, which was her actual question."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 42,
+    "truth": 42,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CO",
+    "truth": "CO",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 55,
+    "truth": 55,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 125000.0,
+    "truth": 125000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 330000.0,
+    "truth": 330000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 85000.0,
+    "truth": 85000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

@@ -1,0 +1,90 @@
+== LIGHT ==
+PASS  16.72  (min 4.5)  text-primary on bg-canvas  -  body text on the page
+PASS  17.85  (min 4.5)  text-primary on bg-surface  -  body text on a card
+PASS  10.35  (min 4.5)  text-secondary on bg-surface  -  secondary text on a card
+PASS   9.22  (min 4.5)  text-secondary on bg-subtle  -  secondary text on a subtle fill
+PASS   5.91  (min 4.5)  text-muted-aa on bg-surface  -  app muted text (--muted) on a card
+PASS   5.54  (min 4.5)  text-muted-aa on bg-canvas  -  app muted text on the page
+PASS   5.26  (min 4.5)  text-muted-aa on bg-subtle  -  app muted text on a subtle fill
+PASS   4.76  (min 4.5)  text-muted on bg-surface  -  muted text on a card
+PASS   4.46  (min 3.0)  text-muted on bg-canvas  -  raw token on canvas: not used for small text (use -aa)
+PASS   4.24  (min 3.0)  text-muted on bg-subtle  -  raw token on subtle: not used for small text (use -aa)
+PASS   6.29  (min 4.5)  brand-accent on bg-surface  -  link and small accent text on a card
+PASS   5.89  (min 4.5)  brand-accent on bg-canvas  -  accent text on the page
+PASS   7.90  (min 4.5)  brand-accent-hover on bg-surface  -  accent hover text on a card
+PASS   6.80  (min 4.5)  brand-accent-hover on brand-accent-tint  -  chip and badge text on the accent tint
+PASS   5.41  (min 4.5)  brand-accent on brand-accent-tint  -  step link on accent tint
+PASS   6.29  (min 4.5)  on-accent on brand-accent  -  primary button text
+PASS   7.90  (min 4.5)  on-accent on brand-accent-hover  -  primary button hover text
+PASS  15.97  (min 4.5)  text-primary on bg-user-bubble  -  user chat bubble
+PASS   7.90  (min 4.5)  brand-accent-hover on bg-surface  -  assistant-side labels
+PASS   8.30  (min 4.5)  status-gain-ink on status-gain-bg  -  gain tag and delta text
+PASS   5.02  (min 4.5)  status-gain on bg-surface  -  gain figure on a card
+PASS   5.02  (min 4.5)  on-gain on status-gain  -  check mark on gain
+PASS   5.24  (min 4.5)  status-loss on status-loss-bg  -  Short $X a year banner
+PASS   7.97  (min 4.5)  status-loss-ink on status-loss-bg  -  shortfall sub text
+PASS   6.29  (min 4.5)  status-loss on bg-surface  -  shortfall figure on a card
+PASS   4.51  (min 4.5)  status-warn on status-warn-bg  -  amber text on its fill (warning figures)
+PASS   8.15  (min 4.5)  status-warn-ink on status-warn-bg  -  close banner and warning text
+PASS   5.02  (min 4.5)  status-warn on bg-surface  -  amber figure on a card
+PASS   4.47  (min 3.0)  status-warn on bg-subtle  -  amber on subtle: only large figures (token as given: 4.47)
+PASS   4.46  (min 3.0)  status-gain on bg-subtle  -  gain on subtle: only the large Needs figure (4.46)
+PASS   5.59  (min 4.5)  status-loss on bg-subtle  -  loss on subtle
+PASS   5.89  (min 4.5)  status-loss on bg-canvas  -  loss text on the page
+PASS  16.03  (min 4.5)  text-primary on status-warn-bg  -  text on the starting-points box
+PASS   6.29  (min 3.0)  brand-accent on bg-surface  -  focus ring against a card (3:1 for UI)
+PASS   5.89  (min 3.0)  brand-accent on bg-canvas  -  focus ring against the page
+PASS   6.29  (min 3.0)  chart-1 on bg-surface  -  chart line 1
+PASS   3.74  (min 3.0)  chart-2 on bg-surface  -  chart 2
+PASS   5.38  (min 3.0)  chart-3 on bg-surface  -  chart 3
+PASS   3.19  (min 3.0)  chart-4 on bg-surface  -  chart 4
+PASS   4.70  (min 3.0)  chart-5 on bg-surface  -  chart 5 (costs line)
+PASS   4.10  (min 3.0)  chart-6 on bg-surface  -  chart 6
+PASS   4.76  (min 3.0)  chart-8 on bg-surface  -  chart 8
+PASS   1.48  (min 1.0)  border-strong on bg-surface  -  hairline (decorative, no minimum)
+== DARK ==
+PASS  18.92  (min 4.5)  text-primary on bg-canvas  -  body text on the page
+PASS  17.47  (min 4.5)  text-primary on bg-surface  -  body text on a card
+PASS  12.31  (min 4.5)  text-secondary on bg-surface  -  secondary text on a card
+PASS  11.15  (min 4.5)  text-secondary on bg-subtle  -  secondary text on a subtle fill
+PASS   7.13  (min 4.5)  text-muted-aa on bg-surface  -  app muted text (--muted) on a card
+PASS   7.72  (min 4.5)  text-muted-aa on bg-canvas  -  app muted text on the page
+PASS   6.46  (min 4.5)  text-muted-aa on bg-subtle  -  app muted text on a subtle fill
+PASS   7.13  (min 4.5)  text-muted on bg-surface  -  muted text on a card
+PASS   7.72  (min 3.0)  text-muted on bg-canvas  -  raw token on canvas: not used for small text (use -aa)
+PASS   6.46  (min 3.0)  text-muted on bg-subtle  -  raw token on subtle: not used for small text (use -aa)
+PASS   6.13  (min 4.5)  brand-accent on bg-surface  -  link and small accent text on a card
+PASS   6.64  (min 4.5)  brand-accent on bg-canvas  -  accent text on the page
+PASS   9.17  (min 4.5)  brand-accent-hover on bg-surface  -  accent hover text on a card
+PASS   7.38  (min 4.5)  brand-accent-hover on brand-accent-tint  -  chip and badge text on the accent tint
+PASS   4.93  (min 4.5)  brand-accent on brand-accent-tint  -  step link on accent tint
+PASS   6.51  (min 4.5)  on-accent on brand-accent  -  primary button text
+PASS   9.75  (min 4.5)  on-accent on brand-accent-hover  -  primary button hover text
+PASS  15.28  (min 4.5)  text-primary on bg-user-bubble  -  user chat bubble
+PASS   9.17  (min 4.5)  brand-accent-hover on bg-surface  -  assistant-side labels
+PASS  11.23  (min 4.5)  status-gain-ink on status-gain-bg  -  gain tag and delta text
+PASS  10.49  (min 4.5)  status-gain on bg-surface  -  gain figure on a card
+PASS   8.55  (min 4.5)  on-gain on status-gain  -  check mark on gain
+PASS   5.48  (min 4.5)  status-loss on status-loss-bg  -  Short $X a year banner
+PASS  10.45  (min 4.5)  status-loss-ink on status-loss-bg  -  shortfall sub text
+PASS   6.79  (min 4.5)  status-loss on bg-surface  -  shortfall figure on a card
+PASS   8.09  (min 4.5)  status-warn on status-warn-bg  -  amber text on its fill (warning figures)
+PASS  10.84  (min 4.5)  status-warn-ink on status-warn-bg  -  close banner and warning text
+PASS  10.95  (min 4.5)  status-warn on bg-surface  -  amber figure on a card
+PASS   9.92  (min 3.0)  status-warn on bg-subtle  -  amber on subtle: only large figures (token as given: 4.47)
+PASS   9.50  (min 3.0)  status-gain on bg-subtle  -  gain on subtle: only the large Needs figure (4.46)
+PASS   6.15  (min 4.5)  status-loss on bg-subtle  -  loss on subtle
+PASS   7.36  (min 4.5)  status-loss on bg-canvas  -  loss text on the page
+PASS  12.90  (min 4.5)  text-primary on status-warn-bg  -  text on the starting-points box
+PASS   6.13  (min 3.0)  brand-accent on bg-surface  -  focus ring against a card (3:1 for UI)
+PASS   6.64  (min 3.0)  brand-accent on bg-canvas  -  focus ring against the page
+PASS   6.13  (min 3.0)  chart-1 on bg-surface  -  chart line 1
+PASS   9.82  (min 3.0)  chart-2 on bg-surface  -  chart 2
+PASS   6.92  (min 3.0)  chart-3 on bg-surface  -  chart 3
+PASS  10.95  (min 3.0)  chart-4 on bg-surface  -  chart 4
+PASS   6.79  (min 3.0)  chart-5 on bg-surface  -  chart 5 (costs line)
+PASS   8.53  (min 3.0)  chart-6 on bg-surface  -  chart 6
+PASS   7.13  (min 3.0)  chart-8 on bg-surface  -  chart 8
+PASS   1.74  (min 1.0)  border-strong on bg-surface  -  hairline (decorative, no minimum)
+
+failures: 0

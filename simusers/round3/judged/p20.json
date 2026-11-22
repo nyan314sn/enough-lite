@@ -1,0 +1,133 @@
+{
+ "persona_id": "p20",
+ "issues": [
+  {
+   "ref": "i2",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $39,000 a year and 4 more.",
+   "note": "The vague 'and 4 more' hides which other typical figures were filled in, so the person cannot easily see or fix them."
+  },
+  {
+   "ref": "a4",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "about $11,000 a year above what lasts in 90 of 100 scenarios, $30,100 a year",
+   "note": "The 'lasts in 90 of 100 scenarios' jargon is hard for an ordinary person to act on, though the advice itself is clear."
+  },
+  {
+   "ref": "a4",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "Your goal is about $11,000 a year above what lasts",
+   "note": "The $41,100 spending goal behind the $11,000 gap was an app assumption (73% of spending), and this reply does not restate that."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 52,
+    "truth": 52,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "WI",
+    "truth": "WI",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 75000.0,
+    "truth": 72000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 232000.0,
+    "truth": 232000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [
+     15
+    ],
+    "truth": [
+     17
+    ],
+    "source": "assumed"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 56000.0,
+    "truth": 56000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "children",
+    "cause": "assumed_default",
+    "note": "User picked 'Teenagers' without giving an age. App used 15 as a typical value, tagged assumed. Real age is 17."
+   }
+  ]
+ }
+}

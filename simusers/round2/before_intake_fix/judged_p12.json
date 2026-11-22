@@ -1,0 +1,122 @@
+{
+ "persona_id": "p12",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 64,
+    "truth": 64,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": false,
+    "got": 64,
+    "truth": null,
+    "source": "assumed"
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "VA",
+    "truth": "VA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 66,
+    "truth": 66,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 75000,
+    "truth": 88000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 0.0,
+    "truth": 570000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": false,
+    "got": 0,
+    "truth": 24000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 56000.0,
+    "truth": 68000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6923076923076923,
+  "why": [
+   {
+    "field": "partner_age",
+    "cause": "correction_lost",
+    "note": "Walt said he is single in turn i2, but the assumed partner age of 64 was kept and later restored when the app re-noted a partner in turn i5."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "app_misparsed",
+    "note": "Walt chose the $50k to $100k bracket. The app stored $75,000, a single point value, not the $88,000 he actually earns."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "Walt never gave a total and said he didn't know it. The app set savings to $0 instead of a typical figure. The true total is $570,000 (420k pretax + 110k taxable + 40k cash)."
+   },
+   {
+    "field": "pension_per_year",
+    "cause": "never_asked",
+    "note": "The intake never asked about pensions, so the $24,000 a year pension starting at 66 was never captured."
+   }
+  ]
+ }
+}

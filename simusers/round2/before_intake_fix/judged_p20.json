@@ -1,0 +1,127 @@
+{
+ "persona_id": "p20",
+ "issues": [
+  {
+   "ref": "i5",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "I noted that your pay is $75,000 a year.",
+   "note": "The person picked a $50k to $100k band, but the app stated a specific $75,000 figure as fact without saying it was a midpoint estimate, and the figure feeds the plan."
+  },
+  {
+   "ref": "i9",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "your mortgage payment at about $1,688 a month, typical for your state.",
+   "note": "The app stored a $1,688 monthly mortgage payment the person never gave (the true payment is $1,050), and the reply presents it as a typical figure rather than a placeholder to be replaced."
+  },
+  {
+   "ref": "i13",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "I noted that you have 1 child, aged 15.",
+   "note": "The person only said 'Teenagers'; the app invented the age 15 and stored it, which is wrong (the true age is 17)."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 52,
+    "truth": 52,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "WI",
+    "truth": "WI",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 75000.0,
+    "truth": 72000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 232000.0,
+    "truth": 232000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     17
+    ],
+    "truth": [
+     17
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 56000.0,
+    "truth": 56000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

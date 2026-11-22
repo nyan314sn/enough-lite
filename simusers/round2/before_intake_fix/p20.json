@@ -1,0 +1,2718 @@
+{
+ "persona_id": "p20",
+ "name": "Kim",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "idk",
+   "clicked": null,
+   "reply": "I didn't catch that. Pick a button or type your answer, or type skip.",
+   "question": {
+    "text": "How old are you?",
+    "quick_answers": [
+     "35",
+     "45",
+     "55",
+     "65"
+    ]
+   },
+   "missing": [
+    "age",
+    "state",
+    "savings",
+    "home"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": []
+  },
+  {
+   "n": 2,
+   "user": "55",
+   "clicked": "55",
+   "reply": "Thanks. I noted that you are 55. Until you tell me otherwise, I use typical figures for the rest: your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $39,000 a year, spending in retirement at $33,000 a year, Social Security at $25,600 a year, saving 10% of pay and a balanced investing mix. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "Which state do you live in?",
+    "quick_answers": [
+     "Connecticut",
+     "New York",
+     "California",
+     "Texas",
+     "Florida"
+    ]
+   },
+   "missing": [
+    "state",
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "pay_per_year: $50,980 a year (assumed)",
+    "retire_age: 65 (assumed)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $25,600 a year (estimate)",
+    "spending_now_per_year: $39,000 a year, about $3,250 a month (estimate)",
+    "spending_per_year: $33,000 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "55",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$39,000 a year, about $3,250 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$33,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 3,
+   "user": "Wisconsin",
+   "clicked": null,
+   "reply": "Thanks. I noted that you live in Wisconsin. I updated the typical figures: spending now at $38,000 a year and spending in retirement at $30,000 a year.",
+   "question": {
+    "text": "What do you do for work, or what do you earn a year before tax?",
+    "quick_answers": [
+     "Under $50k",
+     "$50k to $100k",
+     "$100k to $200k",
+     "Over $200k"
+    ]
+   },
+   "missing": [
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "spending_now_per_year: $38,000 a year, about $3,167 a month (estimate)",
+    "spending_per_year: $30,000 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "55",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$38,000 a year, about $3,167 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$30,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 4,
+   "user": "Wrong age, I said 52 not 55. Also, I'm 52.\n\nHmm, actually I mistyped. I'm 52, not 55.",
+   "clicked": null,
+   "reply": "Got it: age 52, not 55.",
+   "question": {
+    "text": "What do you do for work, or what do you earn a year before tax?",
+    "quick_answers": [
+     "Under $50k",
+     "$50k to $100k",
+     "$100k to $200k",
+     "Over $200k"
+    ]
+   },
+   "missing": [
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $5,098 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$38,000 a year, about $3,167 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$30,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 5,
+   "user": "$50k to $100k",
+   "clicked": "$50k to $100k",
+   "reply": "Thanks. I noted that your pay is $75,000 a year. I updated the typical figures: spending now at $54,000 a year, spending in retirement at $43,000 a year and Social Security at $33,300 a year.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "social_security_per_year: $33,300 a year (estimate)",
+    "spending_now_per_year: $54,000 a year, about $4,500 a month (estimate)",
+    "spending_per_year: $43,000 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 6,
+   "user": "Kim: About $250k",
+   "clicked": null,
+   "reply": "Thanks. I noted that you have saved $250,000.",
+   "question": {
+    "text": "I split your $250,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Change the split"
+    ]
+   },
+   "missing": [
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [
+    "savings: $150,000 pre-tax (401(k) or IRA), $25,000 Roth, $50,000 taxable, $25,000 cash (assumed)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$150,000 pre-tax (401(k) or IRA), $25,000 Roth, $50,000 taxable, $25,000 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "5.6 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 7,
+   "user": "Change the split",
+   "clicked": "Change the split",
+   "reply": "Sure, let's change your savings split.",
+   "question": {
+    "text": "Give the four amounts in one message, for example: pre-tax 400k, Roth 100k, taxable 200k, cash 50k.",
+    "quick_answers": [
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Half and half"
+    ]
+   },
+   "missing": [
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$150,000 pre-tax (401(k) or IRA), $25,000 Roth, $50,000 taxable, $25,000 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "5.6 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 8,
+   "user": "Pre-tax 210k, Roth 10k, taxable 0, cash 12k",
+   "clicked": null,
+   "reply": "Got it: savings of $232,000, not $250,000. If you'd rather, I can build your plan now with typical numbers for the rest.",
+   "question": {
+    "text": "Do you own your home or rent?",
+    "quick_answers": [
+     "I own it outright",
+     "I own it with a mortgage",
+     "I rent",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 9,
+   "user": "I own it with a mortgage",
+   "clicked": "I own it with a mortgage",
+   "reply": "Thanks. I noted that you own your home. I updated the typical figures: your mortgage payment at about $1,688 a month, typical for your state.",
+   "question": {
+    "text": "About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month.",
+    "quick_answers": [
+     "Not sure, estimate it",
+     "It's paid off",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "mortgage",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [
+    "home: Own, mortgage payment $1,688 a month, value not given (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, mortgage payment $1,688 a month, value not given",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 10,
+   "user": "Mortgage balance is 70k, payment is 1050 a month.",
+   "clicked": null,
+   "reply": "Thanks. I noted that you own your home, with $70,000 left on the mortgage and a payment of $1,050 a month. I updated the typical figures: a 5% mortgage rate.",
+   "question": {
+    "text": "Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.",
+    "quick_answers": [
+     "No other debts",
+     "Student loans",
+     "Car loan",
+     "Credit card",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [
+    "mortgage_end: Paid off in 2033, costs fall by about $4,600 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 11,
+   "user": "No other debts",
+   "clicked": "No other debts",
+   "reply": "Thanks. I noted that you have no other debts.",
+   "question": {
+    "text": "Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.",
+    "quick_answers": [
+     "No children",
+     "1 child",
+     "2 children",
+     "3 children",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$54,000 a year, about $4,500 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$43,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 12,
+   "user": "1 child",
+   "clicked": "1 child",
+   "reply": "Thanks. I noted that you have 1 child. I updated the typical figures: spending now at $57,000 a year, spending in retirement at $45,000 a year and children's ages of 6.",
+   "question": {
+    "text": "How old is your child?",
+    "quick_answers": [
+     "Under 5",
+     "5 to 12",
+     "Teenagers",
+     "Grown up",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "children",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [
+    "children: 1 child, ages 6 (assumed)",
+    "spending_now_per_year: $57,000 a year, about $4,750 a month (estimate)",
+    "spending_per_year: $45,000 a year (estimate)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "children",
+     "1 child, ages 6",
+     "assumed"
+    ],
+    [
+     "college",
+     "public, you pay 100%",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.5 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$57,000 a year, about $4,750 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$45,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 13,
+   "user": "Teenagers",
+   "clicked": "Teenagers",
+   "reply": "Thanks. I noted that you have 1 child, aged 15.",
+   "question": {
+    "text": "At what age do you want to stop working?",
+    "quick_answers": [
+     "60",
+     "62",
+     "65",
+     "67",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "children",
+     "1 child, ages 15",
+     "you said"
+    ],
+    [
+     "college",
+     "public, you pay 100%",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.5 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$57,000 a year, about $4,750 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$45,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 14,
+   "user": "62",
+   "clicked": "62",
+   "reply": "Thanks. I noted that you want to retire at 62.",
+   "question": {
+    "text": "About how much does your household spend in a year now, all in?",
+    "quick_answers": [
+     "$4,000 a month",
+     "$6,000 a month",
+     "$9,000 a month",
+     "Estimate it for me",
+     "Build my plan with typical numbers for the rest"
+    ]
+   },
+   "missing": [
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "children",
+     "1 child, ages 15",
+     "you said"
+    ],
+    [
+     "college",
+     "public, you pay 100%",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "62",
+     "you said"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.5 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$57,000 a year, about $4,750 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$45,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 15,
+   "user": "56k a year\n\nAlso my kid is 17, not 15.",
+   "clicked": null,
+   "reply": "I have 1 child, ages 17, as you say. Thanks. I noted that you spend $56,000 a year now. I updated the typical figures: spending in retirement at $41,100 a year.",
+   "question": {
+    "text": "I assumed you will spend about 73% of today's $56,000 in retirement, $41,100 a year. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Same as now",
+     "Less, about 60%",
+     "A set figure"
+    ]
+   },
+   "missing": [],
+   "ready": true,
+   "new_assumed": [
+    "spending_per_year: $41,100 a year (assumed)"
+   ],
+   "fields": [
+    [
+     "age",
+     "52",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Wisconsin",
+     "you said"
+    ],
+    [
+     "children",
+     "1 child, ages 17",
+     "you said"
+    ],
+    [
+     "college",
+     "public, you pay 100%",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$75,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "62",
+     "you said"
+    ],
+    [
+     "savings",
+     "$210,000 pre-tax (401(k) or IRA), $10,000 Roth, $12,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "10% of pay, about $7,500 a year",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, the yearly saving above, assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None given",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "2.6 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Own, $70,000 left on the mortgage, $1,050 a month, value not given",
+     "you said"
+    ],
+    [
+     "mortgage_end",
+     "Paid off in 2033, costs fall by about $4,600 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None given",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$33,300 a year",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None given",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "Not given",
+     "default"
+    ],
+    [
+     "disability",
+     "Not given",
+     "default"
+    ],
+    [
+     "ltc",
+     "Not given",
+     "default"
+    ],
+    [
+     "legacy",
+     "None",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$56,000 a year, about $4,667 a month",
+     "you said"
+    ],
+    [
+     "spending_per_year",
+     "$41,100 a year",
+     "assumed"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [
+  {
+   "n": 1,
+   "user": "Retire at 60",
+   "clicked": null,
+   "text": "If you retire at 60, you can count on $23,700 a year (now $28,000). Your basics are paid in 80 of 100 scenarios (now 98), and your spending goal lasts in 0 of 100 (now 1).",
+   "kind": "whatif",
+   "status": null,
+   "quick_answers": null,
+   "changes": {
+    "retire_age": 60
+   },
+   "had_pending": false,
+   "intent": "whatif",
+   "cost_usd": 0.001312,
+   "whatif_headline": "You can count on $23,700 a year, about your basics. There is little room above them yet. That is less than your Social Security of $25,000 a year because of income tax on it, health costs on top of your spending and the years before it starts."
+  },
+  {
+   "n": 2,
+   "user": "What if I retire at 62?",
+   "clicked": null,
+   "text": "If you retire at 62, you can count on $28,000 a year (now $28,000). Your basics are paid in 98 of 100 scenarios (now 98), and your spending goal lasts in 1 of 100 (now 1).",
+   "kind": "whatif",
+   "status": null,
+   "quick_answers": null,
+   "changes": {
+    "retire_age": 62
+   },
+   "had_pending": false,
+   "intent": "whatif",
+   "cost_usd": 0.000981,
+   "whatif_headline": "You can count on $28,000 a year: $24,400 for basics and $3,600 for the rest. That is less than your Social Security of $28,900 a year because of income tax on it, health costs on top of your spending and the years before it starts."
+  },
+  {
+   "n": 3,
+   "user": "why?",
+   "clicked": null,
+   "text": "You can count on about $28,000 a year in 90 of 100 scenarios, $3,600 more than the basics. Your basics cost about $24,400 a year. They are paid in 98 of 100 scenarios. Your spending goal is $41,100 a year, which is $13,100 a year above what lasts in 90 of 100 scenarios, so the goal is above what lasts. Wishes can only come from the roughly $3,600 a year above the basics, so set the goal nearer the safe level and raise it as savings grow.  \"N of 100\" means this: we ran your plan through 100 different paths that markets might take, and in N of them the money lasted. Markets are uncertain, so these are chances, not promises.",
+   "kind": "answer",
+   "status": null,
+   "quick_answers": [
+    "Try a What If",
+    "Change an answer"
+   ],
+   "changes": null,
+   "had_pending": false,
+   "intent": "question",
+   "cost_usd": 0.0,
+   "whatif_headline": null
+  },
+  {
+   "n": 4,
+   "user": "what do i do first",
+   "clicked": null,
+   "text": "Start with the gap in your plan. Your savings goal of $41,100 a year is not yet met, and the plan shows a gap of $13,100 a year. Your safe spending is $28,000 a year, which covers about 68% of the goal. First, build your emergency fund: you have 2.6 months saved and the target is 3 months, a shortfall of $2,000. Then use the retirement contribution limits: at age 50 and over, you can put up to $34,000 a year into a 401(k), and from age 60 to 63 the catch-up limit is higher, to $11,750 instead of $8,500, for a total of $37,250. Your current saving is $7,500 a year, well below these limits.",
+   "kind": "answer",
+   "status": null,
+   "quick_answers": null,
+   "changes": null,
+   "had_pending": false,
+   "intent": "question",
+   "cost_usd": 0.000688,
+   "whatif_headline": null
+  }
+ ],
+ "started": 1795282993.6289718,
+ "final_profile": {
+  "age": 52,
+  "partner_age": null,
+  "has_partner": false,
+  "state": "WI",
+  "retire_age": 62,
+  "pay_per_year": 75000.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 210000.0,
+   "roth": 10000.0,
+   "taxable": 0.0,
+   "cash": 12000.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": true,
+   "value": 0.0,
+   "mortgage_balance": 70000.0,
+   "mortgage_payment": 1050.0,
+   "rent": 0.0,
+   "mortgage_rate": 0.05
+  },
+  "children": [
+   {
+    "age": 17,
+    "college": true,
+    "college_type": "public",
+    "college_share": 1.0
+   }
+  ],
+  "pets": [],
+  "spending_per_year": 41100.0,
+  "social_security_per_year": 33300.0,
+  "risk": "balanced",
+  "job": null,
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "state": "you said",
+   "pay_per_year": "you said",
+   "savings": "you said",
+   "home": "you said",
+   "mortgage_rate": "assumed",
+   "debts": "you said",
+   "college": "assumed",
+   "children": "you said",
+   "retire_age": "you said",
+   "spending_now_per_year": "you said",
+   "risk": "assumed",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_per_year": "assumed",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "stuck": "0",
+   "told": "{\"spending_per_year\": \"spending in retirement at $41,100 a year\", \"social_security_per_year\": \"Social Security at $33,300 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\", \"mortgage_rate\": \"a 5% mortgage rate\"}",
+   "escape_told": "yes",
+   "mortgage": "yes",
+   "mortgage_balance_said": "yes",
+   "mortgage_payment_said": "yes",
+   "mortgage_rate": "Assumed a 5% mortgage rate.",
+   "college": "Assumed public college, paid in full. Say private, a share, or none.",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_per_year": "About 80% of what you spend now, a common starting point. Say the same, less, or a figure.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "confirm_spending_later",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 2.6,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 56000.0,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [
+   "confirm_split",
+   "debts"
+  ],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: 1 child",
+   "app: Thanks. I noted that you have 1 child. I updated the typical figures: spending now at $57,000 a year, spending in retirement at $45,000 a year and children's ages of 6. How old is your child?",
+   "you: Teenagers",
+   "app: Thanks. I noted that you have 1 child, aged 15. At what age do you want to stop working?",
+   "you: 62",
+   "app: Thanks. I noted that you want to retire at 62. About how much does your household spend in a year now, all in?",
+   "you: 56k a year\n\nAlso my kid is 17, not 15.",
+   "app: I have 1 child, ages 17, as you say. Thanks. I noted that you spend $56,000 a year now. I updated the typical figures: spending in retirement at $41,100 a year. I assumed you will spend about 73% of today's $56,000 in retirement, $41,100 a year. Is that about right?"
+  ],
+  "turns": 15
+ },
+ "reached_missing_empty": true,
+ "turns_to_plan": 15,
+ "plan_error": null,
+ "plan_cost": {
+  "type": "cost",
+  "total_tokens": 21551,
+  "total_usd": 0.002799,
+  "budget_usd": 0.05,
+  "tokens": {
+   "input": 156,
+   "cached": 19075,
+   "output": 2320
+  }
+ },
+ "plan": {
+  "headline": "You can count on $28,000 a year: $24,400 for basics and $3,600 for the rest. That is less than your Social Security of $28,900 a year because of income tax on it, health costs on top of your spending and the years before it starts.",
+  "needs": {
+   "basics_per_year": 24400,
+   "paid_of_100": 98,
+   "line": "Your basics cost about $24,400 a year. They are paid in 98 of 100 scenarios.",
+   "basis": "typical"
+  },
+  "wants": {
+   "per_year": 28000.0,
+   "above_basics_per_year": 3600.0,
+   "line": "You can count on about $28,000 a year in 90 of 100 scenarios, $3,600 more than the basics."
+  },
+  "wishes": {
+   "line": "Your spending goal is $41,100 a year, which is $13,100 a year above what lasts in 90 of 100 scenarios, so the goal is above what lasts. Wishes can only come from the roughly $3,600 a year above the basics, so set the goal nearer the safe level and raise it as savings grow."
+  },
+  "actions": [
+   {
+    "title": "Set your spending goal nearer the safe level",
+    "why": "Your goal is about $13,100 a year above what lasts in 90 of 100 scenarios, $28,000 a year. Start there and raise it as savings grow."
+   },
+   {
+    "title": "Build an emergency fund of three months",
+    "why": "You hold about 2.6 months of spending in cash. Three months is about $14,000, so you are about $2,000 short."
+   },
+   {
+    "title": "Check your plan once a year",
+    "why": "Markets, prices and your own needs change. A yearly check keeps the plan close to the facts."
+   }
+  ],
+  "levers": [
+   {
+    "key": "goal",
+    "title": "Set your spending goal nearer the safe level",
+    "why": "Your goal is about $13,100 a year above what lasts in 90 of 100 scenarios, $28,000 a year. Start there and raise it as savings grow.",
+    "whatif_text": "What if I spend $28,000 a year"
+   },
+   {
+    "key": "emergency",
+    "title": "Build an emergency fund of three months",
+    "why": "You hold about 2.6 months of spending in cash. Three months is about $14,000, so you are about $2,000 short.",
+    "whatif_text": "What if I build an emergency fund of 3 months"
+   }
+  ],
+  "neighbors": {
+   "used": false,
+   "note": "We tried 5 plans of households like yours and several simple plans on your numbers. A simple plan kept your basics safest and left the most to spend: stocks at 110 minus your age, with Social Security from 65.",
+   "candidates_tested": [
+    {
+     "name": "Similar household S217",
+     "source": "S217-fast",
+     "description": "a single person aged 52, still working, with about $91,000 saved",
+     "basics_paid_of_100": 96,
+     "safe_spending_per_year": 27400.0,
+     "wants_per_year": 27400.0,
+     "goal_lasts_of_100": 7,
+     "claim_age": 65,
+     "partner_claim_age": null,
+     "stock_share_now": 0.75,
+     "stock_share_at_retirement": 0.75,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Similar household E21_smoker_poor_health",
+     "source": "E21_smoker_poor_health-fast",
+     "description": "a single person aged 55, still working, with about $222,000 saved",
+     "basics_paid_of_100": 96,
+     "safe_spending_per_year": 27400.0,
+     "wants_per_year": 27400.0,
+     "goal_lasts_of_100": 7,
+     "claim_age": 65,
+     "partner_claim_age": null,
+     "stock_share_now": 0.75,
+     "stock_share_at_retirement": 0.75,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Similar household S247",
+     "source": "S247-full",
+     "description": "a single person aged 48, still working, with about $329,000 saved",
+     "basics_paid_of_100": 91,
+     "safe_spending_per_year": 25200.0,
+     "wants_per_year": 25200.0,
+     "goal_lasts_of_100": 6,
+     "claim_age": 66,
+     "partner_claim_age": null,
+     "stock_share_now": 0.7,
+     "stock_share_at_retirement": 0.7,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Similar household S247",
+     "source": "S247-fast",
+     "description": "a single person aged 48, still working, with about $329,000 saved",
+     "basics_paid_of_100": 90,
+     "safe_spending_per_year": 24300.0,
+     "wants_per_year": 24300.0,
+     "goal_lasts_of_100": 7,
+     "claim_age": 66,
+     "partner_claim_age": null,
+     "stock_share_now": 0.75,
+     "stock_share_at_retirement": 0.75,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Similar household E26_heloc_and_boat",
+     "source": "E26_heloc_and_boat-fast",
+     "description": "a single person aged 57, still working, with about $450,000 saved",
+     "basics_paid_of_100": 72,
+     "safe_spending_per_year": 19000.0,
+     "wants_per_year": 19000.0,
+     "goal_lasts_of_100": 3,
+     "claim_age": 68,
+     "partner_claim_age": null,
+     "stock_share_now": 0.48,
+     "stock_share_at_retirement": 0.65,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan",
+     "source": "rule",
+     "description": "Stocks at 110 minus your age, claim at 67, no products",
+     "basics_paid_of_100": 85,
+     "safe_spending_per_year": 22400.0,
+     "wants_per_year": 22400.0,
+     "goal_lasts_of_100": 2,
+     "claim_age": 67,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 62",
+     "source": "rule-claim-62",
+     "description": "Stocks at 110 minus your age, claim Social Security at 62, no products",
+     "basics_paid_of_100": 98,
+     "safe_spending_per_year": 25900.0,
+     "wants_per_year": 25900.0,
+     "goal_lasts_of_100": 1,
+     "claim_age": 62,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 63",
+     "source": "rule-claim-63",
+     "description": "Stocks at 110 minus your age, claim Social Security at 63, no products",
+     "basics_paid_of_100": 100,
+     "safe_spending_per_year": 26500.0,
+     "wants_per_year": 26500.0,
+     "goal_lasts_of_100": 1,
+     "claim_age": 63,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 64",
+     "source": "rule-claim-64",
+     "description": "Stocks at 110 minus your age, claim Social Security at 64, no products",
+     "basics_paid_of_100": 100,
+     "safe_spending_per_year": 27100.0,
+     "wants_per_year": 27100.0,
+     "goal_lasts_of_100": 1,
+     "claim_age": 64,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 65",
+     "source": "rule-claim-65",
+     "description": "Stocks at 110 minus your age, claim Social Security at 65, no products",
+     "basics_paid_of_100": 98,
+     "safe_spending_per_year": 28000.0,
+     "wants_per_year": 28000.0,
+     "goal_lasts_of_100": 1,
+     "claim_age": 65,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 66",
+     "source": "rule-claim-66",
+     "description": "Stocks at 110 minus your age, claim Social Security at 66, no products",
+     "basics_paid_of_100": 94,
+     "safe_spending_per_year": 27500.0,
+     "wants_per_year": 27500.0,
+     "goal_lasts_of_100": 2,
+     "claim_age": 66,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 67",
+     "source": "rule-claim-67",
+     "description": "Stocks at 110 minus your age, claim Social Security at 67, no products",
+     "basics_paid_of_100": 85,
+     "safe_spending_per_year": 22400.0,
+     "wants_per_year": 22400.0,
+     "goal_lasts_of_100": 2,
+     "claim_age": 67,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 68",
+     "source": "rule-claim-68",
+     "description": "Stocks at 110 minus your age, claim Social Security at 68, no products",
+     "basics_paid_of_100": 71,
+     "safe_spending_per_year": 18700.0,
+     "wants_per_year": 18700.0,
+     "goal_lasts_of_100": 3,
+     "claim_age": 68,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 69",
+     "source": "rule-claim-69",
+     "description": "Stocks at 110 minus your age, claim Social Security at 69, no products",
+     "basics_paid_of_100": 58,
+     "safe_spending_per_year": 16200.0,
+     "wants_per_year": 16200.0,
+     "goal_lasts_of_100": 3,
+     "claim_age": 69,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, claiming at 70",
+     "source": "rule-claim-70",
+     "description": "Stocks at 110 minus your age, claim Social Security at 70, no products",
+     "basics_paid_of_100": 45,
+     "safe_spending_per_year": 14200.0,
+     "wants_per_year": 14200.0,
+     "goal_lasts_of_100": 3,
+     "claim_age": 70,
+     "partner_claim_age": null,
+     "stock_share_now": 0.58,
+     "stock_share_at_retirement": 0.48,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 30 points less in stocks",
+     "source": "rule-stocks-30",
+     "description": "Stocks at 110 minus your age, 30 points less, no products",
+     "basics_paid_of_100": 90,
+     "safe_spending_per_year": 24400.0,
+     "wants_per_year": 24400.0,
+     "goal_lasts_of_100": 0,
+     "claim_age": 67,
+     "partner_claim_age": null,
+     "stock_share_now": 0.28,
+     "stock_share_at_retirement": 0.18,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 30 points less in stocks, claiming at 70",
+     "source": "rule-stocks-30-claim-70",
+     "description": "Stocks at 110 minus your age, 30 points less, claim at 70, no products",
+     "basics_paid_of_100": 28,
+     "safe_spending_per_year": 15600.0,
+     "wants_per_year": 15600.0,
+     "goal_lasts_of_100": 0,
+     "claim_age": 70,
+     "partner_claim_age": null,
+     "stock_share_now": 0.28,
+     "stock_share_at_retirement": 0.18,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 15 points less in stocks",
+     "source": "rule-stocks-15",
+     "description": "Stocks at 110 minus your age, 15 points less, no products",
+     "basics_paid_of_100": 87,
+     "safe_spending_per_year": 23600.0,
+     "wants_per_year": 23600.0,
+     "goal_lasts_of_100": 0,
+     "claim_age": 67,
+     "partner_claim_age": null,
+     "stock_share_now": 0.43,
+     "stock_share_at_retirement": 0.33,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 15 points less in stocks, claiming at 70",
+     "source": "rule-stocks-15-claim-70",
+     "description": "Stocks at 110 minus your age, 15 points less, claim at 70, no products",
+     "basics_paid_of_100": 39,
+     "safe_spending_per_year": 15100.0,
+     "wants_per_year": 15100.0,
+     "goal_lasts_of_100": 0,
+     "claim_age": 70,
+     "partner_claim_age": null,
+     "stock_share_now": 0.43,
+     "stock_share_at_retirement": 0.33,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 15 points more in stocks",
+     "source": "rule-stocks+15",
+     "description": "Stocks at 110 minus your age, 15 points more, no products",
+     "basics_paid_of_100": 81,
+     "safe_spending_per_year": 20400.0,
+     "wants_per_year": 20400.0,
+     "goal_lasts_of_100": 5,
+     "claim_age": 67,
+     "partner_claim_age": null,
+     "stock_share_now": 0.73,
+     "stock_share_at_retirement": 0.63,
+     "products": [],
+     "annuity": false
+    },
+    {
+     "name": "Simple plan, 15 points more in stocks, claiming at 70",
+     "source": "rule-stocks+15-claim-70",
+     "description": "Stocks at 110 minus your age, 15 points more, claim at 70, no products",
+     "basics_paid_of_100": 48,
+     "safe_spending_per_year": 13100.0,
+     "wants_per_year": 13100.0,
+     "goal_lasts_of_100": 7,
+     "claim_age": 70,
+     "partner_claim_age": null,
+     "stock_share_now": 0.73,
+     "stock_share_at_retirement": 0.63,
+     "products": [],
+     "annuity": false
+    }
+   ],
+   "chosen": {
+    "name": "Simple plan, claiming at 65",
+    "source": "rule-claim-65",
+    "description": "Stocks at 110 minus your age, claim Social Security at 65, no products",
+    "basics_paid_of_100": 98,
+    "safe_spending_per_year": 28000.0,
+    "wants_per_year": 28000.0,
+    "goal_lasts_of_100": 1,
+    "claim_age": 65,
+    "partner_claim_age": null,
+    "stock_share_now": 0.58,
+    "stock_share_at_retirement": 0.48,
+    "products": [],
+    "annuity": false
+   },
+   "low_confidence": false,
+   "low_confidence_reasons": []
+  },
+  "family_moments": [
+   "Your youngest child leaves home when you are about 53.",
+   "College years run from about age 53 to 56, at about $32,030 a year for each child in college.",
+   "Your costs fall by about $4,600 a year when the mortgage ends in 2033."
+  ],
+  "costs_events": [
+   "Children's costs end 2027",
+   "College 2027-2030",
+   "Mortgage paid off 2033",
+   "You retire at 62",
+   "Medicare starts for you 2039",
+   "Health costs rise again at 85 (2059)"
+  ]
+ },
+ "plan_ok": true,
+ "app_cost_usd": 0.007391,
+ "app_tokens": 93697,
+ "seconds": 74.8
+}

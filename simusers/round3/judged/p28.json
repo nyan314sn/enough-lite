@@ -1,0 +1,116 @@
+{
+ "persona_id": "p28",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 46,
+    "truth": 46,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CA",
+    "truth": "CA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 60,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 191000.0,
+    "truth": 115000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 378000.0,
+    "truth": 378000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 380000.0,
+    "truth": 380000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     10
+    ],
+    "truth": [
+     10
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8461538461538461,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "simulator_inconsistent",
+    "note": "Simulated Olivia said 60 at intake, but the true profile is 62. Later she refers to 62 as the baseline, and the app never reconciled the two."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "She chose 'Type my real pay' and the app asked for an amount, but no amount was entered, so the $191,000 typical-pay estimate stayed in place. The true pay is $115,000."
+   }
+  ]
+ }
+}

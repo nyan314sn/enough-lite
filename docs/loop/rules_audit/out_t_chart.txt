@@ -1,0 +1,20 @@
+[ch] BOT: 'in 13 more with typical figures, each marked in the panel so you can change it. I split your $920,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[ch] ANSWER "That's about right"
+[ch] BOT: 'Enough said:\nGood. I will treat that as your own figure. What is the monthly mortgage payment?' CHIPS=['Not sure, estimate it']
+[ch] ANSWER '$2,900'
+[ch] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ch] ANSWER '$2,900'
+[ch] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ch] ANSWER 'No other debts'
+[ch] BOT: 'Enough said:\nThanks. I noted that you have no other debts. About how much does your household spend in a year now, all in?' CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me']
+[ch] ANSWER '$5,000 a month'
+[ch] ready after 5 turns
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 12.2 s
+--- chart 0 box {'x': 125, 'y': 1415.703125, 'width': 832, 'height': 210}
+age by x fraction: [(0.05, None), (0.1, None), (0.15, None), (0.2, None), (0.25, None), (0.3, None), (0.35, None), (0.4, None), (0.45, None), (0.5, None), (0.55, None), (0.6, None), (0.65, None), (0.7, None), (0.75, None), (0.8, None), (0.85, None), (0.9, None), (0.95, None)]
+--- chart 1 box {'x': 125, 'y': 329.59375, 'width': 832, 'height': 240}
+age by x fraction: [(0.05, '45'), (0.1, '47'), (0.15, '45'), (0.2, '53'), (0.25, '45'), (0.3, '59'), (0.35, '45'), (0.4, '65'), (0.45, '45'), (0.5, '71'), (0.55, '45'), (0.6, '77'), (0.65, '79'), (0.7, '45'), (0.75, '85'), (0.8, '45'), (0.85, '91'), (0.9, '45'), (0.95, '97')]
+--- chart 2 box {'x': 125, 'y': 367.828125, 'width': 832, 'height': 170}
+age by x fraction: [(0.05, '45'), (0.1, '47'), (0.15, '50'), (0.2, '53'), (0.25, '56'), (0.3, '59'), (0.35, '62'), (0.4, '65'), (0.45, '68'), (0.5, '71'), (0.55, '74'), (0.6, '77'), (0.65, '79'), (0.7, '82'), (0.75, '85'), (0.8, '88'), (0.85, '91'), (0.9, '94'), (0.95, '97')]
+errors []

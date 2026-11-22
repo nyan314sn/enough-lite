@@ -1,0 +1,51 @@
+from lib import *
+ANS=["About $400k","That's about right","I own it outright","No other debts","No children","$5,000 a month","That's about right"]
+with sync_playwright() as p:
+    b, pg = new(p)
+    intake(pg, "I'm 44, a dentist in Connecticut, single, retire at 60. I make $210,000.", ANS)
+    build(pg)
+    print("H0", pg.locator("[data-testid=plan-headline]").inner_text())
+    pg.get_by_role("button", name="← Change my answers").click(); pg.wait_for_timeout(600)
+    pg.get_by_role("button", name=re.compile("Change Your pay")).first.click(); pg.wait_for_timeout(300)
+    f = pg.locator("aside.side input").first; f.fill("120000"); pg.get_by_role("button", name="Save").first.click()
+    pg.wait_for_selector(".typing", state="detached", timeout=60000); pg.wait_for_timeout(800)
+    print("chat after edit:", transcript(pg)[-2:])
+    shot(pg,"j4_after_edit_vp",full=False)
+    # editor: bad inputs
+    pg.get_by_role("button", name=re.compile("Change Your pay")).first.click(); pg.wait_for_timeout(300)
+    f = pg.locator("aside.side input").first; f.fill("-5"); pg.get_by_role("button", name="Save").first.click(); pg.wait_for_timeout(600)
+    print("neg pay result:", pg.locator("aside.side").inner_text()[300:700].replace("\n"," | "))
+    shot(pg,"j4_neg_vp",full=False)
+    if pg.locator("aside.side input").count(): 
+        f = pg.locator("aside.side input").first; f.fill("abc"); pg.get_by_role("button", name="Save").first.click(); pg.wait_for_timeout(600)
+        print("abc:", pg.locator("aside.side [role=alert], aside.side .err").all_inner_texts())
+        pg.keyboard.press("Escape")
+    # to plan
+    pg.get_by_role("button", name=re.compile("2 · Your plan")).click(); pg.wait_for_timeout(600)
+    print("stale banner:", pg.locator(".stale").count(), pg.locator(".stale").inner_text() if pg.locator(".stale").count() else "")
+    print("H still", pg.locator("[data-testid=plan-headline]").inner_text())
+    shot(pg,"j4_stale_vp",full=False)
+    pg.get_by_role("button", name="Rebuild plan").click()
+    pg.wait_for_selector(".placeholder", timeout=5000) if False else None
+    pg.wait_for_timeout(300); shot(pg,"j4_rebuilding_vp",full=False)
+    pg.wait_for_selector("[data-testid=plan-headline]", timeout=120000); pg.wait_for_timeout(500)
+    print("H after rebuild", pg.locator("[data-testid=plan-headline]").inner_text())
+    # Reset one section
+    pg.get_by_role("button", name=re.compile("Change my answers")).click(); pg.wait_for_timeout(500)
+    pg.get_by_role("button", name="Reset Saving").first.click()
+    pg.wait_for_selector(".typing", state="detached", timeout=60000); pg.wait_for_timeout(800)
+    print("after reset chat:", transcript(pg)[-1]); print("can_build", can_build(pg))
+    print("missing hint:", pg.locator("aside.side").inner_text()[-500:].replace("\n"," | "))
+    shot(pg,"j4_reset_vp",full=False)
+    pg.get_by_role("button", name=re.compile("2 · Your plan")).click(); pg.wait_for_timeout(500)
+    print("plan page after reset: stale", pg.locator(".stale").inner_text() if pg.locator(".stale").count() else None)
+    shot(pg,"j4_afterreset_plan_vp",full=False)
+    # Start over
+    pg.get_by_role("button", name="Start over").click(); pg.wait_for_timeout(300)
+    shot(pg,"j4_startover_confirm_vp",full=False)
+    pg.get_by_role("button", name="Yes, clear").click(); pg.wait_for_timeout(800)
+    print("after start over:", transcript(pg), pg.locator("aside.side").inner_text()[:200].replace("\n"," | "))
+    print("step links:", pg.locator(".steps").inner_text().replace("\n"," | "))
+    shot(pg,"j4_startover_done_vp",full=False)
+    print(pg.errors)
+    b.close()

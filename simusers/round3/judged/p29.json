@@ -1,0 +1,116 @@
+{
+ "persona_id": "p29",
+ "issues": [
+  {
+   "ref": "i6",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "a 5% mortgage rate, which sets when the mortgage ends",
+   "note": "The 5% rate was assumed, not given by the person, and the reply presents it as a settled fact without saying it is an estimate."
+  },
+  {
+   "ref": "a5",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "Social Security can start from 62, and the benefit stops rising at 70. Pick an age from 62 to 70.",
+   "note": "The reply answers neither the $37,400 vs $43,900 question nor the request to list the plan's assumptions about age, pay and claiming age."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 56,
+    "truth": 56,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "FL",
+    "truth": "FL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 74000.0,
+    "truth": 74000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 320000.0,
+    "truth": 320000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 20000.0,
+    "truth": 20000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 58000.0,
+    "truth": 58000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

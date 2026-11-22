@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-16",
+  "sources": {
+    "usda_cre_2015": {
+      "name": "USDA CNPP, Expenditures on Children by Families, 2015 (Lino, Kuczynski, Rodriguez, Schap; Misc. Pub. 1528-2015), Table 1",
+      "url": "https://www.cnpp.usda.gov/sites/default/files/expenditures_on_children_by_families/crc2015.pdf",
+      "published": "2017-01-09 (child care and education values revised 2017-03-08)",
+      "retrieved": "2026-11-16",
+      "note": "Read from the PDF copy at https://fns-prod.azureedge.us/sites/default/files/crc2015_March2017.pdf. Latest edition found; the series has no newer edition. Married-couple families, overall US, 2015 dollars, 2011-15 Consumer Expenditure Survey. Younger child in a two-child family; only child x1.27, each child in a family of three or more x0.76. Excludes college and costs after age 17."
+    },
+    "fred_cpiaucns": {
+      "name": "FRED CPIAUCNS (CPI-U, not seasonally adjusted)",
+      "url": "https://fred.stlouisfed.org/data/CPIAUCNS.txt",
+      "published": "monthly, latest 2026-10",
+      "retrieved": "2026-11-16",
+      "note": "2015 monthly mean 237.017 (computed from the twelve values); October 2026 = 337.511. Used only to restate USDA 2015 dollars."
+    },
+    "collegeboard_2026": {
+      "name": "College Board, Trends in College Pricing and Student Aid 2026 (2026-27 total student budgets and net prices)",
+      "url": "https://research.collegeboard.org/trends/college-pricing/highlights",
+      "published": "2026-11-05",
+      "retrieved": "2026-11-16",
+      "note": "The highlights page lists 2026-27 tuition and fees (in-state $12,290, out-of-state $32,730, private nonprofit $46,350) but not room and board. Total budgets (tuition, fees, housing and food, books, transportation, personal) and net prices come from news summaries of the report (Washington Post 2026-11-05, Inside Higher Ed 2026-11-06, via search); the College Board page for 2026-27 totals could not be opened. The official 2025-26 totals ($30,990 in-state, $50,920 out-of-state, $65,470 private; newsroom.collegeboard.org, 2025-11-06) were read directly."
+    },
+    "carescout_2025": {
+      "name": "CareScout (Genworth) 2025 Cost of Care Survey, national medians",
+      "url": "https://investor.genworth.com/news-events/press-releases/detail/1054",
+      "published": "2026-03-02",
+      "retrieved": "2026-11-16",
+      "note": "Data collected July-November 2025. Homemaker and home health aide are now one 'non-medical caregiver' line, $35 an hour, 44 hours a week."
+    },
+    "acl_ltc": {
+      "name": "Administration for Community Living, How Much Care Will You Need?",
+      "url": "https://acl.gov/ltc/basic-needs/how-much-care-will-you-need",
+      "published": "page last modified 2020-02-18",
+      "retrieved": "2026-11-16",
+      "note": "People turning 65: women need care 3.7 years on average, men 2.2; 20% will need more than 5 years. ACLI's guide gives 3.2 and 2.3."
+    },
+    "rover_2025": {
+      "name": "Rover, The True Cost of Pet Parenthood 2025 (US)",
+      "url": "https://www.rover.com/blog/press-release/cost-of-pet-parenthood-2025",
+      "published": "2025-03-19",
+      "retrieved": "2026-11-16",
+      "note": "Rover's page returned 403, so figures come from Fox 13 (2025-03-19; lifetime $34,550 dog over 10 years, $32,170 cat over 16 years) and Review42 (routine annual cost $1,390-$5,295 dog, $760-$3,495 cat). Survey of 1,000 US pet parents, Feb 2025. A commercial survey, not an audit."
+    },
+    "banfield_frontiers_2023": {
+      "name": "Montoya et al., Life expectancy tables for dogs and cats derived from clinical data, Frontiers in Veterinary Science (2023)",
+      "url": "https://www.frontiersin.org/articles/10.3389/fvets.2023.1082102/text",
+      "published": "2023-02",
+      "retrieved": "2026-11-16",
+      "note": "Banfield US clinic records 2013-2019. Life expectancy at birth: dogs 12.69 years (giant breeds 9.51), cats 11.18 (male cats 10.72). Median survival time: dogs 14.13, cats 15.7. Read from the PDF; the by-age tables were not extracted, so remaining life is approximated as expectancy at birth minus age."
+    },
+    "zillow_closing": {
+      "name": "Zillow, closing costs guide",
+      "url": "https://zillow.com/learn/closing-costs",
+      "published": "undated guide",
+      "retrieved": "2026-11-16",
+      "note": "Buyer closing costs 2% to 5% of the purchase price (from a search summary; the page returned 403). Moving costs not sourced."
+    },
+    "theknot_2026": {
+      "name": "The Knot 2026 Real Weddings Study (couples married in 2025; 10,474 couples)",
+      "url": "https://www.theknot.com/content/average-wedding-cost",
+      "published": "2026",
+      "retrieved": "2026-11-16",
+      "note": "Average ceremony and reception cost $34,200 (excludes the engagement ring). The quartile points ($12,000 and $41,000) come from a secondary summary (walnutinvest.com) and the page returned 403, so they are low confidence."
+    },
+    "nolo_divorce": {
+      "name": "Martindale-Nolo reader survey (2019), as reported by SoFi and others",
+      "url": "https://www.sofi.com/learn/content/average-cost-of-divorce/",
+      "published": "survey 2019; reports 2026",
+      "retrieved": "2026-11-16",
+      "note": "Average legal bill $11,300 with a lawyer (median $7,000); uncontested with lawyers about $4,100; contested to trial about $23,300 or more. Self-selected readers, 2019 dollars (not inflated here, so slightly understated). Reported by search summaries; the survey itself was not opened."
+    },
+    "cms_oopm_2027": {
+      "name": "CMS 2027 maximum annual limitation on cost sharing (PAPI guidance, 2026-01-29), as summarized by Milliman",
+      "url": "https://www.milliman.com/en/insight/2027-aca-oop-max-limits-released-group-health",
+      "published": "2026-02-18",
+      "retrieved": "2026-11-16",
+      "note": "Self-only $12,000, family $24,000 (2026: $10,600 and $21,200). In-network, essential benefits only. A ceiling, not an average bill; premiums excluded."
+    },
+    "bls_duration": {
+      "name": "BLS Employment Situation, Table A-12 (duration of unemployment, seasonally adjusted)",
+      "url": "https://www.bls.gov/web/empsit/cpseea12.htm",
+      "published": "October 2026",
+      "retrieved": "2026-11-16",
+      "note": "Median 11.9 weeks, mean 27.1 weeks. Used as months of lost income for a job loss; 12 months is our illustrative high, not a BLS figure."
+    }
+  },
+  "assumptions": {
+    "dollars": "Today's dollars. We restate USDA 2015 dollars with the CPI-U ratio and use the other sources (2025-2026) as published.",
+    "national_averages": "Every figure is a national average or survey median, not a forecast for one household. The app shows each one as a default the user can change.",
+    "college_share": "By default the family pays 100% of college cost, as a ceiling; scholarships, aid and student loans lower it. The user can change it.",
+    "child_rearing_scope": "USDA costs run from birth through age 17 and leave out college; we treat the child as independent at 18.",
+    "pet_remaining_life": "Remaining life = life expectancy at birth minus current age, with a floor (min_remaining_years in the engine). This is an approximation: we did not extract the by-age tables.",
+    "parent_care": "A parent's care starts when the user says and lasts as many years as the user gives (default: the ACL average). We ignore Medicaid, insurance and the parent's own assets."
+  },
+  "cpi": {
+    "base_label": "2015 annual mean",
+    "base_index": 237.017,
+    "current_label": "2026-10",
+    "current_index": 337.511,
+    "factor": 1.424
+  },
+  "child": {
+    "independence_age": 18,
+    "college_start_age": 18,
+    "college_years": 4,
+    "only_child_multiplier": 1.27,
+    "three_plus_multiplier": 0.76,
+    "note": "Multipliers from the USDA report's Table 1 footnote."
+  },
+  "child_rearing": {
+    "0-2": {
+      "low": 13798.56,
+      "typical": 18056.32,
+      "high": 28152.48,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9690,
+        "typical": 12680,
+        "high": 19770
+      },
+      "inflation_factor": 1.424
+    },
+    "3-5": {
+      "low": 13812.8,
+      "typical": 18127.52,
+      "high": 28180.96,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9700,
+        "typical": 12730,
+        "high": 19790
+      },
+      "inflation_factor": 1.424
+    },
+    "6-8": {
+      "low": 13285.92,
+      "typical": 17586.4,
+      "high": 27597.12,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9330,
+        "typical": 12350,
+        "high": 19380
+      },
+      "inflation_factor": 1.424
+    },
+    "9-11": {
+      "low": 14183.04,
+      "typical": 18768.32,
+      "high": 29476.8,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9960,
+        "typical": 13180,
+        "high": 20700
+      },
+      "inflation_factor": 1.424
+    },
+    "12-14": {
+      "low": 13627.68,
+      "typical": 18554.72,
+      "high": 29975.2,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9570,
+        "typical": 13030,
+        "high": 21050
+      },
+      "inflation_factor": 1.424
+    },
+    "15-17": {
+      "low": 14211.52,
+      "typical": 19793.6,
+      "high": 33293.12,
+      "unit": "USD per child per year",
+      "source_id": "usda_cre_2015",
+      "as_of": "2017-01-09",
+      "confidence": "medium",
+      "notes": "Low, typical, high = the report's lower-income (under $59,200), middle-income ($59,200-$107,400) and higher-income (over $107,400) married-couple tiers. Housing, food, transportation, clothing, health care, child care and education, and miscellaneous; excludes college.",
+      "price_basis": "2015 dollars x CPI-U factor 1.424",
+      "published": {
+        "low": 9980,
+        "typical": 13900,
+        "high": 23380
+      },
+      "inflation_factor": 1.424
+    }
+  },
+  "college": {
+    "in_state": {
+      "low": 21660,
+      "typical": 32030,
+      "high": 32030,
+      "unit": "USD per year",
+      "source_id": "collegeboard_2026",
+      "as_of": "2026-11-05",
+      "confidence": "medium",
+      "notes": "Typical = 2026-27 average total student budget before aid (tuition, fees, housing and food, books, transportation, personal). Low = average net cost after grant aid ($21,660). High = sticker budget. Official 2025-26 sticker: $30,990.",
+      "price_basis": "2026-27 academic year"
+    },
+    "out_of_state": {
+      "low": 52470,
+      "typical": 52470,
+      "high": 52470,
+      "unit": "USD per year",
+      "source_id": "collegeboard_2026",
+      "as_of": "2026-11-05",
+      "confidence": "medium",
+      "notes": "2026-27 average total student budget before aid; no net-price figure found for this sector. Official 2025-26 sticker: $50,920.",
+      "price_basis": "2026-27 academic year"
+    },
+    "private": {
+      "low": 38540,
+      "typical": 67610,
+      "high": 67610,
+      "unit": "USD per year",
+      "source_id": "collegeboard_2026",
+      "as_of": "2026-11-05",
+      "confidence": "medium",
+      "notes": "Typical = 2026-27 average total student budget before aid at private nonprofit four-year colleges. Low = average net cost after grant aid ($38,540). Official 2025-26 sticker: $65,470.",
+      "price_basis": "2026-27 academic year"
+    }
+  },
+  "pets": {
+    "dog": {
+      "annual": {
+        "low": 1390,
+        "typical": 3455,
+        "high": 5295,
+        "unit": "USD per year",
+        "source_id": "rover_2025",
+        "as_of": "2025-03-19",
+        "confidence": "low",
+        "notes": "Low and high = Rover's routine annual cost range for dogs. Typical = Rover's lifetime estimate $34,550 / 10 years (our division; lifetime may include one-time costs). Range read from a secondary page; Rover's own page could not be opened.",
+        "price_basis": "2025 survey dollars"
+      },
+      "lifespan": {
+        "low": 9.51,
+        "typical": 12.69,
+        "high": 14.13,
+        "unit": "years",
+        "source_id": "banfield_frontiers_2023",
+        "as_of": "2023-02-01",
+        "confidence": "medium",
+        "notes": "Life expectancy at birth: giant breeds 9.51, all dogs 12.69. High = median survival time 14.13. Rover assumes 10 years.",
+        "price_basis": ""
+      }
+    },
+    "cat": {
+      "annual": {
+        "low": 760,
+        "typical": 2011,
+        "high": 3495,
+        "unit": "USD per year",
+        "source_id": "rover_2025",
+        "as_of": "2025-03-19",
+        "confidence": "low",
+        "notes": "Low and high = Rover's routine annual cost range for cats. Typical = $32,170 / 16 years (our division). Secondary page for the range.",
+        "price_basis": "2025 survey dollars"
+      },
+      "lifespan": {
+        "low": 10.72,
+        "typical": 11.18,
+        "high": 15.7,
+        "unit": "years",
+        "source_id": "banfield_frontiers_2023",
+        "as_of": "2023-02-01",
+        "confidence": "medium",
+        "notes": "Life expectancy at birth: male cats 10.72, all cats 11.18. High = median survival time 15.7. Rover assumes 16 years.",
+        "price_basis": ""
+      }
+    }
+  },
+  "parent_care": {
+    "home_health": {
+      "low": 80080,
+      "typical": 80080,
+      "high": 80080,
+      "unit": "USD per year",
+      "source_id": "carescout_2025",
+      "as_of": "2026-03-02",
+      "confidence": "high",
+      "notes": "Non-medical caregiver (homemaker/home health aide), $35 an hour x 44 hours a week. Scale by actual hours using the override.",
+      "price_basis": "2025 survey dollars"
+    },
+    "assisted_living": {
+      "low": 74400,
+      "typical": 74400,
+      "high": 74400,
+      "unit": "USD per year",
+      "source_id": "carescout_2025",
+      "as_of": "2026-03-02",
+      "confidence": "high",
+      "notes": "Assisted living community, $6,200 a month national median.",
+      "price_basis": "2025 survey dollars"
+    },
+    "nursing_home": {
+      "low": 114975,
+      "typical": 129575,
+      "high": 129575,
+      "unit": "USD per year",
+      "source_id": "carescout_2025",
+      "as_of": "2026-03-02",
+      "confidence": "high",
+      "notes": "Typical and high = private room ($355 a day); low = semi-private room ($315 a day).",
+      "price_basis": "2025 survey dollars"
+    },
+    "duration_years": {
+      "low": 2.2,
+      "typical": 3.0,
+      "high": 5.0,
+      "unit": "years",
+      "source_id": "acl_ltc",
+      "as_of": "2020-02-18",
+      "confidence": "medium",
+      "notes": "Low = men's average (2.2), high = 'more than 5 years' (the 20% tail), typical = midpoint of men's 2.2 and women's 3.7 (our arithmetic). Averages across all people needing care, not a forecast for one parent.",
+      "price_basis": ""
+    }
+  },
+  "events": {
+    "wedding": {
+      "low": 12000,
+      "typical": 34200,
+      "high": 41000,
+      "unit": "USD one time",
+      "source_id": "theknot_2026",
+      "as_of": "2026-11-16",
+      "confidence": "low",
+      "notes": "Typical = The Knot average $34,200; low and high = quartile points from a secondary summary. Ceremony and reception only.",
+      "price_basis": "2025 weddings"
+    },
+    "divorce": {
+      "low": 4100,
+      "typical": 11300,
+      "high": 23300,
+      "unit": "USD one time",
+      "source_id": "nolo_divorce",
+      "as_of": "2026-11-16",
+      "confidence": "low",
+      "notes": "Low = uncontested with lawyers, typical = average legal bill, high = contested to trial. Legal costs only; excludes dividing assets and support.",
+      "price_basis": "2019 survey dollars"
+    },
+    "job_loss_months": {
+      "low": 2.75,
+      "typical": 6.25,
+      "high": 12.0,
+      "unit": "months of income",
+      "source_id": "bls_duration",
+      "as_of": "2026-11-16",
+      "confidence": "medium",
+      "notes": "Low = median unemployment spell 11.9 weeks, typical = mean 27.1 weeks (both x 12/52). High = 12 months is our illustrative choice for a sabbatical or long search, not a BLS figure. Multiply by the user's income; unemployment benefits ignored.",
+      "price_basis": "October 2026"
+    },
+    "major_health": {
+      "low": 12000,
+      "typical": 12000,
+      "high": 24000,
+      "unit": "USD one time",
+      "source_id": "cms_oopm_2027",
+      "as_of": "2026-02-18",
+      "confidence": "medium",
+      "notes": "ACA 2027 in-network out-of-pocket maximum: self-only $12,000 (low and typical), family $24,000 (high). A ceiling for a bad year, not an average.",
+      "price_basis": "plan year 2027"
+    },
+    "home_closing_fraction": {
+      "low": 0.02,
+      "typical": 0.035,
+      "high": 0.05,
+      "unit": "fraction of purchase price",
+      "source_id": "zillow_closing",
+      "as_of": "2026-11-16",
+      "confidence": "low",
+      "notes": "Buyer closing costs 2%-5% of price; typical = midpoint (our arithmetic). Moving costs and rent-versus-own are not included.",
+      "price_basis": "share of price"
+    }
+  },
+  "user_provided_only": [
+    "Moving costs",
+    "Renting versus owning (a comparison, not a default cost)",
+    "Child care beyond what USDA includes",
+    "Adoption or pet purchase fees (one time)",
+    "Support payments after divorce",
+    "Long-term-care insurance benefits",
+    "Sabbatical income beyond months of lost pay",
+    "Costs of grandchildren or adult children"
+  ]
+}

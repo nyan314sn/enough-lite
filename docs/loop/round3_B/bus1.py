@@ -1,0 +1,15 @@
+from lib import *
+log = lambda *a: print(*a, flush=True)
+with sync_playwright() as p:
+    b, pg = new(p)
+    say(pg, "I'm 52, a bus driver in Detroit Michigan, divorced, two kids 16 and 14. I make $52,000 and spend $4,200 a month. I have $30,000 saved. I want to retire at 58.")
+    log("BOT1:", transcript(pg)[-1])
+    log(auto(pg, [], log=True))
+    log("PANEL:", pg.locator("aside").first.inner_text().replace("\n"," | "))
+    shot(pg,"bus_intake",full=False)
+    log("build", build(pg))
+    log("BODY:", pg.inner_text("body"))
+    shot(pg,"bus_plan",full=False); shot(pg,"bus_plan_full")
+    log("BUTTONS:", pg.locator("button:visible").all_inner_texts())
+    log(axe(pg,"p"), overflow(pg), pg.errors)
+    b.close()

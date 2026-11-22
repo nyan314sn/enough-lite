@@ -1,0 +1,123 @@
+{
+ "persona_id": "p17",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 56,
+    "truth": 56,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": 54,
+    "truth": 54,
+    "source": "you said"
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": true,
+    "got": 60000.0,
+    "truth": 60000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 620000.0,
+    "truth": 680000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 70000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     19
+    ],
+    "truth": [
+     19
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 2,
+    "truth": 2,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 85000.0,
+    "truth": 85000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8571428571428571,
+  "why": [
+   {
+    "field": "home_owns",
+    "cause": "person_never_said",
+    "note": "Asked whether they own or rent, but the reply was 'ok', which didn't answer it. The app then used a typical home figure without recording ownership."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "The app never asked for the mortgage balance. It stored 0 instead of leaving the field empty, so the $70,000 owed was never captured."
+   }
+  ]
+ }
+}

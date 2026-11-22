@@ -1,0 +1,121 @@
+{
+ "persona_id": "h02",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 38,
+    "truth": 38,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "NC",
+    "truth": "NC",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 67,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 50980.0,
+    "truth": 74000,
+    "source": "assumed"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 57100.0,
+    "truth": 57000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     9,
+     12
+    ],
+    "truth": [
+     9,
+     12
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": false,
+    "got": 0,
+    "truth": 11000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 43000.0,
+    "truth": 62000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6666666666666666,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "Person never stated a retirement age. App used 65 as a typical value and never asked. Truth is 67."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "never_asked",
+    "note": "App never asked for pay. It used $50,980 as an assumed default. Truth is $74,000."
+   },
+   {
+    "field": "debts_total",
+    "cause": "person_never_said",
+    "note": "Person named a car loan but never gave a balance. App stored 0 with no source tag instead of a typical value. Truth is $11,000."
+   },
+   {
+    "field": "spending_now",
+    "cause": "never_asked",
+    "note": "App never asked current spending. It used a $43,000 estimate derived from assumed pay. Truth is $62,000."
+   }
+  ]
+ }
+}

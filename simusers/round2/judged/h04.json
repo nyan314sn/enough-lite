@@ -1,0 +1,129 @@
+{
+ "persona_id": "h04",
+ "issues": [
+  {
+   "ref": "i5",
+   "type": "ignored_correction",
+   "severity": "P1",
+   "quote": "Just tell me the home is worth about 280,000 if that matters for the plan.",
+   "note": "The app neither stored nor acknowledged the $280,000 home value the person gave, and its reply only mentions the mortgage and debts."
+  },
+  {
+   "ref": "a4",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "Your basics are paid in 100 of 100 scenarios (now 100), and your spending goal lasts in 55 of 100 (now 55).",
+   "note": "The user asked for the age when money hits zero in bad cases, and the reply gives no age or any run-out year."
+  },
+  {
+   "ref": "a4",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "you can count on $53,100 a year (now $53,100)",
+   "note": "The reply repeats figures with '(now ...)' labels that mean nothing to an ordinary person and do not explain the result."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 68,
+    "truth": 68,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "FL",
+    "truth": "FL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 68,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 410000.0,
+    "truth": 410000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 14400.0,
+    "truth": 14400,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 58000.0,
+    "truth": 58000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "simulator_inconsistent",
+    "note": "Walt said he retired at 65 (intake turn i1), so the app stored what he said. The truth record has 68, which conflicts with the scenario's own notes ('retired at 65')."
+   }
+  ]
+ }
+}

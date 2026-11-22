@@ -1,0 +1,30 @@
+/* Colours for the household figures, set for the light page: a deep navy contour, soft fills, the indigo accent for "you". */
+.household-svg {
+  --fg-ink: #26354d; --fg-pen: #1b2740; --fg-shoe: #2b3445; --fg-paper: #f3efe6; --fg-terra: #c8794f; --fg-sage: #7fa793;
+  --fg-stone: #9aa7b5; --fg-deep: #3b4a63; --fg-tan: #c79a6e; --fg-glass: #86a9bd; --fg-gold: #e0b65a; --fg-ground: var(--border-strong);
+  --fg-skin-1: #efcfb3; --fg-skin-2: #d6a17a; --fg-skin-3: #a8714f; --fg-skin-4: #7a4c34;
+  --fg-hair-dark: #2b2420; --fg-hair-brown: #8a5d38; --fg-hair-gray: #9f9a94; --fg-hair-white: #e6e3de; --fg-hair-pale: #ece6dc;
+}
+.household-svg * { stroke: none; }
+.fg-ink { fill: var(--fg-ink); }
+.fg-ground { fill: var(--fg-ground); }
+.fg-deep { fill: var(--fg-deep); } .fg-paper { fill: var(--fg-paper); } .fg-terra { fill: var(--fg-terra); } .fg-sage { fill: var(--fg-sage); } .fg-stone { fill: var(--fg-stone); }
+.fg-pants { fill: var(--fg-deep); } .fg-shoe { fill: var(--fg-shoe); } .fg-pen { fill: var(--fg-pen); } .fg-glass { fill: var(--fg-glass); } .fg-hat { fill: var(--fg-gold); }
+.fg-chain { fill: var(--fg-gold); } .fg-tan { fill: var(--fg-tan); } .fg-gold { fill: var(--fg-gold); }
+.fg-skin-1 { fill: var(--fg-skin-1); } .fg-skin-2 { fill: var(--fg-skin-2); } .fg-skin-3 { fill: var(--fg-skin-3); } .fg-skin-4 { fill: var(--fg-skin-4); }
+.fg-hair-dark { fill: var(--fg-hair-dark); } .fg-hair-brown { fill: var(--fg-hair-brown); } .fg-hair-gray { fill: var(--fg-hair-gray); }
+.fg-hair-white { fill: var(--fg-hair-white); } .fg-hair-pale { fill: var(--fg-hair-pale); }
+.fg-shirt-a { fill: var(--brand-accent); } .fg-shirt-b { fill: var(--fg-sage); } .fg-shirt-c { fill: var(--fg-stone); } .fg-shirt-d { fill: var(--fg-paper); } .fg-shirt-e { fill: var(--fg-deep); }
+
+.fg-pop { animation: fg-in 0.5s ease-out both; }
+@keyframes fg-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.fg-bob { animation: fg-breathe 5.5s ease-in-out infinite; }
+@keyframes fg-breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1px); } }
+.fg-wag { transform-box: fill-box; transform-origin: 100% 100%; animation: fg-wag 2.4s ease-in-out infinite alternate; }
+@keyframes fg-wag { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .fg-pop, .fg-bob, .fg-wag { animation: none !important; } }
+
+.household { margin: 0; }
+.household-svg { width: 100%; height: auto; display: block; max-height: 200px; }
+.household-more { fill: var(--text-2); font: 600 14px var(--font, system-ui); }
+.household-caption { color: var(--text-2); font-size: 0.88rem; margin-top: 0.25rem; text-align: center; }

@@ -1,0 +1,15 @@
+from lib import *
+with sync_playwright() as p:
+    b, pg = new(p)
+    pg.on("request", lambda r: print("REQ", r.method, r.url[-40:], flush=True) if "/api/" in r.url else None)
+    pg.on("response", lambda r: print("RESP", r.status, r.url[-40:], flush=True) if "/api/" in r.url else None)
+    pg.on("requestfailed", lambda r: print("FAIL", r.url[-40:], r.failure, flush=True))
+    say(pg, "I'm 44, a dentist in Connecticut, single, retire at 60. I make $210,000.")
+    auto(pg, [(r"saved in all","About $400k"),(r"spend in a year|spend a year now|household spend","$8,000 a month")])
+    build(pg)
+    shot(pg,"d1a"); print("axe",axe(pg,"p")); print("ask...")
+    inp = pg.locator("#ask-input"); inp.fill("Retire at 55"); inp.press("Enter")
+    pg.wait_for_timeout(15000)
+    print(pg.locator(".turn").last.inner_text()[:300])
+    print(pg.errors)
+    b.close()

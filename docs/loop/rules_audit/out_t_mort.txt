@@ -1,0 +1,29 @@
+MORTGAGE Q: Enough said:
+Thanks. I noted that your partner has no pay. About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month. ['Not sure, estimate it', "It's paid off"]
+FULL REPLY after 'Not sure, estimate it':
+ Enough said:
+I used a typical mortgage for now: about $261,000 left, $1,525 a month, marked estimate. Change it in the panel if you know better. Your answer moved some typical figures, so I updated them: a 5% mortgage rate, which sets when the mortgage ends. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.
+HOME ROWS: Home & debts | Estimated, change it if you know | ✎ | Home | Own, $261,000 left on the mortgage, $1,525 a month, value not given | ✎ | estimate | A typical mortgage: a 30-year loan taken out at about 35, at 5%, with the monthly payment typical for your state (Census) or from your home's value. Please give your own figures. | Mortgage paid off | Paid off in 2052, costs fall by about $10,900 a year | ✎ | estimate | Worked out from the balance, payment and a 5% rate (assumed). | Other debts | None counted | ✎ | typical | Pensions & income | Not added, using typical | ✎ | Insurance | Not added, using typical | ✎ | Goals | Not added, using typical | ✎ | Health | Not added, using typical | ✎ | Cos
+chips now: ['No other debts', 'Student loans', 'Car loan', 'Credit card'] | en the mortgage ends. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.
+CLICKED Student loans -> Enough said:
+Got it: student debt, no amount yet. How much is left, and at what rate?
+chips now: ['$10k at 5%', '$30k at 6%', '$60k at 7%'] | Enough said:
+Got it: student debt, no amount yet. How much is left, and at what rate?
+CLICKED $10k at 5% -> Enough said:
+Thanks. I noted that you owe $10,000 in student debt. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+chips now: ['No children', '1 child', '2 children', '3 children'] | Enough said:
+Thanks. I noted that you owe $10,000 in student debt. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.
+CLICKED No children -> Enough said:
+Thanks. I noted that you have no children. If you'd rather, I can build your plan now with typical numbers for the rest. At what age do you want to stop working?
+chips now: ['60', '62', '65', '67', 'Build my plan with typical numbers for the rest'] | hanks. I noted that you have no children. If you'd rather, I can build your plan now with typical numbers for the rest. At what age do you want to stop working?
+CLICKED 60 -> Enough said:
+Thanks. I noted that you want to retire at 60. About how much does your household spend in a year now, all in?
+chips now: ['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me', 'Build my plan with typical numbers for the rest'] | Enough said:
+Thanks. I noted that you want to retire at 60. About how much does your household spend in a year now, all in?
+CLICKED Estimate it for me -> Enough said:
+Thanks. I noted that you spend $50,000 a year now. I estimated your pay at $62,000 a year from typical pay for your job and state. Is that about right?
+chips now: ["That's about right", 'Type my real pay', 'Build my plan with typical numbers for the rest'] | gh said:
+Thanks. I noted that you spend $50,000 a year now. I estimated your pay at $62,000 a year from typical pay for your job and state. Is that about right?
+CLICKED That's about right -> Enough said:
+Good. I will treat that as your own figure. I estimated your spending in retirement at $50,400 a year from your take-home pay. Is that about right?
+PANEL: YOUR HOUSEHOLD | You (40) and your partner (38) | Build my plan |  | Check the figures, then build. |  | Ready: you can build your plan. |  | MONEY IN AND OUT a year, before tax | Your pay you said | $62,000 | Partner's pay you said | $0 | Costs now estimate | −$50,000 | Left before tax | $12,000 | WHAT WE HAVE SO FAR | Household | 6 | Reset | Your age | 40 | ✎ | you said | Partner's age | 38 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | assumed | Assumed: check this | Only used to pick the right life table. | Partner's sex (life table only) | Female | ✎ | you said | State | Ohio | ✎ | you said | Children | None | ✎ | you said | Work & pay | 4 | Reset | Your job | plumber | ✎ | you said | Your pay | $62,000 a year | ✎ | you said | Partner's pay | No pay | ✎ | you said | Retirement age | 60 | ✎ | you said | Saving | 6 | Reset | Home & debts | 3 | Reset | Home | Own, $261,000 left on the mortgage, $1,525 a month, value not given | ✎ | estimate | A typical mortgage: a 30-year loan taken out at about 35, at 5%, with the monthly payment typical for your state (Census) or from your home's value. Please give your own figures. | Mortgage paid off | Paid off in 2052, costs fall by about $10,900 a year | ✎ | estimate | Worked out from the balance, payment and a 5% rate (assumed). | Other debts | Student loan $10,000, at 5%, $106 a month (assumed) | ✎ | you said | A rate or payment you did not give is assumed: student payment. | Pensions & income | Not added, using typical | ✎ | Insurance | Not added, using typical | ✎ | Goals | Not added, using typical | ✎ | Health | Not added, using typical | ✎ | Costs | Not added, using typical | ✎

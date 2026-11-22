@@ -1,0 +1,167 @@
+{
+ "rows": [
+  {
+   "id": "E01_age_gap_25",
+   "src": "full",
+   "label": "Age 62 with a 37-year-old partner (25-year gap)",
+   "stratum": {
+    "age_band": "55-64",
+    "couple": true,
+    "working": true,
+    "savings": "high"
+   },
+   "opt": {
+    "wants": 110300.0,
+    "needs_paid": 99,
+    "feasible": true,
+    "retire_age": 66,
+    "goal_age": 66,
+    "ss_age": 67,
+    "products": [
+     "term_life"
+    ]
+   },
+   "lite": {
+    "wants": 38700.0,
+    "needs_paid": 100,
+    "verdict": "close",
+    "works": false,
+    "claim_age": 70,
+    "partner_claim_age": 70,
+    "retire_age": 66,
+    "goal": 95000,
+    "products": []
+   },
+   "retire_differs": false,
+   "gap_pct": -64.91387126019946,
+   "verdict_agree": false,
+   "claim_diff": 3,
+   "product_pairs": {
+    "term_life": [
+     true,
+     false
+    ]
+   }
+  },
+  {
+   "id": "E02_age_gap_25_older_partner",
+   "src": "full",
+   "label": "Age 35 with a 60-year-old partner (partner older by 25)",
+   "stratum": {
+    "age_band": "35-44",
+    "couple": true,
+    "working": true,
+    "savings": "high"
+   },
+   "opt": {
+    "wants": 71400.0,
+    "needs_paid": 89,
+    "feasible": false,
+    "retire_age": 65,
+    "goal_age": 65,
+    "ss_age": 67,
+    "products": []
+   },
+   "lite": {
+    "wants": 52400.0,
+    "needs_paid": 100,
+    "verdict": "works",
+    "works": true,
+    "claim_age": 70,
+    "partner_claim_age": 70,
+    "retire_age": 65,
+    "goal": 80000,
+    "products": []
+   },
+   "retire_differs": false,
+   "gap_pct": -26.610644257703083,
+   "verdict_agree": false,
+   "claim_diff": 3,
+   "product_pairs": {}
+  },
+  {
+   "id": "E03_no_savings",
+   "src": "full",
+   "label": "Age 40, no savings, steady job",
+   "stratum": {
+    "age_band": "35-44",
+    "couple": false,
+    "working": true,
+    "savings": "low"
+   },
+   "opt": {
+    "wants": 0.0,
+    "needs_paid": 80,
+    "feasible": false,
+    "retire_age": 67,
+    "goal_age": 67,
+    "ss_age": 67,
+    "products": []
+   },
+   "lite": {
+    "wants": 3500.0,
+    "needs_paid": 100,
+    "verdict": "falls_short",
+    "works": false,
+    "claim_age": 68,
+    "partner_claim_age": null,
+    "retire_age": 67,
+    "goal": 45000,
+    "products": []
+   },
+   "retire_differs": false,
+   "verdict_agree": true,
+   "claim_diff": 1,
+   "product_pairs": {}
+  }
+ ],
+ "summary": {
+  "n_compared": 3,
+  "n_gap": 2,
+  "gap": {
+   "mean": -45.76225775895127,
+   "median": -45.76225775895127,
+   "p10": -61.08354855994982,
+   "p90": -30.440966957952725,
+   "median_abs": 45.762257758951264,
+   "within10": 0.0,
+   "within25": 0.0,
+   "lite_over_25": 0.0,
+   "lite_under_25": 1.0
+  },
+  "gap_hist": {
+   "< -50%": 1,
+   "-50 to -25": 1,
+   "-25 to -10": 0,
+   "-10 to +10": 0,
+   "+10 to +25": 0,
+   "+25 to +50": 0,
+   "> +50%": 0
+  },
+  "verdict": {
+   "n": 3,
+   "agree": 0.3333333333333333,
+   "both_work": 0,
+   "both_fail": 1,
+   "lite_works_opt_fails": 1,
+   "lite_fails_opt_works": 1
+  },
+  "claim": {
+   "n_both": 3,
+   "n_opt": 3,
+   "exact": 0.0,
+   "within1": 0.3333333333333333
+  },
+  "products": {
+   "n_opt_with_products": 1,
+   "per_kind": {
+    "term_life": {
+     "both": 0,
+     "opt_only": 1,
+     "lite_only": 0
+    }
+   }
+  },
+  "retire_differs": 0
+ }
+}

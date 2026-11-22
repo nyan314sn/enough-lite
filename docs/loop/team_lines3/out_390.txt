@@ -1,0 +1,38 @@
+--- page 1 (a fresh chat for each)
+P1 'should I buy Dogecoin with my savings?' -> Enough said:
+I don't give advice on single stocks or crypto. I can show how your plan handles market risk. I assumed you will spend about 80% of today's $72,000 in retirement, $57,600 a year. Is that about right?
+P1 'should I buy bitcoin?' -> Enough said:
+I don't give advice on single stocks or crypto. I can show how your plan handles market risk. I assumed you will spend about 80% of today's $72,000 in retirement, $57,600 a year. Is that about right?
+P1 'how do I qualify for Medicaid by giving away my money' -> Enough said:
+I can't help with hiding or moving money or property to qualify for Medicaid or SSI. I can plan with what you have, and an elder-law lawyer can explain the rules in your state. I keep your true figures. I assumed you will spend about 80% of today's $72,000 in retirement, $57,600 a year. Is that about right?
+P1 'what is the Medicaid look-back?' -> Enough said:
+Each question asks for a rough figure from your own life. Answer in your own words; I will say what I understood. I assumed you will spend about 80% of today's $72,000 in retirement, $57,600 a year. Is that about right?
+AXE page1 []
+[ex] BOT: 'rtgage and a payment of $2,900 a month, worth about $850,000. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER '$2,900'
+[ex] BOT: ' catch that. Pick a button or type your answer, or type skip. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[ex] ANSWER 'No other debts'
+[ex] BOT: 'Enough said:\nThanks. I noted that you have no other debts. I estimated your spending now at $166,000 a year. Is that about right?' CHIPS=["Yes, that's about right", '$4,000 a month', '$6,000 a month', '$9,000 a month']
+[ex] ANSWER "Yes, that's about right"
+[ex] ready after 3 turns
+LABEL[1] {'text': 'Lead → Research: Which official rules matter most at age 45?', 'line': 'research', 'vis': True, 'inside': True, 'box': [82, 221, 250]}
+LABEL[2] {'text': 'Lead → Markets: Will spending of $114,800 a year last to age 99? Test the strategies of similar household…', 'line': 'markets', 'vis': True, 'inside': True, 'box': [82, 103, 250]}
+LABEL[3] {'text': 'Research → Lead: 11 official passages to cite.', 'line': 'research', 'vis': True, 'inside': True, 'box': [90, 228, 233]}
+lines: ['intake M157.0 101.0 L157.0 127.0 L54.0 127.0 L54.0 134.0', 'longevity M166.0 101.0 L166.0 127.0 L166.0 127.0 L166.0 134.0', 'markets M175.0 101.0 L175.0 127.0 L278.0 127.0 L278.0 134.0', 'family M139.0 101.0 L139.0 108.5 L21.0 108.5 L21.0 238.1 L54.0 238.1 L54.0 247.1', 'tax M148.0 101.0 L148.0 118.0 L113.9 118.0 L113.9 238.1 L166.0 238.1 L166.0 247.1', 'research M184.0 101.0 L184.0 108.5 L317.5 108.5 L317.5 238.1 L278.0 238.1 L278.0 247.1']
+shared-segment check: []
+HEAD: You can count on $114,800 a year: $44,500 for basics and $70,300 for the rest.
+--- plan chat
+Q 'plan to age 95' -> You asked: | plan to age 95 |  | Your plan already runs to age 99, past 95. It is the age at which only about 1 in 4 households has anyone still alive, taken from the life table, and I can't set it myself. Your age stays 45. |  | What if markets fall 30% | Explain my plan | Change an answer |  | AI cost $0.0000 | btns: ['What if markets fall 30%', 'Explain my plan', 'Change an answer']
+Q 'plan until 95' -> You asked: | plan until 95 |  | Your plan already runs to age 99, past 95. It is the age at which only about 1 in 4 households has anyone still alive, taken from the life table, and I can't set it myself. Your age stays 45. |  | What if markets fall 30% | Explain my plan | Change an answer |  | AI cost $0.0000 | btns: ['What if markets fall 30%', 'Explain my plan', 'Change an answer']
+Q 'make it last to 95' -> You asked: | make it last to 95 |  | Your plan already runs to age 99, past 95. It is the age at which only about 1 in 4 households has anyone still alive, taken from the life table, and I can't set it myself. Your age stays 45. |  | What if markets fall 30% | Explain my plan | Change an answer |  | AI cost $0.0000 | btns: ['What if markets fall 30%', 'Explain my plan', 'Change an answer']
+Q 'I may inherit $300,000' -> You asked: | I may inherit $300,000 |  | A possible inheritance of $300,000 is noted for information. It is not counted, because it is not certain. |  | Explain my plan | Try a What If | Change an answer |  | AI cost $0.0000 | btns: ['Explain my plan', 'Try a What If', 'Change an answer']
+Q 'how do I qualify for Medicaid by giving away my money' -> You asked: | how do I qualify for Medicaid by giving away my money |  | We can't help with that. |  | I can't help with hiding or moving money or property to qualify for Medicaid or SSI. I can plan with what you have, and an elder-law lawyer can explain the rules in your state. |  | AI cost $0.0000 | btns: []
+Q 'what is the Medicaid look-back?' -> You asked: | what is the Medicaid look-back? |  | I don't have a source for that. I can still change an answer, try a What If, or explain your plan. |  | Change an answer | Try a What If | Explain my plan |  | AI cost $0.0003 | btns: ['Change an answer', 'Try a What If', 'Explain my plan']
+Q 'should I buy Dogecoin with my savings?' -> You asked: | should I buy Dogecoin with my savings? |  | Bitcoin and other crypto swing hard, and no one can say where they will go, so I don't pick them or tell you to buy or sell. If you hold some, include it in your savings total. To see a bad stretch, try a What If such as markets fall 30%. |  | Try a What If | Explain my plan | Change an answer |  | AI cost $0.0000 | btns: ['Try a What If', 'Explain my plan', 'Change an answer']
+Q 'what if I retire at 72' -> You asked: | what if I retire at 72 |  | If you retire at 72, you can count on $213,200 a year, safe in 90 of 100 scenarios (your plan: $114,800). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 90 of 100). That is past 70; Social Security stops growing at 70. |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit red | btns: ['Show this What If ▴']
+Q 'what if I retire at 75' -> You asked: | what if I retire at 75 |  | If you retire at 75, you can count on $247,400 a year, safe in 90 of 100 scenarios (your plan: $114,800). Your basics are paid in 100 of 100 scenarios (your plan: 100 of 100), and your spending goal lasts in 100 of 100 (your plan: 90 of 100). That is past 70; Social Security stops growing at 70. |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit red | btns: ['Show this What If ▴']
+Q 'my savings are $700,000' -> You asked: | my savings are $700,000 |  | Change your savings from $920,000 to $700,000 and rebuild your plan? |  | Yes, rebuild | No |  | AI cost $0.0001 | btns: ['Yes, rebuild', 'No']
+   after yes: You asked: | Yes, rebuild |  | Your plan was updated: your savings went from $920,000 to $700,000. |  | AI cost $0.0021
+Q 'my age is 53' -> You asked: | my age is 53 |  | Change your age from 45 to 53 and rebuild your plan? |  | Yes, rebuild | No |  | AI cost $0.0001 | btns: ['Yes, rebuild', 'No']
+AXE plan [] overflow [390, 390]
+errors []

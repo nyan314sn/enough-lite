@@ -1,0 +1,119 @@
+{
+ "persona_id": "p33",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "unstated_assumption",
+   "severity": "P2",
+   "quote": "your mortgage payment at about $2,155 a month, typical for your state",
+   "note": "The reply states the mortgage payment estimate but does not say that the home value was also estimated, though the assumed fields list it."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 43,
+    "truth": 43,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 115000.0,
+    "truth": 135000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 410000.0,
+    "truth": 410000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 290000.0,
+    "truth": 290000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     7
+    ],
+    "truth": [
+     7
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 92000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pay_per_year",
+    "cause": "correction_lost",
+    "note": "Dev clicked 'Type my real pay' at i8, and the app asked for his pre-tax pay, but no amount was stored. The $115,000 estimate stayed in place instead of his $135,000 truth."
+   }
+  ]
+ }
+}

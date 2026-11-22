@@ -1,0 +1,35 @@
+===== runs_before errors 0
+all      n=288 median +0.2% medabs 17.8% within25 60% agree 84%
+couples  n=165 median +4.9% medabs 19.3% within25 59% agree 85%
+singles  n=123 median -6.2% medabs 15.8% within25 61% agree 83%
+  savings_up n 30 wrong way 0 []
+  retire_later n 30 wrong way 0 []
+  debt_add n 30 wrong way 0 []
+  pension_add n 30 wrong way 0 []
+  match_full n 30 wrong way 0 []
+  legacy_add n 30 wrong way 0 []
+  consistency non-empty: 0
+  falls_short 219 with a safe starting point 120 no starting points 37
+===== runs_after errors 0
+all      n=288 median -1.0% medabs 17.9% within25 60% agree 85%
+couples  n=165 median +4.1% medabs 19.3% within25 59% agree 85%
+singles  n=123 median -7.3% medabs 16.1% within25 61% agree 84%
+  savings_up n 30 wrong way 0 []
+  retire_later n 30 wrong way 0 []
+  debt_add n 30 wrong way 0 []
+  pension_add n 30 wrong way 0 []
+  match_full n 30 wrong way 0 []
+  legacy_add n 30 wrong way 0 []
+  consistency non-empty: 0
+  falls_short 218 with a safe starting point 119 no starting points 40
+paired after vs before: median +0.00%, unchanged 270 of 287
+with a mortgage: n 74 median +0.0%
+  -100.0% S233 5100.0 -> 0.0 falls_short -> falls_short
+  -78.7% S264 64300.0 -> 13700.0 falls_short -> falls_short
+  -59.0% S248 34900.0 -> 14300.0 falls_short -> falls_short
+  -45.1% S137 25500.0 -> 14000.0 falls_short -> falls_short
+  -35.5% E25_underwater_mortgage_arm 41700.0 -> 26900.0 below_goal -> below_goal
+  -30.6% S153 33000.0 -> 22900.0 works -> below_goal
+  +0.0% S297 35400.0 -> 35400.0 works -> works
+  +0.0% S299 29000.0 -> 29000.0 works -> works
+  +0.0% S300 34700.0 -> 34700.0 falls_short -> falls_short

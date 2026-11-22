@@ -1,0 +1,109 @@
+{
+ "tag": "dbg",
+ "baselines": 2,
+ "variations_run": 45,
+ "status": {
+  "ok": 45
+ },
+ "summary": {
+  "basics_in_0_100": {
+   "n": 47,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "claim_choice_not_worse": {
+   "n": 2,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "direction_down": {
+   "n": 20,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "direction_up": {
+   "n": 18,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "goal_change_keeps_count_on": {
+   "n": 8,
+   "fail": 1,
+   "pass_rate": 0.875
+  },
+  "how_sure_ordered": {
+   "n": 2,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "magnitude_100k": {
+   "n": 2,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "no_nan_or_negative": {
+   "n": 47,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "verdict_consistent": {
+   "n": 47,
+   "fail": 0,
+   "pass_rate": 1.0
+  }
+ },
+ "count_on_below_ss": 0,
+ "fails": {
+  "goal_change_keeps_count_on": [
+   {
+    "id": "sample:e27",
+    "where": "spend retired -20%",
+    "detail": "count_on 122600->126400"
+   }
+  ]
+ },
+ "info": {
+  "magnitude_100k": [
+   {
+    "id": "sample:doctor",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 17,
+    "yrs": 36
+   },
+   {
+    "id": "sample:e27",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 19,
+    "yrs": 35
+   }
+  ],
+  "claim_at_retirement": [
+   {
+    "id": "sample:doctor",
+    "label": "Doctor couple, 3 kids, CT",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 920000.0,
+    "count_on_plan": 111600.0,
+    "count_on_early": 105100.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 2870000.0
+   },
+   {
+    "id": "sample:e27",
+    "label": "Single high earner, 41, CA",
+    "plan_claim": 70,
+    "retire": 60,
+    "savings": 1200000.0,
+    "count_on_plan": 122600.0,
+    "count_on_early": 115800.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 3956000.0
+   }
+  ]
+ }
+}

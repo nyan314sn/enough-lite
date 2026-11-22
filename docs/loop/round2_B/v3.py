@@ -1,0 +1,28 @@
+from lib import *
+log = lambda *a: print(*a, flush=True)
+with sync_playwright() as p:
+    b, pg = new(p, 820, 1000)
+    say(pg, "I'm 71, retired, married, my wife is 69. We live in Florida. I already collect Social Security, $2,900 a month, and she gets $1,100. We have $640,000 saved and spend $6,000 a month. We own our house with no mortgage. No kids.")
+    auto(pg, [], log=False)
+    build(pg)
+    log("CHIPS:", pg.locator(".composer-chips .chip, .quick .chip").all_inner_texts())
+    shot(pg,"v3_plan_820",full=False); shot(pg,"v3_plan_820_full")
+    log("axe", axe(pg,"p"), overflow(pg))
+    log("HEAD:", pg.locator(".plan h2").inner_text(), "|", pg.locator("[data-testid=plan-headline]").inner_text())
+    log("ASSUMP:", pg.locator("[data-testid=plan-assumptions]").inner_text()[:1800])
+    log("TEAMTALK:", pg.locator(".talk").inner_text()[:600].replace("\n"," | "))
+    log("retire60:", ask(pg,"Retire at 60")[:300])
+    shot(pg,"v3_retire60",full=False)
+    pg.get_by_role("button", name=re.compile("Back to my plan")).first.click()
+    log("worthtrying chip click:")
+    chips = pg.locator(".composer-chips .chip, .quick .chip"); 
+    for i in range(chips.count()):
+        log("  chip", i, chips.nth(i).inner_text())
+    chips.first.click(); pg.wait_for_timeout(8000); shot(pg,"v3_chip_click",full=False)
+    log("after chip:", pg.locator(".turn").last.inner_text()[:500] if pg.locator(".turn").count() else None)
+    pg.get_by_role("button", name=re.compile("Change my answers")).click(); pg.wait_for_timeout(600)
+    shot(pg,"v3_change_answers",full=False)
+    log("CHAT END:", transcript(pg)[-1][:300], "| chips:", pg.locator(".quick .chip").all_inner_texts())
+    h = pg.evaluate("[...document.querySelectorAll('.steps button, header button')].map(e=>e.innerText+' '+Math.round(e.getBoundingClientRect().height))"); log("hdr btn heights", h)
+    log(pg.errors)
+    b.close()

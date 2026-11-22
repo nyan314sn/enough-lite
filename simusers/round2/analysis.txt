@@ -1,0 +1,139 @@
+original40 n 40 reached 38 acc 93.7 issues 41 P0 13 P1 22 dead_end 14 P0dead 6 ignored_corr 1 planturns min/avg/max 3 4.1 6
+hard8 n 8 reached 7 acc 94.4 issues 5 P0 1 P1 4 dead_end 1 P0dead 0 ignored_corr 1 planturns min/avg/max 4 4.1 5
+all n 48 reached 45 acc 93.8 issues 46 P0 14 P1 26 dead_end 15 P0dead 6 ignored_corr 2 planturns min/avg/max 3 4.1 6
+
+NOT REACHED
+h07 Omar done None 18
+  U: I'm not sure, honestly. My wife would know that. Maybe click the estimate one? 
+  A: A Build my plan button appears under the chat once I have the essentials. I still need any debts, when you want to retire and your spending. Or press 'Build my plan with typical numbers for the rest' to make it now. | Q: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%. | missing ['debts', 'retire_age', 'spending_now_per_year']
+  U: No other debts 
+  A: Thanks. I noted that you have no other debts. | Q: At what age do you want to stop working? | missing ['retire_age', 'spending_now_per_year']
+  U: I'm not sure, honestly. Maybe 65? My wife would know better. 
+  A: Thanks. I noted that you want to retire at 65. | Q: About how much does your household spend in a year now, all in? | missing ['spending_now_per_year']
+  U: I'm not sure, honestly. My wife would know that one. Maybe click the estimate one? 
+  A: A Build my plan button appears under the chat once I have the essentials. I still need your spending. Or press 'Build my plan with typical numbers for the rest' to make it now. | Q: About how much does your household spend in a year now, all in? | missing ['spending_now_per_year']
+  U: Hmm, I'm not sure. Maybe click the estimate one? Honestly I don't know what we spend in a month, my wife does the budget. 
+  A: A rough figure is fine. If you don't know one, type skip and I will use a typical figure, marked so you can change it. | Q: About how much does your household spend in a year now, all in? | missing ['spending_now_per_year']
+  U: I'm not sure, honestly. My wife does the budget. Maybe click the estimate one? 
+  A:  | Q: About how much does your household spend in a year now, all in? | missing ['spending_now_per_year']
+p13 Nina done None 18
+  U: Why are you still looping on the same question? I've asked three times now what the savings number does and whether I see it before it goes  
+  A: Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: e | Q: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash? | missing ['savings', 'home', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+  U: Why are you still looping on the same question? I've asked four times now what the savings number does and whether I see it before it goes a 
+  A: Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: e | Q: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash? | missing ['savings', 'home', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+  U: Why are you still looping on the same question? I've asked five times now what the savings number does and whether I see it before it goes a 
+  A: Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, an outside company reads your messages: e | Q: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash? | missing ['savings', 'home', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+  U: Enough. You've repeated the same privacy paragraph and the same savings question five times, and you still haven't told me what the savings  
+  A: Your savings are the money the plan draws on once you stop working. If you'd rather not say, type skip and I will use a typical figure, marked so you can change it. If you'd rather, I can build your plan now with typical | Q: About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash? | missing ['savings', 'home', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+  U: Finally, a straight answer. But you still haven't said whether I see the number before it's used, or why my spending figures changed on thei 
+  A: Thanks. I noted that you have saved $550,000 ($380,000 pre-tax, $50,000 Roth, $90,000 taxable and $30,000 cash). Your accounts add to $550,000, so I used that, not $500,000. Your answers live in this browser tab. The ser | Q: Do you own your home or rent? | missing ['home', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+  U: Wait, why did you say my total was $550,000? I said about $500,000 and then listed the pieces, which add to $550,000. Fine, that's correct,  
+  A: Thanks. I noted that you own your home. Your answers live in this browser tab. The server uses them only to read your messages and build your plan, and writes no copy to disk; its log holds token counts and costs. Yes, a | Q: About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month. | missing ['mortgage', 'debts', 'children_count', 'retire_age', 'spending_now_per_year']
+p14 Frank done None 18
+  U: Frank here. You've written down $33,600 as my savings twice now and I never said that. Fix it. And I still want to know where that Social Se 
+  A: I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure. | Q: Do you own your home or rent? | missing ['home', 'debts', 'children_count', 'spending_now_per_year']
+  U: Frank here. Fix the savings first. You've written $33,600 down as mine twice and I never said that. My actual savings are much bigger. And I 
+  A: I mean whether you own your home, with or without a mortgage, or rent it. | Q: Do you own your home or rent? | missing ['home', 'debts', 'children_count', 'spending_now_per_year']
+  U: Frank here. I'm not clicking any buttons until you fix my savings and tell me where that $33,600 Social Security number came from. Is it bef 
+  A: Thanks. I noted that your household Social Security is $33,600 a year. I mean whether you own your home, with or without a mortgage, or rent it. | Q: Do you own your home or rent? | missing ['home', 'debts', 'children_count', 'spending_now_per_year']
+  U: Frank here. I'm not clicking anything until you tell me where that $33,600 came from. I never gave you a Social Security number. And you sti 
+  A: I mean whether you own your home, with or without a mortgage, or rent it. | Q: Do you own your home or rent? | missing ['home', 'debts', 'children_count', 'spending_now_per_year']
+  U: I own it with a mortgage. Still want the $33,600 explained first, Frank's not moving till you do. Where did it come from, and is it before o 
+  A: Thanks. I noted that you own your home. I mean whether you own your home, with or without a mortgage, or rent it. I updated the typical figures: your mortgage payment at about $1,554 a month, typical for your state. | Q: About how much is left on the mortgage, and what is the monthly payment? For example: $180,000 left, $1,500 a month. | missing ['mortgage', 'debts', 'children_count', 'spending_now_per_year']
+  U: Frank here. You just told me my mortgage payment is $1,554 a month, and I never said that. My payment is $1,000 a month and there's $30,000  
+  A: Thanks. I noted that you own your home, with $30,000 left on the mortgage and a payment of $1,000 a month. I mean how much you still owe on the mortgage, and what you pay each month. I updated the typical figures: a 5% m | Q: Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%. | missing ['debts', 'children_count', 'spending_now_per_year']
+
+PLAN-CHAT ISSUES AND ALL P0/P1
+h04 a4 P1 dead_end | Your basics are paid in 100 of 100 scenarios (now 100), and your spending goal lasts in 55 of 100 (now 55). | The user asked for the age when money hits zero in bad cases, and the reply gives no age or any run-out year.
+h04 a4 P1 confusing | you can count on $53,100 a year (now $53,100) | The reply repeats figures with '(now ...)' labels that mean nothing to an ordinary person and do not explain the result.
+h07 i4 P0 misunderstanding | I noted that you work as a project manager and your pay is $50,000 a year. | The person gave a range ($50k to $100k) and said the wife knows the exact figure, but the app stored $50,000 as a fact without flagging it as a guess.
+p06 a4 P1 unstated_assumption | Your plan shows $9,200 a year in contributions now, well below those limits. | The person never gave contributions; this is the app's assumed 10% of pay, and the reply presents it as the plan's actual figure.
+p07 a4 P0 dead_end | If you miss your 7-month Initial Enrollment Period, you may have to wait to sign up and pay a monthly late enrollment penalty | The reply is an unrelated Medicare enrollment quote that does not give the age-55 plan result or say what to do first, leaving the couple stuck after a third request.
+p11 a6 P0 dead_end | From the source: "For single taxpayers covered by a workplace retirement plan, the phase-out range is increased to between $83,000 and $93,000..." | The reply quotes IRA phase-out rules that do not answer where the $56,000 and 8% come from or what the plan assumes about pay, spending, and retirement age.
+p11 a6 P0 ignored_correction | From the source: "For single taxpayers covered by a workplace retirement plan, the phase-out range is increased..." | The user said the loan is $28,000 at 5.5%, but the reply neither acknowledges the correction nor fixes the stored $56,000 and 8% figures.
+p11 a6 P1 confusing | From the source: "For married couples filing jointly, if the spouse making the IRA contribution is covered by a workplace retirement plan..." | Dense legal text about married-couple IRA rules is unrelated to a single person with a student loan and would confuse an ordinary user who knows little about money.
+p13 i10 P0 dead_end | Your answers live in this browser tab. The server uses them only to read your messages | The reply repeats the privacy paragraph and never says what the savings figure does or whether the person sees it first, so the person is stuck in a loop.
+p13 i11 P0 dead_end | Your answers live in this browser tab. The server uses them only to read your messages | Second time the person asked the same question; the app repeats the same paragraph and the same savings question without answering, leaving them stuck.
+p13 i12 P0 dead_end | About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash? | Third repetition: the app ignores the explicit question about what the savings figure does and whether it is shown first, and re-asks the same savings question.
+p18 a4 P0 dead_end | From the source: "The annual contribution limit for employees who participate in 401(k)..." | The reply ignores the question about which spending goal to aim for, what the first step is, and how risky the stock mix is.
+p18 a4 P1 confusing | "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 457 plans..." | A pasted regulatory excerpt about contribution limits is jargon-heavy and gives an ordinary couple nothing they can act on.
+p19 a1 P0 misunderstanding | Change your age to 65 and rebuild your plan? | The person is 60 and 65 is their stated retirement age, so the app proposes setting the wrong field (age instead of retire_age).
+p20 i13 P0 misunderstanding | I noted that you have 1 child, aged 15. | The person only said 'Teenagers'; the app invented the age 15 and stored it, which is wrong (the true age is 17).
+p21 i3 P0 misunderstanding | I noted that your pay is $150,000 a year. | The person clicked a $100k to $200k range, and the true pay is $130,000. The app stored an invented midpoint as the person's actual pay, and the reply does not say it was a guess.
+p21 i11 P0 misunderstanding | I noted that you have 2 children. | The user entered three ages (11, 9, 6), so the app stored and echoed the wrong child count.
+p21 i11 P0 misunderstanding | children's ages of 6 and 9 | The app dropped the 11-year-old and stored only two ages, which conflicts with the three the user gave.
+p22 a4 P1 unstated_assumption | Your household saves about $4,572 a year now, so even a modest increase adds to what you have at 63. | The $4,572 savings figure cannot be derived from Rosa's stated pay ($67,000) and spending ($54,000), and the reply does not say how it was estimated.
+p23 i2 P0 misunderstanding | Ha, $50k is way | The person said $50k was way off, but the app read it as a saved amount of $50,000 and stored it, then built a split on that figure.
+p24 a3 P1 contradiction | You can count on $72,800 a year, safe in 90 of 100 scenarios | Turn a1 gave the same $72,800 figure as 100 of 100 safe, and this turn changes it to 90 without saying why.
+p24 a3 P1 confusing | about $32,000 a year of it sits above the basics | The user asked whether the $20k pension is on top, but the reply never says whether the pension is counted, and terms like 'basics' and 'N of 100' are unexplained.
+p27 a3 P1 dead_end | I don't have a source for that. | The user asked directly whether the plan is advice they can rely on, and the reply does not answer that. It only offers menu options.
+p27 a4 P1 dead_end | Who sees my data, like whether anyone at the company reads what I type here? | The user's data-privacy question is never answered; the reply only covers the market-drop scenario.
+p34 a2 P1 dead_end | From the source: "Social Security retirement benefits are increased by a certain percentage for each month you delay..." | The user asked for the plan result at age 68, but the reply quotes a general Social Security rule and gives no changed result or reason it cannot.
+p35 a3 P1 dead_end | From the source: "For example, if you turn age 62 in 2026, your benefit would be about 30% lower than it would be at your full retirement age of 67." | The reply quotes an unrelated Social Security passage and never explains why cutting spending lowered the odds from 71 to 66.
+p37 a1 P1 dead_end | The annual contribution limit for employees who participate in 401(k), 403(b), governmental 457 plans, and the federal government's Thrift Savings Plan is increased to $25,500 | The user asked what happens with an extra $500 a month saved, but the reply quotes an unrelated contribution-limit rule and gives no changed result or reason it can't be computed.
+
+APPLIED/CHANGE turns
+h06 3 change confirm  U: Wait, sorry, my pay is a bit lower than I said, it's 88000... no, actually 89000 is closer | A: Change your pay to $88,000 a year and rebuild your plan?
+h06 4 change applied pending U: ok | A: Your plan was updated: your pay to $88,000 a year.
+p11 3 change confirm  U: I'm sorry, I'm getting lost. My loan is $28,000, not $80,000, so why does it say that? And | A: Change your debts: $28,000 (other) and rebuild your plan?
+p11 4 change applied pending U: Yes, rebuild | A: Your plan was updated: your debts: $28,000 (other).
+p16 1 change confirm  U: We're Sam and Jo, both in Colorado. I'm 50 and Jo's 48, with one kid who's 14. Honestly we | A: Change your age to 50 and your partner's age to 48 and your retirement age to 60 and rebuild your plan?
+p16 2 answer None pending U: Not yet, we haven't settled it. Jo still wants 65, so can you run it at 60 first and then  | A: The plan only gives results for retiring at 65, so I cannot show you a separate figure for retiring at 60. At 
+p19 1 change confirm  U: 65 | A: Change your age to 65 and rebuild your plan?
+p19 2 change cancelled pending U: No | A: Nothing changed. Your plan stays as it was.
+
+Unanswered what-ifs (intent whatif but kind != whatif)
+h01 1 answer U: I saw the plan already. Could you tell me what happens if I stop at 62 instead of 64? | A: Plan figures for stopping at 64 show a "close" result. Your spending goal is $33,600 a year, and your safe spe
+h01 2 answer U: I'm sorry, I'm a bit confused by all that. My husband passed three years ago. Am I able to | A: Yes, you may be able to get survivor benefits from your husband's Social Security record. A widow can usually 
+h02 1 answer U: I'm on the plan page now. What happens if I put 300 a month into college savings for the k | A: From the source: "The catch-up contribution limit that generally applies for employees aged 50 and over who pa
+h03 2 answer U: Thanks, that's helpful. Quick follow-up though: when can Bea start claiming Social Securit | A: Bea can start Social Security as early as age 62. She is 52 now, so that is 10 years away. Her benefit grows f
+h04 1 answer U: Hi. I'm Walt, 68, retired machinist down in Florida. I've got a union pension, Social Secu | A: Walt, the plan says it is close, but the money does not last in most runs. Your spending goal of $58,000 a yea
+h04 2 answer U: Okay, that's a lot of numbers. Let me try something else. What if I get a 3 percent lower  | A: The plan does not test a 3 percent lower return, so I cannot say if the money lasts at $58,000 a year under th
+h05 2 answer U: I'm not sure I follow the numbers yet. Can you tell me what changed? Also, if my savings w | A: What changed: the IRS raised the 401(k) limit to $25,500 for 2027. For people aged 60 to 63, the catch-up limi
+h06 2 answer U: Okay, so what if I work until 65 instead? I think I said 60 then 61, but ignore that, I me | A: Working to 65 instead of 62 would mean 8 years to go, not 5. The plan still shows the spending goal of $56000 
+h08 1 answer U: wat if retir 62 | A: If you retire at 62, you can start Social Security then, but the check is smaller. SSA says a person who turns
+h08 2 answer U: wat if i sav 500 more per mnth | A: From the source: "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 
+p01 2 answer U: ok thats kinda confusing. so basics are fine but my spending goal only lasts 25 of 100? wh | A: Yes, working longer helps. Your plan now says your spending goal of $44400 a year lasts 25 of 100 scenarios, w
+p02 1 answer U: ok | A: You can count on $0 a year, less than your basics of $23,200. On your numbers the plan does not work yet. The 
+p02 2 answer U: I see the plan page. Try what if i cut spendin to 50k and see wat happens | A: From the source: "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 
+p03 1 answer U: Ok so im 40, want to see if im on track. Also thinking about maybe retiring erly, like wha | A: Your plan says you are below your goal. At 60, your savings of $365,000 today and your yearly saving of about 
+p04 1 answer U: Hey, I'm Tom, 57, teacher in Ohio. I want to see if I can quit at 65 like I planned. What  | A: Tom, your plan says retiring at 65 still works if you spend $61,000 a year, which is more than the $41,600 spe
+p04 2 answer U: Ok cool. Can you try another one? What if I retire at sixty two instead of sixty five, wit | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+p05 1 answer U: I'm 40, sorry, actually 45. I want to stop working at 58 if that's possible. What would it | A: Your plan is below its goal for stopping at 58. Your savings of $385,000 would need to last to age 94, and the
+p05 2 answer U: Okay, that's a lot of numbers. Can I try a different what-if? What if I work until 60 inst | A: I can't run new numbers for a retire-at-60 plan or a $125,000 pay figure, because I only have the figures alre
+p07 2 answer U: Thanks. Now could you try something different? What if we both stop at 55 instead of 62? L | A: From the source: "The catch-up contribution limit that generally applies for employees aged 50 and over who pa
+p09 2 answer U: Hmm, ok. So if I stay until 65 it's fine? What about if I'm still working until 66? Would  | A: From the source: "Social Security retirement benefits are increased by a certain percentage for each month you
+p10 1 answer U: Ok so I'm hoping to stop working around 55. What if I just save more each year, like maybe | A: No, not on current figures. Your plan says you would fall short of your goal. Your goal is about $57,600 a yea
+p10 2 answer U: Ok that's a lot of numbers, I didn't really follow all of them. Can you try another one fo | A: From the source: "Under a change made in SECURE 2.0, a higher catch-up contribution limit applies for employee
+p11 1 answer U: Hi, um, I'm Beth. I'm 35 and I'm a dental assistant in Michigan. I don't really know much  | A: Hi Beth, these are good questions. Your plan says you are behind, so it does not show a safe plan yet. If you 
+p11 2 answer U: Okay, that's a lot of numbers, and I'm not sure which ones matter. Can I try a different o | A: Working to 67 is a different plan, and I can only give part of its result. The plan's main check is for retiri
+p12 1 answer U: I'm not really sure what I've got, honestly. My wife Carol handled all the money stuff unt | A: I am sorry about Carol. Based on your plan, retiring at 66 falls short. Your plan shows you have no savings no
+p12 2 answer U: I'm a bit lost on all those numbers. Carol always kept track of this stuff. Can you try so | A: From the source: "Social Security retirement benefits are increased by a certain percentage for each month you
+p15 1 answer U: Thanks, that's helpful. Before I believe the $68,400, could you tell me why you assumed th | A: You can count on $68,400 a year, or $5,700 a month, in 90 of 100 scenarios, which covers the basics and about 
+p16 1 change U: We're Sam and Jo, both in Colorado. I'm 50 and Jo's 48, with one kid who's 14. Honestly we | A: Change your age to 50 and your partner's age to 48 and your retirement age to 60 and rebuild your plan?
+p17 1 answer U: Hi! We're Aisha and Omar. I'm 56 and my husband is 54. We're in Texas. I'd like to see how | A: I don't have a source for that. I can still change an answer, try a What If, or explain your plan.
+p19 1 change U: 65 | A: Change your age to 65 and rebuild your plan?
+p19 3 clarify U: Try a What If | A: Ask it as a question, for example: What if I retire at 60? Or: What if we spend $6,000 a month?
+p21 1 answer U: Ben's style: digits and 'k' only. Goal: test a What If for retiring at a different age. In | A: You asked to test retiring at 50 instead of 58. This plan page does not show a result for age 50, so I cannot 
+p21 2 answer U: Ben's terse style: digits and k only. Intent: test a different What If. Something like cut | A: From the source: "Medicare uses the modified adjusted gross income reported on your IRS tax return from 2 year
+p22 1 answer U: Oh, where do I even start with me. I'm Rosa, I'm 53, and I've been the school secretary at | A: Rosa, your plan says retiring at 63 falls short of your goal. You have about 234,000 saved, and the plan's saf
+p23 1 answer U: Ok so the plan says I can count on $41,000 a year, and I'm wondering what happens if I pus | A: From the source: "Generally, when you turn 65. This is called your Initial Enrollment Period. It lasts for 7 m
+p23 2 answer U: So that Medicare thing is about health insurance, right? Anyway, my question was about the | A: From the source: "Under a change made in SECURE 2.0, a higher catch-up contribution limit applies for employee
+p24 2 answer U: Oh good, that's a relief! Okay, so now I want to see what happens if he does NOT wait, lik | A: The plan figures I have do not include a run for retiring at 62. The plan only models retiring at 64, with Soc
+p27 1 answer U: ok | A: You can count on $85,500 a year in spending, safe in 90 of 100 scenarios, and that covers the basics too; abou
+p27 2 answer U: Ok, I want to try something different. What if I work until 62 instead of 60? Does the $80 | A: Your plan says the $80,000 a year goal still works if you retire at 60. The plan figures do not test retiring 
+p28 1 answer U: I'm Olivia, 46, marketing manager in California. I'd like to know what retiring at 60 look | A: Your plan was run for retiring at 65, not 60, so I cannot give you a full answer for age 60 from these figures
+p28 2 answer U: Okay, so it can't run 60 at all? Let's try 65 then, but I want to see what happens if I st | A: Yes. The plan works if you stop working at 65 and keep spending at about $52,200 a year. Your savings cover yo
+p29 2 answer U: Okay, so at 62 my spending goal only lasts in 20 of 100 cases? That's worse than I expecte | A: You can count on about $37,400 a year in 90 of 100 scenarios, $12,700 more than the basics. Your basics cost a
+p30 2 answer U: Wait, that looks really bad. Only 10 of 100? Let me try something else: what if I work par | A: The plan figures I have do not include a part-time scenario, so I cannot show how working until 60 changes you
+p31 1 answer U: CHK 4821 PAYROLL ACME INC 3,412.18 DEPOSIT
+
+Ok that's my paycheck, twice a month. Can I st | A: Your paycheck deposit is from Acme Inc. The plan figures show a below-goal result at retiring at 62. Your savi
+p34 2 answer U: Okay, that's interesting. Can you also check what happens if I work until 68 instead? | A: From the source: "Social Security retirement benefits are increased by a certain percentage for each month you
+p36 2 answer U: Thanks, that's helpful. Before I go further, I want to check something. Can you tell me ho | A: The spending goal is the amount you want to spend each year in retirement. The plan counts the goal as met in 
+p37 1 answer U: Hi! I'm 39 and live in Illinois. I make about $92,000 a year. Before I see my plan, can yo | A: From the source: "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 
+p38 2 answer U: Okay, that's interesting. Before I decide on the card, can you run one more What If? Say I | A: From the source: "Social Security retirement benefits are increased by a certain percentage for each month you
+p39 1 answer U: Is it too late for me? I'm 62. I work, I make about 38000 a year. I have 41000 in savings  | A: No, it is not too late. You have time to build more savings, and the plan is not yet fully on track. Your plan
+p39 2 answer U: Okay. What if I wait until 67 for Social Security? Is that enough to make it work? I'm rea | A: Waiting to 67 helps, but on its own it does not make the plan work. Your plan figures show that a claim at 68 
+p40 2 answer U: I see the 3 of 100 for the spending goal, and that surprises me given the basics are cover | A: The spending goal the plan uses is $160,000 a year, which matches your current figure. It is $13,333 a month. 
+whatif intents 90

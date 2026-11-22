@@ -1,0 +1,122 @@
+{
+ "persona_id": "p37",
+ "issues": [
+  {
+   "ref": "a1",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "The annual contribution limit for employees who participate in 401(k), 403(b), governmental 457 plans, and the federal government's Thrift Savings Plan is increased to $25,500",
+   "note": "The user asked what happens with an extra $500 a month saved, but the reply quotes an unrelated contribution-limit rule and gives no changed result or reason it can't be computed."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 39,
+    "truth": 39,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "IL",
+    "truth": "IL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 63,
+    "truth": 63,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 92000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 188000.0,
+    "truth": 188000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 250000.0,
+    "truth": 250000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [
+     4,
+     7
+    ],
+    "truth": [
+     1,
+     4,
+     7
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 72000.0,
+    "truth": 72000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "children",
+    "cause": "simulator_inconsistent",
+    "note": "Simulated user said two kids (ages 7 and 4), but the truth profile has three (1, 4, 7). No later correction appears in the transcript."
+   }
+  ]
+ }
+}

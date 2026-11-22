@@ -1,0 +1,6096 @@
+{
+ "tag": "after",
+ "baselines": 315,
+ "variations_run": 6117,
+ "status": {
+  "ok": 6117
+ },
+ "summary": {
+  "basics_in_0_100": {
+   "n": 6432,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "below_ss_explained": {
+   "n": 152,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "claim_choice_not_worse": {
+   "n": 183,
+   "fail": 1,
+   "pass_rate": 0.9945
+  },
+  "direction_down": {
+   "n": 2744,
+   "fail": 16,
+   "pass_rate": 0.9942
+  },
+  "direction_up": {
+   "n": 2628,
+   "fail": 21,
+   "pass_rate": 0.992
+  },
+  "goal_change_keeps_count_on": {
+   "n": 1260,
+   "fail": 6,
+   "pass_rate": 0.9952
+  },
+  "how_sure_ordered": {
+   "n": 315,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "magnitude_100k": {
+   "n": 315,
+   "fail": 4,
+   "pass_rate": 0.9873
+  },
+  "no_nan_or_negative": {
+   "n": 6432,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "savings_moves_count_on": {
+   "n": 299,
+   "fail": 28,
+   "pass_rate": 0.9064
+  },
+  "verdict_consistent": {
+   "n": 6432,
+   "fail": 0,
+   "pass_rate": 1.0
+  },
+  "whatif_equals_fresh": {
+   "n": 810,
+   "fail": 17,
+   "pass_rate": 0.979
+  }
+ },
+ "count_on_below_ss": 152,
+ "claim_stats": {
+  "baselines_with_choice": 183,
+  "plan_claims_after_retiring": 172,
+  "median_gain_pct": 6.2,
+  "low_savings_delayed": 29,
+  "low_savings_examples": [
+   {
+    "id": "E03_no_savings",
+    "label": "Age 40, no savings, steady job",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 0.0,
+    "median_at_retirement": 147000.0,
+    "count_on_plan": 31000.0,
+    "count_on_early": 29300.0,
+    "basics_plan": 48,
+    "basics_early": 32
+   },
+   {
+    "id": "E09_single_mom_2_kids",
+    "label": "Age 34, single parent, two kids, renting",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 10500.0,
+    "median_at_retirement": 399000.0,
+    "count_on_plan": 31900.0,
+    "count_on_early": 29800.0,
+    "basics_plan": 99,
+    "basics_early": 93
+   },
+   {
+    "id": "E10_renter_growing_student_loan",
+    "label": "Age 29 renter, student loan that grows (payment below interest)",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 12000.0,
+    "median_at_retirement": 363000.0,
+    "count_on_plan": 31100.0,
+    "count_on_early": 28200.0,
+    "basics_plan": 65,
+    "basics_early": 49
+   },
+   {
+    "id": "E11_growing_card_debt",
+    "label": "Age 45, credit cards at 26% with payments below the interest",
+    "plan_claim": 68,
+    "retire": 66,
+    "savings": 15500.0,
+    "median_at_retirement": 97000.0,
+    "count_on_plan": 23300.0,
+    "count_on_early": 22200.0,
+    "basics_plan": 1,
+    "basics_early": 1
+   },
+   {
+    "id": "E17_low_income",
+    "label": "Age 52, low income, Social Security is the plan",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 6800.0,
+    "median_at_retirement": 0.0,
+    "count_on_plan": 18100.0,
+    "count_on_early": 17200.0,
+    "basics_plan": 29,
+    "basics_early": 18
+   },
+   {
+    "id": "E19_young_start_22",
+    "label": "Age 22, first job, student loans, nothing saved",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 1200.0,
+    "median_at_retirement": 261000.0,
+    "count_on_plan": 30900.0,
+    "count_on_early": 29600.0,
+    "basics_plan": 100,
+    "basics_early": 98
+   },
+   {
+    "id": "S021",
+    "label": "48F, +partner 41, $61k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 5800.0,
+    "median_at_retirement": 233000.0,
+    "count_on_plan": 52900.0,
+    "count_on_early": 50600.0,
+    "basics_plan": 100,
+    "basics_early": 100
+   },
+   {
+    "id": "S022",
+    "label": "34F, $93k pay, rent",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 13900.0,
+    "median_at_retirement": 888000.0,
+    "count_on_plan": 40700.0,
+    "count_on_early": 39100.0,
+    "basics_plan": 86,
+    "basics_early": 83
+   },
+   {
+    "id": "S028",
+    "label": "32M, $32k pay, own",
+    "plan_claim": 67,
+    "retire": 61,
+    "savings": 19800.0,
+    "median_at_retirement": 97000.0,
+    "count_on_plan": 5500.0,
+    "count_on_early": 5000.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   },
+   {
+    "id": "S033",
+    "label": "57F, +partner 61, $40k pay, own",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 22100.0,
+    "median_at_retirement": 53000.0,
+    "count_on_plan": 28900.0,
+    "count_on_early": 26800.0,
+    "basics_plan": 64,
+    "basics_early": 23
+   },
+   {
+    "id": "S042",
+    "label": "26F, +partner 20, $42k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 9600.0,
+    "median_at_retirement": 29000.0,
+    "count_on_plan": 21800.0,
+    "count_on_early": 20700.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   },
+   {
+    "id": "S057",
+    "label": "44F, $105k pay, own",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 4300.0,
+    "median_at_retirement": 307000.0,
+    "count_on_plan": 37400.0,
+    "count_on_early": 33300.0,
+    "basics_plan": 100,
+    "basics_early": 100
+   },
+   {
+    "id": "S064",
+    "label": "30M, $56k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 12100.0,
+    "median_at_retirement": 120000.0,
+    "count_on_plan": 11600.0,
+    "count_on_early": 10700.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   },
+   {
+    "id": "S078",
+    "label": "22M, +partner 20, $40k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 10500.0,
+    "median_at_retirement": 991000.0,
+    "count_on_plan": 40000.0,
+    "count_on_early": 39400.0,
+    "basics_plan": 79,
+    "basics_early": 78
+   },
+   {
+    "id": "S090",
+    "label": "34M, +partner 39, $82k pay, rent",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 11800.0,
+    "median_at_retirement": 985000.0,
+    "count_on_plan": 66300.0,
+    "count_on_early": 62000.0,
+    "basics_plan": 94,
+    "basics_early": 89
+   },
+   {
+    "id": "S098",
+    "label": "39F, $78k pay, own",
+    "plan_claim": 63,
+    "retire": 62,
+    "savings": 1900.0,
+    "median_at_retirement": 80000.0,
+    "count_on_plan": 14600.0,
+    "count_on_early": 14200.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   },
+   {
+    "id": "S106",
+    "label": "22M, $34k pay, rent",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 4100.0,
+    "median_at_retirement": 139000.0,
+    "count_on_plan": 4900.0,
+    "count_on_early": 4800.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   },
+   {
+    "id": "S123",
+    "label": "33M, $73k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 10700.0,
+    "median_at_retirement": 161000.0,
+    "count_on_plan": 20000.0,
+    "count_on_early": 19200.0,
+    "basics_plan": 1,
+    "basics_early": 1
+   },
+   {
+    "id": "S184",
+    "label": "64F, +partner 69, retired, rent",
+    "plan_claim": 65,
+    "retire": 64,
+    "savings": 24100.0,
+    "median_at_retirement": 24000.0,
+    "count_on_plan": 21400.0,
+    "count_on_early": 19400.0,
+    "basics_plan": 100,
+    "basics_early": 96
+   },
+   {
+    "id": "S197",
+    "label": "29F, +partner 33, $16k pay, rent",
+    "plan_claim": 68,
+    "retire": 64,
+    "savings": 9800.0,
+    "median_at_retirement": 0.0,
+    "count_on_plan": 11500.0,
+    "count_on_early": 9300.0,
+    "basics_plan": 0,
+    "basics_early": 0
+   }
+  ],
+  "early_better_basics": 3,
+  "below_ss_reasons": {
+   "health costs come on top of your spending": 99,
+   "your savings must pay for the years before it starts": 65,
+   "you spend more now than your take-home pay, so your savings run down before you retire": 53,
+   "it falls to one check after the first death": 20,
+   "tax takes part of it": 10
+  }
+ },
+ "fails": {
+  "direction_up": [
+   {
+    "id": "E04_no_savings_no_ss",
+    "where": "retire +3",
+    "detail": "count_on 11300->6300, basics 0->0, claim 66->69, strat rule-claim-66->rule"
+   },
+   {
+    "id": "E17_low_income",
+    "where": "retire +1",
+    "detail": "count_on 18100->17700, basics 29->17, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "E17_low_income",
+    "where": "retire +3",
+    "detail": "count_on 18100->17200, basics 29->3, claim 69->70, strat rule-claim-69->rule"
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "where": "savings +25%",
+    "detail": "count_on 25300->26200, basics 14->9, claim 66->67, strat rule-claim-66->rule-stocks-15"
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "where": "spend retired -20%",
+    "detail": "count_on 25300->26000, basics 14->7, claim 66->67, strat rule-claim-66->rule-stocks-15"
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "where": "spend retired -10%",
+    "detail": "count_on 25300->25800, basics 14->7, claim 66->67, strat rule-claim-66->rule-stocks-15"
+   },
+   {
+    "id": "S004",
+    "where": "pay off high-rate debt",
+    "detail": "count_on 15400->15100, basics 64->55, claim 69->68, strat rule-claim-69->rule-claim-68"
+   },
+   {
+    "id": "S007",
+    "where": "retire +1",
+    "detail": "count_on 25800->25100, basics 0->0, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S007",
+    "where": "retire +3",
+    "detail": "count_on 25800->23400, basics 0->0, claim 69->70, strat rule-claim-69->rule-claim-70"
+   },
+   {
+    "id": "S022",
+    "where": "pay off high-rate debt",
+    "detail": "count_on 40700->39100, basics 86->81, claim 69->70, strat rule-claim-69->rule-claim-70"
+   },
+   {
+    "id": "S033",
+    "where": "pay off high-rate debt",
+    "detail": "count_on 28900->28800, basics 64->60, claim 70->70, strat rule-claim-70->rule-claim-70"
+   },
+   {
+    "id": "S090",
+    "where": "pay off high-rate debt",
+    "detail": "count_on 66300->63800, basics 94->92, claim 70->70, strat rule-claim-70->rule-claim-70"
+   },
+   {
+    "id": "S137",
+    "where": "retire +3",
+    "detail": "count_on 14000->12600, basics 0->0, claim 67->65, strat rule->rule-claim-65"
+   },
+   {
+    "id": "S138",
+    "where": "retire +1",
+    "detail": "count_on 42400->41100, basics 78->68, claim 70->69, strat rule-claim-70->rule-claim-69"
+   },
+   {
+    "id": "S197",
+    "where": "retire +3",
+    "detail": "count_on 11500->10200, basics 0->0, claim 68->70, strat rule-claim-68->rule-claim-70"
+   },
+   {
+    "id": "S238",
+    "where": "retire +1",
+    "detail": "count_on 24400->18700, basics 0->0, claim 63->66, strat rule-claim-63->rule-claim-66"
+   },
+   {
+    "id": "S237",
+    "where": "retire +3",
+    "detail": "count_on 27000->25700, basics 3->4, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S261",
+    "where": "pay off high-rate debt",
+    "detail": "count_on 27900->27900, basics 63->60, claim 70->70, strat rule-claim-70->rule-claim-70"
+   },
+   {
+    "id": "S274",
+    "where": "retire +1",
+    "detail": "count_on 26200->25100, basics 0->0, claim 66->67, strat rule-claim-66->rule-stocks-30"
+   },
+   {
+    "id": "S289",
+    "where": "retire +3",
+    "detail": "count_on 17500->16200, basics 4->5, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S121",
+    "where": "retire +3",
+    "detail": "count_on 5300->3400, basics 0->0, claim 62->64, strat rule-claim-62->rule-claim-64"
+   }
+  ],
+  "savings_moves_count_on": [
+   {
+    "id": "E17_low_income",
+    "detail": "savings 6,800: halving or adding half leaves count_on 18,100 and basics 29 unchanged"
+   },
+   {
+    "id": "E30_divorced_dependents",
+    "detail": "savings 61,000: halving or adding half leaves count_on 27,800 and basics 0 unchanged"
+   },
+   {
+    "id": "S003",
+    "detail": "savings 36,500: halving or adding half leaves count_on 17,600 and basics 0 unchanged"
+   },
+   {
+    "id": "S006",
+    "detail": "savings 28,600: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S014",
+    "detail": "savings 29,200: halving or adding half leaves count_on 25,800 and basics 100 unchanged"
+   },
+   {
+    "id": "S018",
+    "detail": "savings 23,600: halving or adding half leaves count_on 2,900 and basics 0 unchanged"
+   },
+   {
+    "id": "S019",
+    "detail": "savings 54,600: halving or adding half leaves count_on 16,800 and basics 0 unchanged"
+   },
+   {
+    "id": "S036",
+    "detail": "savings 7,600: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S040",
+    "detail": "savings 12,900: halving or adding half leaves count_on 26,600 and basics 0 unchanged"
+   },
+   {
+    "id": "S044",
+    "detail": "savings 16,300: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S054",
+    "detail": "savings 94,600: halving or adding half leaves count_on 20,700 and basics 0 unchanged"
+   },
+   {
+    "id": "S065",
+    "detail": "savings 42,200: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S080",
+    "detail": "savings 10,100: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S104",
+    "detail": "savings 43,600: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S105",
+    "detail": "savings 23,800: halving or adding half leaves count_on 12,800 and basics 0 unchanged"
+   },
+   {
+    "id": "S147",
+    "detail": "savings 6,300: halving or adding half leaves count_on 13,600 and basics 0 unchanged"
+   },
+   {
+    "id": "S196",
+    "detail": "savings 58,100: halving or adding half leaves count_on 24,000 and basics 0 unchanged"
+   },
+   {
+    "id": "S197",
+    "detail": "savings 9,800: halving or adding half leaves count_on 11,500 and basics 0 unchanged"
+   },
+   {
+    "id": "S209",
+    "detail": "savings 42,900: halving or adding half leaves count_on 17,500 and basics 0 unchanged"
+   },
+   {
+    "id": "S211",
+    "detail": "savings 25,900: halving or adding half leaves count_on 19,600 and basics 0 unchanged"
+   },
+   {
+    "id": "S227",
+    "detail": "savings 17,400: halving or adding half leaves count_on 43,300 and basics 100 unchanged"
+   },
+   {
+    "id": "S229",
+    "detail": "savings 42,400: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S233",
+    "detail": "savings 45,500: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S240",
+    "detail": "savings 42,100: halving or adding half leaves count_on 600 and basics 0 unchanged"
+   },
+   {
+    "id": "S256",
+    "detail": "savings 9,100: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S277",
+    "detail": "savings 5,400: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   },
+   {
+    "id": "S300",
+    "detail": "savings 8,400: halving or adding half leaves count_on 34,700 and basics 4 unchanged"
+   },
+   {
+    "id": "S255",
+    "detail": "savings 28,800: halving or adding half leaves count_on 0 and basics 0 unchanged"
+   }
+  ],
+  "direction_down": [
+   {
+    "id": "E17_low_income",
+    "where": "retire -3",
+    "detail": "count_on 18100->19100, basics 29->58, claim 69->70, strat rule-claim-69->rule-claim-70"
+   },
+   {
+    "id": "E17_low_income",
+    "where": "retire -1",
+    "detail": "count_on 18100->18400, basics 29->42, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S007",
+    "where": "retire -3",
+    "detail": "count_on 25800->27700, basics 0->0, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S007",
+    "where": "retire -1",
+    "detail": "count_on 25800->26500, basics 0->0, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S040",
+    "where": "add $300k mortgage",
+    "detail": "count_on 26600->26600, basics 0->100, claim 66->66, strat rule-claim-66->rule-claim-66"
+   },
+   {
+    "id": "S105",
+    "where": "retire -3",
+    "detail": "count_on 12800->16300, basics 0->0, claim 64->67, strat rule-claim-64->rule"
+   },
+   {
+    "id": "S110",
+    "where": "add $300k mortgage",
+    "detail": "count_on 39800->39400, basics 71->82, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S138",
+    "where": "retire -3",
+    "detail": "count_on 42400->43100, basics 78->85, claim 70->69, strat rule-claim-70->rule-claim-69"
+   },
+   {
+    "id": "S198",
+    "where": "partner stops work",
+    "detail": "count_on 49300->53300, basics 100->100, claim 70->70, strat rule-claim-70->rule-claim-70"
+   },
+   {
+    "id": "S197",
+    "where": "partner stops work",
+    "detail": "count_on 11500->12900, basics 0->0, claim 68->69, strat rule-claim-68->rule-claim-69"
+   },
+   {
+    "id": "S229",
+    "where": "retire -3",
+    "detail": "count_on 0->4900, basics 0->0, claim 62->62, strat rule-claim-62->rule-claim-62"
+   },
+   {
+    "id": "S229",
+    "where": "retire -1",
+    "detail": "count_on 0->1400, basics 0->0, claim 62->62, strat rule-claim-62->rule-claim-62"
+   },
+   {
+    "id": "S238",
+    "where": "retire -3",
+    "detail": "count_on 24400->25300, basics 0->0, claim 63->62, strat rule-claim-63->rule-claim-62"
+   },
+   {
+    "id": "S238",
+    "where": "retire -1",
+    "detail": "count_on 24400->26500, basics 0->0, claim 63->64, strat rule-claim-63->rule-claim-64"
+   },
+   {
+    "id": "S237",
+    "where": "retire -3",
+    "detail": "count_on 27000->28000, basics 3->2, claim 69->69, strat rule-claim-69->rule-claim-69"
+   },
+   {
+    "id": "S260",
+    "where": "spend retired +20%",
+    "detail": "count_on 60900->61300, basics 78->82, claim 69->70, strat rule-claim-69->rule-claim-70"
+   }
+  ],
+  "goal_change_keeps_count_on": [
+   {
+    "id": "E29_high_spender_low_income",
+    "where": "spend retired -20%",
+    "detail": "count_on 25300->26000"
+   },
+   {
+    "id": "N03_equity_comp_rsu_espp",
+    "where": "spend retired -20%",
+    "detail": "count_on 91300->93900"
+   },
+   {
+    "id": "S264",
+    "where": "spend retired +20%",
+    "detail": "count_on 13700->13100"
+   },
+   {
+    "id": "E26_heloc_and_boat",
+    "where": "spend retired -20%",
+    "detail": "count_on 43300->44400"
+   },
+   {
+    "id": "S265",
+    "where": "spend retired -20%",
+    "detail": "count_on 28600->29200"
+   },
+   {
+    "id": "sample:e27",
+    "where": "spend retired -20%",
+    "detail": "count_on 122600->126400"
+   }
+  ],
+  "whatif_equals_fresh": [
+   {
+    "id": "N07_pension_takes_annuity",
+    "where": "retire -1",
+    "detail": "whatif 53700/100 claim 68 (rule-claim-68) vs fresh 56200/100 claim 67 (rule)"
+   },
+   {
+    "id": "S041",
+    "where": "retire -3",
+    "detail": "whatif 44000/100 claim 67 (rule) vs fresh 46300/100 claim 70 (rule-claim-70)"
+   },
+   {
+    "id": "S159",
+    "where": "claim at retirement",
+    "detail": "whatif 71300/100 claim 66 (rule-claim-70) vs fresh 76600/100 claim 66 (S134-full)"
+   },
+   {
+    "id": "S182",
+    "where": "retire -3",
+    "detail": "whatif 59300/100 claim 70 (rule-claim-70) vs fresh 61700/100 claim 68 (rule-claim-68)"
+   },
+   {
+    "id": "S213",
+    "where": "retire -1",
+    "detail": "whatif 51200/97 claim 70 (rule-claim-70) vs fresh 57700/100 claim 69 (rule-claim-69)"
+   },
+   {
+    "id": "S219",
+    "where": "retire -1",
+    "detail": "whatif 55900/96 claim 70 (rule-claim-70) vs fresh 55900/100 claim 69 (rule-claim-69)"
+   },
+   {
+    "id": "S232",
+    "where": "partner stops work",
+    "detail": "whatif 43200/98 claim 67 (rule) vs fresh 47100/100 claim 69 (rule-claim-69)"
+   },
+   {
+    "id": "sample:e28",
+    "where": "partner stops work",
+    "detail": "whatif 60500/100 claim 70 (rule-claim-70) vs fresh 63900/100 claim 69 (rule-claim-69)"
+   },
+   {
+    "id": "sample:e28",
+    "where": "claim at retirement",
+    "detail": "whatif 77300/100 claim 66 (rule-claim-70) vs fresh 80000/100 claim 66 (S039-full)"
+   },
+   {
+    "id": "sample:s071",
+    "where": "spend retired -20%",
+    "detail": "whatif 91700/100 claim 69 (rule-claim-69) vs fresh 99800/100 claim 70 (S251-full)"
+   },
+   {
+    "id": "sample:s071",
+    "where": "spend retired -10%",
+    "detail": "whatif 91400/100 claim 69 (rule-claim-69) vs fresh 99600/100 claim 70 (S251-full)"
+   },
+   {
+    "id": "E21_smoker_poor_health",
+    "where": "retire -3",
+    "detail": "whatif 28300/97 claim 70 (rule-claim-70) vs fresh 33000/100 claim 68 (rule-claim-68)"
+   },
+   {
+    "id": "E26_heloc_and_boat",
+    "where": "retire -3",
+    "detail": "whatif 29200/99 claim 70 (rule-stocks-15-claim-70) vs fresh 34200/100 claim 68 (S265-fast)"
+   },
+   {
+    "id": "S015",
+    "where": "retire +1",
+    "detail": "whatif 67100/100 claim 68 (rule-claim-68) vs fresh 68500/100 claim 69 (rule-claim-69)"
+   },
+   {
+    "id": "S015",
+    "where": "retire +3",
+    "detail": "whatif 70800/100 claim 68 (rule-claim-68) vs fresh 73700/100 claim 69 (rule)"
+   },
+   {
+    "id": "sample:e24",
+    "where": "add a child",
+    "detail": "whatif 54700/99 claim 69 (rule-claim-69) vs fresh 58400/100 claim 68 (rule-claim-68)"
+   },
+   {
+    "id": "sample:s083",
+    "where": "retire +3",
+    "detail": "whatif 50100/98 claim 68 (rule-claim-68) vs fresh 51400/99 claim 69 (rule-claim-69)"
+   }
+  ],
+  "magnitude_100k": [
+   {
+    "id": "S002",
+    "detail": "+$100k -> count_on +400 (bounds 1852..24952, 26 yrs to retire, 27 retired)"
+   },
+   {
+    "id": "S089",
+    "detail": "+$100k -> count_on +27700 (bounds 0..9000, 0 yrs to retire, 28 retired)"
+   },
+   {
+    "id": "S160",
+    "detail": "+$100k -> count_on +35700 (bounds 0..10124, 3 yrs to retire, 34 retired)"
+   },
+   {
+    "id": "S264",
+    "detail": "+$100k -> count_on +15400 (bounds 0..9360, 1 yrs to retire, 29 retired)"
+   }
+  ],
+  "claim_choice_not_worse": [
+   {
+    "id": "S060",
+    "detail": "plan claims 64: 30900/1; claiming at 63: 30700/6"
+   }
+  ]
+ },
+ "info": {
+  "count_on_below_ss": [
+   {
+    "id": "E04_no_savings_no_ss",
+    "count_on": 11300.0,
+    "ss": 17700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "E03_no_savings",
+    "count_on": 31000.0,
+    "ss": 32200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E08_sole_provider_3_kids",
+    "count_on": 22700.0,
+    "ss": 27700.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "E12_early_retiree_45",
+    "count_on": 36600.0,
+    "ss": 37200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E11_growing_card_debt",
+    "count_on": 23300.0,
+    "ss": 28100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E18_low_income_retired",
+    "count_on": 15800.0,
+    "ss": 17000.0,
+    "why": "health costs come on top of your spending."
+   },
+   {
+    "id": "E13_early_retiree_45_underfunded",
+    "count_on": 19100.0,
+    "ss": 21000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E25_underwater_mortgage_arm",
+    "count_on": 26900.0,
+    "ss": 29000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E28_couple_one_retired",
+    "count_on": 81600.0,
+    "ss": 81800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "count_on": 25300.0,
+    "ss": 26100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E30_divorced_dependents",
+    "count_on": 27800.0,
+    "ss": 29000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "N06_divorced_receives_support",
+    "count_on": 27100.0,
+    "ss": 29000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S002",
+    "count_on": 52200.0,
+    "ss": 55600.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S001",
+    "count_on": 38500.0,
+    "ss": 45300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S003",
+    "count_on": 17600.0,
+    "ss": 22000.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S006",
+    "count_on": 0.0,
+    "ss": 2400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S004",
+    "count_on": 15400.0,
+    "ss": 16700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S014",
+    "count_on": 25800.0,
+    "ss": 28000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S007",
+    "count_on": 25800.0,
+    "ss": 26400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S016",
+    "count_on": 75500.0,
+    "ss": 78000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S018",
+    "count_on": 2900.0,
+    "ss": 13300.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S019",
+    "count_on": 16800.0,
+    "ss": 47700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S021",
+    "count_on": 52900.0,
+    "ss": 54800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S024",
+    "count_on": 0.0,
+    "ss": 30800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S027",
+    "count_on": 21800.0,
+    "ss": 23700.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S025",
+    "count_on": 42500.0,
+    "ss": 49700.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S028",
+    "count_on": 5500.0,
+    "ss": 6900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S033",
+    "count_on": 28900.0,
+    "ss": 38300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S036",
+    "count_on": 0.0,
+    "ss": 5300.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S043",
+    "count_on": 30400.0,
+    "ss": 34100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S040",
+    "count_on": 26600.0,
+    "ss": 28500.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S044",
+    "count_on": 0.0,
+    "ss": 14300.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S042",
+    "count_on": 21800.0,
+    "ss": 22900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S054",
+    "count_on": 20700.0,
+    "ss": 31500.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S055",
+    "count_on": 13200.0,
+    "ss": 15300.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S061",
+    "count_on": 41600.0,
+    "ss": 42300.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S062",
+    "count_on": 36100.0,
+    "ss": 43800.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S060",
+    "count_on": 30900.0,
+    "ss": 35200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S057",
+    "count_on": 37400.0,
+    "ss": 40700.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S065",
+    "count_on": 0.0,
+    "ss": 17800.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S067",
+    "count_on": 10700.0,
+    "ss": 12200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S068",
+    "count_on": 15900.0,
+    "ss": 20700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S073",
+    "count_on": 9700.0,
+    "ss": 15200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S070",
+    "count_on": 32900.0,
+    "ss": 39300.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S080",
+    "count_on": 0.0,
+    "ss": 5200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S082",
+    "count_on": 26000.0,
+    "ss": 32300.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S085",
+    "count_on": 21400.0,
+    "ss": 26100.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S084",
+    "count_on": 0.0,
+    "ss": 1000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S089",
+    "count_on": 0.0,
+    "ss": 26800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S086",
+    "count_on": 49700.0,
+    "ss": 50000.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S091",
+    "count_on": 32600.0,
+    "ss": 37100.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S096",
+    "count_on": 60800.0,
+    "ss": 76100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S099",
+    "count_on": 52100.0,
+    "ss": 61500.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S103",
+    "count_on": 10300.0,
+    "ss": 13900.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S104",
+    "count_on": 0.0,
+    "ss": 3000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S108",
+    "count_on": 37400.0,
+    "ss": 43100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S105",
+    "count_on": 12800.0,
+    "ss": 19300.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S109",
+    "count_on": 83100.0,
+    "ss": 89100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S111",
+    "count_on": 38600.0,
+    "ss": 44100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S115",
+    "count_on": 76800.0,
+    "ss": 77700.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S116",
+    "count_on": 31300.0,
+    "ss": 33000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S119",
+    "count_on": 36600.0,
+    "ss": 37800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S122",
+    "count_on": 29200.0,
+    "ss": 33500.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S132",
+    "count_on": 33400.0,
+    "ss": 37900.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S133",
+    "count_on": 16100.0,
+    "ss": 19600.0,
+    "why": "health costs come on top of your spending."
+   },
+   {
+    "id": "S124",
+    "count_on": 25800.0,
+    "ss": 29400.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S128",
+    "count_on": 37800.0,
+    "ss": 41900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S137",
+    "count_on": 14000.0,
+    "ss": 22200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S140",
+    "count_on": 31400.0,
+    "ss": 38800.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S138",
+    "count_on": 42400.0,
+    "ss": 47000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S142",
+    "count_on": 29400.0,
+    "ss": 35600.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S147",
+    "count_on": 13600.0,
+    "ss": 15000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S141",
+    "count_on": 28000.0,
+    "ss": 34800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S149",
+    "count_on": 2800.0,
+    "ss": 3000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S154",
+    "count_on": 25200.0,
+    "ss": 28500.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S151",
+    "count_on": 46700.0,
+    "ss": 59100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S158",
+    "count_on": 32100.0,
+    "ss": 34200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S160",
+    "count_on": 7000.0,
+    "ss": 42300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S163",
+    "count_on": 70300.0,
+    "ss": 75800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S169",
+    "count_on": 54700.0,
+    "ss": 66400.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S171",
+    "count_on": 81800.0,
+    "ss": 82900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S175",
+    "count_on": 21000.0,
+    "ss": 27500.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S178",
+    "count_on": 20900.0,
+    "ss": 25800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S180",
+    "count_on": 12300.0,
+    "ss": 20600.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S179",
+    "count_on": 27100.0,
+    "ss": 32700.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S181",
+    "count_on": 33100.0,
+    "ss": 38300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S184",
+    "count_on": 21400.0,
+    "ss": 27300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S177",
+    "count_on": 28200.0,
+    "ss": 29800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S182",
+    "count_on": 72700.0,
+    "ss": 78200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S188",
+    "count_on": 16800.0,
+    "ss": 20200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S193",
+    "count_on": 19600.0,
+    "ss": 20900.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S191",
+    "count_on": 33200.0,
+    "ss": 49400.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S192",
+    "count_on": 28200.0,
+    "ss": 32600.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S198",
+    "count_on": 49300.0,
+    "ss": 62700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S196",
+    "count_on": 24000.0,
+    "ss": 25900.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S195",
+    "count_on": 28500.0,
+    "ss": 30300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S197",
+    "count_on": 11500.0,
+    "ss": 16100.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S208",
+    "count_on": 33100.0,
+    "ss": 41600.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S209",
+    "count_on": 17500.0,
+    "ss": 24900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S212",
+    "count_on": 33600.0,
+    "ss": 37800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S211",
+    "count_on": 19600.0,
+    "ss": 43300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S216",
+    "count_on": 27400.0,
+    "ss": 33500.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S213",
+    "count_on": 61200.0,
+    "ss": 70700.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S215",
+    "count_on": 23100.0,
+    "ss": 27800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S219",
+    "count_on": 59500.0,
+    "ss": 65100.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S220",
+    "count_on": 14400.0,
+    "ss": 15900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S227",
+    "count_on": 43300.0,
+    "ss": 50800.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S229",
+    "count_on": 0.0,
+    "ss": 21000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S233",
+    "count_on": 0.0,
+    "ss": 29400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S226",
+    "count_on": 17300.0,
+    "ss": 18500.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S235",
+    "count_on": 17500.0,
+    "ss": 22700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S240",
+    "count_on": 600.0,
+    "ss": 9200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S238",
+    "count_on": 24400.0,
+    "ss": 33600.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S242",
+    "count_on": 44900.0,
+    "ss": 52700.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S237",
+    "count_on": 27000.0,
+    "ss": 29600.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S248",
+    "count_on": 14300.0,
+    "ss": 17200.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S257",
+    "count_on": 28600.0,
+    "ss": 30600.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S256",
+    "count_on": 0.0,
+    "ss": 1800.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S264",
+    "count_on": 13700.0,
+    "ss": 37600.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S266",
+    "count_on": 27100.0,
+    "ss": 33300.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S268",
+    "count_on": 52300.0,
+    "ss": 59000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S274",
+    "count_on": 26200.0,
+    "ss": 31400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S279",
+    "count_on": 20000.0,
+    "ss": 20300.0,
+    "why": "health costs come on top of your spending."
+   },
+   {
+    "id": "S277",
+    "count_on": 0.0,
+    "ss": 2400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S283",
+    "count_on": 37400.0,
+    "ss": 42500.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S276",
+    "count_on": 13200.0,
+    "ss": 21400.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S280",
+    "count_on": 24000.0,
+    "ss": 24900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S287",
+    "count_on": 37900.0,
+    "ss": 42800.0,
+    "why": "health costs come on top of your spending and it falls to one check after the first death."
+   },
+   {
+    "id": "S285",
+    "count_on": 5100.0,
+    "ss": 6800.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S292",
+    "count_on": 35600.0,
+    "ss": 43200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S290",
+    "count_on": 27600.0,
+    "ss": 28300.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S296",
+    "count_on": 13700.0,
+    "ss": 14600.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S289",
+    "count_on": 17500.0,
+    "ss": 20200.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S295",
+    "count_on": 19300.0,
+    "ss": 24900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "sample:e28",
+    "count_on": 81600.0,
+    "ss": 81800.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "sample:s055",
+    "count_on": 13200.0,
+    "ss": 15300.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "sample:e18",
+    "count_on": 15800.0,
+    "ss": 17000.0,
+    "why": "health costs come on top of your spending."
+   },
+   {
+    "id": "sample:e11",
+    "count_on": 23300.0,
+    "ss": 28100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E24_teen_kids_college",
+    "count_on": 67700.0,
+    "ss": 78900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "E26_heloc_and_boat",
+    "count_on": 43300.0,
+    "ss": 47100.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "N02_business_owner_sale",
+    "count_on": 65500.0,
+    "ss": 69400.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S092",
+    "count_on": 34700.0,
+    "ss": 38900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S121",
+    "count_on": 5300.0,
+    "ss": 10000.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S139",
+    "count_on": 43500.0,
+    "ss": 45900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S153",
+    "count_on": 22900.0,
+    "ss": 23000.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S173",
+    "count_on": 27900.0,
+    "ss": 33800.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S162",
+    "count_on": 19200.0,
+    "ss": 24100.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S217",
+    "count_on": 24600.0,
+    "ss": 25900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "S255",
+    "count_on": 0.0,
+    "ss": 6900.0,
+    "why": "you spend more now than your take-home pay, so your savings run down before you retire."
+   },
+   {
+    "id": "S293",
+    "count_on": 23200.0,
+    "ss": 23400.0,
+    "why": "health costs come on top of your spending and tax takes part of it."
+   },
+   {
+    "id": "S265",
+    "count_on": 28600.0,
+    "ss": 29600.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   },
+   {
+    "id": "sample:e24",
+    "count_on": 67700.0,
+    "ss": 78900.0,
+    "why": "your savings must pay for the years before it starts and health costs come on top of your spending."
+   }
+  ],
+  "magnitude_100k": [
+   {
+    "id": "E04_no_savings_no_ss",
+    "dc": 9200,
+    "pct_of_100k": 9.2,
+    "ytr": 8,
+    "yrs": 28
+   },
+   {
+    "id": "E02_age_gap_25_older_partner",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 30,
+    "yrs": 30
+   },
+   {
+    "id": "E03_no_savings",
+    "dc": 6000,
+    "pct_of_100k": 6.0,
+    "ytr": 27,
+    "yrs": 26
+   },
+   {
+    "id": "E07_widow_with_annuity",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "E06_wealthy_retiree",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 0,
+    "yrs": 24
+   },
+   {
+    "id": "E05_very_wealthy",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 10,
+    "yrs": 32
+   },
+   {
+    "id": "E09_single_mom_2_kids",
+    "dc": 6900,
+    "pct_of_100k": 6.9,
+    "ytr": 32,
+    "yrs": 30
+   },
+   {
+    "id": "E08_sole_provider_3_kids",
+    "dc": 500,
+    "pct_of_100k": 0.5,
+    "ytr": 27,
+    "yrs": 34
+   },
+   {
+    "id": "E10_renter_growing_student_loan",
+    "dc": 7200,
+    "pct_of_100k": 7.2,
+    "ytr": 36,
+    "yrs": 31
+   },
+   {
+    "id": "E14_age_79_retired",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 0,
+    "yrs": 14
+   },
+   {
+    "id": "E12_early_retiree_45",
+    "dc": 2600,
+    "pct_of_100k": 2.6,
+    "ytr": 1,
+    "yrs": 47
+   },
+   {
+    "id": "E15_age_79_working",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 1,
+    "yrs": 15
+   },
+   {
+    "id": "E11_growing_card_debt",
+    "dc": 6300,
+    "pct_of_100k": 6.3,
+    "ytr": 21,
+    "yrs": 27
+   },
+   {
+    "id": "E18_low_income_retired",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 0,
+    "yrs": 24
+   },
+   {
+    "id": "E13_early_retiree_45_underfunded",
+    "dc": 3200,
+    "pct_of_100k": 3.2,
+    "ytr": 5,
+    "yrs": 45
+   },
+   {
+    "id": "E20_couple_both_retired",
+    "dc": 4700,
+    "pct_of_100k": 4.7,
+    "ytr": 0,
+    "yrs": 27
+   },
+   {
+    "id": "E16_bracket_gains",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 2,
+    "yrs": 28
+   },
+   {
+    "id": "E17_low_income",
+    "dc": 3800,
+    "pct_of_100k": 3.8,
+    "ytr": 15,
+    "yrs": 28
+   },
+   {
+    "id": "E23_wants_guaranteed_income",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 0,
+    "yrs": 29
+   },
+   {
+    "id": "E22_legacy_goal",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 5,
+    "yrs": 29
+   },
+   {
+    "id": "E19_young_start_22",
+    "dc": 8400,
+    "pct_of_100k": 8.4,
+    "ytr": 45,
+    "yrs": 27
+   },
+   {
+    "id": "E25_underwater_mortgage_arm",
+    "dc": 7600,
+    "pct_of_100k": 7.6,
+    "ytr": 21,
+    "yrs": 28
+   },
+   {
+    "id": "E28_couple_one_retired",
+    "dc": 3400,
+    "pct_of_100k": 3.4,
+    "ytr": 0,
+    "yrs": 37
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 24,
+    "yrs": 33
+   },
+   {
+    "id": "E30_divorced_dependents",
+    "dc": 1400,
+    "pct_of_100k": 1.4,
+    "ytr": 19,
+    "yrs": 29
+   },
+   {
+    "id": "N01_self_employed_sched_c",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 21,
+    "yrs": 30
+   },
+   {
+    "id": "N03_equity_comp_rsu_espp",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 25,
+    "yrs": 35
+   },
+   {
+    "id": "N05_divorced_pays_support",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 18,
+    "yrs": 25
+   },
+   {
+    "id": "N08_pension_takes_lump_sum",
+    "dc": 3700,
+    "pct_of_100k": 3.7,
+    "ytr": 2,
+    "yrs": 36
+   },
+   {
+    "id": "N06_divorced_receives_support",
+    "dc": 800,
+    "pct_of_100k": 0.8,
+    "ytr": 26,
+    "yrs": 28
+   },
+   {
+    "id": "N07_pension_takes_annuity",
+    "dc": 4600,
+    "pct_of_100k": 4.6,
+    "ytr": 2,
+    "yrs": 36
+   },
+   {
+    "id": "S002",
+    "dc": 400,
+    "pct_of_100k": 0.4,
+    "ytr": 26,
+    "yrs": 27
+   },
+   {
+    "id": "S001",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 23,
+    "yrs": 32
+   },
+   {
+    "id": "S003",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 4,
+    "yrs": 35
+   },
+   {
+    "id": "S006",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 35,
+    "yrs": 25
+   },
+   {
+    "id": "S009",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 0,
+    "yrs": 23
+   },
+   {
+    "id": "S004",
+    "dc": 3900,
+    "pct_of_100k": 3.9,
+    "ytr": 8,
+    "yrs": 30
+   },
+   {
+    "id": "S005",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 28,
+    "yrs": 32
+   },
+   {
+    "id": "S012",
+    "dc": 8800,
+    "pct_of_100k": 8.8,
+    "ytr": 0,
+    "yrs": 11
+   },
+   {
+    "id": "S013",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S011",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 3,
+    "yrs": 25
+   },
+   {
+    "id": "S014",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 19,
+    "yrs": 20
+   },
+   {
+    "id": "S007",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 40,
+    "yrs": 36
+   },
+   {
+    "id": "S010",
+    "dc": 4900,
+    "pct_of_100k": 4.9,
+    "ytr": 19,
+    "yrs": 31
+   },
+   {
+    "id": "S016",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 9,
+    "yrs": 42
+   },
+   {
+    "id": "S018",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 29,
+    "yrs": 36
+   },
+   {
+    "id": "S019",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 21,
+    "yrs": 27
+   },
+   {
+    "id": "S021",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 18,
+    "yrs": 35
+   },
+   {
+    "id": "S024",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 20,
+    "yrs": 42
+   },
+   {
+    "id": "S027",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S026",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 6,
+    "yrs": 22
+   },
+   {
+    "id": "S025",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 8,
+    "yrs": 36
+   },
+   {
+    "id": "S030",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 31,
+    "yrs": 27
+   },
+   {
+    "id": "S022",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 32,
+    "yrs": 30
+   },
+   {
+    "id": "S028",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 29,
+    "yrs": 33
+   },
+   {
+    "id": "S033",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 11,
+    "yrs": 27
+   },
+   {
+    "id": "S036",
+    "dc": 9600,
+    "pct_of_100k": 9.6,
+    "ytr": 34,
+    "yrs": 31
+   },
+   {
+    "id": "S038",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 16,
+    "yrs": 25
+   },
+   {
+    "id": "S032",
+    "dc": 7200,
+    "pct_of_100k": 7.2,
+    "ytr": 38,
+    "yrs": 34
+   },
+   {
+    "id": "S043",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 0,
+    "yrs": 33
+   },
+   {
+    "id": "S040",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 15,
+    "yrs": 26
+   },
+   {
+    "id": "S045",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S041",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 24,
+    "yrs": 29
+   },
+   {
+    "id": "S044",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 38,
+    "yrs": 36
+   },
+   {
+    "id": "S050",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 0,
+    "yrs": 29
+   },
+   {
+    "id": "S042",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 40,
+    "yrs": 34
+   },
+   {
+    "id": "S048",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 19,
+    "yrs": 27
+   },
+   {
+    "id": "S049",
+    "dc": 7200,
+    "pct_of_100k": 7.2,
+    "ytr": 30,
+    "yrs": 28
+   },
+   {
+    "id": "S052",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 0,
+    "yrs": 30
+   },
+   {
+    "id": "S051",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 1,
+    "yrs": 33
+   },
+   {
+    "id": "S054",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 23,
+    "yrs": 32
+   },
+   {
+    "id": "S055",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 3,
+    "yrs": 33
+   },
+   {
+    "id": "S059",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S061",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 0,
+    "yrs": 26
+   },
+   {
+    "id": "S062",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 0,
+    "yrs": 23
+   },
+   {
+    "id": "S060",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 0,
+    "yrs": 33
+   },
+   {
+    "id": "S057",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 19,
+    "yrs": 32
+   },
+   {
+    "id": "S065",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 24,
+    "yrs": 42
+   },
+   {
+    "id": "S066",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 24,
+    "yrs": 29
+   },
+   {
+    "id": "S064",
+    "dc": 6400,
+    "pct_of_100k": 6.4,
+    "ytr": 35,
+    "yrs": 29
+   },
+   {
+    "id": "S067",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S053",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 33,
+    "yrs": 37
+   },
+   {
+    "id": "S068",
+    "dc": 8300,
+    "pct_of_100k": 8.3,
+    "ytr": 7,
+    "yrs": 32
+   },
+   {
+    "id": "S072",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 1,
+    "yrs": 21
+   },
+   {
+    "id": "S069",
+    "dc": 4900,
+    "pct_of_100k": 4.9,
+    "ytr": 16,
+    "yrs": 26
+   },
+   {
+    "id": "S073",
+    "dc": 7500,
+    "pct_of_100k": 7.5,
+    "ytr": 1,
+    "yrs": 14
+   },
+   {
+    "id": "S075",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S071",
+    "dc": 3500,
+    "pct_of_100k": 3.5,
+    "ytr": 12,
+    "yrs": 41
+   },
+   {
+    "id": "S074",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S077",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 0,
+    "yrs": 30
+   },
+   {
+    "id": "S070",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 13,
+    "yrs": 32
+   },
+   {
+    "id": "S080",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 24,
+    "yrs": 34
+   },
+   {
+    "id": "S076",
+    "dc": 7300,
+    "pct_of_100k": 7.3,
+    "ytr": 40,
+    "yrs": 29
+   },
+   {
+    "id": "S079",
+    "dc": 8000,
+    "pct_of_100k": 8.0,
+    "ytr": 42,
+    "yrs": 24
+   },
+   {
+    "id": "S082",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S081",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 0,
+    "yrs": 30
+   },
+   {
+    "id": "S078",
+    "dc": 8300,
+    "pct_of_100k": 8.3,
+    "ytr": 45,
+    "yrs": 33
+   },
+   {
+    "id": "S085",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S084",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 43,
+    "yrs": 29
+   },
+   {
+    "id": "S088",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 15,
+    "yrs": 29
+   },
+   {
+    "id": "S089",
+    "dc": 27700,
+    "pct_of_100k": 27.7,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S086",
+    "dc": 8200,
+    "pct_of_100k": 8.2,
+    "ytr": 34,
+    "yrs": 26
+   },
+   {
+    "id": "S091",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S095",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S094",
+    "dc": 4700,
+    "pct_of_100k": 4.7,
+    "ytr": 16,
+    "yrs": 33
+   },
+   {
+    "id": "S093",
+    "dc": 6100,
+    "pct_of_100k": 6.1,
+    "ytr": 26,
+    "yrs": 29
+   },
+   {
+    "id": "S096",
+    "dc": 3900,
+    "pct_of_100k": 3.9,
+    "ytr": 5,
+    "yrs": 38
+   },
+   {
+    "id": "S099",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 8,
+    "yrs": 31
+   },
+   {
+    "id": "S090",
+    "dc": 8500,
+    "pct_of_100k": 8.5,
+    "ytr": 33,
+    "yrs": 27
+   },
+   {
+    "id": "S100",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 10,
+    "yrs": 23
+   },
+   {
+    "id": "S098",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 23,
+    "yrs": 31
+   },
+   {
+    "id": "S103",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 0,
+    "yrs": 23
+   },
+   {
+    "id": "S104",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 36,
+    "yrs": 26
+   },
+   {
+    "id": "S102",
+    "dc": 8100,
+    "pct_of_100k": 8.1,
+    "ytr": 42,
+    "yrs": 25
+   },
+   {
+    "id": "S108",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 18,
+    "yrs": 35
+   },
+   {
+    "id": "S105",
+    "dc": 200,
+    "pct_of_100k": 0.2,
+    "ytr": 37,
+    "yrs": 33
+   },
+   {
+    "id": "S101",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 30,
+    "yrs": 43
+   },
+   {
+    "id": "S109",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 23,
+    "yrs": 35
+   },
+   {
+    "id": "S106",
+    "dc": 6500,
+    "pct_of_100k": 6.5,
+    "ytr": 43,
+    "yrs": 29
+   },
+   {
+    "id": "S111",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 0,
+    "yrs": 32
+   },
+   {
+    "id": "S114",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 1,
+    "yrs": 30
+   },
+   {
+    "id": "S115",
+    "dc": 6300,
+    "pct_of_100k": 6.3,
+    "ytr": 19,
+    "yrs": 27
+   },
+   {
+    "id": "S110",
+    "dc": 4900,
+    "pct_of_100k": 4.9,
+    "ytr": 29,
+    "yrs": 39
+   },
+   {
+    "id": "S117",
+    "dc": 7300,
+    "pct_of_100k": 7.3,
+    "ytr": 0,
+    "yrs": 13
+   },
+   {
+    "id": "S116",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 6,
+    "yrs": 28
+   },
+   {
+    "id": "S113",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 35,
+    "yrs": 32
+   },
+   {
+    "id": "S119",
+    "dc": 4600,
+    "pct_of_100k": 4.6,
+    "ytr": 8,
+    "yrs": 30
+   },
+   {
+    "id": "S120",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 22,
+    "yrs": 31
+   },
+   {
+    "id": "S122",
+    "dc": 4600,
+    "pct_of_100k": 4.6,
+    "ytr": 0,
+    "yrs": 25
+   },
+   {
+    "id": "S125",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 0,
+    "yrs": 19
+   },
+   {
+    "id": "S127",
+    "dc": 6100,
+    "pct_of_100k": 6.1,
+    "ytr": 0,
+    "yrs": 19
+   },
+   {
+    "id": "S129",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 7,
+    "yrs": 20
+   },
+   {
+    "id": "S130",
+    "dc": 6400,
+    "pct_of_100k": 6.4,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S132",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S133",
+    "dc": 7200,
+    "pct_of_100k": 7.2,
+    "ytr": 0,
+    "yrs": 26
+   },
+   {
+    "id": "S124",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 24,
+    "yrs": 37
+   },
+   {
+    "id": "S123",
+    "dc": 6900,
+    "pct_of_100k": 6.9,
+    "ytr": 34,
+    "yrs": 26
+   },
+   {
+    "id": "S128",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 16,
+    "yrs": 29
+   },
+   {
+    "id": "S137",
+    "dc": 3800,
+    "pct_of_100k": 3.8,
+    "ytr": 2,
+    "yrs": 37
+   },
+   {
+    "id": "S134",
+    "dc": 6000,
+    "pct_of_100k": 6.0,
+    "ytr": 3,
+    "yrs": 29
+   },
+   {
+    "id": "S140",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S138",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 8,
+    "yrs": 31
+   },
+   {
+    "id": "S142",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S143",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 0,
+    "yrs": 22
+   },
+   {
+    "id": "S144",
+    "dc": 7700,
+    "pct_of_100k": 7.7,
+    "ytr": 32,
+    "yrs": 29
+   },
+   {
+    "id": "S147",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 27,
+    "yrs": 26
+   },
+   {
+    "id": "S141",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 20,
+    "yrs": 33
+   },
+   {
+    "id": "S149",
+    "dc": 9000,
+    "pct_of_100k": 9.0,
+    "ytr": 48,
+    "yrs": 24
+   },
+   {
+    "id": "S150",
+    "dc": 6400,
+    "pct_of_100k": 6.4,
+    "ytr": 29,
+    "yrs": 32
+   },
+   {
+    "id": "S148",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 25,
+    "yrs": 39
+   },
+   {
+    "id": "S155",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 0,
+    "yrs": 13
+   },
+   {
+    "id": "S154",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 0,
+    "yrs": 15
+   },
+   {
+    "id": "S156",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S151",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 24,
+    "yrs": 32
+   },
+   {
+    "id": "S158",
+    "dc": 4700,
+    "pct_of_100k": 4.7,
+    "ytr": 6,
+    "yrs": 26
+   },
+   {
+    "id": "S157",
+    "dc": 6900,
+    "pct_of_100k": 6.9,
+    "ytr": 30,
+    "yrs": 28
+   },
+   {
+    "id": "S160",
+    "dc": 35700,
+    "pct_of_100k": 35.7,
+    "ytr": 3,
+    "yrs": 34
+   },
+   {
+    "id": "S159",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 11,
+    "yrs": 26
+   },
+   {
+    "id": "S161",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 1,
+    "yrs": 25
+   },
+   {
+    "id": "S165",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 5,
+    "yrs": 23
+   },
+   {
+    "id": "S164",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 1,
+    "yrs": 27
+   },
+   {
+    "id": "S166",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S163",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 17,
+    "yrs": 36
+   },
+   {
+    "id": "S169",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 16,
+    "yrs": 33
+   },
+   {
+    "id": "S167",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 31,
+    "yrs": 31
+   },
+   {
+    "id": "S172",
+    "dc": 6000,
+    "pct_of_100k": 6.0,
+    "ytr": 32,
+    "yrs": 31
+   },
+   {
+    "id": "S171",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 6,
+    "yrs": 32
+   },
+   {
+    "id": "S174",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 10,
+    "yrs": 22
+   },
+   {
+    "id": "S175",
+    "dc": 8500,
+    "pct_of_100k": 8.5,
+    "ytr": 0,
+    "yrs": 32
+   },
+   {
+    "id": "S178",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 2,
+    "yrs": 33
+   },
+   {
+    "id": "S180",
+    "dc": 10500,
+    "pct_of_100k": 10.5,
+    "ytr": 29,
+    "yrs": 34
+   },
+   {
+    "id": "S179",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 13,
+    "yrs": 34
+   },
+   {
+    "id": "S181",
+    "dc": 4600,
+    "pct_of_100k": 4.6,
+    "ytr": 0,
+    "yrs": 39
+   },
+   {
+    "id": "S184",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S177",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 25,
+    "yrs": 33
+   },
+   {
+    "id": "S186",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 0,
+    "yrs": 16
+   },
+   {
+    "id": "S182",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 23,
+    "yrs": 33
+   },
+   {
+    "id": "S188",
+    "dc": 7500,
+    "pct_of_100k": 7.5,
+    "ytr": 10,
+    "yrs": 29
+   },
+   {
+    "id": "S183",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 37,
+    "yrs": 34
+   },
+   {
+    "id": "S190",
+    "dc": 2800,
+    "pct_of_100k": 2.8,
+    "ytr": 0,
+    "yrs": 26
+   },
+   {
+    "id": "S187",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 23,
+    "yrs": 29
+   },
+   {
+    "id": "S189",
+    "dc": 9200,
+    "pct_of_100k": 9.2,
+    "ytr": 49,
+    "yrs": 28
+   },
+   {
+    "id": "S193",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 5,
+    "yrs": 25
+   },
+   {
+    "id": "S191",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 12,
+    "yrs": 32
+   },
+   {
+    "id": "S194",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S192",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 1,
+    "yrs": 29
+   },
+   {
+    "id": "S198",
+    "dc": 1400,
+    "pct_of_100k": 1.4,
+    "ytr": 33,
+    "yrs": 25
+   },
+   {
+    "id": "S196",
+    "dc": 200,
+    "pct_of_100k": 0.2,
+    "ytr": 21,
+    "yrs": 27
+   },
+   {
+    "id": "S195",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 25,
+    "yrs": 29
+   },
+   {
+    "id": "S201",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S200",
+    "dc": 6000,
+    "pct_of_100k": 6.0,
+    "ytr": 6,
+    "yrs": 22
+   },
+   {
+    "id": "S203",
+    "dc": 8100,
+    "pct_of_100k": 8.1,
+    "ytr": 0,
+    "yrs": 16
+   },
+   {
+    "id": "S204",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 1,
+    "yrs": 30
+   },
+   {
+    "id": "S199",
+    "dc": 7800,
+    "pct_of_100k": 7.8,
+    "ytr": 40,
+    "yrs": 32
+   },
+   {
+    "id": "S197",
+    "dc": 2700,
+    "pct_of_100k": 2.7,
+    "ytr": 35,
+    "yrs": 30
+   },
+   {
+    "id": "S202",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 14,
+    "yrs": 30
+   },
+   {
+    "id": "S205",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 2,
+    "yrs": 29
+   },
+   {
+    "id": "S210",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 22,
+    "yrs": 25
+   },
+   {
+    "id": "S208",
+    "dc": 6000,
+    "pct_of_100k": 6.0,
+    "ytr": 2,
+    "yrs": 35
+   },
+   {
+    "id": "S209",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 31,
+    "yrs": 30
+   },
+   {
+    "id": "S206",
+    "dc": 7200,
+    "pct_of_100k": 7.2,
+    "ytr": 41,
+    "yrs": 33
+   },
+   {
+    "id": "S212",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 4,
+    "yrs": 27
+   },
+   {
+    "id": "S211",
+    "dc": 600,
+    "pct_of_100k": 0.6,
+    "ytr": 16,
+    "yrs": 44
+   },
+   {
+    "id": "S216",
+    "dc": 6100,
+    "pct_of_100k": 6.1,
+    "ytr": 0,
+    "yrs": 19
+   },
+   {
+    "id": "S218",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 0,
+    "yrs": 19
+   },
+   {
+    "id": "S213",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 24,
+    "yrs": 26
+   },
+   {
+    "id": "S221",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 0,
+    "yrs": 19
+   },
+   {
+    "id": "S222",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S215",
+    "dc": 3700,
+    "pct_of_100k": 3.7,
+    "ytr": 28,
+    "yrs": 35
+   },
+   {
+    "id": "S219",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 10,
+    "yrs": 25
+   },
+   {
+    "id": "S224",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 0,
+    "yrs": 25
+   },
+   {
+    "id": "S220",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 20,
+    "yrs": 25
+   },
+   {
+    "id": "S223",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 7,
+    "yrs": 16
+   },
+   {
+    "id": "S228",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 0,
+    "yrs": 25
+   },
+   {
+    "id": "S227",
+    "dc": 3900,
+    "pct_of_100k": 3.9,
+    "ytr": 12,
+    "yrs": 28
+   },
+   {
+    "id": "S229",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 25,
+    "yrs": 39
+   },
+   {
+    "id": "S234",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S233",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 1,
+    "yrs": 30
+   },
+   {
+    "id": "S226",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 13,
+    "yrs": 35
+   },
+   {
+    "id": "S232",
+    "dc": 5900,
+    "pct_of_100k": 5.9,
+    "ytr": 17,
+    "yrs": 32
+   },
+   {
+    "id": "S235",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 3,
+    "yrs": 32
+   },
+   {
+    "id": "S240",
+    "dc": 10800,
+    "pct_of_100k": 10.8,
+    "ytr": 15,
+    "yrs": 30
+   },
+   {
+    "id": "S236",
+    "dc": 8900,
+    "pct_of_100k": 8.9,
+    "ytr": 44,
+    "yrs": 31
+   },
+   {
+    "id": "S238",
+    "dc": 1500,
+    "pct_of_100k": 1.5,
+    "ytr": 20,
+    "yrs": 33
+   },
+   {
+    "id": "S242",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 10,
+    "yrs": 35
+   },
+   {
+    "id": "S243",
+    "dc": 5500,
+    "pct_of_100k": 5.5,
+    "ytr": 11,
+    "yrs": 21
+   },
+   {
+    "id": "S237",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 25,
+    "yrs": 37
+   },
+   {
+    "id": "S249",
+    "dc": 3800,
+    "pct_of_100k": 3.8,
+    "ytr": 0,
+    "yrs": 22
+   },
+   {
+    "id": "S248",
+    "dc": 6800,
+    "pct_of_100k": 6.8,
+    "ytr": 8,
+    "yrs": 29
+   },
+   {
+    "id": "S250",
+    "dc": 8100,
+    "pct_of_100k": 8.1,
+    "ytr": 41,
+    "yrs": 31
+   },
+   {
+    "id": "S244",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 36,
+    "yrs": 35
+   },
+   {
+    "id": "S251",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 7,
+    "yrs": 38
+   },
+   {
+    "id": "S253",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 19,
+    "yrs": 20
+   },
+   {
+    "id": "S257",
+    "dc": 3900,
+    "pct_of_100k": 3.9,
+    "ytr": 0,
+    "yrs": 27
+   },
+   {
+    "id": "S256",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 45,
+    "yrs": 24
+   },
+   {
+    "id": "S258",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 20,
+    "yrs": 34
+   },
+   {
+    "id": "S254",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 42,
+    "yrs": 32
+   },
+   {
+    "id": "S262",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 0,
+    "yrs": 35
+   },
+   {
+    "id": "S264",
+    "dc": 15400,
+    "pct_of_100k": 15.4,
+    "ytr": 1,
+    "yrs": 29
+   },
+   {
+    "id": "S266",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S261",
+    "dc": 7600,
+    "pct_of_100k": 7.6,
+    "ytr": 35,
+    "yrs": 28
+   },
+   {
+    "id": "S267",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S269",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 0,
+    "yrs": 18
+   },
+   {
+    "id": "S263",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 35,
+    "yrs": 34
+   },
+   {
+    "id": "S268",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 11,
+    "yrs": 31
+   },
+   {
+    "id": "S274",
+    "dc": 6300,
+    "pct_of_100k": 6.3,
+    "ytr": 4,
+    "yrs": 29
+   },
+   {
+    "id": "S272",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 27,
+    "yrs": 33
+   },
+   {
+    "id": "S270",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 23,
+    "yrs": 33
+   },
+   {
+    "id": "S278",
+    "dc": 6600,
+    "pct_of_100k": 6.6,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "S279",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S273",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 4,
+    "yrs": 30
+   },
+   {
+    "id": "S277",
+    "dc": 0,
+    "pct_of_100k": 0.0,
+    "ytr": 33,
+    "yrs": 27
+   },
+   {
+    "id": "S283",
+    "dc": 6500,
+    "pct_of_100k": 6.5,
+    "ytr": 0,
+    "yrs": 18
+   },
+   {
+    "id": "S276",
+    "dc": 7000,
+    "pct_of_100k": 7.0,
+    "ytr": 15,
+    "yrs": 31
+   },
+   {
+    "id": "S281",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 18,
+    "yrs": 34
+   },
+   {
+    "id": "S280",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 15,
+    "yrs": 25
+   },
+   {
+    "id": "S287",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S288",
+    "dc": 6100,
+    "pct_of_100k": 6.1,
+    "ytr": 0,
+    "yrs": 16
+   },
+   {
+    "id": "S286",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 4,
+    "yrs": 26
+   },
+   {
+    "id": "S285",
+    "dc": 2400,
+    "pct_of_100k": 2.4,
+    "ytr": 39,
+    "yrs": 29
+   },
+   {
+    "id": "S292",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 1,
+    "yrs": 33
+   },
+   {
+    "id": "S290",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 5,
+    "yrs": 35
+   },
+   {
+    "id": "S284",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 37,
+    "yrs": 34
+   },
+   {
+    "id": "S297",
+    "dc": 6200,
+    "pct_of_100k": 6.2,
+    "ytr": 0,
+    "yrs": 28
+   },
+   {
+    "id": "S296",
+    "dc": 6400,
+    "pct_of_100k": 6.4,
+    "ytr": 27,
+    "yrs": 28
+   },
+   {
+    "id": "S289",
+    "dc": 6900,
+    "pct_of_100k": 6.9,
+    "ytr": 39,
+    "yrs": 32
+   },
+   {
+    "id": "S295",
+    "dc": 700,
+    "pct_of_100k": 0.7,
+    "ytr": 19,
+    "yrs": 35
+   },
+   {
+    "id": "S300",
+    "dc": 200,
+    "pct_of_100k": 0.2,
+    "ytr": 38,
+    "yrs": 31
+   },
+   {
+    "id": "sample:e20",
+    "dc": 4700,
+    "pct_of_100k": 4.7,
+    "ytr": 0,
+    "yrs": 27
+   },
+   {
+    "id": "sample:s011",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 3,
+    "yrs": 25
+   },
+   {
+    "id": "sample:e28",
+    "dc": 3400,
+    "pct_of_100k": 3.4,
+    "ytr": 0,
+    "yrs": 37
+   },
+   {
+    "id": "sample:s071",
+    "dc": 3500,
+    "pct_of_100k": 3.5,
+    "ytr": 12,
+    "yrs": 41
+   },
+   {
+    "id": "sample:s055",
+    "dc": 5300,
+    "pct_of_100k": 5.3,
+    "ytr": 3,
+    "yrs": 33
+   },
+   {
+    "id": "sample:e09",
+    "dc": 6900,
+    "pct_of_100k": 6.9,
+    "ytr": 32,
+    "yrs": 30
+   },
+   {
+    "id": "sample:e18",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 0,
+    "yrs": 24
+   },
+   {
+    "id": "sample:young",
+    "dc": 6500,
+    "pct_of_100k": 6.5,
+    "ytr": 31,
+    "yrs": 33
+   },
+   {
+    "id": "sample:s059",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 0,
+    "yrs": 17
+   },
+   {
+    "id": "sample:e11",
+    "dc": 6300,
+    "pct_of_100k": 6.3,
+    "ytr": 21,
+    "yrs": 27
+   },
+   {
+    "id": "E24_teen_kids_college",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 16,
+    "yrs": 32
+   },
+   {
+    "id": "E21_smoker_poor_health",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 10,
+    "yrs": 24
+   },
+   {
+    "id": "E27_max_contributions_high_earner",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 19,
+    "yrs": 35
+   },
+   {
+    "id": "E01_age_gap_25",
+    "dc": 3000,
+    "pct_of_100k": 3.0,
+    "ytr": 4,
+    "yrs": 54
+   },
+   {
+    "id": "E26_heloc_and_boat",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 6,
+    "yrs": 29
+   },
+   {
+    "id": "N02_business_owner_sale",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 9,
+    "yrs": 35
+   },
+   {
+    "id": "S023",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 10,
+    "yrs": 26
+   },
+   {
+    "id": "S037",
+    "dc": 5700,
+    "pct_of_100k": 5.7,
+    "ytr": 0,
+    "yrs": 20
+   },
+   {
+    "id": "S039",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S056",
+    "dc": 4400,
+    "pct_of_100k": 4.4,
+    "ytr": 11,
+    "yrs": 28
+   },
+   {
+    "id": "S015",
+    "dc": 5600,
+    "pct_of_100k": 5.6,
+    "ytr": 21,
+    "yrs": 30
+   },
+   {
+    "id": "S092",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 1,
+    "yrs": 33
+   },
+   {
+    "id": "S083",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 25,
+    "yrs": 31
+   },
+   {
+    "id": "S087",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 9,
+    "yrs": 33
+   },
+   {
+    "id": "S121",
+    "dc": 7600,
+    "pct_of_100k": 7.6,
+    "ytr": 1,
+    "yrs": 33
+   },
+   {
+    "id": "S126",
+    "dc": 4000,
+    "pct_of_100k": 4.0,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "S139",
+    "dc": 4600,
+    "pct_of_100k": 4.6,
+    "ytr": 1,
+    "yrs": 27
+   },
+   {
+    "id": "S153",
+    "dc": 5100,
+    "pct_of_100k": 5.1,
+    "ytr": 1,
+    "yrs": 27
+   },
+   {
+    "id": "S118",
+    "dc": 6700,
+    "pct_of_100k": 6.7,
+    "ytr": 26,
+    "yrs": 31
+   },
+   {
+    "id": "S173",
+    "dc": 7800,
+    "pct_of_100k": 7.8,
+    "ytr": 6,
+    "yrs": 30
+   },
+   {
+    "id": "S162",
+    "dc": 7400,
+    "pct_of_100k": 7.4,
+    "ytr": 35,
+    "yrs": 29
+   },
+   {
+    "id": "S185",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 8,
+    "yrs": 25
+   },
+   {
+    "id": "S217",
+    "dc": 4900,
+    "pct_of_100k": 4.9,
+    "ytr": 13,
+    "yrs": 30
+   },
+   {
+    "id": "S255",
+    "dc": 9100,
+    "pct_of_100k": 9.1,
+    "ytr": 4,
+    "yrs": 31
+   },
+   {
+    "id": "S252",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 15,
+    "yrs": 30
+   },
+   {
+    "id": "S247",
+    "dc": 5400,
+    "pct_of_100k": 5.4,
+    "ytr": 18,
+    "yrs": 29
+   },
+   {
+    "id": "S275",
+    "dc": 5200,
+    "pct_of_100k": 5.2,
+    "ytr": 0,
+    "yrs": 23
+   },
+   {
+    "id": "S293",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 0,
+    "yrs": 21
+   },
+   {
+    "id": "S260",
+    "dc": 4500,
+    "pct_of_100k": 4.5,
+    "ytr": 0,
+    "yrs": 30
+   },
+   {
+    "id": "S294",
+    "dc": 4900,
+    "pct_of_100k": 4.9,
+    "ytr": 1,
+    "yrs": 23
+   },
+   {
+    "id": "S299",
+    "dc": 5000,
+    "pct_of_100k": 5.0,
+    "ytr": 0,
+    "yrs": 27
+   },
+   {
+    "id": "S265",
+    "dc": 4300,
+    "pct_of_100k": 4.3,
+    "ytr": 2,
+    "yrs": 32
+   },
+   {
+    "id": "sample:s039",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 0,
+    "yrs": 31
+   },
+   {
+    "id": "sample:e27",
+    "dc": 4100,
+    "pct_of_100k": 4.1,
+    "ytr": 19,
+    "yrs": 35
+   },
+   {
+    "id": "sample:doctor",
+    "dc": 4200,
+    "pct_of_100k": 4.2,
+    "ytr": 17,
+    "yrs": 36
+   },
+   {
+    "id": "sample:e24",
+    "dc": 4800,
+    "pct_of_100k": 4.8,
+    "ytr": 16,
+    "yrs": 32
+   },
+   {
+    "id": "sample:s083",
+    "dc": 5800,
+    "pct_of_100k": 5.8,
+    "ytr": 25,
+    "yrs": 31
+   }
+  ],
+  "claim_at_retirement": [
+   {
+    "id": "E02_age_gap_25_older_partner",
+    "label": "Age 35 with a 60-year-old partner (partner older by 25)",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 660000.0,
+    "count_on_plan": 124800.0,
+    "count_on_early": 108000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 2603000.0
+   },
+   {
+    "id": "E03_no_savings",
+    "label": "Age 40, no savings, steady job",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 0.0,
+    "count_on_plan": 31000.0,
+    "count_on_early": 29300.0,
+    "basics_plan": 48,
+    "basics_early": 32,
+    "median_at_retirement": 147000.0
+   },
+   {
+    "id": "E05_very_wealthy",
+    "label": "Age 50, very wealthy: $18M, wants $400k a year",
+    "plan_claim": 69,
+    "retire": 60,
+    "savings": 15400000.0,
+    "count_on_plan": 569600.0,
+    "count_on_early": 566800.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 22277000.0
+   },
+   {
+    "id": "E09_single_mom_2_kids",
+    "label": "Age 34, single parent, two kids, renting",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 10500.0,
+    "count_on_plan": 31900.0,
+    "count_on_early": 29800.0,
+    "basics_plan": 99,
+    "basics_early": 93,
+    "median_at_retirement": 399000.0
+   },
+   {
+    "id": "E10_renter_growing_student_loan",
+    "label": "Age 29 renter, student loan that grows (payment below interest)",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 12000.0,
+    "count_on_plan": 31100.0,
+    "count_on_early": 28200.0,
+    "basics_plan": 65,
+    "basics_early": 49,
+    "median_at_retirement": 363000.0
+   },
+   {
+    "id": "E12_early_retiree_45",
+    "label": "Age 45, wants to retire now on $60k",
+    "plan_claim": 70,
+    "retire": 46,
+    "savings": 980000.0,
+    "count_on_plan": 36600.0,
+    "count_on_early": 34600.0,
+    "basics_plan": 94,
+    "basics_early": 87,
+    "median_at_retirement": 1040000.0
+   },
+   {
+    "id": "E11_growing_card_debt",
+    "label": "Age 45, credit cards at 26% with payments below the interest",
+    "plan_claim": 68,
+    "retire": 66,
+    "savings": 15500.0,
+    "count_on_plan": 23300.0,
+    "count_on_early": 22200.0,
+    "basics_plan": 1,
+    "basics_early": 1,
+    "median_at_retirement": 97000.0
+   },
+   {
+    "id": "E16_bracket_gains",
+    "label": "Age 62, high bracket with a large brokerage account and low basis",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 4350000.0,
+    "count_on_plan": 233700.0,
+    "count_on_early": 226000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 4855000.0
+   },
+   {
+    "id": "E17_low_income",
+    "label": "Age 52, low income, Social Security is the plan",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 6800.0,
+    "count_on_plan": 18100.0,
+    "count_on_early": 17200.0,
+    "basics_plan": 29,
+    "basics_early": 18,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "E23_wants_guaranteed_income",
+    "label": "Age 63 who wants guaranteed income",
+    "plan_claim": 70,
+    "retire": 63,
+    "savings": 590000.0,
+    "count_on_plan": 39300.0,
+    "count_on_early": 35300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 590000.0
+   },
+   {
+    "id": "E22_legacy_goal",
+    "label": "Age 60 who wants to leave $1M to children",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 1450000.0,
+    "count_on_plan": 80500.0,
+    "count_on_early": 75300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1825000.0
+   },
+   {
+    "id": "E19_young_start_22",
+    "label": "Age 22, first job, student loans, nothing saved",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 1200.0,
+    "count_on_plan": 30900.0,
+    "count_on_early": 29600.0,
+    "basics_plan": 100,
+    "basics_early": 98,
+    "median_at_retirement": 261000.0
+   },
+   {
+    "id": "E25_underwater_mortgage_arm",
+    "label": "Age 44, mortgage larger than the home is worth",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 46000.0,
+    "count_on_plan": 26900.0,
+    "count_on_early": 26000.0,
+    "basics_plan": 97,
+    "basics_early": 99,
+    "median_at_retirement": 234000.0
+   },
+   {
+    "id": "E28_couple_one_retired",
+    "label": "Age 66 retired, partner 58 still working",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 640000.0,
+    "count_on_plan": 81600.0,
+    "count_on_early": 77300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 640000.0
+   },
+   {
+    "id": "E29_high_spender_low_income",
+    "label": "Age 36 wants $120k a year in retirement on a $70k salary",
+    "plan_claim": 66,
+    "retire": 60,
+    "savings": 38000.0,
+    "count_on_plan": 25300.0,
+    "count_on_early": 23900.0,
+    "basics_plan": 14,
+    "basics_early": 12,
+    "median_at_retirement": 347000.0
+   },
+   {
+    "id": "E30_divorced_dependents",
+    "label": "Age 47, divorced parent of two, pays alimony-free, small savings",
+    "plan_claim": 67,
+    "retire": 66,
+    "savings": 61000.0,
+    "count_on_plan": 27800.0,
+    "count_on_early": 27200.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 67000.0
+   },
+   {
+    "id": "N01_self_employed_sched_c",
+    "label": "Age 44, self-employed (Schedule C, $95k profit), SEP-IRA, buys her own health cover",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 195000.0,
+    "count_on_plan": 50200.0,
+    "count_on_early": 46700.0,
+    "basics_plan": 99,
+    "basics_early": 96,
+    "median_at_retirement": 847000.0
+   },
+   {
+    "id": "N03_equity_comp_rsu_espp",
+    "label": "Age 33, tech job: $175k pay, $70k a year of RSUs for 4 years, ESPP, $220k in employer stock",
+    "plan_claim": 70,
+    "retire": 58,
+    "savings": 355000.0,
+    "count_on_plan": 91300.0,
+    "count_on_early": 86500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 2742000.0
+   },
+   {
+    "id": "N05_divorced_pays_support",
+    "label": "Age 49, divorced, pays $2,000 a month alimony to 56 and $1,300 child support to 57",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 195000.0,
+    "count_on_plan": 59100.0,
+    "count_on_early": 57300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 717000.0
+   },
+   {
+    "id": "N08_pension_takes_lump_sum",
+    "label": "Age 60, same pension taken as a $470,000 lump sum rolled into an IRA",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 733000.0,
+    "count_on_plan": 54800.0,
+    "count_on_early": 48200.0,
+    "basics_plan": 100,
+    "basics_early": 97,
+    "median_at_retirement": 788000.0
+   },
+   {
+    "id": "N06_divorced_receives_support",
+    "label": "Age 41, divorced, two children, receives alimony for 5 years and child support for 10",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 68000.0,
+    "count_on_plan": 27100.0,
+    "count_on_early": 25600.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 78000.0
+   },
+   {
+    "id": "N07_pension_takes_annuity",
+    "label": "Age 60, pension of $38,000 a year from 62 (takes the monthly pension)",
+    "plan_claim": 68,
+    "retire": 62,
+    "savings": 290000.0,
+    "count_on_plan": 60400.0,
+    "count_on_early": 56200.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 331000.0
+   },
+   {
+    "id": "S001",
+    "label": "41F, +partner 45, 1 kids, $64k pay, rent",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 112900.0,
+    "count_on_plan": 38500.0,
+    "count_on_early": 32700.0,
+    "basics_plan": 37,
+    "basics_early": 30,
+    "median_at_retirement": 342000.0
+   },
+   {
+    "id": "S006",
+    "label": "33F, 1 kids, $14k pay, rent",
+    "plan_claim": 62,
+    "retire": 68,
+    "savings": 28600.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S004",
+    "label": "57F, $22k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 76500.0,
+    "count_on_plan": 15400.0,
+    "count_on_early": 13900.0,
+    "basics_plan": 64,
+    "basics_early": 32,
+    "median_at_retirement": 90000.0
+   },
+   {
+    "id": "S005",
+    "label": "36F, $48k pay, own",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 33400.0,
+    "count_on_plan": 29100.0,
+    "count_on_early": 27200.0,
+    "basics_plan": 99,
+    "basics_early": 96,
+    "median_at_retirement": 386000.0
+   },
+   {
+    "id": "S011",
+    "label": "66F, $130k pay, own",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 702700.0,
+    "count_on_plan": 77800.0,
+    "count_on_early": 76400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 799000.0
+   },
+   {
+    "id": "S007",
+    "label": "24F, +partner 20, $49k pay, rent",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 72700.0,
+    "count_on_plan": 25800.0,
+    "count_on_early": 22400.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 31000.0
+   },
+   {
+    "id": "S010",
+    "label": "47M, +partner 47, $86k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 168000.0,
+    "count_on_plan": 38600.0,
+    "count_on_early": 36400.0,
+    "basics_plan": 92,
+    "basics_early": 84,
+    "median_at_retirement": 415000.0
+   },
+   {
+    "id": "S016",
+    "label": "51M, +partner 44, $68k pay, own",
+    "plan_claim": 70,
+    "retire": 60,
+    "savings": 52700.0,
+    "count_on_plan": 75500.0,
+    "count_on_early": 69200.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 385000.0
+   },
+   {
+    "id": "S021",
+    "label": "48F, +partner 41, $61k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 5800.0,
+    "count_on_plan": 52900.0,
+    "count_on_early": 50600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 233000.0
+   },
+   {
+    "id": "S024",
+    "label": "35F, +partner 34, $78k pay, own",
+    "plan_claim": 67,
+    "retire": 55,
+    "savings": 94600.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 91000.0
+   },
+   {
+    "id": "S026",
+    "label": "62F, +partner 68, $40k pay, own",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 203100.0,
+    "count_on_plan": 43800.0,
+    "count_on_early": 43700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 248000.0
+   },
+   {
+    "id": "S025",
+    "label": "51M, +partner 51, $58k pay, rent",
+    "plan_claim": 68,
+    "retire": 59,
+    "savings": 35200.0,
+    "count_on_plan": 42500.0,
+    "count_on_early": 35800.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 86000.0
+   },
+   {
+    "id": "S030",
+    "label": "38F, 2 kids, $87k pay, own",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 59800.0,
+    "count_on_plan": 39000.0,
+    "count_on_early": 38400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 610000.0
+   },
+   {
+    "id": "S022",
+    "label": "34F, $93k pay, rent",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 13900.0,
+    "count_on_plan": 40700.0,
+    "count_on_early": 39100.0,
+    "basics_plan": 86,
+    "basics_early": 83,
+    "median_at_retirement": 888000.0
+   },
+   {
+    "id": "S028",
+    "label": "32M, $32k pay, own",
+    "plan_claim": 67,
+    "retire": 61,
+    "savings": 19800.0,
+    "count_on_plan": 5500.0,
+    "count_on_early": 5000.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 97000.0
+   },
+   {
+    "id": "S033",
+    "label": "57F, +partner 61, $40k pay, own",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 22100.0,
+    "count_on_plan": 28900.0,
+    "count_on_early": 26800.0,
+    "basics_plan": 64,
+    "basics_early": 23,
+    "median_at_retirement": 53000.0
+   },
+   {
+    "id": "S036",
+    "label": "29M, $50k pay, rent",
+    "plan_claim": 62,
+    "retire": 63,
+    "savings": 7600.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S032",
+    "label": "23F, +partner 29, $34k pay, rent",
+    "plan_claim": 69,
+    "retire": 61,
+    "savings": 36500.0,
+    "count_on_plan": 38400.0,
+    "count_on_early": 33500.0,
+    "basics_plan": 68,
+    "basics_early": 60,
+    "median_at_retirement": 879000.0
+   },
+   {
+    "id": "S043",
+    "label": "62F, +partner 62, retired, own",
+    "plan_claim": 63,
+    "retire": 62,
+    "savings": 123600.0,
+    "count_on_plan": 30400.0,
+    "count_on_early": 29900.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 124000.0
+   },
+   {
+    "id": "S042",
+    "label": "26F, +partner 20, $42k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 9600.0,
+    "count_on_plan": 21800.0,
+    "count_on_early": 20700.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 29000.0
+   },
+   {
+    "id": "S048",
+    "label": "49F, $214k pay, own",
+    "plan_claim": 69,
+    "retire": 68,
+    "savings": 73500.0,
+    "count_on_plan": 111500.0,
+    "count_on_early": 110000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1781000.0
+   },
+   {
+    "id": "S049",
+    "label": "39F, +partner 40, $53k pay, rent",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 29100.0,
+    "count_on_plan": 56400.0,
+    "count_on_early": 54300.0,
+    "basics_plan": 99,
+    "basics_early": 98,
+    "median_at_retirement": 683000.0
+   },
+   {
+    "id": "S052",
+    "label": "65M, +partner 64, retired, own",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 803000.0,
+    "count_on_plan": 85800.0,
+    "count_on_early": 84400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 803000.0
+   },
+   {
+    "id": "S051",
+    "label": "61F, +partner 65, $210k pay, rent",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 2111300.0,
+    "count_on_plan": 141500.0,
+    "count_on_early": 130600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 2199000.0
+   },
+   {
+    "id": "S060",
+    "label": "63F, +partner 61, retired, own",
+    "plan_claim": 64,
+    "retire": 63,
+    "savings": 98500.0,
+    "count_on_plan": 30900.0,
+    "count_on_early": 30700.0,
+    "basics_plan": 1,
+    "basics_early": 6,
+    "median_at_retirement": 98000.0
+   },
+   {
+    "id": "S057",
+    "label": "44F, $105k pay, own",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 4300.0,
+    "count_on_plan": 37400.0,
+    "count_on_early": 33300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 307000.0
+   },
+   {
+    "id": "S064",
+    "label": "30M, $56k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 12100.0,
+    "count_on_plan": 11600.0,
+    "count_on_early": 10700.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 120000.0
+   },
+   {
+    "id": "S053",
+    "label": "30F, +partner 26, $54k pay, rent",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 25500.0,
+    "count_on_plan": 54900.0,
+    "count_on_early": 49600.0,
+    "basics_plan": 58,
+    "basics_early": 46,
+    "median_at_retirement": 654000.0
+   },
+   {
+    "id": "S069",
+    "label": "50M, $22k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 105300.0,
+    "count_on_plan": 19500.0,
+    "count_on_early": 18500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 200000.0
+   },
+   {
+    "id": "S071",
+    "label": "50M, +partner 44, 1 kids, $94k pay, own",
+    "plan_claim": 69,
+    "retire": 62,
+    "savings": 1056300.0,
+    "count_on_plan": 91300.0,
+    "count_on_early": 83700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1599000.0
+   },
+   {
+    "id": "S076",
+    "label": "25M, $67k pay, rent",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 88300.0,
+    "count_on_plan": 14600.0,
+    "count_on_early": 14400.0,
+    "basics_plan": 23,
+    "basics_early": 22,
+    "median_at_retirement": 474000.0
+   },
+   {
+    "id": "S078",
+    "label": "22M, +partner 20, $40k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 10500.0,
+    "count_on_plan": 40000.0,
+    "count_on_early": 39400.0,
+    "basics_plan": 79,
+    "basics_early": 78,
+    "median_at_retirement": 991000.0
+   },
+   {
+    "id": "S084",
+    "label": "22M, $22k pay, own",
+    "plan_claim": 62,
+    "retire": 65,
+    "savings": 700.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S088",
+    "label": "48F, $144k pay, rent",
+    "plan_claim": 70,
+    "retire": 63,
+    "savings": 322000.0,
+    "count_on_plan": 75700.0,
+    "count_on_early": 71700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1271000.0
+   },
+   {
+    "id": "S094",
+    "label": "51M, +partner 45, $76k pay, own",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 802800.0,
+    "count_on_plan": 77500.0,
+    "count_on_early": 75600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1543000.0
+   },
+   {
+    "id": "S093",
+    "label": "41M, +partner 41, $19k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 37000.0,
+    "count_on_plan": 64400.0,
+    "count_on_early": 63200.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 975000.0
+   },
+   {
+    "id": "S096",
+    "label": "58M, +partner 52, $143k pay, own",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 194400.0,
+    "count_on_plan": 60800.0,
+    "count_on_early": 55200.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 417000.0
+   },
+   {
+    "id": "S099",
+    "label": "56F, +partner 59, 1 kids, $121k pay, own",
+    "plan_claim": 68,
+    "retire": 64,
+    "savings": 325200.0,
+    "count_on_plan": 52100.0,
+    "count_on_early": 46400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 444000.0
+   },
+   {
+    "id": "S090",
+    "label": "34M, +partner 39, $82k pay, rent",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 11800.0,
+    "count_on_plan": 66300.0,
+    "count_on_early": 62000.0,
+    "basics_plan": 94,
+    "basics_early": 89,
+    "median_at_retirement": 985000.0
+   },
+   {
+    "id": "S098",
+    "label": "39F, $78k pay, own",
+    "plan_claim": 63,
+    "retire": 62,
+    "savings": 1900.0,
+    "count_on_plan": 14600.0,
+    "count_on_early": 14200.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 80000.0
+   },
+   {
+    "id": "S104",
+    "label": "34F, $16k pay, rent",
+    "plan_claim": 62,
+    "retire": 70,
+    "savings": 43600.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S108",
+    "label": "44M, +partner 43, 3 kids, $94k pay, own",
+    "plan_claim": 65,
+    "retire": 62,
+    "savings": 175600.0,
+    "count_on_plan": 37400.0,
+    "count_on_early": 36000.0,
+    "basics_plan": 94,
+    "basics_early": 85,
+    "median_at_retirement": 251000.0
+   },
+   {
+    "id": "S105",
+    "label": "30M, +partner 26, 2 kids, $25k pay, rent",
+    "plan_claim": 64,
+    "retire": 67,
+    "savings": 23800.0,
+    "count_on_plan": 12800.0,
+    "count_on_early": 11300.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 25000.0
+   },
+   {
+    "id": "S101",
+    "label": "32M, +partner 24, $34k pay, rent",
+    "plan_claim": 69,
+    "retire": 62,
+    "savings": 89600.0,
+    "count_on_plan": 33200.0,
+    "count_on_early": 30000.0,
+    "basics_plan": 22,
+    "basics_early": 17,
+    "median_at_retirement": 367000.0
+   },
+   {
+    "id": "S109",
+    "label": "41M, +partner 39, $130k pay, own",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 63000.0,
+    "count_on_plan": 83100.0,
+    "count_on_early": 75100.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 591000.0
+   },
+   {
+    "id": "S106",
+    "label": "22M, $34k pay, rent",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 4100.0,
+    "count_on_plan": 4900.0,
+    "count_on_early": 4800.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 139000.0
+   },
+   {
+    "id": "S111",
+    "label": "63F, +partner 64, retired, rent",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 273600.0,
+    "count_on_plan": 38600.0,
+    "count_on_early": 34000.0,
+    "basics_plan": 99,
+    "basics_early": 62,
+    "median_at_retirement": 274000.0
+   },
+   {
+    "id": "S114",
+    "label": "65F, +partner 64, $96k pay, rent",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 898300.0,
+    "count_on_plan": 85700.0,
+    "count_on_early": 81700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 926000.0
+   },
+   {
+    "id": "S115",
+    "label": "50F, +partner 51, 2 kids, $60k pay, own",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 139200.0,
+    "count_on_plan": 76800.0,
+    "count_on_early": 73400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 559000.0
+   },
+   {
+    "id": "S110",
+    "label": "31F, +partner 33, 2 kids, $86k pay, own",
+    "plan_claim": 69,
+    "retire": 60,
+    "savings": 38400.0,
+    "count_on_plan": 39800.0,
+    "count_on_early": 34800.0,
+    "basics_plan": 71,
+    "basics_early": 56,
+    "median_at_retirement": 625000.0
+   },
+   {
+    "id": "S116",
+    "label": "58M, $71k pay, rent",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 241500.0,
+    "count_on_plan": 31300.0,
+    "count_on_early": 29200.0,
+    "basics_plan": 2,
+    "basics_early": 0,
+    "median_at_retirement": 267000.0
+   },
+   {
+    "id": "S113",
+    "label": "29F, 1 kids, $112k pay, own",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 29400.0,
+    "count_on_plan": 35200.0,
+    "count_on_early": 32700.0,
+    "basics_plan": 98,
+    "basics_early": 96,
+    "median_at_retirement": 896000.0
+   },
+   {
+    "id": "S119",
+    "label": "57F, +partner 63, $86k pay, rent",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 231600.0,
+    "count_on_plan": 36600.0,
+    "count_on_early": 31500.0,
+    "basics_plan": 3,
+    "basics_early": 1,
+    "median_at_retirement": 311000.0
+   },
+   {
+    "id": "S120",
+    "label": "44F, +partner 46, 4 kids, $103k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 266700.0,
+    "count_on_plan": 104400.0,
+    "count_on_early": 98500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1514000.0
+   },
+   {
+    "id": "S124",
+    "label": "40M, +partner 35, 2 kids, $66k pay, rent",
+    "plan_claim": 68,
+    "retire": 64,
+    "savings": 90000.0,
+    "count_on_plan": 25800.0,
+    "count_on_early": 24000.0,
+    "basics_plan": 34,
+    "basics_early": 27,
+    "median_at_retirement": 148000.0
+   },
+   {
+    "id": "S123",
+    "label": "33M, $73k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 10700.0,
+    "count_on_plan": 20000.0,
+    "count_on_early": 19200.0,
+    "basics_plan": 1,
+    "basics_early": 1,
+    "median_at_retirement": 161000.0
+   },
+   {
+    "id": "S128",
+    "label": "49M, +partner 51, $24k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 210500.0,
+    "count_on_plan": 37800.0,
+    "count_on_early": 33800.0,
+    "basics_plan": 76,
+    "basics_early": 54,
+    "median_at_retirement": 281000.0
+   },
+   {
+    "id": "S137",
+    "label": "58M, +partner 55, $19k pay, own",
+    "plan_claim": 67,
+    "retire": 60,
+    "savings": 225800.0,
+    "count_on_plan": 14000.0,
+    "count_on_early": 12600.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 185000.0
+   },
+   {
+    "id": "S134",
+    "label": "60M, $36k pay, own",
+    "plan_claim": 65,
+    "retire": 63,
+    "savings": 1414700.0,
+    "count_on_plan": 68700.0,
+    "count_on_early": 68600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1465000.0
+   },
+   {
+    "id": "S138",
+    "label": "57F, +partner 59, $29k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 169300.0,
+    "count_on_plan": 42400.0,
+    "count_on_early": 36700.0,
+    "basics_plan": 78,
+    "basics_early": 39,
+    "median_at_retirement": 242000.0
+   },
+   {
+    "id": "S141",
+    "label": "44M, +partner 44, 1 kids, $43k pay, own",
+    "plan_claim": 67,
+    "retire": 64,
+    "savings": 146300.0,
+    "count_on_plan": 28000.0,
+    "count_on_early": 26400.0,
+    "basics_plan": 4,
+    "basics_early": 8,
+    "median_at_retirement": 107000.0
+   },
+   {
+    "id": "S150",
+    "label": "35F, 2 kids, $76k pay, rent",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 50300.0,
+    "count_on_plan": 25900.0,
+    "count_on_early": 23800.0,
+    "basics_plan": 71,
+    "basics_early": 64,
+    "median_at_retirement": 645000.0
+   },
+   {
+    "id": "S148",
+    "label": "37M, +partner 33, 1 kids, $75k pay, rent",
+    "plan_claim": 69,
+    "retire": 62,
+    "savings": 107800.0,
+    "count_on_plan": 49300.0,
+    "count_on_early": 44800.0,
+    "basics_plan": 83,
+    "basics_early": 74,
+    "median_at_retirement": 839000.0
+   },
+   {
+    "id": "S151",
+    "label": "42M, +partner 39, 2 kids, $67k pay, rent",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 87700.0,
+    "count_on_plan": 46700.0,
+    "count_on_early": 44800.0,
+    "basics_plan": 56,
+    "basics_early": 59,
+    "median_at_retirement": 426000.0
+   },
+   {
+    "id": "S158",
+    "label": "60M, $82k pay, rent",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 169900.0,
+    "count_on_plan": 32100.0,
+    "count_on_early": 30500.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 181000.0
+   },
+   {
+    "id": "S157",
+    "label": "36M, +partner 38, 2 kids, $76k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 311400.0,
+    "count_on_plan": 62500.0,
+    "count_on_early": 59700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1189000.0
+   },
+   {
+    "id": "S159",
+    "label": "55M, $190k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 138100.0,
+    "count_on_plan": 75200.0,
+    "count_on_early": 71300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 938000.0
+   },
+   {
+    "id": "S161",
+    "label": "68M, +partner 69, $78k pay, own",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 283600.0,
+    "count_on_plan": 58600.0,
+    "count_on_early": 58900.0,
+    "basics_plan": 100,
+    "basics_early": 99,
+    "median_at_retirement": 284000.0
+   },
+   {
+    "id": "S164",
+    "label": "64M, $52k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 3597600.0,
+    "count_on_plan": 164200.0,
+    "count_on_early": 161400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 3691000.0
+   },
+   {
+    "id": "S163",
+    "label": "47M, +partner 45, $51k pay, own",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 116700.0,
+    "count_on_plan": 70300.0,
+    "count_on_early": 64400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 937000.0
+   },
+   {
+    "id": "S169",
+    "label": "47F, +partner 49, $77k pay, own",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 139200.0,
+    "count_on_plan": 54700.0,
+    "count_on_early": 48600.0,
+    "basics_plan": 100,
+    "basics_early": 99,
+    "median_at_retirement": 498000.0
+   },
+   {
+    "id": "S167",
+    "label": "33M, +partner 38, $28k pay, own",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 140800.0,
+    "count_on_plan": 47400.0,
+    "count_on_early": 42500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1060000.0
+   },
+   {
+    "id": "S172",
+    "label": "33F, $160k pay, rent",
+    "plan_claim": 68,
+    "retire": 65,
+    "savings": 910600.0,
+    "count_on_plan": 108400.0,
+    "count_on_early": 106700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 4548000.0
+   },
+   {
+    "id": "S171",
+    "label": "59F, +partner 56, 2 kids, $80k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 66600.0,
+    "count_on_plan": 81800.0,
+    "count_on_early": 74200.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 313000.0
+   },
+   {
+    "id": "S174",
+    "label": "57M, $52k pay, own",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 93100.0,
+    "count_on_plan": 30400.0,
+    "count_on_early": 29400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 201000.0
+   },
+   {
+    "id": "S178",
+    "label": "58F, +partner 61, $36k pay, own",
+    "plan_claim": 65,
+    "retire": 60,
+    "savings": 52600.0,
+    "count_on_plan": 20900.0,
+    "count_on_early": 19100.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 61000.0
+   },
+   {
+    "id": "S180",
+    "label": "36F, +partner 34, $52k pay, own",
+    "plan_claim": 63,
+    "retire": 65,
+    "savings": 51300.0,
+    "count_on_plan": 12300.0,
+    "count_on_early": 6600.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S179",
+    "label": "48M, +partner 48, $56k pay, rent",
+    "plan_claim": 65,
+    "retire": 61,
+    "savings": 135400.0,
+    "count_on_plan": 27100.0,
+    "count_on_early": 25600.0,
+    "basics_plan": 2,
+    "basics_early": 2,
+    "median_at_retirement": 271000.0
+   },
+   {
+    "id": "S181",
+    "label": "63M, +partner 56, retired, rent",
+    "plan_claim": 65,
+    "retire": 63,
+    "savings": 25700.0,
+    "count_on_plan": 33100.0,
+    "count_on_early": 31800.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 26000.0
+   },
+   {
+    "id": "S184",
+    "label": "64F, +partner 69, retired, rent",
+    "plan_claim": 65,
+    "retire": 64,
+    "savings": 24100.0,
+    "count_on_plan": 21400.0,
+    "count_on_early": 19400.0,
+    "basics_plan": 100,
+    "basics_early": 96,
+    "median_at_retirement": 24000.0
+   },
+   {
+    "id": "S177",
+    "label": "38F, +partner 42, $33k pay, rent",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 41900.0,
+    "count_on_plan": 28200.0,
+    "count_on_early": 24200.0,
+    "basics_plan": 70,
+    "basics_early": 53,
+    "median_at_retirement": 393000.0
+   },
+   {
+    "id": "S182",
+    "label": "42F, +partner 41, $120k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 53700.0,
+    "count_on_plan": 72700.0,
+    "count_on_early": 68300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 820000.0
+   },
+   {
+    "id": "S183",
+    "label": "27M, +partner 24, $48k pay, rent",
+    "plan_claim": 68,
+    "retire": 64,
+    "savings": 56500.0,
+    "count_on_plan": 40100.0,
+    "count_on_early": 38500.0,
+    "basics_plan": 68,
+    "basics_early": 66,
+    "median_at_retirement": 806000.0
+   },
+   {
+    "id": "S190",
+    "label": "66M, retired, rent",
+    "plan_claim": 67,
+    "retire": 66,
+    "savings": 515700.0,
+    "count_on_plan": 51200.0,
+    "count_on_early": 50500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 516000.0
+   },
+   {
+    "id": "S187",
+    "label": "43F, $78k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 81000.0,
+    "count_on_plan": 39600.0,
+    "count_on_early": 37000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 457000.0
+   },
+   {
+    "id": "S191",
+    "label": "51F, +partner 60, $38k pay, own",
+    "plan_claim": 70,
+    "retire": 63,
+    "savings": 80500.0,
+    "count_on_plan": 33200.0,
+    "count_on_early": 24000.0,
+    "basics_plan": 6,
+    "basics_early": 1,
+    "median_at_retirement": 171000.0
+   },
+   {
+    "id": "S192",
+    "label": "66M, +partner 63, $34k pay, own",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 160500.0,
+    "count_on_plan": 28200.0,
+    "count_on_early": 26500.0,
+    "basics_plan": 9,
+    "basics_early": 8,
+    "median_at_retirement": 144000.0
+   },
+   {
+    "id": "S195",
+    "label": "41F, $69k pay, rent",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 44300.0,
+    "count_on_plan": 28500.0,
+    "count_on_early": 26700.0,
+    "basics_plan": 55,
+    "basics_early": 38,
+    "median_at_retirement": 149000.0
+   },
+   {
+    "id": "S204",
+    "label": "68M, +partner 64, $30k pay, own",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 274800.0,
+    "count_on_plan": 33500.0,
+    "count_on_early": 33000.0,
+    "basics_plan": 14,
+    "basics_early": 15,
+    "median_at_retirement": 264000.0
+   },
+   {
+    "id": "S199",
+    "label": "26M, +partner 22, $22k pay, own",
+    "plan_claim": 67,
+    "retire": 66,
+    "savings": 52500.0,
+    "count_on_plan": 21400.0,
+    "count_on_early": 21300.0,
+    "basics_plan": 83,
+    "basics_early": 83,
+    "median_at_retirement": 430000.0
+   },
+   {
+    "id": "S197",
+    "label": "29F, +partner 33, $16k pay, rent",
+    "plan_claim": 68,
+    "retire": 64,
+    "savings": 9800.0,
+    "count_on_plan": 11500.0,
+    "count_on_early": 9300.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S202",
+    "label": "51F, +partner 57, $46k pay, rent",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 682700.0,
+    "count_on_plan": 65700.0,
+    "count_on_early": 58200.0,
+    "basics_plan": 98,
+    "basics_early": 90,
+    "median_at_retirement": 1048000.0
+   },
+   {
+    "id": "S205",
+    "label": "64F, +partner 67, $152k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 973900.0,
+    "count_on_plan": 91300.0,
+    "count_on_early": 85600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1047000.0
+   },
+   {
+    "id": "S208",
+    "label": "61M, +partner 58, $45k pay, own",
+    "plan_claim": 67,
+    "retire": 63,
+    "savings": 23600.0,
+    "count_on_plan": 33100.0,
+    "count_on_early": 30400.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 19000.0
+   },
+   {
+    "id": "S206",
+    "label": "24F, +partner 29, $38k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 94400.0,
+    "count_on_plan": 34400.0,
+    "count_on_early": 31200.0,
+    "basics_plan": 78,
+    "basics_early": 70,
+    "median_at_retirement": 791000.0
+   },
+   {
+    "id": "S212",
+    "label": "63M, +partner 68, 2 kids, $59k pay, own",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 532100.0,
+    "count_on_plan": 33600.0,
+    "count_on_early": 31700.0,
+    "basics_plan": 22,
+    "basics_early": 17,
+    "median_at_retirement": 643000.0
+   },
+   {
+    "id": "S213",
+    "label": "44M, +partner 47, 3 kids, $122k pay, own",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 41800.0,
+    "count_on_plan": 61200.0,
+    "count_on_early": 57700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 173000.0
+   },
+   {
+    "id": "S215",
+    "label": "35M, +partner 34, 1 kids, $34k pay, rent",
+    "plan_claim": 69,
+    "retire": 63,
+    "savings": 10800.0,
+    "count_on_plan": 23100.0,
+    "count_on_early": 20300.0,
+    "basics_plan": 4,
+    "basics_early": 4,
+    "median_at_retirement": 98000.0
+   },
+   {
+    "id": "S233",
+    "label": "64F, +partner 66, 1 kids, $48k pay, own",
+    "plan_claim": 64,
+    "retire": 65,
+    "savings": 45500.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 35000.0
+   },
+   {
+    "id": "S232",
+    "label": "46F, +partner 52, 3 kids, $71k pay, own",
+    "plan_claim": 67,
+    "retire": 63,
+    "savings": 261800.0,
+    "count_on_plan": 88900.0,
+    "count_on_early": 75000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1133000.0
+   },
+   {
+    "id": "S235",
+    "label": "60M, +partner 59, $33k pay, own",
+    "plan_claim": 65,
+    "retire": 63,
+    "savings": 132200.0,
+    "count_on_plan": 17500.0,
+    "count_on_early": 16500.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 105000.0
+   },
+   {
+    "id": "S236",
+    "label": "24M, +partner 23, $38k pay, rent",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 56600.0,
+    "count_on_plan": 33800.0,
+    "count_on_early": 33300.0,
+    "basics_plan": 55,
+    "basics_early": 54,
+    "median_at_retirement": 578000.0
+   },
+   {
+    "id": "S238",
+    "label": "45M, +partner 40, 1 kids, $72k pay, own",
+    "plan_claim": 63,
+    "retire": 65,
+    "savings": 86200.0,
+    "count_on_plan": 24400.0,
+    "count_on_early": 24300.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S242",
+    "label": "50M, +partner 49, 2 kids, $88k pay, own",
+    "plan_claim": 67,
+    "retire": 60,
+    "savings": 300100.0,
+    "count_on_plan": 44900.0,
+    "count_on_early": 42200.0,
+    "basics_plan": 99,
+    "basics_early": 94,
+    "median_at_retirement": 378000.0
+   },
+   {
+    "id": "S237",
+    "label": "33M, +partner 38, $14k pay, rent",
+    "plan_claim": 69,
+    "retire": 58,
+    "savings": 23700.0,
+    "count_on_plan": 27000.0,
+    "count_on_early": 21500.0,
+    "basics_plan": 3,
+    "basics_early": 1,
+    "median_at_retirement": 215000.0
+   },
+   {
+    "id": "S250",
+    "label": "26M, +partner 23, $48k pay, rent",
+    "plan_claim": 66,
+    "retire": 67,
+    "savings": 792000.0,
+    "count_on_plan": 59800.0,
+    "count_on_early": 60600.0,
+    "basics_plan": 95,
+    "basics_early": 96,
+    "median_at_retirement": 2420000.0
+   },
+   {
+    "id": "S244",
+    "label": "26M, +partner 28, $126k pay, rent",
+    "plan_claim": 68,
+    "retire": 62,
+    "savings": 482800.0,
+    "count_on_plan": 113500.0,
+    "count_on_early": 109200.0,
+    "basics_plan": 99,
+    "basics_early": 98,
+    "median_at_retirement": 3543000.0
+   },
+   {
+    "id": "S251",
+    "label": "55M, +partner 52, $139k pay, own",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 590000.0,
+    "count_on_plan": 112000.0,
+    "count_on_early": 99500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1192000.0
+   },
+   {
+    "id": "S253",
+    "label": "47M, $56k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 350900.0,
+    "count_on_plan": 42500.0,
+    "count_on_early": 41900.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 591000.0
+   },
+   {
+    "id": "S256",
+    "label": "25M, $39k pay, own",
+    "plan_claim": 62,
+    "retire": 70,
+    "savings": 9100.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S258",
+    "label": "42F, +partner 45, $52k pay, rent",
+    "plan_claim": 69,
+    "retire": 62,
+    "savings": 68600.0,
+    "count_on_plan": 68500.0,
+    "count_on_early": 59600.0,
+    "basics_plan": 100,
+    "basics_early": 96,
+    "median_at_retirement": 999000.0
+   },
+   {
+    "id": "S254",
+    "label": "23M, +partner 25, $68k pay, rent",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 191100.0,
+    "count_on_plan": 45800.0,
+    "count_on_early": 44500.0,
+    "basics_plan": 87,
+    "basics_early": 84,
+    "median_at_retirement": 1358000.0
+   },
+   {
+    "id": "S262",
+    "label": "63M, +partner 61, retired, rent",
+    "plan_claim": 67,
+    "retire": 63,
+    "savings": 495700.0,
+    "count_on_plan": 55300.0,
+    "count_on_early": 51500.0,
+    "basics_plan": 99,
+    "basics_early": 90,
+    "median_at_retirement": 496000.0
+   },
+   {
+    "id": "S261",
+    "label": "34F, +partner 36, $14k pay, rent",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 58400.0,
+    "count_on_plan": 27900.0,
+    "count_on_early": 26800.0,
+    "basics_plan": 63,
+    "basics_early": 58,
+    "median_at_retirement": 271000.0
+   },
+   {
+    "id": "S267",
+    "label": "63F, retired, own",
+    "plan_claim": 68,
+    "retire": 63,
+    "savings": 291600.0,
+    "count_on_plan": 37200.0,
+    "count_on_early": 36500.0,
+    "basics_plan": 100,
+    "basics_early": 98,
+    "median_at_retirement": 292000.0
+   },
+   {
+    "id": "S263",
+    "label": "25M, $32k pay, rent",
+    "plan_claim": 67,
+    "retire": 60,
+    "savings": 36000.0,
+    "count_on_plan": 2400.0,
+    "count_on_early": 2200.0,
+    "basics_plan": 9,
+    "basics_early": 9,
+    "median_at_retirement": 144000.0
+   },
+   {
+    "id": "S268",
+    "label": "54M, +partner 53, $82k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 16900.0,
+    "count_on_plan": 52300.0,
+    "count_on_early": 47600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 189000.0
+   },
+   {
+    "id": "S272",
+    "label": "37F, +partner 39, $32k pay, own",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 73300.0,
+    "count_on_plan": 49500.0,
+    "count_on_early": 43800.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 694000.0
+   },
+   {
+    "id": "S270",
+    "label": "41M, +partner 45, 1 kids, $167k pay, rent",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 73200.0,
+    "count_on_plan": 76600.0,
+    "count_on_early": 66700.0,
+    "basics_plan": 99,
+    "basics_early": 86,
+    "median_at_retirement": 918000.0
+   },
+   {
+    "id": "S273",
+    "label": "58M, $80k pay, rent",
+    "plan_claim": 65,
+    "retire": 62,
+    "savings": 52600.0,
+    "count_on_plan": 27000.0,
+    "count_on_early": 26000.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 46000.0
+   },
+   {
+    "id": "S277",
+    "label": "33M, 3 kids, $14k pay, rent",
+    "plan_claim": 62,
+    "retire": 66,
+    "savings": 5400.0,
+    "count_on_plan": 0.0,
+    "count_on_early": 0.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 0.0
+   },
+   {
+    "id": "S281",
+    "label": "47M, +partner 45, $206k pay, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 122700.0,
+    "count_on_plan": 87900.0,
+    "count_on_early": 82000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1248000.0
+   },
+   {
+    "id": "S280",
+    "label": "52M, $50k pay, own",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 14600.0,
+    "count_on_plan": 24000.0,
+    "count_on_early": 22800.0,
+    "basics_plan": 39,
+    "basics_early": 22,
+    "median_at_retirement": 70000.0
+   },
+   {
+    "id": "S292",
+    "label": "61F, +partner 61, $138k pay, rent",
+    "plan_claim": 65,
+    "retire": 62,
+    "savings": 290000.0,
+    "count_on_plan": 35600.0,
+    "count_on_early": 33700.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 288000.0
+   },
+   {
+    "id": "S290",
+    "label": "55F, $78k pay, rent",
+    "plan_claim": 67,
+    "retire": 60,
+    "savings": 240000.0,
+    "count_on_plan": 27600.0,
+    "count_on_early": 25200.0,
+    "basics_plan": 59,
+    "basics_early": 40,
+    "median_at_retirement": 316000.0
+   },
+   {
+    "id": "S284",
+    "label": "29F, +partner 26, $32k pay, rent",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 31300.0,
+    "count_on_plan": 30900.0,
+    "count_on_early": 29700.0,
+    "basics_plan": 71,
+    "basics_early": 68,
+    "median_at_retirement": 638000.0
+   },
+   {
+    "id": "S289",
+    "label": "27M, +partner 24, $15k pay, own",
+    "plan_claim": 69,
+    "retire": 66,
+    "savings": 20900.0,
+    "count_on_plan": 17500.0,
+    "count_on_early": 16500.0,
+    "basics_plan": 4,
+    "basics_early": 4,
+    "median_at_retirement": 73000.0
+   },
+   {
+    "id": "S295",
+    "label": "42F, +partner 49, 1 kids, $62k pay, rent",
+    "plan_claim": 63,
+    "retire": 61,
+    "savings": 71600.0,
+    "count_on_plan": 19300.0,
+    "count_on_early": 18400.0,
+    "basics_plan": 0,
+    "basics_early": 0,
+    "median_at_retirement": 52000.0
+   },
+   {
+    "id": "S300",
+    "label": "29M, +partner 27, 4 kids, $54k pay, rent",
+    "plan_claim": 69,
+    "retire": 67,
+    "savings": 8400.0,
+    "count_on_plan": 34700.0,
+    "count_on_early": 33500.0,
+    "basics_plan": 4,
+    "basics_early": 4,
+    "median_at_retirement": 294000.0
+   },
+   {
+    "id": "sample:s011",
+    "label": "Single, 66, still working, FL",
+    "plan_claim": 70,
+    "retire": 69,
+    "savings": 702700.0,
+    "count_on_plan": 77800.0,
+    "count_on_early": 76400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 799000.0
+   },
+   {
+    "id": "sample:e28",
+    "label": "Couple, one retired, TN",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 640000.0,
+    "count_on_plan": 81600.0,
+    "count_on_early": 77300.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 640000.0
+   },
+   {
+    "id": "sample:s071",
+    "label": "Couple in their 50s, one teen, PA",
+    "plan_claim": 69,
+    "retire": 62,
+    "savings": 1056300.0,
+    "count_on_plan": 91300.0,
+    "count_on_early": 83700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1599000.0
+   },
+   {
+    "id": "sample:e09",
+    "label": "Single parent, 2 kids, renting, GA",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 10500.0,
+    "count_on_plan": 31900.0,
+    "count_on_early": 29800.0,
+    "basics_plan": 99,
+    "basics_early": 93,
+    "median_at_retirement": 399000.0
+   },
+   {
+    "id": "sample:young",
+    "label": "Young couple, 2 small kids, TX",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 96000.0,
+    "count_on_plan": 59100.0,
+    "count_on_early": 55700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 932000.0
+   },
+   {
+    "id": "sample:e11",
+    "label": "Single, 45, heavy credit card debt, OH",
+    "plan_claim": 68,
+    "retire": 66,
+    "savings": 15500.0,
+    "count_on_plan": 23300.0,
+    "count_on_early": 22200.0,
+    "basics_plan": 1,
+    "basics_early": 1,
+    "median_at_retirement": 97000.0
+   },
+   {
+    "id": "E24_teen_kids_college",
+    "label": "Age 49, two teens about to start college",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 475000.0,
+    "count_on_plan": 67700.0,
+    "count_on_early": 62700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 589000.0
+   },
+   {
+    "id": "E21_smoker_poor_health",
+    "label": "Age 55, smoker with heart disease and diabetes",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 222000.0,
+    "count_on_plan": 42100.0,
+    "count_on_early": 39900.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 463000.0
+   },
+   {
+    "id": "E27_max_contributions_high_earner",
+    "label": "Age 41, saves the legal maximum everywhere",
+    "plan_claim": 70,
+    "retire": 60,
+    "savings": 1200000.0,
+    "count_on_plan": 117700.0,
+    "count_on_early": 111100.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 3956000.0
+   },
+   {
+    "id": "E01_age_gap_25",
+    "label": "Age 62 with a 37-year-old partner (25-year gap)",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 825000.0,
+    "count_on_plan": 95400.0,
+    "count_on_early": 87700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1065000.0
+   },
+   {
+    "id": "E26_heloc_and_boat",
+    "label": "Age 57 with a home equity line, a boat and an RV",
+    "plan_claim": 70,
+    "retire": 63,
+    "savings": 450000.0,
+    "count_on_plan": 43300.0,
+    "count_on_early": 38700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 674000.0
+   },
+   {
+    "id": "N02_business_owner_sale",
+    "label": "Age 54, owns a business worth $1.4M, plans to sell it at 63",
+    "plan_claim": 70,
+    "retire": 63,
+    "savings": 500000.0,
+    "count_on_plan": 65500.0,
+    "count_on_early": 59400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 883000.0
+   },
+   {
+    "id": "S023",
+    "label": "58F, $40k pay, own",
+    "plan_claim": 70,
+    "retire": 68,
+    "savings": 333700.0,
+    "count_on_plan": 34700.0,
+    "count_on_early": 33400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 432000.0
+   },
+   {
+    "id": "S056",
+    "label": "53M, $90k pay, own",
+    "plan_claim": 70,
+    "retire": 64,
+    "savings": 614300.0,
+    "count_on_plan": 47800.0,
+    "count_on_early": 44500.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 773000.0
+   },
+   {
+    "id": "S015",
+    "label": "45F, +partner 47, $44k pay, own",
+    "plan_claim": 68,
+    "retire": 66,
+    "savings": 319200.0,
+    "count_on_plan": 65600.0,
+    "count_on_early": 62900.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1022000.0
+   },
+   {
+    "id": "S092",
+    "label": "60M, +partner 63, $30k pay, own",
+    "plan_claim": 67,
+    "retire": 61,
+    "savings": 123500.0,
+    "count_on_plan": 34700.0,
+    "count_on_early": 28200.0,
+    "basics_plan": 100,
+    "basics_early": 51,
+    "median_at_retirement": 126000.0
+   },
+   {
+    "id": "S083",
+    "label": "40F, +partner 41, $58k pay, own",
+    "plan_claim": 68,
+    "retire": 65,
+    "savings": 200400.0,
+    "count_on_plan": 43900.0,
+    "count_on_early": 42000.0,
+    "basics_plan": 90,
+    "basics_early": 86,
+    "median_at_retirement": 592000.0
+   },
+   {
+    "id": "S087",
+    "label": "53F, $28k pay, own",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 317100.0,
+    "count_on_plan": 21000.0,
+    "count_on_early": 18600.0,
+    "basics_plan": 88,
+    "basics_early": 70,
+    "median_at_retirement": 343000.0
+   },
+   {
+    "id": "S126",
+    "label": "65F, +partner 67, retired, own",
+    "plan_claim": 70,
+    "retire": 65,
+    "savings": 580100.0,
+    "count_on_plan": 42000.0,
+    "count_on_early": 39700.0,
+    "basics_plan": 98,
+    "basics_early": 94,
+    "median_at_retirement": 580000.0
+   },
+   {
+    "id": "S139",
+    "label": "66F, +partner 72, $51k pay, own",
+    "plan_claim": 70,
+    "retire": 67,
+    "savings": 315200.0,
+    "count_on_plan": 43500.0,
+    "count_on_early": 40700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 327000.0
+   },
+   {
+    "id": "S153",
+    "label": "63F, $44k pay, own",
+    "plan_claim": 69,
+    "retire": 64,
+    "savings": 143700.0,
+    "count_on_plan": 22900.0,
+    "count_on_early": 20600.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 149000.0
+   },
+   {
+    "id": "S118",
+    "label": "39F, +partner 43, $80k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 220400.0,
+    "count_on_plan": 79100.0,
+    "count_on_early": 72700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 1471000.0
+   },
+   {
+    "id": "S173",
+    "label": "59F, +partner 64, $28k pay, own",
+    "plan_claim": 67,
+    "retire": 65,
+    "savings": 128400.0,
+    "count_on_plan": 27900.0,
+    "count_on_early": 25800.0,
+    "basics_plan": 99,
+    "basics_early": 100,
+    "median_at_retirement": 70000.0
+   },
+   {
+    "id": "S217",
+    "label": "52F, 1 kids, $54k pay, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 91200.0,
+    "count_on_plan": 24600.0,
+    "count_on_early": 23000.0,
+    "basics_plan": 92,
+    "basics_early": 76,
+    "median_at_retirement": 195000.0
+   },
+   {
+    "id": "S252",
+    "label": "53F, +partner 51, $58k pay, own",
+    "plan_claim": 69,
+    "retire": 68,
+    "savings": 421200.0,
+    "count_on_plan": 68600.0,
+    "count_on_early": 67000.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 903000.0
+   },
+   {
+    "id": "S247",
+    "label": "48F, $69k pay, own",
+    "plan_claim": 70,
+    "retire": 66,
+    "savings": 329000.0,
+    "count_on_plan": 38800.0,
+    "count_on_early": 36400.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 531000.0
+   },
+   {
+    "id": "S260",
+    "label": "65F, +partner 65, retired, own",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 467200.0,
+    "count_on_plan": 60900.0,
+    "count_on_early": 59600.0,
+    "basics_plan": 78,
+    "basics_early": 77,
+    "median_at_retirement": 467000.0
+   },
+   {
+    "id": "S265",
+    "label": "60F, $74k pay, own",
+    "plan_claim": 68,
+    "retire": 62,
+    "savings": 347000.0,
+    "count_on_plan": 28600.0,
+    "count_on_early": 25200.0,
+    "basics_plan": 73,
+    "basics_early": 31,
+    "median_at_retirement": 373000.0
+   },
+   {
+    "id": "sample:e27",
+    "label": "Single high earner, 41, CA",
+    "plan_claim": 70,
+    "retire": 60,
+    "savings": 1200000.0,
+    "count_on_plan": 122600.0,
+    "count_on_early": 115800.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 3956000.0
+   },
+   {
+    "id": "sample:doctor",
+    "label": "Doctor couple, 3 kids, CT",
+    "plan_claim": 70,
+    "retire": 62,
+    "savings": 920000.0,
+    "count_on_plan": 111600.0,
+    "count_on_early": 105100.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 2870000.0
+   },
+   {
+    "id": "sample:e24",
+    "label": "Couple, two teens, college soon, OH",
+    "plan_claim": 69,
+    "retire": 65,
+    "savings": 475000.0,
+    "count_on_plan": 67700.0,
+    "count_on_early": 62700.0,
+    "basics_plan": 100,
+    "basics_early": 100,
+    "median_at_retirement": 589000.0
+   },
+   {
+    "id": "sample:s083",
+    "label": "Couple in their 40s, modest savings, NY",
+    "plan_claim": 68,
+    "retire": 65,
+    "savings": 200400.0,
+    "count_on_plan": 43900.0,
+    "count_on_early": 42000.0,
+    "basics_plan": 90,
+    "basics_early": 86,
+    "median_at_retirement": 592000.0
+   }
+  ]
+ }
+}

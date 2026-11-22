@@ -1,0 +1,449 @@
+{
+ "data_year": 2024,
+ "sources": {
+  "hud_fmr": {
+   "name": "HUD Fair Market Rents, FY2026, one bedroom, county and metro areas",
+   "url": "https://services.arcgis.com/VTyQ9soqVukalItT/ArcGIS/rest/services/Fair_Market_Rents/FeatureServer/0",
+   "retrieved": "2026-11-19",
+   "data_year": 2026,
+   "note": "HUD's ArcGIS feature service of the FMR data (layer modified 2026-04-20; 2622 areas). A county takes the rent of its HUD metro area (Census CBSA delineation, July 2023) or its own non-metro area; for a county in a metro area that HUD splits under older codes, the mean of that metro area's HUD areas. huduser.gov answers a scripted client with a bot challenge, so its xlsx files were not used."
+  },
+  "acs_b25088": {
+   "name": "Census ACS 2020-2024 5-year, table B25088: median selected monthly owner costs, by mortgage status",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b25088.dat",
+   "retrieved": "2026-11-19",
+   "data_year": 2024,
+   "note": "Table-based summary file (the Census API asks for a key). Owner costs include mortgage, taxes, insurance, utilities and fees. The table has no age split, so the figure is for all owners."
+  },
+  "acs_b01003": {
+   "name": "Census ACS 2020-2024 5-year, table B01003: total population (the weights for place medians)",
+   "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b01003.dat",
+   "retrieved": "2026-11-19",
+   "data_year": 2024
+  },
+  "cbsa": {
+   "name": "Census CBSA delineation, July 2023 (county to metro area)",
+   "url": "https://www2.census.gov/programs-surveys/metro-micro/geographies/reference-files/2023/delineation-files/list1_2023.xlsx",
+   "retrieved": "2026-11-19",
+   "data_year": 2023
+  },
+  "usda_low_cost": {
+   "name": "USDA Food Plans: Cost of Food at Home, Low-Cost Plan, October 2026, individuals in 4-person households",
+   "url": "https://www.fns.usda.gov/sites/default/files/resource-files/CostofFoodOct2026LowModLib.pdf",
+   "retrieved": "2026-11-19",
+   "data_year": 2026,
+   "note": "Machine-readable file: https://www.fns.usda.gov/sites/default/files/resource-files/usda-lowcostplan-sept2007-oct2026.xlsx. Household-size adjustment as the report states it: one person +20%, two persons +10%."
+  },
+  "fhwa_nhts": {
+   "name": "FHWA 2017 National Household Travel Survey, Summary of Travel Trends, Table 23b: average annual miles per licensed driver, by age and sex (self-estimate)",
+   "url": "https://nhts.ornl.gov/assets/2017_nhts_summary_travel_trends.pdf",
+   "retrieved": "2026-11-19",
+   "data_year": 2017,
+   "note": "Drivers 65 and older. The 2022 summary has no such table. Miles are the driver's own estimate."
+  },
+  "irs_mileage": {
+   "name": "IRS standard mileage rate, 2026",
+   "url": "https://www.irs.gov/tax-professionals/standard-mileage-rates",
+   "retrieved": "2026-11-19",
+   "data_year": 2026,
+   "note": "Business rates in cents: 76.0, 72.5 (two half-year rates in 2026); the mean is used. The rate covers fuel, repairs, insurance, depreciation and tax on driving."
+  },
+  "health": {
+   "name": "Medicare Part B and Part D premiums and out-of-pocket health spending",
+   "url": null,
+   "retrieved": "2026-11-19",
+   "note": "Not copied here. engine/basics_benchmark.py reads data/health_costs.json (CMS), so the benchmark and the plan share one health figure."
+  }
+ },
+ "us": {
+  "rent_1br": 1386.0,
+  "smoc_mortgage": 1931.0,
+  "smoc_free": 671.0
+ },
+ "states": {
+  "AK": {
+   "name": "Alaska",
+   "rent_1br": 1243.0,
+   "smoc_mortgage": 2194.0,
+   "smoc_free": 751.0
+  },
+  "AL": {
+   "name": "Alabama",
+   "rent_1br": 919.0,
+   "smoc_mortgage": 1404.0,
+   "smoc_free": 454.0
+  },
+  "AR": {
+   "name": "Arkansas",
+   "rent_1br": 868.0,
+   "smoc_mortgage": 1286.0,
+   "smoc_free": 444.0
+  },
+  "AZ": {
+   "name": "Arizona",
+   "rent_1br": 1583.0,
+   "smoc_mortgage": 1931.0,
+   "smoc_free": 575.0
+  },
+  "CA": {
+   "name": "California",
+   "rent_1br": 2416.0,
+   "smoc_mortgage": 3160.0,
+   "smoc_free": 843.0
+  },
+  "CO": {
+   "name": "Colorado",
+   "rent_1br": 1754.0,
+   "smoc_mortgage": 2378.0,
+   "smoc_free": 682.0
+  },
+  "CT": {
+   "name": "Connecticut",
+   "rent_1br": 1477.0,
+   "smoc_mortgage": 2284.0,
+   "smoc_free": 1027.0
+  },
+  "DC": {
+   "name": "District of Columbia",
+   "rent_1br": 2015.0,
+   "smoc_mortgage": 3128.0,
+   "smoc_free": 899.0
+  },
+  "DE": {
+   "name": "Delaware",
+   "rent_1br": 1520.0,
+   "smoc_mortgage": 1882.0,
+   "smoc_free": 616.0
+  },
+  "FL": {
+   "name": "Florida",
+   "rent_1br": 1696.0,
+   "smoc_mortgage": 1976.0,
+   "smoc_free": 695.0
+  },
+  "GA": {
+   "name": "Georgia",
+   "rent_1br": 1660.0,
+   "smoc_mortgage": 1758.0,
+   "smoc_free": 562.0
+  },
+  "HI": {
+   "name": "Hawaii",
+   "rent_1br": 2016.0,
+   "smoc_mortgage": 3111.0,
+   "smoc_free": 783.0
+  },
+  "IA": {
+   "name": "Iowa",
+   "rent_1br": 838.0,
+   "smoc_mortgage": 1550.0,
+   "smoc_free": 614.0
+  },
+  "ID": {
+   "name": "Idaho",
+   "rent_1br": 1302.0,
+   "smoc_mortgage": 1664.0,
+   "smoc_free": 502.0
+  },
+  "IL": {
+   "name": "Illinois",
+   "rent_1br": 1581.0,
+   "smoc_mortgage": 2270.0,
+   "smoc_free": 910.0
+  },
+  "IN": {
+   "name": "Indiana",
+   "rent_1br": 1051.0,
+   "smoc_mortgage": 1375.0,
+   "smoc_free": 513.0
+  },
+  "KS": {
+   "name": "Kansas",
+   "rent_1br": 849.0,
+   "smoc_mortgage": 1564.0,
+   "smoc_free": 630.0
+  },
+  "KY": {
+   "name": "Kentucky",
+   "rent_1br": 985.0,
+   "smoc_mortgage": 1425.0,
+   "smoc_free": 497.0
+  },
+  "LA": {
+   "name": "Louisiana",
+   "rent_1br": 982.0,
+   "smoc_mortgage": 1596.0,
+   "smoc_free": 433.0
+  },
+  "MA": {
+   "name": "Massachusetts",
+   "rent_1br": 1855.0,
+   "smoc_mortgage": 2867.0,
+   "smoc_free": 1083.0
+  },
+  "MD": {
+   "name": "Maryland",
+   "rent_1br": 1511.0,
+   "smoc_mortgage": 2454.0,
+   "smoc_free": 751.0
+  },
+  "ME": {
+   "name": "Maine",
+   "rent_1br": 1234.0,
+   "smoc_mortgage": 1615.0,
+   "smoc_free": 642.0
+  },
+  "MI": {
+   "name": "Michigan",
+   "rent_1br": 1122.0,
+   "smoc_mortgage": 1556.0,
+   "smoc_free": 612.0
+  },
+  "MN": {
+   "name": "Minnesota",
+   "rent_1br": 1405.0,
+   "smoc_mortgage": 1975.0,
+   "smoc_free": 721.0
+  },
+  "MO": {
+   "name": "Missouri",
+   "rent_1br": 995.0,
+   "smoc_mortgage": 1545.0,
+   "smoc_free": 573.0
+  },
+  "MS": {
+   "name": "Mississippi",
+   "rent_1br": 888.0,
+   "smoc_mortgage": 1350.0,
+   "smoc_free": 447.0
+  },
+  "MT": {
+   "name": "Montana",
+   "rent_1br": 1145.0,
+   "smoc_mortgage": 1846.0,
+   "smoc_free": 594.0
+  },
+  "NC": {
+   "name": "North Carolina",
+   "rent_1br": 1305.0,
+   "smoc_mortgage": 1554.0,
+   "smoc_free": 515.0
+  },
+  "ND": {
+   "name": "North Dakota",
+   "rent_1br": 917.0,
+   "smoc_mortgage": 1855.0,
+   "smoc_free": 631.0
+  },
+  "NE": {
+   "name": "Nebraska",
+   "rent_1br": 926.0,
+   "smoc_mortgage": 1742.0,
+   "smoc_free": 729.0
+  },
+  "NH": {
+   "name": "New Hampshire",
+   "rent_1br": 1455.0,
+   "smoc_mortgage": 2452.0,
+   "smoc_free": 1066.0
+  },
+  "NJ": {
+   "name": "New Jersey",
+   "rent_1br": 2172.0,
+   "smoc_mortgage": 3070.0,
+   "smoc_free": 1311.0
+  },
+  "NM": {
+   "name": "New Mexico",
+   "rent_1br": 1185.0,
+   "smoc_mortgage": 1615.0,
+   "smoc_free": 456.0
+  },
+  "NV": {
+   "name": "Nevada",
+   "rent_1br": 1478.0,
+   "smoc_mortgage": 1928.0,
+   "smoc_free": 561.0
+  },
+  "NY": {
+   "name": "New York",
+   "rent_1br": 2172.0,
+   "smoc_mortgage": 3094.0,
+   "smoc_free": 1117.0
+  },
+  "OH": {
+   "name": "Ohio",
+   "rent_1br": 985.0,
+   "smoc_mortgage": 1525.0,
+   "smoc_free": 619.0
+  },
+  "OK": {
+   "name": "Oklahoma",
+   "rent_1br": 987.0,
+   "smoc_mortgage": 1650.0,
+   "smoc_free": 556.0
+  },
+  "OR": {
+   "name": "Oregon",
+   "rent_1br": 1371.0,
+   "smoc_mortgage": 2147.0,
+   "smoc_free": 696.0
+  },
+  "PA": {
+   "name": "Pennsylvania",
+   "rent_1br": 1212.0,
+   "smoc_mortgage": 1685.0,
+   "smoc_free": 654.0
+  },
+  "PR": {
+   "name": "Puerto Rico",
+   "rent_1br": 512.0,
+   "smoc_mortgage": 887.0,
+   "smoc_free": 182.0
+  },
+  "RI": {
+   "name": "Rhode Island",
+   "rent_1br": 1402.0,
+   "smoc_mortgage": 2152.0,
+   "smoc_free": 872.0
+  },
+  "SC": {
+   "name": "South Carolina",
+   "rent_1br": 1221.0,
+   "smoc_mortgage": 1446.0,
+   "smoc_free": 459.0
+  },
+  "SD": {
+   "name": "South Dakota",
+   "rent_1br": 925.0,
+   "smoc_mortgage": 1727.0,
+   "smoc_free": 643.0
+  },
+  "TN": {
+   "name": "Tennessee",
+   "rent_1br": 1154.0,
+   "smoc_mortgage": 1589.0,
+   "smoc_free": 485.0
+  },
+  "TX": {
+   "name": "Texas",
+   "rent_1br": 1323.0,
+   "smoc_mortgage": 2155.0,
+   "smoc_free": 744.0
+  },
+  "UT": {
+   "name": "Utah",
+   "rent_1br": 1281.0,
+   "smoc_mortgage": 2115.0,
+   "smoc_free": 570.0
+  },
+  "VA": {
+   "name": "Virginia",
+   "rent_1br": 1512.0,
+   "smoc_mortgage": 1996.0,
+   "smoc_free": 653.0
+  },
+  "VT": {
+   "name": "Vermont",
+   "rent_1br": 1161.0,
+   "smoc_mortgage": 1873.0,
+   "smoc_free": 843.0
+  },
+  "WA": {
+   "name": "Washington",
+   "rent_1br": 1876.0,
+   "smoc_mortgage": 2423.0,
+   "smoc_free": 836.0
+  },
+  "WI": {
+   "name": "Wisconsin",
+   "rent_1br": 962.0,
+   "smoc_mortgage": 1688.0,
+   "smoc_free": 664.0
+  },
+  "WV": {
+   "name": "West Virginia",
+   "rent_1br": 816.0,
+   "smoc_mortgage": 1209.0,
+   "smoc_free": 408.0
+  },
+  "WY": {
+   "name": "Wyoming",
+   "rent_1br": 852.0,
+   "smoc_mortgage": 1716.0,
+   "smoc_free": 564.0
+  }
+ },
+ "food": {
+  "month": "October",
+  "year": 2026,
+  "monthly_individual": {
+   "male": {
+    "51-70": 299.9,
+    "71+": 296.4
+   },
+   "female": {
+    "51-70": 269.4,
+    "71+": 269.0
+   }
+  },
+  "household_adjust": {
+   "1": 1.2,
+   "2": 1.1
+  },
+  "bands": [
+   {
+    "key": "51-70",
+    "min_age": 0,
+    "max_age": 70
+   },
+   {
+    "key": "71+",
+    "min_age": 71,
+    "max_age": 200
+   }
+  ]
+ },
+ "transport": {
+  "miles_65_plus": {
+   "male": 9974.0,
+   "female": 6373.0
+  },
+  "miles_year": 2017,
+  "rate_per_mile": 0.7425,
+  "rate_year": 2026
+ },
+ "health": {
+  "out_of_pocket_per_person": {
+   "19-44": 892.0,
+   "45-64": 1881.82,
+   "65-84": 3292.85,
+   "85+": 8033.26
+  },
+  "part_b_premium_monthly_2027": 209.4,
+  "part_d_premium_monthly": 36.0,
+  "sources": {
+   "cms_nhe_age_2020": {
+    "name": "CMS Office of the Actuary, National Health Expenditure Accounts by age and sex, Table 7-1: Out-of-Pocket Per-capita Spending by Sex and Age Group (workbook 'Age20 tables 3-27-24.xlsx')",
+    "url": "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/age-and-sex",
+    "published": "2024-03-27 (data through calendar year 2020, the latest year published)",
+    "retrieved": "2026-11-17",
+    "note": "Read from the downloaded workbook. Per-capita out-of-pocket PERSONAL HEALTH CARE spending (deductibles, coinsurance, copays and uncovered services, including nursing-home out-of-pocket; premiums are NOT out-of-pocket in NHE). 2020 is a pandemic year with depressed use: 2018 values are kept beside 2020 (19-44 $688, 45-64 $1,418, 65-84 $2,513, 85+ $6,404) and are within 5% for 45+. Nominal dollars, restated to today with the CPI-U ratio, which understates medical price growth if medical prices rose faster than the CPI."
+   },
+   "cms_medicare_2027": {
+    "name": "CMS fact sheet: 2027 Medicare Parts A & B Premiums and Deductibles",
+    "url": "https://www.cms.gov/newsroom/fact-sheets/2027-medicare-parts-b-premiums-deductibles",
+    "published": "2026-11-17",
+    "retrieved": "2026-11-19",
+    "note": "Standard Part B premium $209.40, Part B deductible $292, Part A deductible $1,776, and the 2027 IRMAA tables for Part B and Part D (MAGI from two years earlier, so 2025 income). Matches the Federal Register notice FR Doc. 2026-23601 (published 2026-11-19, https://www.federalregister.gov/documents/2026/11/19/2026-23601/medicare-program-medicare-part-b-monthly-actuarial-rates-premium-rates-and-annual-deductible): $209.40, $292, actuarial rates $418.70 aged and $452.40 disabled."
+   },
+   "kff_part_d_2026": {
+    "name": "KFF, Medicare Part D Enrollment, Premiums, and Cost Sharing in 2026",
+    "url": "https://www.kff.org/medicare/medicare-part-d-enrollment-premiums-and-cost-sharing-in-2026/",
+    "published": "2026",
+    "retrieved": "2026-11-17",
+    "note": "Average monthly stand-alone PDP premium $36 (MA-PD $8); national base beneficiary premium $38.99; 2026 out-of-pocket drug cap $2,100. Read from a search summary of the KFF pages, not the pages themselves; the $2,400 cap for 2027 is from one secondary source (low confidence)."
+   }
+  }
+ }
+}

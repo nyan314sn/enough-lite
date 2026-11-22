@@ -1,0 +1,116 @@
+{
+ "persona_id": "p04",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "repeated_question",
+   "severity": "P1",
+   "quote": "At what age do you want to stop working?",
+   "note": "The person already said in turn i1 that they want to leave work at 65, so this asks for something already given."
+  },
+  {
+   "ref": "i3",
+   "type": "dead_end",
+   "severity": "P2",
+   "quote": "Thanks. I noted that you have no children.",
+   "note": "The reply confirms children but silently skips the 'no pets' answer, so the pets field is not acknowledged."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 57,
+    "truth": 57,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "OH",
+    "truth": "OH",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 65000.0,
+    "truth": 65000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 363000.0,
+    "truth": 363000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 30000.0,
+    "truth": 30000,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 52000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "persona_id": "p13",
+ "issues": [
+  {
+   "ref": "i13",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "I noted that you hold whole life cover.",
+   "note": "The person said they never mentioned insurance and asked for an explanation, but the app repeated the claim without acknowledging or correcting it."
+  },
+  {
+   "ref": "i13",
+   "type": "contradiction",
+   "severity": "P0",
+   "quote": "I noted that you hold whole life cover.",
+   "note": "The stored insurance fact is not in anything the person said and conflicts with their statement that they have no such cover."
+  },
+  {
+   "ref": "i14",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "I still need this one to go on.",
+   "note": "The person again denied having insurance and asked whether it was a mistake; the app neither admitted the error nor answered, and kept asking for age."
+  },
+  {
+   "ref": "i15",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "I noted that you hold whole life cover.",
+   "note": "After the person asked yes or no whether it was a mistake, the app repeated the fabricated insurance claim instead of answering or removing it."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": false,
+    "got": null,
+    "truth": 50,
+    "source": null
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "IL",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": null,
+    "truth": 62,
+    "source": null
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": null,
+    "truth": 110000,
+    "source": null
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 0.0,
+    "truth": 550000,
+    "source": null
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 150000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     16
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": null,
+    "truth": 82000,
+    "source": null
+   }
+  ],
+  "share": 0.3076923076923077,
+  "why": [
+   {
+    "field": "age",
+    "cause": "person_never_said",
+    "note": "User refused every age prompt and never stated an age."
+   },
+   {
+    "field": "state",
+    "cause": "person_never_said",
+    "note": "State was never provided in the conversation."
+   },
+   {
+    "field": "retire_age",
+    "cause": "person_never_said",
+    "note": "Retirement age was never provided."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "person_never_said",
+    "note": "Pay was never provided."
+   },
+   {
+    "field": "savings_total",
+    "cause": "other",
+    "note": "Stored as 0.0 with no source tag; no savings figures were given."
+   },
+   {
+    "field": "home_owns",
+    "cause": "person_never_said",
+    "note": "Home ownership was never stated."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "other",
+    "note": "Stored as 0.0 with no source tag; no mortgage figure was given."
+   },
+   {
+    "field": "children",
+    "cause": "person_never_said",
+    "note": "Children were never mentioned; stored as empty list."
+   },
+   {
+    "field": "spending_now",
+    "cause": "person_never_said",
+    "note": "Spending was never provided."
+   }
+  ]
+ }
+}

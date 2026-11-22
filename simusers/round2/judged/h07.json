@@ -1,0 +1,135 @@
+{
+ "persona_id": "h07",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 45,
+    "truth": 45,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": false,
+    "got": null,
+    "truth": 44,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "VA",
+    "truth": "VA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 75000.0,
+    "truth": 98000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": false,
+    "got": null,
+    "truth": 55000,
+    "source": null
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 115000.0,
+    "truth": 170000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 200000.0,
+    "truth": 210000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     7,
+     10
+    ],
+    "truth": [
+     7,
+     10
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 84000.0,
+    "truth": 88000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.7142857142857143,
+  "why": [
+   {
+    "field": "partner_age",
+    "cause": "never_asked",
+    "note": "The app never asked for the partner's age, so it stored null."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "app_misparsed",
+    "note": "The user gave a $50k to $100k range. The app stored the midpoint, $75,000, and tagged it 'you said'. The true $98,000 is inside the range."
+   },
+   {
+    "field": "partner_pay",
+    "cause": "never_asked",
+    "note": "The app never asked for the partner's pay, so it stored null."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "The user said they did not know the total. The app substituted the typical $115,000 for the $170,000 truth."
+   }
+  ]
+ }
+}

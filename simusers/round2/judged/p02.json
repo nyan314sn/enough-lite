@@ -1,0 +1,121 @@
+{
+ "persona_id": "p02",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "I updated the typical figures: a 5% mortgage rate.",
+   "note": "The reply does not mention the new assumed mortgage payoff in 2035 and the roughly $7,700 a year drop in costs, which changes the plan."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 48,
+    "truth": 48,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "GA",
+    "truth": "GA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 82000.0,
+    "truth": 82000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 210000.0,
+    "truth": 210000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 95000.0,
+    "truth": 95000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     12,
+     15
+    ],
+    "truth": [
+     12,
+     15
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 14000.0,
+    "truth": 14000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 336000.0,
+    "truth": 66000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "spending_now",
+    "cause": "app_misparsed",
+    "note": "Truth is $66,000/yr. At turn i4 the user gave a $14k car loan at 7%, and the app read it as $14,000/month transport plus $14,000/month debt ($28,000/mo, $336,000/yr). The user never stated spending."
+   }
+  ]
+ }
+}

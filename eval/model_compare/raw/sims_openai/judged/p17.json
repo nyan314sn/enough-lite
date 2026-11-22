@@ -1,0 +1,118 @@
+{
+ "persona_id": "p17",
+ "issues": [
+  {
+   "ref": "i5",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "I will use a typical figure for your mortgage, marked so you can change it.",
+   "note": "It says a typical mortgage figure is used but never states the balance or payment, so the person cannot tell what was assumed."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 56,
+    "truth": 56,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": 54,
+    "truth": 54,
+    "source": "you said"
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": true,
+    "got": 60000.0,
+    "truth": 60000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 680000.0,
+    "truth": 680000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 70000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     19
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": false,
+    "got": 0,
+    "truth": 2,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 112000.0,
+    "truth": 85000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.7142857142857143,
+  "why": null
+ }
+}

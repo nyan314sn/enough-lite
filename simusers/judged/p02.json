@@ -1,0 +1,113 @@
+{
+ "persona_id": "p02",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 48,
+    "truth": 48,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "GA",
+    "truth": "GA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 82000.0,
+    "truth": 82000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 210000.0,
+    "truth": 210000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 95000.0,
+    "truth": 95000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     12,
+     15
+    ],
+    "truth": [
+     12,
+     15
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 14000.0,
+    "truth": 14000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 336000.0,
+    "truth": 66000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "spending_now",
+    "cause": "app_misparsed",
+    "note": "Marcus never stated a spending figure. After the car-loan turn (i4) the app jumped spending_now from the $55,000 assumed default to $336,000, an estimate it did not explain. The true value of $66,000 was never given in the conversation."
+   }
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+# Secrets: never commit. .env.example (names only) is committed.
+.env
+.env.*
+!.env.example
+!web/.env.mock
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node (web/dist is pre-built and IS committed)
+node_modules/
+*.tsbuildinfo
+
+# Run output and logs
+*.log
+runs/
+var/cache/
+eval/runs/
+eval/runs_*/
+simusers/runs/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Loop audit scratch (keep FINDINGS.md and LOOP_LOG.md)
+docs/loop/**/eval_runs/
+docs/loop/**/evalcopy/
+docs/loop/**/build/
+docs/loop/**/eval_runs*/
+docs/loop/**/tools_runs/
+docs/loop/**/runs_before/
+docs/loop/**/runs_after/
+docs/loop/**/plans/
+docs/loop/**/*.err
+docs/loop/**/*.out
+!docs/loop/**/out_*.txt
+# Loop audit screenshots: only the ones the report and docs cite are kept
+docs/loop/**/*.png
+!docs/loop/rules_audit/ch_1440_1.png
+!docs/loop/rules_audit/ed_chat_change.png
+!docs/loop/rules_audit/ex_chart0.png
+!docs/loop/rules_audit/ex_whatif.png
+!docs/loop/rules_audit/idk_02_ready.png
+!docs/loop/rules_audit/parent_01_first.png
+!docs/loop/rules_audit/parent_03_plan.png
+!docs/loop/rules_audit/rs_startover_dialog.png
+!docs/loop/rules_audit/saf_intake.png
+!docs/loop/rules_audit/tm_build_1.png
+!docs/loop/rules_recheck/ex1440_6_claim.png
+!docs/loop/rules_recheck/p1_1440_r7.png
+!docs/loop/rules_recheck/plan1440_chart1.png
+!docs/loop/rules_recheck/team1440_build_2.png
+!docs/loop/team_lines3/team1440_build_2.png
+# Old one-off fix scripts with local absolute paths (kept on disk, not published)
+docs/packaging_scripts/apply_fixes*.py
+
+# Demo video: the mp4/wav and the raw recordings are not committed (the mp4 goes to Canvas); the script and narration are
+demo/*.mp4
+demo/*.wav
+demo/*.webm
+demo/raw/
+demo/work/
+
+# Demo audio and voice samples
+demo/*.mp3
+demo/samples/
+
+# Intermediate audit run (superseded by results_after.jsonl)
+eval/reasonableness/results_after_pre_mortgagefix.jsonl

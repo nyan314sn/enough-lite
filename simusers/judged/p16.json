@@ -1,0 +1,123 @@
+{
+ "persona_id": "p16",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 50,
+    "truth": 50,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": 48,
+    "truth": 48,
+    "source": "you said"
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CO",
+    "truth": "CO",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 60,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 75000.0,
+    "truth": 95000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 470000.0,
+    "truth": 470000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 230000.0,
+    "truth": 230000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     14
+    ],
+    "truth": [
+     14
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8571428571428571,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "person_never_said",
+    "note": "User voiced 60 (Sam) and 65 (Jo) only. The 62 settlement appears in notes but was never said in chat; app stored 60, Sam's figure."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "app_misparsed",
+    "note": "User picked the '$50k to $100k' range; app stored its midpoint, $75,000, as an exact figure. Truth $95,000 was never stated and the app never asked for the exact amount."
+   }
+  ]
+ }
+}

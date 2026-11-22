@@ -1,0 +1,78 @@
+from lib import *
+with sync_playwright() as p:
+    b, pg = new(p)
+    log = lambda *a: print(*a, flush=True)
+    say(pg, "I'm 47, a teacher in Ohio, married, my husband is 49 and works as an electrician. I make $68,000, he makes $82,000. We have $210,000 saved, spend $6,500 a month. I have a state teacher pension of about $3,000 a month starting at 60. Retire at 60. Two kids, 15 and 12.")
+    log("BOT1:", transcript(pg)[-1])
+    auto(pg, [(r"mortgage payment","$1,500 a month")])
+    side = pg.locator("aside").first
+    log("YEARLY ROW:", side.inner_text().replace("\n"," | ")[side.inner_text().replace("\n"," | ").find("Saving"):][:900])
+    # open edit on yearly saving
+    pg.locator("aside summary, aside button", has_text=re.compile(r"^Saving")).first.click(); pg.wait_for_timeout(300)
+    t = pg.locator("aside").first.inner_text().replace(chr(10), " | "); log("SAVING SECTION:", t[t.find("Savings"):][:1200])
+    pg.get_by_role("button", name=re.compile("Change Yearly saving")).first.click(); pg.wait_for_timeout(400)
+    shot(pg,"v1_yearly_edit",full=False)
+    log("EDITOR:", pg.locator("aside").first.inner_text().replace("\n"," | ")[-900:])
+    pg.keyboard.press("Escape"); pg.wait_for_timeout(300)
+    build(pg)
+    # team talk
+    r = pg.evaluate("""()=>{const l=document.querySelector('.talk-log');if(!l)return null;const f=l.querySelector('.talk-row');return {sh:l.scrollHeight,ch:l.clientHeight,st:l.scrollTop,firstTop:f.getBoundingClientRect().top-l.getBoundingClientRect().top}}""")
+    log("TALK scroll:", r)
+    pg.locator(".talk").scroll_into_view_if_needed()
+    pg.locator(".talk").screenshot(path="v1_talk.png")
+    # chips + tried
+    log("CHIPS:", pg.locator(".composer-chips .chip, .ask-chips .chip, .quick .chip").all_inner_texts())
+    log("PLAN TOP:", pg.locator(".plan").inner_text()[:700])
+    # WI 1,2,3
+    log(ask(pg,"Retire at 62")[:200])
+    log("HIST:", pg.locator(".history").inner_text().replace("\n"," | "))
+    shot(pg,"v1_wi1",full=False)
+    log(ask(pg,"What if I get a dog")[:200])
+    log(ask(pg,"Markets fall 30%")[:200])
+    log("HIST:", pg.locator(".history").inner_text().replace("\n"," | "))
+    shot(pg,"v1_wi3",full=False)
+    # stale 'Show this What If' in older turn
+    btns = pg.locator(".turn button", has_text="Show this What If")
+    log("show buttons:", btns.count())
+    if btns.count()>1:
+        btns.first.click(); pg.wait_for_timeout(600)
+        log("WI after clicking first show:", pg.locator("#wi-h").inner_text())
+        shot(pg,"v1_stale_show",full=False)
+    log("CHIPS after:", pg.locator(".quick .chip").all_inner_texts())
+    # back
+    pg.get_by_role("button", name=re.compile("Back to my plan")).first.click(); pg.wait_for_timeout(500)
+    shot(pg,"v1_back",full=False)
+    # failed ask w/ retry
+    pg.route("**/api/ask", lambda r: r.fulfill(status=500, body='{"detail":"boom internal trace"}'))
+    ask(pg,"what is a Roth?"); shot(pg,"v1_ask_err",full=False)
+    log("ERR TURN:", pg.locator(".turn").last.inner_text(), "| input:", pg.locator("#ask-input").input_value(), "| btns:", pg.locator(".turn").last.locator("button").all_inner_texts())
+    pg.unroute("**/api/ask")
+    rb = pg.locator(".turn").last.get_by_role("button", name=re.compile("retry|try again", re.I))
+    if rb.count(): rb.first.click(); pg.wait_for_timeout(6000); log("AFTER RETRY:", pg.locator(".turn").last.inner_text()[:300])
+    # adviser detail
+    pg.locator(".team-panel button, .team button, .roster button").first.scroll_into_view_if_needed()
+    pg.locator(".team-panel button, .team button, .roster button").nth(3).click(); pg.wait_for_timeout(600)
+    shot(pg,"v1_adviser",full=False)
+    log("ADVISER:", pg.locator(".team-panel, aside, .team").last.inner_text().replace("\n"," | ")[:900])
+    log("axe", axe(pg,"a"))
+    # change via chat
+    log("fix1:", ask(pg,"my pay is wrong")[:300])
+    log("fix2:", ask(pg,"$150,000")[:400])
+    shot(pg,"v1_change_confirm",full=False)
+    log("fix3:", ask(pg,"yes")[:400])
+    shot(pg,"v1_change_done",full=False)
+    log("PLAN H:", pg.locator("[data-testid=plan-headline]").inner_text())
+    log("turns now:", pg.locator(".turn").count(), "history:", pg.locator(".history").count())
+    # stale: edit age in answers
+    pg.get_by_role("button", name=re.compile("Change my answers")).click(); pg.wait_for_timeout(500)
+    pg.get_by_role("button", name=re.compile("Change Your age")).first.click(); pg.wait_for_timeout(300)
+    f = pg.locator("aside input").first; f.fill("48"); pg.get_by_role("button", name="Save").first.click()
+    pg.wait_for_selector(".typing", state="detached", timeout=60000); pg.wait_for_timeout(800)
+    log("after edit chat:", transcript(pg)[-2:])
+    pg.get_by_role("button", name=re.compile("2 · Your plan")).click(); pg.wait_for_timeout(600)
+    log("stale:", pg.locator(".stale").inner_text() if pg.locator(".stale").count() else None)
+    shot(pg,"v1_stale",full=False)
+    log("WI while stale:", ask(pg,"Retire at 63")[:300])
+    shot(pg,"v1_stale_wi",full=False)
+    log(pg.errors)
+    b.close()

@@ -1,0 +1,12 @@
+# Enough Lite: small, focused dependencies (a fresh install takes a minute or two).
+# Two providers: Claude Haiku 5.5 when ANTHROPIC_API_KEY is set, else gpt-6-luna when OPENAI_API_KEY is set
+# (the course's Portkey key was rejected). So the slim package takes both extras. See README.md.
+pydantic-ai-slim[anthropic,openai]>=2.46.0
+fastapi>=0.115.0
+uvicorn>=0.30.0
+numpy>=1.26.0
+python-dotenv>=1.0.0
+
+# tests only
+pytest>=8.0.0
+httpx>=0.27.0

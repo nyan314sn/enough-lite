@@ -1,0 +1,122 @@
+{
+ "persona_id": "p19",
+ "issues": [
+  {
+   "ref": "i6",
+   "type": "repeated_question",
+   "severity": "P1",
+   "quote": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+   "note": "The person already gave $168,000 in turn i4, so asking the total again is a repeat."
+  },
+  {
+   "ref": "i6",
+   "type": "misunderstanding",
+   "severity": "P1",
+   "quote": "Sure, let's change your savings.",
+   "note": "The person picked 'Mostly in a 401(k)' as a split choice, but the app restarted the total-savings question instead of applying it."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 60,
+    "truth": 60,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "SC",
+    "truth": "SC",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 75000.0,
+    "truth": 58000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 168000.0,
+    "truth": 168000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 44000.0,
+    "truth": 44000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "Person picked the range '$50k to $100k' (truth $58,000 is inside it). App stored its midpoint, $75,000, but tagged the source 'you said'. No exact figure was ever given."
+   }
+  ]
+ }
+}

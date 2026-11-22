@@ -1,0 +1,326 @@
+{
+ "items": {
+  "S049": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "39F, +partner 40, $53k pay, rent"
+  },
+  "S261": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "34F, +partner 36, $14k pay, rent"
+  },
+  "S204": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "68M, +partner 64, $30k pay, own"
+  },
+  "S219": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "60M, +partner 59, $50k pay, own"
+  },
+  "S184": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "64F, +partner 69, retired, rent"
+  },
+  "S250": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "26M, +partner 23, $48k pay, rent"
+  },
+  "S201": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "76F, +partner 75, retired, own"
+  },
+  "S120": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "44F, +partner 46, 4 kids, $103k pay, own"
+  },
+  "S278": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "76M, retired, own"
+  },
+  "S265": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "60F, $74k pay, own"
+  },
+  "S187": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "43F, $78k pay, own"
+  },
+  "S092": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "60M, +partner 63, $30k pay, own"
+  },
+  "E09_single_mom_2_kids": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "Age 34, single parent, two kids, renting"
+  },
+  "S098": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "39F, $78k pay, own"
+  },
+  "S279": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "73F, retired, own"
+  },
+  "S299": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "72M, +partner 65, retired, own"
+  },
+  "S127": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "76F, retired, own"
+  },
+  "S232": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "46F, +partner 52, 3 kids, $71k pay, own"
+  },
+  "S037": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "75F, +partner 78, retired, own"
+  },
+  "S111": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "63F, +partner 64, retired, rent"
+  },
+  "S076": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "25M, $67k pay, rent"
+  },
+  "S016": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "51M, +partner 44, $68k pay, own"
+  },
+  "S088": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "48F, $144k pay, rent"
+  },
+  "S048": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "49F, $214k pay, own"
+  },
+  "S068": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "56F, $75k pay, rent"
+  },
+  "S125": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "73M, retired, own"
+  },
+  "S067": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "61M, retired, own"
+  },
+  "S011": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "66F, $130k pay, own"
+  },
+  "S267": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "63F, retired, own"
+  },
+  "S122": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "70F, +partner 73, retired, own"
+  },
+  "E15_age_79_working": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "Age 79, still working, wants to stop at 80"
+  },
+  "S294": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "68M, $30k pay, own"
+  },
+  "S073": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "80F, $25k pay, own"
+  },
+  "S072": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "75M, +partner 71, $60k pay, rent"
+  },
+  "S209": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "35F, +partner 41, 2 kids, $30k pay, rent"
+  },
+  "S237": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "33M, +partner 38, $14k pay, rent"
+  },
+  "S192": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "66M, +partner 63, $34k pay, own"
+  },
+  "S208": {
+   "verdict": "questionable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "61M, +partner 58, $45k pay, own"
+  },
+  "S181": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "63M, +partner 56, retired, rent"
+  },
+  "S206": {
+   "verdict": "reasonable",
+   "reason": "mock judge: compared wants with the spending goal",
+   "input_tokens": 1500,
+   "output_tokens": 40,
+   "usd": 0.00017,
+   "label": "24F, +partner 29, $38k pay, own"
+  }
+ },
+ "usd": 0.0068000000000000005,
+ "model": "mock"
+}

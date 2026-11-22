@@ -1,0 +1,158 @@
+{
+ "persona_id": "p21",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "I noted that your pay is $150,000 a year.",
+   "note": "The person clicked a $100k to $200k range, and the true pay is $130,000. The app stored an invented midpoint as the person's actual pay, and the reply does not say it was a guess."
+  },
+  {
+   "ref": "i5",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "I didn't catch that. Pick a button or type your answer, or type skip.",
+   "note": "The person typed four clear amounts, but the app rejected them and repeated the same question without using the answer."
+  },
+  {
+   "ref": "i6",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "BUTTONS: ['Mostly in a 401(k)', 'Mostly in a bank account', 'Half and half']",
+   "note": "The app asks for four typed amounts, but the offered buttons are split-style choices that don't fit that request."
+  },
+  {
+   "ref": "i11",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "I noted that you have 2 children.",
+   "note": "The user entered three ages (11, 9, 6), so the app stored and echoed the wrong child count."
+  },
+  {
+   "ref": "i11",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "children's ages of 6 and 9",
+   "note": "The app dropped the 11-year-old and stored only two ages, which conflicts with the three the user gave."
+  },
+  {
+   "ref": "i11",
+   "type": "repeated_question",
+   "severity": "P1",
+   "quote": "How old are your children?",
+   "note": "The user had just given the children's ages in the same message, so the app asked for them again."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 45,
+    "truth": 45,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "UT",
+    "truth": "UT",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 58,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 150000.0,
+    "truth": 130000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 435000.0,
+    "truth": 435000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 300000.0,
+    "truth": 300000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     6,
+     9,
+     11
+    ],
+    "truth": [
+     6,
+     9,
+     11
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.9230769230769231,
+  "why": [
+   {
+    "field": "pay_per_year",
+    "cause": "person_never_said",
+    "note": "Person clicked the $100k to $200k bucket at i3 and never stated an exact figure. App used the bucket midpoint, $150,000, but tagged it as 'you said'. Truth is $130,000."
+   }
+  ]
+ }
+}

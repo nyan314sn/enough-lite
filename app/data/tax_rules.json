@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "tax_year": 2027,
+  "as_of": "2026-11-16",
+  "sources": {
+    "brackets_standard_deduction_capital_gains": "https://www.irs.gov/pub/irs-drop/rp-26-35.pdf (Rev. Proc. 2026-35, tax year 2027); summary: https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2027-taxpayers-continue-to-benefit-from-the-working-families-tax-cuts. Note: the PDF copy read for this file shows a placeholder release date in section 1; its single and married-joint figures match the IRS news release IR-2026-133 exactly.",
+    "retirement_limits_and_ira_phaseouts": "https://www.irs.gov/pub/irs-drop/n-26-66.pdf (Notice 2026-66, 2027 limits); summary: https://www.irs.gov/newsroom/401k-limit-increases-to-25500-for-2027-ira-limit-remains-7500",
+    "rmd_uniform_lifetime_table": "https://www.irs.gov/pub/irs-pdf/p590b.pdf (IRS Publication 590-B (2025), Appendix B, Table III)",
+    "rmd_start_age_1960_plus": "SECURE 2.0 Act section 107, as reported by secondary sources (age 75 for those born 1960 or later). Publication 590-B (2025) states age 73. Verify the 1960+ rule against the statute before relying on it."
+  },
+  "ordinary_brackets": {
+    "single": [
+      {
+        "threshold": 0,
+        "rate": 0.1
+      },
+      {
+        "threshold": 12800,
+        "rate": 0.12
+      },
+      {
+        "threshold": 52025,
+        "rate": 0.22
+      },
+      {
+        "threshold": 109125,
+        "rate": 0.24
+      },
+      {
+        "threshold": 208325,
+        "rate": 0.32
+      },
+      {
+        "threshold": 264550,
+        "rate": 0.35
+      },
+      {
+        "threshold": 661375,
+        "rate": 0.37
+      }
+    ],
+    "married_joint": [
+      {
+        "threshold": 0,
+        "rate": 0.1
+      },
+      {
+        "threshold": 25600,
+        "rate": 0.12
+      },
+      {
+        "threshold": 104050,
+        "rate": 0.22
+      },
+      {
+        "threshold": 218250,
+        "rate": 0.24
+      },
+      {
+        "threshold": 416650,
+        "rate": 0.32
+      },
+      {
+        "threshold": 529100,
+        "rate": 0.35
+      },
+      {
+        "threshold": 793650,
+        "rate": 0.37
+      }
+    ],
+    "head_of_household": [
+      {
+        "threshold": 0,
+        "rate": 0.1
+      },
+      {
+        "threshold": 18250,
+        "rate": 0.12
+      },
+      {
+        "threshold": 69650,
+        "rate": 0.22
+      },
+      {
+        "threshold": 109100,
+        "rate": 0.24
+      },
+      {
+        "threshold": 208300,
+        "rate": 0.32
+      },
+      {
+        "threshold": 264550,
+        "rate": 0.35
+      },
+      {
+        "threshold": 661350,
+        "rate": 0.37
+      }
+    ],
+    "married_separate": [
+      {
+        "threshold": 0,
+        "rate": 0.1
+      },
+      {
+        "threshold": 12800,
+        "rate": 0.12
+      },
+      {
+        "threshold": 52025,
+        "rate": 0.22
+      },
+      {
+        "threshold": 109125,
+        "rate": 0.24
+      },
+      {
+        "threshold": 208325,
+        "rate": 0.32
+      },
+      {
+        "threshold": 264550,
+        "rate": 0.35
+      },
+      {
+        "threshold": 396825,
+        "rate": 0.37
+      }
+    ]
+  },
+  "standard_deduction": {
+    "single": 16600,
+    "married_joint": 33200,
+    "head_of_household": 24925,
+    "married_separate": 16600
+  },
+  "additional_standard_deduction_aged": {
+    "married": 1700,
+    "unmarried": 2100
+  },
+  "long_term_capital_gains": {
+    "single": {
+      "zero_rate_max": 51050,
+      "fifteen_rate_max": 563200
+    },
+    "married_joint": {
+      "zero_rate_max": 102100,
+      "fifteen_rate_max": 633600
+    },
+    "head_of_household": {
+      "zero_rate_max": 68350,
+      "fifteen_rate_max": 598400
+    },
+    "married_separate": {
+      "zero_rate_max": 51050,
+      "fifteen_rate_max": 316800
+    }
+  },
+  "retirement": {
+    "elective_deferral": 25500,
+    "catch_up_50_plus": 8500,
+    "catch_up_60_to_63": 11750,
+    "roth_catch_up_wage_threshold": 155000,
+    "ira_limit": 7500,
+    "ira_catch_up_50_plus": 1100
+  },
+  "ira_deduction_phaseout_active_participant": {
+    "single_or_head_of_household": {
+      "lower": 83000,
+      "upper": 93000
+    },
+    "married_joint": {
+      "lower": 133000,
+      "upper": 153000
+    },
+    "married_joint_spouse_is_participant_you_are_not": {
+      "lower": 250000,
+      "upper": 260000
+    },
+    "married_separate": {
+      "lower": 0,
+      "upper": 10000
+    }
+  },
+  "roth_ira_phaseout": {
+    "single_or_head_of_household": {
+      "lower": 158000,
+      "upper": 173000
+    },
+    "married_joint": {
+      "lower": 250000,
+      "upper": 260000
+    },
+    "married_separate": {
+      "lower": 0,
+      "upper": 10000
+    }
+  },
+  "rmd": {
+    "start_age_born_1951_to_1959": 73,
+    "start_age_born_1960_plus": 75,
+    "start_age_note": "73 for those born 1951-1959; 75 for those born 1960 or later (SECURE 2.0 section 107, secondary source). Treasury's treatment of people born in 1959 was reported as unsettled; the app uses 73 for 1959.",
+    "uniform_lifetime": {
+      "72": 27.4,
+      "73": 26.5,
+      "74": 25.5,
+      "75": 24.6,
+      "76": 23.7,
+      "77": 22.9,
+      "78": 22.0,
+      "79": 21.1,
+      "80": 20.2,
+      "81": 19.4,
+      "82": 18.5,
+      "83": 17.7,
+      "84": 16.8,
+      "85": 16.0,
+      "86": 15.2,
+      "87": 14.4,
+      "88": 13.7,
+      "89": 12.9,
+      "90": 12.2,
+      "91": 11.5,
+      "92": 10.8,
+      "93": 10.1,
+      "94": 9.5,
+      "95": 8.9,
+      "96": 8.4,
+      "97": 7.8,
+      "98": 7.3,
+      "99": 6.8,
+      "100": 6.4,
+      "101": 6.0,
+      "102": 5.6,
+      "103": 5.2,
+      "104": 4.9,
+      "105": 4.6,
+      "106": 4.3,
+      "107": 4.1,
+      "108": 3.9,
+      "109": 3.7,
+      "110": 3.5,
+      "111": 3.4,
+      "112": 3.3,
+      "113": 3.1,
+      "114": 3.0,
+      "115": 2.9,
+      "116": 2.8,
+      "117": 2.7,
+      "118": 2.5,
+      "119": 2.3,
+      "120": 2.0
+    }
+  },
+  "child_tax_credit": {
+    "per_child_under_17": 2200,
+    "refundable_max_per_child": 1700,
+    "refundable_earned_income_floor": 2500,
+    "refundable_rate": 0.15,
+    "phaseout_start": {
+      "married_joint": 400000,
+      "other": 200000
+    },
+    "phaseout_per_1000": 50,
+    "source": "IRC section 24 as amended by Public Law 119-21 (2025): $2,200 a qualifying child under 17, indexed from 2026; refundable part up to $1,700 (2025 figure), 15% of earnings above $2,500; phase-out of $50 per $1,000 above $400,000 (married filing jointly) or $200,000 (others). https://www.irs.gov/credits-deductions/individuals/child-tax-credit . The 2027 indexed amounts were not checked; the 2025-2026 figures are used."
+  }
+}

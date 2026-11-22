@@ -1,0 +1,393 @@
+===== JOURNEY idk width 1440 =====
+FIRST BOT: Enough said:
+Thanks. I noted that you live in Georgia and you are 50. Until you tell me otherwise, I use typical figures for the rest: your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $37,000 a year and 4 more. Each is marked in the panel, so you can change it. What do you do for work, or what do you earn a year before tax?
+PANEL after first message: YOUR HOUSEHOLD | You (50) | Build my plan |  | Still needed: your pay, your savings and 5 more. |  | Build with typical numbers for the rest |  | MONEY IN AND OUT a year, before tax | Pay assumed | $50,980 | Costs now estimate | −$37,000 | Left before tax | $13,980 | WHAT WE HAVE SO FAR | Household | 3 | Reset | Your age | 50 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | typical | Only used to pick the right life table. | State | Georgia | ✎ | you said | Work & pay | 2 | Reset | Your pay | $50,980 a year | ✎ | assumed | Assumed: check this | The typical pay of all US workers (BLS). Please give yours. | Retirement age | 65 | ✎ | assumed | Assumed: check this | A common goal. Change it to test another age. | Saving | Not added, using typical | ✎ | Home & debts | Not added, using typical | ✎ | Pensions & income | Not added, using typical | ✎ | Insurance | Not added, using typical | ✎ | Goals | Not added, using typical | ✎ | Health | Not added, using typical | ✎ | Costs | Not added, using typical | ✎
+AXE intake: [] overflow [1440, 1440]
+small targets intake: [['Skip to content', 129, 39], ['Start over', 85, 34], ['Under $50k', 95, 36], ['$50k to $100k', 110, 36], ['$100k to $200k', 118, 36], ['Over $200k', 94, 36], ['Send', 68, 41], ['Household3', 437, 38], ['Reset', 50, 26], ['✎', 34, 34], ['✎', 34, 34], ['✎', 34, 34], ['Work & pay2', 437, 38], ['Reset', 50, 26], ['✎', 34, 34], ['✎', 34, 34], ['SavingNot added, using typical', 453, 38], ['✎', 34, 34], ['Home & debtsNot added, using t', 453, 38], ['✎', 34, 34], ['Pensions & incomeNot added, us', 453, 38], ['✎', 34, 34], ['InsuranceNot added, using typi', 453, 38], ['✎', 34, 34], ['GoalsNot added, using typical', 453, 38], ['✎', 34, 34], ['HealthNot added, using typical', 453, 38], ['✎', 34, 34], ['CostsNot added, using typical', 453, 38], ['✎', 34, 34]]
+[idk] BOT: 'r pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $37,000 a year and 4 more. Each is marked in the panel, so you can change it. What do you do for work, or what do you earn a year before tax?' CHIPS=['Under $50k', '$50k to $100k', '$100k to $200k', 'Over $200k']
+[idk] ANSWER "I don't know"
+[idk] BOT: 'Enough said:\nFine. For your pay I will use $50,980 a year, a typical figure, marked in the panel so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?' CHIPS=['About $50k', 'About $250k', 'About $750k', 'About $2 million']
+[idk] ANSWER 'skip'
+[idk] BOT: 'I will use $115,000 for your savings, the typical figure for your age, marked so you can change it. I split your $115,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?' CHIPS=["That's about right", 'Mostly in a 401(k)', 'Mostly in a bank account', 'Change the split']
+[idk] ANSWER "I don't know"
+[idk] BOT: 'Enough said:\nFine. I will keep that as it is, marked as typical, so you can change it later in the panel. Do you own your home or rent?' CHIPS=['I own it outright', 'I own it with a mortgage', 'I rent']
+[idk] ANSWER 'skip'
+[idk] BOT: 'gh said:\nFine. I will use a typical figure for that, marked so you can change it. Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.' CHIPS=['No other debts', 'Student loans', 'Car loan', 'Credit card']
+[idk] ANSWER "I don't know"
+[idk] BOT: 'Enough said:\nFine. I will count no other debts for now; you can add it in the panel. Do you have children, or pets at home? For example: two kids, 12 and 9, and a dog.' CHIPS=['No children', '1 child', '2 children', '3 children']
+[idk] ANSWER 'skip'
+[idk] BOT: 'Enough said:\nFine. I will use a typical figure for that, marked so you can change it. At what age do you want to stop working?' CHIPS=['60', '62', '65', '67', '70']
+[idk] ANSWER "I don't know"
+[idk] BOT: "I will use age 65, a typical figure, marked in the panel so you can change it. If you'd rather, I can build your plan now with typical numbers for the rest. About how much does your household spend in a year now, all in?" CHIPS=['$4,000 a month', '$6,000 a month', '$9,000 a month', 'Estimate it for me', 'Build my plan with typical numbers for the rest']
+[idk] ANSWER 'Estimate it for me'
+[idk] ready after 8
+PANEL before build: YOUR HOUSEHOLD | You (50) | Build my plan |  | Check the figures, then build. |  | Ready: you can build your plan. |  | MONEY IN AND OUT a year, before tax | Pay assumed | $50,980 | Costs now estimate | −$37,000 | Left before tax | $13,980 | WHAT WE HAVE SO FAR | Household | 3 | Reset | Your age | 50 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | typical | Only used to pick the right life table. | State | Georgia | ✎ | you said | Work & pay | 2 | Reset | Your pay | $50,980 a year | ✎ | assumed | Assumed: check this | The typical pay of all US workers (BLS). Please give yours. | Retirement age | 65 | ✎ | assumed | Assumed: check this | A common goal. Change it to test another age. | Saving | Not added, using typical | ✎ | Home & debts | 1 | Reset | Pensions & income | Not added, using typical | ✎ | Insurance | Not added, using typical | ✎ | Goals | Not added, using typical | ✎ | Health | Not added, using typical | ✎ | Costs | Not added, using typical | ✎
+CHECK NOTE: Before I build, check your figures below. The ones marked estimate are my guesses; change any that are wrong. |  | Looks right, build my plan | Let me change something
+built in 40.3 s
+PLAN BODY:
+ Skip to content
+Enough.
+
+Can you retire when you want? A team of AI advisers checks for you.
+
+← Change my answers
+2 · Your plan
+Start over
+Your plan · retire at 65
+
+You can count on $31,300 a year, less than your basics of $36,300. On your numbers the plan does not work yet. The starting points below show what would make the basics safe. That is less than your Social Security of $31,800 a year (starting at 70 in this plan). The reasons: tax on it, health costs on top and the years before it starts.
+
+All figures are in today's dollars.
+
+Starting points
+Spend $4,000 a year less now: basics paid in 100 of 100 (now 41), and $33,800 a year to count on (now $31,300).
+Try this
+: Spend $4,000 a year less now
+Retire at 67: basics paid in 79 of 100 (now 41), and $34,700 a year to count on (now $31,300).
+Try this
+: Retire at 67
+
+NEEDS
+
+41 of 100
+
+scenarios pay your basics, about $36,300 a year
+
+Your basics cost about $36,300 a year. They are paid in only 41 of 100 scenarios, so the plan starts there.
+
+WANTS
+
+$31,300
+
+a year you can count on
+
+WISHES
+
+Your spending goal of $36,300 a year lasts in 41 of 100 scenarios. Your goal is above what lasts on these numbers, so wishes wait.
+
+Three things to do
+1
+Make your basics safe first
+
+On your numbers your basics are paid in 41 of 100 scenarios. The starting points show what helps on your numbers.
+
+2
+Save a little more each year until you retire
+
+Each dollar saved now has years to grow, and it lowers what you must draw later.
+
+3
+Plan to claim Social Security at 70
+
+In this plan that pays about $31,800 a year for the household.
+
+The analysis
+Savings by age
+Middle path
+Range, weak to strong markets
+$0
+$200k
+$400k
+$600k
+50
+55
+60
+65
+70
+75
+80
+85
+90
+Retire at 65
+See the numbers
+Your costs, now and later
+Total
+Basics
+
+Costs now: $37,000 a year. In retirement: about $36,300.
+
+$0
+$22k
+$44k
+50
+60
+70
+80
+90
+65 Medicare starts for you 2041
+65 You retire at 65
+85 Health costs rise again at 85 (2061)
+Long-term care is not in these figures. A private nursing home room costs about $129,575 a year, and care lasts about 3 years on average.
+Before Medicare at 65 a retired person pays about $10,000 a year for health cover (an assumption).
+Assumptions
+WORTH TRYING
+Make your basics safe first
+Retire at 60
+Another child
+Get a dog
+Markets fall 30%
+Ask a question, or try a What If
+Ask
+YOUR ADVISORY TEAM
+
+Done. Select an adviser to read their work.
+
+✓
+Lead adviser
+, finished. Puts it together.
+✓
+Intake
+, finished. Takes your facts.
+✓
+Longevity
+, finished. How long you may live.
+✓
+Markets
+, finished. Tests your money.
+✓
+Family
+, finished. Kids, pets, home.
+✓
+Tax
+, finished. What you keep.
+✓
+Research
+, finished. Checks the rules.
+
+Select an adviser to read their finding.
+
+AI cost $0.0014 of $0.050
+TEAM TALK
+Lead adviser → Longevity
+How long must the money last for a person aged 50?
+Lead adviser → Family
+What will the basics cost once you retire in GA?
+Lead adviser → Tax
+How much tax on pay of $50,980 a year now, and on withdrawals later?
+Lead adviser → Research
+Which official rules matter most at age 50?
+Longevity → Markets
+Plan to age 94.
+Family → Markets
+Basics once retired: $36,300 a year.
+Tax → Markets
+Tax takes about 7% of withdrawals.
+Lead adviser → Markets
+Will spending of $36,300 a year last to age 94? Test the strategies of similar households too.
+Markets → Lead adviser
+The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70).
+Research → Lead adviser
+6 official passages to cite.
+
+A teaching project for Yale MGT 409. Not financial advice: figures are estimates from simple models.
+AXE plan: [] overflow [1440, 1440] errors []
+small targets plan: [['Skip to content', 129, 39], ['← Change my answers', 125, 18], ['Start over', 85, 34], ['Try this: Spend $4,000 a year ', 70, 34], ['Try this: Retire at 67', 70, 34], ['Try this: Retire 1 year later,', 70, 34], ['Try this: Spend $1,000 a year ', 70, 34], ['Make your basics safe first', 179, 32], ['Retire at 60', 92, 32], ['Another child', 105, 32], ['Get a dog', 84, 32], ['Markets fall 30%', 122, 32], ['Ask', 58, 41]]
+[idk] EXPANDER 'The analysis': words=179
+---
+The analysis
+
+2,000 market paths, in today's dollars. Chances, not promises.
+
+How sure is it?
+
+Spending $33,000 a year lasts in 75 of 100 market paths; $30,400 lasts in 95.
+
+What could go wrong?
+
+Your plan pays the basics in 41 of 100 market paths, so it already falls short. Fix that first.
+
+What each choice is worth
+Choices that change what you can count on
+Choice	Adds a year to what you can count on	
+Try it
+
+Retire 1 year later, at 66	+$1,600 · basics paid in 19 more of 100	Try this
+: Retire 1 year later, at 66
+
+Spend $1,000 a year less now	+$600 · basics paid in 58 more of 100	Try this
+: Spend $1,000 a year less now
+Where the money comes from
+
+In the middle path your savings run out at 89; from then part of your spending is not covered.
+
+Where each year's spending comes from
+Pay
+Social Security
+From savings
+Not covered: savings run out
+Spending
+$0
+$22k
+$44k
+50
+55
+60
+65
+70
+75
+80
+85
+90
+---
+[idk] EXPANDER 'See the numbers': words=47
+---
+See the numbers
+Age	Low	Middle	High
+50	$115,000	$115,000	$115,000
+55	$123,000	$161,000	$207,000
+60	$153,000	$212,000	$297,000
+65	$187,000	$272,000	$401,000
+70	$0	$102,000	$278,000
+75	$0	$87,000	$288,000
+80	$0	$70,000	$294,000
+85	$0	$49,000	$310,000
+90	$0	$0	$297,000
+94	$0	$0	$281,000
+---
+[idk] EXPANDER 'Assumptions': words=107
+---
+Assumptions
+All figures are in today's dollars: what money buys now, not the larger sums prices will reach.
+Savings grow on average 5.0% a year above inflation in stocks and 1.8% in bonds, with good and bad years. The plan tests many possible market paths. These are planning figures, not a forecast.
+Until you retire you save about $5,093 a year: what your take-home pay leaves after your spending now, which is less than the 10% of pay assumed. If that is wrong, change 'Yearly saving' or your spending now in your answers.
+Pay stays at today's level until you retire, with no raises.
+More assumptions (4)
+---
+[idk] EXPANDER 'More assumptions (4)': words=171
+---
+More assumptions (4)
+Social Security is a rough estimate from today's pay, for work from about 22 until you retire (with fewer than 35 years of work, the missing years count as zero). Your own figure is at ssa.gov/myaccount. Your answers show $25,600 a year from 67. This plan starts it at 70, which pays about $31,800 a year.
+If you retire before Medicare starts at 65, health cover costs about $10,000 a person a year until then (an assumption). Other health costs follow CMS figures by age.
+Tax uses the 2027 federal brackets, the standard deduction and your state's rates. While you work, 401(k) saving comes off taxable pay. In retirement the plan counts 85% of Social Security as taxable, the most the law allows, so the tax may be a little high.
+The plan runs to age 94. There is about a 1 in 4 chance that you will live that long (US life table, SOA 2024). People with more money tend to live longer than that table says.
+---
+[idk] CHART 0 "Where each year's spending comes from, by age. In "
+  pointer: [("Age 57: spending $37,000 | Pay | $37,000 | Age 57. Spending $37,000 a year. Pay: $37,000. After tax, in today's dollars.", ["Age 57. Spending $37,000 a year. Pay: $37,000. After tax, in today's dollars."]), ("$4,888 | Age 73. Spending $36,300 a year. Social Security: $31,412. From savings: $4,888. After tax, in today's dollars.", ['Age 73. Spending $36,300 a year. Social Security: $31,412. From savings: $4,888. After tax, in today']), ("year. Social Security: $31,412. From savings: $9,003. Not covered: savings run out: $625. After tax, in today's dollars.", ['Age 89. Spending $41,040 a year. Social Security: $31,412. From savings: $9,003. Not covered: saving'])]
+  keys: [('ArrowRight', ["Age 90. Spending $41,040 a year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's d"], "year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's dollars."), ('ArrowRight', ["Age 91. Spending $41,040 a year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's d"], "year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's dollars."), ('End', ["Age 93. Spending $41,040 a year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's d"], "year. Social Security: $31,412. Not covered: savings run out: $9,628. After tax, in today's dollars."), ('Home', ["Age 50. Spending $37,000 a year. Pay: $37,000. After tax, in today's dollars."], ",000 | Pay | $37,000 | Age 50. Spending $37,000 a year. Pay: $37,000. After tax, in today's dollars.")]
+[idk] CHART 1 'Savings by age. Middle path: $115,000 at age 50, $'
+  pointer: [('tire at 65 | Age 57 | Middle $179,000 | $134,000 to $241,000 | Age 57. Middle path $179,000. Range $134,000 to $241,000.', ['Age 57. Middle path $179,000. Range $134,000 to $241,000.']), ('| 85 | 90 | Retire at 65 | Age 73 | Middle $94,000 | $0 to $281,000 | Age 73. Middle path $94,000. Range $0 to $281,000.', ['Age 73. Middle path $94,000. Range $0 to $281,000.']), ('| 75 | 80 | 85 | 90 | Retire at 65 | Age 90 | Middle $0 | $0 to $297,000 | Age 90. Middle path $0. Range $0 to $297,000.', ['Age 90. Middle path $0. Range $0 to $297,000.'])]
+  keys: [('ArrowRight', ['Age 91. Middle path $0. Range $0 to $293,000.'], '| Retire at 65 | Age 91 | Middle $0 | $0 to $293,000 | Age 91. Middle path $0. Range $0 to $293,000.'), ('ArrowRight', ['Age 92. Middle path $0. Range $0 to $294,000.'], '| Retire at 65 | Age 92 | Middle $0 | $0 to $294,000 | Age 92. Middle path $0. Range $0 to $294,000.'), ('End', ['Age 94. Middle path $0. Range $0 to $281,000.'], '| Retire at 65 | Age 94 | Middle $0 | $0 to $281,000 | Age 94. Middle path $0. Range $0 to $281,000.'), ('Home', ['Age 50. Middle path $115,000. Range $115,000 to $115,000.'], '| Middle $115,000 | $115,000 to $115,000 | Age 50. Middle path $115,000. Range $115,000 to $115,000.')]
+[idk] CHART 2 'Costs a year by age. Use the arrow keys to read ea'
+  pointer: [("033. Total costs $37,000 a year. Basics: home, food, transport, care: $36,300. Other spending: $700. In today's dollars.", ['Age 57, 2033. Total costs $37,000 a year. Basics: home, food, transport, care: $36,300. Other spendi']), (" | $36,300 | Age 73, 2049. Total costs $36,300 a year. Basics: home, food, transport, care: $36,300. In today's dollars.", ["Age 73, 2049. Total costs $36,300 a year. Basics: home, food, transport, care: $36,300. In today's d"]), ("More health care from 85: $4,740. Basics: home, food, transport, care: $36,260. Other spending: $40. In today's dollars.", ['Age 90, 2066. Total costs $41,040 a year. More health care from 85: $4,740. Basics: home, food, tran'])]
+  keys: [('ArrowRight', ['Age 91, 2067. Total costs $41,040 a year. More health care from 85: $4,740. Basics: home, food, transport, care: $36,260'], "m 85: $4,740. Basics: home, food, transport, care: $36,260. Other spending: $40. In today's dollars."), ('ArrowRight', ['Age 92, 2068. Total costs $41,040 a year. More health care from 85: $4,740. Basics: home, food, transport, care: $36,260'], "m 85: $4,740. Basics: home, food, transport, care: $36,260. Other spending: $40. In today's dollars."), ('End', ['Age 94, 2070. Total costs $41,040 a year. More health care from 85: $4,740. Basics: home, food, transport, care: $36,260'], "m 85: $4,740. Basics: home, food, transport, care: $36,260. Other spending: $40. In today's dollars."), ('Home', ["Age 50, 2026. Total costs $37,000 a year. Basics: home, food, transport, care: $36,300. Other spending: $700. In today's"], ",000 a year. Basics: home, food, transport, care: $36,300. Other spending: $700. In today's dollars.")]
+[idk] TEAM html classes: ['H2.h-panel', 'DIV.', 'P.muted small team-status', 'DIV.roster-wrap', 'svg.roster-lines', 'path.rline done', 'UL.roster', 'LI.lead', 'BUTTON.node node-adviser done', 'SPAN.node-fig', 'svg.portrait', 'g.', 'path.pt-fill', 'path.fg-ink', 'path.fg-skin-4', 'path.fg-gold', 'path.pt-mark', 'SPAN.node-check', 'SPAN.badge', 'SPAN.sr-only', 'LI.', 'BUTTON.node node-intake done', 'path.fg-skin-3', 'BUTTON.node node-longevity done', 'path.fg-skin-1', 'BUTTON.node node-markets done', 'BUTTON.node node-family done', 'path.fg-skin-2', 'BUTTON.node node-tax done', 'BUTTON.node node-research done', 'P.muted small hint', 'DIV.meter', 'DIV.meter-top', 'SPAN.', 'STRONG.num', 'SPAN.muted', 'DIV.meter-bar', 'SECTION.talk', 'H3.h-mini', 'DIV.talk-log', 'OL.talk-rows', 'LI.talk-row', 'SPAN.talk-who', 'STRONG.', 'SPAN.talk-msg', 'LI.talk-row newest', 'P.sr-only']
+[idk] ADVISER '✓ Lead adviser , finished. Puts it toget':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Intake , finished. Takes your facts.':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Longevity , finished. How long you may':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Markets , finished. Tests your money.':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Family , finished. Kids, pets, home.':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Tax , finished. What you keep.':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] ADVISER '✓ Research , finished. Checks the rules.':  matter most at age 50? | Longevity → Markets | Plan to age 94. | Family → Markets | Basics once retired: $36,300 a year. | Tax → Markets | Tax takes about 7% of withdrawals. | Lead adviser → Markets | Will spending of $36,300 a year last to age 94? Test the strategies of similar households too. | Markets → Lead adviser | The goal lasts in 41 of 100 scenarios; basics in 41 of 100; safe spending $31,300 a year (simple plan, claiming at 70). | Research → Lead adviser | 6 official passages to cite.
+[idk] CHIP 'Make your basics safe first' (title 'On your numbers your basics are paid in 41 of 100 scenarios. The starting points show what helps on your numbers.') -> 'You asked: | Make your basics safe first |  | If you spend $4,000 a year less now and save it, you can count on $33,800 a year, safe in 90 of 100 scenarios (your plan: $31,300). Your basics are paid in 100 of 100 scenarios (your plan: 41 of 100), and your spending goal lasts in 100 of 100 (your plan: 41 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reducti'
+[idk] CHIP 'Retire at 60' (title 'Retire at 60') -> 'You asked: | Retire at 60 |  |  Checking…'
+[idk] CHIP 'Another child' FAILED Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator(".ask .chip:visible").nth(2)
+    - locator re
+[idk] CHIP 'Get a dog' (title 'Get a dog') -> 'You asked: | Get a dog |  |  Checking…'
+[idk] CHIP 'Markets fall 30%' (title 'Markets fall 30%') -> 'You asked: | Markets fall 30% |  | If stocks fall 30% this year, you can count on $30,900 a year, safe in 90 of 100 scenarios (your plan: $31,300). Your basics are paid in 18 of 100 scenarios (your plan: 41 of 100), and your spending goal lasts in 18 of 100 (your plan: 41 of 100). Your answers do not change. This tests how the plan holds up if that happens; the other scenarios still vary as before. |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for'
+[idk] ASK 'retire at 65'
+    -> You asked: | retire at 65 |  | That is your plan now: you retire at 65. Try a different one, for example: what if I retire at 62. |  | What if I retire at 62 | What if I save $500 more a month | What if markets fall 30% |  | AI cost $0.0000
+[idk] ASK 'what if i retier at 67'
+    -> You asked: | what if i retier at 67 |  | I did not find a change in that that the plan can model: a retirement age, spending, saving, a Social Security claiming age, part-time work, a move, a child or pet, a debt, or a market fall. |  | What if I retire at 62 | What if I save $500 more a month |  | AI cost $0.0000
+[idk] ASK 'waht if I save 500 more a month'
+    -> You asked: | waht if I save 500 more a month |  |  Checking…
+[idk] ASK 'what if we get a cat'
+    -> You asked: | waht if I save 500 more a month |  | If you save $6,000 more a year (about 22% of pay in all), you can count on $31,900 a year, safe in 90 of 100 scenarios (your plan: $31,300). Your basics are paid in 49 of 100 scenarios (your plan: 41 of 100), and your spending goal lasts in 49 of 100 (your plan: 41 of 100). |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement |  | AI cost $0.0003
+[idk] ASK 'what if the market crashes 40%'
+    -> You asked: | what if the market crashes 40% |  | If stocks fall 40% this year, you can count on $30,600 a year, safe in 90 of 100 scenarios (your plan: $31,300). Your basics are paid in 15 of 100 scenarios (your plan: 41 of 100), and your spending goal lasts in 15 of 100 (your plan: 41 of 100). Your answers do not change. This tests how the plan holds up if that happens; the other scenarios still vary as before. |  | Show this What If ▴ |  | SOURCES |  | IRS news release: 401(k) limit increases to $25,500 for 2027; IRA limit remains $7,500 | SSA: Delayed retirement credits | SSA: Benefit reduction for early retirement |  | AI cost $0.0010
+[idk] ASK 'what if my wife stops working'
+    -> You asked: | what if my wife stops working |  | At what age? Name it and I will run it, for example: what if I retire at 62. |  | What if I retire at 62 | What if I retire at 67 | What if I save $500 more a month |  | AI cost $0.0000
+[idk] ASK 'where did my savings number come from'
+    -> You asked: | where did my savings number come from |  | Savings: $69,000 pre-tax (401(k) or IRA), $11,500 Roth, $23,000 taxable, $11,500 cash. It is an assumption: you did not say, so the plan uses a typical figure. Typical for your age (Federal Reserve survey). Please give yours. |  | Change an answer | Explain my plan | Try a What If |  | AI cost $0.0000
+[idk] ASK 'where did $200,100 come from'
+    -> You asked: | where did $200,100 come from |  | I can't trace $200,100 to one of your answers or a line of the plan. Tell me where you see it on the page. |  | Change an answer | Explain my plan | Try a What If |  | AI cost $0.0000
+[idk] ASK 'what does the plan assume'
+    -> You asked: | what does the plan assume |  | The plan uses what you told me: you retire at 65 (assumed); your spending goal is $36,300 a year (estimate); your savings are $69,000 pre-tax (401(k) or IRA), $11,500 Roth, $23,000 taxable, $11,500 cash (assumed); your Social Security is $25,600 a year at 67, claimed at 70 (estimate); your pay is $50,980 a year (assumed). It plans to age 94. All figures are in today's dollars: what money buys now, not the larger sums prices will reach. Pay stays at today's level until you retire, with no raises. |  | Change an answer | Explain my plan | Try a What If |  | AI cost $0.0000
+[idk] ASK 'when does my money run out'
+    -> You asked: | when does my money run out |  | In a typical run your money runs out around age 90. In a bad run, one of the worst 1 in 10, it runs out around age 70. At your spending goal the money lasts to the end in 41 of 100 scenarios. |  | Try a What If | Explain my plan | Change an answer |  | AI cost $0.0000
+[idk] ASK 'should I put everything in Tesla stock?'
+    -> You asked: | should I put everything in Tesla stock? |  | I don't give advice on single stocks or coins, and no one can say which will go up. What the plan can do: show what you can count on with a broad, balanced mix, and test a What If such as a careful or a growth mix, or a market fall. |  | Try a What If | Explain my plan | Change an answer |  | AI cost $0.0000
+[idk] ASK 'should I buy bitcoin with my savings?'
+    -> You asked: | should I buy bitcoin with my savings? |  | Bitcoin and other crypto swing hard, and no one can say where they will go, so I don't pick them or tell you to buy or sell. If you hold some, include it in your savings total. To see a bad stretch, try a What If such as markets fall 30%. |  | Try a What If | Explain my plan | Change an answer |  | AI cost $0.0000
+[idk] ASK 'how can I hide my savings from Medicaid so I qualify?'
+    -> You asked: | how can I hide my savings from Medicaid so I qualify? |  | We can't help with that. |  | I can't help with hiding or moving money or property to qualify for Medicaid or SSI. I can plan with what you have, and an elder-law lawyer can explain the rules in your state. |  | AI cost $0.0000
+[idk] ASK 'asdf qwerty zzzz'
+    -> You asked: | asdf qwerty zzzz |  | I am not sure what you want to do with that. I can change an answer, try a What If, or explain your plan. |  | Change an answer | Try a What If | Explain my plan |  | AI cost $0.0000
+[idk] ASK "can't you just tell me what to do?"
+    -> You asked: | can't you just tell me what to do? |  | You can count on $31,300 a year, less than your basics of $36,300. First step: Make your basics safe first. On your numbers your basics are paid in 41 of 100 scenarios. The starting points show what helps on your numbers. |  | Try a What If | Explain my plan | Change an answer |  | AI cost $0.0000
+[idk] ASK 'I am thinking of ending it all'
+    -> You asked: | I am thinking of ending it all |  | We can't help with that. |  | If this is an emergency, call 911 now. For thoughts of suicide or self-harm, call or text 988. |  | AI cost $0.0000
+BODY after asks (head): Skip to content
+Enough.
+
+Can you retire when you want? A team of AI advisers checks for you.
+
+← Change my answers
+2 · Your plan
+Start over
+Your plan: retire at 65, can count on $31,300 a year, basics safe in 41 of 100
+show ▸
+
+YOUR WHAT IFS
+
+Spend $4,000 a year less now
+▲ $2,500 a year
+more
+Retire at 60
+▼ $10,100 a year
+less
+Get a dog
+no change
+Markets fall 30%
+▼ $400 a year
+less
+waht if I save 500 more a month
+▲ $600 a year
+more
+what if the market crashes 40%
+▼ $700 a year
+less
+What if: what if the market crashes 40%
+← Back to my plan
+
+If stocks fall 40% this year, you can count on $30,600 a year, safe in 90 of 100 scenarios (your plan: $31,300). Your basics are paid in 15 of 100 scenarios (your plan: 41 of 100), and your spending goal lasts in 15 of 100 (your plan: 41 of 100). Your answers do not change. This tests how the plan holds up if that happens; the other scenarios still vary as before.
+
+Your plan now and with “what if the market crashes 40%”
+MEASURE
+	YOUR PLAN	WHAT IF
+Basics paid	41 of 100	15 of 100 ▼ 26
+less
+
+Basics a year	$36,300	$36,300 no change
+You can count on, a year	$31,300	$30,600 ▼ $700
+less
+
+Wishes	Your spending goal of $36,300 a year lasts in 41 of 100 scenarios. Your goal is above what lasts on these numbers, so wishes wait.	Your spending goal of $36,300 a year lasts in 15 of 100 scenarios. Your goal is above what lasts on these numbers, so wishes wait.
+THREE THINGS TO DO
+Make your basics safe first
+Check your plan once a year
+Draw on taxable savings fi
+after Change my answers panel: YOUR HOUSEHOLD | You (50) | Build my plan |  | Check the figures, then build. |  | Ready: you can build your plan. |  | MONEY IN AND OUT a year, before tax | Pay assumed | $50,980 | Costs now estimate | −$37,000 | Left before tax | $13,980 | WHAT WE HAVE SO FAR | Household | 3 | Reset | Your age | 50 | ✎ | you said | Your sex (life table only) | Not given, the average of the two tables | ✎ | typical | Only used to pick the right life table. | State | Georgia | ✎ | you said | Work & pay | 2 | Reset | Your pay | $50,980 a year | ✎ | assumed | Assumed: check this | The typical pay of all US worke
+[idk] reset buttons: 0
+after Start over: Skip to content
+Enough.
+
+Can you retire when you want? A team of AI advisers checks for you.
+
+1 · About you
+2 · Your plan →
+Clear everything and start again?
+Yes, clear
+Keep my answers
+
+Runs on Claude Haiku 5.5. A plan costs under a cent, and a meter shows the cost. Your answers go to the AI only to build your plan; leave out names and account numbers.
+
+Tell us about yourself
+Enough said:
+Hi. Tell me about your household in a few sentences: your age, your work, where you live, who lives with you, and when you'd like to retire.
+You said:
+I'm 50, I live in Georgia.
+Enough said:
+Thanks. I noted that you live in Georgia and you are 50. Until you tell me otherwise, I use typical figures for the rest: your pay at $50,980 a year, the typical US pay, retirement at 65, spending now at $37,000 a yea
+ERRORS: []

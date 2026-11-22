@@ -1,0 +1,123 @@
+{
+ "persona_id": "p26",
+ "issues": [
+  {
+   "ref": "a2",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "Your retirement age is already 66 and your pre-tax savings is already $230,000",
+   "note": "The user said the plan shows 63 after the what-if, but the app insisted nothing needed changing and did not explain or fix the 63 that the plan displays."
+  },
+  {
+   "ref": "a3",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "I don't have a source for that.",
+   "note": "This is an unclear non-answer to a plain question about what the mortgage balance and payment mean, which the app had already explained in turn i2."
+  },
+  {
+   "ref": "a3",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "I don't have a source for that. I can still change an answer, try a What If, or explain your plan.",
+   "note": "The reply does not answer the user's mortgage question and only offers generic menu options."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 61,
+    "truth": 61,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "KY",
+    "truth": "KY",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 66,
+    "truth": 66,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 64000.0,
+    "truth": 64000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 246000.0,
+    "truth": 246000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 35000.0,
+    "truth": 35000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 50000.0,
+    "truth": 50000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

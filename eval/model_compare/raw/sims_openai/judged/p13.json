@@ -1,0 +1,243 @@
+{
+ "persona_id": "p13",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+   "note": "The reply does not answer the user's question about what changes between 50 and 51, and it repeats the skip-to-typical-figure option the user just rejected."
+  },
+  {
+   "ref": "i4",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "A rough figure is fine. If you don't know one, type skip and I will use a typical figure",
+   "note": "The reply ignores the user's request for one concrete example and only repeats the age ask."
+  },
+  {
+   "ref": "i5",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your age sets how many years you have left to save and how long the money must last.",
+   "note": "The app repeats its earlier line verbatim and never gives the requested 50-versus-51 example, leaving the user stuck."
+  },
+  {
+   "ref": "i6",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+   "note": "After the third repetition the app still gives no concrete plan change and offers no other way forward, so the user is stuck."
+  },
+  {
+   "ref": "i7",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your age sets how many years you have left to save and how long the money must last.",
+   "note": "The app repeats the same line and asks for age again without naming the 50-versus-51 change the person asked for, leaving them stuck."
+  },
+  {
+   "ref": "i8",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "I can't guess your age, and the plan needs it. Pick one below or type it.",
+   "note": "The app neither answers the question about what changes between 50 and 51 nor offers any new option, so the person is still stuck."
+  },
+  {
+   "ref": "i9",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your plan will answer that with your own numbers. It needs a few more answers first.",
+   "note": "The app deflects the direct question again with a vague promise and no concrete example, and still asks only for age."
+  },
+  {
+   "ref": "i10",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+   "note": "The user asked for one concrete example of how 50 versus 51 changes the plan, and the app repeats the same ask without answering or offering any other way forward."
+  },
+  {
+   "ref": "i11",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your plan will answer that with your own numbers. It needs a few more answers first.",
+   "note": "The app deflects the explicit request for one example with a vague promise and no example, leaving the user stuck."
+  },
+  {
+   "ref": "i12",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+   "note": "The app ignores the user's specific request for a worked example and repeats the age prompt, so the conversation makes no progress."
+  },
+  {
+   "ref": "i13",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your age sets how many years you have left to save and how long the money must last.",
+   "note": "The user asked for one concrete change between 50 and 51 and said they are done; the app repeats the same line and offers no example or new option."
+  },
+  {
+   "ref": "i14",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+   "note": "The user has explicitly said they are done and asked again for an example, and the app neither answers nor acknowledges the exit."
+  },
+  {
+   "ref": "i15",
+   "type": "dead_end",
+   "severity": "P0",
+   "quote": "Your plan will answer that with your own numbers. It needs a few more answers first.",
+   "note": "The app deflects the request for a concrete example, repeats the age ask, and gives the user no way forward after they said they are leaving."
+  },
+  {
+   "ref": "i15",
+   "type": "confusing",
+   "severity": "P1",
+   "quote": "Your plan will answer that with your own numbers.",
+   "note": "A vague promise that the plan will answer the question, without naming any change, is hard for the user to act on or check."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 50,
+    "truth": 50,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "IL",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 62,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 50980.0,
+    "truth": 110000,
+    "source": "assumed"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 0.0,
+    "truth": 550000,
+    "source": null
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 150000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     16
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 39000.0,
+    "truth": 82000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.38461538461538464,
+  "why": [
+   {
+    "field": "state",
+    "cause": "never_asked",
+    "note": "App first asked for state in the final turn; the user never answered."
+   },
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "User never stated it; app used a typical 65 instead of the true 62."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "User never stated it; app used a typical $50,980 instead of the true $110,000."
+   },
+   {
+    "field": "savings_total",
+    "cause": "never_asked",
+    "note": "Savings were never asked; stored as 0 instead of $550,000."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "Home ownership was never asked; stored as null instead of true."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "Mortgage was never asked; stored as 0 instead of $150,000."
+   },
+   {
+    "field": "children",
+    "cause": "never_asked",
+    "note": "Children were never asked; stored as an empty list instead of [16]."
+   },
+   {
+    "field": "spending_now",
+    "cause": "assumed_default",
+    "note": "User never stated it; app used a $39,000 estimate instead of the true $82,000."
+   }
+  ]
+ }
+}
