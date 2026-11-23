@@ -51,6 +51,11 @@ def apply(p: Profile, facts: dict[str, Any]) -> list[str]:
         if key not in changed:
             changed.append(key)
 
+    for k in ("sex", "partner_sex"):
+        if facts.get(k) == "unstated":          # "my partner is nonbinary": the average of the two life tables, as they said
+            facts = {**facts, k: None}
+            setattr(p, k, None)
+            said(k)
     for k in ("age", "partner_age", "state", "job", "partner_job", "retire_age", "spending_per_year", "social_security_per_year", "risk",
               "pay_per_year", "partner_pay_per_year", "spending_now_per_year", "partner_retire_age", "sex", "partner_sex", "health",
               "partner_health", "emergency_months"):
@@ -418,7 +423,7 @@ def missing(p: Profile) -> list[str]:
 
 
 def question_for(key: str, p: Profile) -> Question:
-    partner = {"female": "your wife", "male": "your husband"}.get(p.partner_sex or "", "your partner")
+    partner = "your partner"        # never guessed from a life-table choice; the person may not say wife or husband
     if key == "age":
         if p.has_partner:
             return Question(text=f"How old are you and {partner}?", quick_answers=["35 and 33", "45 and 43", "55 and 53", "65 and 63"])
@@ -549,10 +554,16 @@ def _named_bits(changed: list[str], p: Profile) -> list[str]:
         out.append(_join(said) if said else "")
     if "health" in changed and p.health:
         out.append(f"you are in {p.health} health")
+    if "risk" in changed and p.risk:
+        out.append({"careful": "you prefer a careful investing style (fewer swings)", "balanced": "you prefer a balanced investing style",
+                    "growth": "you prefer a growth investing style (bigger swings, more growth)"}[p.risk])
     if "partner_health" in changed and p.partner_health:
         out.append(f"your partner is in {p.partner_health} health")
     if "sex" in changed and p.sex:
         out.append(f"you are {p.sex} (used only to pick the life table)")
+    if "partner_sex" in changed and p.has_partner:
+        out.append(f"your partner is {p.partner_sex} (used only to pick the life table)" if p.partner_sex
+                   else "for your partner I use the average of the two life tables")
     if "part_time" in changed and p.part_time and p.part_time.per_year:
         out.append(f"you plan part-time work of {_money(p.part_time.per_year)} a year in retirement")
     if "inheritance" in changed and p.inheritance and p.inheritance.amount:
@@ -648,6 +659,10 @@ def summary(changed: list[str], p: Profile) -> str:
 
 
 PLAIN_KEYS = ("pay_per_year", "partner_pay_per_year", "spending_now_per_year", "spending_per_year", "social_security_per_year")
+# words that tie a figure to some other field (used so a money question does not swallow it)
+OTHER_FIELD_WORDS = re.compile(r"\bborn\b|\bbirth|\brent|\bmortgage|\bloans?\b|\bdebts?\b|\bbills?\b|\bowe|\bsaved\b|\bsavings\b|\b401|\b403|\b457|"
+                               r"\bira\b|\broth\b|\btsp\b|\bhouse\b|\bhome\b|\bcondo\b|\bkids?\b|\bchild|\bson\b|\bdaughter|\bdogs?\b|\bcats?\b|"
+                               r"\bpension|social security|\bage\b|\byears? old\b|\bretir|\bcredit card|\bvisa\b|\bcar\b", re.I)
 UPDATED_LABELS = {"savings": ["savings"], "pay": ["pay_per_year"], "partner's pay": ["partner_pay_per_year"], "retirement age": ["retire_age"],
                   "spending": ["spending_now_per_year", "spending_per_year"], "social security": ["social_security_per_year"],
                   "investing style": ["risk"], "yearly saving": ["save_rate"], "health": ["health"], "home": ["home"],
@@ -1581,6 +1596,11 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
     if doubt_yes:
         prep.accept.add(doubt.split("=")[0])
     if not facts and not escape:
+        # a figure answers a money question only when the words fit it: "I was born in 1968", "$3k in medical bills" and
+        # "we're renters, $1,800/mo" are not a partner's pay, whatever question is open
+        if eff in PLAIN_KEYS and re.search(r"\d", said) and OTHER_FIELD_WORDS.search(said) and not turn_guard.fits(eff, said) \
+                and not re.search(r"\bincluding\b|\ball in\b|\bin total\b|\ball told\b", said, re.I):      # "$85k including rent" is a total
+            eff = None
         facts = parser.parse(said, asking=eff, has_partner=p.has_partner, n_children=len(p.children), pending_kind=p.notes.get("pending_debt_kind"))
         if eff == "mortgage":
             est_pending = p.notes.get("mortgage_payment_est") == "yes" and p.home.mortgage_payment > 0 and p.notes.get("mortgage_payment_said") != "yes"
@@ -1716,7 +1736,8 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
     answered = bool(cf) or (bool(asking) and (sup.answers(facts, asking, then) or (skipping and not new_fact)))
     words = len(clean.split())
     skipped_key: str | None = None
-    real = {k: v for k, v in facts.items() if k not in NON_FACTS and k not in ("partner_sex", "has_partner", "savings.replace")}
+    real = {k: v for k, v in facts.items() if k not in NON_FACTS and k not in ("has_partner", "savings.replace")
+            and not (k == "partner_sex" and (v == p.partner_sex or (v == "unstated" and p.partner_sex is None)))}   # a partner word is no answer; a change of their sex is
     if facts.get("type_prompt"):
         reply_bits.append("Type the amount, for example $85,000 a year or $7,000 a month.")
         forced_question = Question(text=sup.edit_question(facts["type_prompt"], p).text, quick_answers=[])

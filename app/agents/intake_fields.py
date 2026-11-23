@@ -218,7 +218,7 @@ def rows(p: Profile, offered_none: bool = True) -> list[dict[str, Any]]:
             "you said" if p.sex else "assumed", "Only used to pick the right life table.", _choice("sex", ["male", "female"]))
     if p.has_partner:
         add("partner_sex", "Partner's sex (life table only)", "Household", p.partner_sex,
-            p.partner_sex.title() if p.partner_sex else "Not given, the average of the two tables", "you said" if p.partner_sex else "assumed", "",
+            p.partner_sex.title() if p.partner_sex else "Not given, the average of the two tables", "you said" if p.partner_sex or p.sources.get("partner_sex") == "you said" else "assumed", "",
             _choice("partner_sex", ["male", "female"]))
     if p.state:
         from . import parser

@@ -468,7 +468,7 @@ def explain(q: str, plan: dict | None) -> str | None:
 
 
 AGE_OWN = re.compile(r"\b(?:i'?m|i am|we'?re|we are|i turned?|i just turned|i will be|my age)\b[^.?!]{0,15}?\b\d{2}\b|\bmy age\b|\b\d{2}\s*(?:years?|yrs?)\s*old\b|\bage (?:is|of|to)\s+\d{2}\b", re.I)
-PARTNER_OWN = re.compile(r"\b(?:partner|wife|husband|spouse)(?:'?s)?\s+(?:is|age|turned|just turned)\b|\b(?:partner|wife|husband|spouse)'?s age\b|\b(?:she|he)(?:'s| is)\s+\d{2}\b", re.I)
+PARTNER_OWN = re.compile(r"\b(?:partner|wife|husband|spouse|boyfriend|girlfriend|fianc[eé]e?)(?:'?s)?\s+(?:is|age|turned|just turned)\b|\b(?:partner|wife|husband|spouse|boyfriend|girlfriend|fianc[eé]e?)'?s age\b|\b(?:she|he)(?:'s| is)\s+\d{2}\b", re.I)
 AGE_KEYS = ("age", "partner_age")
 
 

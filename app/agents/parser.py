@@ -6,6 +6,7 @@ Returns {key: value} for what the person said, using profile keys (savings.preta
 from __future__ import annotations
 
 import re
+from datetime import date
 from typing import Any
 
 from ..tools import estimates
@@ -30,14 +31,40 @@ CITIES = {"nyc": "NY", "new york city": "NY", "brooklyn": "NY", "manhattan": "NY
           "los angeles": "CA", "san francisco": "CA", "san diego": "CA", "austin": "TX", "houston": "TX", "dallas": "TX", "denver": "CO",
           "atlanta": "GA", "miami": "FL", "phoenix": "AZ", "philadelphia": "PA", "pittsburgh": "PA", "new haven": "CT", "hartford": "CT",
           "stamford": "CT", "detroit": "MI", "minneapolis": "MN", "nashville": "TN", "charlotte": "NC", "las vegas": "NV",
-          "baltimore": "MD", "cleveland": "OH", "columbus": "OH"}
+          "baltimore": "MD", "cleveland": "OH", "columbus": "OH",
+          # regions and nicknames people use instead of a state
+          "bay area": "CA", "silicon valley": "CA", "socal": "CA", "norcal": "CA", "sacramento": "CA", "san jose": "CA", "oakland": "CA",
+          "jersey": "NJ", "philly": "PA", "dfw": "TX", "san antonio": "TX", "twin cities": "MN", "new orleans": "LA", "nola": "LA",
+          "st louis": "MO", "st. louis": "MO", "kansas city": "MO", "salt lake city": "UT", "orlando": "FL", "tampa": "FL",
+          "jacksonville": "FL", "raleigh": "NC", "indianapolis": "IN", "milwaukee": "WI", "honolulu": "HI", "anchorage": "AK",
+          "albuquerque": "NM", "boise": "ID", "long island": "NY", "queens": "NY", "the bronx": "NY",
+          "buffalo": "NY", "cincinnati": "OH", "louisville": "KY", "memphis": "TN", "oklahoma city": "OK", "omaha": "NE",
+          "des moines": "IA", "providence": "RI", "tucson": "AZ", "el paso": "TX", "fort worth": "TX"}
 CODES = set(STATES.values())
 STATE_NAME = {v: k.title() for k, v in STATES.items() if k not in ("washington dc", "washington d.c.", "washington state")}
 STATE_NAME["DC"] = "the District of Columbia"
 
 AMOUNT_RE = re.compile(r"(\$)?\s?(?<![\d,])(?<!\d\.)(\d[\d,]*(?:\.\d+)?)\s?(k|thousand|mm|m|million)?(?![\w%])", re.I)
 MULT = {"k": 1e3, "thousand": 1e3, "m": 1e6, "mm": 1e6, "million": 1e6}
-PARTNER = r"(?:wife|husband|partner|spouse)"
+PARTNER = r"(?:wife|husband|partner|spouse|boyfriend|girlfriend|fianc[eé]e?)"
+# the partner's sex, only for the life table; never guessed from the person's own sex or from the word "partner"
+_SEX_OF = {"man": "male", "male": "male", "guy": "male", "woman": "female", "female": "female", "lady": "female",
+           "nonbinary": "unstated", "non-binary": "unstated", "non binary": "unstated"}
+_PARTNER_IS = re.compile(rf"\b{PARTNER}(?:\s+is|'s)\s+(?:actually\s+|really\s+|also\s+|in fact\s+)?(?:an?\s+)?"
+                         r"(man|male|guy|woman|female|lady|non-?binary|non binary)\b"
+                         r"|\bmarried to\s+(?:an?\s+)?(man|guy|woman|lady)\b", re.I)
+_SEX_WORD = re.compile(r"\b(wife|husband|girlfriend|boyfriend)\b")
+_WORD_SEX = {"wife": "female", "girlfriend": "female", "husband": "male", "boyfriend": "male"}
+
+
+def partner_sex_said(low: str) -> str | None:
+    """'my partner is actually a man' -> male; 'my husband, not wife' -> male; 'my partner is nonbinary' -> 'unstated' (the
+    average of the two tables). None when the words say nothing about it."""
+    m = _PARTNER_IS.search(low)
+    if m:
+        return _SEX_OF[(m.group(1) or m.group(2)).lower()]
+    words = [w.group(1) for w in _SEX_WORD.finditer(low) if not re.search(r"\bnot\s+(?:an?\s+|my\s+)?$", low[:w.start()])]
+    return _WORD_SEX[words[-1]] if words else None
 
 
 def fix_typos(text: str) -> str:
@@ -249,10 +276,26 @@ def parse_split(t: str) -> dict[str, float]:
     return out
 
 
+RETIRE_AGE_WORDS = re.compile(r"\b(?:(?:set|change|make|update|put)\s+)?(?:my|our)\s+((?:partner'?s?|wife'?s?|husband'?s?|spouse'?s?)\s+)?"
+                              r"retirement\s+age\s+(?:to\s+|as\s+|is\s+|at\s+|of\s+|should be\s+|=\s*)?(?:actually\s+)?(\d{2})\b", re.I)
+
+
+HOURLY = re.compile(r"\$?\s?(\d{1,3}(?:\.\d{1,2})?)\s*(?:dollars?\s*)?(?:an|per|/|a)\s*(?:hour|hr)\b|\$?\s?(?<![\d,])(\d{1,3}(?:\.\d{1,2})?)\s*hourly\b", re.I)
+PART_TIME = re.compile(r"part[- ]?time", re.I)
+# "my partner passed away", "we split up", "my ex": planned for alone (a partner's parent or friend dying is not this)
+NO_PARTNER_NOW = re.compile(rf"\bmy\s+{PARTNER}\s+(?:passed(?: away)?|died|is gone|left me)\b|\blost my\s+{PARTNER}\b|"
+                            r"\bwe(?:'ve| have)?\s+(?:split up|separated|broke up|divorced)\b|\bmy ex\b|\bit'?s just me( now)?\b|\bon my own now\b", re.I)
+BORN = re.compile(rf"\b(?:(my|our)\s+{PARTNER}\s+(?:was\s+)?)?born\s+(?:in\s+)?(?:[a-z]+\s+)?(19[2-9]\d|200\d)\b", re.I)
+
+
 def parse(text: str, asking: str | None = None, has_partner: bool = False, n_children: int = 0, pending_kind: str | None = None) -> dict[str, Any]:
     """Facts the person stated, as {key: value}."""
     out: dict[str, Any] = {}
     t = fix_typos(text.strip())
+    # "make my retirement age 67", "my retirement age is 62": a retirement age, never the person's age or a child's
+    t = RETIRE_AGE_WORDS.sub(lambda m: f"{m.group(1) or ''}retire at {m.group(2)}", t)
+    # "$45 an hour": a year's pay, full time (2,080 hours) or part time (1,040)
+    t = HOURLY.sub(lambda m: f"${float((m.group(1) or m.group(2)).replace(',', '')) * (1040 if PART_TIME.search(t) else 2080):,.0f} a year", t)
     low = t.lower()
     if not t:
         return out
@@ -357,6 +400,8 @@ def parse(text: str, asking: str | None = None, has_partner: bool = False, n_chi
         re.search(r"\b(\d{2})[- ](?:years?[- ]old|yo|y/o)\b(?!\s+(?:son|daughter|kid|child|boy|girl|dog|cat))", t, re.I)
     if m and int(m.group(1)) >= 18:
         out.setdefault("age", int(m.group(1)))
+    for bm in BORN.finditer(t):          # "I was born in 1968", "my wife was born in March 1970": this year minus the year
+        out["partner_age" if bm.group(1) else "age"] = date.today().year - int(bm.group(2))
     if "age" not in out and asking in (None, "age", "more"):
         # a bare age as its own clause: "I'm a doctor, 44, married", "28, I rent", "40 yrs, married"
         for m in re.finditer(r"(?:^|,)\s*(\d{2})\s*(?:yrs?|years?(?:\s+old)?|yo)?\s*(?=,|;|$|\.\s)", t, re.I):
@@ -373,14 +418,14 @@ def parse(text: str, asking: str | None = None, has_partner: bool = False, n_chi
         out.setdefault("partner_age", int(m.group(1)))
 
     # --- partner
-    if re.search(rf"\b{PARTNER}\b|\bmarried\b|\bmy (?:fiance|fiancee)\b", low) and not re.search(r"\b(?:divorced|widowed|widow|single)\b", low):
+    alone = re.search(r"\b(?:divorced|widowed|widow|widower|single|separated)\b", low) or NO_PARTNER_NOW.search(low)
+    if re.search(rf"\b{PARTNER}\b|\bmarried\b|\bmy (?:fiance|fiancee)\b", low) and not alone:
         out["has_partner"] = True
         has_partner = True
-        if re.search(r"\bwife\b", low):
-            out["partner_sex"] = "female"
-        elif re.search(r"\bhusband\b", low):
-            out["partner_sex"] = "male"
-    if re.search(r"\b(?:divorced|widowed|widow|widower|single)\b", low):
+        sex = partner_sex_said(low)
+        if sex is not None:
+            out["partner_sex"] = sex
+    if alone:
         out["has_partner"] = False
     if has_partner and re.search(rf"(?:stay[- ]at[- ]home|homemaker|housewife|house husband|full[- ]time (?:mom|dad|parent))\s*{PARTNER}?|{PARTNER}\s+(?:stays (?:at )?home|is (?:at|a stay[- ]at) home|doesn'?t work|does not work|is not working|isn'?t working|is retired|is a homemaker)", low):
         out["partner_pay_per_year"] = 0

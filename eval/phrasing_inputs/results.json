@@ -1,0 +1,1475 @@
+[
+ {
+  "base": "single",
+  "message": "I have a girlfriend, she's 52",
+  "field": "partner_age",
+  "want": "partner 52",
+  "got": 52,
+  "ok": true,
+  "reply": "Got it: you have a partner, your partner is 52 and your partner is female (used only to pick the life table). Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 "
+ },
+ {
+  "base": "single",
+  "message": "My boyfriend is 57",
+  "field": "partner_age",
+  "want": "partner 57",
+  "got": 57,
+  "ok": true,
+  "reply": "Got it: you have a partner, your partner is 57 and your partner is male (used only to pick the life table). Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 "
+ },
+ {
+  "base": "single",
+  "message": "My husband is 58",
+  "field": "partner_age",
+  "want": "partner 58",
+  "got": 58,
+  "ok": true,
+  "reply": "Got it: you have a partner, your partner is 58 and your partner is male (used only to pick the life table). Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 "
+ },
+ {
+  "base": "single",
+  "message": "My significant other is 50",
+  "field": "partner_age",
+  "want": "partner 50",
+  "got": 50,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 50. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "single",
+  "message": "My fianc\u00e9 is 49",
+  "field": "partner_age",
+  "want": "partner 49",
+  "got": 49,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 49. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "single",
+  "message": "I have a common-law partner who is 51",
+  "field": "partner_age",
+  "want": "partner 51",
+  "got": 51,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 51. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "single",
+  "message": "My other half is 54",
+  "field": "partner_age",
+  "want": "partner 54",
+  "got": 54,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 54. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "single",
+  "message": "Actually I'm married, my wife is 52",
+  "field": "partner_age",
+  "want": "partner 52",
+  "got": 52,
+  "ok": true,
+  "reply": "Got it: you have a partner, your partner is 52 and your partner is female (used only to pick the life table). Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 "
+ },
+ {
+  "base": "couple",
+  "message": "We're divorced now, it's just me",
+  "field": "has_partner",
+  "want": "no partner",
+  "got": false,
+  "ok": true,
+  "reply": "Got it: you are single. Spending now: $68,000 \u2192 $64,000. Spending in retirement: $54,000 \u2192 $51,000, since you spend $64,000 now. Social Security: $57,200 \u2192 $38,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner passed away last year",
+  "field": "has_partner",
+  "want": "no partner",
+  "got": false,
+  "ok": true,
+  "reply": "Got it: you are single. Spending now: $68,000 \u2192 $64,000. Spending in retirement: $54,000 \u2192 $51,000, since you spend $64,000 now. Social Security: $57,200 \u2192 $38,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "We split up, so plan for me alone",
+  "field": "has_partner",
+  "want": "no partner",
+  "got": false,
+  "ok": true,
+  "reply": "Got it: you are single. Spending now: $68,000 \u2192 $64,000. Spending in retirement: $54,000 \u2192 $51,000, since you spend $64,000 now. Social Security: $57,200 \u2192 $38,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner is actually a man",
+  "field": "partner_sex",
+  "want": "partner male",
+  "got": "male",
+  "ok": true,
+  "reply": "Got it: your partner is male (used only to pick the life table)."
+ },
+ {
+  "base": "couple",
+  "message": "My spouse is a woman",
+  "field": "partner_sex",
+  "want": "partner female",
+  "got": "female",
+  "ok": true,
+  "reply": "Got it: your partner is female (used only to pick the life table)."
+ },
+ {
+  "base": "couple",
+  "message": "My partner is 51, not 53",
+  "field": "partner_age",
+  "want": "partner 51",
+  "got": 51,
+  "ok": true,
+  "reply": "Changed: your partner's age is now 51."
+ },
+ {
+  "base": "couple",
+  "message": "Sorry, I just turned 57",
+  "field": "age",
+  "want": "age 57",
+  "got": 57,
+  "ok": true,
+  "reply": "Changed: your age is now 57."
+ },
+ {
+  "base": "couple",
+  "message": "I was born in 1968",
+  "field": "age",
+  "want": "age 58",
+  "got": 58,
+  "ok": true,
+  "reply": "Changed: your age is now 58."
+ },
+ {
+  "base": "couple",
+  "message": "I'm actually fifty-six",
+  "field": "age",
+  "want": "age 56",
+  "got": 56,
+  "ok": true,
+  "reply": "Changed: your age is now 56."
+ },
+ {
+  "base": "couple",
+  "message": "I'm a guy",
+  "field": "sex",
+  "want": "male",
+  "got": "male",
+  "ok": true,
+  "reply": "Got it: you are male (used only to pick the life table)."
+ },
+ {
+  "base": "couple",
+  "message": "I'm a woman",
+  "field": "sex",
+  "want": "female",
+  "got": "female",
+  "ok": true,
+  "reply": "Got it: you are female (used only to pick the life table)."
+ },
+ {
+  "base": "couple",
+  "message": "I want to stop working at 62",
+  "field": "retire_age",
+  "want": "retire 62",
+  "got": 62,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 62."
+ },
+ {
+  "base": "couple",
+  "message": "I'd like to hang it up at 63",
+  "field": "retire_age",
+  "want": "retire 63",
+  "got": 63,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 63."
+ },
+ {
+  "base": "couple",
+  "message": "I'd like to retire in 7 years",
+  "field": "retire_age",
+  "want": "retire 62",
+  "got": 62,
+  "ok": true,
+  "reply": "Got it: retirement at 62, not 65."
+ },
+ {
+  "base": "couple",
+  "message": "Planning to call it quits at 64",
+  "field": "retire_age",
+  "want": "retire 64",
+  "got": 64,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 64."
+ },
+ {
+  "base": "couple",
+  "message": "I want out of work by 60",
+  "field": "retire_age",
+  "want": "retire 60",
+  "got": 60,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 60."
+ },
+ {
+  "base": "couple",
+  "message": "Make my retirement age 67",
+  "field": "retire_age",
+  "want": "retire 67",
+  "got": 67,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 67."
+ },
+ {
+  "base": "couple",
+  "message": "My partner wants to retire at 62",
+  "field": "partner_retire_age",
+  "want": "partner retire 62",
+  "got": 62,
+  "ok": true,
+  "reply": "I lost the thread of that, sorry. Here is the question again. Does your partner work? If so, what do they earn a year before tax?"
+ },
+ {
+  "base": "couple",
+  "message": "Actually I make 95k",
+  "field": "pay_per_year",
+  "want": "pay 95k",
+  "got": 95000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $95,000. Spending now: $68,000 \u2192 $72,000. Spending in retirement: $54,000 \u2192 $57,000, since you spend $72,000 now. Social Security: $57,200 \u2192 $59,600, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My salary is $95,000",
+  "field": "pay_per_year",
+  "want": "pay 95k",
+  "got": 95000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $95,000. Spending now: $68,000 \u2192 $72,000. Spending in retirement: $54,000 \u2192 $57,000, since you spend $72,000 now. Social Security: $57,200 \u2192 $59,600, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "I earn $45 an hour full time",
+  "field": "pay_per_year",
+  "want": "pay ~94k",
+  "got": 93600.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $93,600. Spending now: $68,000 \u2192 $71,000. Spending in retirement: $54,000 \u2192 $56,000, since you spend $71,000 now. Social Security: $57,200 \u2192 $58,900, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My income is 95 grand",
+  "field": "pay_per_year",
+  "want": "pay 95k",
+  "got": 95000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $95,000. Spending now: $68,000 \u2192 $72,000. Spending in retirement: $54,000 \u2192 $57,000, since you spend $72,000 now. Social Security: $57,200 \u2192 $59,600, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "I'm paid $8,000 a month before tax",
+  "field": "pay_per_year",
+  "want": "pay 96k",
+  "got": 96000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $96,000. Spending now: $68,000 \u2192 $72,000. Spending in retirement: $54,000 \u2192 $57,000, since you spend $72,000 now. Social Security: $57,200 \u2192 $60,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My gross pay is $100,000 a year",
+  "field": "pay_per_year",
+  "want": "pay 100k",
+  "got": 100000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $100,000. Spending now: $68,000 \u2192 $75,000. Spending in retirement: $54,000 \u2192 $60,000, since you spend $75,000 now. Social Security: $57,200 \u2192 $61,200, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My wages are about 88,000",
+  "field": "pay_per_year",
+  "want": "pay 88k",
+  "got": 88000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $88,000. Spending now: $68,000 \u2192 $67,000. Spending in retirement: $54,000 \u2192 $53,000, since you spend $67,000 now. Social Security: $57,200 \u2192 $56,200, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner makes 60k",
+  "field": "partner_pay_per_year",
+  "want": "partner pay 60k",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $60,000 a year. Spending now: $68,000 \u2192 $110,000. Spending in retirement: $54,000 \u2192 $87,000, since you spend $110,000 now. Social Security: $57,200 \u2192 $66,700, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My spouse earns $60,000 a year",
+  "field": "partner_pay_per_year",
+  "want": "partner pay 60k",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $60,000 a year. Spending now: $68,000 \u2192 $110,000. Spending in retirement: $54,000 \u2192 $87,000, since you spend $110,000 now. Social Security: $57,200 \u2192 $66,700, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner brings in about 60 grand",
+  "field": "partner_pay_per_year",
+  "want": "partner pay 60k",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $60,000 a year. Spending now: $68,000 \u2192 $110,000. Spending in retirement: $54,000 \u2192 $87,000, since you spend $110,000 now. Social Security: $57,200 \u2192 $66,700, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner doesn't work",
+  "field": "partner_pay_per_year",
+  "want": "partner pay 0",
+  "got": 0.0,
+  "ok": true,
+  "reply": "Got it: your partner is at home and your partner has no pay."
+ },
+ {
+  "base": "couple",
+  "message": "My partner is a stay-at-home parent",
+  "field": "partner_pay_per_year",
+  "want": "partner pay 0",
+  "got": 0.0,
+  "ok": true,
+  "reply": "Got it: you work as a stay-at-home parent, your partner is at home and your partner has no pay."
+ },
+ {
+  "base": "couple",
+  "message": "Actually it's $200k in my 401k and nothing else",
+  "field": "savings.pretax",
+  "want": "pre-tax 200k",
+  "got": 200000.0,
+  "ok": true,
+  "reply": "Got it: savings of $200,000, not $300,000."
+ },
+ {
+  "base": "couple",
+  "message": "We have $250k in a 403(b) and $50k in a Roth IRA",
+  "field": "savings.roth",
+  "want": "Roth 50k",
+  "got": 50000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($250,000 pre-tax and $50,000 Roth)."
+ },
+ {
+  "base": "couple",
+  "message": "We have $250k in a 403(b) and $50k in a Roth IRA",
+  "field": "savings.pretax",
+  "want": "pre-tax 250k",
+  "got": 250000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($250,000 pre-tax and $50,000 Roth)."
+ },
+ {
+  "base": "couple",
+  "message": "Our nest egg is about 400k",
+  "field": "savings_total",
+  "want": "total 400k",
+  "got": 400000.0,
+  "ok": true,
+  "reply": "Changed: your savings is now $400,000."
+ },
+ {
+  "base": "couple",
+  "message": "We've got half a million saved",
+  "field": "savings_total",
+  "want": "total 500k",
+  "got": 500000.0,
+  "ok": true,
+  "reply": "Changed: your savings is now $500,000."
+ },
+ {
+  "base": "couple",
+  "message": "We have 1.2 million in retirement accounts",
+  "field": "savings_total",
+  "want": "total 1.2M",
+  "got": 1200000.0,
+  "ok": true,
+  "reply": "Changed: your savings is now $1,200,000."
+ },
+ {
+  "base": "couple",
+  "message": "Our savings are $280k in a TSP and $20k in the bank",
+  "field": "savings.cash",
+  "want": "cash 20k",
+  "got": 20000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($280,000 pre-tax and $20,000 cash)."
+ },
+ {
+  "base": "couple",
+  "message": "$260k in a traditional IRA and $40k in a brokerage account",
+  "field": "savings.taxable",
+  "want": "taxable 40k",
+  "got": 40000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($260,000 pre-tax and $40,000 taxable)."
+ },
+ {
+  "base": "couple",
+  "message": "$270k in a 457 plan plus 30k in a checking account",
+  "field": "savings.cash",
+  "want": "cash 30k",
+  "got": 30000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($270,000 pre-tax and $30,000 cash)."
+ },
+ {
+  "base": "couple",
+  "message": "$250k in retirement accounts and $50k in index funds outside them",
+  "field": "savings.taxable",
+  "want": "taxable 50k",
+  "got": 50000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($50,000 taxable and $250,000 cash). The accounts you named add to $50,000. You said $300,000 in all, so I put the other $250,000 in cash. Tell me if it belongs elsewhere."
+ },
+ {
+  "base": "couple",
+  "message": "$280k in my 401k and $20k in CDs",
+  "field": "savings.cash",
+  "want": "cash 20k",
+  "got": 20000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($280,000 pre-tax and $20,000 cash)."
+ },
+ {
+  "base": "couple",
+  "message": "We spend about $5,000 a month",
+  "field": "spending_now_per_year",
+  "want": "spend 60k now",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: you spend $60,000 a year now. Spending in retirement: $54,000 \u2192 $48,000, since you spend $60,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our monthly expenses are 5k",
+  "field": "spending_now_per_year",
+  "want": "spend 60k now",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $5,000 a year and you spend $60,000 a year now. Spending in retirement: $54,000 \u2192 $48,000, since you spend $60,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We live on about $60k a year",
+  "field": "spending_now_per_year",
+  "want": "spend 60k now",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: you spend $60,000 a year now. Spending in retirement: $54,000 \u2192 $48,000, since you spend $60,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our bills come to $4,500 per month",
+  "field": "spending_now_per_year",
+  "want": "spend 54k now",
+  "got": 54000.0,
+  "ok": true,
+  "reply": "Got it: you spend $54,000 a year now. Spending in retirement: $54,000 \u2192 $43,200, since you spend $54,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We go through roughly 70 grand a year",
+  "field": "spending_now_per_year",
+  "want": "spend 70k now",
+  "got": 70000.0,
+  "ok": true,
+  "reply": "Got it: you spend $70,000 a year now. Spending in retirement: $54,000 \u2192 $56,000, since you spend $70,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our cost of living is around $6k/mo",
+  "field": "spending_now_per_year",
+  "want": "spend 72k now",
+  "got": 72000.0,
+  "ok": true,
+  "reply": "Got it: you spend $72,000 a year now. Spending in retirement: $54,000 \u2192 $57,600, since you spend $72,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "In retirement we'd want to spend $50k a year",
+  "field": "spending_per_year",
+  "want": "retire spend 50k",
+  "got": 50000.0,
+  "ok": true,
+  "reply": "Got it: your spending in retirement is $50,000 a year."
+ },
+ {
+  "base": "couple",
+  "message": "We own our home, it's worth $400k",
+  "field": "home.value",
+  "want": "home 400k",
+  "got": 400000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, worth about $400,000."
+ },
+ {
+  "base": "couple",
+  "message": "Our house is valued at 400k",
+  "field": "home.value",
+  "want": "home 400k",
+  "got": 400000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, worth about $400,000."
+ },
+ {
+  "base": "couple",
+  "message": "Our condo is worth about 300k",
+  "field": "home.value",
+  "want": "home 300k",
+  "got": 300000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, worth about $300,000."
+ },
+ {
+  "base": "couple",
+  "message": "We rent for $1,800 a month",
+  "field": "home.rent",
+  "want": "rent 1800",
+  "got": 1800.0,
+  "ok": true,
+  "reply": "Got it: you rent, at $1,800 a month."
+ },
+ {
+  "base": "couple",
+  "message": "We're renters, $1,800/mo",
+  "field": "home.rent",
+  "want": "rent 1800",
+  "got": 1800.0,
+  "ok": true,
+  "reply": "Got it: you rent, at $1,800 a month."
+ },
+ {
+  "base": "couple",
+  "message": "I lease an apartment for $1,500 a month",
+  "field": "home.rent",
+  "want": "rent 1500",
+  "got": 1500.0,
+  "ok": true,
+  "reply": "Got it: you rent, at $1,500 a month and your partner's pay is $18,000 a year. Spending now: $68,000 \u2192 $81,000. Spending in retirement: $54,000 \u2192 $64,000, since you spend $81,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We owe $150k on the mortgage",
+  "field": "home.mortgage_balance",
+  "want": "mortgage 150k",
+  "got": 150000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, with $150,000 left on the mortgage. I updated some typical figures: your mortgage payment at about $1,591 a month, worked out from your balance and a 5% mortgage rate, which sets when the mortgage ends."
+ },
+ {
+  "base": "couple",
+  "message": "We still have 150 grand left on our home loan",
+  "field": "home.mortgage_balance",
+  "want": "mortgage 150k",
+  "got": 150000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, with $150,000 left on the mortgage. I updated some typical figures: your mortgage payment at about $1,591 a month, worked out from your balance and a 5% mortgage rate, which sets when the mortgage ends."
+ },
+ {
+  "base": "couple",
+  "message": "Our mortgage payment is $2,100 a month",
+  "field": "home.mortgage_payment",
+  "want": "payment 2100",
+  "got": 2100.0,
+  "ok": true,
+  "reply": "Got it: you own your home, with a payment of $2,100 a month. Spending in retirement: $54,000 \u2192 $57,300, since you spend $68,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We own the house outright",
+  "field": "home.mortgage_balance",
+  "want": "no mortgage",
+  "got": 0.0,
+  "ok": true,
+  "reply": "Got it: you own your home with no mortgage."
+ },
+ {
+  "base": "couple",
+  "message": "Our home is paid off",
+  "field": "home.owns",
+  "want": "owns",
+  "got": true,
+  "ok": true,
+  "reply": "Got it: you own your home with no mortgage."
+ },
+ {
+  "base": "couple",
+  "message": "I have $20k in student loans",
+  "field": "debt.student",
+  "want": "student 20k",
+  "got": 20000.0,
+  "ok": true,
+  "reply": "Got it: you owe $20,000 in student debt."
+ },
+ {
+  "base": "couple",
+  "message": "I still owe 20 grand on my college loans",
+  "field": "debt.student",
+  "want": "student 20k",
+  "got": 20000.0,
+  "ok": true,
+  "reply": "Got it: you owe $20,000 in student debt."
+ },
+ {
+  "base": "couple",
+  "message": "We have a car loan of $15k",
+  "field": "debt.car",
+  "want": "car 15k",
+  "got": 15000.0,
+  "ok": true,
+  "reply": "Got it: you owe $15,000 in car debt."
+ },
+ {
+  "base": "couple",
+  "message": "Auto loan balance is 12k",
+  "field": "debt.car",
+  "want": "car 12k",
+  "got": 12000.0,
+  "ok": true,
+  "reply": "Got it: you owe $12,000 in car debt."
+ },
+ {
+  "base": "couple",
+  "message": "There's $8k of credit card debt",
+  "field": "debt.credit_card",
+  "want": "card 8k",
+  "got": 8000.0,
+  "ok": true,
+  "reply": "Got it: you owe $8,000 in credit card debt."
+ },
+ {
+  "base": "couple",
+  "message": "I owe 5k on my Visa",
+  "field": "debt.credit_card",
+  "want": "card 5k",
+  "got": 5000.0,
+  "ok": true,
+  "reply": "Got it: you owe $5,000 in credit card debt."
+ },
+ {
+  "base": "couple",
+  "message": "We have $3k in medical bills",
+  "field": "debt.other",
+  "want": "other 3k",
+  "got": 3000.0,
+  "ok": true,
+  "reply": "Got it: you owe $3,000 in other debt."
+ },
+ {
+  "base": "couple",
+  "message": "We're debt free",
+  "field": "debts",
+  "want": "no debts",
+  "got": [],
+  "ok": true,
+  "reply": "Got it: you have no other debts."
+ },
+ {
+  "base": "couple",
+  "message": "We have two kids aged 10 and 13",
+  "field": "children.ages",
+  "want": "kids 10, 13",
+  "got": [
+   10,
+   13
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 2 children, aged 10 and 13. Spending now: $68,000 \u2192 $73,000. Spending in retirement: $54,000 \u2192 $57,000, "
+ },
+ {
+  "base": "couple",
+  "message": "I've got a son, 12",
+  "field": "children.ages",
+  "want": "kid 12",
+  "got": [
+   12
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 1 child, aged 12. Spending now: $68,000 \u2192 $70,000. Spending in retirement: $54,000 \u2192 $56,000, since you "
+ },
+ {
+  "base": "couple",
+  "message": "We have a daughter who's 8",
+  "field": "children.ages",
+  "want": "kid 8",
+  "got": [
+   8
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 1 child, aged 8. Spending now: $68,000 \u2192 $70,000. Spending in retirement: $54,000 \u2192 $56,000, since you s"
+ },
+ {
+  "base": "couple",
+  "message": "Three children: 5, 9 and 14",
+  "field": "children.ages",
+  "want": "kids 5, 9, 14",
+  "got": [
+   5,
+   9,
+   14
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 3 children, aged 5, 9 and 14. Spending now: $68,000 \u2192 $75,000. Spending in retirement: $54,000 \u2192 $59,000"
+ },
+ {
+  "base": "couple",
+  "message": "We have twins, age 7",
+  "field": "children.ages",
+  "want": "kids 7, 7",
+  "got": [
+   7,
+   7
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 2 children, aged 7 and 7. Spending now: $68,000 \u2192 $73,000. Spending in retirement: $54,000 \u2192 $57,000, si"
+ },
+ {
+  "base": "couple",
+  "message": "My stepson is 15",
+  "field": "children.ages",
+  "want": "kid 15",
+  "got": [
+   15
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 1 child, aged 15. Spending now: $68,000 \u2192 $70,000. Spending in retirement: $54,000 \u2192 $56,000, since you "
+ },
+ {
+  "base": "couple",
+  "message": "We don't have any kids",
+  "field": "children.ages",
+  "want": "no kids",
+  "got": [],
+  "ok": true,
+  "reply": "Got it: you have no children."
+ },
+ {
+  "base": "couple",
+  "message": "We have a dog",
+  "field": "pets.dog",
+  "want": "1 dog",
+  "got": 1,
+  "ok": true,
+  "reply": "Got it: you have 1 dog."
+ },
+ {
+  "base": "couple",
+  "message": "We have two cats",
+  "field": "pets.cat",
+  "want": "2 cats",
+  "got": 2,
+  "ok": true,
+  "reply": "Got it: you have 2 cats."
+ },
+ {
+  "base": "couple",
+  "message": "We have 5 dogs",
+  "field": "pets.dog",
+  "want": "5 dogs",
+  "got": 5,
+  "ok": true,
+  "reply": "Got it: you have 5 dogs."
+ },
+ {
+  "base": "couple",
+  "message": "We've got a couple of pups",
+  "field": "pets.dog",
+  "want": "2 dogs",
+  "got": 2,
+  "ok": true,
+  "reply": "Got it: you have 2 dogs."
+ },
+ {
+  "base": "couple",
+  "message": "Actually we live in Texas",
+  "field": "state",
+  "want": "TX",
+  "got": "TX",
+  "ok": true,
+  "reply": "Got it: Texas, not Ohio. Spending now: $68,000 \u2192 $69,000. Spending in retirement: $54,000 \u2192 $55,000, since you spend $69,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We're in NYC",
+  "field": "state",
+  "want": "NY",
+  "got": "NY",
+  "ok": true,
+  "reply": "Got it: New York, not Ohio. Spending now: $68,000 \u2192 $66,000. Spending in retirement: $54,000 \u2192 $64,700, since you spend $66,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We're based in California",
+  "field": "state",
+  "want": "CA",
+  "got": "CA",
+  "ok": true,
+  "reply": "Got it: California, not Ohio. Spending in retirement: $54,000 \u2192 $68,400, since you spend $68,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We moved to Florida",
+  "field": "state",
+  "want": "FL",
+  "got": "FL",
+  "ok": true,
+  "reply": "Got it: Florida, not Ohio. Spending now: $68,000 \u2192 $69,000. Spending in retirement: $54,000 \u2192 $57,600, since you spend $69,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We live in Boston",
+  "field": "state",
+  "want": "MA",
+  "got": "MA",
+  "ok": true,
+  "reply": "Got it: Massachusetts, not Ohio. Spending now: $68,000 \u2192 $65,000. Spending in retirement: $54,000 \u2192 $60,000, since you spend $65,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We're in PA",
+  "field": "state",
+  "want": "PA",
+  "got": "PA",
+  "ok": true,
+  "reply": "Got it: Pennsylvania, not Ohio. Spending now: $68,000 \u2192 $133,000. Spending in retirement: $54,000 \u2192 $106,000, since you spend $133,000 now. Social Security: $57,200 \u2192 $83,700, from your pay and retirement age. I updated some typical figures"
+ },
+ {
+  "base": "couple",
+  "message": "We live in Washington state",
+  "field": "state",
+  "want": "WA",
+  "got": "WA",
+  "ok": true,
+  "reply": "Got it: Washington, not Ohio. Spending now: $68,000 \u2192 $69,000. Spending in retirement: $54,000 \u2192 $60,300, since you spend $69,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "I'm in great health",
+  "field": "health",
+  "want": "excellent",
+  "got": "excellent",
+  "ok": true,
+  "reply": "Got it: you are in excellent health."
+ },
+ {
+  "base": "couple",
+  "message": "My health is poor",
+  "field": "health",
+  "want": "poor",
+  "got": "poor",
+  "ok": true,
+  "reply": "Got it: you are in poor health."
+ },
+ {
+  "base": "couple",
+  "message": "My health is so-so",
+  "field": "health",
+  "want": "fair",
+  "got": "fair",
+  "ok": true,
+  "reply": "Got it: you are in fair health."
+ },
+ {
+  "base": "couple",
+  "message": "My partner's health is excellent",
+  "field": "partner_health",
+  "want": "partner excellent",
+  "got": "excellent",
+  "ok": true,
+  "reply": "Got it: your partner is in excellent health."
+ },
+ {
+  "base": "couple",
+  "message": "I'm a conservative investor",
+  "field": "risk",
+  "want": "careful",
+  "got": "careful",
+  "ok": true,
+  "reply": "Got it: you prefer a careful investing style (fewer swings)."
+ },
+ {
+  "base": "couple",
+  "message": "I don't like risk",
+  "field": "risk",
+  "want": "careful",
+  "got": "careful",
+  "ok": true,
+  "reply": "Got it: you prefer a careful investing style (fewer swings)."
+ },
+ {
+  "base": "couple",
+  "message": "I'm an aggressive investor",
+  "field": "risk",
+  "want": "growth",
+  "got": "growth",
+  "ok": true,
+  "reply": "Got it: you prefer a growth investing style (bigger swings, more growth)."
+ },
+ {
+  "base": "couple",
+  "message": "Moderate risk is fine",
+  "field": "risk",
+  "want": "balanced",
+  "got": "balanced",
+  "ok": true,
+  "reply": "Got it: you prefer a balanced investing style."
+ },
+ {
+  "base": "couple",
+  "message": "I can stomach big swings for higher returns",
+  "field": "risk",
+  "want": "growth",
+  "got": "growth",
+  "ok": true,
+  "reply": "Got it: you prefer a growth investing style (bigger swings, more growth)."
+ },
+ {
+  "base": "couple",
+  "message": "My Social Security will be $2,500 a month",
+  "field": "social_security_per_year",
+  "want": "SS 30k",
+  "got": 30000.0,
+  "ok": true,
+  "reply": "Got it: your household Social Security is $30,000 a year."
+ },
+ {
+  "base": "couple",
+  "message": "My SS estimate is 30k a year",
+  "field": "social_security_per_year",
+  "want": "SS 30k",
+  "got": 30000.0,
+  "ok": true,
+  "reply": "Got it: your household Social Security is $30,000 a year."
+ },
+ {
+  "base": "couple",
+  "message": "My benefits statement says $2,200/mo",
+  "field": "social_security_per_year",
+  "want": "SS 26.4k",
+  "got": 26400.0,
+  "ok": true,
+  "reply": "Got it: your household Social Security is $26,400 a year."
+ },
+ {
+  "base": "couple",
+  "message": "I'll get a pension of $1,500 a month",
+  "field": "pension.you",
+  "want": "pension 18k",
+  "got": 18000.0,
+  "ok": true,
+  "reply": "Got it: you have a pension of $18,000 a year from 65."
+ },
+ {
+  "base": "couple",
+  "message": "My teacher's pension pays 30k a year",
+  "field": "pension.you",
+  "want": "pension 30k",
+  "got": 30000.0,
+  "ok": true,
+  "reply": "Got it: you have a pension of $30,000 a year from 65."
+ },
+ {
+  "base": "couple",
+  "message": "I have a defined benefit plan paying $2k monthly",
+  "field": "pension.you",
+  "want": "pension 24k",
+  "got": 24000.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $24,000 a year and you have a pension of $24,000 a year from 65. Spending now: $68,000 \u2192 $85,000. Spending in retirement: $54,000 \u2192 $67,000, since you spend $85,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "I'm a nurse",
+  "field": "job",
+  "want": "nurse",
+  "got": "nurse",
+  "ok": true,
+  "reply": "Got it: you work as a nurse. Spending now: $68,000 \u2192 $117,000. Spending in retirement: $54,000 \u2192 $94,000, since you spend $117,000 now. Social Security: $57,200 \u2192 $77,500, from your pay and retirement age. I updated some typical figures: yo"
+ },
+ {
+  "base": "couple",
+  "message": "I work as a software engineer",
+  "field": "job",
+  "want": "software engineer",
+  "got": "software engineer",
+  "ok": true,
+  "reply": "Got it: you work as a software engineer. Spending now: $68,000 \u2192 $133,000. Spending in retirement: $54,000 \u2192 $106,000, since you spend $133,000 now. Social Security: $57,200 \u2192 $83,700, from your pay and retirement age. I updated some typica"
+ },
+ {
+  "base": "couple",
+  "message": "I teach high school",
+  "field": "job",
+  "want": "teacher",
+  "got": "high school teacher",
+  "ok": true,
+  "reply": "Got it: you work as a high school teacher."
+ },
+ {
+  "base": "couple",
+  "message": "I'm a self-employed plumber",
+  "field": "job",
+  "want": "plumber",
+  "got": "self-employed plumber",
+  "ok": true,
+  "reply": "Got it: you work as a self-employed plumber. Spending now: $68,000 \u2192 $111,000. Spending in retirement: $54,000 \u2192 $88,000, since you spend $111,000 now. Social Security: $57,200 \u2192 $67,300, from your pay and retirement age. I updated some typ"
+ },
+ {
+  "base": "single",
+  "message": "I'm a woman and my wife is 50",
+  "field": "partner_age",
+  "want": "partner 50",
+  "got": 50,
+  "ok": true,
+  "reply": "Got it. I noted 7 facts from your message. Check them in the panel on the right. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and "
+ },
+ {
+  "base": "single",
+  "message": "I'm a woman and my wife is 50",
+  "field": "partner_sex",
+  "want": "partner female",
+  "got": "female",
+  "ok": true,
+  "reply": "Got it. I noted 7 facts from your message. Check them in the panel on the right. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and "
+ },
+ {
+  "base": "single",
+  "message": "I'm a man and my husband is 60",
+  "field": "partner_sex",
+  "want": "partner male",
+  "got": "male",
+  "ok": true,
+  "reply": "Got it. I noted 7 facts from your message. Check them in the panel on the right. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and "
+ },
+ {
+  "base": "single",
+  "message": "My partner and I are 55 and 54",
+  "field": "partner_age",
+  "want": "partner 54",
+  "got": 54,
+  "ok": true,
+  "reply": "Got it: you have a partner and you are 55 and your partner is 54. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age."
+ },
+ {
+  "base": "single",
+  "message": "We're domestic partners; she is 52",
+  "field": "partner_age",
+  "want": "partner 52",
+  "got": 52,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 52. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "single",
+  "message": "I live with my partner, who is 48",
+  "field": "partner_age",
+  "want": "partner 48",
+  "got": 48,
+  "ok": true,
+  "reply": "Got it: you have a partner and your partner is 48. Spending now: $64,000 \u2192 $68,000. Spending in retirement: $51,000 \u2192 $54,000, since you spend $68,000 now. Social Security: $38,100 \u2192 $57,200, from your pay and retirement age. I updated some"
+ },
+ {
+  "base": "couple",
+  "message": "I'm widowed",
+  "field": "has_partner",
+  "want": "no partner",
+  "got": false,
+  "ok": true,
+  "reply": "Got it: you are single. Spending now: $68,000 \u2192 $64,000. Spending in retirement: $54,000 \u2192 $51,000, since you spend $64,000 now. Social Security: $57,200 \u2192 $38,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My ex and I separated, it's just me now",
+  "field": "has_partner",
+  "want": "no partner",
+  "got": false,
+  "ok": true,
+  "reply": "Got it: you are single. Spending now: $68,000 \u2192 $64,000. Spending in retirement: $54,000 \u2192 $51,000, since you spend $64,000 now. Social Security: $57,200 \u2192 $38,100, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "I pull in about 110k",
+  "field": "pay_per_year",
+  "want": "pay 110k",
+  "got": 110000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $110,000. Spending now: $68,000 \u2192 $82,000. Spending in retirement: $54,000 \u2192 $65,000, since you spend $82,000 now. Social Security: $57,200 \u2192 $63,500, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "I'm on a salary of 72,000",
+  "field": "pay_per_year",
+  "want": "pay 72k",
+  "got": 72000.0,
+  "ok": true,
+  "reply": "Changed: your pay is now $72,000. Spending now: $68,000 \u2192 $56,000. Spending in retirement: $54,000 \u2192 $46,900, since you spend $56,000 now. Social Security: $57,200 \u2192 $48,500, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My partner makes $30 an hour",
+  "field": "partner_pay_per_year",
+  "want": "partner pay ~62k",
+  "got": 62400.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $62,400 a year. Spending now: $68,000 \u2192 $111,000. Spending in retirement: $54,000 \u2192 $89,000, since you spend $111,000 now. Social Security: $57,200 \u2192 $67,400, from your pay and retirement age."
+ },
+ {
+  "base": "couple",
+  "message": "My 401(k) balance is $210,000 and that's all we have",
+  "field": "savings_total",
+  "want": "total 210k",
+  "got": 210000.0,
+  "ok": true,
+  "reply": "Got it: savings of $210,000, not $300,000. Got it: you owe $210,000 in other debt."
+ },
+ {
+  "base": "couple",
+  "message": "$250k in my IRA and 50k in a Roth 401k",
+  "field": "savings.roth",
+  "want": "Roth 50k",
+  "got": 50000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($250,000 pre-tax and $50,000 Roth)."
+ },
+ {
+  "base": "couple",
+  "message": "$260k in a 401k and about 40k in a high-yield savings account",
+  "field": "savings.cash",
+  "want": "cash 40k",
+  "got": 40000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($260,000 pre-tax and $40,000 cash)."
+ },
+ {
+  "base": "couple",
+  "message": "$285k in retirement plans and a $15k emergency fund",
+  "field": "savings.cash",
+  "want": "cash 15k",
+  "got": 15000.0,
+  "ok": true,
+  "reply": "Got it: you have saved $300,000 ($285,000 pre-tax and $15,000 cash)."
+ },
+ {
+  "base": "couple",
+  "message": "We have $350,000 put away for retirement",
+  "field": "savings_total",
+  "want": "total 350k",
+  "got": 350000.0,
+  "ok": true,
+  "reply": "Changed: your savings is now $350,000."
+ },
+ {
+  "base": "couple",
+  "message": "Our nest egg is 1.5M",
+  "field": "savings_total",
+  "want": "total 1.5M",
+  "got": 1500000.0,
+  "ok": true,
+  "reply": "Changed: your savings is now $1,500,000."
+ },
+ {
+  "base": "couple",
+  "message": "We budget $4k/month",
+  "field": "spending_now_per_year",
+  "want": "spend 48k now",
+  "got": 48000.0,
+  "ok": true,
+  "reply": "Got it: you spend $48,000 a year now. Spending in retirement: $54,000 \u2192 $38,400, since you spend $48,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our monthly outgoings are about 4,200",
+  "field": "spending_now_per_year",
+  "want": "spend 50.4k now",
+  "got": 50400.0,
+  "ok": true,
+  "reply": "Got it: your partner's pay is $4,200 a year and you spend $50,400 a year now. Spending in retirement: $54,000 \u2192 $40,300, since you spend $50,400 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our annual expenses are $65k",
+  "field": "spending_now_per_year",
+  "want": "spend 65k now",
+  "got": 65000.0,
+  "ok": true,
+  "reply": "Got it: you spend $65,000 a year now. Spending in retirement: $54,000 \u2192 $52,000, since you spend $65,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We need around 5 grand a month to live",
+  "field": "spending_now_per_year",
+  "want": "spend 60k now",
+  "got": 60000.0,
+  "ok": true,
+  "reply": "Got it: you spend $60,000 a year now. Spending in retirement: $54,000 \u2192 $48,000, since you spend $60,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "Our place is worth 550 thousand",
+  "field": "home.value",
+  "want": "home 550k",
+  "got": 550000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, worth about $550,000."
+ },
+ {
+  "base": "couple",
+  "message": "We pay $2,000 in rent each month",
+  "field": "home.rent",
+  "want": "rent 2000",
+  "got": 2000.0,
+  "ok": true,
+  "reply": "Got it: you rent, at $2,000 a month. Spending in retirement: $54,000 \u2192 $56,100, since you spend $68,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We have a $1,200 monthly mortgage",
+  "field": "home.mortgage_payment",
+  "want": "payment 1200",
+  "got": 1200.0,
+  "ok": true,
+  "reply": "Got it: you own your home, with a payment of $1,200 a month."
+ },
+ {
+  "base": "couple",
+  "message": "We still owe $90k on the house",
+  "field": "home.mortgage_balance",
+  "want": "mortgage 90k",
+  "got": 90000.0,
+  "ok": true,
+  "reply": "Got it: you own your home, with $90,000 left on the mortgage. I updated some typical figures: your mortgage payment at about $955 a month, worked out from your balance and a 5% mortgage rate, which sets when the mortgage ends."
+ },
+ {
+  "base": "couple",
+  "message": "I'm carrying about 6k on credit cards",
+  "field": "debt.credit_card",
+  "want": "card 6k",
+  "got": 6000.0,
+  "ok": true,
+  "reply": "Got it: you owe $6,000 in credit card debt."
+ },
+ {
+  "base": "couple",
+  "message": "My car note has 18k left",
+  "field": "debt.car",
+  "want": "car 18k",
+  "got": 18000.0,
+  "ok": true,
+  "reply": "Got it: you owe $18,000 in car debt."
+ },
+ {
+  "base": "couple",
+  "message": "We have a personal loan of $10k",
+  "field": "debt.other",
+  "want": "other 10k",
+  "got": 10000.0,
+  "ok": true,
+  "reply": "Got it: you owe $10,000 in other debt."
+ },
+ {
+  "base": "couple",
+  "message": "Two teenagers, 15 and 17",
+  "field": "children.ages",
+  "want": "kids 15, 17",
+  "got": [
+   15,
+   17
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 2 children, aged 15 and 17. Spending now: $68,000 \u2192 $70,000. Spending in retirement: $54,000 \u2192 $56,000, "
+ },
+ {
+  "base": "couple",
+  "message": "My kids are 4 and 6",
+  "field": "children.ages",
+  "want": "kids 4, 6",
+  "got": [
+   4,
+   6
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 2 children, aged 4 and 6. Spending now: $68,000 \u2192 $73,000. Spending in retirement: $54,000 \u2192 $57,000, si"
+ },
+ {
+  "base": "couple",
+  "message": "I have a 9 year old",
+  "field": "children.ages",
+  "want": "kid 9",
+  "got": [
+   9
+  ],
+  "ok": true,
+  "reply": "I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it: you have 1 child, aged 9. Spending now: $68,000 \u2192 $70,000. Spending in retirement: $54,000 \u2192 $56,000, since you s"
+ },
+ {
+  "base": "couple",
+  "message": "I'll draw a pension of 2k/month",
+  "field": "pension.you",
+  "want": "pension 24k",
+  "got": 24000.0,
+  "ok": true,
+  "reply": "Got it: you have a pension of $24,000 a year from 65."
+ },
+ {
+  "base": "couple",
+  "message": "My state pension will be $28,000 annually",
+  "field": "pension.you",
+  "want": "pension 28k",
+  "got": 28000.0,
+  "ok": true,
+  "reply": "Got it: you have a pension of $28,000 a year from 65."
+ },
+ {
+  "base": "couple",
+  "message": "Social security of about 1,900 per month",
+  "field": "social_security_per_year",
+  "want": "SS 22.8k",
+  "got": 22800.0,
+  "ok": true,
+  "reply": "Got it: your household Social Security is $22,800 a year."
+ },
+ {
+  "base": "couple",
+  "message": "My SSA statement shows $2,100 a month at 67",
+  "field": "social_security_per_year",
+  "want": "SS 25.2k",
+  "got": 25200.0,
+  "ok": true,
+  "reply": "Got it: your household Social Security is $25,200 a year."
+ },
+ {
+  "base": "couple",
+  "message": "I plan to retire around 66",
+  "field": "retire_age",
+  "want": "retire 66",
+  "got": 66,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 66."
+ },
+ {
+  "base": "couple",
+  "message": "I'd like to stop working when I'm 61",
+  "field": "retire_age",
+  "want": "retire 61",
+  "got": 61,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 61."
+ },
+ {
+  "base": "couple",
+  "message": "I hope to be done working at 64",
+  "field": "retire_age",
+  "want": "retire 64",
+  "got": 64,
+  "ok": true,
+  "reply": "Changed: your retirement age is now 64."
+ },
+ {
+  "base": "couple",
+  "message": "My partner plans to stop working at 60",
+  "field": "partner_retire_age",
+  "want": "partner retire 60",
+  "got": 60,
+  "ok": true,
+  "reply": "I lost the thread of that, sorry. Here is the question again. Does your partner work? If so, what do they earn a year before tax?"
+ },
+ {
+  "base": "couple",
+  "message": "I'm risk averse",
+  "field": "risk",
+  "want": "careful",
+  "got": "careful",
+  "ok": true,
+  "reply": "Got it: you prefer a careful investing style (fewer swings)."
+ },
+ {
+  "base": "couple",
+  "message": "I prefer safe investments",
+  "field": "risk",
+  "want": "careful",
+  "got": "careful",
+  "ok": true,
+  "reply": "Got it: you prefer a careful investing style (fewer swings)."
+ },
+ {
+  "base": "couple",
+  "message": "I'm comfortable with ups and downs",
+  "field": "risk",
+  "want": "growth",
+  "got": "growth",
+  "ok": true,
+  "reply": "Got it: you prefer a growth investing style (bigger swings, more growth)."
+ },
+ {
+  "base": "couple",
+  "message": "Middle of the road on risk",
+  "field": "risk",
+  "want": "balanced",
+  "got": "balanced",
+  "ok": true,
+  "reply": "Got it: you prefer a balanced investing style."
+ },
+ {
+  "base": "couple",
+  "message": "I'm healthy",
+  "field": "health",
+  "want": "good or excellent",
+  "got": "good",
+  "ok": true,
+  "reply": "Got it: you are in good health."
+ },
+ {
+  "base": "couple",
+  "message": "I have some health issues",
+  "field": "health",
+  "want": "fair or poor",
+  "got": "fair",
+  "ok": true,
+  "reply": "Got it: you are in fair health."
+ },
+ {
+  "base": "couple",
+  "message": "We're in the Bay Area",
+  "field": "state",
+  "want": "CA",
+  "got": "CA",
+  "ok": true,
+  "reply": "Got it: California, not Ohio. Spending in retirement: $54,000 \u2192 $68,400, since you spend $68,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "I live in Chicago",
+  "field": "state",
+  "want": "IL",
+  "got": "IL",
+  "ok": true,
+  "reply": "Got it: Illinois, not Ohio. Spending now: $68,000 \u2192 $65,000. Spending in retirement: $54,000 \u2192 $55,800, since you spend $65,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We're in Jersey",
+  "field": "state",
+  "want": "NJ",
+  "got": "NJ",
+  "ok": true,
+  "reply": "Got it: New Jersey, not Ohio. Spending now: $68,000 \u2192 $67,000. Spending in retirement: $54,000 \u2192 $64,700, since you spend $67,000 now."
+ },
+ {
+  "base": "couple",
+  "message": "We live in Atlanta",
+  "field": "state",
+  "want": "GA",
+  "got": "GA",
+  "ok": true,
+  "reply": "Got it: Georgia, not Ohio. Spending now: $68,000 \u2192 $66,000. Spending in retirement: $54,000 \u2192 $57,000, since you spend $66,000 now."
+ }
+]

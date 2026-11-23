@@ -76,7 +76,11 @@ Rules:
 - Debts besides the mortgage: debts.student, debts.car, debts.credit_card or debts.other, with the balance as value. debts.none true when they say they owe nothing else.
 - Pensions: pension.you or pension.partner with the amount (unit per_month or per_year). pension.none true when they say there is no pension.
 - social_security_per_year: the household's yearly total. When both partners get a benefit ("$2,900 a month, and she gets $1,100"), add them and quote both figures.
-- spending_now_per_year: what the household spends now. spending_per_year: what they expect to spend in retirement.
+- spending_now_per_year: what the household spends now ("we live on", "we need 5 grand a month to live", "our bills come to"). spending_per_year: only what they expect to spend in retirement, when they say so.
+- risk is exactly one of careful, balanced, growth. careful: low risk, conservative, cautious, safe, risk averse, hates losses. balanced: moderate, middle of the road, some risk. growth: aggressive, high risk, comfortable with ups and downs, can stomach swings.
+- health and partner_health are exactly one of excellent, good, fair, poor. "healthy" or "fine" is good; "great shape" is excellent; "some health issues", "so-so" or a chronic condition is fair; "serious illness" or "bad" is poor.
+- Partners: people use many words (partner, spouse, wife, husband, boyfriend, girlfriend, fiancé, significant other, other half), in any kind of couple. sex and partner_sex are male or female, only when the words say so ("my partner is a man", "my wife"); never guess the partner's sex from the person's own.
+- state is a two-letter code, also from a city or region ("Chicago" is IL, "the Bay Area" is CA, "Jersey" is NJ).
 - A bare number or short reply answers the pending question: "62" after "At what age do you want to stop working?" is retire_age 62; "Texas" is state TX (two-letter code); "About $250k" after the savings question is savings.total 250000. The evidence_quote is then the bare reply.
 - Do not guess and do not fill gaps. "I don't know", "skip" or "not sure" give no update.
 

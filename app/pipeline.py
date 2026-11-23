@@ -313,7 +313,7 @@ def shock_words(s: dict) -> str:
             f"{simulate_mod.SHOCK_YEARS} years of retirement")
 
 
-PARTNER_STOPS = re.compile(r"\b(?:my|our)\s+(wife|husband|spouse|partner)\b[^.?!\d]{0,20}?\b(?:stops?|stopped|quits?|leaves?|gives? up|"
+PARTNER_STOPS = re.compile(r"\b(?:my|our)\s+(wife|husband|spouse|partner|boyfriend|girlfriend|fianc[eé]e?)\b[^.?!\d]{0,20}?\b(?:stops?|stopped|quits?|leaves?|gives? up|"
                            r"no longer|doesn'?t|does not|can'?t|cannot)\b[^.?!\d]{0,15}\b(?:work\w*|job|earning)\b"
                            r"|\b(?:my|our)\s+(?:wife|husband|spouse|partner)\b[^.?!\d]{0,10}\b(?:retires?|loses? (?:her|his|their) job)\b(?![^.?!]{0,12}\d)")
 

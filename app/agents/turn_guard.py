@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import itertools
+from datetime import date
 import re
 from dataclasses import dataclass, field
 from typing import Any
@@ -73,7 +74,16 @@ def quote_numbers(quote: str) -> list[float]:
             v *= DMULT[m.group(2).lower()]
         out.append(v)
     out += _word_numbers(q)
+    for pat, v in FRACTION_WORDS:
+        if pat.search(q):
+            out.append(v)
     return out
+
+
+FRACTION_WORDS = [(re.compile(r"\bhalf (?:a |of a )?mil(?:lion)?\b", re.I), 500000.0),
+                  (re.compile(r"\bthree quarters? (?:of )?(?:a )?mil(?:lion)?\b", re.I), 750000.0),
+                  (re.compile(r"(?<!three )\b(?:a )?quarter (?:of )?(?:a )?mil(?:lion)?\b", re.I), 250000.0),
+                  (re.compile(r"\b(?:a|one) mil(?:lion)?\b", re.I), 1000000.0)]
 
 
 ASKING_SENTENCE = re.compile(r"^\s*(?:and\s+|but\s+|so\s+|also\s+|wait,?\s+)?(?:why|where|what|how|who|when|is|are|do|does|did|can|could|should|would|will)\b"
@@ -110,8 +120,20 @@ BALANCES = {"savings.total", "savings.pretax", "savings.roth", "savings.taxable"
             "debts.student", "debts.car", "debts.credit_card", "debts.other"}
 MONEY = PER_YEAR | PER_MONTH | BALANCES
 AGES = {"age", "partner_age", "retire_age", "partner_retire_age"}
+LATER_WORDS = re.compile(r"retir|later|after (?:we|i) stop|once (?:we|i)|when (?:we|i) stop|old age|golden years|down the road", re.I)
+BORN_YEAR = re.compile(r"\bborn\b[^.;]{0,20}?\b(19[2-9]\d|200\d)\b|\b(?:birth ?year|year of birth)\b[^.;]{0,10}?\b(19[2-9]\d|200\d)\b", re.I)
 BOOLS = {"has_partner", "retired", "home.owns", "home.has_mortgage", "debts.none", "pension.none"}
-CHOICES = {"risk": ("careful", "balanced", "growth"), "sex": ("male", "female"), "health": ("excellent", "good", "fair", "poor"),
+CHOICE_WORDS = {
+    "risk": {"low": "careful", "conservative": "careful", "cautious": "careful", "safe": "careful", "low risk": "careful",
+             "risk averse": "careful", "risk-averse": "careful", "moderate": "balanced", "medium": "balanced", "middle": "balanced", "middle of the road": "balanced", "some risk": "balanced",
+             "average": "balanced", "mid": "balanced", "high": "growth", "aggressive": "growth", "high risk": "growth", "bold": "growth", "comfortable with ups and downs": "growth", "high tolerance": "growth",
+             "risk tolerant": "growth", "risk-tolerant": "growth", "very conservative": "careful", "low tolerance": "careful"},
+    "health": {"great": "excellent", "very good": "excellent", "fine": "good", "decent": "good", "ok": "fair", "okay": "fair",
+               "so-so": "fair", "so so": "fair", "average": "fair", "not great": "fair", "bad": "poor", "not good": "poor", "terrible": "poor", "healthy": "good", "some health issues": "fair",
+               "health issues": "fair", "chronic condition": "fair", "serious illness": "poor"},
+}
+CHOICE_WORDS["partner_health"] = CHOICE_WORDS["health"]
+CHOICES = {"risk": ("careful", "balanced", "growth"), "sex": ("male", "female"), "partner_sex": ("male", "female"), "health": ("excellent", "good", "fair", "poor"),
            "partner_health": ("excellent", "good", "fair", "poor")}
 RANGE = re.compile(r"(?:\bbetween\s+\$?(\d[\d,]*(?:\.\d+)?)\s*(k|thousand|grand)?\s*(?:and|to|-|–)|\$?(?<![\d,.])(\d[\d,]*(?:\.\d+)?)\s*(k|thousand|grand)?\s*(?:to|-|–))"
                    r"\s*\$?(\d[\d,]*(?:\.\d+)?)\s*(k|thousand|grand)?", re.I)
@@ -119,7 +141,8 @@ NO_MONEY = re.compile(r"\b(?:no|none|nothing|zero|nada|paid off|don'?t have|do n
 NO_WORK = re.compile(r"stays? (?:at )?home|stay[- ]at[- ]home|at home|homemaker|housewife|house husband|not working|doesn'?t work|does not work|"
                      r"isn'?t working|unemployed|retired|between jobs|full[- ]time (?:mom|dad|parent)", re.I)
 RETIRE_WORDS = re.compile(r"retir|stop(?:ping)? work|leave work|quit|stop at|done working|work until|out at|hang it up|call it quits|be done|"
-                          r"wrap (?:it )?up|leave the workforce|clock out", re.I)
+                          r"wrap (?:it )?up|leave the workforce|clock out|out of work|out by|work till|work til\b|hang up|hang it up|"
+                          r"pack it in|step away|step down|leave my job|stop my job|last day|finish work|done by", re.I)
 # words that show a quote is about a field (used when two readings disagree)
 FITS = {
     "pay_per_year": r"pay|salary|make|earn|income|paid|wage|\bgross\b",
@@ -128,7 +151,7 @@ FITS = {
     "savings": r"sav|401|403|457|ira|roth|brokerage|cash|check|bank|invest|stock|pre-?tax|total|account|tsp|nest egg|put away|retirement",
     "home.mortgage_balance": r"mortgage|owe|left|balance|loan",
     "home.mortgage_payment": r"payment|month|mortgage|/mo",
-    "home.rent": r"rent",
+    "home.rent": r"rent|lease",
     "home.value": r"worth|value|valued|house|home",
     "spending_now_per_year": r"spend|budget|live on|expenses|costs|bills|go through",
     "spending_per_year": r"spend|budget|live on|expenses|costs|retire",
@@ -230,10 +253,13 @@ def check_updates(updates: list, message: str, p: Profile, asking: str | None = 
         # retire versus age
         if fp == "age" and RETIRE_WORDS.search(quote):
             fp = "retire_age"
+        if fp == "spending_per_year" and not LATER_WORDS.search(quote) \
+                and asking not in ("spending_per_year", "spending_later", "confirm_spending_later"):
+            fp = "spending_now_per_year"     # "we need 5 grand a month to live": spending now, unless they speak of later
         if fp == "retire_age" and not RETIRE_WORDS.search(quote) and asking not in ("retire_age", "partner_retire_age") and not bare:
             g.rejected.append((fp, v, "no retirement words in the quote"))
             continue
-        if bare and asking and (fp in MONEY or fp in AGES) and asking != "more" and not fits(fp, quote) \
+        if bare and asking and (fp in MONEY or fp in AGES) and asking != "more" and not fits(fp, quote) and not fits(fp, message) \
                 and not sup._owns(fp, sup.own_keys(asking) or ()):
             # "no, make it 65" at the children question: a bare figure for some other field is not guessed at
             g.rejected.append((fp, v, "bare figure for a field other than the pending question"))
@@ -250,7 +276,11 @@ def check_updates(updates: list, message: str, p: Profile, asking: str | None = 
                 g.rejected.append((fp, v, "a total that includes the rent, not the rent"))
                 continue
             zero_ok = v == 0 and (NO_MONEY.search(quote) or (fp in ("pay_per_year", "partner_pay_per_year") and NO_WORK.search(quote)))
-            if not zero_ok and not money_supported(v, quote, allow_sum=True):
+            hm = parser.HOURLY.search(quote) if fp in ("pay_per_year", "partner_pay_per_year", "household_pay") else None
+            if hm:
+                # "$45 an hour": a year's pay, worked out here (full time 2,080 hours, part time 1,040), whatever the model sent
+                v = float((hm.group(1) or hm.group(2)).replace(",", "")) * (1040 if parser.PART_TIME.search(message) else 2080)
+            elif not zero_ok and not money_supported(v, quote, allow_sum=True):
                 g.rejected.append((fp, v, "figure not in the quote"))
                 continue
             rng = RANGE.search(quote)
@@ -276,7 +306,10 @@ def check_updates(updates: list, message: str, p: Profile, asking: str | None = 
                 g.rejected.append((fp, v, "not a number"))
                 continue
             v = int(round(v))
-            if not any(_close(v, n) for n in quote_numbers(quote)):
+            by = BORN_YEAR.search(quote) if fp in ("age", "partner_age") else None
+            if by:
+                v = date.today().year - int(by.group(1) or by.group(2))       # the birthday may not have come yet: within a year either way
+            elif not any(_close(v, n) for n in quote_numbers(quote)):
                 g.rejected.append((fp, v, "age not in the quote"))
                 continue
         elif fp in ("children.count", "pets.dogs", "pets.cats"):
@@ -319,13 +352,19 @@ def check_updates(updates: list, message: str, p: Profile, asking: str | None = 
             v = code
         elif fp in ("job", "partner_job"):
             if not isinstance(v, str) or not v.strip() or len(v) > 40 or len(v.split()) > 3 \
-                    or not all(re.search(re.escape(w), message.lower()) for w in v.strip().lower().split()) \
+                    or not all(re.escape(w[:5]) in message.lower() or w in message.lower() for w in v.strip().lower().split()) \
                     or re.search(r"javascript|script|<|>|=|https?:|\bwww\.", v, re.I):
                 g.rejected.append((fp, v, "job not in the message"))
                 continue
             v = re.sub(r"[^a-z \-]", "", v.strip().lower())[:40]
         elif fp in CHOICES:
-            if not isinstance(v, str) or v.lower() not in CHOICES[fp]:
+            if fp == "sex" and re.search(rf"\b{parser.PARTNER}\b|\bmarried to\b", quote, re.I) and not re.search(r"\bi(?:'m| am)\b", quote, re.I):
+                fp = "partner_sex"          # "my spouse is male" is about the partner, not the person
+            if fp in ("sex", "partner_sex") and isinstance(v, str) and re.search(r"non-?binary|non binary", quote, re.I):
+                v = "unstated"              # the average of the two life tables
+            elif isinstance(v, str) and v.strip().lower() in CHOICE_WORDS.get(fp, {}):
+                v = CHOICE_WORDS[fp][v.strip().lower()]
+            elif not isinstance(v, str) or v.lower() not in CHOICES[fp]:
                 g.rejected.append((fp, v, "not an allowed choice"))
                 continue
             v = v.lower()
@@ -359,8 +398,8 @@ def _to_facts(vals: dict, quotes: dict, corr: set, p: Profile, asking: str | Non
         if src in corr:
             g.corrections.add(key)
     for k in ("age", "partner_age", "state", "job", "partner_job", "pay_per_year", "partner_pay_per_year", "household_pay", "retire_age",
-              "partner_retire_age", "spending_now_per_year", "spending_per_year", "social_security_per_year", "risk", "sex", "health",
-              "partner_health", "has_partner"):
+              "partner_retire_age", "spending_now_per_year", "spending_per_year", "social_security_per_year", "risk", "sex", "partner_sex",
+              "health", "partner_health", "has_partner"):
         if k in vals:
             put(k, vals[k], k)
     if vals.get("retired"):
@@ -526,6 +565,11 @@ def merge(rule: dict[str, Any], g: GuardResult, message: str = "") -> dict[str, 
     ai = g.facts
     out: dict[str, Any] = {k: v for k, v in rule.items() if k in MARKERS}
     out.update(ai)
+    # words that say it outright beat the model: "my spouse is a woman", "my partner passed away"
+    if "partner_sex" in rule:
+        out["partner_sex"] = rule["partner_sex"]
+    if rule.get("has_partner") is False:
+        out["has_partner"] = False
     ai_nums = _numeric_values(ai)
     ai_has_savings = any(k.startswith("savings.") for k in ai)
     off = {x[0] for x in g.looks_off} | {"pets" for x in g.looks_off if x[0].startswith("pets.")} \

@@ -162,7 +162,7 @@ NOTE_KEY = {"pay_per_year": "pay_per_year", "partner_pay_per_year": "partner_pay
             "spending_now_per_year": "spending_now_per_year", "spending_per_year": "spending_per_year"}
 PAY_BUCKETS = {"under $50k": "$40,000", "over $200k": "$250,000"}
 CHILD_CHIPS = {"under 5": 3, "5 to 12": 9, "teenagers": 15, "grown up": 24, "grown": 24}
-PARTNER_AGE_Q = re.compile(r"\b(?:husband|wife|spouse|partner)(?:'s)?\b[^.?!]{0,40}\bage\b|\bage\b[^.?!]{0,40}\b(?:husband|wife|spouse|partner)\b", re.I)
+PARTNER_AGE_Q = re.compile(r"\b(?:husband|wife|spouse|partner|boyfriend|girlfriend|fianc[eé]e?)(?:'s)?\b[^.?!]{0,40}\bage\b|\bage\b[^.?!]{0,40}\b(?:husband|wife|spouse|partner|boyfriend|girlfriend|fianc[eé]e?)\b", re.I)
 GONE = re.compile(r"\b(?:passed|died|dead|late|widow\w*|gone|lost)\b", re.I)
 
 
@@ -260,8 +260,9 @@ def prepare(clean: str, said: str, p: Profile, asking: str | None, full0: Profil
     if prep.rejected:
         prep.reject_bit = f"Understood: ${prep.rejected[0]:,.0f} is not right. What should it be? You can also take a typical figure."
     if PARTNER_AGE_Q.search(clean or "") and not p.has_partner and not p.partner_age:
-        prep.partner_note = ("I am sorry about your husband. " if GONE.search(clean or "") else "") + \
-            "I plan for you on your own, so only your age counts. If that is wrong, tell me you are married and their age."
+        word = re.search(r"\b(husband|wife|spouse|partner|boyfriend|girlfriend|fianc[eé]e?)\b", clean or "", re.I)   # their own word
+        prep.partner_note = (f"I am sorry about your {word.group(1).lower() if word else 'partner'}. " if GONE.search(clean or "") else "") + \
+            "I plan for you on your own, so only your age counts. If that is wrong, tell me about your partner and their age."
     return prep
 
 
@@ -337,7 +338,7 @@ def student_loan_guard(facts: dict[str, Any], text: str) -> None:
             after = text[m.end(): m.end() + 18].lower()
             if re.search(r"\b(?:saved|savings|in the bank|in cash|put away|401|ira)\b", after):
                 continue
-            if re.search(r"loan|debt|owe|card|balance|borrow|left on", around):
+            if re.search(r"loan|debt|owe|card|balance|borrow|left on|bills?\b|medical|hospital|financ|visa|mastercard|amex|payday|line of credit|heloc|\bnote\b|\bleft\b", around):
                 ok = True
                 break
         if ok:
@@ -370,11 +371,10 @@ def too_small(facts: dict[str, Any], bare: bool) -> list[tuple[str, str, float]]
     mp = facts.get("home.mortgage_payment")
     if isinstance(mp, (int, float)) and 0 < mp < 100:
         out.append(("home.mortgage_payment", "a mortgage payment", float(mp)))
-    if bare:
-        for k, lbl in (("pay_per_year", "your pay"), ("partner_pay_per_year", "your partner's pay")):
-            v = facts.get(k)
-            if isinstance(v, (int, float)) and 0 < v < 1000:
-                out.append((k, lbl, float(v)))
+    for k, lbl in (("pay_per_year", "a year's pay"), ("partner_pay_per_year", "your partner's yearly pay")):
+        v = facts.get(k)       # "$45" as a year's pay is an hourly rate or a slip, never a salary
+        if isinstance(v, (int, float)) and not isinstance(v, bool) and 0 < v < 1000:
+            out.append((k, lbl, float(v)))
     return out
 
 

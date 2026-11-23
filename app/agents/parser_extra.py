@@ -21,7 +21,7 @@ def is_product(text: str, start: int) -> bool:
 
 
 PCT = re.compile(r"(?<![\d,])(?<!\d\.)(\d+(?:\.\d+)?)\s?(?:%|percent|per cent)", re.I)
-PARTNER = r"(?:wife|husband|partner|spouse)"
+PARTNER = r"(?:wife|husband|partner|spouse|boyfriend|girlfriend|fianc[eé]e?)"
 YEAR = re.compile(r"\b(20[2-9]\d)\b")
 
 
@@ -434,7 +434,8 @@ def parse_health(t: str, asking: str | None, has_partner: bool) -> dict[str, Any
     m = re.search(rf"\b{PARTNER}(?:'s)?\s+(?:health\s+)?(?:is|has|in)?\s*(?:in\s+)?(excellent|great|very good|good|fair|poor|bad)(?:\s+health)?", low)
     if m and re.search(r"health", low):
         out["partner_health"] = HEALTH_WORDS[m.group(1)]
-    if asking == "sex":
+    about_partner = re.search(rf"\b{PARTNER}\b|\bmarried to\b", low) and not re.search(r"\bi(?:'m| am)\b|\bme\b", low)
+    if asking == "sex" and not about_partner:        # "my partner is a man" at the sex question is about the partner
         if re.search(r"\b(?:female|woman|women|girl|she|her)\b", low):
             out["sex"] = "female"
         elif re.search(r"\b(?:male|man|men|guy|he|him)\b", low):

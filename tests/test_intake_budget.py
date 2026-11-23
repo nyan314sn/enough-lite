@@ -16,7 +16,7 @@ def test_doctor_example_parsed_by_rules():
     assert p["has_partner"] and p["partner_pay_per_year"] == 0
     assert len(p["children"]) == 3
     assert p["pets"] == [{"kind": "dog", "count": 2}]
-    assert r.missing[0] == "age" and "wife" in r.question.text
+    assert r.missing[0] == "age" and "your partner" in r.question.text
     assert r.tokens == {"input": 0, "cached": 0, "output": 0}   # no model call needed
     assert "doctor" in r.reply and "Connecticut" in r.reply
 
