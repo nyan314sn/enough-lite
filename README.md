@@ -86,20 +86,38 @@ can read them without running anything. The raw per-run files (`eval/runs*`, `si
 benchmark against the full optimizer (`eval/benchmark.py`, `eval/make_cases.py`) needs files from the old full app that
 are not in this repository; its results are saved in `eval/benchmark_results.json`.
 
-## Layout
+## Folder guide
+
+**The submission** (the report and slides are uploaded to Canvas; each opens by double-clicking, images inside)
+
+| Path | What it is |
+|---|---|
+| `report.html` | The report (15 printed pages). |
+| `slides.html` | The slide deck (reveal.js, 10 slides). |
+| `enough_demo.mp4` | The demo video (2:47). Uploaded to Canvas, not kept in this repository. |
+
+**The app**
 
 | Path | What it holds |
 |---|---|
-| `run.py` | Starts the app. |
-| `app/` | The backend (FastAPI): `agents/`, `tools/`, `data/` (small data files; `data/SOURCES.json` says where each came from). |
-| `web/` | The React app. `web/dist` is the built copy the backend serves; `web/src` is the source (rebuilding needs Node: `npm install`, `npm run build`). |
-| `tests/` | Unit and API tests. |
-| `eval/` | 300 households run through the app, with checks, a judge and a report. |
-| `simusers/` | Simulated users who try the app. |
-| `safety_tests/` | 74 attacks and their results. |
-| `report/` | Scripts that build the report and slides from the logs. |
-| `docs/` | Security review, UX review, research notes, screenshots. |
+| `run.py` | Starts the app on http://localhost:8020. |
+| `requirements.txt`, `.env.example` | What to install, and the key names (no values). |
+| `app/` (backend) | FastAPI: `agents/` (the AI agents), `tools/` (the engine: market tests, life tables, taxes, Social Security), `data/` (small data files; `data/SOURCES.json` says where each came from). |
+| `web/` (frontend) | The React app. `web/dist` is the built copy the backend serves; `web/src` is the source (rebuilding needs Node: `npm install`, `npm run build`). |
+| `mcp_server.py`, `requirements-mcp.txt` | The optional MCP server (see "Use Enough from your AI assistant" below); `docs/mcp/` has a demo client and transcript. |
+| `tests/` | Unit and API tests (no model calls). |
 | `PLAN.md` | The build plan and API contract. |
+
+**The evidence behind the report** (each folder has a report you can read without running anything)
+
+| Path | What it holds | Report section |
+|---|---|---|
+| `eval/` | Households run through the app with checks and a judge (`EVAL_REPORT.md`); `reasonableness/`, `model_compare/` (Haiku against gpt-6-luna), `readability/`, `whatif_phrasing/` and `phrasing_inputs/` (different words for the same input), each with a `REPORT.md`. | 4, 5, appendix |
+| `safety_tests/` | 74 attacks and their results (`RESULTS.md`). | 6 |
+| `simusers/` | Simulated users who tried the app (`SIM_REPORT.md`, `round4/REPORT.md`). | appendix |
+| `user_test/` | The real-user test: protocol, feedback form, session log and summary script. Raw answers stay private. | 7 |
+| `report/img/` | Screenshots used in the report. | 4, 5, 6 |
+| `docs/` | Security, UX and accessibility reviews, research notes, product rules, the audit loop (`loop/`), the theme, and the screenshots the safety results cite (`screens/`). | 3, 6, appendix |
 
 ## The model: two providers
 
