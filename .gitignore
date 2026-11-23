@@ -61,16 +61,6 @@ docs/loop/**/*.png
 # Old one-off fix scripts with local absolute paths (kept on disk, not published)
 docs/packaging_scripts/apply_fixes*.py
 
-# Demo video: the mp4/wav and the raw recordings are not committed (the mp4 goes to Canvas); the script and narration are
-demo/*.mp4
-demo/*.wav
-demo/*.webm
-demo/raw/
-demo/work/
-
-# Demo audio and voice samples
-demo/*.mp3
-demo/samples/
 
 # Intermediate audit run (superseded by results_after.jsonl)
 eval/reasonableness/results_after_pre_mortgagefix.jsonl
