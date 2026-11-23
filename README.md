@@ -24,7 +24,7 @@ Run these from the repository folder.
    ANTHROPIC_API_KEY=your-key    # or: the app uses Claude Haiku 5.5 (wins if both are set)
    ```
 
-   **Teaching staff:** your `.env` one folder up, with `OPENAI_API_KEY`, is enough; the app then runs on `gpt-6-luna`. (The course `PORTKEY_API_KEY` is not used: the one given to the student was rejected by Portkey, "Invalid API Key".)
+   **Teaching staff:** your `.env` one folder up, with `OPENAI_API_KEY`, is enough; the app then runs on `gpt-6-luna`. Claude Haiku 5.5 is the preferred model (faster, fewer template fallbacks; see "The model" below), so add `ANTHROPIC_API_KEY` if you have one. (The course `PORTKEY_API_KEY` is not used: the one given to the student was rejected by Portkey, "Invalid API Key".)
 
 3. Start the app:
 
@@ -123,7 +123,7 @@ are not in this repository; its results are saved in `eval/benchmark_results.jso
 
 The class default is `gpt-6-luna` through Portkey. The course Portkey key given to the student was rejected ("Invalid API Key"), so the app calls the model providers directly:
 
-- **`ANTHROPIC_API_KEY` set:** Claude Haiku 5.5, the student's choice. It was used for development, and every measured cost and eval in the report is from Haiku.
+- **`ANTHROPIC_API_KEY` set:** Claude Haiku 5.5, the preferred model. It was used for development, and every measured cost and eval in the report is from Haiku. Why: on the same 80 households (`eval/model_compare/REPORT.md`), Haiku wrote a plan in 11 s at the median against 22 s for gpt-6-luna, and only 20% of its plans fell back to the template text against 51%. The plan numbers were identical and a blind judge rated the text a tie. Haiku costs a little more (about $0.0023 a plan against $0.0016), which is small beside the speed.
 - **Else `OPENAI_API_KEY` set:** `gpt-6-luna` on the OpenAI Responses API, the course model. Checked live: one intake turn and one full plan, all seven agents, no fallback, about 20 s a plan.
 - **No key:** the app still runs; the tools work out every number and plain templates replace the AI's wording.
 
