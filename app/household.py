@@ -116,7 +116,7 @@ def _mark(p: Profile, key: str, source: str, note: str = "") -> None:
             p.notes[key] = note
 
 
-SPEND_FLOOR_SHARE = 0.25   # spending under a quarter of the typical basics here is read as a slip, not a figure
+SPEND_FLOOR_SHARE = 0.25   # spending under a quarter of the typical needs here is read as a slip, not a figure
 
 
 def basics(p: Profile, cap: bool = True) -> dict:
@@ -152,7 +152,7 @@ def basics(p: Profile, cap: bool = True) -> dict:
     b["basis"] = "your budget" if len(own) == 4 else ("your budget where given, else typical" if own else "typical")
     goal = (p.spending_per_year or 0) if cap else 0
     if goal and total > goal:
-        total, b["basis"] = float(int(goal // 100) * 100), "your spending goal (typical basics are higher)"
+        total, b["basis"] = float(int(goal // 100) * 100), "your spending goal (typical needs are higher)"
     b["basics_per_year"] = total
     return b
 
@@ -284,7 +284,7 @@ def complete(p: Profile) -> Profile:
         if v is not None and v < floor:
             setattr(p, k, None)
             p.sources.pop(k, None)
-            p.notes[k + "_set_aside"] = (f"You gave ${v:,.0f} a year, far below what the basics cost where you live, so the plan "
+            p.notes[k + "_set_aside"] = (f"You gave ${v:,.0f} a year, far below what needs cost where you live, so the plan "
                                          "uses an estimate. Please check this figure.")
     retired_now = (p.retire_age or 65) <= age
     after = None
@@ -304,14 +304,14 @@ def complete(p: Profile) -> Profile:
                 if cap is not None and est > cap:
                     p.spending_now_per_year = max(round(b, -3), cap)
                     _mark(p, "spending_now_per_year", "estimate",
-                          "Estimated from what US households with pay like yours spend (BLS Consumer Expenditure Survey 2024): "
-                          "high earners save more than a tenth of pay. Please check it.")
+                          "Estimated from what US households with pay like yours spend (BLS survey, 2024). "
+                          "High earners save more than a tenth of pay. Please check it.")
                 else:
                     p.spending_now_per_year = max(round(b, -3), est)
-                    _mark(p, "spending_now_per_year", "estimate", "Estimated as your take-home pay less what you save, and no less than typical basics.")
+                    _mark(p, "spending_now_per_year", "estimate", "Estimated as your take-home pay less what you save, and no less than typical needs.")
             else:
                 p.spending_now_per_year = round(b * 1.25, -3)
-                _mark(p, "spending_now_per_year", "estimate", "Estimated as typical basics plus a quarter for wants.")
+                _mark(p, "spending_now_per_year", "estimate", "Estimated as typical needs plus a quarter for wants.")
     if p.spending_per_year is None:
         said_now = p.sources.get("spending_now_per_year") == "you said" or p.budget.given() or p.retire_spend_ratio is not None
         if said_now:
@@ -333,14 +333,14 @@ def complete(p: Profile) -> Profile:
             b = basics(p)["basics_per_year"]
             if after:
                 guess = max(b, round(0.7 * after, -3))
-                note = "Estimated as 70% of your take-home pay, and no less than typical basics."
+                note = "Estimated as 70% of your take-home pay, and no less than typical needs."
                 cap = estimates.high_earner_spend_cap(p.household_pay())
                 if cap is not None and p.sources.get("spending_now_per_year") == "estimate" and guess > 0.8 * (p.spending_now_per_year or 0):
                     guess = max(b, round(0.8 * (p.spending_now_per_year or 0), -3))
-                    note = "Estimated as 80% of your estimated spending now (BLS Consumer Expenditure Survey 2024), and no less than typical basics."
+                    note = "Estimated as 80% of your estimated spending now, and no less than typical needs."
             else:
                 guess = round(b * 1.25, -3)
-                note = "Estimated as typical basics plus a quarter for wants."
+                note = "Estimated as typical needs plus a quarter for wants."
             p.spending_per_year = guess
             _mark(p, "spending_per_year", "estimate", note)
     if p.emergency_months is None:

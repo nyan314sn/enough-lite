@@ -29,7 +29,7 @@ export function costsReadout(c: Costs, i: number) {
   const extra = Math.max(0, c.total[i] - basics);
   const events = c.events.filter((e) => e.age === age).map((e) => e.label);
   const parts = (c.parts ?? []).map((p) => ({ label: p.label, value: p.values[i] ?? 0 })).filter((p) => p.value >= 1);
-  const said = parts.length ? ` ${parts.map((p) => `${p.label}: ${usd(p.value)}`).join(". ")}.` : ` Basics ${usd(basics)}.${extra >= 1 ? ` On top of basics: ${usd(extra)}.` : ""}`;
+  const said = parts.length ? ` ${parts.map((p) => `${p.label}: ${usd(p.value)}`).join(". ")}.` : ` Needs ${usd(basics)}.${extra >= 1 ? ` On top of needs: ${usd(extra)}.` : ""}`;
   const text = `Age ${age}${year != null ? `, ${year}` : ""}. Total costs ${usd(c.total[i])} a year.${said}${events.length ? ` ${events.join(". ")}.` : ""} In today's dollars.`;
   return { age, year, total: c.total[i], basics, extra, parts, events, text };
 }
@@ -89,7 +89,7 @@ export default function CostsChart({ costs, retireAge }: { costs?: Costs | null;
   return (
     <figure className="chart costs">
       <figcaption className="chart-title">Your costs, now and later
-        <span className="legend"><span className="key key-line" aria-hidden="true" /> Total <span className="key key-band" aria-hidden="true" /> Basics</span>
+        <span className="legend"><span className="key key-line" aria-hidden="true" /> Total <span className="key key-band" aria-hidden="true" /> Needs</span>
       </figcaption>
       <p className="costs-line">{costsLine(costs, retireAge)}</p>
       <div className="chart-box" ref={box}>
@@ -118,8 +118,8 @@ export default function CostsChart({ costs, retireAge }: { costs?: Costs | null;
             <strong>Age {r.age}{r.year != null ? `, ${r.year}` : ""}</strong>
             <span>Total {usd(r.total)} a year</span>
             {r.parts.length > 0 ? r.parts.map((p) => <span key={p.label} className="muted tip-part"><span>{p.label}</span> <span className="num">{usd(p.value)}</span></span>) : <>
-              <span className="muted">Basics {usd(r.basics)}</span>
-              {r.extra >= 1 && <span className="muted">On top of basics {usd(r.extra)}</span>}
+              <span className="muted">Needs {usd(r.basics)}</span>
+              {r.extra >= 1 && <span className="muted">On top of needs {usd(r.extra)}</span>}
             </>}
             {r.events.map((l, i) => <span key={i} className="tip-ev">{l}</span>)}
           </div>

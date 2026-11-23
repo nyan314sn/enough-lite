@@ -19,12 +19,12 @@ export const MIN_GAIN_BASICS = 5;
 /** Below this many of 100, the plan already falls short and the stress tests would only pile on. */
 export const SAFE_OF_100 = 90;
 
-/** "Spending $X a year lasts in 75 of 100 market paths; $Y lasts in 95." Falls back to the server's sentence. */
+/** "Spending $X a year lasts in 75 of 100 market tests; $Y lasts in 95." Falls back to the server's sentence. */
 export function sureSentence(s: Sure): string {
   const at = (n: number) => s.levels.find((l) => l.of_100 === n)?.per_year ?? 0;
   const a = at(75), b = at(95);
   if (a <= 0 || b <= 0) return s.line;
-  return `Spending ${usd(a)} a year lasts in 75 of 100 market paths; ${usd(b)} lasts in 95.`;
+  return `Spending ${usd(a)} a year lasts in 75 of 100 market tests; ${usd(b)} lasts in 95.`;
 }
 
 const RISK_WORDS: Record<string, string> = {
@@ -155,7 +155,7 @@ export function SourcesChart({ src: raw }: { src: Src }) {
   );
 }
 
-export default function AnalysisSection({ analysis, onTry, level = "short" }: { analysis?: Analysis | null; onTry?: (q: string) => void; level?: "short" | "close" | "ok" }) {
+export default function AnalysisSection({ analysis, level = "short" }: { analysis?: Analysis | null; level?: "short" | "close" | "ok" }) {
   if (!analysis) return null;
   const falls = analysis.plan_basics_paid_of_100 < SAFE_OF_100;
   const gap = Math.max(0, Math.round(analysis.how_sure.goal_per_year - analysis.how_sure.count_on_per_year));
@@ -163,11 +163,11 @@ export default function AnalysisSection({ analysis, onTry, level = "short" }: { 
   const choices = topChoices(analysis.levers.rows);
   const grouped = !!analysis.stresses.lead && risks.length > 1 && risks.every((r) => !!r.short);
   const allPaid = risks.length > 0 && risks.every((r) => r.sentence && r.basics_paid_of_100 >= 100);
-  const all100 = !allPaid ? "" : risks.length === 1 ? "Your basics stay paid in every path." : `In ${risks.length === 2 ? "both" : "all three"}, your basics stay paid in every path.`;
+  const all100 = !allPaid ? "" : risks.length === 1 ? "Your needs stay paid in every path." : `In ${risks.length === 2 ? "both" : "all three"}, your needs stay paid in every path.`;
   return (
     <details className="worth-checking analysis" data-testid="plan-analysis">
       <summary>The analysis</summary>
-      <p className="muted small">{analysis.paths.toLocaleString("en-US")} market paths, in today's dollars. Chances, not promises.</p>
+      <p className="muted small">{analysis.paths.toLocaleString("en-US")} market tests, in today's dollars. Chances, not promises.</p>
 
       <section className="an-part" aria-labelledby="an-sure-h">
         <h4 id="an-sure-h" className="an-h">How sure is it?</h4>
@@ -178,7 +178,7 @@ export default function AnalysisSection({ analysis, onTry, level = "short" }: { 
       <section className="an-part" aria-labelledby="an-wrong-h">
         <h4 id="an-wrong-h" className="an-h">What could go wrong?</h4>
         {falls ? (
-          <p className="an-fall" data-testid="an-short"><span aria-hidden="true">{LEVEL_ICON.short}</span> Your plan pays the basics in {analysis.plan_basics_paid_of_100} of 100 market paths, so it already falls short. Fix that first.</p>
+          <p className="an-fall" data-testid="an-short"><span aria-hidden="true">{LEVEL_ICON.short}</span> Your plan pays your needs in {analysis.plan_basics_paid_of_100} of 100 market tests, so it already falls short. Fix that first.</p>
         ) : risks.length > 0 ? (
           <>
           {grouped && <p data-testid="an-lead">{analysis.stresses.lead}</p>}
@@ -190,8 +190,8 @@ export default function AnalysisSection({ analysis, onTry, level = "short" }: { 
             ) : (
               <li key={r.key} className={r.basics_at_risk ? "an-risk an-risk-warn" : "an-risk"} data-at-risk={r.basics_at_risk ? "true" : undefined}>
                 <strong>{r.label || RISK_WORDS[r.key] || r.title}.</strong>{" "}
-                {r.basics_at_risk && <span className="sr-only">Basics at risk. </span>}
-                {r.sentence || `You could count on ${usd(r.count_on_per_year)} a year, and your basics are paid in ${r.basics_paid_of_100} of 100 market paths.`}
+                {r.basics_at_risk && <span className="sr-only">Needs at risk. </span>}
+                {r.sentence || `You could count on ${usd(r.count_on_per_year)} a year, and your needs are paid in ${r.basics_paid_of_100} of 100 market tests.`}
               </li>
             ))}
           </ul>
@@ -206,12 +206,11 @@ export default function AnalysisSection({ analysis, onTry, level = "short" }: { 
           <div className="table-scroll">
             <table className="an-table" data-testid="an-levers">
               <caption className="sr-only">Choices that change what you can count on</caption>
-              <thead><tr><th scope="col">Choice</th><th scope="col">Adds a year to what you can count on</th><th scope="col"><span className="sr-only">Try it</span></th></tr></thead>
+              <thead><tr><th scope="col">Choice</th><th scope="col">Adds a year to what you can count on</th></tr></thead>
               <tbody>{choices.map((r) => (
                 <tr key={r.key}>
                   <th scope="row">{r.title}</th>
-                  <td className="num">{r.count_on_change >= MIN_GAIN_PER_YEAR ? `+${usd(r.count_on_change)}` : "Little"}{r.basics_change >= MIN_GAIN_BASICS && <span className="muted small"> · basics paid in {r.basics_change} more of 100</span>}</td>
-                  <td>{onTry && <button type="button" className="btn btn-quiet btn-small" onClick={() => onTry(r.ask || r.title)}>Try this<span className="sr-only">: {r.title}</span></button>}</td>
+                  <td className="num">{r.count_on_change >= MIN_GAIN_PER_YEAR ? `+${usd(r.count_on_change)}` : "Little"}{r.basics_change >= MIN_GAIN_BASICS && <span className="muted small"> · needs paid in {r.basics_change} more of 100</span>}</td>
                 </tr>
               ))}</tbody>
             </table>

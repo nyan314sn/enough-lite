@@ -1,0 +1,112 @@
+{
+ "persona_id": "h01",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 61,
+    "truth": 61,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "OH",
+    "truth": "OH",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 64,
+    "truth": 64,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 52000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 185000.0,
+    "truth": 255000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 39000.0,
+    "truth": 42000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.8461538461538461,
+  "why": [
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "Savings question in i2 went unanswered; app used a typical $185,000 total instead of the true $255,000."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "App never asked about home ownership; home was left as 'not given' with typical housing costs."
+   }
+  ]
+ }
+}

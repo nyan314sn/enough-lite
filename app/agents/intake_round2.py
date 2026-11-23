@@ -141,7 +141,7 @@ COMPLAINT = re.compile(
     r"did not (?:say|tell|give)|made[- ]up|making (?:it|them|numbers)|pulled|out of nowhere|"
     r"you(?:'re|'ve| are| have)? (?:assuming|assumed|wrote|written|recorded|put|stored|noted|using|made|said|told)|fix (?:it|that|this)|not mine", re.I)
 SOURCE = {
-    "social_security_per_year": "I estimated it from your pay and the age you retire, using the Social Security benefit formula. "
+    "social_security_per_year": "I estimated it from your pay and the age you retire, using the Social Security formula. "
                                 "It is a yearly amount in today's dollars, before income tax.",
     "spending_now_per_year": "I estimated it from your pay and state, less what a household like yours typically saves.",
     "spending_per_year": "I assumed about 80% of what you spend now, a common starting point.",
@@ -261,7 +261,7 @@ def prepare(clean: str, said: str, p: Profile, asking: str | None, full0: Profil
         prep.reject_bit = f"Understood: ${prep.rejected[0]:,.0f} is not right. What should it be? You can also take a typical figure."
     if PARTNER_AGE_Q.search(clean or "") and not p.has_partner and not p.partner_age:
         prep.partner_note = ("I am sorry about your husband. " if GONE.search(clean or "") else "") + \
-            "I plan for you on your own, so only your age counts and you do not need to give me anyone else's. If that is wrong, tell me you are married and their age."
+            "I plan for you on your own, so only your age counts. If that is wrong, tell me you are married and their age."
     return prep
 
 
@@ -387,7 +387,7 @@ PRIVACY_Q = re.compile(r"who (?:sees|can see|gets|reads)|my data|privacy|private
 FIND_Q = re.compile(r"where (?:do|can|would) i (?:find|look up|get|see)|how (?:do|can) i (?:find|look up|get)", re.I)
 FIND_ANSWER = ("Look for your latest statement from the company that holds the account, or log in to your employer's benefits site. "
                "A rough total is enough. If you cannot find it, type skip and I will use a typical figure, marked so you can change it.")
-PRIVACY_SHORT = "I covered that above: your answers stay in this browser tab, and an AI model reads each message so it can be understood."
+PRIVACY_SHORT = "I covered that above. Your answers stay in this browser tab, and an AI model reads each message."
 SEE_FIRST = "You see every figure in the panel, and can change it, before the plan is built."
 
 

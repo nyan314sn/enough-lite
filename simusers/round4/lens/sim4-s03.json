@@ -1,0 +1,15 @@
+{
+ "id": "s03",
+ "path": "normal",
+ "kind": "basics",
+ "gap": 13000,
+ "text": "Readiness: 40 of 100\nNot yet. First, make your needs safe.\nShort $13,000 a year\nNeeds: $24,700 a year. Paid in 53 of 100 market tests. Not safe yet.\nWants: $0 a year. You can count on less than your needs. You can count on $23,600. Not sure yet.\nWishes: $11,900 a year, the rest of your goal of $36,600. Only if markets help.\nYou can count on $23,600 a year, but your needs cost $24,700. The plan does not work yet....\nFirst move: Make your needs safe first",
+ "result": {
+  "a": "no",
+  "b": "no",
+  "c": "no",
+  "confusing": "Short $13,000 a year conflicts with $23,600 vs $24,700; 'market tests', 'make your needs safe', 'Wants: $0' unclear, no retire-at-60 answer"
+ },
+ "grade": 0.77,
+ "words": 89
+}

@@ -416,12 +416,12 @@ def test_r12_panel_and_plan_show_the_same_saving_spending_and_social_security(ca
 
 
 def test_r12_chat_what_if_names_the_same_plan_figure_as_the_plan(client):
-    """R12: the chat's 'baseline plan: $X' is the plan's own count-on figure."""
+    """R12: the chat's 'up from $X' (or 'as before') is the plan's own count-on figure."""
     plan, ctx = plan_of("S021")
     prof = ctx.profile.model_dump()
     j = _ask(client, "what if I retire at 64", prof)
     assert j["kind"] == "whatif"
-    m = re.search(r"(?:baseline|your) plan:\s*\$([\d,]+)", j["text"])
+    m = re.search(r"(?:up|down) from \$([\d,]+)", j["text"]) or re.search(r"count on \$([\d,]+) a year, as before", j["text"])
     assert m, j["text"]
     shown = float(m.group(1).replace(",", ""))
     assert abs(shown - plan["count_on_per_year"]) <= max(0.06 * plan["count_on_per_year"], 600), (shown, plan["count_on_per_year"])
@@ -525,7 +525,7 @@ def test_r14_hiding_assets_and_emergencies_in_the_first_chat(client):
 def _fake_finding(agent_name, ctx, fake):
     if agent_name == "adviser":
         out = adviser_mod.template(ctx)
-        out = out.model_copy(update={"wants_line": f"You can count on {fake} a year, safe in 90 of 100 scenarios."})
+        out = out.model_copy(update={"wants_line": f"You can count on {fake} a year, safe in 90 of 100 market tests."})
     else:
         out = base.Finding(headline=f"You will have {fake}.", details=[f"That is {fake} more than the plan says."])
     return out
@@ -850,7 +850,7 @@ def test_r8_needs_safe_wants_sure_wishes_open(case_id):
 
 
 def test_r8_each_lever_is_judged_at_the_margin(client):
-    """R8: a lever's What If runs the plan with the change and reports the plan without it beside it ('baseline plan: $X')."""
+    """R8: a lever's What If runs the plan with the change and reports the plan without it beside it ('up from $X')."""
     plan, ctx = plan_of("S021")
     prof = ctx.profile.model_dump()
     levers = [x for x in plan["levers"] if x.get("whatif_text")][:3]
@@ -858,7 +858,7 @@ def test_r8_each_lever_is_judged_at_the_margin(client):
     for x in levers:
         j = _ask(client, x["whatif_text"], prof)
         assert j["kind"] == "whatif", (x["whatif_text"], j.get("kind"), j.get("text"))
-        assert re.search(r"(?:baseline|your) plan:\s*\$[\d,]+", j["text"]) or "plan" in j["text"].lower(), j["text"]
+        assert re.search(r"(?:up|down) from \$[\d,]+|as before", j["text"]), j["text"]
 
 
 # ------------------------------------------------------------------ R15, R20 theme and touch targets (read from the stylesheet)
@@ -1072,6 +1072,8 @@ def test_r22_no_key_in_any_committed_file_and_env_is_ignored():
                 t = f.read_text(encoding="utf-8", errors="ignore")
             except OSError:
                 continue
+            # embedded images (base64 data URIs in report.html / slides.html) can hold random runs such as "AKia…": not keys
+            t = re.sub(r"data:[\w/+.-]+;base64,[A-Za-z0-9+/=]+", "", t)
             if KEYLIKE.search(t):
                 hits.append(str(f.relative_to(LITE)))
     assert not hits, hits

@@ -24,6 +24,7 @@ RATE_BY_KIND = {"student": 0.06, "car": 0.07, "credit_card": 0.22, "other": 0.08
 TERM_YEARS = {"student": 10, "car": 5, "credit_card": 5, "other": 5}               # standard payoff term, assumed
 HIGH_RATE = config.HIGH_RATE_DEBT   # debt at or above this rate is "high rate" (7%, set in config)
 DEBT_NAME = {"student": "student loan", "car": "car loan", "credit_card": "credit card", "other": "other debt"}
+DEBT_SHORT = {"student": "student loan", "car": "car loan", "credit_card": "card debt", "other": "high-rate debt"}     # in action titles
 DEFAULT_MORTGAGE_RATE = 0.05
 DEFAULT_MATCH_CAP = 0.06    # employer match cap, share of pay, when only the match rate is known
 PRE_MEDICARE_PREMIUM = 10000  # a person a year, before Medicare at 65: a round figure for a marketplace plan around age 60. Assumed.
@@ -345,7 +346,7 @@ def family_side(p: Profile, fam: dict, n: int = N_YEARS) -> dict:
 
 
 PART_LABELS = {
-    "basics": "Basics: home, food, transport, care",
+    "basics": "Needs: home, food, transport, care",
     "mortgage": "Mortgage payments",
     "children": "Children and college",
     "pets": "Pets",
@@ -586,31 +587,32 @@ def levers(p: Profile, debts: dict, match: dict, spend_now: float, cash: float) 
     if debts["high_rate_balance"] > 0:
         hi = [r["kind"] for r in debts["rows"] if r["rate"] >= HIGH_RATE]
         one = hi[0] if len(set(hi)) == 1 else None
-        out.append({"key": "debt", "title": "Pay off your high-rate debt first",
+        # titles are actions with the figure (round 4): "Pay off your $8,000 card debt first"
+        out.append({"key": "debt", "title": f"Pay off your ${debts['high_rate_balance']:,.0f} {DEBT_SHORT.get(one, 'high-rate debt')} first",
                     "whatif_text": "What if I pay off my " + (DEBT_NAME[one] if one else "high-rate debts"),
                     "numbers": {"high_rate_debt_balance": debts["high_rate_balance"], "high_rate_debt_rate": debts["high_rate"],
                                 "high_rate_debt_interest_per_year": debts["high_rate_interest_per_year"]},
                     "why": f"You owe ${debts['high_rate_balance']:,.0f} at up to {round(debts['high_rate'] * 100)}%. "
-                           f"That costs about ${debts['high_rate_interest_per_year']:,.0f} a year in interest."})
+                           f"Interest costs about ${debts['high_rate_interest_per_year']:,.0f} a year."})
     years_left = (p.retire_age or 65) - (p.age or 45)
     if match.get("rate") is not None and match.get("missed", 0) > 0 and years_left >= config.MATCH_MIN_YEARS_LEFT:
-        out.append({"key": "match", "title": "Save enough to get the full employer match",
+        out.append({"key": "match", "title": f"Get the full employer match: ${match['missed']:,.0f} a year",
                     "whatif_text": "What if I raise my 401(k) saving to the full match",
                     "numbers": {"match_full_contribution": match["full_contribution"], "match_missed_per_year": match["missed"]},
-                    "why": f"Saving ${match['full_contribution']:,.0f} a year in your 401(k) earns the full match. "
-                           f"You now leave about ${match['missed']:,.0f} a year unclaimed."})
+                    "why": f"Save ${match['full_contribution']:,.0f} a year in your 401(k) to get the full match. "
+                           f"You now miss about ${match['missed']:,.0f} a year."})
     working = (p.retire_age or 65) > (p.age or 45)
     monthly = spend_now / 12 if spend_now else 0
     held_months = p.emergency_months if p.emergency_months is not None else (cash / monthly if monthly else None)
     if monthly and held_months is not None and held_months < EMERGENCY_MIN_MONTHS:
         held = cash if (cash and abs(cash / monthly - held_months) < 0.06) else held_months * monthly   # exact, not from rounded months
         short = round(max(0.0, EMERGENCY_MIN_MONTHS * monthly - held))
-        out.append({"key": "emergency", "title": "Build an emergency fund of three months",
+        out.append({"key": "emergency", "title": f"Keep {EMERGENCY_MIN_MONTHS} months of spending in cash",
                     "whatif_text": f"What if I build an emergency fund of {EMERGENCY_MIN_MONTHS} months",
                     "numbers": {"emergency_shortfall": short, "emergency_target_months": EMERGENCY_MIN_MONTHS,
                                 "emergency_months_now": round(held_months, 1)},
-                    "why": f"You hold about {held_months:.1f} months of spending in cash. Three months is about "
-                           f"${EMERGENCY_MIN_MONTHS * monthly:,.0f}, so you are about ${short:,.0f} short."})
+                    "why": f"You hold about {held_months:.1f} months of spending in cash. Three months is "
+                           f"${EMERGENCY_MIN_MONTHS * monthly:,.0f}, so you are ${short:,.0f} short."})
     ins = p.insurance
     dependents = any((c.age or 0) < 22 for c in p.children) or (p.has_partner and (p.partner_pay_per_year or 0) == 0 and (p.pay_per_year or 0) > 0)
     if dependents and ins.life_kind is not None:
@@ -618,19 +620,18 @@ def levers(p: Profile, debts: dict, match: dict, spend_now: float, cash: float) 
         need = LIFE_COVER_YEARS * earner
         have = (ins.life_face or 0) if ins.life_kind != "none" else 0
         if need > have and earner > 0:
-            out.append({"key": "life", "title": "Close the gap in your life cover",
+            out.append({"key": "life", "title": f"Add ${need - have:,.0f} of life cover",
                         "whatif_text": "What if I get life insurance",
                         "numbers": {"life_cover_needed": round(need), "life_cover_have": round(have), "life_cover_gap": round(need - have)},
-                        "why": f"Ten years of pay is about ${need:,.0f}. You have ${have:,.0f} of cover, a gap of ${need - have:,.0f}."})
+                        "why": f"Ten years of pay is about ${need:,.0f}. You have ${have:,.0f}, a gap of ${need - have:,.0f}."})
     if working and ins.disability is False and pay > 0:
         out.append({"key": "disability", "title": "Get disability cover while you work",
                     "whatif_text": "What if I get disability insurance",
-                    "numbers": {}, "why": "Your pay is your largest asset. Disability cover protects it if illness stops you working."})
+                    "numbers": {}, "why": "Your pay is your biggest asset. This cover protects it if you cannot work."})
     if ins.ltc is False and (p.age or 0) >= 50:
         lt = ltc_facts()
-        out.append({"key": "ltc", "title": "Plan for long-term care",
+        out.append({"key": "ltc", "title": "Look into long-term care cover",
                     "whatif_text": "What if I get long-term care insurance",
                     "numbers": {"ltc_nursing_home_per_year": lt["nursing_home_per_year"], "ltc_typical_years": lt["typical_years"]},
-                    "why": f"A private nursing home room costs about ${lt['nursing_home_per_year']:,.0f} a year, and care lasts about "
-                           f"{lt['typical_years']:g} years on average. You have no cover for it."})
+                    "why": f"A nursing home room costs about ${lt['nursing_home_per_year']:,.0f} a year. You have no cover for it."})
     return out

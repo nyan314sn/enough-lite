@@ -41,7 +41,7 @@ export default function ScenarioTabs({ items, active, comparing, onSelect, onRem
         ))}
       </div>
       <div className="scen-acts">
-        <button type="button" className="scen-add" onClick={onNew} aria-describedby={full ? "scen-full" : undefined}>+ What if…</button>
+        <button type="button" id="scen-add" className="scen-add" onClick={onNew} aria-describedby={full ? "scen-full" : undefined}>+ What if…</button>
         {items.length > 0 && <button type="button" className="btn btn-quiet scen-compare" aria-pressed={comparing} onClick={onCompare}>Compare</button>}
       </div>
       {full && <p id="scen-full" className="small muted scen-full">You have {MAX_WHATIFS} What Ifs. Remove one first to add another.</p>}

@@ -1,0 +1,30 @@
+e11_1440 verdict: Not yet. First, make your basics safe. | ring: Readiness 52 out of 100. You can count on 52 percent of your goal. | words shown: 378 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+e11_1440_dark verdict: Not yet. First, make your basics safe. | ring: Readiness 52 out of 100. You can count on 52 percent of your goal. | words shown: 378 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+e11_390 verdict: Not yet. First, make your basics safe. | ring: Readiness 52 out of 100. You can count on 52 percent of your goal. | words shown: 373 | overflow: False | errors: []
+   axe: [] | targets < 44px: []
+s011_1440 verdict: Close. A few changes get you there. | ring: Readiness 93 out of 100. You can count on 93 percent of your goal. | words shown: 319 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+   ticked: 3 of 3 planned | stored: {"16rdsxl":["goal","emergency","plan for the # family trip in # as a one-time cost#"]}
+s011_1440_dark verdict: Close. A few changes get you there. | ring: Readiness 93 out of 100. You can count on 93 percent of your goal. | words shown: 319 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+   ticked: 3 of 3 planned | stored: {"16rdsxl":["goal","emergency","plan for the # family trip in # as a one-time cost#"]}
+s011_390 verdict: Close. A few changes get you there. | ring: Readiness 93 out of 100. You can count on 93 percent of your goal. | words shown: 317 | overflow: False | errors: []
+   axe: [] | targets < 44px: []
+e27_1440 verdict: Yes, you're on track. | ring: Readiness 100 out of 100. You can count on 100 percent of your goal. | words shown: 290 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+e27_1440_dark verdict: Yes, you're on track. | ring: Readiness 100 out of 100. You can count on 100 percent of your goal. | words shown: 290 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+e27_390 verdict: Yes, you're on track. | ring: Readiness 100 out of 100. You can count on 100 percent of your goal. | words shown: 284 | overflow: False | errors: []
+   axe: [] | targets < 44px: []
+e24_1440 verdict: Not yet. Here's how to close the gap. | ring: Readiness 79 out of 100. You can count on 79 percent of your goal. | words shown: 294 | overflow: False | errors: []
+   axe: [] | targets < 44px: -
+e24_1440 what if: What if: Retire at 66 · retire at 66 | ready: ▲ 5 points
+, better
+vs baseline
+e24_390 verdict: Not yet. Here's how to close the gap. | ring: Readiness 79 out of 100. You can count on 79 percent of your goal. | words shown: 289 | overflow: False | errors: []
+   axe: [] | targets < 44px: []
+e24_390 what if: What if: Retire at 66 · retire at 66 | ready: ▲ 5 points
+, better
+vs baseline

@@ -1,0 +1,468 @@
+{
+ "persona_id": "p09",
+ "name": "Linda",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "Hi, I'm Linda. I'm 58 and I work as an office manager. I'd like to retire at 65 if I can. Honestly I don't really know my numbers, I think I have maybe 300k saved? Not sure.",
+   "clicked": null,
+   "reply": "Got it: you work as a office manager, you are 58, you have saved $300,000 and you want to retire at 65. I filled in 6 more with typical figures. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Change the split"
+    ]
+   },
+   "missing": [
+    "state",
+    "home",
+    "debts",
+    "children_count",
+    "spending_now_per_year",
+    "pay_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "pay_per_year: $70,000 a year (estimate)",
+    "savings: $180,000 pre-tax (401(k) or IRA), $30,000 Roth, $60,000 taxable, $30,000 cash (assumed)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $31,700 a year at 67 (estimate)",
+    "spending_now_per_year: $52,000 a year, about $4,333 a month (estimate)",
+    "spending_per_year: $42,000 a year (estimate)"
+   ],
+   "early_press": false,
+   "fields": [
+    [
+     "age",
+     "58",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "job",
+     "office manager",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$70,000 a year",
+     "estimate"
+    ],
+    [
+     "retire_age",
+     "65",
+     "you said"
+    ],
+    [
+     "savings",
+     "$180,000 pre-tax (401(k) or IRA), $30,000 Roth, $60,000 taxable, $30,000 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $7,333 a year ($7,000 into a 401(k) or IRA, an assumed 10% of pay; $333 of take-home pay left after spending)",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "6.9 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None counted",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$31,700 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$52,000 a year, about $4,333 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$42,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 2,
+   "user": "Build my plan with typical numbers for the rest",
+   "clicked": null,
+   "reply": "Fine. I will build your plan with typical figures for your state, your home, any debts, whether you have children, your spending and your pay. Each is marked in the panel, and you can change any of them on the plan page.",
+   "question": {
+    "text": "I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Change the split"
+    ]
+   },
+   "missing": [],
+   "ready": true,
+   "new_assumed": [
+    "children: None counted (assumed)",
+    "home: Not given. Typical housing costs used: about $16,632 a year (estimate)"
+   ],
+   "early_press": true,
+   "fields": [
+    [
+     "age",
+     "58",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "children",
+     "None counted",
+     "assumed"
+    ],
+    [
+     "job",
+     "office manager",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$70,000 a year",
+     "estimate"
+    ],
+    [
+     "retire_age",
+     "65",
+     "you said"
+    ],
+    [
+     "savings",
+     "$180,000 pre-tax (401(k) or IRA), $30,000 Roth, $60,000 taxable, $30,000 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $7,333 a year ($7,000 into a 401(k) or IRA, an assumed 10% of pay; $333 of take-home pay left after spending)",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "6.9 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Not given. Typical housing costs used: about $16,632 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None counted",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$31,700 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$52,000 a year, about $4,333 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$42,000 a year",
+     "estimate"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [],
+ "path": "early",
+ "started": 1795386464.5334282,
+ "final_profile": {
+  "age": 58,
+  "partner_age": null,
+  "has_partner": false,
+  "state": null,
+  "retire_age": 65,
+  "pay_per_year": 70000.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 180000.0,
+   "roth": 30000.0,
+   "taxable": 60000.0,
+   "cash": 30000.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": null,
+   "value": 0.0,
+   "mortgage_balance": 0.0,
+   "mortgage_payment": 0.0,
+   "rent": 0.0,
+   "mortgage_rate": null
+  },
+  "children": [],
+  "pets": [],
+  "spending_per_year": 42000.0,
+  "social_security_per_year": 31700.0,
+  "risk": "balanced",
+  "job": "office manager",
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "job": "you said",
+   "retire_age": "you said",
+   "savings": "assumed",
+   "risk": "assumed",
+   "pay_per_year": "estimate",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_now_per_year": "estimate",
+   "spending_per_year": "estimate",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "told": "{\"pay_per_year\": \"your pay at $70,000 a year\", \"spending_now_per_year\": \"spending now at $52,000 a year\", \"spending_per_year\": \"spending in retirement at $42,000 a year\", \"social_security_per_year\": \"Social Security at $31,700 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\"}",
+   "savings": "You gave the total. I assumed 60% pre-tax, 10% Roth, 20% taxable and 10% cash; change the split if you know it.",
+   "then": "state",
+   "stuck": "1",
+   "children_n": "0",
+   "skipped_state": "yes",
+   "skipped_home": "yes",
+   "skipped_debts": "yes",
+   "skipped_children_count": "yes",
+   "skipped_spending_now_per_year": "yes",
+   "skipped_pay_per_year": "yes",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "pay_per_year": "Typical pay for first-line supervisors of office and administrative support workers (BLS, May 2025), adjusted for pay levels in your state.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_now_per_year": "Estimated as your take-home pay less what you save, and no less than typical needs.",
+   "spending_per_year": "Estimated as 70% of your take-home pay, and no less than typical needs.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "confirm_split",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 6.9,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 52000.0,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [
+   "debts"
+  ],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: Hi, I'm Linda. I'm 58 and I work as an office manager. I'd like to retire at 65 if I can. Honestly I don't really know my numbers, I think I have maybe 300k saved? Not sure.",
+   "app: Got it: you work as a office manager, you are 58, you have saved $300,000 and you want to retire at 65. I filled in 6 more with typical figures. Each is marked in the panel, so you can change it. I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+   "you: Build my plan with typical numbers for the rest",
+   "app: Fine. I will build your plan with typical figures for your state, your home, any debts, whether you have children, your spending and your pay. Each is marked in the panel, and you can change any of them on the plan page. I split your $300,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?"
+  ],
+  "turns": 2
+ },
+ "reached_missing_empty": true,
+ "turns_to_plan": 2,
+ "person_messages": 1,
+ "escape_presses": 1,
+ "plan_error": null,
+ "plan_ok": true,
+ "plan": {
+  "headline": "You can count on $42,200 a year: $33,000 for needs, $9,200 for wants.",
+  "needs": {
+   "basics_per_year": 33000,
+   "paid_of_100": 100,
+   "line": "Your needs cost about $33,000 a year. They are paid in all 100 market tests.",
+   "basis": "typical"
+  },
+  "wants": {
+   "per_year": 42200.0,
+   "above_basics_per_year": 9200.0,
+   "line": "You can count on about $42,200 a year, safe in 90 of 100 market tests. That leaves $9,200 for wants."
+  },
+  "wishes": {
+   "line": "Your goal is $42,000 a year. It lasted in 91 of 100 market tests. Little is left for wishes."
+  },
+  "actions": [
+   {
+    "title": "Sign up for Medicare at age 65",
+    "why": "Late signup may cost more; health premiums are about $10,000 a year before 65."
+   },
+   {
+    "title": "Use taxable savings first in retirement",
+    "why": "About 6 cents of each dollar you take out goes to tax."
+   },
+   {
+    "title": "Check your plan once a year",
+    "why": "Markets and your needs change. Check again once a year."
+   }
+  ]
+ },
+ "seconds": 26.1
+}

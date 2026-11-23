@@ -56,6 +56,20 @@ export async function readStream(body: ReadableStream<Uint8Array>, onEvent: (e: 
   if (!ended) onEvent({ type: "done" });
 }
 
+/** Read a streamed What If: every event but the answer goes to onEvent; the answer (the "result" event) is returned.
+ *  A stream that ends without one rejects with the server's plain message. */
+export async function askStream(body: ReadableStream<Uint8Array>, onEvent: (e: PlanEvent) => void): Promise<AskResponse> {
+  let result: AskResponse | null = null;
+  let err: string | null = null;
+  await readStream(body, (e) => {
+    if (e.type === "result") { result = e.result; return; }
+    if (e.type === "error") err = e.message;
+    onEvent(e);
+  });
+  if (!result) throw new Error(err ?? "The What If could not be finished. Please try again.");
+  return result;
+}
+
 export const realApi: Api = {
   async health() {
     const res = await fetch("/api/health");
@@ -87,7 +101,21 @@ export const realApi: Api = {
     if (!res.ok || !res.body) { onEvent({ type: "error", message: await errorText(res) }); return; }
     await readStream(res.body, onEvent);
   },
-  ask: (question, profile, plan, pendingChange) => post<AskResponse>("/api/ask", { question, profile, plan, ...(pendingChange ? { pending_change: pendingChange } : {}) }),
+  async ask(question, profile, plan, pendingChange, onEvent) {
+    const body = { question, profile, plan, ...(pendingChange ? { pending_change: pendingChange } : {}) };
+    if (!onEvent) return post<AskResponse>("/api/ask", body);
+    // Ask for a stream: a What If then streams its team's work, as the plan does, and ends with the answer.
+    // Anything else (a rule question, a refusal, a question back) still comes back as plain JSON.
+    let res: Response;
+    try {
+      res = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json", Accept: "text/event-stream", ...testHeader() }, body: JSON.stringify(body) });
+    } catch {
+      throw new Error("We could not reach the server. Check your connection and try again.");
+    }
+    if (!res.ok) throw new Error(await errorText(res));
+    if (!(res.headers.get("content-type") ?? "").includes("text/event-stream") || !res.body) return (await res.json()) as AskResponse;
+    return askStream(res.body, onEvent);
+  },
   async costs() {
     const res = await fetch("/api/costs", { headers: testHeader() });
     if (!res.ok) throw new Error("costs");

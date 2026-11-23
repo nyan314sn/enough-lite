@@ -107,11 +107,11 @@ def test_spend_less_is_a_cut_of_the_goal(q):
     r = ask(q, RETIRED)
     assert r["kind"] == "whatif", r["text"]
     assert r["changes"]["spending_per_year"] == 66000
-    assert "If you spend $6,000 a year less ($66,000)," in r["text"]
+    assert "If you spend $6,000 a year less, at $66,000," in r["text"]
     base_lasts = plan_of(RETIRED)[1]["markets"]["goal_lasts_of_100"]
     new_lasts = r["plan"]["spending_goal"]
     assert new_lasts == 66000
-    assert f"(baseline plan: {base_lasts} of 100)" in r["text"]      # round 3: "of 100" (B P2-7)
+    assert f"from {base_lasts}" in r["text"], r["text"]
     assert r["plan"]["spending_goal"] != 72000
 
 
@@ -120,7 +120,7 @@ def test_spend_less_result_changes():
     lasts_before = plan_of(RETIRED)[1]["markets"]["goal_lasts_of_100"]
     m = re.search(r"goal lasts in (\d+) of 100", r["text"])
     assert m and int(m.group(1)) != lasts_before
-    assert "(now $" not in r["text"] and "(baseline plan: $" in r["text"]
+    assert "(now $" not in r["text"] and re.search(r"(?:up|down) from|as before", r["text"]), r["text"]
 
 
 def test_spend_less_without_an_amount_asks_how_much():
@@ -216,12 +216,12 @@ def test_run_out_for_money_that_lasts_says_so():
 
 def test_whatif_labels_say_your_plan():
     r = ask("retire at 70", WORKING)
-    assert "(baseline plan: $" in r["text"] and "(now $" not in r["text"]
+    assert re.search(r"(?:up|down) from \$|as before", r["text"]) and "(now $" not in r["text"], r["text"]
 
 
 def test_same_figure_100_then_90_is_explained():
     r = ask("why does it say 100 of 100 and then 90 of 100?", RETIRED)
-    assert r["kind"] == "answer" and "different things" in r["text"] and "basics" in r["text"].lower()
+    assert r["kind"] == "answer" and "different things" in r["text"] and "needs" in r["text"].lower()
 
 
 # ---------------------------------------------------------------- 6. where did a figure come from (C P0-4)

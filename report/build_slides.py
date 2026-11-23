@@ -21,7 +21,7 @@ REVEAL = "https://cdn.jsdelivr.net/npm/reveal.js@5.1.0"
 
 def shot(name: str, width: int = 1000) -> str:
     p = br.resolve_img(name)
-    if name in ("img/intake.png", "img/team.png", "img/plan.png"):   # trim the empty side margins of the 1440 px captures
+    if name in ("img/intake.png", "img/team.png", "img/plan.png", "img/whatif.png"):   # trim the empty side margins of the 1440 px captures
         import io
         from PIL import Image
         im = Image.open(p).convert("RGB").crop((100, 0, 1340, 900))
@@ -78,10 +78,10 @@ def build(usage_path: Path | None = None) -> list[str]:
 </div>
 <p class="small"><b>MCP server (optional):</b> any AI assistant calls Enough's six tools and gets checked numbers and sources instead of guesses. No AI inside, same engine and refusals, 33 tests. Example: a 58-year-old in Ohio can count on $45,900, $9,100 short of the goal; Medicare cited; Medicaid hiding refused.</p></section>""")
     S.append(f"""<section><h2>One run</h2><div class="shots">
-<figure><img src="{shot('img/intake.png', 760)}" alt="Intake"><figcaption>1. Type a few lines; every field is marked</figcaption></figure>
-<figure><img src="{shot('img/team.png', 760)}" alt="Team working"><figcaption>2. Watch the team and its hand-offs</figcaption></figure>
-<figure><img src="{shot('img/plan.png', 760)}" alt="Plan"><figcaption>3. Plan left, team right</figcaption></figure></div>
-<p class="small">A couple, 45 and 43, $310,000 pay, $920,000 saved, three children, two dogs: they can count on $114,800 a year ($44,500 for basics), and the goal lasts in 90 of 100 scenarios. 4. What If tabs on the baseline: retire at 65 gives $140,900; savings $500 more a month, $118,400; markets fall 30%, $108,700 and $6,100 short. Compare puts them side by side.</p></section>""")
+<figure><img src="{shot('img/intake.png', 760)}" alt="Intake: the chat with a hint to press Build my plan, and the filled panel"><figcaption>1. Type a few lines; every field is marked</figcaption></figure>
+<figure><img src="{shot('img/plan.png', 760)}" alt="The plan: verdict, readiness ring, needs, wants and wishes"><figcaption>2. Verdict, ring and ladder; next moves below</figcaption></figure>
+<figure><img src="{shot('img/whatif.png', 760)}" alt="A What If running: the plan greyed out, the advisers re-running it"><figcaption>3. A What If: the same advisers run the plan again</figcaption></figure></div>
+<p class="small">A couple, 45 and 43, $310,000 pay, $920,000 saved, three children, two dogs: they can count on $114,200 a year ($44,500 for needs); readiness 85, short $18,800 of a $133,000 goal. What Ifs sit in one section at the end and open as tabs on the baseline: retire at 65 gives $141,000; savings $500 more a month, $117,900; markets fall 30%, $108,100 and $6,100 less. Compare puts them side by side.</p></section>""")
     S.append(f"""<section><h2>Cost to run</h2><div class="stats row">
 <div><b>{run_cost}</b><span>one plan ({tokens} tokens)</span></div><div><b>{per_month}</b><span>per user per month</span></div>
 <div><b>{c100}</b><span>100 users a month</span></div><div><b>{c10k}</b><span>10,000 users a month</span></div></div>
@@ -115,12 +115,21 @@ def build(usage_path: Path | None = None) -> list[str]:
 <tr><td>Crashes</td><td>5</td><td class="us">0</td></tr>
 <tr><td>Pay off debt: effect on count-on</td><td>-$350</td><td class="us">+$95</td></tr>
 <tr><td>Model compare: template fallbacks</td><td>51% gpt-6-luna</td><td class="us">20% Haiku</td></tr></table></div>
-<p class="small"><b>What the audits missed:</b> the user found by hand that "Not sure, estimate it" left the mortgage blank. So: 25 product rules, a test for each, and a live rules audit as the last gate (first run 14 pass, 10 partial, 1 fail; re-check 2 / 9 / 0). Not met: two audits in a row with no P0. The "after" columns are simulated testers and tools-only runs, not people.</p></section>""")
-    S.append(f"""<section><h2>Impact</h2><div class="stats row">
+<p class="small"><b>What the audits missed:</b> the user found by hand that "Not sure, estimate it" left the mortgage blank. So: 26 product rules, a test for each, and a live rules audit as the last gate (first run 14 pass, 10 partial, 1 fail; re-check 2 / 9 / 0). Not met: two audits in a row with no P0. The "after" columns are simulated testers and tools-only runs, not people.</p></section>""")
+    S.append(f"""<section><h2>Impact: a real user tried it</h2><div class="stats row">
 <div><b>9 s</b><span>median compute per plan</span></div><div><b>{run_cost}</b><span>per plan, against $2,926 for an adviser plan</span></div>
-<div><b>{T('minutes')}</b><span>real user: start to plan</span></div><div><b>{T('quote')}</b><span>real user quote</span></div></div>
-<p>Not a like-for-like swap: an adviser covers tax, estate and judgment. This is access, a first answer for people who would not pay for any plan.</p>
-<p class="small">Limits: not financial advice, no linked accounts, simple models, one or two testers at most.</p></section>""")
+<div><b>10 min</b><span>to her first plan, vs ~6 hours and $2,500 with an adviser (her estimate). Understood all 3 answers. "It is worth to try at least once."</span></div></div>
+<div class="cols2 fb"><div><h4>What they said</h4><ul>
+<li>Not obvious you can build without answering every question</li>
+<li>"How Enough works" should fold by itself</li>
+<li>"Your plan" is too complex; plainer words, something that draws you in</li>
+<li>Redo the demo once the app is redone</li></ul></div>
+<div><h4>What we changed</h4><ul>
+<li>Build early; typical figures shown for checking; guide folds itself</li>
+<li>One verdict, a readiness ring (stops at 40 if needs are unsafe), a read-only list of next moves, each with its worth, badges from plan data</li>
+<li>One ladder: needs, wants, wishes. Grade 8 or lower (rule R26) (Flesch-Kincaid, own syllable count): all text grade 6.1 to 4.2, longest sentence 60 to 32 words; What If replies 12.0 to 4.7; AI adviser lines 6.3 to 3.7</li>
+<li>Demo held, then re-recorded</li></ul></div></div>
+<p class="small">An adviser covers tax, estate and judgment; this is access, not a like-for-like swap. Limits: not financial advice, no linked accounts, simple models. The redesign has not yet been tried on a second real user.</p></section>""")
     S.append("""<section><h2>What is next</h2><ul>
 <li>Five real users, then fix what confuses them.</li><li>Fix the last P0s and pass the live rules audit.</li>
 <li>Compare Haiku with a larger Claude model.</li><li>Upload a statement (the injection defense is ready).</li>
@@ -145,6 +154,7 @@ table.cmp{{width:100%;border-collapse:collapse;font-size:.6em;background:{br.PAN
 .shots{{display:flex;gap:.6em;align-items:flex-start;justify-content:center}} .shots figure{{margin:0;flex:1;text-align:center}}
 .shots img{{max-height:430px;max-width:100%;width:auto;border:1px solid {br.LINE};border-radius:8px;margin:0;box-shadow:0 1px 4px rgba(30,27,75,.10)}} .shots figcaption{{font-size:.5em;color:{br.MUTED}}}
 .shots.one img{{max-height:400px}}
+.fb h4{{margin:0 0 .2em;font-size:.7em;color:{br.ACCENT2}}} .fb ul{{font-size:.58em}} .fb li{{margin:.2em 0}}
 mark.todo{{background:#ffd23f;color:#111;padding:0 .2em;border-radius:3px;font-size:.6em;font-weight:600}}
 """
     doc = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

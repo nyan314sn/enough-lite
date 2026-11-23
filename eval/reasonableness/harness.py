@@ -77,7 +77,7 @@ def figures(plan: dict, ctx) -> dict:
         "save_now": ms.get("save_now"),
         "median_at_retirement": m.get("median_at_retirement"),
         "stock_share_now": m.get("stock_share_now"),
-        "headline": plan["headline"],
+        "headline": plan["headline"] + (" " + plan["headline_why"] if plan.get("headline_why") else ""),
         "how_sure": [x["per_year"] for x in hs] if hs else None,
         "starting_points": len(plan.get("starting_points") or []),
         "chart_min": min([*plan["chart"]["low"], *plan["chart"]["median"]], default=0),

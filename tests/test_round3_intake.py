@@ -156,7 +156,7 @@ def test_partner_pension_with_start_age_and_the_right_person():
     pens = r.profile["pensions"]
     assert len(pens) == 1 and pens[0]["who"] == "partner" and pens[0]["per_year"] == 30000 and pens[0]["start_age"] == 60
     assert r.profile["sources"]["pensions"] == "you said"
-    assert "your partner has a pension of $30,000 a year from 60" in r.reply and "you have a pension" not in r.reply
+    assert "your partner has a pension of $30,000 a year from 60" in r.reply.lower() and "you have a pension" not in r.reply.lower()
     row = next(f for f in r.fields if f.key == "pensions")
     assert "from 60" in row.display and "start at 65" not in (row.note or "")
 
@@ -230,7 +230,7 @@ def test_a_rejected_estimate_is_not_stored_as_another_figure():
     p = r.profile
     assert p["spending_now_per_year"] == 33000
     assert p["spending_per_year"] != 37000 and p["sources"].get("spending_per_year") != "you said"
-    assert "spending in retirement at" in r.reply          # the derived figure moved, and the reply says so
+    assert "Spending in retirement: $" in r.reply and "→" in r.reply      # the derived figure moved, and the reply says so (old → new, round 4)
 
 
 def test_retraction_removes_the_debt_and_ends_the_question():

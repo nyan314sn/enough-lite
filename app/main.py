@@ -1,6 +1,7 @@
 """Enough Lite API (FastAPI). The React build in web/dist is served at /.
 
-Endpoints: /api/health, /api/intake, /api/plan (Server-Sent Events), /api/ask, /api/costs.
+Endpoints: /api/health, /api/intake, /api/plan (Server-Sent Events), /api/ask (JSON; with Accept: text/event-stream a What If
+streams its team's events like /api/plan), /api/costs.
 Deploy-ready: one start command (run.py reads PORT), hard dollar caps (llm.py), a per-IP rate limit on /api/plan and
 /api/ask, and no secrets or prompts in logs.
 """
@@ -15,6 +16,7 @@ from pathlib import Path
 from collections import defaultdict, deque
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
@@ -312,10 +314,69 @@ async def api_ask(req: AskRequest, request: Request):
             raise HTTPException(status_code=400, detail=str(e))
         except Exception:
             raise HTTPException(status_code=400, detail=pipeline.BAD_PROFILE)
-    try:
-        return await pipeline.ask(_parser.fix_words(req.question), req.profile, session=session_id(request), pending=req.pending_change, plan_so_far=req.plan)
-    except pipeline.PlanError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    question, sid = _parser.fix_words(req.question), session_id(request)
+    if "text/event-stream" not in (request.headers.get("accept") or ""):
+        try:
+            return await pipeline.ask(question, req.profile, session=sid, pending=req.pending_change, plan_so_far=req.plan)
+        except pipeline.PlanError as e:
+            raise HTTPException(status_code=400, detail=str(e))
+    return await _ask_stream(question, req, sid)
+
+
+END = "__end__"     # the worker's last item on the queue: the answer, or the error that stopped it
+
+
+async def _ask_stream(question: str, req: AskRequest, sid: str):
+    """The streamed ask (Accept: text/event-stream). The checks above are the same as the JSON path's. A What If streams the
+    plan's events (whatif_start, agent_start, tool, handoff, agent_done, cost, plan), then {"type": "result", "result": <the
+    JSON the plain path returns>} and done. Anything else (an answer, a refusal, a question back, a change to confirm) sends
+    no event, so it comes back as plain JSON, exactly as without the header."""
+    queue: asyncio.Queue = asyncio.Queue()
+
+    async def emit(event: dict) -> None:
+        await queue.put(event)
+
+    async def worker():
+        try:
+            out = await pipeline.ask(question, req.profile, session=sid, pending=req.pending_change, plan_so_far=req.plan, emit=emit)
+            await queue.put({"type": END, "result": jsonable_encoder(out)})
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            await queue.put({"type": END, "exc": exc})
+
+    task = asyncio.create_task(worker())
+    first = await queue.get()
+    if first["type"] == END:            # not a What If: the plain JSON answer, or the plain error
+        exc = first.get("exc")
+        if isinstance(exc, pipeline.PlanError):
+            raise HTTPException(status_code=400, detail=str(exc))
+        if exc is not None:
+            raise exc
+        return JSONResponse(first["result"])
+
+    async def stream():
+        ev = first
+        try:
+            while True:
+                if ev["type"] == END:
+                    exc = ev.get("exc")
+                    if exc is None:
+                        yield f"data: {json.dumps({'type': 'result', 'result': ev['result']})}\n\n"
+                    else:
+                        log.error("what if failed: %s", type(exc).__name__)
+                        msg = str(exc) if isinstance(exc, pipeline.PlanError) else "The What If could not be finished. Please try again."
+                        yield f"data: {json.dumps({'type': 'error', 'message': msg})}\n\n"
+                    yield f"data: {json.dumps({'type': 'done'})}\n\n"
+                    break
+                yield f"data: {json.dumps(ev)}\n\n"
+                ev = await queue.get()
+        finally:
+            if not task.done():
+                task.cancel()
+
+    return StreamingResponse(stream(), media_type="text/event-stream",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 
 @app.post("/api/reset")

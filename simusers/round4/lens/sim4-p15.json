@@ -1,0 +1,16 @@
+{
+ "id": "p15",
+ "path": "normal",
+ "kind": "short",
+ "gap": 9900,
+ "text": "Readiness: 85 of 100\nNot yet. Here's how to close the gap.\nShort $9,900 a year\nNeeds: $29,400 a year. Paid in 100 of 100 market tests. Safe.\nWants: $29,700 a year on top of your needs. You can count on $59,100 in all. Sure.\nWishes: $9,900 a year, the rest of your goal of $69,000. Only if markets help.\nYou can count on $59,100 a year: $29,400 for needs, $29,700 for wants. That is less than your...\nFirst move: Set your spending goal nearer the safe level",
+ "result": {
+  "a": "no",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "\"Readiness: 85 of 100\" with \"Not yet\"; \"market tests\"; \"safe level\" unclear; text cut off at \"less than your...\"; retirement age 60 never mentioned",
+  "reasoning": "none"
+ },
+ "grade": 1.45,
+ "words": 88
+}

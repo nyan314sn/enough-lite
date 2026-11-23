@@ -1,0 +1,110 @@
+{
+ "persona_id": "s01",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 29,
+    "truth": 29,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "OH",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 62,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 40000.0,
+    "truth": 41000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 8400.0,
+    "truth": 8500,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": false,
+    "truth": false,
+    "source": "you said"
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": false,
+    "got": 0,
+    "truth": 9000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 33000,
+    "truth": 33000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.75,
+  "why": [
+   {
+    "field": "state",
+    "cause": "person_never_said",
+    "note": "Asked at i2; user replied 'ok' and never named a state. App moved on without a value."
+   },
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "App assumed 65 as a typical value. User never gave a retirement age; truth is 62."
+   },
+   {
+    "field": "debts_total",
+    "cause": "person_never_said",
+    "note": "User named a car loan but never gave a balance and chose 'build with typical numbers'. App stored 0 with no source instead of a typical debt figure."
+   }
+  ]
+ }
+}

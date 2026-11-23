@@ -31,9 +31,9 @@ describe("The empty state", () => {
     expect(toggle(debts).getAttribute("aria-expanded")).toBe("false");
     expect(debts.textContent).toContain("Not added, using typical");
     expect(toggle(m.el.querySelector('[data-section="Household"]')!).getAttribute("aria-expanded")).toBe("true");
-    await click(debts.querySelector("button.pen"));
+    await click(debts.querySelector("button.chat-alt"));
     expect(onChip).toHaveBeenCalledWith("Add debts");
-    await click(m.el.querySelector('[data-section="Pensions & income"] button.pen'));
+    await click(m.el.querySelector('[data-section="Pensions & income"] button.chat-alt'));
     expect(onChip).toHaveBeenCalledWith("Add a pension");
   });
 

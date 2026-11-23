@@ -34,16 +34,17 @@ CHANGEABLE_PREFIX = ("age", "partner_age", "state", "job", "partner_job", "pay_p
 CHIPS_UNCLEAR = ["Change an answer", "Try a What If", "Explain my plan"]
 IS_QUESTION = re.compile(r"\?\s*$|^\s*(?:why|what|how|when|where|who|which|is|are|does|do|can|could|should|will|would)\b", re.I)
 
-SCENARIOS_LINE = ("\"N of 100\" means this: we ran your plan through 100 different paths that markets might take, and in N of them "
-                  "the money lasted. Markets are uncertain, so these are chances, not promises.")
+SCENARIOS_LINE = ("\"N of 100\" means your money lasted in N of 100 market tests. "
+                  "A market test is one made-up run of the markets. These are chances, not promises.")
 DEFINITIONS = {
-    "basics": "Basics are the costs you cannot skip: housing, food, transport and health care.",
-    "needs": "Needs are the basics: housing, food, transport and health care. The plan checks how often they are paid.",
-    "wants": "Wants are the spending you can count on a year, basics included, safe in 90 of 100 market scenarios.",
-    "wishes": "Wishes are what is left after needs and wants, such as gifts or a legacy. They stay open.",
-    "scenario": "A scenario is one possible run of markets, year by year. The plan runs 2,000 of them and counts how often your money lasts.",
-    "safe": "Safe spending is the most you can spend a year and still have money left in 90 of 100 scenarios.",
-    "90 of 100": "90 of 100 means the money lasts in 90 of the 100 market scenarios we tried. It is a chance, not a promise.",
+    "basics": "Needs are the costs you cannot skip: housing, food, transport and health care.",
+    "needs": "Needs are the costs you cannot skip: housing, food, transport and health care. The plan checks how often they are paid.",
+    "wants": "Wants are what you can count on each year above your needs. It is safe in 90 of 100 market tests.",
+    "wishes": "Wishes are the rest of your goal, such as gifts or a legacy. They stay open: markets must help.",
+    "scenario": "A market test is one made-up run of the markets, year by year. The plan tests 2,000 of them and counts how often your money lasts.",
+    "market test": "A market test is one made-up run of the markets, year by year. The plan tests 2,000 of them and counts how often your money lasts.",
+    "safe": "Safe spending is the most you can spend a year. Your money still lasts in 90 of 100 market tests.",
+    "90 of 100": "90 of 100 means the money lasts in 90 of the 100 market tests we tried. It is a chance, not a promise.",
     "of 100": SCENARIOS_LINE,
     "horizon": "The planning horizon is the age you plan for. Only about 1 in 4 households has anyone alive past it.",
 }
@@ -514,22 +515,22 @@ async def _route(question: str, base: Profile, plan: dict | None, session: str, 
                 raise ValueError
             above = _num(w.get("above_basics_per_year"))
             basics = _num((plan.get("needs") or {}).get("basics_per_year"))
-            text = (f"You can count on about ${per:,.0f} a year, safe in 90 of 100 market scenarios"
-                    + (f"; that covers your basics of ${basics:,.0f}" if basics is not None else "")
-                    + (f" and leaves ${above:,.0f} above them." if above else "."))
+            text = (f"You can count on about ${per:,.0f} a year, safe in 90 of 100 market tests."
+                    + (f" That covers your needs of ${basics:,.0f}" if basics is not None else "")
+                    + (f" and leaves ${above:,.0f} for wants." if above and basics is not None else ("." if basics is not None else "")))
             return {"kind": "answer", "intent": "question_plan", "text": text, "citations": [], "tokens": dict(ZERO), "cost_usd": 0.0,
                     "quick_answers": ["Explain my plan", "Try a What If", "Change an answer"]}
         except (KeyError, TypeError, ValueError):
             pass
     # "what does 92 of 100 mean?", "what are basics?": the plan's own words, explained once in plain words
-    if is_q and re.search(r"\bof 100\b|out of 100|\bscenarios?\b|\bbasics\b", low) and re.search(r"\bmean(?:s|ing)?\b|\bbetter\b|\bgood\b|\bbad\b", low) \
+    if is_q and re.search(r"\bof 100\b|out of 100|\bscenarios?\b|\bbasics\b|\bneeds\b", low) and re.search(r"\bmean(?:s|ing)?\b|\bbetter\b|\bgood\b|\bbad\b", low) \
             and not re.search(r"\b(?:change|fix|update|wrong|correct)\b", low) and len(low.split()) <= 40 \
             and not re.search(r"\bfirst\b|should i|what (?:do|can) i do|how much|\brisk\w*|\bwhat if\b|\brerun\b|\bwork\b|\binstead\b", low):
         parts = []
         if re.search(r"\bof 100\b|out of 100|\bscenarios?\b", low):
             parts.append(SCENARIOS_LINE + " A higher number is safer.")
-        if re.search(r"\bbasics\b", low):
-            parts.append(DEFINITIONS["basics"] + " \"Basics paid in N of 100\" counts the market paths in which those costs are always covered.")
+        if re.search(r"\bbasics\b|\bneeds\b", low):
+            parts.append(DEFINITIONS["basics"] + " \"Needs paid in N of 100\" counts the market tests where those costs are always covered.")
         return {"kind": "answer", "intent": "question_plan", "text": " ".join(parts), "citations": [], "tokens": dict(ZERO), "cost_usd": 0.0,
                 "quick_answers": ["Explain my plan", "Try a What If", "Change an answer"]}
     # a plain "what is a Roth?" gets the fixed definition, never a hedge

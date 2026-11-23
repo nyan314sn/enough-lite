@@ -13,14 +13,12 @@ afterEach(() => { m?.unmount(); m = null; });
 const point = { title: "Retire at 67", result: "basics paid in 100 of 100", whatif_text: "Retire at 67", paid_of_100: 100, count_on_per_year: 24000 };
 
 describe("Round 2 UI: starting points", () => {
-  it("makes each starting point a button that sends its What If, and cuts the repeat from action 1", async () => {
+  it("lists each starting point (no button), and cuts the repeat from action 1", async () => {
     const base = examplePlan({ age: 45, retire_age: 62 });
     const plan = { ...base, starting_points: [point], actions: [{ title: "Make your basics safe first", why: "On your numbers they are not safe. Starting points: retire at 67 (x)." }, ...base.actions.slice(1)] };
-    const onTry = vi.fn();
-    m = await render(<PlanCard plan={plan} retireAge={62} onTry={onTry} />);
-    const b = m.el.querySelector(".starting-points button") as HTMLButtonElement;
-    await click(b);
-    expect(onTry).toHaveBeenCalledWith("Retire at 67");
+    m = await render(<PlanCard plan={plan} retireAge={62} />);
+    expect(m.el.querySelector(".starting-points button")).toBeNull();
+    expect(m.el.querySelector(".starting-points")?.textContent).toContain("Retire at 67");
     expect(m.el.querySelector(".actions")?.textContent).not.toContain("Starting points:");
     expect(withoutRepeat("A. Starting points: b.", true)).toBe("A.");
     expect(withoutRepeat("A. Starting points: b.", false)).toContain("Starting points");

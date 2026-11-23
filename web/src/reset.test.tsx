@@ -94,8 +94,8 @@ describe("Reset one section", () => {
     expect(q(".side [data-key=age]")).toBeTruthy();                            // other sections stay
     expect(byText(m!.el, ".bubble-us", "Cleared your saving. About how much have you saved?")).toBeTruthy();
     expect(intake).toHaveBeenLastCalledWith("", expect.not.objectContaining({ savings: expect.anything() }), ["Saving"]);   // the server is told, and the section is gone from what we send
-    expect(byText(m!.el, ".side .build-why", "savings")).toBeTruthy();
-    expect(q(".side .build button")?.getAttribute("aria-disabled")).toBe("true");   // a core answer is missing: no plan yet
+    expect(q(".side .build-why")?.textContent).toMatch(/typical figures/);
+    expect(q(".side .build button")?.hasAttribute("disabled")).toBe(false);   // a core answer is missing: building early is allowed, with typical figures
 
     await click(byText(m!.el, ".step-link", "Your plan"));
     expect(q(".plan")).toBeTruthy();                                            // the old plan stays, but not silently

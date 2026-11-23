@@ -1,0 +1,12 @@
+{
+ "ring0": 70,
+ "gap": 20900,
+ "goal": 70000,
+ "counton": 49100,
+ "paid": 97,
+ "newgoal": 49000,
+ "delta": 30,
+ "ring1": 100,
+ "lasts0": 6,
+ "lasts1": 90
+}

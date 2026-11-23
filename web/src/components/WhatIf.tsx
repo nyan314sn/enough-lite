@@ -11,8 +11,8 @@ interface Row { label: string; before: number; after: number; show: (n: number) 
 
 export function changes(before: Plan, after: Plan): Row[] {
   return [
-    { label: "Basics paid", before: before.needs.paid_of_100, after: after.needs.paid_of_100, show: (n) => `${n} of 100` },
-    { label: "Basics a year", before: before.needs.basics_per_year, after: after.needs.basics_per_year, show: usd },
+    { label: "Needs paid", before: before.needs.paid_of_100, after: after.needs.paid_of_100, show: (n) => `${n} of 100` },
+    { label: "Needs a year", before: before.needs.basics_per_year, after: after.needs.basics_per_year, show: usd },
     { label: "You can count on, a year", before: before.wants.per_year, after: after.wants.per_year, show: usd },
   ];
 }
@@ -51,7 +51,8 @@ export function shortMoney(raw: string, k = false): string {
 export function shortName(q: string, shown?: string): string {
   for (const t of [q, shown ?? ""]) {
     if (!t) continue;
-    let m = t.match(/retire\w*\s+(?:at|by|in)?\s*(?:age\s+)?(\d{2})\b/i);
+    // "retire at 64", and "Retire 1 year later, at 66" (an analysis choice)
+    let m = t.match(/retire\w*\s+(?:at|by|in)?\s*(?:age\s+)?(\d{2})\b/i) ?? t.match(/retire\b[^.?!]*?\b(?:at|by)\s+(?:age\s+)?(\d{2})\b/i);
     if (m) return `Retire at ${m[1]}`;
     m = t.match(/markets?\s+(?:fall|drop|crash|go down|decline)\w*\s+(?:by\s+)?(\d+)\s*%/i);
     if (m) return `Markets fall ${m[1]}%`;
@@ -107,6 +108,7 @@ export function keyFigures(p: Plan, base: Plan) {
     countOn: p.wants.per_year,
     paid: p.needs.paid_of_100,
     basics: p.needs.basics_per_year,
+    wants: Math.max(0, p.wants.per_year - p.needs.basics_per_year),
     gap: goal != null ? yearlyGap(p, goalOf(base)) : null,
     goalLasts: p.analysis?.how_sure?.goal_lasts_of_100 ?? null,
   };

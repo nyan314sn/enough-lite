@@ -1,0 +1,486 @@
+{
+ "persona_id": "p27",
+ "name": "Ivan",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "Hi. Before I tell you anything, who sees my data? And is what you give me advice or just general info?",
+   "clicked": null,
+   "reply": "Your answers live in this browser tab. The server uses them only to read your messages and build your plan. It saves no copy. Its log holds only counts and costs. An outside company does read your messages: each one goes to an AI model, Claude, from Anthropic. Leave out names and account numbers. Rough figures are enough.",
+   "question": {
+    "text": "How old are you?",
+    "quick_answers": [
+     "35",
+     "45",
+     "55",
+     "65"
+    ]
+   },
+   "missing": [
+    "age",
+    "state",
+    "savings",
+    "home"
+   ],
+   "ready": false,
+   "new_assumed": [],
+   "early_press": false,
+   "fields": []
+  },
+  {
+   "n": 2,
+   "user": "I'm 49. Thanks for explaining the data part. Is the plan you build general info or actual advice? I want to know before I share my numbers.",
+   "clicked": null,
+   "reply": "Got it: you are 49. No. This is an education tool, not financial advice. It shows what your own numbers suggest. For big decisions, talk to a fee-only adviser who must act in your interest. I filled in 6 more with typical figures. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "Which state do you live in?",
+    "quick_answers": [
+     "Connecticut",
+     "New York",
+     "California",
+     "Texas",
+     "Florida"
+    ]
+   },
+   "missing": [
+    "state",
+    "pay_per_year",
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "pay_per_year: $50,980 a year (assumed)",
+    "retire_age: 65 (assumed)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $25,600 a year at 67 (estimate)",
+    "spending_now_per_year: $39,000 a year, about $3,250 a month (estimate)",
+    "spending_per_year: $33,000 a year (estimate)"
+   ],
+   "early_press": false,
+   "fields": [
+    [
+     "age",
+     "49",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $4,822 a year, what take-home pay leaves after spending, less than the 10% of pay assumed",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None counted",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$39,000 a year, about $3,250 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$33,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 3,
+   "user": "Build my plan with typical numbers for the rest",
+   "clicked": null,
+   "reply": "Fine. I will build your plan with typical figures for your state, your pay, your savings, your home, any debts, whether you have children, when you want to retire and your spending. Each is marked in the panel, and you can change any of them on the plan page.",
+   "question": {
+    "text": "I split your $115,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Change the split"
+    ]
+   },
+   "missing": [],
+   "ready": true,
+   "new_assumed": [
+    "children: None counted (assumed)",
+    "savings: $69,000 pre-tax (401(k) or IRA), $11,500 Roth, $23,000 taxable, $11,500 cash (assumed)",
+    "home: Not given. Typical housing costs used: about $16,632 a year (estimate)"
+   ],
+   "early_press": true,
+   "fields": [
+    [
+     "age",
+     "49",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "children",
+     "None counted",
+     "assumed"
+    ],
+    [
+     "pay_per_year",
+     "$50,980 a year",
+     "assumed"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$69,000 pre-tax (401(k) or IRA), $11,500 Roth, $23,000 taxable, $11,500 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $4,822 a year, what take-home pay leaves after spending, less than the 10% of pay assumed",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "3.5 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Not given. Typical housing costs used: about $16,632 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None counted",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$25,600 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$39,000 a year, about $3,250 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$33,000 a year",
+     "estimate"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [],
+ "path": "early",
+ "started": 1795386490.5934834,
+ "final_profile": {
+  "age": 49,
+  "partner_age": null,
+  "has_partner": false,
+  "state": null,
+  "retire_age": 65,
+  "pay_per_year": 50980.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 69000.0,
+   "roth": 11500.0,
+   "taxable": 23000.0,
+   "cash": 11500.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": null,
+   "value": 0.0,
+   "mortgage_balance": 0.0,
+   "mortgage_payment": 0.0,
+   "rent": 0.0,
+   "mortgage_rate": null
+  },
+  "children": [],
+  "pets": [],
+  "spending_per_year": 33000,
+  "social_security_per_year": 25600.0,
+  "risk": "balanced",
+  "job": null,
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "savings": "assumed",
+   "retire_age": "assumed",
+   "risk": "assumed",
+   "pay_per_year": "assumed",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_now_per_year": "estimate",
+   "spending_per_year": "estimate",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "told": "{\"pay_per_year\": \"your pay at $50,980 a year\", \"retire_age\": \"retirement at 65\", \"spending_now_per_year\": \"spending now at $39,000 a year\", \"spending_per_year\": \"spending in retirement at $33,000 a year\", \"social_security_per_year\": \"Social Security at $25,600 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\"}",
+   "stuck": "0",
+   "privacy_told": "yes",
+   "children_n": "0",
+   "skipped_state": "yes",
+   "skipped_pay_per_year": "yes",
+   "savings": "Typical for your age (Federal Reserve survey). Please give yours.",
+   "skipped_savings": "yes",
+   "skipped_home": "yes",
+   "skipped_debts": "yes",
+   "skipped_children_count": "yes",
+   "skipped_retire_age": "yes",
+   "skipped_spending_now_per_year": "yes",
+   "retire_age": "A common goal. Change it to test another age.",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "pay_per_year": "The typical pay of all US workers (BLS). Please give yours.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_now_per_year": "Estimated as your take-home pay less what you save, and no less than typical needs.",
+   "spending_per_year": "Estimated as 70% of your take-home pay, and no less than typical needs.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "confirm_split",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 3.5,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 39000.0,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [
+   "debts"
+  ],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: Hi. Before I tell you anything, who sees my data? And is what you give me advice or just general info?",
+   "app: Your answers live in this browser tab. The server uses them only to read your messages and build your plan. It saves no copy. Its log holds only counts and costs. An outside company does read your messages: each one goes to an AI model, Claude, from Anthropic. Leave out names and account numbers. Rough figures are enough. How old are you?",
+   "you: I'm 49. Thanks for explaining the data part. Is the plan you build general info or actual advice? I want to know before I share my numbers.",
+   "app: Got it: you are 49. No. This is an education tool, not financial advice. It shows what your own numbers suggest. For big decisions, talk to a fee-only adviser who must act in your interest. I filled in 6 more with typical figures. Each is marked in the panel, so you can change it. Which state do you live in?",
+   "you: Build my plan with typical numbers for the rest",
+   "app: Fine. I will build your plan with typical figures for your state, your pay, your savings, your home, any debts, whether you have children, when you want to retire and your spending. Each is marked in the panel, and you can change any of them on the plan page. I split your $115,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?"
+  ],
+  "turns": 3
+ },
+ "reached_missing_empty": true,
+ "turns_to_plan": 3,
+ "person_messages": 2,
+ "escape_presses": 1,
+ "plan_error": null,
+ "plan_ok": true,
+ "plan": {
+  "headline": "You can count on $31,500 a year, but your needs cost $33,000. The plan does not work yet. The starting points below show what would fix it. That is less than your Social Security of $31,800 a year. It starts at 70 in this plan.",
+  "needs": {
+   "basics_per_year": 33000,
+   "paid_of_100": 79,
+   "line": "Your needs cost about $33,000 a year. They are paid in only 79 of 100 market tests, so the plan starts there.",
+   "basis": "typical"
+  },
+  "wants": {
+   "per_year": 31500.0,
+   "above_basics_per_year": 0.0,
+   "line": "You can count on $31,500 a year, but your needs cost $33,000. The plan does not work yet. The starting points below show what would fix it. That is less than your Social Security of $31,800 a year. It starts at 70 in this plan."
+  },
+  "wishes": {
+   "line": "Your goal of $33,000 a year lasts in 79 of 100 market tests. Your goal is above what lasts, so wishes wait."
+  },
+  "actions": [
+   {
+    "title": "Make your needs safe first",
+    "why": "Your needs are paid in 79 of 100 market tests. The starting points show what helps."
+   },
+   {
+    "title": "Save a little more each year",
+    "why": "Money saved now has years to grow. It also means less to draw later."
+   },
+   {
+    "title": "Plan to claim Social Security at 70",
+    "why": "That pays about $31,800 a year for your household."
+   }
+  ]
+ },
+ "seconds": 58.4
+}

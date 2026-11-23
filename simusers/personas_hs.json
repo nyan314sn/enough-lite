@@ -1,0 +1,240 @@
+[
+ {
+  "id": "s01",
+  "name": "Jaylen",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Works at a warehouse; has never thought about retirement.",
+  "goal": "see if he can stop work at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 29,
+   "partner_age": null,
+   "state": "OH",
+   "retire_age": 62,
+   "job": "warehouse worker",
+   "pay_per_year": 41000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 6000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 2500
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 950
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "car",
+     "balance": 9000
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 33000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "s02",
+  "name": "Kayla",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Cashier and part-time cosmetologist; unsure of her numbers, says idk to savings.",
+  "goal": "know if she's ok for retiring at 65",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 34,
+   "partner_age": null,
+   "state": "GA",
+   "retire_age": 65,
+   "job": "cashier",
+   "pay_per_year": 35000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 3000,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 1200
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 1100
+   },
+   "children_ages": [
+    6
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 31000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "s03",
+  "name": "Tyler",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Roofer, 45, owns a small house; uses 'bro' and 'lol'.",
+  "goal": "see when he can quit roofing",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 45,
+   "partner_age": null,
+   "state": "FL",
+   "retire_age": 60,
+   "job": "roofer",
+   "pay_per_year": 58000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 40000,
+    "roth": 0,
+    "taxable": 5000,
+    "cash": 6000
+   },
+   "home": {
+    "owns": true,
+    "value": 190000,
+    "mortgage_balance": 88000,
+    "mortgage_payment_month": 1050,
+    "rent_month": 0
+   },
+   "children_ages": [
+    13,
+    16
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 50000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "s04",
+  "name": "Destiny",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Medical assistant, newly married, answers for both of them in fragments.",
+  "goal": "check if they can retire at 63",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 40,
+   "partner_age": 41,
+   "state": "TX",
+   "retire_age": 63,
+   "job": "medical assistant",
+   "pay_per_year": 44000,
+   "partner_pay_per_year": 52000,
+   "savings": {
+    "pretax": 28000,
+    "roth": 0,
+    "taxable": 4000,
+    "cash": 8000
+   },
+   "home": {
+    "owns": true,
+    "value": 230000,
+    "mortgage_balance": 170000,
+    "mortgage_payment_month": 1400,
+    "rent_month": 0
+   },
+   "children_ages": [
+    3
+   ],
+   "pets": [],
+   "debts": [],
+   "pensions": [],
+   "spending_now_per_year": 68000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "s05",
+  "name": "Mike",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Truck driver, 52, a bit suspicious of apps, gets impatient with questions.",
+  "goal": "find out if he can retire at 62",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 52,
+   "partner_age": null,
+   "state": "PA",
+   "retire_age": 62,
+   "job": "truck driver",
+   "pay_per_year": 64000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 75000,
+    "roth": 0,
+    "taxable": 10000,
+    "cash": 9000
+   },
+   "home": {
+    "owns": true,
+    "value": 210000,
+    "mortgage_balance": 60000,
+    "mortgage_payment_month": 900,
+    "rent_month": 0
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "credit card",
+     "balance": 6500
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 54000,
+   "notes": ""
+  }
+ },
+ {
+  "id": "s06",
+  "name": "Brianna",
+  "personality": "A hurried high-school graduate typing on a phone: very short answers (1 to 6 words), lowercase, slang, typos, says 'idk' or 'around' for things you are unsure of, never explains. Barista and student, 24; replies 'dunno' to anything she has not looked up.",
+  "goal": "see if she can retire at 60",
+  "whatif": "",
+  "correction": "",
+  "truth": {
+   "age": 24,
+   "partner_age": null,
+   "state": "CA",
+   "retire_age": 60,
+   "job": "barista",
+   "pay_per_year": 32000,
+   "partner_pay_per_year": null,
+   "savings": {
+    "pretax": 1500,
+    "roth": 0,
+    "taxable": 0,
+    "cash": 900
+   },
+   "home": {
+    "owns": false,
+    "value": 0,
+    "mortgage_balance": 0,
+    "mortgage_payment_month": 0,
+    "rent_month": 1300
+   },
+   "children_ages": [],
+   "pets": [],
+   "debts": [
+    {
+     "kind": "student loan",
+     "balance": 18000
+    }
+   ],
+   "pensions": [],
+   "spending_now_per_year": 30000,
+   "notes": ""
+  }
+ }
+]

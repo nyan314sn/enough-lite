@@ -62,12 +62,17 @@ class RunCtx:
 
 class Finding(BaseModel):
     """What a specialist's model writes. Numbers in it must come from the tool output."""
-    headline: str = Field(description="One plain sentence, under 20 words, with the single most useful fact.")
-    details: list[str] = Field(description="Two or three short plain sentences. Use only figures from 'Numbers you may use'.", max_length=4)
+    headline: str = Field(description="One plain sentence of 15 words or fewer, with the single most useful fact first.")
+    details: list[str] = Field(description="Two or three short plain sentences, 15 words or fewer each. Use only figures from 'Numbers you may use'.",
+                               max_length=4)
 
 
 STYLE = (
-    "Write in plain English, like George Orwell's rules: short words, short sentences, active voice, no jargon, no hype. "
+    "Write for a high-school graduate: reading grade 8 or lower. Use short, everyday words, active voice, no jargon, no hype "
+    "(George Orwell's rules). Keep every sentence to 15 words or fewer, never more than 20. Put the most important fact first. "
+    "One idea per sentence. No parentheses, no lists of clauses, no long chains of 'and'. Keep to your word budget: a headline of "
+    "15 words at most, each detail of 15 words at most, and no more than 45 words in all. "
+    "Say 'market tests' for the many made-up market runs ('safe in 90 of 100 market tests'); never write 'scenarios' or 'paths'. Say 'needs', 'wants' and 'wishes'; never say 'basics' to the person. "
     "Say what the numbers mean for this household. Use only the figures listed under 'Numbers you may use', written as shown "
     "(you may round them). Do not add, subtract, divide or estimate any other figure. If a figure you want is not listed, "
     "leave it out. Never invent a number, an age or a year. Never promise results. "

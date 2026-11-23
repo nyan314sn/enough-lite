@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { act } from "react";
 import IntakeScreen from "./components/IntakeScreen";
+import { BUILD_FIRST, BUILD_NOW, CHAT_HINT, CHECK_NOTE, ESCAPE_TEXT } from "./components/BuildBlock";
 import LivePanel from "./components/LivePanel";
 import { EXAMPLE_TEXT } from "./examples";
 import { mockApi, mockSpeed } from "./mock";
@@ -58,6 +59,44 @@ describe("quick answers", () => {
   });
 });
 
+describe("build early", () => {
+  const nothing = () => byText(m!.el, ".side button", "Build my plan") as HTMLButtonElement;
+  it("is off before any answer, active after the first one, and the chat says so once", async () => {
+    const { api } = fakeApi(first, { ...first, reply: "Thanks." });
+    m = await render(<IntakeScreen api={api} onBuild={() => {}} />);
+    expect(nothing().disabled).toBe(true);
+    expect(m.el.querySelector(".build-why")?.textContent).toBe(BUILD_FIRST);
+    await click(byText(m.el, ".quick button", "Use an example")); await flush();
+    expect(nothing().disabled).toBe(false);
+    expect(nothing().className).toMatch(/btn-primary/);
+    expect(m.el.querySelector(".build-why")?.textContent).toBe(BUILD_NOW);
+    expect(Array.from(m.el.querySelectorAll(".bubble-us")).filter((b) => (b.textContent ?? "").includes(CHAT_HINT))).toHaveLength(1);
+    expect(m.el.textContent).not.toMatch(/Build with typical numbers for the rest/);   // one button, no second link
+    await click(byText(m.el, ".quick button", "Not sure")); await flush();
+    expect(Array.from(m.el.querySelectorAll(".bubble-us")).filter((b) => (b.textContent ?? "").includes(CHAT_HINT))).toHaveLength(1);   // said once
+  });
+
+  it("pressing it early fills typical figures, then shows the guesses for approval before building", async () => {
+    const { api, intake } = fakeApi(first, second);   // the second reply is the server filling the rest
+    const onBuild = vi.fn();
+    m = await render(<IntakeScreen api={api} onBuild={onBuild} />);
+    await click(byText(m.el, ".quick button", "Use an example")); await flush();
+    await click(nothing()); await flush();
+    expect(intake).toHaveBeenLastCalledWith(ESCAPE_TEXT, first.profile);
+    expect(onBuild).not.toHaveBeenCalled();                                   // R1: never straight to the plan
+    const check = m.el.querySelector(".side .check");
+    expect(check?.querySelector(".check-h")?.textContent).toBe(CHECK_NOTE);
+    expect(m.el.querySelectorAll(".side .field.is-check").length).toBeGreaterThan(0);
+    // while the check note is open, the first Build button steps back: dimmed, not pressable, and says why
+    const mainBtn = [...m.el.querySelectorAll<HTMLButtonElement>(".side .build > button")].find((b) => b.textContent === "Build my plan")!;
+    expect(mainBtn.disabled).toBe(true);
+    expect(mainBtn.className).toMatch(/btn-off/);
+    expect(m.el.querySelector(".side .build-why")?.textContent).toBe("Check the figures below first.");
+    await click(byText(m.el, ".side button", "Looks right"));
+    expect(onBuild).toHaveBeenCalledWith(second.profile);
+  });
+});
+
 describe("live panel", () => {
   it("updates as answers arrive: household, money, sources, still needed, then Build my plan", async () => {
     const { api } = fakeApi(first, second);
@@ -74,22 +113,20 @@ describe("live panel", () => {
     expect(pay.querySelector(".tag")?.textContent).toBe("estimate");
     expect(panel().querySelector("[data-key=age] .tag")?.textContent).toBe("you said");
     expect(panel().textContent).toMatch(/Left before tax\$215,000/);
-    expect(panel().textContent).toMatch(/Still needed: your savings/);
     const btn = () => byText(m!.el, ".side button", "Build my plan")!;
-    expect(btn().getAttribute("aria-disabled")).toBe("true");                 // always there, off until ready
-    expect(panel().querySelector(".build-why")?.textContent).toBe("Still needed: your savings.");
+    expect((btn() as HTMLButtonElement).disabled).toBe(false);                                       // active from the first answer, though savings is still missing
+    expect(btn().hasAttribute("aria-disabled")).toBe(false);
+    expect(panel().querySelector(".build-why")?.textContent).toBe(BUILD_NOW);
     expect(m.el.querySelectorAll("button").length && Array.from(m.el.querySelectorAll("button")).filter((b) => b.textContent === "Build my plan")).toHaveLength(1);
     expect(panel().querySelector(".household-caption")!.compareDocumentPosition(btn()) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();   // under the family picture
-    await click(btn());
-    expect(onBuild).not.toHaveBeenCalled();                                   // a click while off does nothing
 
     await click(byText(m.el, ".quick button", "About $1 million"));
     await flush();
     expect(panel().querySelector("[data-key=savings]")?.textContent).toMatch(/\$1,000,000/);
-    expect(btn().getAttribute("aria-disabled")).toBe("false");
+    expect((btn() as HTMLButtonElement).disabled).toBe(false);
     expect(btn().className).toMatch(/btn-primary/);
     expect(panel().querySelector(".build-why")?.textContent).toBe("Check the figures, then build.");
-    expect(panel().querySelector("[role=status][aria-live=polite]")?.textContent).toBe("Ready: you can build your plan.");
+    expect(panel().querySelector("[role=status][aria-live=polite]")?.textContent).toBe("You can build your plan now.");
     await click(btn());
     expect(onBuild).not.toHaveBeenCalled();                                   // the first press opens the check, it does not build
     const chk = () => panel().querySelector(".check");
@@ -132,14 +169,14 @@ describe("live panel", () => {
   });
 
   it("✎ puts “Change X to:” into the chat box when the figure has no editor", async () => {
-    const { api } = fakeApi({ ...first, fields: [...first.fields, { key: "state", label: "State", value: "CT", source: "you said" }] });
+    const { api } = fakeApi({ ...first, fields: [...first.fields, { key: "nickname", label: "Nickname", value: "CT", source: "you said" }] });
     m = await render(<IntakeScreen api={api} onBuild={() => {}} />);
     await click(byText(m.el, ".quick button", "Use an example"));
     await flush();
-    await click(m.el.querySelector(".side [aria-label='Change State']"));
+    await click(m.el.querySelector(".side [aria-label='Change Nickname']"));
     await act(async () => { await new Promise((r) => requestAnimationFrame(() => r(null))); });
     const box = m.el.querySelector("#chat-input") as HTMLTextAreaElement;
-    expect(box.value).toBe("Change State to: ");
+    expect(box.value).toBe("Change Nickname to: ");
     expect(document.activeElement).toBe(box);
   });
 

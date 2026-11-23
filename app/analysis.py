@@ -1,5 +1,5 @@
 """The analysis: four short checks on the kept plan, all worked out in code on the plan's own scenarios (same strategy,
-same 2,000 market paths, same seed), in today's dollars. No model call and no figure from a model.
+same 2,000 market tests, same seed), in today's dollars. No model call and no figure from a model.
 
 1. How sure is it: the most you could spend a year and have it last in 50, 75, 90 and 95 of 100 scenarios, and the
    share of scenarios that last at each level of spending (each scenario's own limit, found in one search).
@@ -75,11 +75,11 @@ def how_sure(sim: dict, strat: dict, people: list[dict], m: dict) -> tuple[dict,
            "basics_per_year": basics, "basics_paid_of_100": int(m.get("basics_paid_of_100") or 0)}
     l50, l95 = levels[0]["per_year"], levels[-1]["per_year"]
     if l50 <= 0:
-        out["line"] = ("On these numbers no level of spending lasts in half of the scenarios. Even with no spending of your own, "
-                       f"the costs that come on top of it, such as health cover before Medicare, use up your savings in {100 - ys[0]} of 100.")
+        out["line"] = ("No level of spending lasts in half of the market tests. Even with no spending of your own, "
+                       f"bills like health cover use up your savings in {100 - ys[0]} of 100.")
     else:
-        out["line"] = (f"In half of the scenarios you could spend {_money(l50)} a year. To be sure in 90 of 100 it is "
-                       f"{_money(count_on)}, and in 95 of 100, {_money(l95)}.")
+        out["line"] = (f"In half of the market tests you could spend {_money(l50)} a year. To be sure in 90 of 100, spend "
+                       f"{_money(count_on)}. For 95 of 100, spend {_money(l95)}.")
     return out, r
 
 
@@ -167,8 +167,8 @@ def short_line(x: dict, couple: bool) -> str:
     """For risks that share one verdict (all "holds"): only what is particular to this risk, after the shared lead."""
     b = x["basics_paid_of_100"]
     age = f"when you are {x['worst_runs_out_age']}" if couple else f"at {x['worst_runs_out_age']}"
-    return (f"savings run out {age}; you would cut about {_k(x['worst_gap_per_year'])} a year for {_years(x['worst_years_short'])}."
-            + ("" if b >= 100 else f" Basics stay paid in {b} of 100 paths."))
+    return (f"Savings run out {age}. You would cut about {_k(x['worst_gap_per_year'])} a year for {_years(x['worst_years_short'])}."
+            + ("" if b >= 100 else f" Your needs stay paid in {b} of 100 market tests."))
 
 
 def group_lead(rows: list[dict]) -> str:
@@ -178,7 +178,7 @@ def group_lead(rows: list[dict]) -> str:
     P = rows[0]["plan_spend_per_year"]
     if any(_k(x["plan_spend_per_year"]) != _k(P) for x in rows):
         return ""
-    return f"Your {_k(P)} a year holds up in most market paths under each of these. In the worst 1 in 10:"
+    return f"Your {_k(P)} a year holds up in most market tests. In the worst 1 in 10:"
 
 
 def sentence(x: dict, couple: bool) -> str:
@@ -188,9 +188,9 @@ def sentence(x: dict, couple: bool) -> str:
     def at(a: int) -> str:
         return f"when you are {a}" if couple else f"at {a}"
     if x["basics_at_risk"]:
-        s = f"Your basics would go unpaid in {100 - b} of 100 market paths."
+        s = f"Your needs would go unpaid in {100 - b} of 100 market tests."
         if x["typical_runs_out_age"] is not None:
-            s += f" In a typical path your savings run out {at(x['typical_runs_out_age'])}."
+            s += f" In a typical test, your savings run out {at(x['typical_runs_out_age'])}."
         if c <= 0:
             s += " No level of spending of your own would last."
         elif c < P and _k(c) != _k(P):
@@ -199,18 +199,18 @@ def sentence(x: dict, couple: bool) -> str:
             s += f" You could count on about {_k(c)} a year."
     elif x["typical_runs_out_age"] is not None:
         src = x["typical_income_from"]
-        s = (f"Your {_k(P)} a year would run out {at(x['typical_runs_out_age'])} in a typical path. "
+        s = (f"Your {_k(P)} a year would run out {at(x['typical_runs_out_age'])} in a typical market test. "
              + (f"You would have {_years(x['typical_years_short'])} with only {src}, about {_k(x['typical_income_per_year'])} a year."
                 if src else f"You would have {_years(x['typical_years_short'])} with no income outside savings.")
              + (f" Spending {_k(c)} instead would last." if c > 0 else " No level of spending of your own would last."))
     elif x["worst_runs_out_age"] is not None:
-        s = (f"Your {_k(P)} a year still lasts in most paths. In the worst 1 in 10, savings run out "
-             f"{at(x['worst_runs_out_age'])}, and you would cut about {_k(x['worst_gap_per_year'])} a year for "
-             f"{_years(x['worst_years_short'])}." + ("" if b >= 100 else f" Basics stay paid in {b} of 100 paths."))
+        s = (f"Your {_k(P)} a year still lasts in most market tests. In the worst 1 in 10, savings run out "
+             f"{at(x['worst_runs_out_age'])}. You would then cut about {_k(x['worst_gap_per_year'])} a year for "
+             f"{_years(x['worst_years_short'])}." + ("" if b >= 100 else f" Your needs stay paid in {b} of 100 market tests."))
     elif _k(c) != _k(P) and c < P:
-        s = f"The plan still works: you could spend about {_k(c)} a year instead of {_k(P)}."
+        s = f"The plan still works. You could spend about {_k(c)} a year instead of {_k(P)}."
     else:
-        s = f"The plan still works: you could still spend about {_k(P)} a year."
+        s = f"The plan still works. You could still spend about {_k(P)} a year."
     if x["key"] == "early_death" and x.get("survivor_spend_pct"):
         s += f" Spending drops to {x['survivor_spend_pct']}% for the one left."
     return s
@@ -271,8 +271,8 @@ def stresses(ctx: RunCtx, sim: dict, strat: dict, people: list[dict], m: dict) -
     s2 = {**sim, "shock": {"kind": "inflation", "size": STRESS_INFLATION}, "income_by_year": inc}
     has_fixed = any(fixed) or bool(strat["annuities"])
     put("inflation", "Higher inflation",
-        f"Prices rise {STRESS_INFLATION * 100:.1f} points a year faster than we assume for 10 years, so savings earn that much less"
-        + (", and pensions and annuities with no cost-of-living rise buy less." if has_fixed else "."),
+        f"Prices rise {STRESS_INFLATION * 100:.1f} points a year faster than we assume for 10 years. Savings earn that much less."
+        + (" Pensions and annuities with no yearly rise buy less." if has_fixed else ""),
         s2, go(s2, fixed_real=fr), stress_years=STRESS_YEARS)
     # living to 100: the money must last longer (each person in a couple)
     h = int(sim["horizon_age"])
@@ -301,9 +301,8 @@ def stresses(ctx: RunCtx, sim: dict, strat: dict, people: list[dict], m: dict) -
             s4 = {**sim, "ss_first_death_t": t1, "spend_drop_t": t1, "income_by_year": ms["income_by_year"]}
             put("early_death", "The first death comes 10 years early" if cut >= EARLY_DEATH_YEARS else
                 f"The first death comes {cut} years early",
-                f"The first of you to die does so {cut} years sooner than expected: one Social Security check "
-                f"and any pension survivor share from then, and spending falls to "
-                f"{round(simulate.SURVIVOR_SPEND_SHARE * 100)}%.", s4, go(s4), stress_years=int(cut),
+                f"The first of you to die does so {cut} years sooner than expected. After that you get one Social Security check, "
+                f"and spending falls to {round(simulate.SURVIVOR_SPEND_SHARE * 100)}%.", s4, go(s4), stress_years=int(cut),
                 survivor_spend_pct=round(simulate.SURVIVOR_SPEND_SHARE * 100))
             if out[-1]["count_on_change"] > 0:
                 out[-1]["note"] = "Spending falls as well, so the money goes a little further. The one who is left has less income."
@@ -318,8 +317,8 @@ def stresses(ctx: RunCtx, sim: dict, strat: dict, people: list[dict], m: dict) -
                                   ctx.results["family"]["costs"])
             s5 = {**sim, "ss_first_death_t": t2, "spend_drop_t": t2, "income_by_year": ms["income_by_year"]}
             put("late_death", f"You both live {add} years longer together",
-                 f"The first death comes {add} years later than expected, so the two of you spend at the couple's "
-                 "level for longer before it falls.", s5, go(s5), stress_years=int(add))
+                 f"The first death comes {add} years later than expected. The two of you spend at the higher level "
+                 "for longer.", s5, go(s5), stress_years=int(add))
             if out[-1]["count_on_change"] > 0:
                 out[-1]["note"] = "Two Social Security checks also last longer, and they more than pay for it."
     return out
@@ -488,9 +487,9 @@ def sources(ctx: RunCtx, sim: dict, strat: dict, base: dict, m: dict) -> dict:
     series = [{"key": k, "label": labels[k], "values": rows[k]} for k in labels if any(rows[k])]
     short_at = next((age + t for t in range(n) if rows["short"][t] > 0), None)
     if short_at is not None:
-        line = f"In the middle path your savings run out at {short_at}; from then part of your spending is not covered."
+        line = f"In a middle market test, your savings run out at {short_at}. After that, part of your spending is not covered."
     elif ra > age:
-        line = "Pay covers your spending until you retire; after that Social Security, any pension and your savings do."
+        line = "Pay covers your spending until you retire. After that, Social Security, any pension and your savings do."
     else:
         line = "Social Security, any pension and your savings pay for each year's spending."
     return {"ages": [age + t for t in range(n)], "spending": spending, "series": series, "surplus": surplus,
@@ -513,14 +512,14 @@ def build(ctx: RunCtx) -> dict | None:
     worst = min(st, key=lambda x: (x["basics_change"], x["count_on_change"]), default=None)
     if worst and worst["count_on_change"] >= 0 and worst["basics_change"] >= 0:
         worst = None
-    st_line = (f"Of these, {worst['title'].lower()} hurts most: you could count on {_money(worst['count_on_per_year'])} a year, "
-               f"and your basics are paid in {worst['basics_paid_of_100']} of 100 scenarios." if worst else
+    st_line = (f"The biggest risk: {worst['label'][0].lower() + worst['label'][1:]}. You could count on {_money(worst['count_on_per_year'])} a year, "
+               f"and your needs are paid in {worst['basics_paid_of_100']} of 100 market tests." if worst else
                "Your plan already falls short, so these tests cannot lower it further." if not m.get("safe_spending_per_year") and not m.get("basics_paid_of_100")
                else "None of these tests lowers what you can count on.")
     if lv and lv[0]["count_on_change"] > 0:
         lv_line = f"{lv[0]['title']} adds the most: {_money(lv[0]['count_on_change'])} a year to count on."
     elif lv:
-        lv_line = "None of these changes adds to what you can count on by itself." + (
+        lv_line = "No one of these changes adds to what you can count on." + (
             " The starting points above show bigger changes." if m.get("starting_points") else "")
     else:
         lv_line = "There is no change of this kind left to test on your numbers."

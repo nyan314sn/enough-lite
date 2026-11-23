@@ -277,7 +277,7 @@ def test_saved_editor_edit_is_not_called_unmatched():
     r = _ready_household()
     prof = dict(r.profile, pay_per_year=310000)
     out = run("Updated your pay: $310,000.", prof)
-    assert "did not match" not in out.reply and out.reply.strip() and ("Saved" in out.reply or "updated them" in out.reply)
+    assert "did not match" not in out.reply and out.reply.strip() and ("Saved" in out.reply or "updated some typical figures" in out.reply or "→" in out.reply)
 
 
 def test_retier_typo_works_for_the_plan_chat_and_for_intake():

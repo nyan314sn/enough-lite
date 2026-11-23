@@ -1,0 +1,473 @@
+{
+ "persona_id": "p33",
+ "name": "Dev",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "Hi! I'm Dev, 43, data analyst in Texas. I'm thinking about retiring at 60 and want to see if that's realistic.",
+   "clicked": null,
+   "reply": "Got it: you work as a data analyst, you live in Texas, you are 43 and you want to retire at 60. I filled in 5 more with typical figures. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "spending_now_per_year",
+    "pay_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "pay_per_year: $115,000 a year (estimate)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $43,100 a year at 67 (estimate)",
+    "spending_now_per_year: $81,000 a year, about $6,750 a month (estimate)",
+    "spending_per_year: $65,000 a year (estimate)"
+   ],
+   "early_press": false,
+   "fields": [
+    [
+     "age",
+     "43",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Texas",
+     "you said"
+    ],
+    [
+     "job",
+     "data analyst",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$115,000 a year",
+     "estimate"
+    ],
+    [
+     "retire_age",
+     "60",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "About $11,543 a year ($11,500 into a 401(k) or IRA, an assumed 10% of pay; $43 of take-home pay left after spending)",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None counted",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$43,100 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$81,000 a year, about $6,750 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$65,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 2,
+   "user": "Build my plan with typical numbers for the rest",
+   "clicked": null,
+   "reply": "Fine. I will build your plan with typical figures for your savings, your home, any debts, whether you have children, your spending and your pay. Each is marked in the panel, and you can change any of them on the plan page.",
+   "question": {
+    "text": "I split your $45,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Mostly in a 401(k)",
+     "Mostly in a bank account",
+     "Change the split"
+    ]
+   },
+   "missing": [],
+   "ready": true,
+   "new_assumed": [
+    "children: None counted (assumed)",
+    "savings: $27,000 pre-tax (401(k) or IRA), $4,500 Roth, $9,000 taxable, $4,500 cash (assumed)",
+    "home: Not given. Typical housing costs used: about $15,876 a year (estimate)"
+   ],
+   "early_press": true,
+   "fields": [
+    [
+     "age",
+     "43",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "Texas",
+     "you said"
+    ],
+    [
+     "children",
+     "None counted",
+     "assumed"
+    ],
+    [
+     "job",
+     "data analyst",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$115,000 a year",
+     "estimate"
+    ],
+    [
+     "retire_age",
+     "60",
+     "you said"
+    ],
+    [
+     "savings",
+     "$27,000 pre-tax (401(k) or IRA), $4,500 Roth, $9,000 taxable, $4,500 cash",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $11,543 a year ($11,500 into a 401(k) or IRA, an assumed 10% of pay; $43 of take-home pay left after spending)",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0.7 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Not given. Typical housing costs used: about $15,876 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None counted",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$43,100 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$81,000 a year, about $6,750 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$65,000 a year",
+     "estimate"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [],
+ "path": "early",
+ "started": 1795386494.2177603,
+ "final_profile": {
+  "age": 43,
+  "partner_age": null,
+  "has_partner": false,
+  "state": "TX",
+  "retire_age": 60,
+  "pay_per_year": 115000.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 27000.0,
+   "roth": 4500.0,
+   "taxable": 9000.0,
+   "cash": 4500.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": null,
+   "value": 0.0,
+   "mortgage_balance": 0.0,
+   "mortgage_payment": 0.0,
+   "rent": 0.0,
+   "mortgage_rate": null
+  },
+  "children": [],
+  "pets": [],
+  "spending_per_year": 65000.0,
+  "social_security_per_year": 43100.0,
+  "risk": "balanced",
+  "job": "data analyst",
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "state": "you said",
+   "job": "you said",
+   "retire_age": "you said",
+   "savings": "assumed",
+   "risk": "assumed",
+   "pay_per_year": "estimate",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_now_per_year": "estimate",
+   "spending_per_year": "estimate",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "told": "{\"pay_per_year\": \"your pay at $115,000 a year\", \"spending_now_per_year\": \"spending now at $81,000 a year\", \"spending_per_year\": \"spending in retirement at $65,000 a year\", \"social_security_per_year\": \"Social Security at $43,100 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\"}",
+   "stuck": "0",
+   "children_n": "0",
+   "savings": "Typical for your age (Federal Reserve survey). Please give yours.",
+   "skipped_savings": "yes",
+   "skipped_home": "yes",
+   "skipped_debts": "yes",
+   "skipped_children_count": "yes",
+   "skipped_spending_now_per_year": "yes",
+   "skipped_pay_per_year": "yes",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "pay_per_year": "Typical pay for data scientists (BLS, May 2025), adjusted for pay levels in your state.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_now_per_year": "Estimated as your take-home pay less what you save, and no less than typical needs.",
+   "spending_per_year": "Estimated as 70% of your take-home pay, and no less than typical needs.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "confirm_split",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 0.7,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 81000.0,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [
+   "debts"
+  ],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: Hi! I'm Dev, 43, data analyst in Texas. I'm thinking about retiring at 60 and want to see if that's realistic.",
+   "app: Got it: you work as a data analyst, you live in Texas, you are 43 and you want to retire at 60. I filled in 5 more with typical figures. Each is marked in the panel, so you can change it. About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+   "you: Build my plan with typical numbers for the rest",
+   "app: Fine. I will build your plan with typical figures for your savings, your home, any debts, whether you have children, your spending and your pay. Each is marked in the panel, and you can change any of them on the plan page. I split your $45,000 as 60% in pre-tax accounts like a 401(k), 10% Roth, 20% taxable and 10% cash. Is that about right?"
+  ],
+  "turns": 2
+ },
+ "reached_missing_empty": true,
+ "turns_to_plan": 2,
+ "person_messages": 1,
+ "escape_presses": 1,
+ "plan_error": null,
+ "plan_ok": true,
+ "plan": {
+  "headline": "You can count on $35,400 a year: $32,300 for needs, $3,100 for wants. That is less than your Social Security of $37,300 a year. It starts at 65 in this plan.",
+  "needs": {
+   "basics_per_year": 32300,
+   "paid_of_100": 98,
+   "line": "Your needs cost about $32,300 a year. They are paid in 98 of 100 market tests.",
+   "basis": "typical"
+  },
+  "wants": {
+   "per_year": 35400.0,
+   "above_basics_per_year": 3100.0,
+   "line": "Counting on $35,400 a year is safe in 90 of 100 market tests."
+  },
+  "wishes": {
+   "line": "Your goal of $65,000 a year lasts in 0 of 100 market tests. Your goal is above what lasts, so wishes wait."
+  },
+  "actions": [
+   {
+    "title": "Set your spending goal nearer the safe level",
+    "why": "You are $29,600 a year over the safe $35,400. Raise your goal as savings grow."
+   },
+   {
+    "title": "Build an emergency fund of three months",
+    "why": "You hold about 0.7 months of spending in cash. Three months is $20,250, so you are $15,750 short."
+   },
+   {
+    "title": "Use the simple plan that did best",
+    "why": "An example plan with stocks at 110 minus your age kept needs safest."
+   }
+  ]
+ },
+ "seconds": 35.9
+}

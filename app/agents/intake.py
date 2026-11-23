@@ -142,7 +142,7 @@ def apply(p: Profile, facts: dict[str, Any]) -> list[str]:
         if p.notes.get("mortgage_balance_said") == "yes" and p.home.mortgage_balance > 0:
             # one rule for an estimated payment: the typical mortgage (costs.typical_mortgage), kept to the balance the person gave
             p.home.mortgage_payment = _costs.typical_mortgage(p)[1]
-            p.notes["home"] = ("The payment is an estimate: it pays your balance off over the years a typical mortgage has left at your age, at 5%. "
+            p.notes["home"] = ("The payment is an estimate. It pays off your balance over the years a typical mortgage has left, at 5%. "
                                "Please give your own payment.")
         else:
             from ..tools.family_costs import _load as _fc_load
@@ -483,31 +483,35 @@ def fields(p: Profile) -> list[FieldOut]:
     return intake_fields.fields(p)
 
 
-BUILD_LINE = ("That's enough to build your plan. Check the figures on the right, change any that are wrong, then press Build my plan "
-              "under your family picture (on a phone, at the bottom of the screen). I will ask you to check the figures once before building.")
+BUILD_LINE = ("That is enough to build your plan. Check the figures on the right, then press Build my plan. "
+              "I will ask you to check them once more first.")
 BUILD_REMINDER = "Press Build my plan when you are ready."
-SHORT_WORDS = 80      # ...and only when the full readback would run past this many words
-SHORT_AFTER = 6     # more facts than this in one message: a short reply, the full list is in the panel
+SHORT_WORDS = 45      # a reply (before the question) longer than this many words gets a short readback and a short typical-figures line
+SHORT_AFTER = 5     # more facts than this in one message (or a readback of more than SHORT_WORDS words): a short reply
+SHORT_LIST = 28       # a readback of more words than this becomes a short one (the key facts and any pension, college or home figure)
+DISC_START = "For the rest, I use typical figures"
 
 
 def _said_count(p: Profile) -> int:
     return sum(1 for f in fields(p) if f.source == "you said")
 
 
-def _short_summary(changed: list[str], p: Profile) -> str:
+def _short_summary(changed: list[str], p: Profile, extra: list[str] | None = None) -> str:
     n = _said_count(p)
     key = []
     if "age" in changed and p.age:
         key.append(f"you are {p.age}")
     if "pay_per_year" in changed and p.pay_per_year:
         key.append(f"your pay is {_money(p.pay_per_year)} a year")
-    if "savings" in changed and p.savings.total:
-        key.append(f"you have saved {_money(p.savings.total)}")
     if "retire_age" in changed and p.retire_age:
         key.append(f"you want to retire at {p.retire_age}")
-    out = f"Thanks. I noted {n} facts from your message. They are in the panel on the right, where you can check and change each one."
+    if "savings" in changed and p.savings.total:
+        key.append(f"you have saved {_money(p.savings.total)}")
+    out = f"Got it. I noted {n} facts from your message. Check them in the panel on the right."
     if key:
-        out += " The ones that drive your plan most: " + _join(key) + "."
+        out += " The main ones: " + _join(key[:3]) + "."
+    if extra:
+        out += " Also: " + ". ".join(x[0].upper() + x[1:] if i else x for i, x in enumerate(extra[:3])) + "."      # a pension, college or Social Security figure is read back, never only counted
     return out
 
 
@@ -637,9 +641,9 @@ def summary(changed: list[str], p: Profile) -> str:
     bits = [b for b in bits if b]
     if not bits:
         return ""
-    full_text = "Thanks. I noted that " + (", ".join(bits[:-1]) + " and " + bits[-1] if len(bits) > 1 else bits[0]) + "."
-    if len(bits) > SHORT_AFTER and _said_count(p) > SHORT_AFTER and len(full_text.split()) > SHORT_WORDS:
-        return _short_summary(changed, p)       # many facts and a long list: the list is in the panel
+    full_text = "Got it: " + (", ".join(bits[:-1]) + " and " + bits[-1] if len(bits) > 1 else bits[0]) + "."
+    if len(bits) > SHORT_AFTER or len(full_text.split()) > SHORT_LIST:
+        return _short_summary(changed, p, [b for b in bits if re.search(r"pension|Social Security|college|goes to|worth about|work as|live in", b)])       # many facts: the list is in the panel
     return full_text
 
 
@@ -648,6 +652,52 @@ UPDATED_LABELS = {"savings": ["savings"], "pay": ["pay_per_year"], "partner's pa
                   "spending": ["spending_now_per_year", "spending_per_year"], "social security": ["social_security_per_year"],
                   "investing style": ["risk"], "yearly saving": ["save_rate"], "health": ["health"], "home": ["home"],
                   "partner's retirement age": ["partner_retire_age"], "children": ["children"], "emergency fund": ["emergency_months"]}
+# Every figure the panel can edit in place (web/src/components/editSpecs.ts NOUN): "Updated your <noun>: ..." names the profile keys
+# whose source becomes "you said". The sources use the group keys (insurance, goals, saving), as the chat path does.
+UPDATED_LABELS.update({
+    "age": ["age"], "partner's age": ["partner_age"], "sex": ["sex"], "partner's sex": ["partner_sex"], "state": ["state"], "pets": ["pets"],
+    "job": ["job"], "partner's job": ["partner_job"], "part-time work": ["part_time"], "retirement account saving": ["saving"],
+    "employer match": ["saving"], "other saving": ["saving"], "other debts": ["debts"], "pensions": ["pensions"],
+    "possible inheritance": ["inheritance"], "life insurance": ["insurance"], "disability insurance": ["insurance"],
+    "long-term care insurance": ["insurance"], "money to leave behind": ["goals"], "big planned costs": ["goals"], "help for parents": ["goals"],
+    "partner's health": ["partner_health"], "spending now": ["spending_now_per_year"], "spending split": ["budget"],
+    "spending in retirement": ["spending_per_year"],
+})
+PAGE_EDIT_AGES = {"age": (18, 110), "partner_age": (18, 110), "retire_age": (30, 80), "partner_retire_age": (30, 80)}
+
+
+def _page_edit_line(noun: str, text: str, bad: list[str]) -> str:
+    """'Saved. Your state is now Texas, was Connecticut.' from the page's own line 'Updated your state: Texas (was Connecticut).'"""
+    noun = noun.lower().strip()
+    was = re.search(r"\(was (.{1,140})\)\s*$", text)
+    now = re.match(r"\s*updated your [a-z' -]+?\s*:\s*(.+?)\.?(?:\s*\(was .*)?$", text, re.I)
+    line = f"Saved. Your {noun} is now {now.group(1).rstrip('.')}, was {was.group(1)}." if was and now else ""
+    if bad:
+        line = f"I did not keep {', '.join(bad)}: it is outside the range I can use. Tell me again. " + (line or f"Saved the rest of your {noun}.")
+    return line
+
+
+def check_page_edit(p: Profile) -> list[str]:
+    """A figure typed in the panel is checked against the same limits the form shows. A value out of range is dropped (the
+    question is asked again), never moved to another figure. Returns the plain names of what was dropped."""
+    bad: list[str] = []
+    for k, (lo, hi) in PAGE_EDIT_AGES.items():
+        v = getattr(p, k)
+        if v is not None and not lo <= v <= hi:
+            setattr(p, k, None)
+            bad.append(k.replace("_", " "))
+    if any(c.age is not None and not 0 <= c.age <= 30 for c in p.children):
+        p.children = [c for c in p.children if c.age is None or 0 <= c.age <= 30]
+        bad.append("a child's age")
+    p.pets = [x for x in p.pets if 0 < x.count <= 20]
+    for d in p.debts:
+        if d.rate is not None and not 0 <= d.rate <= 1:
+            d.rate = None
+            d.assumed = sorted(set(d.assumed) | {"rate"})
+    for x in p.pensions:
+        if x.survivor_share is not None and not 0 <= x.survivor_share <= 1:
+            x.survivor_share = None
+    return bad
 
 
 def _plain_answer_facts(text: str, asking: str) -> dict[str, Any]:
@@ -739,6 +789,122 @@ FACT_LABEL = {"pay_per_year": "your pay", "partner_pay_per_year": "your partner'
 PER_YEAR_KEYS = ("pay_per_year", "partner_pay_per_year", "household_pay", "spending_now_per_year", "spending_per_year", "social_security_per_year")
 ESCAPE = "Build my plan with typical numbers for the rest"
 ESCAPE_RE = re.compile(r"^\s*(?:build|make|create|show) (?:my|the|a) plan\b.*\btypical\b", re.I)
+
+# ------------------------------------------------------------------ round 4: a What If asked during the intake
+# "what if I save an extra 1,000 a month?" is a question about a plan not yet built, never a change to a stored figure. The
+# cue words are the plan chat's What If words (ask_intent.HYPOTHETICAL) less the loose ones ("if I", "let's say") that
+# also start plain answers here.
+INTAKE_WHATIF = re.compile(r"\bwhat (?:if|happens if|would happen if)\b|^\W*(?:but\s+|and\s+|so\s+)?(?:suppose|imagine)\s+(?:i|we|if)\b|"
+                           r"\bhypothetical\w*\b|\bhow (?:does|would|will|could|might) (?:that|this|it) (?:change|affect|move)\b", re.I)
+NOT_WHATIF = re.compile(r"\bwhat if (?:i|we) (?:don'?t|do not|can'?t|cannot|am not|'?m not|skip|leave|make a mistake|get (?:it|this|that) wrong|"
+                        r"change (?:my|our) minds?|have no|type|press|click)\b|\bwhat if (?:i'?m|i am|we'?re|we are) wrong\b", re.I)
+WHATIF_GO_ON = re.compile(r"^\W*(?:say|so|and|like|for example|e\.?g\.?|then|how|would|could|will|what|or|maybe|instead|is that)\b", re.I)
+WHATIF_LATER = "I'll test that once your plan is built. Press Build my plan, then ask it in the plan chat."
+
+
+def whatif_split(text: str) -> tuple[str, str]:
+    """(the What If part, the rest) of a message: a sentence with a What If cue, and the sentences that carry it on
+    ("Say an extra 1,000 a month.", "How does that change when I could retire?"). The rest is read as usual."""
+    wi, rest, on = [], [], False
+    for s in re.split(r"(?<=[.?!])\s+", text or ""):
+        if INTAKE_WHATIF.search(s) and not NOT_WHATIF.search(s):
+            on = True
+            wi.append(s)
+        elif on and (WHATIF_GO_ON.match(s) or s.strip().endswith("?")):
+            wi.append(s)
+        else:
+            on = False
+            rest.append(s)
+    return " ".join(wi).strip(), " ".join(rest).strip()
+
+
+# ------------------------------------------------------------------ round 4: an early build asks the retirement age first
+RETIRE_CHIPS = (60, 62, 65, 67)
+USE_DEFAULT = re.compile(r"^\W*(?:use\b|ok\b|okay\b|fine\b|sure\b|yes\b|default|typical|skip|idk|dunno|(?:i )?don'?t know|not sure|no idea|"
+                         r"whatever|any\b|you pick|go ahead|just build|build)", re.I)
+
+
+def _retire_chips(now: int | None, use: int) -> list[str]:
+    return [str(a) for a in RETIRE_CHIPS if (now or 0) < a <= 70][:4] + [f"Use {use}"]
+
+
+def _escape_retire_q(p: Profile) -> tuple[Question, str] | None:
+    """Before an early build: one short question for a retirement age nobody gave (R2: a stated age is never moved;
+    an unstated one is asked, not silently set to 65). A partner's age to stop is asked in the same breath when nothing
+    was said about it. None when there is nothing to ask."""
+    if p.age is None:
+        return None
+    full = household.complete(p)
+    own = "retire_age" in missing(full)
+    partner = bool(full.has_partner and full.sources.get("partner_retire_age") != "you said" and full.notes.get("retired") != "yes"
+                   and not (full.sources.get("partner_pay_per_year") == "you said" and not full.partner_pay_per_year)
+                   and (full.partner_age or full.age or 0) < 67)
+    d = full.retire_age or 65
+    if own:
+        text = f"When would you like to retire? Pick an age or I'll use {d}."
+        if partner:
+            text += " If your partner stops at another age, type both, like 62 and 64."
+        return Question(text=text, quick_answers=_retire_chips(full.age, d)), ("both" if partner else "own")
+    if partner:
+        from ..tools import costs
+        pd = costs.partner_retire_age(full)
+        return (Question(text=f"When would your partner like to retire? Pick an age or I'll use {pd}.",
+                         quick_answers=_retire_chips(full.partner_age, pd)), "partner")
+    return None
+
+
+def _escape_retire_answer(clean: str, p: Profile, mode: str) -> str | None:
+    """The answer to the early build's retirement question: the age or ages given (the person's own), or the typical
+    age on "Use 65", "skip" and the like. None when the message is not an answer to it (it is then read as usual)."""
+    from ..tools import costs
+    full = household.complete(p)
+    d = full.retire_age or 65
+    pd = costs.partner_retire_age(full) if full.has_partner else None
+    low = (clean or "").strip()
+    nums = [int(x) for x in turn_guard.quote_numbers(low) if 40 <= x <= 85 and x == int(x)]
+    if USE_DEFAULT.match(low) and not (nums and not re.match(r"^\W*use\b", low, re.I)):
+        if mode == "partner":
+            return f"I will use {pd} for your partner's retirement, marked assumed."
+        if re.match(r"^\W*(?:use|ok|okay|fine|sure|yes)\b", low, re.I):
+            apply(p, {"retire_age": d})        # R1: the age on offer, approved, is now the person's own
+            return f"Got it: retirement at {d}."
+        _skip(p, "retire_age")
+        return f"I will use {d} for your retirement, marked assumed."
+    if not nums:
+        return None
+    if mode == "partner":
+        if nums[0] <= (full.partner_age or 0):
+            return None
+        apply(p, {"partner_retire_age": nums[0]})
+        return f"Got it: your partner retires at {nums[0]}."
+    if nums[0] <= (p.age or 0):
+        return None
+    facts: dict[str, Any] = {"retire_age": nums[0]}
+    if mode == "both" and len(nums) > 1 and nums[1] > (full.partner_age or 0):
+        facts["partner_retire_age"] = nums[1]
+    apply(p, facts)
+    return f"Got it: you want to retire at {nums[0]}" + (f", and your partner at {nums[1]}." if "partner_retire_age" in facts else ".")
+
+
+def _respond_q(p: Profile, reply: str, q: Question, ask: str | None) -> IntakeResponse:
+    """A reply that ends the turn with a question of its own (not one rebuilt from the pending key)."""
+    full = household.complete(p) if p.age else p
+    miss = missing(full)
+    full.asking = ask
+    ready = all(k not in miss for k in REQUIRED) and full.age is not None
+    _history(full, "", f"{reply} {q.text}".strip())
+    flds = fields(full)
+    return IntakeResponse(profile=full.model_dump(), fields=flds, missing=miss, question=q, reply=reply.strip(), ready=ready,
+                          sections_status=intake_fields.sections_status(flds), tokens={"input": 0, "cached": 0, "output": 0}, cost_usd=0.0)
+
+
+AGE_AGAIN = ("The plan can't start without your age. It sets how long your money must last and when Social Security can start. "
+             "A rough age is fine.")      # never "type skip": an age is not guessed
+AGE_LAST = "I still need your age to go on. Type it as a number, for example 50."
+START_HELP = re.compile(r"\bwhat (?:to|do i|should i|can i) (?:say|write|type|tell|put)\b|\bwhere (?:do i |to |should i )?(?:start|begin)\b|"
+                        r"\bhow (?:do i |to )?(?:start|begin)\b|^\W*(?:idk|dunno|i don'?t know|no idea|not sure|help|hi|hello|hey)\W*$", re.I)
+START_EXAMPLE = ("Tell me a little about yourself, in your own words. "
+                 "For example: I'm 45, a teacher in Ohio, I earn $60,000 and I've saved $80,000.")
 ESSENTIAL_SKIP = ("pay_per_year", "partner_pay_per_year", "mortgage", "debts", "children_count", "partner_age", "state", "children", "home", "retire_age",
                   "spending_now_per_year", "savings")
 FIGURE_KEYS = ("age", "partner_age", "pay_per_year", "partner_pay_per_year", "savings", "children", "retire_age", "spending_now_per_year", "mortgage",
@@ -817,8 +983,7 @@ def _assumption_bits(full: Profile) -> dict[str, str]:
         return s.get(k) in ("estimate", "assumed")
     retired = full.notes.get("retired") == "yes"
     if est("pay_per_year") and full.pay_per_year:
-        out["pay_per_year"] = f"your pay at {_money(full.pay_per_year)} a year" + (
-            f", typical for a {full.job}" if s.get("pay_per_year") == "estimate" and full.job else ", the typical US pay")
+        out["pay_per_year"] = f"your pay at {_money(full.pay_per_year)} a year"
     if full.has_partner and est("partner_pay_per_year") and full.partner_pay_per_year is not None:
         out["partner_pay_per_year"] = (f"your partner's pay at {_money(full.partner_pay_per_year)} a year" if full.partner_pay_per_year
                                        else "no pay for your partner")
@@ -860,14 +1025,48 @@ def _disclose(full: Profile) -> str:
         told = told if isinstance(told, dict) else {}
     except ValueError:
         told = {}
-    new = [t for k, t in bits.items() if told.get(k) != t]
+    try:
+        told_v = json.loads(full.notes.get("told_v") or "{}")
+        told_v = told_v if isinstance(told_v, dict) else {}
+    except ValueError:
+        told_v = {}
+    vals = {k: round(float(getattr(full, k))) for k in MOVED_LABEL if k in bits and getattr(full, k)}
+    new_keys = [k for k, t in bits.items() if told.get(k) != t]
     full.notes["told"] = json.dumps(bits)[:3000]
-    if not new:
+    full.notes["told_v"] = json.dumps(vals)[:200]
+    if not new_keys:
         return ""
     if not told:
-        shown = new[:3] + ([f"{len(new) - 3} more"] if len(new) > 3 else [])      # the rest are in the panel
-        return f"Until you tell me otherwise, I use typical figures for the rest: {_join(shown)}. Each is marked in the panel, so you can change it."
-    return f"Your answer moved some typical figures, so I updated them: {_join(new)}."
+        new = [bits[k] for k in new_keys]
+        shown = new[:2] + ([f"{len(new) - 2} more"] if len(new) > 2 else [])      # the rest are in the panel
+        return f"{DISC_START}: {_join(shown)}. Each is marked in the panel, so you can change it."
+    # round 4, no silent changes: a typical figure worked out again because another answer changed is said as old -> new
+    moved, rest = [], []
+    for k in new_keys:
+        old = told_v.get(k)
+        if k in vals and isinstance(old, (int, float)) and old and abs(old - vals[k]) >= 1:
+            moved.append(f"{MOVED_LABEL[k]}: {_money(old)} → {_money(vals[k])}{_moved_why(k, full)}.")
+        else:
+            rest.append(bits[k])
+    out = " ".join(moved[:3])
+    rest += [bits[k] for k in new_keys if any(MOVED_LABEL.get(k, "-") in x for x in moved[3:])]
+    if rest:
+        shown = rest[:2] + ([f"{len(rest) - 2} more"] if len(rest) > 2 else [])
+        out = f"{out} I updated some typical figures: {_join(shown)}.".strip()
+    return out
+
+
+MOVED_LABEL = {"pay_per_year": "Your pay", "partner_pay_per_year": "Your partner's pay", "spending_now_per_year": "Spending now",
+               "spending_per_year": "Spending in retirement", "social_security_per_year": "Social Security"}
+
+
+def _moved_why(k: str, full: Profile) -> str:
+    """The short reason a typical figure moved, from the answer it follows."""
+    if k == "spending_per_year" and full.spending_now_per_year and full.notes.get("retired") != "yes":
+        return f", since you spend {_money(full.spending_now_per_year)} now"
+    if k == "social_security_per_year":
+        return ", from your pay and retirement age"
+    return ""
 
 
 def _reask_line(key: str | None) -> str:
@@ -960,11 +1159,11 @@ def _estimate_mortgage(p: Profile) -> str:
     p.notes["skipped_mortgage"] = "yes"
     p.notes["mortgage_payment_est"] = "yes"
     if p.notes.get("mortgage_balance_said") == "yes":
-        p.notes["home"] = "The payment is an estimate: a typical 30-year loan taken out at about 35, at 5%, kept to your balance. Please give your own payment."
+        p.notes["home"] = "The payment is an estimate. It is a typical 30-year loan at 5%, kept to your balance. Please give your own payment."
     else:
         p.sources["home"] = "estimate"
-        p.notes["home"] = ("A typical mortgage: a 30-year loan taken out at about 35, at 5%, with the monthly payment typical for your state "
-                           "(Census) or from your home's value. Please give your own figures.")
+        p.notes["home"] = ("This is a typical mortgage: a 30-year loan at 5%. The payment is typical for your state, or comes from your home's value. "
+                           "Please give your own figures.")
     return f"I used a typical mortgage for now: about {_money(bal)} left, {_money(pay)} a month, marked estimate. Change it in the panel if you know better."
 
 
@@ -1165,7 +1364,7 @@ def _apply_pending_change(p: Profile, pc: dict[str, Any], ask: str | None) -> In
     said = _join([f"{GATE_KEYS[k][0]} is now {_gate_value(k, v)}" for k, v in pc["f"].items()] + [f"{what} is now {change.rsplit(' to ', 1)[1]}" for what, change in bits])
     disclosure = _disclose(full) if full.age else ""
     reply = f"Changed: {said}." + (f" {disclosure}" if disclosure else "")
-    p.notes.update({k: v for k, v in full.notes.items() if k == "told"})
+    p.notes.update({k: v for k, v in full.notes.items() if k in ("told", "told_v")})
     if "children.count" in g and "children.ages" not in g and g["children.count"] > 0:
         ask = "children"          # a new count has no ages: ask them now
     return _respond(p, reply, ask)
@@ -1296,13 +1495,18 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
             held_note = f"I did not clear the {_money(p.home.mortgage_balance)} mortgage."
     # "Updated your savings: ..." from the page: keep the edited value as the person's own
     page_edit = False
-    um = re.match(r"\s*updated your ([a-z' ]+?)\s*[:.]", text or "", re.I)
+    page_bad: list[str] = []
+    um = re.match(r"\s*updated your ([a-z' -]+?)\s*[:.]", text or "", re.I)
+    edit_text = text or ""
     if um:
         page_edit = True
+        page_bad = check_page_edit(p)
         for k in UPDATED_LABELS.get(um.group(1).lower().strip(), []):
-            if p.sources.get(k) in ("estimate", "assumed"):
-                p.sources[k] = "you said"
+            p.sources[k] = "you said"       # the person typed it: it is their own figure, whatever it was before
             p.notes.pop(k, None)
+            p.notes.pop(f"skipped_{k}", None)
+        if um.group(1).lower().strip() == "children":
+            p.notes.pop("skipped_children_count", None)
         if um.group(1).lower().strip() == "savings":
             p.offered = list(dict.fromkeys(p.offered + ["confirm_split"]))
         text = ""
@@ -1324,6 +1528,23 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
             notes.append("I set aside part of your message because it read like instructions to me, not facts about you.")
     clean = parser.fix_typos(clean)          # "4o yrs" -> "40 yrs", for both readers and the evidence check
     escape = bool(ESCAPE_RE.match(clean))
+    # round 4: the answer to the early build's retirement question, then the build itself
+    er = p.notes.pop("escape_retire", None)
+    if er and not escape and (line := _escape_retire_answer(clean, p, er)) is not None:
+        notes.append(line)
+        clean, escape = ESCAPE, True
+    if escape and p.notes.get("escape_retire_asked") != "yes" and (rq := _escape_retire_q(p)) is not None:
+        p.notes["escape_retire_asked"] = "yes"
+        p.notes["escape_retire"] = rq[1]
+        return _respond_q(p, " ".join([*notes, "Before I build it, one question."]), rq[0], "retire_age")
+    # round 4: a What If asked before the plan exists is answered, never read as a change; the rest of the message is read as usual
+    whatif_line = ""
+    if not escape:
+        wi, rest = whatif_split(clean)
+        if wi:
+            whatif_line, clean = WHATIF_LATER, rest
+            if not clean.strip():
+                return _respond(p, " ".join([*notes, WHATIF_LATER]), asking)
     # the model reads the message (one call), unless it is one of the pending question's own buttons
     pending_q = _pending_q(asking, p)
     is_chip = (bool(pending_q) and clean.strip().lower().strip(" .!") in {c.lower() for c in pending_q.quick_answers}) or bool(asking and r2.USE_THIS.match(clean))
@@ -1641,8 +1862,8 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
         cq = json.loads(cu)
         forced_question, forced_asking = Question(text=cq["question"], quick_answers=cq["quick"]), None
     elif "children" in changed and "college" not in changed and any(c.college_source != "you said" for c in p.children):
-        reply_bits.append("I assumed the typical college for each child: public in-state, and you pay all of it. It is marked as an estimate. "
-                          "Tell me if one goes private, if you pay a share, or if one skips college.")
+        reply_bits.append("I assumed public in-state college for each child, paid in full. It is marked as an estimate. "
+                          "Tell me if that is wrong.")
     if "mortgage" in ut and p.home.owns and asking == "mortgage":
         reply_bits.append(_estimate_mortgage(p))
     if range_note and range_note[0] in ("pay_per_year", "partner_pay_per_year", "savings", "spending_now_per_year", "spending_per_year"):
@@ -1762,10 +1983,14 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
     summ = summary([c for c in changed if c not in echoed and c not in ut and c not in affirmed], full)      # an estimate the person asked for is not something they said
     disclosure = _disclose(full) if full.age else ""
     escape_line = (f"Fine. I will build your plan with typical figures for {answers._plain_list(escaped)}. Each is marked in the panel, "
-                   "and you can change any of them on the plan page." if escaped else
+                   "and you can change any of them on the plan page."
+                   + (" With no state, I use typical US taxes and costs." if "state" in escaped else "") if escaped else
                    ("I need at least your age to build a plan. How old are you?" if escape and full.age is None else ""))
     answer_text = reply_bits.pop(asked_at) if asked_at >= 0 else ""      # what was recorded first, then the answer, then the question
-    reply = " ".join(x for x in [*notes, escape_line, *corr_bits, *reply_bits, summ, gr.breakdown_note if gr else "", answer_text, disclosure] if x)
+    reply = " ".join(x for x in [*notes, escape_line, *corr_bits, *reply_bits, summ, gr.breakdown_note if gr else "", answer_text,
+                                 disclosure, whatif_line] if x)
+    if p.age is None and not p.history and not real and not changed and not whatif_line and START_HELP.search(clean):
+        reply = START_EXAMPLE            # "idk what to say" as a first message: one example sentence to copy
     no_text = not clean.strip() and not notes
     if not reply.strip() and not changed and not (cleared and no_text):
         # never a dead end: say what was understood, or ask one specific question
@@ -1793,7 +2018,7 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
         elif asking in sup.CONFIRM_BASE and skipping:
             reply = _skip_line(asking, full) or "Fine. I will keep that as it is, marked estimate, so you can change it later in the panel."
         elif page_edit and um:
-            reply = f"Saved. I use your new {um.group(1).lower().strip()} from now on."
+            reply = _page_edit_line(um.group(1), edit_text, page_bad) or f"Saved. I use your new {um.group(1).lower().strip()} from now on."
         elif q is not None and (miss or reasked):
             reply = _reask_line(asking)
         else:
@@ -1805,9 +2030,11 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
     elif (skipping or ut) and asking and not real and (line := _typical_figure_line(asking, full)) and line.split(" use ")[1].split(",")[0] not in reply:
         reply = reply.replace("Fine. I will count no extra costs for now; you can add it in the panel.", "").strip()
         reply = f"{reply} {line}".strip()      # a skipped money question: the typical figure, named and marked
-    if disclosure.startswith("Until you") and disclosure in reply and (len(reply.split()) > 80 or "facts from your message" in summ):
+    if disclosure.startswith(DISC_START) and disclosure in reply and (len(reply.split()) > SHORT_WORDS or "facts from your message" in summ):
         n_typ = sum(1 for f in fields(full) if f.source in ("estimate", "assumed"))
-        reply = reply.replace(disclosure, f"I filled in {n_typ} more with typical figures, each marked in the panel so you can change it.")      # short first reply
+        reply = reply.replace(disclosure, f"I filled in {n_typ} more with typical figures. Each is marked in the panel, so you can change it.")      # short first reply
+    if page_edit and um and (line := _page_edit_line(um.group(1), edit_text, page_bad)) and line not in reply:
+        reply = f"{line} {reply}".strip()      # an edit from the page says old to new, whatever else the reply carries
     if cleared:
         reply = f"{cleared} {reply}"
     # ready to build: say so once, after any confirm question has been answered; later, a short reminder only if no next step is named
@@ -1839,15 +2066,18 @@ async def run(text: str, profile_so_far: dict | None, session: str = "local", us
         if ESCAPE not in q.quick_answers:
             q = Question(text=q.text, quick_answers=[*q.quick_answers[:4], ESCAPE])
         if not offered_typ and (full.notes.get("escape_told") != "yes" or stuck >= 2):
-            reply += " If you'd rather, I can build your plan now with typical numbers for the rest."
+            reply += " Or I can build your plan now with typical numbers for the rest."
             full.notes["escape_told"] = "yes"
     # never the same reply twice in a row: say it another way, and offer a way forward
     shown = (reply + " " + (q.text if q else "")).strip()
     if real_turn and not age_needed and _same(shown, _last_app(p)):
-        alt = ("I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure." if reasked or q is not None
+        age_q = full.asking == "age" or full.age is None
+        alt = (AGE_AGAIN if age_q else
+               "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure." if reasked or q is not None
                else "I could not use that. You can change an answer, or build your plan now.")
         if _same(alt + " " + (q.text if q else ""), _last_app(p)):
-            alt = "Let's keep moving. Answer the question below in your own words, or press the button to build your plan with typical numbers."
+            alt = (AGE_LAST if age_q else
+                   "Let's keep moving. Answer the question below in your own words, or press the button to build your plan with typical numbers.")
         reply = f"{alt} {offer_note}".strip()
         if q is not None and miss and ESCAPE not in q.quick_answers and full.age is not None:
             q = Question(text=q.text, quick_answers=[*q.quick_answers[:4], ESCAPE])

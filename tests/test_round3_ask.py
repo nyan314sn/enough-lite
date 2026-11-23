@@ -58,7 +58,7 @@ def test_pensions_are_named_when_there_is_one():
 
 def test_p35_mortgage_is_inside_the_figure():
     r = _no_quote(ask("does the $59,300 figure already include my mortgage payment, or is that separate?", WORKING))
-    assert "basics" in r["text"] and "inside" in r["text"]
+    assert "needs" in r["text"] and "inside" in r["text"]
 
 
 @pytest.mark.parametrize("q", ["what does the plan assume", "Can you tell me what the plan assumes about me? Like my spending, my savings, and when Social Security starts?",
@@ -90,7 +90,7 @@ def test_r13_cant_you_just_tell_me_gets_the_headline_and_a_next_step():
 
 def test_what_to_do_first_and_how_risky_come_from_the_plan():
     r = _no_quote(ask("what should I do first, and how risky is the plan?", WORKING))
-    assert "First step" in r["text"] and "scenarios" in r["text"]
+    assert "First step" in r["text"] and "market tests" in r["text"]
 
 
 def test_social_security_treatment_comes_from_the_plan():
@@ -161,13 +161,13 @@ def test_a_bare_age_asks_whether_it_is_the_retirement_age(q, n):
 
 def test_b_p2_7_a_what_if_that_matches_the_plan_says_so():
     r = ask("what if I retire at 65", WORKING)
-    assert r["kind"] == "clarify" and r["text"].startswith("That is your baseline plan now: you retire at 65")
+    assert r["kind"] == "clarify" and r["text"].startswith("That is your plan now: you retire at 65")
     assert ask("what if I retire at 63", WORKING)["kind"] == "whatif"
 
 
 def test_b_p2_7_your_plan_reads_of_100():
     text = ask("what if I retire at 62", WORKING)["text"]
-    assert not re.search(r"baseline plan: \d+\)", text) and len(re.findall(r"baseline plan: \d+ of 100\)", text)) == 2
+    assert "baseline plan" not in text and "(" not in text and "of 100 market tests" in text, text
 
 
 def test_b_p2_4_gibberish_gets_the_short_reply_with_a_plan_on_screen():

@@ -194,7 +194,7 @@ def test_wife_stops_working_with_pay_stops_her_pay_now():
 def test_below_social_security_note_is_two_plain_sentences():
     m = {"safe_spending_per_year": 20000, "social_security_per_year": 37000, "ss_tax_rate": 0.1, "health_extra_in_retirement": True,
          "ss_starts_later": True, "social_security_survivor_per_year": 20000}
-    note = adviser.below_ss_note(m).strip()
+    note = (adviser.below_ss_note(m) + " " + adviser.below_ss_why(m)).strip()
     sentences = [s for s in note.split(". ") if s]
     assert len(sentences) == 2 and all(len(s.split()) <= 22 for s in sentences), note
     assert "The reasons:" not in note and note.count(" and ") <= 1
@@ -205,7 +205,7 @@ def test_below_social_security_note_is_two_plain_sentences():
 def test_assumptions_say_what_is_fixed_and_offer_changes():
     prof, base, plan, _ = plan_for("example")
     text = " ".join(plan["assumptions"])
-    assert "They are fixed" in text and "This is fixed" in text
+    assert "They stay fixed" in text and "counts no raises" in text
     qs = {c["q"] for c in plan["assumption_changes"]}
     assert qs == {adviser.CHANGE_RETIRE_Q, adviser.CHANGE_CLAIM_Q}
 

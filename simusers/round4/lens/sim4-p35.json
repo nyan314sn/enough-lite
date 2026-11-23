@@ -1,0 +1,15 @@
+{
+ "id": "p35",
+ "path": "normal",
+ "kind": "works",
+ "gap": 0,
+ "text": "Readiness: 100 of 100\nYes, you're on track.\n$63,000 a year you can count on.\nNeeds: $23,100 a year. Paid in 100 of 100 market tests. Safe.\nWants: $39,900 a year on top of your needs. You can count on $63,000 in all. Sure.\nWishes: $0 open. Your whole goal is covered.\nYou can count on $63,000 a year: $23,100 for needs, $39,900 for wants.\nFirst move: Plan to claim Social Security at age 70",
+ "result": {
+  "a": "yes",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "\"Paid in 100 of 100 market tests\" and \"Wishes: $0 open\" unclear; also doesn't say retire at 61 explicitly."
+ },
+ "grade": 2.24,
+ "words": 75
+}

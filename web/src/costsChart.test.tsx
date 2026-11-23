@@ -30,7 +30,7 @@ describe("Costs chart readout", () => {
     await key("ArrowRight"); await key("ArrowRight");
     expect(tip()?.textContent).toContain("Age 62, 2028");
     expect(tip()?.textContent).toContain("Total $90,000 a year");
-    expect(tip()?.textContent).toContain("On top of basics $20,000");
+    expect(tip()?.textContent).toContain("On top of needs $20,000");
     expect(tip()?.textContent).toContain("Retire");
     const live = m.el.querySelector("[data-testid=costs-live]")!;
     expect(live.getAttribute("aria-live")).toBe("polite");

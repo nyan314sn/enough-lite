@@ -1,0 +1,146 @@
+{
+ "persona_id": "h03",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": 52,
+    "truth": 52,
+    "source": "you said"
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "MN",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 64,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 135000.0,
+    "truth": 135000,
+    "source": "you said"
+   },
+   {
+    "field": "partner_pay",
+    "ok": true,
+    "got": 70000.0,
+    "truth": 70000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 185000.0,
+    "truth": 760000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 85000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     15
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": false,
+    "got": 126000.0,
+    "truth": 96000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.5,
+  "why": [
+   {
+    "field": "state",
+    "cause": "person_never_said",
+    "note": "App asked which state at turn i2, but the user never answered and moved on to 'build my plan.'"
+   },
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "Hal said he wants to stop working but never gave an age. App used 65; the true plan is 64."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "App never asked for balances and used a typical $185,000 total. True total is $760,000."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "App never asked about home ownership and stored null."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "App never asked about the mortgage and stored 0. Truth is $85,000."
+   },
+   {
+    "field": "children",
+    "cause": "assumed_default",
+    "note": "App assumed no children counted. Truth is one 15-year-old, which the user never mentioned."
+   },
+   {
+    "field": "spending_now",
+    "cause": "assumed_default",
+    "note": "App never asked about spending and used a typical estimate of $126,000. Truth is $96,000."
+   }
+  ]
+ }
+}

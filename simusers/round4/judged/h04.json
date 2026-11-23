@@ -1,0 +1,123 @@
+{
+ "persona_id": "h04",
+ "issues": [
+  {
+   "ref": "i4",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "Got it: you have saved $410,000 ($310,000 pre-tax, $60,000 taxable and $40,000 cash).",
+   "note": "The user corrected spending to $58,000 a year in i3, but this reply never acknowledges it, so the $46,000 estimate likely remains stored silently."
+  },
+  {
+   "ref": "i7",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "Spending is about $58,000 a year, not $46,000, so please change that.",
+   "note": "The reply never mentions spending, and the stored $46,000 estimate is still in use after the person corrected it to $58,000."
+  },
+  {
+   "ref": "i7",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "stocks at 110 minus your age, at most 75%",
+   "note": "The stock-allocation rule is jargon-heavy and does not state the resulting percentage (about 42%) in plain words."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 68,
+    "truth": 68,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "FL",
+    "truth": "FL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 68,
+    "truth": 68,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 410000.0,
+    "truth": 410000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 0.0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 14400.0,
+    "truth": 14400,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 58000.0,
+    "truth": 58000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

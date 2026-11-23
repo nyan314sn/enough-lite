@@ -21,27 +21,33 @@ from .base import STYLE, RunCtx, figure_lines, money, profile_facts, run_model
 
 
 class Action(BaseModel):
-    title: str = Field(description="A short instruction, under 10 words, starting with a verb.")
-    why: str = Field(description="One or two plain sentences on why, using only the allowed figures.")
+    title: str = Field(description="A short instruction of 8 words or fewer, starting with a verb.")
+    why: str = Field(description="One plain sentence of 15 words or fewer on why, using only the allowed figures.")
 
 
 class AdviserOut(BaseModel):
-    needs_line: str = Field(description="One sentence: what the basics cost and how often they are paid.")
-    wants_line: str = Field(description="One sentence: how much can go to wants on top of the basics.")
-    wishes_line: str = Field(description="One or two sentences: the spending goal and what may be left for wishes.")
+    needs_line: str = Field(description="One sentence of 15 words or fewer: what your needs cost and how often they are paid.")
+    wants_line: str = Field(description="One sentence of 15 words or fewer: how much can go to wants on top of your needs.")
+    wishes_line: str = Field(description="One or two sentences of 15 words or fewer each: the spending goal and what may be left for wishes.")
     actions: list[Action] = Field(description="Exactly three actions, most important first.", min_length=3, max_length=3)
 
 
 INSTRUCTIONS = (
     "You are the lead adviser in a retirement-planning team. Specialists have worked out the facts with tools. "
-    "Write the plan in the frame 'Needs safe. Wants sure. Wishes open.': needs are the basics, wants are the spending you "
-    "can count on (safe in 90 of 100 scenarios, basics included: markets.safe_spending_per_year), wishes are what is left after that. "
+    "Write the plan in the frame 'Needs safe. Wants sure. Wishes open.': needs are the yearly cost of the basics, wants are what you "
+    "can count on above your needs (what you can count on in all is safe in 90 of 100 market tests: markets.safe_spending_per_year), "
+    "wishes are the rest of the goal. Say 'needs', 'wants' and 'wishes'; never say 'basics' to the person. "
     "markets.above_basics_per_year is how much of it is above the basics. When that is near zero, never write 'Wants are $0'; "
-    "say what can be counted on a year, that it is about the basics, and that there is little room above them yet. Then give three actions. "
+    "say what can be counted on a year, that it is about your needs, and that little is left for wants. Then give three actions. "
+    "Each action is a title of 8 words or fewer and one sentence of 15 words or fewer. A title is one thing the person can do, "
+    "with its figure when one is listed: 'Spend $4,000 less a year', 'Save $300 more a month', 'Pay off your $8,000 card debt first', "
+    "'Keep 3 months of spending in cash'. Never a goal or a state, such as 'Make your needs safe' or 'Stay on track'. "
+    "Each line you write is one or two sentences "
+    "of 15 words or fewer. Lead with the one fact that matters most. "
     "Rules: use only the figures under 'Numbers you may use', as written or rounded; do no arithmetic of your own "
     "(the gap between goal and safe spending is listed). Keep the person's own retirement age; never tell "
-    "them to retire later and never suggest working past 70. Verdicts: falls_short means the basics are not safe; say once, "
-    "plainly, that the plan does not work on these numbers and use the listed starting points. below_goal means the basics "
+    "them to retire later and never suggest working past 70. Verdicts: falls_short means the needs are not safe; say once, "
+    "plainly, that the plan does not work on these numbers and use the listed starting points. below_goal means the needs "
     "are safe but the goal is above what lasts; say that, and never write 'falls short' for it. close means near the goal. "
     "If the plan uses the plan of a similar household, say so plainly in one action's reason. When 'Actions the person's own inputs point to' are listed "
     "(paying off high-rate debt, the full employer match, an emergency fund, a gap in cover), use them for the actions in place of "
@@ -71,22 +77,22 @@ def verdict(m: dict) -> str:
 
 
 VERDICT_WORDS = {"works": "works", "close": "close to your goal", "below_goal": "below your goal",
-                 "falls_short": "falls short: the basics are not safe"}
+                 "falls_short": "falls short: your needs are not safe"}
 
 
 def needs_line(m: dict, basics: float) -> str:
     """The needs line, built in code from basics paid of 100 (never written by the model)."""
     paid = m.get("basics_paid_of_100")
-    head = f"Your basics cost about {money(basics)} a year."
+    head = f"Your needs cost about {money(basics)} a year."
     if paid is None:
         return head
     if paid >= 100:
-        return head + " They are paid in all 100 scenarios."
+        return head + " They are paid in all 100 market tests."
     if paid >= BASICS_SAFE:
-        return head + f" They are paid in {paid} of 100 scenarios."
+        return head + f" They are paid in {paid} of 100 market tests."
     if paid == 0:
-        return head + " On these numbers they are not paid in any of 100 scenarios, so the plan starts there."
-    return head + f" They are paid in only {paid} of 100 scenarios, so the plan starts there."
+        return head + " They are paid in none of the 100 market tests, so the plan starts there."
+    return head + f" They are paid in only {paid} of 100 market tests, so the plan starts there."
 
 
 THIN_SHARE = 0.05      # room above the basics under 5% of them counts as "little room above the basics"
@@ -101,9 +107,16 @@ def wants_thin(m: dict, basics: float) -> bool:
 
 
 def below_ss_note(m: dict) -> str:
-    """Why what you can count on is below your Social Security, when it is: built from the plan's own inputs. Two short
-    sentences (R18): the comparison, then at most two reasons in plain clauses. Spending now above take-home pay, when it
-    is the cause, is named alone: it drains savings first."""
+    """The comparison, one short sentence, when what you can count on is below your Social Security: it goes on the headline."""
+    safe, ss = m.get("safe_spending_per_year") or 0, m.get("social_security_per_year") or 0
+    if not ss or safe >= ss:
+        return ""
+    return f" That is less than your Social Security of {money(ss)} a year.{m.get('ss_when') or ''}"
+
+
+def below_ss_why(m: dict) -> str:
+    """Why what you can count on may be below your Social Security: built from the plan's own inputs, in one short sentence with at
+    most two plain reasons. Spending now above take-home pay, when it is the cause, is named alone: it drains savings first."""
     safe, ss = m.get("safe_spending_per_year") or 0, m.get("social_security_per_year") or 0
     if not ss or safe >= ss:
         return ""
@@ -112,27 +125,27 @@ def below_ss_note(m: dict) -> str:
     # audit: "The reasons: tax on it, health costs on top and the years before it starts" could not be followed)
     why = []
     if (inp.get("save_per_year") or 0) < 0 and (inp.get("retire_age") or 0) > (inp.get("age") or 0):
-        why.append("you spend more now than your take-home pay, so your savings run down before you retire")
+        why.append("you spend more than your take-home pay, so savings run down before you retire")
     else:
         if m.get("ss_starts_later"):
-            why.append("your savings must pay for the years before it starts")
+            why.append("savings must cover the years before it starts")
         if m.get("health_extra_in_retirement"):
-            why.append("health costs come on top of your spending")
+            why.append("health costs come on top")
         if m.get("social_security_survivor_per_year"):
-            why.append("it falls to one check after the first death")
+            why.append("it drops to one check after the first death")
         if (m.get("ss_tax_rate") or 0) > 0:
             why.append("tax takes part of it")
         if not why:
-            why.append("the plan keeps a margin for bad markets")
+            why.append("the plan leaves a margin for bad markets")
     why = why[:2]
     lst = " and ".join(why)
     # when the plan starts it at another age than your answers, say so, so the figure matches the one in your answers' basis
-    return f" That is less than your Social Security of {money(ss)} a year{m.get('ss_when') or ''}. That is because {lst}."
+    return f"That is because {lst}."
 
 
 def headline(m: dict, basics: float) -> str:
-    """One plain sentence on what the person can count on (plan.wants.per_year). Built in code from the simulation."""
-    safe = m.get("safe_spending_per_year") or 0
+    """What the person can count on (plan.wants.per_year), in one or two short sentences. Built in code from the simulation.
+    Below their Social Security, a second short sentence says so; the reason is plan.headline_why."""
     return _headline(m, basics) + below_ss_note(m)
 
 
@@ -141,16 +154,19 @@ def _headline(m: dict, basics: float) -> str:
     falls_short = verdict(m) == "falls_short"
     if safe < 0.95 * basics or falls_short:
         pts = m.get("starting_points") or []
-        more = (" The starting points below show what would make the basics safe." if any(x.get("makes_basics_safe") for x in pts) else
-                " The starting points below each help, but none we tried makes the basics safe." if pts else "")
+        more = (" The starting points below show what would fix it." if any(x.get("makes_basics_safe") for x in pts) else
+                " Each starting point below helps, but none fixes it alone." if pts else "")
         paid = m.get("basics_paid_of_100")
-        rel = "less than" if safe < basics else "about"
-        how = f", which are paid in only {paid} of 100 scenarios" if falls_short and paid is not None and safe >= 0.95 * basics else ""
-        return (f"You can count on {money(safe)} a year, {rel} your basics of {money(basics)}{how}. "
-                f"On your numbers the plan does not work yet.{more}")
+        if safe < basics:
+            first = f"You can count on {money(safe)} a year, but your needs cost {money(basics)}."
+        else:
+            first = f"You can count on {money(safe)} a year, about your needs of {money(basics)}."
+            if falls_short and paid is not None:
+                first += f" They are paid in only {paid} of 100 market tests."
+        return f"{first} The plan does not work yet.{more}"
     if wants_thin(m, basics):
-        return f"You can count on {money(safe)} a year, about your basics. There is little room above them yet."
-    return f"You can count on {money(safe)} a year: {money(basics)} for basics and {money(above_basics(m, basics))} for the rest."
+        return f"You can count on {money(safe)} a year, about your needs. Little is left for wants."
+    return f"You can count on {money(safe)} a year: {money(basics)} for needs, {money(above_basics(m, basics))} for wants."
 
 
 def plan_claims(p, m: dict) -> tuple[int | None, int | None, bool]:
@@ -195,22 +211,34 @@ def ranked_levers(p, m: dict) -> list[dict]:
     pts = m.get("starting_points") or []
     if verdict(m) == "falls_short":
         # the basics are not safe: no "spend less" (it does not make the basics safe); the starting points instead
+        # the best starting point the tools found, said as the change itself (round 4: "Make your needs safe first" told
+        # no one what to do); with none, a plain thing to do and no figure
         paid = m.get("basics_paid_of_100") or 0
-        why = f"On your numbers your basics are paid in {paid} of 100 scenarios."
-        if pts:
-            why += " The starting points show what helps on your numbers."
+        best = next((x for x in pts if x.get("whatif_text")), None)
+        if best is not None:
+            title = best.get("action_title") or best["title"]
+            why = (f"Your needs would be paid in {best['paid_of_100']} of 100 market tests, not {paid}." if best["paid_of_100"] > paid else
+                   f"You could count on {money(best['count_on_per_year'])} a year, not {money(m.get('safe_spending_per_year') or 0)}.")
+            if best.get("action_rest"):
+                why = f"Also {best['action_rest']}. {why}"
+            whatif = best["whatif_text"]
         else:
-            why += " Lower fixed costs, such as housing, or more income in retirement would help most."
-        out.append({"key": GOAL_KEY, "title": "Make your basics safe first",
-                    "whatif_text": next((x["whatif_text"] for x in pts if x["whatif_text"]), ""),
-                    "numbers": {"gap_per_year": max(gap, 1)}, "why": why})
+            title, whatif = "Lower your housing costs or add income", ""
+            why = f"Your needs are paid in only {paid} of 100 market tests. Lower housing costs or more income would help most."
+        out.append({"key": GOAL_KEY, "title": title, "whatif_text": whatif, "numbers": {"gap_per_year": max(gap, 1)}, "why": why})
     elif verdict(m) != "works" and gap >= max(GOAL_GAP_MIN, GOAL_GAP_SHARE * (m.get("spending_goal_per_year") or 0)):
         safe = m.get("safe_spending_per_year") or 0
-        out.append({"key": GOAL_KEY, "title": "Set your spending goal nearer the safe level",
-                    "whatif_text": f"What if I spend ${round(safe, -3):,.0f} a year" if safe >= 1000 else "",
-                    "numbers": {"gap_per_year": gap},
-                    "why": f"Your goal is about {money(gap)} a year above what lasts in 90 of 100 scenarios, "
-                           f"{money(safe)} a year. Start there and raise it as savings grow."})
+        goal = m.get("spending_goal_per_year") or 0
+        working = (p.retire_age or 65) > (p.age or 45)
+        new_goal = math.floor(safe / 1000) * 1000          # a round goal at or below what you can count on
+        cut = goal - new_goal
+        if new_goal >= 1000 and cut >= 1000:
+            title = f"Spend {money(cut)} less a year" + (" in retirement" if working else "")
+            whatif = f"What if I spend ${new_goal:,.0f} a year" + (" in retirement" if working else "")
+        else:
+            title, whatif = "Lower your spending goal a little", ""
+        out.append({"key": GOAL_KEY, "title": title, "whatif_text": whatif, "numbers": {"gap_per_year": gap, "goal_cut_per_year": max(cut, 0)},
+                    "why": f"Your goal is {money(gap)} a year above the {money(safe)} you can count on."})
     working = (p.retire_age or 65) > (p.age or 45)
     years_left = (p.retire_age or 65) - (p.age or 45)
     keep = []
@@ -270,13 +298,13 @@ def _tries(p, m: dict) -> list[dict]:
             txt = f"Spend ${x:,.0f} a year less now"
             ch = pipeline.parse_whatif(txt, p)
             # the What If reads it as a cut to spending now: run it the same way; else cut it here
-            out.append({"key": "spend_now", "text": txt, "ch": ch} if ch.get("_spend_now") else
-                       {"key": "spend_now", "text": txt, "spend_now_less": x})
+            out.append({"key": "spend_now", "text": txt, "ch": ch, "amt": x} if ch.get("_spend_now") else
+                       {"key": "spend_now", "text": txt, "spend_now_less": x, "amt": x})
         month = max(100, round(SAVE_MORE_SHARE * p.household_pay() / 12, -2))
         txt = f"Save ${month:,.0f} a month more"
         ch = pipeline.parse_whatif(txt, p)
         if ch and all(k in pipeline.AFFECTS or k.startswith("_") for k in ch):
-            out.append({"key": "save", "text": txt, "ch": ch})
+            out.append({"key": "save", "text": txt, "ch": ch, "amt": month})
     claim, _, already = plan_claims(p, m)
     if not already and claim is not None and claim < 70:
         out.append({"key": "claim", "text": "Claim Social Security at 70", "ch": {"claim_age": 70}})
@@ -289,8 +317,45 @@ def _tries(p, m: dict) -> list[dict]:
         if parsed.get("spending_per_year") != new_goal or working:
             # the plain form for a goal: "Spend $X a year" (for someone working, "less" is a cut to spending now)
             txt = f"Spend ${new_goal:,.0f} a year" + (" in retirement" if working else "")
-        out.append({"key": "goal", "text": txt, "ch": {"spending_per_year": new_goal}})
+        out.append({"key": "goal", "text": txt, "ch": {"spending_per_year": new_goal}, "amt": new_goal})
     return out
+
+
+ACTION_WORDS = 8      # an action title is 8 words or fewer
+
+
+def _phrase(x: dict, alone: bool, ra: int) -> tuple[str, str]:
+    """One change of a starting point as (short words for a title, the full words for the reason)."""
+    k, amt = x["key"], x.get("amt") or 0
+    if k == "retire":
+        a = x["ch"]["retire_age"]
+        return (f"Retire at {a} instead of {ra}" if alone else f"retire at {a}"), f"retire at {a}"
+    if k == "spend_now":
+        return (f"Spend {money(amt)} less a year now" if alone else f"spend {money(amt)} less now"), f"spend {money(amt)} a year less now"
+    if k == "save":
+        return (f"Save {money(amt)} more a month" if alone else f"save {money(amt)} more a month"), f"save {money(amt)} more a month"
+    if k == "claim":
+        a = x["ch"].get("claim_age", 70)
+        return (f"Claim Social Security at {a}" if alone else f"claim at {a}"), f"claim Social Security at {a}"
+    if k == "goal":
+        return ((f"Lower your retirement spending to {money(amt)}" if alone else f"spend {money(amt)} a year retired"),
+                f"spend {money(amt)} a year in retirement")
+    t = x.get("text") or ""
+    return t, t
+
+
+def action_title(parts: list[dict], ra: int) -> tuple[str, str]:
+    """A starting point as an action title of 8 words or fewer, and what did not fit (said in the reason):
+    "Retire at 64 instead of 62", "Retire at 66 and spend $3,000 less now"."""
+    alone = len(parts) == 1
+    ph = [_phrase(x, alone, ra) for x in parts]
+    fit = 1
+    while fit < len(ph) and len(_join_texts([s for s, _ in ph[:fit + 1]]).split()) <= ACTION_WORDS:
+        fit += 1
+    title = _join_texts([s for s, _ in ph[:fit]])
+    title = title[0].upper() + title[1:]
+    rest = [w for _, w in ph[fit:]]
+    return title, (", ".join(rest[:-1]) + " and " + rest[-1] if len(rest) > 1 else (rest[0] if rest else ""))
 
 
 def _apply_try(p, t):
@@ -344,9 +409,10 @@ async def starting_points(ctx: RunCtx) -> list[dict]:
             return None
         parts = t if isinstance(t, list) else [t]
         text = _join_texts([x["text"] for x in parts])
-        res = f"basics paid in {paid} of 100 (now {base_paid}), and {money(safe)} a year to count on (now {money(base_safe)})"
+        res = f"Your needs are paid in {paid} of 100 market tests, against {base_paid} now. You can count on {money(safe)} a year, against {money(base_safe)} now."
+        at, rest = action_title(parts, p.retire_age or 65)
         return {"title": text, "whatif_text": text, "paid_of_100": paid, "count_on_per_year": safe, "result": res,
-                "makes_basics_safe": paid >= BASICS_SAFE, "keys": [x["key"] for x in parts]}
+                "makes_basics_safe": paid >= BASICS_SAFE, "keys": [x["key"] for x in parts], "action_title": at, "action_rest": rest}
 
     tries = _tries(p, m)
     out = []
@@ -427,38 +493,78 @@ def template(ctx: RunCtx) -> AdviserOut:
     goal = m["spending_goal_per_year"]
     v = verdict(m)
     needs = needs_line(m, basics)
-    wants_line = (f"You can count on about {money(m['safe_spending_per_year'])} a year in 90 of 100 scenarios, "
-                  f"{money(room)} more than the basics." if not wants_thin(m, basics) else headline(m, basics))
-    wishes = f"Your spending goal of {money(goal)} a year lasts in {m['goal_lasts_of_100']} of 100 scenarios."
+    wants_line = (f"You can count on about {money(m['safe_spending_per_year'])} a year, safe in 90 of 100 market tests. "
+                  f"That leaves {money(room)} for wants." if not wants_thin(m, basics) else headline(m, basics))
+    wishes = (f"Your wishes stay open: your goal of {money(goal)} a year lasts in {m['goal_lasts_of_100']} of 100 market tests." if v == "works" else
+              f"Your goal of {money(goal)} a year lasts in {m['goal_lasts_of_100']} of 100 market tests.")
     if (m.get("extras") or {}).get("legacy_to_leave"):
         wishes += f" That keeps {money(m['extras']['legacy_to_leave'])} to leave behind."
     if v == "works" and m.get("median_at_horizon"):
-        wishes += f" In a middle case, about {money(m['median_at_horizon'])} is left at the end for wishes."
+        wishes += f" In a typical test, about {money(m['median_at_horizon'])} is left at the end."
     elif v == "close":
-        wishes += " That is close to your goal; wishes wait until it is met."
+        wishes += " That is close to your goal. Wishes wait until it is met."
     elif v != "works":
-        wishes += " Your goal is above what lasts on these numbers, so wishes wait."
+        wishes += " Your goal is above what lasts, so wishes wait."
     actions = [Action(title=x["title"], why=x["why"]) for x in ranked_levers(p, m)[:2]]
     working = (p.retire_age or 65) > (p.age or 45)
     years_left = (p.retire_age or 65) - (p.age or 45)
     lim = tx.get("limits_2027") or {}
     near_limit = bool(lim) and costs.contributions(p)["you"] >= CATCH_UP_SHARE * lim["401k_limit"]
     if working and years_left >= MATCH_MIN_YEARS and (p.age or 45) >= 50 and lim and near_limit:
-        actions.append(Action(title="Use the catch-up limit in your 401(k)",
+        actions.append(Action(title=f"Add the {money(lim['401k_catch_up_50_plus'])} catch-up to your 401(k)",
                               why=f"From 50 you may add {money(lim['401k_catch_up_50_plus'])} a year on top of the {money(lim['401k_limit'])} limit."))
     elif working and years_left >= MATCH_MIN_YEARS:
-        actions.append(Action(title="Save a little more each year until you retire",
-                              why="Each dollar saved now has years to grow, and it lowers what you must draw later."))
+        actions.append(Action(title=f"Save {money(save_more_month(p))} more a month",
+                              why="Money saved now has years to grow. It also means less to draw later."))
     claim, _, already = plan_claims(p, m)
     if claim is not None and not already and (p.age or 0) < claim:
         actions.append(Action(title=f"Plan to claim Social Security at {claim}",
-                              why=f"In this plan that pays about {money(m.get('social_security_per_year') or p.social_security_per_year)} a year for the household."))
+                              why=f"That pays about {money(m.get('social_security_per_year') or p.social_security_per_year)} a year for your household."))
     nb = ctx.results.get("neighbors") or {}
-    why_mix = nb.get("note") or "This mix balances growth against falls in the market."
+    why_mix = mix_why(nb)
     actions.append(Action(title=f"Keep about {round(m['stock_share_now'] * 100)}% of savings in stocks now", why=why_mix))
     spares = [Action(**x) for x in SPARES]
     actions += spares[:max(0, 3 - len(actions))]
     return AdviserOut(needs_line=needs, wants_line=wants_line, wishes_line=wishes, actions=actions[:3])
+
+
+def save_more_month(p) -> float:
+    """The "save more" step: a twentieth of pay a year, said as a round sum a month (at least $100)."""
+    return max(100, round(SAVE_MORE_SHARE * p.household_pay() / 12, -2))
+
+
+WHATIF_OF_TITLE = [(re.compile(r"^Save \$([\d,]+) more a month$"), "What if I save ${} a month more"),
+                   (re.compile(r"^Retire at (\d{2})\b"), "What if I retire at {}"),
+                   (re.compile(r"^Claim Social Security at (\d{2})$"), "What if I claim Social Security at {}"),
+                   (re.compile(r"^Spend \$([\d,]+) less a year now$"), "What if I spend ${} a year less now")]
+
+
+def action_whatif(p, m: dict | None, a: dict) -> str:
+    """The What If that runs exactly an action's change (the frontend's Try it), or '' when it maps to none: the lever's
+    own text, else one read from a title of a known shape. Never the plan as it stands, an age past 70 or one already passed,
+    and only a text the What If reader turns into a change."""
+    from .. import pipeline
+    txt = a.get("whatif_text") or ""
+    if not txt:
+        for rx, form in WHATIF_OF_TITLE:
+            mm = rx.match((a.get("title") or "").strip().rstrip("."))
+            if mm:
+                txt = form.format(mm.group(1))
+                break
+    if not txt or p is None or _repeats_plan(p, {"whatif_text": txt}) or not lever_ok(p, txt):
+        return ""
+    if m is not None and (cm := re.search(r"social security at (\d{2})", txt.lower())):
+        claim, _, already = plan_claims(p, m)
+        if already or int(cm.group(1)) == claim:
+            return ""
+    if not a.get("whatif_text"):
+        try:
+            ch = pipeline.parse_whatif(txt, p)
+        except Exception:       # noqa: BLE001  a What If that cannot be read is simply not offered
+            ch = None
+        if not ch or "shock" in ch:
+            return ""
+    return txt
 
 
 LEVER_WORDS = {"goal": ("goal", "spend", "safe level"), "debt": ("debt", "loan", "card"), "match": ("match",),
@@ -474,15 +580,22 @@ def _same_action(a: dict, b: dict) -> bool:
     return bool(x) and bool(y) and (x == y or x[:4] == y[:4])
 
 
+def mix_why(nb: dict) -> str:
+    """The stock mix action's reason, one short sentence: whose plan was kept."""
+    if not nb.get("note"):
+        return "This mix balances growth against falls in the market."
+    return ("A similar household's plan keeps your needs safest." if nb.get("used") else "A simple stock mix keeps your needs safest.")
+
+
 SPARES = [{"title": "Check your plan once a year",
-           "why": "Markets, prices and your own needs change. A yearly check keeps the plan close to the facts."},
-          {"title": "Draw on taxable savings first",
-           "why": "Then pre-tax accounts, and Roth accounts last. That order usually keeps the tax bill lower."}]
+           "why": "Markets and your needs change. Check again once a year."},
+          {"title": "Use taxable savings first",
+           "why": "Use 401(k) money next and Roth last. This usually lowers your taxes."}]
 CONCRETE = ("debt", "match")      # the actions that move money now: pay the high-rate debt, claim the match
-STATUS_RE = re.compile(r"^\s*(?:keep\b(?! about \d)|continue|stay|stick|maintain|remain|plan for your money to last)\b", re.I)
+STATUS_RE = re.compile(r"^\s*(?:keep\b(?! about \d)(?! \d)|continue|stay|stick|maintain|remain|plan for your money to last|make your needs safe|get on track)\b", re.I)
 
 
-def order_actions(ranked: list[dict], written: list) -> list[dict]:
+def order_actions(ranked: list[dict], written: list, p=None, m: dict | None = None) -> list[dict]:
     """The three actions, built in code from the tools' figures: the goal gap first when there is one, then the top
     concrete money action (high-rate debt, the employer match), then the next levers by dollar impact. The adviser's own
     actions fill what is left, and no action repeats another."""
@@ -492,7 +605,7 @@ def order_actions(ranked: list[dict], written: list) -> list[dict]:
         head += [x for x in ranked[2:] if x not in head][:3 - len(head)]   # then the next real lever, before any filler
     out: list[dict] = []
     for x in head:
-        a = {"title": x["title"], "why": x["why"]}
+        a = {"title": x["title"], "why": x["why"], "whatif_text": x.get("whatif_text") or ""}
         if not any(_same_action(a, o) for o in out):
             out.append(a)
     used = [w for x in head for w in LEVER_WORDS.get(x["key"], ())]
@@ -514,7 +627,10 @@ def order_actions(ranked: list[dict], written: list) -> list[dict]:
     add([a for a in cands if not repeats_lever(a) and not status(a)])
     add([dict(a) for a in SPARES])
     add([a for a in cands if not status(a)])
-    return out[:3]
+    out = out[:3]
+    for a in out:
+        a["whatif_text"] = action_whatif(p, m, a)
+    return out
 
 
 def _repeats_plan(p, x: dict) -> bool:
@@ -550,11 +666,11 @@ def costs_by_age(ctx: RunCtx) -> dict:
     tl = costs.trim_timeline(c["timeline"], h)
     ltc = c["ltc"]
     p = ctx.profile
-    notes = [f"Long-term care is not in these figures. A private nursing home room costs about ${ltc['nursing_home_per_year']:,.0f} a year, "
-             f"and care lasts about {ltc['typical_years']:g} years on average."
+    notes = [f"Long-term care is not in these figures. A private nursing home room costs about ${ltc['nursing_home_per_year']:,.0f} a year. "
+             f"Care lasts about {ltc['typical_years']:g} years on average."
              + (" You said you have cover." if p.insurance.ltc else "")]
     if (p.age or 0) < costs.MEDICARE_AGE:
-        notes.append(f"Before Medicare at 65 a retired person pays about ${costs.PRE_MEDICARE_PREMIUM:,.0f} a year for health cover (an assumption).")
+        notes.append(f"Before Medicare at 65, health cover costs about ${costs.PRE_MEDICARE_PREMIUM:,.0f} a year. This is a guess.")
     # "costs now" is the spending-now figure the answers panel shows, so the two always agree
     now = round(p.spending_now_per_year) if p.spending_now_per_year else tl["total"][0]
     return {"ages": tl["ages"], "total": tl["total"], "basics": tl["basics"], "events": tl["events"], "parts": tl.get("parts", []),
@@ -579,11 +695,11 @@ def worth_checking(p, m: dict) -> list[dict]:
     no_life = ins.life_kind in (None, "none") or not (ins.life_face or 0)
     if dependants and working and no_life:
         out.append({"kind": "term_life", "title": "Term life insurance",
-                    "why": "People depend on your pay and your answers show no life cover. Term life pays your household a sum if you die "
+                    "why": "People depend on your pay, and you have no life cover. Term life pays your household if you die "
                            "while you still work. " + CHECK_NOTE})
     if dependants and working and ins.disability is not True and (p.pay_per_year or 0) > 0:
         out.append({"kind": "disability", "title": "Disability insurance",
-                    "why": "People depend on your pay and your answers show no disability cover. It replaces part of your pay if illness "
+                    "why": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness "
                            "or injury stops you working. " + CHECK_NOTE})
     single = not p.has_partner
     # no field says "I worry about outliving my money", so the plan stands in: savings are large enough to matter and the
@@ -591,8 +707,8 @@ def worth_checking(p, m: dict) -> list[dict]:
     longevity = (m.get("low_at_horizon") or 0) <= 0 or (m.get("goal_lasts_of_100") or 0) < 100
     if single and p.savings.total >= ANNUITY_MIN_SAVINGS and longevity and not p.pensions and (p.age or 0) >= 50:
         out.append({"kind": "income_annuity", "title": "An income annuity",
-                    "why": "You are one person with savings that may not last in a long life. An income annuity trades part of your savings "
-                           "for a fixed sum each year for life. The sum loses value to inflation and the money cannot be taken back. "
+                    "why": "Your savings may not last a long life. An income annuity trades part of them for a fixed sum each year for life. "
+                           "The sum loses value to inflation, and you cannot take the money back. "
                            "This is information only. " + CHECK_NOTE})
     return out
 
@@ -649,43 +765,44 @@ def assumptions(ctx: RunCtx) -> list[str]:
     p, m = ctx.profile, ctx.results["markets"]
     lon = ctx.results["longevity"]
     age, ra = p.age or 45, p.retire_age or 65
-    out = ["All figures are in today's dollars: what money buys now, not the larger sums prices will reach."]
-    out.append(f"Savings grow on average {sim.STOCK_MU * 100:.1f}% a year above inflation in stocks and {sim.BOND_MU * 100:.1f}% in bonds, "
-               "with good and bad years. The plan tests many possible market paths. These are planning figures, not a forecast. "
-               "They are fixed, so every plan is tested on the same markets; to see a bad stretch, try a What If such as markets fall 30%.")
+    out = ["All figures are in today's dollars. That is what money buys now."]
+    out.append(f"Stocks grow {sim.STOCK_MU * 100:.1f}% a year above inflation on average, and bonds {sim.BOND_MU * 100:.1f}%. "
+               "Some years are good and some are bad. These are planning figures, not a forecast. "
+               "They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.")
+    out.append("A market test is one made-up run of the markets, year by year. We test many of them. "
+               "'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.")
     if any(not x.inflation_adjusted for x in p.pensions):
-        out.append(f"A pension with no yearly rise for prices loses about {sim.INFLATION * 100:.1f}% of its value each year.")
+        out.append(f"A pension that never rises loses about {sim.INFLATION * 100:.1f}% of its value each year.")
     # saving until retirement: the figure the answers show as "Yearly saving"
     if ra > age:
         sv = saving_used(ctx)
         acc = sv["accounts_per_year"]
-        tag = " (assumed: 10% of pay)" if sv["assumed"] else ""
         parts = []
         if acc:
-            parts.append(f"{money(acc)} into a 401(k) or IRA{tag}")
+            parts.append(f"{money(acc)} goes into a 401(k) or IRA" + (": that is assumed, 10% of pay" if sv["assumed"] else ""))
         if sv["match_per_year"]:
-            parts.append(f"{money(sv['match_per_year'])} from your employer's match")
+            parts.append(f"Your employer's match adds {money(sv['match_per_year'])}")
         if sv["other_per_year"]:
-            parts.append(f"{money(sv['other_per_year'])} of other saving")
+            parts.append(f"{money(sv['other_per_year'])} is other saving")
         if sv["unspent_pay_per_year"] > 0:
-            parts.append(f"{money(sv['unspent_pay_per_year'])} of take-home pay left after your spending, which the plan assumes you save")
+            parts.append(f"{money(sv['unspent_pay_per_year'])} is take-home pay left after spending, which the plan assumes you save")
         if sv["per_year"] < 0:
-            out.append(f"Your spending now is about {money(-sv['per_year'])} a year more than your take-home pay, so until you retire "
-                       "the plan takes that from your savings each year. If that is wrong, change your spending now or your pay.")
+            out.append(f"You spend about {money(-sv['per_year'])} a year more than your take-home pay. Until you retire, "
+                       "the plan takes that from your savings. If that is wrong, change your spending now or your pay.")
         elif sv["unspent_pay_per_year"] < 0:
-            out.append(f"Until you retire you save about {money(sv['per_year'])} a year: what your take-home pay leaves after your "
-                       "spending now" + (", which is less than the 10% of pay assumed" if sv["assumed"] else ", which is less than the saving you gave")
-                       + (f", plus {money(sv['match_per_year'])} from your employer's match" if sv["match_per_year"] else "")
-                       + ". If that is wrong, change 'Yearly saving' or your spending now in your answers.")
+            out.append(f"Until you retire you save about {money(sv['per_year'])} a year. That is what your take-home pay leaves after spending"
+                       + (". It is less than the 10% of pay assumed" if sv["assumed"] else ". It is less than the saving you gave")
+                       + (f". Your employer's match adds {money(sv['match_per_year'])}" if sv["match_per_year"] else "")
+                       + ". If that is wrong, change 'Yearly saving' or your spending now.")
         elif parts:
-            out.append(f"Until you retire you save about {money(sv['per_year'])} a year: " + ", ".join(parts) +
+            out.append(f"Until you retire you save about {money(sv['per_year'])} a year. " + ". ".join(x[0].upper() + x[1:] for x in parts) +
                        ". If that is wrong, change 'Yearly saving' in your answers.")
-        out.append("Pay stays at today's level until you retire, with no raises. This is fixed: raises are not certain, so the plan "
-                   "does not count on them. If your pay changes, change it in your answers.")
+        out.append("Pay stays the same until you retire. The plan counts no raises, since they are not certain. "
+                   "If your pay changes, update it in your answers.")
         mort = costs.mortgage_end(p)
         if mort and costs.mortgage_separate(p) and mort["years_left"] > ra - age:
-            out.append(f"Your spending in retirement leaves out the mortgage. The payments left after you retire, until {mort['end_year']}, "
-                       "are counted as a cost of their own.")
+            out.append(f"Your retirement spending leaves out the mortgage. Payments after you retire, until {mort['end_year']}, "
+                       "are a separate cost.")
     aside = p.notes.get("spending_now_per_year_set_aside") or p.notes.get("spending_per_year_set_aside")
     if aside:
         out.append(aside)
@@ -694,40 +811,40 @@ def assumptions(ctx: RunCtx) -> list[str]:
     # Social Security: the basis, then the age it starts in this plan
     b = ss_basis(p, m)
     if b["already"] and b["claim_age"] is not None:
-        out.append(f"You already get Social Security (from {b['claim_age']}): the plan uses the {money(b['panel_per_year'])} a year you gave.")
+        out.append(f"You already get Social Security, from {b['claim_age']}. The plan uses the {money(b['panel_per_year'])} a year you gave.")
     elif b["claim_age"] is not None:
         if p.sources.get("social_security_per_year") == "estimate":
-            first = (f"Social Security is a rough estimate from today's pay, for work from about 22 until you retire "
-                     f"(with fewer than {estimates.FULL_CAREER_YEARS} years of work, the missing years count as zero). "
+            first = (f"Social Security is a rough guess from today's pay. We count work from about 22 until you retire. "
+                     f"Missing years under {estimates.FULL_CAREER_YEARS} count as zero. "
                      "Your own figure is at ssa.gov/myaccount.")
         else:
-            first = "Social Security uses the figure you gave" + ("." if p.claim_age is not None else ", read as the benefit at 67.")
+            first = "Social Security uses the figure you gave" + ("." if p.claim_age is not None else ", as the benefit at 67.")
         when = _when(b["claim_age"], b["partner_claim_age"])
         if b["same"]:
             out.append(first + f" It starts {when}: {money(b['plan_per_year'])} a year.")
         else:
             out.append(first + f" Your answers show {money(b['panel_per_year'])} a year from {b['panel_age']}. This plan starts it "
-                       f"{when}, which pays about {money(b['plan_per_year'])} a year.")
+                       f"{when}. That pays about {money(b['plan_per_year'])} a year.")
         if b["partner_claim_age"] is not None:
-            out.append("A partner with little pay of their own gets half of the other's benefit at 67, less if started sooner.")
+            out.append("A partner with little pay gets half of the other's benefit at 67. It is less if started sooner.")
     if m.get("social_security_survivor_per_year") and p.has_partner:
-        out.append(f"After the first death (at the shorter life expectancy), Social Security falls to the larger of your two benefits, "
-                   f"about {money(m['social_security_survivor_per_year'])} a year, and spending falls to "
+        out.append(f"After the first death, the one left keeps the larger Social Security check, "
+                   f"about {money(m['social_security_survivor_per_year'])} a year. Spending falls to "
                    f"{round(config.SURVIVOR_SPEND_SHARE * 100)}% of what the two of you spend.")
     if age < costs.MEDICARE_AGE:
-        out.append(f"If you retire before Medicare starts at 65, health cover costs about {money(costs.PRE_MEDICARE_PREMIUM)} a person "
-                   "a year until then (an assumption). Other health costs follow CMS figures by age.")
+        out.append(f"If you retire before 65, health cover costs about {money(costs.PRE_MEDICARE_PREMIUM)} a person "
+                   "a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.")
     state_ss = "" if tax_mod.state_exempts_ss(p.state, max(age, ra)) else " Your state taxes part of it too."
     work = ""
     if ra > age and p.household_pay() > 0:
         kids = any((c.age or 99) < costs.CHILD_CREDIT_AGE for c in p.children)
-        work = " While you work, 401(k) saving comes off taxable pay" + (" and the child tax credit applies." if kids else ".")
-    out.append("Tax uses the 2027 federal brackets, the standard deduction and your state's rates." + work +
-               " In retirement the plan counts 85% of Social Security as taxable, the most the law allows, so the tax may be "
-               "a little high." + state_ss)
+        work = " While you work, 401(k) saving lowers your taxable pay." + (" The child tax credit applies." if kids else "")
+    out.append("Tax uses 2027 federal rates, the standard deduction and your state's rates." + work +
+               " In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a "
+               "little high." + state_ss)
     out.append(f"The plan runs {horizon_text(p, lon)}. There is about a 1 in 4 chance that "
-               + ("one of you" if p.has_partner else "you") + " will live that long (US life table, SOA 2024). "
-               "People with more money tend to live longer than that table says.")
+               + ("one of you" if p.has_partner else "you") + " will live that long. This comes from a US life table. "
+               "People with more money often live longer.")
     return out
 
 
@@ -806,12 +923,13 @@ def assemble(ctx: RunCtx, out: AdviserOut, source: str) -> dict:
         "needs": {"basics_per_year": basics, "paid_of_100": m.get("basics_paid_of_100"), "line": out.needs_line,
                   "basis": fam["basics"].get("basis", "typical")},
         "headline": headline(m, basics),
+        "headline_why": below_ss_why(m),
         # wants = what you can count on a year (safe in 90 of 100 scenarios), basics included; the headline's figure
         "wants": {"per_year": safe, "above_basics_per_year": above_basics(m, basics),
                   "line": headline(m, basics) if wants_thin(m, basics) else out.wants_line},
         "count_on_per_year": safe,
         "wishes": {"line": out.wishes_line},
-        "actions": order_actions(ranked, out.actions),
+        "actions": order_actions(ranked, out.actions, p, m),
         "worth_checking": worth_checking(p, m),
         "family_moments": fam["moments"],
         "neighbors": {"used": bool(nb.get("used")), "note": nb.get("note", ""), "candidates_tested": nb.get("candidates_tested", []),
@@ -838,7 +956,13 @@ async def run(ctx: RunCtx) -> dict:
     # the analysis (app/analysis.py) runs in a thread beside the model call, so it adds little time to the plan
     job = asyncio.create_task(asyncio.to_thread(plan_analysis, ctx)) if ctx.options and not ctx.shock else None
     b = ss_basis(ctx.profile, m0)
-    m0["ss_when"] = "" if b["same"] or b["claim_age"] is None else " (starting " + _when(b["claim_age"], b["partner_claim_age"]) + " in this plan)"
+    m0["ss_when"] = "" if b["same"] or b["claim_age"] is None else " It starts " + _when(b["claim_age"], b["partner_claim_age"]) + " in this plan."
+    # the figures the code puts in action titles (round 4: "Spend $8,000 less a year", "Save $500 more a month") are tool
+    # figures too: the model may repeat them and the template uses them, so the number check allows them
+    for x in ranked_levers(ctx.profile, m0):
+        ctx.extra_facts += [v for v in (x.get("numbers") or {}).values() if isinstance(v, (int, float))]
+        ctx.extra_facts += [float(s.replace(",", "")) for s in re.findall(r"\$(\d[\d,]*)", x["title"] + " " + x["why"])]
+    ctx.extra_facts.append(save_more_month(ctx.profile))
     allowed = allowed_for_adviser(ctx)
     findings = {k: {"headline": f["headline"], "details": f["details"]} for k, f in ctx.findings.items()}
     m = ctx.results["markets"]
@@ -908,7 +1032,7 @@ def plan_analysis(ctx: RunCtx) -> dict | None:
 
 LITTLE_ROOM = re.compile(r"little room|not much room|thin|tight", re.I)
 FALLS_SHORT = re.compile(r"falls? short|fell short|does not work|doesn't work", re.I)
-ABOUT_BASICS = re.compile(r"\babout (?:the|your) basics\b", re.I)
+ABOUT_BASICS = re.compile(r"\babout (?:the|your) (?:basics|needs)\b", re.I)
 
 
 def _first_sentence(t: str) -> str:

@@ -1,0 +1,16 @@
+{
+ "id": "s05",
+ "path": "early",
+ "kind": "close",
+ "gap": 1300,
+ "text": "Readiness: 96 of 100\nClose. A few changes get you there.\nShort $1,300 a year\nNeeds: $33,000 a year. Paid in 94 of 100 market tests. Safe.\nWants: $700 a year on top of your needs. You can count on $33,700 in all. Sure.\nWishes: $1,300 a year, the rest of your goal of $35,000. Only if markets help.\nYou can count on $33,700 a year, about your needs. Little is left for wants. That is less...\nFirst move: Set your spending goal nearer the safe level",
+ "result": {
+  "a": "no",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "Readiness 96 of 100, 'market tests', 'Wishes', 'Only if markets help', 'safe level' vs short $1,300 contradiction; text cut off",
+  "retire_age_stated": "no"
+ },
+ "grade": 1.45,
+ "words": 87
+}

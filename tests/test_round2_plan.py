@@ -64,7 +64,7 @@ def test_social_security_in_the_answers_and_the_plan_are_both_named_with_their_a
     if not b["same"]:
         assert f"at {b['claim_age']}" in text
         if "Social Security of" in plan["headline"]:
-            assert f"starting at {b['claim_age']}" in plan["headline"]
+            assert f"starts at {b['claim_age']}" in plan["headline"]
     assert f"at {b['panel_age']}" in intake_fields._ss_display(p)
 
 
@@ -94,7 +94,7 @@ def test_starting_points_each_help_and_run_as_a_what_if():
         for m in re.finditer(r"Retire at (\d+)", x["whatif_text"]):
             assert ctx.profile.age < int(m.group(1)) <= 70
     safe = any(x["makes_basics_safe"] for x in pts)
-    assert ("would make the basics safe" in plan["headline"]) == safe
+    assert ("would fix it" in plan["headline"]) == safe
     assert "Starting points:" not in plan["actions"][0]["why"]
     # a retire or claim point is read by the What If parser the same way
     for x in pts:
@@ -106,7 +106,7 @@ def test_starting_points_each_help_and_run_as_a_what_if():
 def test_starting_points_never_offer_a_point_that_does_nothing():
     plan, _ = plan_for(dict(PARENT, spending_now_per_year=61000, spending_per_year=54000))
     for x in plan["starting_points"]:
-        assert "(now" in x["result"]
+        assert " now." in x["result"] and "against" in x["result"]
 
 
 def test_retire_later_steps_one_or_two_years_first():
@@ -137,7 +137,7 @@ def test_assumptions_in_order_and_plain():
     plan, _ = plan_for(TEACHERS)
     a = plan["assumptions"]
     assert a[0].startswith("All figures are in today's dollars")
-    assert "above inflation" in a[1] and "many possible market paths" in a[1]
+    assert "above inflation" in a[1] and "market test" in " ".join(a[:3])
     text = " ".join(a)
     assert "2,000" not in text and "annuit" not in text and "scenarios" not in text
     idx = {k: next(i for i, x in enumerate(a) if k in x) for k in ("save about", "Social Security", "After the first death", "Medicare", "Tax uses", "The plan runs")}
@@ -248,7 +248,8 @@ def test_a_new_child_does_not_raise_count_on_for_a_single_parent():
 
 def test_count_on_below_social_security_is_always_explained():
     m = {"safe_spending_per_year": 20000, "social_security_per_year": 22000}
-    assert "That is because" in adviser.below_ss_note(m)      # two short sentences (R18): "... a year. That is because ..."
+    assert "less than your Social Security" in adviser.headline(m, 18000)       # the comparison is on the headline
+    assert "That is because" in adviser.below_ss_why(m)      # the reason is its own short sentence (R18)
 
 
 def test_low_value_actions_are_left_out():

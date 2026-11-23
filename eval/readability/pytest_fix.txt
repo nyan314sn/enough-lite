@@ -1,0 +1,307 @@
+F..FFF..F......FFFF...................F................................. [ 16%]
+..................F................................................F.... [ 32%]
+.......F................................................................ [ 48%]
+...............................................................F........ [ 65%]
+........................................................................ [ 81%]
+.....................................................F.....F............ [ 97%]
+.......F.                                                                [100%]
+================================== FAILURES ===================================
+_____________________________ test_score_is_sane ______________________________
+
+    def test_score_is_sane():
+        easy = measure.stats("You can count on $40,000 a year. That is about your needs. Little is left for wants.")
+        hard = measure.stats("Notwithstanding considerable uncertainty regarding macroeconomic conditions, prospective "
+                             "retirement expenditures necessitate comprehensive actuarial reconsideration of contribution trajectories.")
+        assert easy["grade"] < 6 and easy["longest"] <= 9
+        assert hard["grade"] > 16 and hard["sentences"] == 1
+>       assert measure.syllables("retirement") == 3 and measure.syllables("make") == 1 and measure.syllables("$53,400") == 2
+E       AssertionError: assert (4 == 3)
+E        +  where 4 = <function syllables at 0x000001F182749170>('retirement')
+E        +    where <function syllables at 0x000001F182749170> = measure.syllables
+
+tests\test_readability.py:37: AssertionError
+_______ test_plan_text_uses_needs_wants_wishes_and_market_tests[doctor] _______
+
+sid = 'doctor'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_plan_text_uses_needs_wants_wishes_and_market_tests(sid):
+        for kind, t in _plan_texts(_plan(sid)):
+>           assert not re.search(r"\bbasics\b|\bscenarios?\b|market paths?\b|baseline plan", t, re.I), (kind, t)
+E           AssertionError: ('analysis', 'The biggest risk: stocks do badly for 10 years. You could count on $102,500 a year, and your basics are paid in 100 of 100 market tests.')
+E           assert not <re.Match object; span=(93, 99), match='basics'>
+E            +  where <re.Match object; span=(93, 99), match='basics'> = <function search at 0x000001F1F4B83D70>('\\bbasics\\b|\\bscenarios?\\b|market paths?\\b|baseline plan', 'The biggest risk: stocks do badly for 10 years. You could count on $102,500 a year, and your basics are paid in 100 of 100 market tests.', re.IGNORECASE)
+E            +    where <function search at 0x000001F1F4B83D70> = re.search
+E            +    and   re.IGNORECASE = re.I
+
+tests\test_readability.py:88: AssertionError
+________ test_plan_text_uses_needs_wants_wishes_and_market_tests[s071] ________
+
+sid = 's071'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_plan_text_uses_needs_wants_wishes_and_market_tests(sid):
+        for kind, t in _plan_texts(_plan(sid)):
+>           assert not re.search(r"\bbasics\b|\bscenarios?\b|market paths?\b|baseline plan", t, re.I), (kind, t)
+E           AssertionError: ('analysis', 'The biggest risk: stocks do badly for 10 years. You could count on $84,900 a year, and your basics are paid in 100 of 100 market tests.')
+E           assert not <re.Match object; span=(92, 98), match='basics'>
+E            +  where <re.Match object; span=(92, 98), match='basics'> = <function search at 0x000001F1F4B83D70>('\\bbasics\\b|\\bscenarios?\\b|market paths?\\b|baseline plan', 'The biggest risk: stocks do badly for 10 years. You could count on $84,900 a year, and your basics are paid in 100 of 100 market tests.', re.IGNORECASE)
+E            +    where <function search at 0x000001F1F4B83D70> = re.search
+E            +    and   re.IGNORECASE = re.I
+
+tests\test_readability.py:88: AssertionError
+________ test_plan_text_uses_needs_wants_wishes_and_market_tests[e24] _________
+
+sid = 'e24'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_plan_text_uses_needs_wants_wishes_and_market_tests(sid):
+        for kind, t in _plan_texts(_plan(sid)):
+>           assert not re.search(r"\bbasics\b|\bscenarios?\b|market paths?\b|baseline plan", t, re.I), (kind, t)
+E           AssertionError: ('analysis', 'The biggest risk: the first death comes 10 years early. You could count on $59,700 a year, and your basics are paid in 100 of 100 market tests.')
+E           assert not <re.Match object; span=(100, 106), match='basics'>
+E            +  where <re.Match object; span=(100, 106), match='basics'> = <function search at 0x000001F1F4B83D70>('\\bbasics\\b|\\bscenarios?\\b|market paths?\\b|baseline plan', 'The biggest risk: the first death comes 10 years early. You could count on $59,700 a year, and your basics are paid in 100 of 100 market tests.', re.IGNORECASE)
+E            +    where <function search at 0x000001F1F4B83D70> = re.search
+E            +    and   re.IGNORECASE = re.I
+
+tests\test_readability.py:88: AssertionError
+_________________________ test_headline_is_short[e24] _________________________
+
+sid = 'e24'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_headline_is_short(sid):
+        h = _plan(sid)["headline"]
+        first = measure.sentences(h)[0]
+        assert len(measure.words(first)) <= 15, h
+>       assert len(measure.words(h)) <= 32, h
+E       AssertionError: You can count on $67,700 a year: $39,900 for needs, $27,800 for wants. That is less than your Social Security of $78,900 a year, which starts at 69 for each of you in this plan.
+E       assert 35 <= 32
+E        +  where 35 = len(['You', 'can', 'count', 'on', '$67,700', 'a', ...])
+E        +    where ['You', 'can', 'count', 'on', '$67,700', 'a', ...] = <function words at 0x000001F182749430>('You can count on $67,700 a year: $39,900 for needs, $27,800 for wants. That is less than your Social Security of $78,900 a year, which starts at 69 for each of you in this plan.')
+E        +      where <function words at 0x000001F182749430> = measure.words
+
+tests\test_readability.py:98: AssertionError
+___________________ test_what_if_replies_are_short[doctor] ____________________
+
+sid = 'doctor'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_what_if_replies_are_short(sid):
+        h = _sample(sid)
+        for q in measure.whatif_questions(h["profile"]):
+            r = asyncio.run(pipeline.ask(q, h["profile"], "t", use_ai=False))
+            text = r["text"]
+            assert "baseline plan" not in text and "(" not in text, text
+>           _check_sentences([text], "what if")
+
+tests\test_readability.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+texts = ['If you save $6,000 more a year and spend that much less now, you can count on $115,200 a year, up from $111,600. Your goal lasts in 96 of 100 market tests, up from 94. That makes about $96,634 a year saved in all, 31% of pay.']
+what = 'what if'
+
+    def _check_sentences(texts: list[str], what: str) -> None:
+        for t in texts:
+            longest = measure.stats(t)["longest"]
+>           assert longest <= SENTENCE_MAX, f"{what}: a {longest}-word sentence: {t}"
+E           AssertionError: what if: a 23-word sentence: If you save $6,000 more a year and spend that much less now, you can count on $115,200 a year, up from $111,600. Your goal lasts in 96 of 100 market tests, up from 94. That makes about $96,634 a year saved in all, 31% of pay.
+E           assert 23 <= 20
+
+tests\test_readability.py:82: AssertionError
+____________________ test_what_if_replies_are_short[s071] _____________________
+
+sid = 's071'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_what_if_replies_are_short(sid):
+        h = _sample(sid)
+        for q in measure.whatif_questions(h["profile"]):
+            r = asyncio.run(pipeline.ask(q, h["profile"], "t", use_ai=False))
+            text = r["text"]
+            assert "baseline plan" not in text and "(" not in text, text
+>           _check_sentences([text], "what if")
+
+tests\test_readability.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+texts = ['If you save $6,000 more a year and spend that much less now, you can count on $93,800 a year, up from $91,300. Your goal lasts in 83 of 100 market tests, up from 78. That makes about $27,405 a year saved in all, 17% of pay.']
+what = 'what if'
+
+    def _check_sentences(texts: list[str], what: str) -> None:
+        for t in texts:
+            longest = measure.stats(t)["longest"]
+>           assert longest <= SENTENCE_MAX, f"{what}: a {longest}-word sentence: {t}"
+E           AssertionError: what if: a 23-word sentence: If you save $6,000 more a year and spend that much less now, you can count on $93,800 a year, up from $91,300. Your goal lasts in 83 of 100 market tests, up from 78. That makes about $27,405 a year saved in all, 17% of pay.
+E           assert 23 <= 20
+
+tests\test_readability.py:82: AssertionError
+_____________________ test_what_if_replies_are_short[e24] _____________________
+
+sid = 'e24'
+
+    @pytest.mark.parametrize("sid", SAMPLES)
+    def test_what_if_replies_are_short(sid):
+        h = _sample(sid)
+        for q in measure.whatif_questions(h["profile"]):
+            r = asyncio.run(pipeline.ask(q, h["profile"], "t", use_ai=False))
+            text = r["text"]
+            assert "baseline plan" not in text and "(" not in text, text
+>           _check_sentences([text], "what if")
+
+tests\test_readability.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+texts = ['If you save $6,000 more a year and spend that much less now, you can count on $71,800 a year, up from $67,700. Your goal lasts in 43 of 100 market tests, up from 24. That makes about $36,231 a year saved in all, 18% of pay.']
+what = 'what if'
+
+    def _check_sentences(texts: list[str], what: str) -> None:
+        for t in texts:
+            longest = measure.stats(t)["longest"]
+>           assert longest <= SENTENCE_MAX, f"{what}: a {longest}-word sentence: {t}"
+E           AssertionError: what if: a 23-word sentence: If you save $6,000 more a year and spend that much less now, you can count on $71,800 a year, up from $67,700. Your goal lasts in 43 of 100 market tests, up from 24. That makes about $36,231 a year saved in all, 18% of pay.
+E           assert 23 <= 20
+
+tests\test_readability.py:82: AssertionError
+_____________ test_intake_replies_for_the_example_chat_are_short ______________
+
+    def test_intake_replies_for_the_example_chat_are_short():
+        replies = []
+        for conv in measure.EXAMPLE_TURNS[:4]:
+            prof: dict = {}
+            for turn in conv:
+                r = asyncio.run(intake.run(turn, prof, use_ai=False))
+                prof = r.profile
+                replies.append(r.reply or "")
+                if r.question:
+                    assert len(measure.words(r.question.text)) <= 32, r.question.text
+        replies = [x for x in replies if x]
+        assert statistics.mean(len(measure.words(x)) for x in replies) <= 32
+        for x in replies:
+>           _check_sentences([x], "intake reply")
+
+tests\test_readability.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+texts = ['Got it: you live in Ohio, you are 67, you have no pay now, you want to retire at 67 and your household Social Security is $25,200 a year. I filled in 3 more with typical figures. Each is marked in the panel, so you can change it.']
+what = 'intake reply'
+
+    def _check_sentences(texts: list[str], what: str) -> None:
+        for t in texts:
+            longest = measure.stats(t)["longest"]
+>           assert longest <= SENTENCE_MAX, f"{what}: a {longest}-word sentence: {t}"
+E           AssertionError: intake reply: a 29-word sentence: Got it: you live in Ohio, you are 67, you have no pay now, you want to retire at 67 and your household Social Security is $25,200 a year. I filled in 3 more with typical figures. Each is marked in the panel, so you can change it.
+E           assert 29 <= 20
+
+tests\test_readability.py:82: AssertionError
+__________ test_long_reply_is_short_and_still_discloses_assumptions ___________
+
+    def test_long_reply_is_short_and_still_discloses_assumptions():
+        r = run(LONG)
+>       assert len(r.reply.split()) <= 60, r.reply
+E       AssertionError: Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay is $310,000 a year and you want to retire at 62. Also: the 13-year-old goes to a public in-state college, the 10-year-old goes to a private college and the 6-year-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.
+E       assert 78 <= 60
+E        +  where 78 = len(['Got', 'it.', 'I', 'noted', '18', 'facts', ...])
+E        +    where ['Got', 'it.', 'I', 'noted', '18', 'facts', ...] = <built-in method split of str object at 0x000001F18468A870>()
+E        +      where <built-in method split of str object at 0x000001F18468A870> = 'Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay...r-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.'.split
+E        +        where 'Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay...r-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 45, 'partner_age': 43, 'has_partner': True, 'state': 'CT', 'retire_age': 62, 'pay_per_y...status': 'default', 'note': 'Estimate: $166,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_example_household.py:48: AssertionError
+__ test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run __
+
+    def test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run():
+        r = ask("what if I work part time until 68", WORKING)
+        assert r["kind"] == "clarify"
+        assert len(re.findall(r"[.?!](?:\s|$)", r["text"])) == 1
+>       assert "can't run it" in r["text"] and "retiring at 68" in r["text"]
+E       assert ("can't run it" in 'Part-time work needs a yearly amount, so the closest What If I can run is retiring at 68.')
+
+tests\test_round2_ask.py:85: AssertionError
+__ test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes ___
+
+    def test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes():
+        r = play([MORT + ". House is worth around 330k, $45,000 left, payment about $1300 a month"])[-1]
+>       assert "worth about $330,000" in r.reply
+E       AssertionError: assert 'worth about $330,000' in 'Got it. I noted 5 facts from your message. Check them in the panel on the right. The main ones: you are 45 and you have saved $300,000. I filled in 7 more with typical figures. Each is marked in the panel, so you can change it.'
+E        +  where 'Got it. I noted 5 facts from your message. Check them in the panel on the right. The main ones: you are 45 and you have saved $300,000. I filled in 7 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 65, 'pay_pe...'status': 'default', 'note': 'Estimate: $66,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_round2_intake.py:180: AssertionError
+_____________________ test_assumptions_in_order_and_plain _____________________
+
+    def test_assumptions_in_order_and_plain():
+        plan, _ = plan_for(TEACHERS)
+        a = plan["assumptions"]
+        assert a[0].startswith("All figures are in today's dollars")
+>       assert "above inflation" in a[1] and "market path" in " ".join(a[:3])
+E       assert ('above inflation' in "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are p..., not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'." and 'market path' in "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...rkets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.")
+E        +  where "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...rkets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100." = <built-in method join of str object at 0x00007FFD7A64DCC8>(["All figures are in today's dollars. That is what money buys now.", "Stocks grow 5.0% a year above inflation on avera...kets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100."])
+E        +    where <built-in method join of str object at 0x00007FFD7A64DCC8> = ' '.join
+
+tests\test_round2_plan.py:140: AssertionError
+_______________ test_saved_editor_edit_is_not_called_unmatched ________________
+
+    def test_saved_editor_edit_is_not_called_unmatched():
+        r = _ready_household()
+        prof = dict(r.profile, pay_per_year=310000)
+        out = run("Updated your pay: $310,000.", prof)
+>       assert "did not match" not in out.reply and out.reply.strip() and ("Saved" in out.reply or "updated them" in out.reply)
+E       AssertionError: assert ('did not match' not in 'I updated s...,000 a year.'
+E         
+E         'did not match' is contained here:
+E           000 a year. and 'I updated some typical figures: spending now at $166,000 a year.' and ('Saved' in 'I updated some typical figures: spending now at $166,000 a year.' or 'updated them' in 'I updated some typical figures: spending now at $166,000 a year.'))
+E        +  where 'I updated some typical figures: spending now at $166,000 a year.' = <built-in method strip of str object at 0x000001F182F70A40>()
+E        +    where <built-in method strip of str object at 0x000001F182F70A40> = 'I updated some typical figures: spending now at $166,000 a year.'.strip
+E        +      where 'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+E        +  and   'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+E        +  and   'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_rules_audit_intake.py:280: AssertionError
+___________________ test_p35_mortgage_is_inside_the_figure ____________________
+
+    def test_p35_mortgage_is_inside_the_figure():
+        r = _no_quote(ask("does the $59,300 figure already include my mortgage payment, or is that separate?", WORKING))
+>       assert "basics" in r["text"] and "inside" in r["text"]
+E       AssertionError: assert ('basics' in 'The $90,100 a year you can count on is what you can spend a year, from every source. Your money lasts in 90 of 100 ma...ortgage payment or rent, is part of your needs ($39,600 a year), so it is already inside the figure, not on top of it.')
+
+tests\test_round3_ask.py:61: AssertionError
+___________ test_what_to_do_first_and_how_risky_come_from_the_plan ____________
+
+    def test_what_to_do_first_and_how_risky_come_from_the_plan():
+        r = _no_quote(ask("what should I do first, and how risky is the plan?", WORKING))
+>       assert "First step" in r["text"] and "market paths" in r["text"]
+E       AssertionError: assert ('First step' in 'You can count on $90,100 a year: $39,600 for needs, $50,500 for wants. Your needs cost about $39,600 a year. They are...our spending goal nearer the safe level. You are $2,900 a year over the safe $90,100. Raise your goal as savings grow.' and 'market paths' in 'You can count on $90,100 a year: $39,600 for needs, $50,500 for wants. Your needs cost about $39,600 a year. They are...our spending goal nearer the safe level. You are $2,900 a year over the safe $90,100. Raise your goal as savings grow.')
+
+tests\test_round3_ask.py:93: AssertionError
+_____________________ test_b_p2_7_your_plan_reads_of_100 ______________________
+
+    def test_b_p2_7_your_plan_reads_of_100():
+        text = ask("what if I retire at 62", WORKING)["text"]
+>       assert not re.search(r"(?:up|down) from \d+\)", text) and len(re.findall(r"of 100 market paths|of 100,", text)) >= 1, text
+E       AssertionError: If you retire at 62, you can count on $73,100 a year, down from $90,100. Your goal lasts in 46 of 100 market tests, down from 86.
+E       assert (not None and 0 >= 1)
+E        +  where None = <function search at 0x000001F1F4B83D70>('(?:up|down) from \\d+\\)', 'If you retire at 62, you can count on $73,100 a year, down from $90,100. Your goal lasts in 46 of 100 market tests, down from 86.')
+E        +    where <function search at 0x000001F1F4B83D70> = re.search
+E        +  and   0 = len([])
+E        +    where [] = <function findall at 0x000001F1F4BB5FE0>('of 100 market paths|of 100,', 'If you retire at 62, you can count on $73,100 a year, down from $90,100. Your goal lasts in 46 of 100 market tests, down from 86.')
+E        +      where <function findall at 0x000001F1F4BB5FE0> = re.findall
+
+tests\test_round3_ask.py:170: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_readability.py::test_score_is_sane - AssertionError: assert...
+FAILED tests/test_readability.py::test_plan_text_uses_needs_wants_wishes_and_market_tests[doctor]
+FAILED tests/test_readability.py::test_plan_text_uses_needs_wants_wishes_and_market_tests[s071]
+FAILED tests/test_readability.py::test_plan_text_uses_needs_wants_wishes_and_market_tests[e24]
+FAILED tests/test_readability.py::test_headline_is_short[e24] - AssertionErro...
+FAILED tests/test_readability.py::test_what_if_replies_are_short[doctor] - As...
+FAILED tests/test_readability.py::test_what_if_replies_are_short[s071] - Asse...
+FAILED tests/test_readability.py::test_what_if_replies_are_short[e24] - Asser...
+FAILED tests/test_readability.py::test_intake_replies_for_the_example_chat_are_short
+FAILED tests/test_example_household.py::test_long_reply_is_short_and_still_discloses_assumptions
+FAILED tests/test_round2_ask.py::test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run
+FAILED tests/test_round2_intake.py::test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes
+FAILED tests/test_round2_plan.py::test_assumptions_in_order_and_plain - asser...
+FAILED tests/test_rules_audit_intake.py::test_saved_editor_edit_is_not_called_unmatched
+FAILED tests/test_round3_ask.py::test_p35_mortgage_is_inside_the_figure - Ass...
+FAILED tests/test_round3_ask.py::test_what_to_do_first_and_how_risky_come_from_the_plan
+FAILED tests/test_round3_ask.py::test_b_p2_7_your_plan_reads_of_100 - Asserti...
+17 failed, 424 passed in 1149.37s (0:19:09)

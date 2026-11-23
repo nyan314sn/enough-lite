@@ -101,9 +101,9 @@ class Markets(Specialist):
     tool_doc = "Run 2,000 market scenarios for this household on the rule of thumb and report how often the money lasts."
     tool2_name = "test_similar_households"
     tool2_doc = ("Test the whole strategies of the 5 most similar households in the library, and the rule of thumb, on this "
-                 "household's numbers. Keeps the one that pays the basics most often, then leaves the most to spend.")
+                 "household's numbers. Keeps the one that pays the needs most often, then leaves the most to spend.")
     instructions = ("You are the markets specialist in a retirement-planning team. The tools have run. Say how often the spending "
-                    "goal lasts, the most the household can spend and still be safe in 90 of 100 scenarios, and which plan "
+                    "goal lasts, the most the household can spend and still be safe in 90 of 100 market tests, and which plan "
                     "was kept, in plain words (a simple plan, or the plan of a similar household). Report the kept plan's figures "
                     "only. Say plainly that markets are uncertain. A figure whose name ends in 'assumed' is an assumption, "
                     "not the person's own figure: if you use it, say it is assumed.")
@@ -119,7 +119,7 @@ class Markets(Specialist):
         return r
 
     def summary(self, r: dict) -> str:
-        return (f"{r['paths']:,} scenarios: the goal lasts in {r['goal_lasts_of_100']} of 100; "
+        return (f"{r['paths']:,} market tests: the goal lasts in {r['goal_lasts_of_100']} of 100; "
                 f"safe spending {money(r['safe_spending_per_year'])} a year.")
 
     async def run_neighbors(self, ctx: RunCtx) -> dict:
@@ -165,9 +165,9 @@ class Markets(Specialist):
         ctx.results["markets"] = chosen
         c = res["chosen"]
         await tool_event(ctx, self.name, self.tool2_name,
-                         f"Tested {len(res['candidates_tested'])} strategies; kept {c['name'].lower()}: basics paid in "
+                         f"Tested {len(res['candidates_tested'])} strategies; kept {c['name'].lower()}: needs paid in "
                          f"{c['basics_paid_of_100']} of 100, safe spending {money(c['safe_spending_per_year'])}, goal lasts in "
-                         f"{c['goal_lasts_of_100']} of 100 ({c['description']}).")
+                         f"{c['goal_lasts_of_100']} of 100. {c['description']}.")
         return res
 
     def figures(self, ctx, r):
@@ -209,13 +209,13 @@ class Markets(Specialist):
 
     def template(self, r: dict) -> tuple[str, list[str]]:
         ex = r.get("extras") or {}
-        d = [f"The most you can spend and still be safe in 90 of 100 scenarios is about {money(r['safe_spending_per_year'])} a year.",
+        d = [f"You can spend about {money(r['safe_spending_per_year'])} a year and stay safe in 90 of 100 market tests.",
              f"The plan keeps about {round(r['stock_share_now'] * 100)}% of savings in stocks now.",
-             "Markets are uncertain, so these are chances, not promises."]
+             "Markets are uncertain. These are chances, not promises."]
         if "costs_fall_when_mortgage_ends" in ex:
-            d.insert(1, f"Your costs fall by about {money(ex['costs_fall_when_mortgage_ends'])} a year when the mortgage ends in {ex['mortgage_ends_year']}.")
+            d.insert(1, f"Your costs drop about {money(ex['costs_fall_when_mortgage_ends'])} a year when the mortgage ends in {ex['mortgage_ends_year']}.")
         if ex.get("pension_per_year"):
             d.insert(1, f"Your pension adds about {money(ex['pension_per_year'])} a year before tax.")
         if ex.get("legacy_to_leave"):
             d.insert(1, f"The plan keeps {money(ex['legacy_to_leave'])} to leave behind.")
-        return (f"Your spending goal of {money(r['spending_goal_per_year'])} a year lasts in {r['goal_lasts_of_100']} of 100 scenarios.", d)
+        return (f"Your goal of {money(r['spending_goal_per_year'])} a year lasts in {r['goal_lasts_of_100']} of 100 market tests.", d)

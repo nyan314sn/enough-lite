@@ -103,7 +103,7 @@ def assignments(p: Profile) -> list[tuple[str, str]]:
     for x in p.pets:
         fam.append(f"{x.count} {x.kind}{'s' if x.count > 1 else ''}")
     out.append(("family", (f"What will {' and '.join(fam)} cost, and what" if fam else "What") +
-                f" will the basics cost once you retire in {p.state or 'the US'}?"))
+                f" will your needs cost once you retire in {p.state or 'the US'}?"))
     pay = p.household_pay()
     out.append(("tax", (f"How much tax on pay of ${pay:,.0f} a year now, and on withdrawals later?" if pay
                         else "How much tax on withdrawals in retirement?")))
@@ -136,8 +136,8 @@ def markets_question(ctx: RunCtx) -> str:
 
 def feeds_to_adviser(ctx: RunCtx) -> list[tuple[str, str]]:
     m = ctx.results["markets"]
-    out = [("markets", f"The goal lasts in {m['goal_lasts_of_100']} of 100 scenarios; basics in {m.get('basics_paid_of_100')} of 100; "
-                       f"safe spending ${m['safe_spending_per_year']:,.0f} a year ({m.get('strategy', 'simple plan').lower()}).")]
+    out = [("markets", f"The goal lasts in {m['goal_lasts_of_100']} of 100 market tests; basics in {m.get('basics_paid_of_100')} of 100; "
+                       f"safe spending ${m['safe_spending_per_year']:,.0f} a year, using the {m.get('strategy', 'simple plan').lower()}.")]
     moments = ctx.results["family"]["moments"]
     if moments:
         out.append(("family", f"{len(moments)} family moment{'s' if len(moments) != 1 else ''} to show, such as: {moments[0]}"))
@@ -325,8 +325,8 @@ def parse_whatif(q: str, p: Profile) -> dict[str, Any]:
     if shock:
         return {"shock": shock}
     if alloc:
-        return {"_say": "I can't set an exact share in stocks. The plan uses three styles, careful, balanced or growth. "
-                        "Try one of those, or test a market fall.",
+        return {"_say": "I can't set an exact share in stocks. The plan has three styles: careful, balanced or growth. "
+                        "Try one, or test a market fall.",
                 "_chips": ["What if I choose a careful mix", "What if I choose a growth mix", "What if markets fall 30%"]}
     low = whatif_read.PCT_MORE.sub(lambda m: f"save {m.group(1)}% more", low)
     hypo = bool(HYPO.search(low))
@@ -346,7 +346,7 @@ def parse_whatif(q: str, p: Profile) -> dict[str, Any]:
             return {"_say": "I plan for you on your own, so I do not model a partner's work.", "_chips": ask_plan.useful_whatifs(p)}
         if (p.partner_pay_per_year or 0) <= 0:
             she, her = {"wife": ("she stops", "her"), "husband": ("he stops", "his")}.get(pm.group(1) or "", ("they stop", "their"))
-            return {"_say": f"Your answers show no pay for {who}, so the plan does not change if {she} working. "
+            return {"_say": f"Your answers show no pay for {who}, so nothing would change if {she} working. "
                             f"If that is wrong, add {her} pay in your answers first.", "_chips": ask_plan.useful_whatifs(p)}
         return {"partner_retire_age": int(p.partner_age), "_partner_name": who, "_partner_now": True}
     if ra is not None:
@@ -491,7 +491,7 @@ def parse_whatif(q: str, p: Profile) -> dict[str, Any]:
                            "what if I earn $20,000 a year part time until 70.")
         else:
             near = until if isinstance(until, int) and until > (p.age or 0) else min(70, max((p.retire_age or 65) + 2, (p.age or 45) + 1))
-            ch["_say"] = (f"Part-time work needs a yearly amount, so I can't run it as asked; the closest What If I can run is retiring at {near}.")
+            ch["_say"] = (f"Part-time work needs a yearly amount, so I can't run it; the closest What If is retiring at {near}.")
             ch["_chips"] = [f"What if I retire at {near}", f"What if I earn $20,000 a year part time until {near}"]
     ch.pop("_part_time_no_amount", None)
     if re.search(r"\b(?:more careful|more cautious|less risk|safer|careful|cautious\w*|conservativ\w*|play(?:ed|ing)? it safe|less risky|lower risk)\b", low):
@@ -572,8 +572,8 @@ def _freed_while_working(p: Profile, paid_by_year: list[float]) -> float:
     return cut
 
 
-DEFICIT_LATER = ("You spend more now than your take-home pay, so each extra year at work is also a year of drawing on savings. "
-                 "That is why retiring later helps little or not at all.")
+DEFICIT_LATER = ("You spend more than your take-home pay, so each extra year at work still draws on savings. "
+                 "That is why retiring later helps little.")
 
 
 def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, Any]]:
@@ -675,8 +675,8 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
             save_delta = float(ch["_extra_per_year"])       # the sum asked for ($6,000), not the rounded share of pay
         now = newp.spending_now_per_year or 0.0
         if save_delta > 0 and now - save_delta < 0.5 * now:
-            notes["_say"] = (f"Saving {_money(save_delta)} more a year means spending that much less now, and you spend about "
-                             f"{_money(now)} a year. That would cut your spending by more than half. Try a smaller amount.")
+            notes["_say"] = (f"Saving {_money(save_delta)} more a year means spending that much less now. "
+                             f"That would cut your {_money(now)} a year by over half. Try a smaller amount.")
             notes["_chips"] = ["What if I save $200 more a month", "What if I spend $500 less a month"]
             return newp, notes
         if abs(save_delta) >= 1 and now:
@@ -730,8 +730,8 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
             _savings_changed(newp)
             said("debts")
             label = ", ".join(sorted({costs.DEBT_NAME.get(d.kind, "debt") for d in hit}))
-            notes["what"].append(f"you pay off your {label} ({_money(total)}) from your savings")
-            notes["after"] = (f"Your debt payments of about {_money(freed)} a year stop, and your savings fall by {_money(total)} (cash first)."
+            notes["what"].append(f"you pay off {_money(total)} of {label} from your savings")
+            notes["after"] = (f"Your debt payments of about {_money(freed)} a year stop. Your savings fall by {_money(total)}, cash first."
                               + (" " + SAVED_WHILE_WORKING if stops else ""))
 
     if "emergency_months" in ch:
@@ -749,9 +749,9 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
         newp.emergency_months = round(newp.savings.cash / monthly, 1)
         said("emergency_months")
         newp.sources["savings"] = "you said"
-        notes["what"].append(f"you hold {n:g} months of spending ({_money(target)}) in cash")
-        notes["after"] = (f"I moved {_money(moved)} from your other savings into cash. Your total savings do not change, and the scenarios use the total, "
-                          "so the figures barely move. A cash fund helps when pay stops or a big bill comes.")
+        notes["what"].append(f"you keep {n:g} months of spending, {_money(target)}, in cash")
+        notes["after"] = (f"I moved {_money(moved)} from your other savings into cash. Your total savings stay the same, "
+                          "so the figures barely move. Cash helps when pay stops or a big bill comes.")
 
     if "insurance" in ch:
         kind = ch["insurance"]
@@ -770,8 +770,8 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
         said("insurance")
         notes["what"].append(what)
         notes["only_note"] = True
-        notes["after"] = ("the plan's figures do not change, because the market scenarios do not model illness, early death or the cost of care. "
-                          "Cover protects your household against those. I have not priced it.")
+        notes["after"] = ("the plan's figures do not change. The plan does not model illness, early death or the cost of care. "
+                          "Cover protects your household from them. I have not priced it.")
 
     if "match_full" in ch:
         mi = costs.match_info(newp)
@@ -818,14 +818,14 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
             newp.emergency_months = None
         said("home")
         notes["what"].append(f"you sell your home and buy one worth {_money(new_value)} outright")
-        notes["after"] = (f"I assumed selling costs of {round(SELLING_COST * 100)}% and, unless you named a price, a new home at {round(DOWNSIZE_SHARE * 100)}% of the old "
-                          f"price. About {_money(proceeds)} goes into your savings"
-                          + (f", and your yearly spending falls by about {_money(drop)} with the mortgage payment gone" if drop else "") + ".")
+        notes["after"] = (f"I assumed selling costs of {round(SELLING_COST * 100)}%. Unless you named a price, the new home costs {round(DOWNSIZE_SHARE * 100)}% of the old "
+                          f"one. About {_money(proceeds)} goes into your savings."
+                          + (f" Your yearly spending drops about {_money(drop)} with the mortgage payment gone." if drop else ""))
 
     if "shock" in ch:
         notes["what"].append(shock_words(ch["shock"]))
-        notes["after"] = ("Your answers do not change. This tests how the plan holds up if that happens; "
-                          "the other scenarios still vary as before.")
+        notes["after"] = ("Your answers do not change. This tests how the plan holds up. "
+                          "The other market tests still vary as before.")
 
     if "claim_age" in ch:
         a = int(ch["claim_age"])
@@ -835,7 +835,7 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
         household.set_claim(newp, base, a)
         said("claim_age")
         notes["what"].append(f"you claim Social Security at {a}")
-        notes["after"] = "A later start pays more each year and a sooner start pays less (SSA)."
+        notes["after"] = "A later start pays more each year. A sooner start pays less."
 
     newp = household.complete(newp)
     if "retire_age" in ch and ch["retire_age"] > (base.retire_age or 65) and costs.saving_now(newp)["per_year"] < 0:
@@ -845,8 +845,8 @@ def apply_whatif(base: Profile, ch: dict[str, Any]) -> tuple[Profile, dict[str, 
         total = costs.saving_now(newp)["per_year"]
         pay = max(1.0, newp.household_pay())
         more = "more" if save_delta > 0 else "less"
-        notes["_save_line"] = (f"you save {_money(abs(save_delta))} {more} a year and spend that much {'less' if save_delta > 0 else 'more'} now "
-                               f"(about {_money(total)} a year saved in all, {round(100 * total / pay)}% of pay)")
+        notes["_save_line"] = f"you save {_money(abs(save_delta))} {more} a year and spend that much {'less' if save_delta > 0 else 'more'} now"
+        notes["after"] = ((notes.get("after") or "") + f" That makes about {_money(total)} a year saved in all, {round(100 * total / pay)}% of pay.").strip()
     return newp, notes
 
 
@@ -859,16 +859,16 @@ def whatif_text(ch: dict, old: dict, new: dict, notes: dict | None = None) -> st
         what.append(f"{ch.get('_partner_name') or 'your partner'} stops working now" if ch.get("_partner_now") else
                     f"{ch.get('_partner_name') or 'your partner'} retires at {ch['partner_retire_age']}")
     if ch.get("_less_by"):
-        what.append(f"you spend ${ch['_less_by']:,.0f} a year less (${ch['spending_per_year']:,.0f})")
+        what.append(f"you spend ${ch['_less_by']:,.0f} a year less, at ${ch['spending_per_year']:,.0f}")
     elif ch.get("_more_by"):
-        what.append(f"you spend ${ch['_more_by']:,.0f} a year more (${ch['spending_per_year']:,.0f})")
+        what.append(f"you spend ${ch['_more_by']:,.0f} a year more, at ${ch['spending_per_year']:,.0f}")
     elif "spending_per_year" in ch:
         what.append(f"you spend ${ch['spending_per_year']:,.0f} a year")
     if notes.get("_save_line"):
         what.append(notes["_save_line"])
     elif "save_rate" in ch:
         if ch.get("_extra_per_year"):
-            what.append(f"you save ${ch['_extra_per_year']:,.0f} more a year (about {round(ch['save_rate'] * 100)}% of pay in all)")
+            what.append(f"you save ${ch['_extra_per_year']:,.0f} more a year, about {round(ch['save_rate'] * 100)}% of pay in all")
         else:
             what.append(f"you save {round(ch['save_rate'] * 100)}% of pay")
     if "saving_contrib_you" in ch and not notes.get("_save_line"):
@@ -891,23 +891,40 @@ def whatif_text(ch: dict, old: dict, new: dict, notes: dict | None = None) -> st
                 what.append("you get another " + word if n == 1 else f"you get {n} more {word}s")
             elif after > before:
                 n = after - before
-                what.append(("you get another " + word if n == 1 else f"you get {n} more {word}s") + (f" ({after} in all)" if before else ""))
+                what.append(("you get another " + word if n == 1 else f"you get {n} more {word}s") + (f", {after} in all" if before else ""))
             else:
                 what.append(f"you have no {word}s" if after == 0 else f"you have {after} {word}{'s' if after != 1 else ''} instead of {before}")
     what += notes.get("what", [])
     head = "If " + " and ".join(what) + ", "
     tail = (" " + ch["_note"]) if ch.get("_note") else ""
     if isinstance(ch.get("retire_age"), (int, float)) and ch["retire_age"] > 70:
-        tail += " That is past 70; Social Security stops growing at 70."
+        tail += " That is past 70. Social Security stops growing at 70."
     if ch.get("_college"):
-        tail += " I counted the college money as extra saving: the plan does not keep a separate college fund."
+        tail += " I counted the college money as extra saving. The plan has no separate college fund."
     if notes.get("only_note"):
         return head + notes["after"] + tail
     om, nm = old["markets"], new["markets"]
-    body = (head + f"you can count on ${nm['safe_spending_per_year']:,.0f} a year, safe in 90 of 100 scenarios (baseline plan: ${om['safe_spending_per_year']:,.0f}). "
-            f"Your basics are paid in {nm.get('basics_paid_of_100')} of 100 scenarios (baseline plan: {om.get('basics_paid_of_100')} of 100), "
-            f"and your spending goal lasts in {nm['goal_lasts_of_100']} of 100 (baseline plan: {om['goal_lasts_of_100']} of 100).")
+    new_safe, old_safe = nm["safe_spending_per_year"], om["safe_spending_per_year"]
+    new_paid, old_paid = nm.get("basics_paid_of_100"), om.get("basics_paid_of_100")
+    new_goal, old_goal = nm["goal_lasts_of_100"], om["goal_lasts_of_100"]
+    body = head + f"you can count on ${new_safe:,.0f} a year, {_vs(new_safe, old_safe, '$')}."
+    if new_paid != old_paid:
+        body += f" Your needs are paid in {new_paid} of 100 market tests, {_vs(new_paid, old_paid)}."
+    elif (new_paid or 0) < 90:
+        body += f" Your needs are still paid in only {new_paid} of 100 market tests."
+    if new_goal != old_goal:
+        body += f" Your goal lasts in {new_goal} of 100 market tests, {_vs(new_goal, old_goal)}."
     return body + (" " + notes["after"] if notes.get("after") else "") + tail
+
+
+def _vs(new, old, unit: str = "") -> str:
+    """'up from $53,400', 'down from 95' or 'as before': the What If figure against the plan's, in plain words."""
+    if new is None or old is None:
+        return "as before"
+    fmt = (lambda x: f"${x:,.0f}") if unit == "$" else (lambda x: f"{x}")
+    if round(new) == round(old):
+        return "as before"
+    return f"{'up' if new > old else 'down'} from {fmt(old)}"
 
 
 def _clean_profile_text(p: Profile) -> Profile:
@@ -940,7 +957,7 @@ def _same_as_plan(ch: dict, base: Profile) -> dict | None:
         return None
     what = " and ".join(SAME_KEYS[k].format(v) for k, v in shown.items())
     near = ask_plan.retire_examples(base)
-    return ask_intent._clarify(f"That is your baseline plan now: {what}. Try a different one, for example: what if I retire at {near[0]}.",
+    return ask_intent._clarify(f"That is your plan now: {what}. Try a different one, for example: what if I retire at {near[0]}.",
                                [f"What if I retire at {near[0]}", ask_plan.save_chip(base), "What if markets fall 30%"])
 
 
@@ -953,7 +970,32 @@ def kept_for(ch: dict, old_ctx: RunCtx) -> dict | None:
             "repick": adviser.verdict(old_ctx.results["markets"]) == "falls_short"}
 
 
-async def ask(question: str, profile: dict, session: str, use_ai: bool = True, pending: dict | None = None, plan_so_far: dict | None = None) -> dict:
+# How long a What If takes, for the "about N to M seconds" the team panel says while it runs. Until this server has timed a
+# few, the eval's figure is used (eval/model_compare/REPORT.md: about 12 s on Haiku); then the range of the recent runs.
+WHATIF_SECONDS_DEFAULT = (10, 20)
+_whatif_times: list[float] = []
+
+
+def whatif_estimate() -> str:
+    """'about 10 to 20 seconds': the range of the last few What Ifs on this server, to the nearest 5 seconds."""
+    recent = _whatif_times[-5:]
+    if len(recent) < 3:
+        lo, hi = WHATIF_SECONDS_DEFAULT
+    else:
+        lo = max(5, int(min(recent) // 5) * 5)
+        hi = max(lo + 5, int(-(-max(recent) // 5)) * 5)
+    return f"about {lo} to {hi} seconds"
+
+
+def _timed_whatif(seconds: float) -> None:
+    _whatif_times.append(seconds)
+    del _whatif_times[:-20]
+
+
+async def ask(question: str, profile: dict, session: str, use_ai: bool = True, pending: dict | None = None, plan_so_far: dict | None = None,
+              emit: Emit | None = None) -> dict:
+    """emit: when given (the streamed What If), a What If's run sends the same events as the plan, after a whatif_start
+    event. Nothing else is sent: every other answer is made without an event, so the caller can return it as plain JSON."""
     tokens = {"input": 0, "cached": 0, "output": 0}
     g = safety.guard(question)
     if safety.is_medicaid_hiding(question):
@@ -975,7 +1017,7 @@ async def ask(question: str, profile: dict, session: str, use_ai: bool = True, p
         if isinstance(wf, dict):
             return wf
         if isinstance(wf, str):         # yes: the plain sentence built in code, read again by the rules like any message
-            return await ask(wf, profile, session, use_ai=use_ai, plan_so_far=plan_so_far)
+            return await ask(wf, profile, session, use_ai=use_ai, plan_so_far=plan_so_far, emit=emit)
     cc = ask_intent.claim_change(g.clean, base)       # "Change my Social Security start age": a change with a confirm (R6)
     if cc is not None:
         return cc
@@ -1009,8 +1051,13 @@ async def ask(question: str, profile: dict, session: str, use_ai: bool = True, p
         if notes.get("_say"):
             return ask_intent._clarify(notes["_say"], notes.get("_chips") or ["Try a What If", "Change an answer", "Explain my plan"])
         affected = set().union(*(AFFECTS.get(k, set()) for k in ch if not k.startswith("_"))) | {"adviser"}
-        ctx = RunCtx(profile=newp, session=session, use_ai=use_ai, shock=ch.get("shock"), fixed=kept_for(ch, old_ctx))
+        if emit is not None:
+            await emit({"type": "whatif_start", "question": g.clean, "agents": sorted(affected), "estimate": whatif_estimate()})
+        ctx = RunCtx(profile=newp, session=session, use_ai=use_ai, shock=ch.get("shock"), fixed=kept_for(ch, old_ctx), emit=emit or _no_emit)
+        t0 = time.monotonic()
         plan = await run_plan(ctx, ai_agents=affected)
+        if use_ai and ctx.use_ai and not ctx.ai_down:
+            _timed_whatif(time.monotonic() - t0)       # only runs that used the model: template-only runs are near instant
         shown = {k: v for k, v in ch.items() if not k.startswith("_")}
         return {"kind": "whatif", "text": whatif_text(ch, old_ctx.results, ctx.results, notes), "citations": plan.get("citations", []),
                 "plan": plan, "profile": newp.model_dump(), "changes": shown, "tokens": ctx.tokens, "cost_usd": round(ctx.cost_usd, 6)}

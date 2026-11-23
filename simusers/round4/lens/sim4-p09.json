@@ -1,0 +1,15 @@
+{
+ "id": "p09",
+ "path": "normal",
+ "kind": "works",
+ "gap": 0,
+ "text": "Readiness: 100 of 100\nYes, you're on track.\n$41,600 a year you can count on.\nNeeds: $24,300 a year. Paid in 100 of 100 market tests. Safe.\nWants: $17,300 a year on top of your needs. You can count on $41,600 in all. Sure.\nWishes: $0 open. Your whole goal is covered.\nYou can count on $41,600 a year: $24,300 for needs, $17,300 for wants.\nFirst move: Build an emergency fund of three months",
+ "result": {
+  "a": "yes",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "\"Paid in 100 of 100 market tests\" and \"Wishes: $0 open\" were unclear; also unsure how emergency fund relates to retiring at 65."
+ },
+ "grade": 1.94,
+ "words": 74
+}

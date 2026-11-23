@@ -38,8 +38,8 @@ def _num(x: Any) -> float | None:
 # ------------------------------------------------------------------ bitcoin and crypto
 CRYPTO = re.compile(r"\b(?:bitcoin|btc|ethereum|dogecoin|doge|solana|xrp|ripple|cardano|litecoin|shiba inu|usdt|bnb|polkadot|chainlink|monero|stablecoins?|memecoins?|"
                     r"crypto\w*|altcoins?|\w+coins?)\b", re.I)
-CRYPTO_LINE = ("Bitcoin and other crypto swing hard, and no one can say where they will go, so I don't pick them or tell you to buy or sell. "
-               "If you hold some, include it in your savings total. To see a bad stretch, try a What If such as markets fall 30%.")
+CRYPTO_LINE = ("Bitcoin and other crypto swing hard, and no one can say where they will go. So I don't pick them or tell you to buy or sell. "
+               "If you hold some, include it in your savings total. To see a bad stretch, try 'markets fall 30%'.")
 
 
 def pick_refusal(q: str) -> str | None:
@@ -137,7 +137,7 @@ def plan_end_age(q: str, base: Profile, plan: dict | None) -> dict | None:
         return None
     h = plan.get("horizon_age") if isinstance(plan, dict) and isinstance(plan.get("horizon_age"), int) else None
     mine = f" Your age stays {base.age}." if base.age else ""
-    why = "It is the age at which only about 1 in 4 households has anyone still alive, taken from the life table, and I can't set it myself."
+    why = "Only about 1 in 4 households has anyone alive at that age, by the life table. I can't set it myself."
     if h is not None and n <= h:
         text = f"Your plan already runs to age {h}, past {n}. {why}{mine}"
     elif h is not None:
@@ -213,9 +213,9 @@ def _plan_lines(plan: dict | None) -> list[tuple[float, str]]:
     n = plan.get("needs") if isinstance(plan.get("needs"), dict) else {}
     basis = {"typical": "typical costs for your state and household", "budget": "the budget you gave, with typical figures where you gave none"}.get(
         n.get("basis") if isinstance(n.get("basis"), str) else "", "typical costs for your state and household")
-    for v, text in ((_num(w.get("per_year")), "the most you can spend a year and still have money in 90 of 100 market scenarios. The plan works it out from 2,000 scenarios; it is not a figure you gave"),
-                    (_num(w.get("above_basics_per_year")), "the part of what you can count on that sits above your basics. The plan works it out; it is not a figure you gave"),
-                    (_num(n.get("basics_per_year")), f"your basics (housing, food, transport, health care), built from {basis}"),
+    for v, text in ((_num(w.get("per_year")), "the most you can spend a year and still have money in 90 of 100 market tests. The plan works it out from 2,000 market tests. It is not a figure you gave"),
+                    (_num(w.get("above_basics_per_year")), "your wants, the part of what you can count on above your needs. The plan works it out. It is not a figure you gave"),
+                    (_num(n.get("basics_per_year")), f"your needs (housing, food, transport, health care), built from {basis}"),
                     (_num(plan.get("spending_goal")), "your spending goal, the amount you want to spend a year"),
                     (_num(plan.get("social_security_per_year")), "your Social Security a year, from the figure you gave or the plan's estimate")):
         if v:
@@ -283,8 +283,8 @@ def provenance(q: str, base: Profile, plan: dict | None) -> dict | None:
                          "; ".join(f"{_lower(str(r['label']))} ({r['display']}, {r['source']})" for r in guessed) +
                          ". Change any of them in your answers and the plan is rebuilt.")
         else:
-            lines.append("Every figure comes from your own answers, plus the fixed assumptions listed under Assumptions on the plan page: market returns, "
-                         "inflation and life expectancy.")
+            lines.append("Every figure comes from your own answers and the fixed assumptions on the plan page. "
+                         "Those cover market returns, inflation and how long people live.")
     return reply(" ".join(lines[:3]), ["Change an answer", "Explain my plan", "Try a What If"])
 
 
@@ -321,14 +321,14 @@ def runs_out(base: Profile, plan: dict | None, results: dict | None) -> dict:
     else:
         bits.append(f"I don't have a run-out age for this plan. It is planned through age {horizon or 'your horizon'}.")
     if isinstance(n_goal, int):
-        bits.append(f"At your spending goal the money lasts to the end in {n_goal} of 100 scenarios.")
+        bits.append(f"At your spending goal the money lasts to the end in {n_goal} of 100 market tests.")
     return reply(" ".join(bits), ["Try a What If", "Explain my plan", "Change an answer"])
 
 
 SAME_100_90 = re.compile(r"\b(?:100|hundred)\b[^.?!]{0,60}\b(?:90|ninety)\b|\b(?:90|ninety)\b[^.?!]{0,60}\b(?:100|hundred)\b", re.I)
-EXPLAIN_100_90 = ("They count different things. \"Basics paid in 100 of 100\" is only your basics: housing, food, transport and health care. "
-                  "\"90 of 100\" is the bar for the whole amount you can count on, basics and the rest: the most you can spend while your money "
-                  "lasts in 90 of 100 scenarios. So the basics can be safe in every scenario while the larger amount is safe in 90 of 100.")
+EXPLAIN_100_90 = ("They count different things. \"Needs paid in 100 of 100\" covers only your needs: housing, food, transport and health care. "
+                  "\"90 of 100\" covers the whole amount you can count on, needs and wants. "
+                  "So your needs can be safe in every market test while the larger amount is safe in 90 of 100.")
 
 
 # ------------------------------------------------------------------ privacy and "can I rely on this"
@@ -406,8 +406,8 @@ def unread_whatif(q: str, base: Profile) -> dict | None:
     elif re.search(r"\b(?:spend\w*|cost\w*|expens\w*|budget)\b", low):
         why, chips = ("I did not find an amount in that. Say how much, for example: what if I spend $6,000 a year more."),             ["What if I spend $6,000 a year more", "What if I spend $500 less a month"]
     else:
-        why, chips = ("I did not find a change in your message that the plan can model: a retirement age, spending, saving, a Social Security claiming age, "
-                      "part-time work, a move, a child or pet, a debt, or a market fall."), useful_whatifs(base)[:2]
+        why, chips = ("I did not find a change I can test. I can test when you retire, spending and saving. "
+                      "I can also test when Social Security starts, part-time work, a move, a child or pet, a debt, or a market fall."), useful_whatifs(base)[:2]
     return reply(why, chips, kind="clarify")
 
 

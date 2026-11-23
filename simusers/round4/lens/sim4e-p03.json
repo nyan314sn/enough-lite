@@ -1,0 +1,15 @@
+{
+ "id": "p03",
+ "path": "early",
+ "kind": "works",
+ "gap": 0,
+ "text": "Readiness: 100 of 100\nYes, you're on track.\n$77,200 a year you can count on.\nNeeds: $45,400 a year. Paid in 100 of 100 market tests. Safe.\nWants: $31,800 a year on top of your needs. You can count on $77,200 in all. Sure.\nWishes: $0 open. Your whole goal is covered.\nYou can count on $77,200 a year: $45,400 for needs, $31,800 for wants.\nFirst move: Save a little more each year",
+ "result": {
+  "a": "yes",
+  "b": "yes",
+  "c": "no",
+  "confusing": "First move: Save a little more each year, contradicts 'on track'; unclear how much. 'market tests', 'Wishes: $0 open'"
+ },
+ "grade": 1.63,
+ "words": 73
+}

@@ -1,0 +1,944 @@
+{
+ "before": {
+  "n": 24,
+  "reached": 22,
+  "turns_mean": 8.4,
+  "turns_median": 8.0,
+  "fields": 311,
+  "correct": 292,
+  "acc": 93.9,
+  "never_given_wrong": 11,
+  "wrong_but_said": 5,
+  "wrong_marked_estimate": 3,
+  "p0": 6,
+  "p1": 10,
+  "p0l": [
+   [
+    "p13",
+    {
+     "ref": "i13",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "I noted that you hold whole life cover.",
+     "note": "The person said they never mentioned insurance and asked for an explanation, but the app repeated the claim without acknowledging or correcting it."
+    }
+   ],
+   [
+    "p13",
+    {
+     "ref": "i13",
+     "type": "contradiction",
+     "severity": "P0",
+     "quote": "I noted that you hold whole life cover.",
+     "note": "The stored insurance fact is not in anything the person said and conflicts with their statement that they have no such cover."
+    }
+   ],
+   [
+    "p13",
+    {
+     "ref": "i14",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "I still need this one to go on.",
+     "note": "The person again denied having insurance and asked whether it was a mistake; the app neither admitted the error nor answered, and kept asking for age."
+    }
+   ],
+   [
+    "p13",
+    {
+     "ref": "i15",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "I noted that you hold whole life cover.",
+     "note": "After the person asked yes or no whether it was a mistake, the app repeated the fabricated insurance claim instead of answering or removing it."
+    }
+   ],
+   [
+    "p17",
+    {
+     "ref": "a3",
+     "type": "misunderstanding",
+     "severity": "P0",
+     "quote": "You can count on about $88,200 a year in 90 of 100 scenarios",
+     "note": "The user asked about the 62 plan, which was $71,800. This reports the baseline 65 figure without saying so, so the user may think the 62 plan still gives $88,200."
+    }
+   ],
+   [
+    "p39",
+    {
+     "ref": "a2",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "Basics are the costs you cannot skip: housing, food, transport and health care.",
+     "note": "The user said she already has one cat, but the reply never acknowledges the error or fixes the earlier 'get another cat' cost."
+    }
+   ]
+  ],
+  "p1l": [
+   [
+    "h02",
+    {
+     "ref": "i6",
+     "type": "unstated_assumption",
+     "severity": "P1",
+     "quote": "At what age do you want to stop working?",
+     "note": "The plan still uses assumed pay ($50,980), spending ($43,000) and retirement age (65) that the person never gave, and this reply does not flag them."
+    }
+   ],
+   [
+    "p05",
+    {
+     "ref": "a3",
+     "type": "misunderstanding",
+     "severity": "P1",
+     "quote": "I did not find a change in your message that the plan can model",
+     "note": "The user clearly asked to see whether she could retire at 55, but the app read the message as having no changeable input and did not run the scenario."
+    }
+   ],
+   [
+    "p17",
+    {
+     "ref": "a3",
+     "type": "contradiction",
+     "severity": "P1",
+     "quote": "You can count on about $88,200 a year in 90 of 100 scenarios, $47,100 more than the basics.",
+     "note": "This conflicts with the earlier what-if result of $71,800 for retiring at 62, and the reply never reconciles the two numbers."
+    }
+   ],
+   [
+    "p17",
+    {
+     "ref": "a3",
+     "type": "dead_end",
+     "severity": "P1",
+     "quote": "Your goal works on these numbers.",
+     "note": "The reply never answers whether the drop comes from fewer years of saving, which was the user's direct question."
+    }
+   ],
+   [
+    "p21",
+    {
+     "ref": "i10",
+     "type": "confusing",
+     "severity": "P1",
+     "quote": "I assumed you will spend about 80% of today's $90,000, not counting the mortgage, in retirement, $56,800 a year.",
+     "note": "$56,800 is about 63% of $90,000, and 80% of the mortgage-excluded figure would be about $51,000, so the stated basis does not match the number."
+    }
+   ],
+   [
+    "p21",
+    {
+     "ref": "a3",
+     "type": "misunderstanding",
+     "severity": "P1",
+     "quote": "That is your baseline plan now: you spend $70,000 a year.",
+     "note": "The user asked whether retiring at 50 works, but the reply restates spending and never says if age 50 is feasible."
+    }
+   ],
+   [
+    "p33",
+    {
+     "ref": "a2",
+     "type": "dead_end",
+     "severity": "P1",
+     "quote": "Your goal is close, but not safe yet.",
+     "note": "The user asked whether the drop at 55 comes from the mortgage or the college costs, and the reply never answers that question."
+    }
+   ],
+   [
+    "p33",
+    {
+     "ref": "a2",
+     "type": "confusing",
+     "severity": "P1",
+     "quote": "You can count on about $56,500 a year in 90 of 100 scenarios, $31,200 more than the basics.",
+     "note": "These are the baseline 60-retirement figures, not the retire-at-55 figures from the previous turn ($27,400 at 90 of 100), and the reply does not say which plan it describes."
+    }
+   ],
+   [
+    "p37",
+    {
+     "ref": "a3",
+     "type": "unstated_assumption",
+     "severity": "P1",
+     "quote": "The plan uses what you told me: you retire at 63 (you said); your spending goal is $48,600 a year (assumed)",
+     "note": "The user asked what the plan assumes about school costs. The reply lists the inputs but never mentions college, even though the stored college costs are estimates (public in-state, 100% paid) for all three kids."
+    }
+   ],
+   [
+    "p39",
+    {
+     "ref": "a2",
+     "type": "confusing",
+     "severity": "P1",
+     "quote": "A higher number is safer.",
+     "note": "The user asked directly whether she will run out. The reply explains the metric but never says what 0 of 100 means for her or answers that question."
+    }
+   ]
+  ]
+ },
+ "after": {
+  "n": 24,
+  "reached": 24,
+  "turns_mean": 9.3,
+  "turns_median": 9.0,
+  "fields": 311,
+  "correct": 301,
+  "acc": 96.8,
+  "never_given_wrong": 4,
+  "wrong_but_said": 4,
+  "wrong_marked_estimate": 3,
+  "p0": 5,
+  "p1": 5,
+  "p0l": [
+   [
+    "h04",
+    {
+     "ref": "i4",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "Got it: you have saved $410,000 ($310,000 pre-tax, $60,000 taxable and $40,000 cash).",
+     "note": "The user corrected spending to $58,000 a year in i3, but this reply never acknowledges it, so the $46,000 estimate likely remains stored silently."
+    }
+   ],
+   [
+    "h04",
+    {
+     "ref": "i7",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "Spending is about $58,000 a year, not $46,000, so please change that.",
+     "note": "The reply never mentions spending, and the stored $46,000 estimate is still in use after the person corrected it to $58,000."
+    }
+   ],
+   [
+    "p01",
+    {
+     "ref": "i3",
+     "type": "ignored_correction",
+     "severity": "P0",
+     "quote": "Got it: savings of $267,000, not $250,000.",
+     "note": "The user gave an exact split (210k pretax, 30k Roth, 15k taxable, 12k cash), but the app only acknowledged the total and never confirmed or applied the breakdown, so the assumed 60/10/20/10 split may stay stored silently."
+    }
+   ],
+   [
+    "p17",
+    {
+     "ref": "i7",
+     "type": "contradiction",
+     "severity": "P0",
+     "quote": "I assumed you will spend about 80% of today's $85,000 ... in retirement, $60,700 a year.",
+     "note": "80% of $85,000 is $68,000, not $60,700, so the stated assumption contradicts the figure stored and offered for confirmation."
+    }
+   ],
+   [
+    "p37",
+    {
+     "ref": "i7",
+     "type": "misunderstanding",
+     "severity": "P0",
+     "quote": "Change your savings from $188,000 to $80,000?",
+     "note": "The user only asked a what-if about saving an extra $1,000 a month, not to change savings. The proposed $80,000 figure also matches no number she gave."
+    }
+   ]
+  ],
+  "p1l": [
+   [
+    "p01",
+    {
+     "ref": "i10",
+     "type": "contradiction",
+     "severity": "P1",
+     "quote": "I assumed you will spend about 80% of today's $63,600, not counting the mortgage, in retirement, $44,100 a year.",
+     "note": "80% of $63,600 is about $50,900, not $44,100 (about 69%), so the stated assumption does not match the figure used."
+    }
+   ],
+   [
+    "p13",
+    {
+     "ref": "i3",
+     "type": "dead_end",
+     "severity": "P1",
+     "quote": "I still need this one to go on. A rough figure is fine, or type skip and I will use a typical figure.",
+     "note": "The reply ignores the user's direct 'why' questions about why age matters and why the plan changes between 50 and 55, and just repeats the request."
+    }
+   ],
+   [
+    "p29",
+    {
+     "ref": "i8",
+     "type": "contradiction",
+     "severity": "P1",
+     "quote": "I assumed you will spend about 80% of today's $58,000, not counting the mortgage, in retirement, $43,900 a year.",
+     "note": "80% of $58,000 is $46,400, and removing the $11,400 yearly mortgage payment gives about $37,300, so neither matches the stated $43,900."
+    }
+   ],
+   [
+    "p37",
+    {
+     "ref": "i7",
+     "type": "dead_end",
+     "severity": "P1",
+     "quote": "A 401(k) is a retirement account through your employer.",
+     "note": "The reply never answers how an extra $1,000 a month changes her retirement date, and offers only a Yes/No on a wrong change."
+    }
+   ],
+   [
+    "p37",
+    {
+     "ref": "i7",
+     "type": "unstated_assumption",
+     "severity": "P1",
+     "quote": "I updated some typical figures: spending in retirement at $48,600 a year.",
+     "note": "Retirement spending was $57,000 and is silently lowered to $48,600 without saying what it was changed from or why."
+    }
+   ]
+  ]
+ },
+ "hs": {
+  "n": 6,
+  "reached": 6,
+  "turns_mean": 10.7,
+  "turns_median": 11.0,
+  "fields": 76,
+  "correct": 69,
+  "acc": 90.8,
+  "never_given_wrong": 5,
+  "wrong_but_said": 4,
+  "wrong_marked_estimate": 1,
+  "p0": 0,
+  "p1": 0,
+  "p0l": [],
+  "p1l": []
+ },
+ "early": {
+  "n": 10,
+  "reached": 10,
+  "turns_mean": 2.5,
+  "turns_median": 2.5,
+  "fields": 129,
+  "correct": 79,
+  "acc": 61.2,
+  "never_given_wrong": 41,
+  "wrong_but_said": 0,
+  "wrong_marked_estimate": 21,
+  "p0": 0,
+  "p1": 0,
+  "p0l": [],
+  "p1l": [],
+  "person_messages_mean": 1.5,
+  "escape_presses_mean": 1
+ },
+ "lens_hs_normal": {
+  "n": 6,
+  "a": 0,
+  "b": 5,
+  "c": 1,
+  "all3": 0,
+  "grade_mean": 1.0,
+  "grade_max": 1.6
+ },
+ "lens_hs_early": {
+  "n": 2,
+  "a": 0,
+  "b": 2,
+  "c": 1,
+  "all3": 0,
+  "grade_mean": 1.1,
+  "grade_max": 1.45
+ },
+ "lens_base_normal": {
+  "n": 24,
+  "a": 9,
+  "b": 23,
+  "c": 14,
+  "all3": 6,
+  "grade_mean": 1.5,
+  "grade_max": 2.24
+ },
+ "lens_base_early": {
+  "n": 8,
+  "a": 2,
+  "b": 8,
+  "c": 6,
+  "all3": 1,
+  "grade_mean": 1.5,
+  "grade_max": 1.94
+ },
+ "lens_all": {
+  "n": 40,
+  "a": 11,
+  "b": 38,
+  "c": 22,
+  "all3": 7,
+  "grade_mean": 1.4,
+  "grade_max": 2.24
+ },
+ "lens_by_kind": {
+  "works": {
+   "n": 9,
+   "a": 9,
+   "b": 9,
+   "c": 7,
+   "all3": 7,
+   "grade_mean": 1.9,
+   "grade_max": 2.24
+  },
+  "close": {
+   "n": 8,
+   "a": 0,
+   "b": 8,
+   "c": 7,
+   "all3": 0,
+   "grade_mean": 1.6,
+   "grade_max": 1.8
+  },
+  "short": {
+   "n": 14,
+   "a": 1,
+   "b": 14,
+   "c": 8,
+   "all3": 0,
+   "grade_mean": 1.5,
+   "grade_max": 1.65
+  },
+  "basics": {
+   "n": 9,
+   "a": 1,
+   "b": 7,
+   "c": 0,
+   "all3": 0,
+   "grade_mean": 0.8,
+   "grade_max": 0.77
+  }
+ },
+ "lens_confusing": [
+  [
+   "h01",
+   "normal",
+   "\"Close. A few changes get you there.\" doesn't say if I can retire at 64; \"Wishes\", \"market tests\", \"safe level\" unclear; text cut off at \"less than your...\""
+  ],
+  [
+   "h03",
+   "normal",
+   "\"Paid in 100 of 100 market tests\"; the cut-off line \"That is less than your...\"; Medicare at 65 though retiring at 64."
+  ],
+  [
+   "h04",
+   "normal",
+   "\"Close. A few changes get you there.\" doesn't say whether I can retire at 68; \"Wishes\", \"market tests\", \"safe level\" unclear."
+  ],
+  [
+   "p01",
+   "normal",
+   "\"Not yet\" doesn't say if age 62 works; \"Wishes\", \"market tests\", \"safe level\" unclear; first move vague; text cut off at \"less than your...\""
+  ],
+  [
+   "p03",
+   "normal",
+   "\"Set your spending goal nearer the safe level\" unclear how; \"market tests\", \"Wishes\" vs gap; text cut off at \"less than your...\""
+  ],
+  [
+   "p05",
+   "normal",
+   "\"make your needs safe first\" doesn't say what action to take; \"market tests\", \"Wants: $0\", \"Wishes\" unclear; retirement age 58 not mentioned"
+  ],
+  [
+   "p07",
+   "normal",
+   "\"Paid in 100 of 100 market tests\"; \"Plan for money to last to age 98\" isn't a clear action; text cut off at \"less than your...\""
+  ],
+  [
+   "p09",
+   "normal",
+   "\"Paid in 100 of 100 market tests\" and \"Wishes: $0 open\" were unclear; also unsure how emergency fund relates to retiring at 65."
+  ],
+  [
+   "p11",
+   "normal",
+   "\"Paid in 37 of 100 market tests\", \"Wants: $0\", \"Wishes\", \"make your needs safe first\" - unclear how, and retiring at 62 never stated"
+  ],
+  [
+   "p13",
+   "normal",
+   "Never says if I can retire at 62; 'Close' is vague. 'Market tests', 'Wishes', 'safe level' unclear; text cut off at 'less than your...'"
+  ],
+  [
+   "p15",
+   "normal",
+   "\"Readiness: 85 of 100\" with \"Not yet\"; \"market tests\"; \"safe level\" unclear; text cut off at \"less than your...\"; retirement age 60 never mentioned"
+  ],
+  [
+   "p17",
+   "normal",
+   "\"Paid in 100 of 100 market tests\"; \"Wishes: $0 open\"; \"401(k) catch-up limit\" unclear, and it says age 60, not now."
+  ],
+  [
+   "p19",
+   "normal",
+   "\"Close. A few changes get you there.\" doesn't say if I can retire at 65; \"Wishes\", \"Paid in 100 of 100 market tests\", truncated line"
+  ],
+  [
+   "p21",
+   "normal",
+   "Readiness 37 of 100; 'Not yet' doesn't mention age 58; 'market tests'; 'Wishes'; 'safe level' vague; text cut off"
+  ],
+  [
+   "p23",
+   "normal",
+   "\"Paid in 100 of 100 market tests\", \"Wishes\", \"Set your spending goal nearer the safe level\", and the cut-off \"less than your...\" line. It never says whether I can retire at 62."
+  ],
+  [
+   "p25",
+   "normal",
+   "\"Paid in 100 of 100 market tests\", \"Wishes... Only if markets help\", \"spending goal nearer the safe level\", and the text cut off at \"less than your...\". No retire-at-62 answer."
+  ],
+  [
+   "p27",
+   "normal",
+   "\"Paid in 100 of 100 market tests\"; \"Wishes: $0 open\"; \"taxable savings first\" is unclear; the text never mentions age 60."
+  ],
+  [
+   "p29",
+   "normal",
+   "Readiness 85 of 100 vs 'Not yet'; 'market tests'; 'Wishes'; text cut off at 'less than your...'; doesn't say if age 62 works"
+  ],
+  [
+   "p31",
+   "normal",
+   "\"Not yet\" doesn't say if age 62 works; \"market tests\", \"Wishes\", \"safe level\" unclear; text cut off at \"less than your...\"; first move vague"
+  ],
+  [
+   "p33",
+   "normal",
+   "\"Readiness: 60 of 100\", \"Paid in 100 of 100 market tests\", \"Wishes\", and the cut-off line \"less than your...\" never say if I can retire at 60."
+  ],
+  [
+   "p35",
+   "normal",
+   "\"Paid in 100 of 100 market tests\" and \"Wishes: $0 open\" unclear; also doesn't say retire at 61 explicitly."
+  ],
+  [
+   "p37",
+   "normal",
+   "\"Not yet\" doesn't mention age 63; \"Wishes\", \"Paid in 99 of 100 market tests\"; \"Set your spending goal nearer the safe level\" is vague; text cut off at \"That is less...\""
+  ],
+  [
+   "p39",
+   "normal",
+   "\"Paid in 100 of 100 market tests\"; the cut-off sentence \"That is less than your...\"; \"Wishes: $0 open\""
+  ],
+  [
+   "s01",
+   "normal",
+   "Needs, Wants, Wishes, market tests, 'make your needs safe first', readiness 40 of 100; doesn't mention age 62 or what action to take"
+  ],
+  [
+   "s02",
+   "normal",
+   "\"Paid in 0 of 100 market tests\", \"Wants: $0\", \"make your needs safe first\" - unclear what to actually do; doesn't mention age 65"
+  ],
+  [
+   "s03",
+   "normal",
+   "Short $13,000 a year conflicts with $23,600 vs $24,700; 'market tests', 'make your needs safe', 'Wants: $0' unclear, no retire-at-60 answer"
+  ],
+  [
+   "s04",
+   "normal",
+   "Readiness 99 of 100, \"Close\" vs short $300; no mention of age 63; wishes, wants, needs; \"market tests\"; truncated \"less than your...\""
+  ],
+  [
+   "s05",
+   "normal",
+   "Readiness 70 of 100, 'market tests', Wishes vs Wants, 'Set your spending goal nearer the safe level' - doesn't say retire at 62 yes or no"
+  ],
+  [
+   "s06",
+   "normal",
+   "\"make your needs safe first\", \"market tests\", \"Wants\" vs \"Wishes\"; never says if I can retire at 60 or what to actually do"
+  ],
+  [
+   "h01",
+   "early",
+   "Never says if I can retire at 64; \"Short $1,700\" vs \"Close\"; \"market tests\"; \"Wishes\"; text cut off \"That is less...\""
+  ],
+  [
+   "h03",
+   "early",
+   "\"Not yet\" doesn't mention age 64; \"market tests\", \"Wishes\", \"safe level\", and the cut-off line \"less than your...\""
+  ],
+  [
+   "p03",
+   "early",
+   "First move: Save a little more each year, contradicts 'on track'; unclear how much. 'market tests', 'Wishes: $0 open'"
+  ],
+  [
+   "p09",
+   "early",
+   "\"Paid in 100 of 100 market tests\" and \"Wishes: $0 open\" were unclear; Needs/Wants/Wishes labels a bit vague."
+  ],
+  [
+   "p15",
+   "early",
+   "\"Not yet\" doesn't say if I can retire at 60; \"Short $19,100\" vs wishes; \"market tests\"; \"safe level\" unclear; why 77 of 100?"
+  ],
+  [
+   "p21",
+   "early",
+   "Not yet doesn't say if age 58 works; 'market tests', 'Wishes', 'safe level' unclear; short $14,700 vs readiness 79 mixed."
+  ],
+  [
+   "p27",
+   "early",
+   "\"Make your needs safe first\", \"79 of 100 market tests\", \"Wants: $0... You can count on less than your needs\", \"Wishes\" - unclear what action to take or about age 60."
+  ],
+  [
+   "p33",
+   "early",
+   "\"Paid in 98 of 100 market tests\", \"Wishes\", \"Only if markets help\", and the cut-off line; it never says whether age 60 works."
+  ],
+  [
+   "s01",
+   "early",
+   "market tests, Needs/Wants/Wishes, 'make your needs safe first', readiness 40 of 100, no mention of age 62"
+  ],
+  [
+   "s05",
+   "early",
+   "Readiness 96 of 100, 'market tests', 'Wishes', 'Only if markets help', 'safe level' vs short $1,300 contradiction; text cut off"
+  ]
+ ],
+ "lens_no": [
+  [
+   "h01",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "h02",
+   "normal",
+   "basics",
+   {
+    "a": null,
+    "b": null,
+    "c": null
+   }
+  ],
+  [
+   "h04",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p01",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p03",
+   "normal",
+   "short",
+   {
+    "a": "yes",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p05",
+   "normal",
+   "basics",
+   {
+    "a": "yes",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p07",
+   "normal",
+   "works",
+   {
+    "a": "yes",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p11",
+   "normal",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p13",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p15",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p19",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p21",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p23",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p25",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p29",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p31",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p33",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p37",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "s01",
+   "normal",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "s02",
+   "normal",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "s03",
+   "normal",
+   "basics",
+   {
+    "a": "no",
+    "b": "no",
+    "c": "no"
+   }
+  ],
+  [
+   "s04",
+   "normal",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "s05",
+   "normal",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "s06",
+   "normal",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "h01",
+   "early",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "h03",
+   "early",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p03",
+   "early",
+   "works",
+   {
+    "a": "yes",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p15",
+   "early",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p21",
+   "early",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "p27",
+   "early",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "p33",
+   "early",
+   "short",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ],
+  [
+   "s01",
+   "early",
+   "basics",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "no"
+   }
+  ],
+  [
+   "s05",
+   "early",
+   "close",
+   {
+    "a": "no",
+    "b": "yes",
+    "c": "yes"
+   }
+  ]
+ ]
+}

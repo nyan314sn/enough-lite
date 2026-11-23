@@ -68,7 +68,7 @@ def test_end_to_end_plan_names_the_debt_and_match_and_the_goal_once():
     titles = [a["title"].lower() for a in plan["actions"]]
     assert len(titles) == 3 and len(set(titles)) == 3
     assert sum("spending goal" in t for t in titles) <= 1
-    assert any("high-rate debt" in t for t in titles)
+    assert any("pay off your $9,000 card debt" in t for t in titles)      # round 4: the debt and its figure
     assert any("match" in t for t in titles)
 
 

@@ -23,7 +23,7 @@ export const TIERS: { key: Sample["tier"]; label: string }[] = [
 /** What is kept from one plan: the five figures that matter most. Dollars are a year, in today's dollars. */
 export interface Metrics {
   verdict: string | null;           // works | close | below_goal | falls_short
-  basics_of_100: number;            // paths in 100 where the basics are paid
+  basics_of_100: number;            // market tests in 100 where the needs are paid
   count_on: number;                 // what you can count on each year
   gap: number | null;               // how far the goal is above what you can count on (0 when met)
   savings_at_retire: number | null; // a middle path

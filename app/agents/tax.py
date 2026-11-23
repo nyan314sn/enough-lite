@@ -11,9 +11,9 @@ class Tax(Specialist):
     tool_name = "tax_estimate"
     tool_doc = "Estimate income tax now and in retirement, and the order in which to draw on accounts."
     instructions = ("You are the tax specialist in a retirement-planning team. The tax_estimate tool has run. Say what share "
-                    "of income goes to tax now and in retirement, and which accounts to draw on first: taxable savings first, then "
-                    "pre-tax accounts such as a 401(k), and Roth accounts last (the order the tool uses). This is a rough guide, "
-                    "not tax advice.")
+                    "of income goes to tax now and in retirement, and which accounts to use first: taxable savings first, then "
+                    "401(k) and other pre-tax accounts, and Roth accounts last (the order the tool uses). This is a rough guide, "
+                    "not tax advice. Say 'take out', not 'withdraw'.")
 
     def compute(self, ctx: RunCtx) -> dict:
         p = ctx.profile
@@ -61,8 +61,8 @@ class Tax(Specialist):
     def template(self, r: dict) -> tuple[str, list[str]]:
         d = []
         if r["gross_pay"]:
-            d.append(f"While you work, about {round(r['effective_rate_working'] * 100)}% of pay goes to tax, leaving {money(r['after_tax_pay'])} a year.")
+            d.append(f"While you work, about {round(r['effective_rate_working'] * 100)}% of pay goes to tax. You keep {money(r['after_tax_pay'])} a year.")
         if r.get("pension_per_year") or r.get("part_time_per_year"):
             d.append(f"Your pension and part-time pay count as income. Tax on them is about {money(r['other_income_tax_per_year'])} a year.")
-        d.append("Draw on taxable savings first, then pre-tax accounts, and Roth accounts last.")
-        return (f"In retirement, tax takes about {round(r['effective_rate_on_withdrawals'] * 100)}% of what you withdraw.", d)
+        d.append("Use taxable savings first, then 401(k) money, and Roth money last.")
+        return (f"In retirement, tax takes about {round(r['effective_rate_on_withdrawals'] * 100)}% of what you take out.", d)

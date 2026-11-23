@@ -20,6 +20,7 @@ WORK = os.path.join(os.environ.get("TEMP", HERE), "enough_demo_work")
 RAW = os.path.join(WORK, "raw")
 TTS_DIR = os.path.join(WORK, "tts")
 OUT = os.path.join(HERE, "enough_demo.mp4")
+NARRATION = "narration.txt"
 URL = os.environ.get("ENOUGH_URL", "http://localhost:8020/")
 FFMPEG = os.environ.get("FFMPEG", r"C:\ProgramData\chocolatey\bin\ffmpeg.exe")
 FFPROBE = os.environ.get("FFPROBE", r"C:\ProgramData\chocolatey\bin\ffprobe.exe")
@@ -83,7 +84,7 @@ def mp3path(i, sid, text):
 # ---------------------------------------------------------------- 1. narration
 def tts():
     os.makedirs(TTS_DIR, exist_ok=True)
-    with open(os.path.join(HERE, "narration.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(HERE, NARRATION), "w", encoding="utf-8") as f:
         f.write(f"Enough Lite demo: narration script (voice: OpenAI {TTS_MODEL}, '{TTS_VOICE}')\n\n")
         for i, (sid, mode, text) in enumerate(SCENES):
             f.write(f"[{i:02d} {sid}] {text}\n\n")
@@ -475,8 +476,508 @@ def assemble():
     print("wrote", OUT, f"{os.path.getsize(OUT)/1e6:.1f} MB, {dur(OUT):.1f} s")
 
 
+# ================================================================ v3: the redesigned app (flag --v3)
+# Usage (conda Python):
+#   python demo\make_demo.py --v3 figures            one live pass (about 3 AI calls, no video): reads the numbers the narration will say -> demo/figures_v3.json
+#   python demo\make_demo.py --v3 tts                narration MP3s (numbers filled from figures_v3.json); only changed segments are made again
+#   python demo\make_demo.py --v3 record             the recording, then the CONSISTENCY CHECK (fails loudly)
+#   python demo\make_demo.py --v3 record --stop-after early      dry run: the first scenes only; estimated durations if there is no MP3 yet
+#   python demo\make_demo.py --v3 assemble           ffmpeg; writes demo/enough_demo_v3.mp4
+# Rules: about the app only; one voice (nova); transcript, voice and screen agree. A number is never typed into the narration as a
+# fixed figure unless the page shows it: write {name} and the figure is read from the live page (figures stage) and spoken as words.
+# The check after recording parses every number the narration says (digits or words) and requires it on screen, in the visible text
+# captured during that scene (text hidden, folded, scrolled out of the window or covered by another element does not count).
+import re
+
+FIG_FILE = os.path.join(HERE, "figures_v3.json")
+USD_FIGS = {"gap", "goal", "counton", "newgoal"}          # spoken with "dollars"
+
+EXAMPLE_V3 = ("I'm 54 and my wife is 52, in Ohio. I make about $95,000 and she makes $60,000. We have about $520,000 saved. "
+              "We owe $140,000 on our house. Our son is 16. We'd like to spend about $70,000 a year in retirement.")
+
+# (id, mode, template, phrases that must be visible during the scene). {name} is a figure read from the live page.
+# Wording on screen is being rewritten: if a phrase in the last column fails, change the phrase here, not the check.
+SCENES_V3 = [
+    ("title", "card", "Can we retire at sixty? Every household asks. Enough is an AI retirement planner that gives an honest answer.",
+     ["retire at 60"]),
+    ("intro", "fit", "This is Enough. I tell it about a couple in plain words, the way I would tell a friend. They are in their fifties.",
+     ["how enough works", "54"]),
+    ("send", "fit", "The moment I send it, the guide folds into one line. The panel on the right fills in. Anything I did not say is a typical figure, marked estimate.",
+     ["how enough works", "estimate"]),
+    ("edit", "cut", "Every figure in the panel can be changed right there. I press the pencil and pick from the list.",
+     ["state"]),
+    ("early", "fit", "I do not have to answer every question. I press Build my plan, and it asks me one thing first: when to retire. I pick sixty.",
+     ["build my plan", "when would you like to retire", "60"]),
+    ("check", "cut", "Then Enough asks me to check its guesses. The rows marked estimate are what I left out. They look fair, so I confirm.",
+     ["estimate", "looks right"]),
+    ("team", "fit", "Now the advisers get to work, one part each. Then the lead adviser writes the plan.",
+     []),
+    ("answer", "cut", "Here is the answer, in one glance. The verdict says not yet. The ring shows how ready they are: {ring0} out of one hundred. And they are short {gap} a year.",
+     ["not yet", "readiness", "short"]),
+    ("ladder", "cut", "Below is the money ladder. Needs are safe, wants are sure, wishes are open. Needs are paid in {paid} of one hundred market tests. The couple can count on {counton} a year. The wishes are the rest of the goal.",
+     ["needs", "wants", "wishes", "safe", "sure", "open", "count on"]),
+    ("moves", "cut", "Next come the moves. It is a plain list, and the first one says it closes the gap.",
+     ["your next moves", "closes the gap"]),
+    ("whatif", "cut", "To test a move, I press What if. The plan greys out, and the What If section lights up. I pick the first idea, the best move.",
+     ["try a what if", "worth trying", "change one thing"]),
+    ("run", "fit", "Now the same advisers run the plan again, with that one change.",
+     ["working on", "re-running your plan with"]),
+    ("tab", "cut", "The result opens as its own tab. The change is to spend {newgoal} a year in retirement. Wishes are covered now, and the page says level up. Readiness rises {delta} points, to {ring1}. That is a trade, and the choice is theirs.",
+     ["what changed", "level up", "vs baseline", "closes the gap"]),
+    ("compare", "fit", "Compare puts them side by side. Before, they were short {gap} a year, and the goal lasted in {lasts0} of one hundred tests. After, there is no gap, and it lasts in {lasts1}.",
+     ["compare", "short", "none", "goal lasts in"]),
+    ("rule", "fit", "I can also ask a rule question, like when I can sign up for Medicare. The answer comes with its source.",
+     ["medicare", "sources"]),
+    ("stock", "fit", "Ask which stock to buy, and Enough politely declines. It plans. It does not pick stocks.",
+     ["which stock", "can't help"]),
+    ("cost", "cut", "Every plan shows its token costs. This one used well under a cent.",
+     ["token costs", "this plan"]),
+    ("end", "card", "Enough. Can you retire when you want? This is not financial advice.",
+     ["not financial advice"]),
+]
+CARDS_V3 = {
+    "title": ("Enough<span class='dot'>.</span>", "Can we retire at 60?", "An AI retirement planner. Honest answers."),
+    "end": ("Enough<span class='dot'>.</span>", "Can you retire when you want?", "Not financial advice."),
+}
+
+# ---- numbers as words, and back
+_ON = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
+_TN = {2: "twenty", 3: "thirty", 4: "forty", 5: "fifty", 6: "sixty", 7: "seventy", 8: "eighty", 9: "ninety"}
+_W2N = {w: i for i, w in enumerate(_ON)}
+_W2N.update({w: n * 10 for n, w in _TN.items()})
+
+
+def n2w(n):
+    n = int(n)
+    if n < 20: return _ON[n]
+    if n < 100: return _TN[n // 10] + ("-" + _ON[n % 10] if n % 10 else "")
+    if n < 1000: return _ON[n // 100] + " hundred" + (" " + n2w(n % 100) if n % 100 else "")
+    if n < 1000000: return n2w(n // 1000) + " thousand" + (" " + n2w(n % 1000) if n % 1000 else "")
+    raise ValueError(n)
+
+
+def spoken_numbers(text):
+    """Every number a listener hears in `text`: digits, and number words ("forty-nine thousand"). A lone "one" ("one glance") is not a number."""
+    out, seq = [], []
+    def flush():
+        if not seq: return
+        if seq == ["one"]: seq.clear(); return
+        total = cur = 0
+        for w in seq:
+            if w == "hundred": cur = (cur or 1) * 100
+            elif w == "thousand": total += (cur or 1) * 1000; cur = 0
+            else: cur += _W2N[w]
+        out.append(total + cur); seq.clear()
+    for tok in re.findall(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?|[a-z']+|[^\sa-z\d-]", text.lower().replace("’", "'")):
+        if tok[0].isdigit(): flush(); out.append(float(tok.replace(",", "")))
+        elif tok in _W2N or tok in ("hundred", "thousand"): seq.append(tok)
+        else: flush()
+    flush()
+    return out
+
+
+def page_numbers(text):
+    """Every number written in the visible page text; "$312k" counts as 312000 as well as 312."""
+    out = set()
+    for m in re.finditer(r"((?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)(\s?k\b)?", text.lower()):
+        v = float(m.group(1).replace(",", "")); out.add(v)
+        if m.group(2): out.add(v * 1000)
+    return out
+
+
+def norm(t): return re.sub(r"\s+", " ", t.lower().replace("’", "'"))
+
+
+def fill_text(tmpl, figs):
+    def sub(m):
+        k = m.group(1)
+        if k not in figs: raise SystemExit(f"figure '{k}' is not in figures_v3.json: run the figures stage (python make_demo.py --v3 figures)")
+        return n2w(figs[k]) + (" dollars" if k in USD_FIGS else "")
+    return re.sub(r"\{(\w+)\}", sub, tmpl)
+
+
+def load_figs(required=True):
+    if os.path.exists(FIG_FILE): return json.load(open(FIG_FILE, encoding="utf-8"))
+    if required: raise SystemExit("no demo/figures_v3.json yet: run  python demo\\make_demo.py --v3 figures  first")
+    return {}
+
+
+def use_v3():
+    """Point the shared stages (tts, record helpers, assemble) at the v3 scenes, work folder and output."""
+    global SCENES, CARDS, WORK, RAW, TTS_DIR, OUT, NARRATION, TEMPL, SHOW
+    WORK = os.path.join(os.environ.get("TEMP", HERE), "enough_demo_work_v3")
+    RAW, TTS_DIR = os.path.join(WORK, "raw"), os.path.join(WORK, "tts")
+    OUT, NARRATION, CARDS = os.path.join(HERE, "enough_demo_v3.mp4"), "narration_v3.txt", CARDS_V3
+    TEMPL = {sid: t for sid, m, t, s in SCENES_V3}
+    SHOW = {sid: s for sid, m, t, s in SCENES_V3}
+
+
+def build_scenes_v3(figs):
+    return [(sid, mode, fill_text(t, figs)) for sid, mode, t, s in SCENES_V3]
+
+
+def est_len(text): return len(text.split()) / 2.7 + 0.4          # only for a dry run with no MP3 yet
+
+
+def scene_len(i):
+    sid, mode, text = SCENES[i]
+    p = mp3path(i, sid, text)
+    return (dur(p) if os.path.exists(p) else est_len(text)) + PAD_HEAD + PAD_TAIL
+
+
+# Visible text only: not sr-only, not hidden or folded, inside the window, and not covered by another element at its centre.
+VISIBLE_JS = """
+() => {
+  const out = [], vw = innerWidth, vh = innerHeight;
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (w.nextNode()) {
+    const n = w.currentNode, t = n.nodeValue.trim(); if (!t) continue;
+    const el = n.parentElement; if (!el || el.closest('.sr-only,script,style,[hidden],#demo-cursor')) continue;
+    const cs = getComputedStyle(el); if (cs.visibility === 'hidden' || cs.display === 'none' || +cs.opacity === 0) continue;
+    const r = document.createRange(); r.selectNodeContents(n);
+    const b = r.getBoundingClientRect(); if (!b.width || !b.height) continue;
+    const cx = Math.min(Math.max(b.left + b.width / 2, 0), vw - 1), cy = Math.min(Math.max(b.top + b.height / 2, 0), vh - 1);
+    if (b.bottom < 0 || b.top > vh || b.right < 0 || b.left > vw) continue;
+    const top = document.elementFromPoint(cx, cy); if (!top || !(el.contains(top) || top.contains(el))) continue;
+    out.push(t);
+  }
+  document.querySelectorAll('textarea,input').forEach(e => { if (e.value) out.push(e.value); });
+  return out.join(' ');
+}
+"""
+
+
+class StopRun(Exception): pass
+
+
+class Rec3(Rec):
+    """Rec plus: a visible-text snapshot every 0.45 s inside a scene, scene ends, and the figures read from the page."""
+    def __init__(self, pg, stop_after=None):
+        super().__init__(pg)
+        self.cur, self.snaps, self.ended, self.rmark, self.figs, self.claims = None, {}, {}, {}, {}, []
+        self.stop_after = stop_after
+
+    def snap(self):
+        if self.cur: self.snaps.setdefault(self.cur, []).append((self.now(), self.pg.evaluate(VISIBLE_JS)))
+
+    def scene(self, sid):
+        self.cur = sid; super().scene(sid); self.snap()
+
+    def wait(self, ms):
+        left = ms / 1000.0
+        while left > 0:
+            step = min(0.45, left); self.pg.wait_for_timeout(int(step * 1000)); left -= step; self.snap()
+
+    def hold_until(self, seconds):
+        left = seconds - (self.now() - self.sstart)
+        if left > 0: self.wait(int(left * 1000))
+
+    def mark_r(self, sid):
+        self.marks.append((sid + "_r", self.now())); self.rmark[sid] = self.now()
+
+    def done(self, sid):
+        self.snap(); self.ended[sid] = self.now()
+        if self.stop_after == sid: raise StopRun(sid)
+
+    def stop_point(self, name):
+        if self.stop_after == name: self.snap(); raise StopRun(name)
+
+    def claim(self, sid, what, ok):
+        self.claims.append((sid, what, bool(ok)))
+
+
+def _t(pg, sel): return pg.locator(sel).first.inner_text().replace("\n", " | ")
+def _int(s, pat=r"(\d[\d,]*)", n=1): return int(re.findall(pat, s)[n - 1].replace(",", ""))
+
+
+def flow_v3(pg, r, L):
+    F = r.figs
+    # 1. page 1: the guide is open on the first visit; tell it about the household
+    r.scene("intro"); r.move(900, 300)
+    r.claim("intro", "the 'How Enough works' guide is open on the first visit", pg.locator("[data-testid=how-it-works]").count() == 1)
+    r.hold_until(2.6)
+    ta = pg.locator("#chat-input"); r.click(ta); r.wait(300)
+    r.type(EXAMPLE_V3, delay=24)
+    r.hold_until(L["intro"] - 0.9); r.done("intro")
+
+    # 2. send: the guide folds on the first message; the panel fills in
+    r.scene("send")
+    pg.keyboard.press("Enter"); wait_reply(pg)
+    r.claim("send", "the guide folded to one line after the first message",
+            pg.locator("[data-testid=how-it-works]").count() == 0 and pg.locator("[data-testid=how-collapsed]").count() == 1)
+    r.snap()
+    est = pg.locator(".field", has_text="estimate").first
+    r.to(est); r.wait(1200); r.mark_r("send")
+    r.move(1180, 420); r.scroll(280, pause=22); r.wait(900); r.scroll(-280, pause=22)
+    r.done("send")
+
+    # 2b. a figure can be edited right in the panel (the state: a searchable list); nothing is saved, so the plan is unchanged
+    r.scene("edit")
+    pen = pg.locator(".field[data-key=state] .pen").first
+    if not pen.is_visible():
+        grp = pg.locator(".field[data-key=state]").first.locator("xpath=ancestor::*[.//button[contains(@class,'group-toggle')]][1]").locator(".group-toggle").first
+        r.click(grp); r.wait(400)
+    r.to(pen, steps=26); r.wait(300); r.click(pen); r.wait(600)
+    r.claim("edit", "the state editor opened inline", pg.locator("form.editor").count() == 1)
+    ed = pg.locator("form.editor input").first
+    r.to(ed, 0.5, 0.5, steps=20); r.wait(800)
+    r.hold_until(L["edit"] - 0.7)
+    pg.keyboard.press("Escape"); r.wait(500)
+    r.claim("edit", "the editor closed without a change", pg.locator("form.editor").count() == 0)
+    r.hold_until(L["edit"]); r.done("edit")
+
+    # 3. early build: usable from the first answer; it asks the retirement age first, answered with its chip
+    r.scene("early")
+    build = pg.get_by_role("button", name="Build my plan", exact=True).first
+    r.claim("early", "Build my plan is enabled before the follow-up questions are answered", build.is_enabled())
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(300)
+    r.to(build, scroll=False); r.wait(600)
+    r.hold_until(max(L["early"] * 0.15, 1.5))
+    r.click(build); wait_reply(pg)
+    r.claim("early", "Build my plan asks for the retirement age first", pg.get_by_text("When would you like to retire?").count() >= 1)
+    chip60 = pg.locator(".quick .chip", has_text="60").first
+    log_ = pg.locator("[role=log]").first
+    r.to(chip60, 0.5, 0.5, steps=24); r.hold_until(L["early"] - 2.2)
+    r.click(chip60); wait_reply(pg); r.wait(300)
+    r.hold_until(L["early"]); r.done("early")
+
+    # 4. check the guessed figures, confirm
+    r.scene("check")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(200)
+    build = pg.get_by_role("button", name="Build my plan", exact=True).first
+    r.click(build); pg.wait_for_selector(".check", timeout=5000); r.wait(600)
+    guesses = pg.locator(".field.is-check")
+    r.claim("check", "the check step highlights guessed rows", guesses.count() > 0)
+    r.to(guesses.first, 0.3, 0.5); r.wait(500)
+    r.hold_until(L["check"] * 0.5)
+    if guesses.count() > 3: r.to(guesses.nth(3), 0.3, 0.5, steps=22)
+    r.hold_until(L["check"] - 1.6)
+    r.stop_point("confirm")
+    r.click(pg.get_by_role("button", name="Looks right, build my plan")); r.done("check")
+
+    # 5. the advisers at work (brief)
+    r.scene("team")
+    r.wait(2500)
+    for key in ("family", "markets", "tax", "longevity"):
+        node = pg.locator(f"[data-agent='{key}']")
+        if node.count(): r.to(node.first, scroll=False, steps=18)
+    r.move(1180, 520)
+    pg.wait_for_selector("[data-testid=plan-hero]", timeout=240000); r.wait(1500)
+    r.done("team")
+
+    # 6. the answer in one glance
+    r.scene("answer")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(800)
+    F["ring0"] = int(pg.locator("[data-testid=ring]").get_attribute("data-value"))
+    short = pg.locator("[data-testid=verdict]")
+    r.claim("answer", "the verdict reads Not yet, short $X a year", "not yet" in short.inner_text().lower())
+    F["gap"] = _int(short.inner_text(), r"short \$([\d,]+)")
+    F["goal"] = _int(_t(pg, "[data-testid=ladder-goal]"))
+    F["counton"] = _int(_t(pg, "[data-testid=ladder-counton]"))
+    F["paid"] = _int(_t(pg, "[data-layer=needs]"), r"(\d+) of 100")
+    r.to(pg.locator(".verdict"), 0.3, 0.5, scroll=False); r.hold_until(L["answer"] * 0.25)
+    r.to(pg.locator("[data-testid=ring]"), 0.5, 0.5, scroll=False, steps=22); r.hold_until(L["answer"] * 0.5)
+    r.to(short, 0.3, 0.5, scroll=False, steps=22); r.hold_until(L["answer"]); r.done("answer")
+
+    # 7. the money ladder
+    r.scene("ladder")
+    for k, frac in (("needs", 0.25), ("wants", 0.5), ("wishes", 0.78)):
+        r.to(pg.locator(f"[data-layer={k}] .lad-hit"), 0.3, 0.5, scroll=False, steps=22); r.hold_until(L["ladder"] * frac)
+    r.hold_until(L["ladder"]); r.done("ladder")
+
+    # 8. the next moves (read only): the one that closes the gap
+    r.scene("moves")
+    closing = pg.locator(".move", has_text="Closes the gap")
+    r.claim("moves", "exactly one next move is marked 'Closes the gap'", closing.count() == 1)
+    if closing.count() != 1: raise SystemExit("this household has no single closing move: pick another household (see storyboard_v3.md)")
+    r.claim("moves", "the moves are read only (no Try it, no Mark as planned)", pg.get_by_text("Try it").count() == 0 and pg.get_by_text("Mark as planned").count() == 0)
+    r.smooth_into_view(pg.locator("[data-testid=moves]"), 120); r.wait(400)
+    r.to(closing.locator(".move-title"), 0.3, 0.5, scroll=False); r.hold_until(L["moves"] * 0.5)
+    r.to(closing.locator(".worth-chip").first, 0.3, 0.5, scroll=False, steps=22); r.hold_until(L["moves"]); r.done("moves")
+    print("  first move:", _t(pg, ".move >> nth=0 >> .move-title"))
+
+    # 9. "+ What if…" greys out the plan and lights the What If section; the first chip is the plan's best move
+    r.scene("whatif")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(500)
+    add = pg.locator("#scen-add")
+    r.click(add); r.wait(900)
+    r.claim("whatif", "the plan is greyed out while composing", pg.locator(".scen-panel.dimmed").count() == 1 and pg.locator("section.ask.composing").count() == 1)
+    first = pg.locator("[data-testid=whatif-section] .ideas .chip").first
+    r.claim("whatif", "the first 'Worth trying' chip is the plan's closing move", first.inner_text().strip().lower().startswith(closing.locator(".move-title").first.inner_text().strip().lower()[:25]))
+    r.to(first, 0.4, 0.5, scroll=False, steps=26)
+    r.hold_until(L["whatif"] - 0.2); r.done("whatif")
+
+    # 10. the What If runs: the same advisers, live in the team panel
+    r.scene("run")
+    pg.mouse.click(r.x, r.y)
+    pg.wait_for_selector("[data-testid=run-wait]", timeout=20000); r.wait(1200)
+    r.claim("run", "the team panel shows 'Working on' during the re-run", pg.get_by_text("Working on:").count() >= 1)
+    r.move(1180, 420)
+    pg.locator(".scen-tab").nth(1).wait_for(timeout=240000); r.wait(700); r.mark_r("run")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(1200)
+    r.done("run")
+
+    # 11. the What If tab: level up, the gap closes
+    r.scene("tab")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(900)
+    chg = _t(pg, "[data-testid=wi-change]")
+    m = re.search(r"Spend \$([\d,]+) a year", chg)
+    r.claim("tab", "the What If is a spending-goal change ('Spend $X a year')", bool(m))
+    if not m: raise SystemExit(f"the closing move is not a spending-goal change ({chg!r}): the 'tab' narration must be rewritten")
+    F["newgoal"] = int(m.group(1).replace(",", ""))
+    F["delta"] = _int(_t(pg, "[data-testid=vs-ready]"), r"(\d+) point")
+    F["ring1"] = int(pg.locator("[data-testid=ring]").get_attribute("data-value"))
+    r.claim("tab", "a 'Level up' marker shows on the wishes row", pg.locator("[data-testid=levelup-wishes]").count() == 1)
+    r.claim("tab", "'This change closes the gap' shows", pg.locator("[data-testid=closes-gap]").count() == 1)
+    r.to(pg.locator("[data-testid=wi-change]"), 0.3, 0.5, scroll=False); r.hold_until(L["tab"] * 0.28)
+    r.scroll(240, pause=18); r.wait(300)   # the sticky "Try a What If" bar covers the bottom of the ladder at the top of the page
+    r.to(pg.locator("[data-testid=levelup-wishes]"), 0.5, 0.5, scroll=False, steps=22); r.hold_until(L["tab"] * 0.55)
+    r.scroll(-240, pause=18); r.wait(300)
+    r.to(pg.locator("[data-testid=vs-ready]"), 0.4, 0.5, scroll=False, steps=22); r.hold_until(L["tab"] * 0.8)
+    r.to(pg.locator("[data-testid=closes-gap]"), 0.3, 0.5, scroll=False, steps=22); r.hold_until(L["tab"]); r.done("tab")
+
+    # 12. compare
+    r.scene("compare")
+    r.click(pg.locator(".scen-compare"))
+    pg.wait_for_selector("[data-testid=compare-table]", timeout=5000); r.wait(900)
+    row = pg.locator("[data-testid=compare-table] tr", has_text="Goal lasts in").first.inner_text()
+    lasts = re.findall(r"(\d+) of 100", row)
+    r.claim("compare", "the compare table shows 'goal lasts in' for the baseline and the What If", len(lasts) >= 2)
+    F["lasts0"], F["lasts1"] = int(lasts[0]), int(lasts[1])
+    r.move(520, 450); r.hold_until(L["compare"] * 0.35)
+    gap = pg.locator("[data-testid=gap-row]")
+    if gap.count(): r.to(gap, 0.6, 0.5, scroll=False); r.wait(600)
+    r.hold_until(L["compare"] - 1.8)
+    r.click(pg.locator(".scen-tab", has_text="Baseline").first); r.wait(900)
+    r.hold_until(L["compare"]); r.done("compare")
+
+    # 13. trust: a cited rule answer, a refused stock pick
+    for sid, q, sel in (("rule", RULE_Q, ".turn .cites"), ("stock", STOCK_Q, ".refused")):
+        r.scene(sid)
+        ask = pg.locator("#ask-input"); r.to(ask); pg.mouse.click(r.x, r.y)
+        r.type(q, delay=40); r.wait(300); pg.keyboard.press("Enter")
+        pg.wait_for_selector(sel, timeout=180000)
+        try: pg.locator(".turns .spinner").first.wait_for(state="detached", timeout=90000)
+        except Exception: pass
+        r.wait(800); r.mark_r(sid)
+        pg.locator(".turn").last.scroll_into_view_if_needed(); r.wait(3500)
+        r.done(sid)
+
+    # 14. token costs, one line
+    r.scene("cost")
+    pg.evaluate("window.scrollTo(0,0)"); r.wait(600)
+    cb = pg.locator("[data-testid=cost-block]")
+    r.to(cb, 0.5, 0.3, scroll=False); r.wait(600)
+    cost = float(re.search(r"\$(\d+\.\d+)", _t(pg, "[data-testid=cost-run]")).group(1))
+    r.claim("cost", f"this plan cost under one cent (page: ${cost})", cost < 0.01)
+    r.hold_until(L["cost"]); r.done("cost")
+
+    r.scene("end"); r.wait(500); r.done("end")
+
+
+def consistency_v3(r, figs):
+    """Every number the narration says must be in the visible page text of its scene; every phrase listed must be visible. Fails loudly."""
+    problems, report = [], []
+    for sid, mode, text in SCENES:
+        if sid not in r.ended and sid not in ("title", "end"): continue
+        tmpl = TEMPL[sid]
+        if mode == "card":
+            if sid == "end" and "end" not in r.ended: continue
+            card = " ".join(re.sub(r"<[^>]+>", "", s) for s in CARDS[sid])
+            pool = pool_all = norm(card); pnums = page_numbers(card)
+        else:
+            snaps = r.snaps.get(sid, [])
+            pool_all = norm(" ".join(t for _, t in snaps))
+            use = [t for tm, t in snaps if sid in r.rmark and tm >= r.rmark[sid]] if mode == "fit" and sid in r.rmark else [t for _, t in snaps]
+            pnums = page_numbers(" ".join(use) if use else "")
+            pool = pool_all
+        heard = spoken_numbers(text)
+        for k in re.findall(r"\{(\w+)\}", tmpl):                       # each figure placeholder: its digits are on screen
+            if float(figs[k]) not in pnums: problems.append(f"[{sid}] figure {k}={figs[k]} is not in the visible page text")
+        for v in spoken_numbers(re.sub(r"\{\w+\}", " ", tmpl)):         # each fixed number written in the narration
+            if float(v) not in pnums: problems.append(f"[{sid}] the narration says {v:g} but the screen does not show it")
+        for v in heard:
+            if float(v) not in pnums: problems.append(f"[{sid}] spoken number {v:g} is not in the visible page text")
+        for ph in SHOW[sid]:
+            ph = norm(ph.format(**figs))
+            if ph not in pool_all: problems.append(f"[{sid}] the screen never shows '{ph}'")
+        report.append(f"  {sid:8s} numbers heard {sorted(set(heard)) or '-'}; phrases {len(SHOW[sid])}: ok" if not any(p.startswith(f'[{sid}]') for p in problems) else f"  {sid:8s} FAILED")
+    for sid, what, ok in r.claims:
+        if not ok: problems.append(f"[{sid}] claim failed: {what}")
+    print("consistency check (spoken numbers and phrases against the visible text of each scene):"); print("\n".join(report))
+    print(f"  claims checked: {len(r.claims)}, failed: {sum(1 for c in r.claims if not c[2])}")
+    return problems
+
+
+def record_v3(stop_after=None, figures_only=False):
+    from playwright.sync_api import sync_playwright
+    L = {sid: 0.0 for sid, *_ in SCENES_V3} if figures_only else {sid: scene_len(i) for i, (sid, m, t) in enumerate(SCENES)}
+    import shutil
+    if not figures_only: shutil.rmtree(RAW, ignore_errors=True)
+    os.makedirs(os.path.join(RAW, "frames"), exist_ok=True)
+    errors, frames, stopped = [], [], None
+    with sync_playwright() as p:
+        b = p.chromium.launch(channel="msedge")
+        ctx = b.new_context(viewport={"width": W, "height": H}, extra_http_headers={"X-Enough-Test": "1"})
+        ctx.add_init_script(CURSOR_JS)
+        pg = ctx.new_page(); pg.on("pageerror", lambda e: errors.append(str(e)))
+        r = Rec3(pg, stop_after)
+        if not figures_only:
+            cdp = ctx.new_cdp_session(pg)
+            def on_frame(ev):
+                t = time.time() - r.t0; path = os.path.join(RAW, "frames", f"{len(frames):06d}.jpg")
+                with open(path, "wb") as fh: fh.write(base64.b64decode(ev["data"]))
+                frames.append((t, path))
+                try: cdp.send("Page.screencastFrameAck", {"sessionId": ev["sessionId"]})
+                except Exception: pass
+            cdp.on("Page.screencastFrame", on_frame)
+            r.t0 = time.time()
+            cdp.send("Page.startScreencast", {"format": "jpeg", "quality": 88, "maxWidth": W, "maxHeight": H, "everyNthFrame": 1})
+        pg.goto(URL); pg.wait_for_timeout(1500)
+        try: flow_v3(pg, r, L)
+        except StopRun as e: stopped = str(e); print(f"  stopped after '{stopped}' (dry run)")
+        r.marks.append(("_end_probe", r.now()))
+        log = {"marks": [m for m in r.marks if m[0] != "_end_probe"], "end": r.now(), "errors": errors, "figs": r.figs, "partial": bool(stopped)}
+        if not figures_only:
+            pg.screenshot(path=os.path.join(WORK, "last_state_v3.png")); cdp.send("Page.stopScreencast")
+        ctx.close(); b.close()
+    print("figures read from the live page:", json.dumps(r.figs))
+    print("page errors:", errors)
+    if figures_only:
+        json.dump(r.figs, open(FIG_FILE, "w", encoding="utf-8"), indent=1)
+        failed = [c for c in r.claims if not c[2]]
+        for c in failed: print("CLAIM FAILED:", c)
+        print("wrote", FIG_FILE); return
+    log["frames"] = frames
+    json.dump(log, open(os.path.join(RAW, "marks.json"), "w"), indent=1)
+    print(len(frames), "frames")
+    saved = load_figs(required=False)
+    problems = [f"figure {k}: live page {v}, but the narration was made with {saved[k]}: run the figures and tts stages again"
+                for k, v in r.figs.items() if k in saved and saved[k] != v]
+    problems += consistency_v3(r, {**saved, **r.figs})
+    if problems:
+        print("\nCONSISTENCY CHECK FAILED:"); [print("  -", x) for x in problems]
+        raise SystemExit(1)
+    print("consistency check passed")
+
+
 if __name__ == "__main__":
-    stages = sys.argv[1:] or ["tts", "record", "assemble"]
-    if "tts" in stages: tts()
-    if "record" in stages: record()
-    if "assemble" in stages: assemble()
+    args = sys.argv[1:]
+    v3 = "--v3" in args
+    stop_after = args[args.index("--stop-after") + 1] if "--stop-after" in args else None
+    stages = [a for a in args if not a.startswith("--") and a != stop_after]
+    if v3:
+        use_v3()
+        figs = {} if "figures" in stages else load_figs()
+        SCENES = build_scenes_v3(figs) if figs else []
+        if "figures" in stages: record_v3(stop_after="compare", figures_only=True)
+        else:
+            stages = stages or ["tts", "record", "assemble"]
+            if "tts" in stages: tts()
+            if "record" in stages: record_v3(stop_after)
+            if "assemble" in stages: assemble()
+    else:
+        stages = stages or ["tts", "record", "assemble"]
+        if "tts" in stages: tts()
+        if "record" in stages: record()
+        if "assemble" in stages: assemble()

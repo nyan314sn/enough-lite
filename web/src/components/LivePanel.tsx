@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import Household from "../figure/Household";
 import { savingsParts, showValue, usd } from "../format";
-import FieldEditor, { editorFor } from "./FieldEditor";
+import FieldEditor, { editorFor, isReadOnly, synthField } from "./FieldEditor";
 import BuildBlock from "./BuildBlock";
 import type { Field, Profile } from "../types";
 
@@ -16,6 +16,18 @@ export const neededLabel = (k: string) => NEEDED[k] ?? k.replace(/_/g, " ");
 
 /** A figure the person never gave: estimate, assumed or default. */
 export const isGuess = (f: Field) => f.source === "estimate" || f.source === "assumed" || f.source === "default";
+
+/** The state is never left out: when the person has not given it, a "State" row marked typical sits in Household with a pen to change it. */
+export function withStateRow(fields: Field[], profile: Profile): Field[] {
+  if (fields.length === 0 || fields.some((f) => f.key === "state")) return fields;
+  const row: Field = {
+    key: "state", label: "State", value: profile.state ?? null, display: profile.state ?? "Typical (not given)", source: "default",
+    note: "Taxes use a typical state. Change it if yours is different.", section: fields.some((f) => f.section) ? "Household" : null,
+  };
+  let at = -1;
+  fields.forEach((f, i) => { if (f.section === "Household") at = i; });
+  return at < 0 ? [...fields, row] : [...fields.slice(0, at + 1), row, ...fields.slice(at + 1)];
+}
 
 export function SourceTag({ source }: { source: string }) {
   const kind = source === "you said" ? "said" : source === "estimate" ? "estimate" : source === "default" ? "default" : "assumed";
@@ -44,7 +56,21 @@ const OPTIONAL: Record<string, string> = { "Home & debts": "debts", "Pensions & 
 /** The chat chip each section opens (the same words the server offers). */
 export const SECTION_CHIP: Record<string, string> = { Saving: "Add saving", "Home & debts": "Add debts", "Pensions & income": "Add a pension", Insurance: "Add insurance", Goals: "Add goals", Health: "Add health", Costs: "Add costs" };
 
-export const sectionNoun = (name: string) => OPTIONAL[name] ?? name.toLowerCase().replace(/&/g, "and");
+/** The figure each section's "Add" pen opens an inline form for. */
+export const SECTION_TARGET: Record<string, string> = { Saving: "contributions", "Home & debts": "debts", "Pensions & income": "pensions", Insurance: "life_insurance", Goals: "big_costs", Health: "health", Costs: "budget" };
+
+/** A section's "Add" pen; when its form closes the keyboard goes back to it. */
+function SectionPen({ label, open, onClick }: { label: string; open: boolean; onClick: () => void }) {
+  const ref = useRef<HTMLButtonElement>(null);
+  const was = useRef(false);
+  useEffect(() => {
+    if (was.current && !open) { const a = document.activeElement; if (!a || a === document.body) ref.current?.focus(); }
+    was.current = open;
+  }, [open]);
+  return <button type="button" ref={ref} className="pen" aria-label={label} title={label} aria-expanded={open} onClick={onClick}>✎</button>;
+}
+
+export const sectionNoun =(name: string) => OPTIONAL[name] ?? name.toLowerCase().replace(/&/g, "and");
 
 interface Props {
   onReset?: (section: string, fields: Field[]) => void;
@@ -65,7 +91,7 @@ interface Props {
   canBuild: boolean;
   /** Show the Build my plan button under the family picture (one per screen: the caller decides which panel has it). */
   showBuild?: boolean;
-  onEscape?: () => void;
+  canStart?: boolean;
   checking?: boolean;
   onConfirm?: () => void;
   onCloseCheck?: (change: boolean) => void;
@@ -74,7 +100,7 @@ interface Props {
   idp?: string;
 }
 
-export default function LivePanel({ profile, fields, missing, onEdit, editing = null, onSave, onCancel, onAdd, onChip, sections, planSS = null, onReset, onBuild, canBuild, showBuild = true, onEscape, checking, onConfirm, onCloseCheck, marking = false, idp = "lp" }: Props) {
+export default function LivePanel({ profile, fields, onEdit, editing = null, onSave, onCancel, onAdd, onChip, sections, planSS = null, onReset, onBuild, canBuild, showBuild = true, canStart = canBuild, checking, onConfirm, onCloseCheck, marking = false, idp = "lp" }: Props) {
   const byKey = (k: string) => fields.find((f) => f.key === k);
   const pay = profile.pay_per_year ?? null;
   const ppay = profile.partner_pay_per_year ?? null;
@@ -104,7 +130,7 @@ export default function LivePanel({ profile, fields, missing, onEdit, editing = 
         {fields.length === 0
           ? <p className="muted">Your household appears here as you answer.</p>
           : <Household profile={profile} />}
-        {showBuild && <BuildBlock idp={idp} canBuild={canBuild} missing={missing} started={profile.age != null} onBuild={onBuild} onEscape={onEscape} checking={checking} onConfirm={onConfirm} onCloseCheck={onCloseCheck} />}
+        {showBuild && <BuildBlock idp={idp} canBuild={canBuild} canStart={canStart} onBuild={onBuild} fields={fields} checking={checking} onConfirm={onConfirm} onCloseCheck={onCloseCheck} />}
       </section>
 
       {pay != null && (
@@ -129,7 +155,7 @@ export default function LivePanel({ profile, fields, missing, onEdit, editing = 
       <section className="panel-block" aria-labelledby={`${idp}-sofar`}>
         <h2 id={`${idp}-sofar`} className="h-panel">What we have so far</h2>
         {fields.length === 0 ? <p className="muted">Nothing yet.</p> : (
-          <Fields fields={fields} profile={profile} onEdit={onEdit} onAdd={onAdd} onChip={onChip} sections={sections} onReset={onReset} ed={{ editing, onSave, onCancel, idp }} />
+          <Fields fields={withStateRow(fields, profile)} profile={profile} onEdit={onEdit} onAdd={onAdd} onChip={onChip} sections={sections} onReset={onReset} ed={{ editing, onSave, onCancel, idp }} />
         )}
       </section>
     </div>
@@ -160,7 +186,7 @@ function FieldRow({ f, profile, onEdit, ed }: { f: Field; profile: Profile; onEd
       <div className="field-main">
         <span className="field-label">{f.label}</span>
         <span className="field-value">{f.key === "social_security_per_year" ? withPlanStart(shown, ssPlan) : shown}</span>
-        <button type="button" ref={pen} className="pen" aria-label={`Change ${f.label}`} title={`Change ${f.label}`} aria-expanded={editorFor(f) ? ed.editing === f.key : undefined} onClick={() => onEdit(f)}>✎</button>
+        {!isReadOnly(f) && <button type="button" ref={pen} className="pen" aria-label={`Change ${f.label}`} title={`Change ${f.label}`} aria-expanded={editorFor(f) ? ed.editing === f.key : undefined} onClick={() => onEdit(f)}>✎</button>}
       </div>
       <div className="field-meta">
         <SourceTag source={f.source} />
@@ -203,13 +229,25 @@ function Fields({ fields, profile, onEdit, onAdd, onChip, sections, onReset, ed 
     <div className="groups">
       {names.map((n) => {
         const mine = fields.filter((f) => (f.section ?? "Other") === n);
+        // "Add ..." opens an inline form for the section's main figure (a row of its own, or one built from the profile); the chat is the other way in.
+        const target = SECTION_TARGET[n];
+        const tOpen = !!target && ed.editing === target;
+        const synth = tOpen && !mine.some((f) => f.key === target) ? synthField(target, profile) : null;
+        const synthEd = synth && ed.onSave && ed.onCancel ? <FieldEditor field={synth} profile={profile} idp={ed.idp} onSave={ed.onSave} onCancel={ed.onCancel} /> : null;
+        const pens = (what: string, chatDo: () => void) => target ? (
+          <span className="section-pens">
+            <SectionPen label={`Add ${what}`} open={tOpen} onClick={() => onEdit(mine.find((f) => f.key === target) ?? synthField(target, profile))} />
+            <button type="button" className="chat-alt" aria-label={`Add ${what} in the chat`} onClick={chatDo}>In chat</button>
+          </span>
+        ) : null;
         if (mine.length === 0) {
           const what = OPTIONAL[n];
           if (!what) return null;
           return (
             <div key={n} className="group group-empty" data-section={n}>
               <div className="group-h"><span className="group-name">{n}</span><span className="muted small">Not added, using typical</span>
-                <button type="button" className="pen" aria-label={`Add ${what}`} title={`Add ${what}`} onClick={() => onAdd?.(what)}>✎</button></div>
+                {pens(what, () => onAdd?.(what)) ?? <button type="button" className="pen" aria-label={`Add ${what}`} title={`Add ${what}`} onClick={() => onAdd?.(what)}>✎</button>}</div>
+              {synthEd}
             </div>
           );
         }
@@ -219,9 +257,9 @@ function Fields({ fields, profile, onEdit, onAdd, onChip, sections, onReset, ed 
         const st = sec?.status;
         if (chip && (st === "default" || st === "estimated")) {
           return (
-            <Group key={n} name={n} idp={ed.idp} className="group-default" meta={sec?.note ? (n === "Pensions & income" ? sec.note.replace(/(Social Security [^;]*)/, (m) => withPlanStart(m, ssPlan)) : sec.note) :st === "estimated" ? "Estimated, change it if you know" : "Not added, using typical"} open={false} forceOpen={mark && mine.some(isGuess)}
-              action={<button type="button" className="pen" aria-label={`${chip}`} title={chip} onClick={() => { if (onChip) onChip(chip); else onAdd?.(sectionNoun(n)); }}>✎</button>}>
-              {rows}
+            <Group key={n} name={n} idp={ed.idp} className="group-default" meta={sec?.note ? (n === "Pensions & income" ? sec.note.replace(/(Social Security [^;]*)/, (m) => withPlanStart(m, ssPlan)) : sec.note) :st === "estimated" ? "Estimated, change it if you know" : "Not added, using typical"} open={false} forceOpen={(mark && mine.some(isGuess)) || (!!ed.editing && (tOpen || mine.some((f) => f.key === ed.editing)))}
+              action={pens(chip.replace(/^Add /, ""), () => { if (onChip) onChip(chip); else onAdd?.(sectionNoun(n)); }) ?? <button type="button" className="pen" aria-label={`${chip}`} title={chip} onClick={() => { if (onChip) onChip(chip); else onAdd?.(sectionNoun(n)); }}>✎</button>}>
+              {synthEd}{rows}
             </Group>
           );
         }

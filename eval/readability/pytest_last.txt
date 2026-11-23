@@ -1,0 +1,21 @@
+........................................................................ [ 20%]
+........................................................................ [ 41%]
+.....................................................s.................. [ 62%]
+........................................................................ [ 82%]
+................................................F..........              [100%]
+================================== FAILURES ===================================
+__________________ test_same_figure_100_then_90_is_explained __________________
+
+    def test_same_figure_100_then_90_is_explained():
+        r = ask("why does it say 100 of 100 and then 90 of 100?", RETIRED)
+>       assert r["kind"] == "answer" and "different things" in r["text"] and "basics" in r["text"].lower()
+E       assert ('answer' == 'answer'
+E         
+E           answer and 'different things' in 'They count different things. "Needs paid in 100 of 100" covers only your needs: housing, food, transport and health c...ount on, needs and wants. So your needs can be safe in every market test while the larger amount is safe in 90 of 100.' and 'basics' in 'they count different things. "needs paid in 100 of 100" covers only your needs: housing, food, transport and health c...ount on, needs and wants. so your needs can be safe in every market test while the larger amount is safe in 90 of 100.')
+E        +  where 'they count different things. "needs paid in 100 of 100" covers only your needs: housing, food, transport and health c...ount on, needs and wants. so your needs can be safe in every market test while the larger amount is safe in 90 of 100.' = <built-in method lower of str object at 0x0000026AE3D1C030>()
+E        +    where <built-in method lower of str object at 0x0000026AE3D1C030> = 'They count different things. "Needs paid in 100 of 100" covers only your needs: housing, food, transport and health c...ount on, needs and wants. So your needs can be safe in every market test while the larger amount is safe in 90 of 100.'.lower
+
+tests\test_round2_ask.py:224: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_round2_ask.py::test_same_figure_100_then_90_is_explained - ...
+1 failed, 345 passed, 1 skipped in 737.09s (0:12:17)

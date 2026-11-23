@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { neededLabel, isGuess } from "./LivePanel";
+import { neededLabel, isGuess, SourceTag } from "./LivePanel";
 import type { Field, Profile } from "../types";
 
 const MORE: Record<string, string> = { home: "your home", debts: "your debts", children_count: "how many children", children: "your children", spending_now_per_year: "your spending now" };
@@ -44,7 +44,8 @@ const reduced = () => typeof window !== "undefined" && !!window.matchMedia?.("(p
 
 /** The inline note before the first build. It holds no figures: it points at the answers panel, where the guessed rows are
  *  highlighted (and their groups opened). Focus moves in when it opens; Esc closes it. */
-function CheckPanel({ idp, onConfirm, onClose }: { idp: string; onConfirm: () => void; onClose: (change: boolean) => void }) {
+function CheckPanel({ idp, fields = [], onConfirm, onClose }: { idp: string; fields?: Field[]; onConfirm: () => void; onClose: (change: boolean) => void }) {
+  const retire = fields.find((f) => f.key === "retire_age");
   const box = useRef<HTMLDivElement>(null);
   const head = useRef<HTMLParagraphElement>(null);
   const live = () => box.current?.closest(".live");
@@ -70,6 +71,11 @@ function CheckPanel({ idp, onConfirm, onClose }: { idp: string; onConfirm: () =>
   return (
     <div ref={box} className="check" role="group" aria-labelledby={`${idp}-check-h`} onKeyDown={(e) => { if (e.key === "Escape") { e.stopPropagation(); onClose(false); } }}>
       <p id={`${idp}-check-h`} ref={head} tabIndex={-1} className="check-h">{CHECK_NOTE}</p>
+      {retire && (
+        <ul className="check-figures" data-testid="check-figures">
+          <li>Retire at <strong className="num">{retire.display ?? String(retire.value)}</strong> <SourceTag source={retire.source} /></li>
+        </ul>
+      )}
       <div className="check-btns">
         <button type="button" className="btn btn-primary btn-big" onClick={onConfirm}>Looks right, build my plan</button>
         <button type="button" className="btn btn-quiet btn-big" onClick={change}>Let me change something</button>
@@ -78,20 +84,28 @@ function CheckPanel({ idp, onConfirm, onClose }: { idp: string; onConfirm: () =>
   );
 }
 
-/** The one "Build my plan" button. It sits under the family picture, always shown, and works only when the answers are ready.
- *  Not ready: it is marked aria-disabled (still focusable, so a screen reader can find out why) and a line says what is missing.
- *  Ready: it takes the accent fill and a polite live region says so once. The first press opens a note that points at the answers panel. */
-export default function BuildBlock({ idp, canBuild, missing, started, onBuild, onEscape, compact = false, checking = false, onConfirm, onCloseCheck }: { idp: string; canBuild: boolean; missing: string[]; started: boolean; onBuild: () => void; onEscape?: () => void; compact?: boolean; checking?: boolean; fields?: Field[]; profile?: Profile; onConfirm?: () => void; onCloseCheck?: (change: boolean) => void }) {
+export const BUILD_NOW = "You can build now. We'll use typical figures for anything you skip — you can check them first.";
+export const BUILD_FIRST = "Tell us a little about yourself first, then you can build.";
+export const CHAT_HINT = "You can press Build my plan at any time. I'll fill in typical figures for what you skip.";
+
+/** The one "Build my plan" button. It sits under the family picture. It is active as soon as the person has said anything to start from.
+ *  With answers missing, pressing it fills typical figures for the rest (the parent does that) and the check step then shows every guess,
+ *  marked estimate, for approval. Before the first answer it is truly disabled, with a line that says why. */
+/** Shown under the dimmed button while the check note is open. */
+export const CHECK_FIRST = "Check the figures below first.";
+
+export default function BuildBlock({ idp, canBuild, canStart = canBuild, onBuild, compact = false, checking = false, onConfirm, onCloseCheck, fields, }: { idp: string; canBuild: boolean; canStart?: boolean; missing?: string[]; started?: boolean; onBuild: () => void; compact?: boolean; checking?: boolean; fields?: Field[]; profile?: Profile; onConfirm?: () => void; onCloseCheck?: (change: boolean) => void }) {
   const why = `${idp}-build-why`;
   const btn = useRef<HTMLButtonElement>(null);
+  // While the check note is open, its own "Looks right, build my plan" is the one button to press: this one steps back (dimmed).
+  const open = checking && canBuild && !!onConfirm && !!onCloseCheck;
+  const active = canStart && !open;
   return (
-    <div className={`build${compact ? " build-compact" : ""}${canBuild ? " is-ready" : ""}`} data-testid="build-block">
-      <button type="button" ref={btn} className={`btn btn-big ${canBuild ? "btn-primary" : "btn-off"}`} aria-disabled={!canBuild} aria-describedby={why}
-        onClick={() => { if (canBuild) onBuild(); }}>Build my plan</button>
-      <p id={why} className="build-why">{canBuild ? "Check the figures, then build." : `Still needed: ${stillNeeded(missing)}.`}</p>
-      {checking && canBuild && onConfirm && onCloseCheck && <CheckPanel idp={idp} onConfirm={onConfirm} onClose={(change) => { onCloseCheck(change); if (!change) btn.current?.focus(); }} />}
-      {!canBuild && started && onEscape && !compact && <button type="button" className="build-escape" onClick={onEscape}>Build with typical numbers for the rest</button>}
-      <p className="sr-only" role="status" aria-live="polite">{canBuild ? "Ready: you can build your plan." : ""}</p>
+    <div className={`build${compact ? " build-compact" : ""}${active ? " is-ready" : ""}${open ? " is-checking" : ""}`} data-testid="build-block">
+      <button type="button" ref={btn} className={`btn btn-big ${active ? "btn-primary" : "btn-off"}`} disabled={!active} aria-describedby={why} onClick={onBuild}>Build my plan</button>
+      <p id={why} className="build-why">{open ? CHECK_FIRST : !canStart ? BUILD_FIRST : canBuild ? "Check the figures, then build." : BUILD_NOW}</p>
+      {checking && canBuild && onConfirm && onCloseCheck && <CheckPanel idp={idp} fields={fields} onConfirm={onConfirm} onClose={(change) => { onCloseCheck(change); if (!change) btn.current?.focus(); }} />}
+      <p className="sr-only" role="status" aria-live="polite">{canStart ? "You can build your plan now." : ""}</p>
     </div>
   );
 }

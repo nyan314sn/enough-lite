@@ -1,0 +1,125 @@
+{
+ "persona_id": "s05",
+ "issues": [
+  {
+   "ref": "i13",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "I assumed you will spend about 80% of today's $54,000, not counting the mortgage, in retirement",
+   "note": "It is unclear whether the $54,000 the user confirmed includes the mortgage payment, and the reply does not say how the 80% figure relates to the mortgage."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 52,
+    "truth": 52,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": "CT",
+    "truth": "PA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 75000.0,
+    "truth": 64000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 115000.0,
+    "truth": 94000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 60000.0,
+    "truth": 60000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 6500.0,
+    "truth": 6500,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 54000.0,
+    "truth": 54000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.7692307692307693,
+  "why": [
+   {
+    "field": "state",
+    "cause": "correction_lost",
+    "note": "User typed 'pa' (rejected), then clicked Connecticut and said 'that's wrong, I'll type it instead'. The app stored CT and never took the typed correction."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "User picked the '$50k to $100k' bracket. App used the $75k midpoint. Truth is $64k, which was never asked for."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "App used a typical $115k figure. User replied 'ok', which the app stored as their own figure. Truth is $94k (75k pretax + 10k taxable + 9k cash), and the user never stated a total."
+   }
+  ]
+ }
+}

@@ -1,0 +1,39 @@
+F....................................................................... [ 30%]
+............................................................F........... [ 60%]
+........................................................................ [ 90%]
+........................                                                 [100%]
+================================== FAILURES ===================================
+_____________________ test_doctor_example_parsed_by_rules _____________________
+
+    def test_doctor_example_parsed_by_rules():
+        r = asyncio.run(intake.run(DOCTOR, {}, use_ai=False))
+        p = r.profile
+        assert p["job"] == "doctor" and p["state"] == "CT"
+        assert p["has_partner"] and p["partner_pay_per_year"] == 0
+        assert len(p["children"]) == 3
+        assert p["pets"] == [{"kind": "dog", "count": 2}]
+        assert r.missing[0] == "age" and "wife" in r.question.text
+        assert r.tokens == {"input": 0, "cached": 0, "output": 0}   # no model call needed
+>       assert "doctor" in r.reply and "Connecticut" in r.reply
+E       AssertionError: assert ('doctor' in 'I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it. I noted 7 facts from your message. Check them in the panel on the right. Also: you work as a doctor.' and 'Connecticut' in 'I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it. I noted 7 facts from your message. Check them in the panel on the right. Also: you work as a doctor.')
+E        +  where 'I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it. I noted 7 facts from your message. Check them in the panel on the right. Also: you work as a doctor.' = IntakeResponse(profile={'age': None, 'partner_age': None, 'has_partner': True, 'state': 'CT', 'retire_age': None, 'pay...': 'default'}, {'section': 'Costs', 'status': 'default'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+E        +  and   'I assumed public in-state college for each child, paid in full. It is marked as an estimate. Tell me if that is wrong. Got it. I noted 7 facts from your message. Check them in the panel on the right. Also: you work as a doctor.' = IntakeResponse(profile={'age': None, 'partner_age': None, 'has_partner': True, 'state': 'CT', 'retire_age': None, 'pay...': 'default'}, {'section': 'Costs', 'status': 'default'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_intake_budget.py:21: AssertionError
+__________ test_long_reply_is_short_and_still_discloses_assumptions ___________
+
+    def test_long_reply_is_short_and_still_discloses_assumptions():
+        r = run(LONG)
+>       assert len(r.reply.split()) <= 80, r.reply
+E       AssertionError: Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay is $310,000 a year and you want to retire at 62. Also: you work as a doctor and the 13-year-old goes to a public in-state college, the 10-year-old goes to a private college and the 6-year-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.
+E       assert 84 <= 80
+E        +  where 84 = len(['Got', 'it.', 'I', 'noted', '18', 'facts', ...])
+E        +    where ['Got', 'it.', 'I', 'noted', '18', 'facts', ...] = <built-in method split of str object at 0x00000169B6C0FDD0>()
+E        +      where <built-in method split of str object at 0x00000169B6C0FDD0> = 'Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay...r-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.'.split
+E        +        where 'Got it. I noted 18 facts from your message. Check them in the panel on the right. The main ones: you are 45, your pay...r-old goes to no college. I filled in 11 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 45, 'partner_age': 43, 'has_partner': True, 'state': 'CT', 'retire_age': 62, 'pay_per_y...status': 'default', 'note': 'Estimate: $166,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_example_household.py:48: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_intake_budget.py::test_doctor_example_parsed_by_rules - Ass...
+FAILED tests/test_example_household.py::test_long_reply_is_short_and_still_discloses_assumptions
+2 failed, 238 passed in 426.80s (0:07:06)

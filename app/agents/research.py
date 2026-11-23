@@ -53,6 +53,7 @@ class Research(Specialist):
     instructions = ("You are the research specialist in a retirement-planning team. Official passages are given with the request. "
                     "Pick the two or three rules that matter most to this household (for example contribution limits, Social "
                     "Security claiming, Medicare at 65, required distributions). State each rule only as a passage states it. "
+                    "Say each rule in plain everyday words, not the passage's legal wording. "
                     "Search again only if no passage covers a rule you need. If none covers it, leave it out.")
 
     def compute(self, ctx: RunCtx) -> dict:  # used only by ensure()
@@ -118,12 +119,13 @@ class Research(Specialist):
         ps = r.get("passages", [])
         if not ps:
             return NO_SOURCE, []
-        return ("These official rules matter most for you.", [f"{x['title']}." for x in ps[:3]])
+        return ("These rules matter most for you.", [f"{x['title']}." for x in ps[:3]])
 
 
 class Answer(BaseModel):
     kind: str = Field(description='"answer" when the passages or the plan figures answer the question; "no_source" when they do not.')
-    text: str = Field(description="The answer in two to four plain sentences. Only figures from the passages or the plan.")
+    text: str = Field(description="The answer in one to three short sentences (15 words each, 45 in all), in plain words. "
+                                  "Only figures from the passages or the plan.")
     source_ids: list[str] = Field(default_factory=list, description="Ids of the passages the answer relies on.")
 
 

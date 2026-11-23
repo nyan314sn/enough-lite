@@ -201,7 +201,7 @@ export default function AdminScreen({ api, onOpen, onBuild }: { api: Api; onOpen
             <table className="adm-table adm-res-table">
               <caption className="sr-only">Plan results for each household{before ? ", with the saved before run beside each figure" : ""}</caption>
               <thead><tr>
-                <th scope="col">Tier</th><th scope="col">Household</th><th scope="col">Verdict</th><th scope="col">Basics paid, of 100</th>
+                <th scope="col">Tier</th><th scope="col">Household</th><th scope="col">Verdict</th><th scope="col">Needs paid, of 100</th>
                 <th scope="col">Can count on, a year</th><th scope="col">Short of goal, a year</th><th scope="col">Savings at retirement</th><th scope="col">Actions</th>
               </tr></thead>
               <tbody>
@@ -220,7 +220,7 @@ export default function AdminScreen({ api, onOpen, onBuild }: { api: Api; onOpen
                       {m && (
                         <>
                           <Cell before={b && d ? word(b.verdict) : null} after={word(m.verdict)} c={d?.verdict ?? SAME} what="Verdict" tone={m.verdict === "falls_short" || m.verdict === "below_goal" ? "short" : m.verdict === "close" ? "close" : "ok"} />
-                          <Cell before={b && d ? String(b.basics_of_100) : null} after={String(m.basics_of_100)} c={d?.basics ?? SAME} what="Basics paid" tone={basicsLevel(m.basics_of_100)} />
+                          <Cell before={b && d ? String(b.basics_of_100) : null} after={String(m.basics_of_100)} c={d?.basics ?? SAME} what="Needs paid" tone={basicsLevel(m.basics_of_100)} />
                           <Cell before={b && d ? money(b.count_on) : null} after={money(m.count_on)} c={d?.count_on ?? SAME} what="Can count on" />
                           <Cell before={b && d ? money(b.gap) : null} after={money(m.gap)} c={d?.gap ?? SAME} what="Short of goal" tone={(m.gap ?? 0) > 0 ? (m.verdict === "close" ? "close" : "short") : "ok"} />
                           <Cell before={b && d ? money(b.savings_at_retire) : null} after={money(m.savings_at_retire)} c={d?.savings ?? SAME} what="Savings at retirement" />

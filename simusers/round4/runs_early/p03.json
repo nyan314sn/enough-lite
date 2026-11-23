@@ -1,0 +1,618 @@
+{
+ "persona_id": "p03",
+ "name": "Priya",
+ "status": "done",
+ "intake_turns": [
+  {
+   "n": 1,
+   "user": "hey so im priya, 40 now. im a software engineer in CA, make about 145k. not sure if im on track tbh, thats kinda why im here lol",
+   "clicked": null,
+   "reply": "Got it: you work as a software engineer, you live in California, you are 40 and your pay is $145,000 a year. I can't tell yet. The plan answers that by comparing what you have with what your spending needs, year by year. I still need your savings, your home, any debts, whether you have children, when you want to retire and your spending. I filled in 5 more with typical figures. Each is marked in the panel, so you can change it.",
+   "question": {
+    "text": "About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
+    "quick_answers": [
+     "About $50k",
+     "About $250k",
+     "About $750k",
+     "About $2 million"
+    ]
+   },
+   "missing": [
+    "savings",
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": false,
+   "new_assumed": [
+    "retire_age: 65 (assumed)",
+    "risk: Balanced (assumed)",
+    "social_security_per_year: $47,600 a year at 67 (estimate)",
+    "spending_now_per_year: $92,000 a year, about $7,667 a month (estimate)",
+    "spending_per_year: $75,000 a year (estimate)"
+   ],
+   "early_press": false,
+   "fields": [
+    [
+     "age",
+     "40",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "California",
+     "you said"
+    ],
+    [
+     "job",
+     "software engineer",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$145,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "save_rate",
+     "About $14,474 a year, what take-home pay leaves after spending, less than the 10% of pay assumed",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "0 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None counted",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$47,600 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$92,000 a year, about $7,667 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$75,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 2,
+   "user": "sorry typing on my phone lol. total saved is like 365k? 180 in 401k, 90 roth, 60 brokerage, 35 in checking",
+   "clicked": null,
+   "reply": "Got it: you have saved $365,000 ($180,000 pre-tax, $90,000 Roth, $60,000 taxable and $35,000 cash).",
+   "question": {
+    "text": "Do you own your home or rent?",
+    "quick_answers": [
+     "I own it outright",
+     "I own it with a mortgage",
+     "I rent"
+    ]
+   },
+   "missing": [
+    "home",
+    "debts",
+    "children_count",
+    "retire_age",
+    "spending_now_per_year"
+   ],
+   "ready": true,
+   "new_assumed": [],
+   "early_press": false,
+   "fields": [
+    [
+     "age",
+     "40",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "California",
+     "you said"
+    ],
+    [
+     "job",
+     "software engineer",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$145,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$180,000 pre-tax (401(k) or IRA), $90,000 Roth, $60,000 taxable, $35,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "About $14,474 a year, what take-home pay leaves after spending, less than the 10% of pay assumed",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "4.6 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "debts",
+     "None counted",
+     "default"
+    ],
+    [
+     "social_security_per_year",
+     "$47,600 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$92,000 a year, about $7,667 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$75,000 a year",
+     "estimate"
+    ]
+   ]
+  },
+  {
+   "n": 3,
+   "user": "Build my plan with typical numbers for the rest",
+   "clicked": null,
+   "reply": "Fine. I will build your plan with typical figures for your home, any debts, whether you have children, when you want to retire and your spending. Each is marked in the panel, and you can change any of them on the plan page.",
+   "question": {
+    "text": "I estimated your spending in retirement at $75,000 a year from your take-home pay. Is that about right?",
+    "quick_answers": [
+     "That's about right",
+     "Same as now",
+     "Less, about 60%",
+     "A set figure"
+    ]
+   },
+   "missing": [],
+   "ready": true,
+   "new_assumed": [
+    "children: None counted (assumed)",
+    "home: Not given. Typical housing costs used: about $28,992 a year (estimate)"
+   ],
+   "early_press": true,
+   "fields": [
+    [
+     "age",
+     "40",
+     "you said"
+    ],
+    [
+     "sex",
+     "Not given, the average of the two tables",
+     "default"
+    ],
+    [
+     "state",
+     "California",
+     "you said"
+    ],
+    [
+     "children",
+     "None counted",
+     "assumed"
+    ],
+    [
+     "job",
+     "software engineer",
+     "you said"
+    ],
+    [
+     "pay_per_year",
+     "$145,000 a year",
+     "you said"
+    ],
+    [
+     "retire_age",
+     "65",
+     "assumed"
+    ],
+    [
+     "savings",
+     "$180,000 pre-tax (401(k) or IRA), $90,000 Roth, $60,000 taxable, $35,000 cash",
+     "you said"
+    ],
+    [
+     "save_rate",
+     "About $14,474 a year, what take-home pay leaves after spending, less than the 10% of pay assumed",
+     "default"
+    ],
+    [
+     "contributions",
+     "Not given, 10% of pay assumed",
+     "default"
+    ],
+    [
+     "match",
+     "None counted",
+     "default"
+    ],
+    [
+     "emergency_months",
+     "4.6 months of spending in cash",
+     "default"
+    ],
+    [
+     "risk",
+     "Balanced",
+     "assumed"
+    ],
+    [
+     "home",
+     "Not given. Typical housing costs used: about $28,992 a year",
+     "estimate"
+    ],
+    [
+     "debts",
+     "None counted",
+     "you said"
+    ],
+    [
+     "social_security_per_year",
+     "$47,600 a year at 67",
+     "estimate"
+    ],
+    [
+     "pensions",
+     "None counted",
+     "default"
+    ],
+    [
+     "life_insurance",
+     "None counted",
+     "default"
+    ],
+    [
+     "disability",
+     "None counted",
+     "default"
+    ],
+    [
+     "ltc",
+     "None counted",
+     "default"
+    ],
+    [
+     "legacy",
+     "None counted",
+     "default"
+    ],
+    [
+     "big_costs",
+     "None counted",
+     "default"
+    ],
+    [
+     "parents_help",
+     "None counted",
+     "default"
+    ],
+    [
+     "health",
+     "Good",
+     "default"
+    ],
+    [
+     "spending_now_per_year",
+     "$92,000 a year, about $7,667 a month",
+     "estimate"
+    ],
+    [
+     "spending_per_year",
+     "$75,000 a year",
+     "estimate"
+    ]
+   ]
+  }
+ ],
+ "plan_turns": [],
+ "path": "early",
+ "started": 1795386464.5330925,
+ "final_profile": {
+  "age": 40,
+  "partner_age": null,
+  "has_partner": false,
+  "state": "CA",
+  "retire_age": 65,
+  "pay_per_year": 145000.0,
+  "partner_pay_per_year": null,
+  "savings": {
+   "pretax": 180000.0,
+   "roth": 90000.0,
+   "taxable": 60000.0,
+   "cash": 35000.0
+  },
+  "savings_known": true,
+  "home": {
+   "owns": null,
+   "value": 0.0,
+   "mortgage_balance": 0.0,
+   "mortgage_payment": 0.0,
+   "rent": 0.0,
+   "mortgage_rate": null
+  },
+  "children": [],
+  "pets": [],
+  "spending_per_year": 75000.0,
+  "social_security_per_year": 47600.0,
+  "risk": "balanced",
+  "job": "software engineer",
+  "partner_job": null,
+  "sex": null,
+  "partner_sex": null,
+  "save_rate": 0.1,
+  "sources": {
+   "age": "you said",
+   "state": "you said",
+   "job": "you said",
+   "pay_per_year": "you said",
+   "savings": "you said",
+   "retire_age": "assumed",
+   "risk": "assumed",
+   "save_rate": "assumed",
+   "social_security_per_year": "estimate",
+   "health": "assumed",
+   "spending_now_per_year": "estimate",
+   "spending_per_year": "estimate",
+   "emergency_months": "estimate"
+  },
+  "notes": {
+   "told": "{\"retire_age\": \"retirement at 65\", \"spending_now_per_year\": \"spending now at $92,000 a year\", \"spending_per_year\": \"spending in retirement at $75,000 a year\", \"social_security_per_year\": \"Social Security at $47,600 a year\", \"save_rate\": \"saving 10% of pay\", \"risk\": \"a balanced investing mix\"}",
+   "stuck": "0",
+   "children_n": "0",
+   "skipped_home": "yes",
+   "skipped_debts": "yes",
+   "skipped_children_count": "yes",
+   "skipped_retire_age": "yes",
+   "skipped_spending_now_per_year": "yes",
+   "retire_age": "A common goal. Change it to test another age.",
+   "risk": "Stocks at 110 minus your age, at most 75%.",
+   "save_rate": "Assumed you save 10% of pay until you retire.",
+   "social_security_per_year": "Rough estimate from pay, claiming at 67. Get your real figure at ssa.gov/myaccount.",
+   "health": "Assumed good health, which leaves the life table as it is.",
+   "spending_now_per_year": "Estimated as your take-home pay less what you save, and no less than typical needs.",
+   "spending_per_year": "Estimated as 70% of your take-home pay, and no less than typical needs.",
+   "emergency_months": "Your cash savings divided by a month of spending."
+  },
+  "asking": "confirm_spending_later",
+  "health": "good",
+  "partner_health": null,
+  "partner_retire_age": null,
+  "debts": [],
+  "pensions": [],
+  "saving": {
+   "contrib_you": null,
+   "contrib_partner": null,
+   "match_rate": null,
+   "match_cap": null,
+   "other_per_month": null
+  },
+  "insurance": {
+   "life_kind": null,
+   "life_face": null,
+   "life_premium": null,
+   "disability": null,
+   "ltc": null
+  },
+  "goals": {
+   "legacy": null,
+   "big_costs": [],
+   "parents_per_year": null,
+   "parents_years": null
+  },
+  "emergency_months": 4.6,
+  "part_time": null,
+  "inheritance": null,
+  "spending_now_per_year": 92000.0,
+  "budget": {
+   "housing": null,
+   "food": null,
+   "transport": null,
+   "health": null,
+   "childcare": null,
+   "debt": null,
+   "other": null
+  },
+  "retire_spend_ratio": null,
+  "offered": [
+   "debts"
+  ],
+  "claim_age": null,
+  "partner_claim_age": null,
+  "history": [
+   "you: hey so im priya, 40 now. im a software engineer in CA, make about 145k. not sure if im on track tbh, thats kinda why im here lol",
+   "app: Got it: you work as a software engineer, you live in California, you are 40 and your pay is $145,000 a year. I can't tell yet. The plan answers that by comparing what you have with what your spending needs, year by year. I still need your savings, your home, any debts, whether you have children, when you want to retire and your spending. I filled in 5 more with typical figures. Each is m",
+   "you: sorry typing on my phone lol. total saved is like 365k? 180 in 401k, 90 roth, 60 brokerage, 35 in checking",
+   "app: Got it: you have saved $365,000 ($180,000 pre-tax, $90,000 Roth, $60,000 taxable and $35,000 cash). Do you own your home or rent?",
+   "you: Build my plan with typical numbers for the rest",
+   "app: Fine. I will build your plan with typical figures for your home, any debts, whether you have children, when you want to retire and your spending. Each is marked in the panel, and you can change any of them on the plan page. I estimated your spending in retirement at $75,000 a year from your take-home pay. Is that about right?"
+  ],
+  "turns": 3
+ },
+ "reached_missing_empty": true,
+ "turns_to_plan": 3,
+ "person_messages": 2,
+ "escape_presses": 1,
+ "plan_error": null,
+ "plan_ok": true,
+ "plan": {
+  "headline": "You can count on $77,200 a year: $45,400 for needs, $31,800 for wants.",
+  "needs": {
+   "basics_per_year": 45400,
+   "paid_of_100": 100,
+   "line": "Your needs cost about $45,400 a year. They are paid in all 100 market tests.",
+   "basis": "typical"
+  },
+  "wants": {
+   "per_year": 77200.0,
+   "above_basics_per_year": 31800.0,
+   "line": "You can count on about $77,200 a year, safe in 90 of 100 market tests. That leaves $31,800 for wants."
+  },
+  "wishes": {
+   "line": "Your wishes stay open: your goal of $75,000 a year lasts in 93 of 100 market tests. In a typical test, about $899,000 is left at the end."
+  },
+  "actions": [
+   {
+    "title": "Save a little more each year",
+    "why": "Money saved now has years to grow. It also means less to draw later."
+   },
+   {
+    "title": "Plan to claim Social Security at 70",
+    "why": "That pays about $59,000 a year for your household."
+   },
+   {
+    "title": "Keep about 55% of savings in stocks now",
+    "why": "A simple stock mix keeps your needs safest."
+   }
+  ]
+ },
+ "seconds": 31.0
+}

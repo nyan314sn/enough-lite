@@ -35,6 +35,7 @@ These are the rules the user set for Enough Lite, gathered from the user's instr
   - `elapsed_s` notes: a plan takes about 8 to 20 seconds on a quiet machine; under load it can take over a minute. The saved eval ran three plans at a time beside pytest: median 11 s, 90th percentile 32.6 s, slowest 91.5 s. The test judges the median (at most 20 s) and the 90th percentile (at most 40 s), not the slowest run.
 - **R24. Fresh clone runs in under 10 minutes.**
 - **R25. Realistic test inputs.** Tests use realistic, complete households.
+- **R26. A high-school graduate can use it (real user, 2026-11-22).** Plain, short sentences at reading grade 8 or lower; the plan's answer (can I retire, how short, what to do first) readable in under a minute; everything else folded away; the plan can be built early with typical figures shown for checking.
 
 ## Coverage
 

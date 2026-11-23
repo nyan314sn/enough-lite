@@ -1,0 +1,127 @@
+{
+ "persona_id": "p09",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 58,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "PA",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 70000.0,
+    "truth": 60000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 300000.0,
+    "truth": 189000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 40000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 52000.0,
+    "truth": 48000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6153846153846154,
+  "why": [
+   {
+    "field": "state",
+    "cause": "never_asked",
+    "note": "App never asked which state she lives in."
+   },
+   {
+    "field": "pay_per_year",
+    "cause": "assumed_default",
+    "note": "She never gave her pay; app used a $70,000 estimate. Truth is $60,000."
+   },
+   {
+    "field": "savings_total",
+    "cause": "person_guessed_wrong",
+    "note": "She guessed 'maybe 300k'. Truth is $189,000 ($180k 401(k) plus $9k cash)."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "App never asked about home ownership; it said home was 'not given'."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "App never asked about the mortgage and used typical housing costs instead. Truth is $40,000."
+   }
+  ]
+ }
+}

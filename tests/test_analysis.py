@@ -90,7 +90,8 @@ def test_stresses_are_never_better_than_the_plan(name):
     rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
     assert {"bad_decade", "inflation"} <= set(rows)
     for k, x in rows.items():
-        assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+        assert x["what"].count(". ") <= 2 and x["what"].endswith("."), "each stress is a few plain short sentences"
+        assert all(len(s.split()) <= 20 for s in x["what"].split(". ")), x["what"]
         if k in ("early_death", "late_death"):
             continue      # spending falls after a death too, so this one can go either way (its note says so)
         assert x["count_on_change"] <= 0 and x["basics_change"] <= 0, (k, x)
@@ -172,7 +173,7 @@ def test_cost_parts_add_up_to_the_total(name):
 def test_bus_driver_sees_the_shortfall_plainly():
     plan, _ = plan_of("bus_driver")
     a = plan["analysis"]
-    assert "no level of spending lasts" in a["how_sure"]["line"]
+    assert "no level of spending lasts" in a["how_sure"]["line"].lower()
     assert any(x["key"] == "short" for x in a["sources"]["series"])
     assert "run out" in a["sources"]["line"]
 
@@ -200,12 +201,12 @@ def test_below_social_security_note_is_two_short_sentences_and_names_a_pay_defic
     from app.agents import adviser
     m = {"safe_spending_per_year": 10000, "social_security_per_year": 33000, "ss_tax_rate": 0.1, "health_extra_in_retirement": True,
          "social_security_survivor_per_year": 20000, "ss_starts_later": True, "inputs": {"save_per_year": 5000, "retire_age": 65, "age": 50}}
-    note = adviser.below_ss_note(m).strip()
+    note = (adviser.below_ss_note(m) + " " + adviser.below_ss_why(m)).strip()
     sentences = [s for s in note.split(". ") if s]
     assert len(sentences) == 2 and all(len(s.split()) <= 25 for s in sentences), note
     m["inputs"]["save_per_year"] = -6000
-    note = adviser.below_ss_note(m)
-    assert "more now than your take-home pay" in note and "health" not in note
+    note = adviser.below_ss_why(m)
+    assert "more than your take-home pay" in note and "health" not in note
 
 
 # ------------------------------------------------------------------ what could go wrong: consequence sentences
@@ -240,10 +241,10 @@ def _allowed(x: dict) -> set[int]:
 def test_sentence_template_spending_still_holds():
     x = _base_row(plan_spend_per_year=191000, count_on_per_year=167000, worst_runs_out_age=88, worst_years_short=7, worst_gap_per_year=24000)
     s = analysis.sentence(x, couple=False)
-    assert s == ("Your $191,000 a year still lasts in most paths. In the worst 1 in 10, savings "
-                 "run out at 88, and you would cut about $24,000 a year for 7 years.")      # basics said once after the list
+    assert s == ("Your $191,000 a year still lasts in most market tests. In the worst 1 in 10, savings "
+                 "run out at 88. You would then cut about $24,000 a year for 7 years.")      # needs said once after the list
     assert "when you are 88" in analysis.sentence(x, couple=True)
-    assert "Basics stay paid in 97 of 100 paths." in analysis.sentence({**x, "basics_paid_of_100": 97}, couple=False)
+    assert "Your needs stay paid in 97 of 100 market tests." in analysis.sentence({**x, "basics_paid_of_100": 97}, couple=False)
     assert "for 1 year." in analysis.sentence({**x, "worst_years_short": 1}, couple=False)
 
 
@@ -251,22 +252,22 @@ def test_sentence_template_spending_fails():
     x = _base_row(key="inflation", plan_spend_per_year=191000, count_on_per_year=187900, typical_runs_out_age=84, typical_years_short=11,
                   worst_runs_out_age=80, typical_income_per_year=58000, typical_income_from="Social Security and your pension")
     s = analysis.sentence(x, couple=False)
-    assert s == ("Your $191,000 a year would run out at 84 in a typical path. You would have 11 years "
+    assert s == ("Your $191,000 a year would run out at 84 in a typical market test. You would have 11 years "
                  "with only Social Security and your pension, about $58,000 a year. Spending $188,000 instead would last.")
 
 
 def test_sentence_template_small_effect():
     x = _base_row(key="late_death", stress_years=10, plan_spend_per_year=195000, count_on_per_year=191800)
-    assert analysis.sentence(x, couple=True) == "The plan still works: you could spend about $192,000 a year instead of $195,000."
+    assert analysis.sentence(x, couple=True) == "The plan still works. You could spend about $192,000 a year instead of $195,000."
     s = analysis.sentence({**x, "count_on_per_year": 196000}, couple=True)
-    assert s.endswith("you could still spend about $195,000 a year.")
+    assert s.endswith("You could still spend about $195,000 a year.")
 
 
 def test_sentence_template_basics_at_risk_comes_first():
     x = _base_row(basics_paid_of_100=86, basics_at_risk=True, plan_spend_per_year=60000, count_on_per_year=52000, typical_runs_out_age=91)
     s = analysis.sentence(x, couple=False)
-    assert s.startswith("Your basics would go unpaid in 14 of 100 market paths.")
-    assert "In a typical path your savings run out at 91." in s and s.endswith("about $52,000 a year, down from $60,000.")
+    assert s.startswith("Your needs would go unpaid in 14 of 100 market tests.")
+    assert "In a typical test, your savings run out at 91." in s and s.endswith("about $52,000 a year, down from $60,000.")
 
 
 def test_sentence_early_death_keeps_the_survivor_note():
@@ -330,10 +331,10 @@ def test_grouped_form_when_all_shown_risks_hold():
     mk = lambda key, y, age, gap, yrs: _base_row(key=key, stress_years=y, plan_spend_per_year=111000, count_on_per_year=104000,
                                                   worst_runs_out_age=age, worst_years_short=yrs, worst_gap_per_year=gap)
     rows = [mk("inflation", 10, 93, 40000, 5), mk("bad_decade", 10, 93, 37000, 5), mk("long_partner", None, 98, 39000, 5)]
-    assert analysis.group_lead(rows) == "Your $111,000 a year holds up in most market paths under each of these. In the worst 1 in 10:"
-    assert analysis.short_line(rows[0], couple=True) == "savings run out when you are 93; you would cut about $40,000 a year for 5 years."
-    assert analysis.short_line(rows[0], couple=False).startswith("savings run out at 93;")
-    assert "Basics stay paid in 97 of 100 paths." in analysis.short_line({**rows[0], "basics_paid_of_100": 97}, couple=False)
+    assert analysis.group_lead(rows) == "Your $111,000 a year holds up in most market tests. In the worst 1 in 10:"
+    assert analysis.short_line(rows[0], couple=True) == "Savings run out when you are 93. You would cut about $40,000 a year for 5 years."
+    assert analysis.short_line(rows[0], couple=False).startswith("Savings run out at 93.")
+    assert "Your needs stay paid in 97 of 100 market tests." in analysis.short_line({**rows[0], "basics_paid_of_100": 97}, couple=False)
     # different verdicts (one fails, one is small): no group, full sentences
     assert analysis.group_lead([rows[0], {**rows[1], "typical_runs_out_age": 90}]) == ""
     assert analysis.group_lead([rows[0], _base_row()]) == ""

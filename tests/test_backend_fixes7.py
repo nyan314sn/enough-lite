@@ -177,9 +177,9 @@ def test_thin_wants_headline_reads_sensibly():
     from app.agents import adviser
     m = {"safe_spending_per_year": 50400, "wants_per_year": 0}
     h = adviser.headline(m, 50400)
-    assert h.startswith("You can count on $50,400 a year, about your basics") and "little room above them yet" in h
-    assert "less than your basics" in adviser.headline({"safe_spending_per_year": 30000, "wants_per_year": 0}, 50400)
-    assert "$60,000 for basics and $30,000 for the rest" in adviser.headline({"safe_spending_per_year": 90000, "wants_per_year": 90000}, 60000)
+    assert h.startswith("You can count on $50,400 a year, about your needs") and "Little is left for wants" in h
+    assert "but your needs cost $50,400" in adviser.headline({"safe_spending_per_year": 30000, "wants_per_year": 0}, 50400)
+    assert "$60,000 for needs, $30,000 for wants" in adviser.headline({"safe_spending_per_year": 90000, "wants_per_year": 90000}, 60000)
 
 
 def test_plan_carries_headline_and_never_says_wants_are_zero():

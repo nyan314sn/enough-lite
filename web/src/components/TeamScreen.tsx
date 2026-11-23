@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import AskBox, { type WhatIfEntry } from "./AskBox";
 import PlanCard from "./PlanCard";
-import TeamPanel, { ROSTER, nodeState, type ScenarioView } from "./TeamPanel";
+import TeamPanel, { ROSTER, nodeState, type RunView, type ScenarioView } from "./TeamPanel";
 import ScenarioTabs, { PANEL_ID } from "./ScenarioTabs";
 import CompareTable, { type Col } from "./CompareTable";
 import { MAX_WHATIFS, changeLine } from "./WhatIf";
@@ -42,11 +42,24 @@ export default function TeamScreen({ api, profile, model, onBack, stale = false,
   const [cleared, setCleared] = useState(false);   // the What Ifs were dropped because a correction changed the baseline
   const count = useRef(0);
   const [rerun, setRerun] = useState<string[]>([]);
-  const [req, setReq] = useState<{ id: number; q: string } | null>(null);   // a What If asked from a starting point
+  const [composing, setComposing] = useState(false);   // "+ What if" was pressed: the plan is dimmed and the What If section is in focus
   const next = useRef(1);
   const initial = useRef(profile);                       // the answers this run was built from; a later correction does not restart it
   const [fixed, setFixed] = useState<Plan | null>(null);   // a plan rebuilt after a correction in the chat: it replaces the baseline
   const top = useRef<HTMLDivElement>(null);
+  // a What If's own run of the team, streamed like the plan's: live while it works, then kept with its tab
+  const [live, setLive] = useState<RunView | null>(null);
+  const liveRef = useRef<RunView | null>(null);
+  const [runs, setRuns] = useState<Record<number, RunView>>({});
+  const onRunEvent = useCallback((e: PlanEvent, name: string) => {
+    let r = liveRef.current;
+    if (e.type === "whatif_start") r = { label: name, estimate: e.estimate, team: emptyTeam, working: true };
+    else if (r) r = { ...r, team: teamReducer(r.team, e) };
+    else return;
+    liveRef.current = r;
+    setLive(r);
+  }, []);
+  const onRunEnd = useCallback(() => { liveRef.current = null; setLive(null); }, []);
 
   useEffect(() => {
     const ctl = new AbortController();
@@ -62,6 +75,9 @@ export default function TeamScreen({ api, profile, model, onBack, stale = false,
   const onWhatIf = useCallback((e: Omit<WhatIfEntry, "id">) => {
     if (count.current >= MAX_WHATIFS) return null;   // the chat says to remove one first
     const id = next.current++;
+    const r = liveRef.current;
+    if (r) setRuns((m) => ({ ...m, [id]: { ...r, working: false } }));
+    setComposing(false);
     count.current += 1;
     setWhatifs((w) => [...w, { ...e, id }]);
     setActive(id);
@@ -100,16 +116,26 @@ export default function TeamScreen({ api, profile, model, onBack, stale = false,
     else setFocusTab({ id: comparing && rest.length > 0 ? null : active, n: Date.now() });
   };
   const newWhatIf = () => {
+    setComposing(true);
     const el = document.getElementById("ask-input") as HTMLInputElement | null;
     el?.scrollIntoView?.({ block: "center", behavior: scrollBehavior() });
     el?.focus();
   };
+  const cancelCompose = () => { setComposing(false); requestAnimationFrame(() => document.getElementById("scen-add")?.focus()); };
+  useEffect(() => {
+    if (!composing) return;
+    const esc = (e: KeyboardEvent) => { if (e.key === "Escape") cancelCompose(); };
+    document.addEventListener("keydown", esc);
+    return () => document.removeEventListener("keydown", esc);
+  }, [composing]);
+  const dim = composing || rerun.length > 0;
   const working = !team.done;
   const doneN = ROSTER.filter((r) => nodeState(team, r.key) === "done").length;
   const cur = whatifs.find((w) => w.id === active) ?? null;
   const shownCur = comparing ? null : cur;
   const view: ScenarioView | null = shownCur ? { label: shownCur.name, text: shownCur.text, tokens: shownCur.tokens, usd: shownCur.cost_usd } : null;
-  const status = rerun.length ? "Your advisers are re-checking this What If." : view ? `Showing the What If “${view.label}”. The advisers' notes are from the baseline run.` : working ? `Each adviser checks one part of your plan, using ${model}.` : team.error ? "The team stopped." : "Done. Select an adviser to read their work.";
+  const panelRun = live ?? (shownCur ? runs[shownCur.id] ?? null : null);
+  const status = live ? `Working on: ${live.label}` : rerun.length ? "Starting your advisers on this What If…" : view ? (panelRun ? `Showing the What If “${view.label}”. Select an adviser to read their work on it.` : `Showing the What If “${view.label}”. The advisers' notes are from the baseline run.`) : working ? `Each adviser checks one part of your plan, using ${model}.` : team.error ? "The team stopped." : "Done. Select an adviser to read their work.";
   const cols: Col[] = plan ? [{ key: "base", label: "Baseline", plan, retire: plan.already_retired ? null : profile.retire_age ?? null }, ...whatifs.map((w) => ({ key: String(w.id), label: w.name, full: w.q, plan: w.plan, retire: plan.already_retired ? null : w.retireAfter ?? profile.retire_age ?? null }))] : [];
 
   return (
@@ -144,18 +170,18 @@ export default function TeamScreen({ api, profile, model, onBack, stale = false,
             <ScenarioTabs items={whatifs} active={active} comparing={comparing} onSelect={open} onRemove={remove} onNew={newWhatIf} onCompare={() => { setComparing((c) => !c); requestAnimationFrame(() => top.current?.scrollIntoView?.({ block: "start", behavior: scrollBehavior() })); }} focusTab={focusTab} />
             {whatifs.length > 0 && stale && <p className="small muted scen-note" role="status" data-testid="scen-stale">Rebuilding the plan clears these What Ifs, because they were built on your old answers.</p>}
             {cleared && whatifs.length === 0 && <p className="small muted scen-note" role="status" data-testid="scen-cleared">Your What Ifs were cleared, because they were built on your old answers.</p>}
-            <div id={PANEL_ID} role="tabpanel" aria-labelledby={comparing ? undefined : `tab-${cur?.id ?? "base"}`} aria-label={comparing ? "Compare" : undefined} tabIndex={-1} className="scen-panel">
+            <div id={PANEL_ID} role="tabpanel" aria-labelledby={comparing ? undefined : `tab-${cur?.id ?? "base"}`} aria-label={comparing ? "Compare" : undefined} tabIndex={-1} className={`scen-panel${dim ? " dimmed" : ""}`} aria-hidden={dim || undefined} {...(dim ? ({ inert: "" } as object) : {})}>
               {comparing
                 ? <CompareTable cols={cols} onOpen={(k) => open(k === "base" ? null : Number(k))} />
                 : cur
                   ? <PlanCard key={cur.id} plan={cur.plan} retireAge={cur.retireAfter ?? profile.retire_age} scenario={{ name: cur.name, baseline: plan, change: changeLine(cur.q, plan, profile.retire_age, cur.retireAfter), text: cur.text, citations: cur.citations }} />
-                  : <PlanCard plan={plan} retireAge={profile.retire_age} onTry={(q) => setReq((r) => ({ id: (r?.id ?? 0) + 1, q }))} />}
+                  : <PlanCard plan={plan} retireAge={profile.retire_age} />}
             </div>
           </>
         )}
-        {plan && <AskBox api={api} profile={profile} plan={plan} onCost={addCost} onWhatIf={onWhatIf} onOpen={open} onAsking={setRerun} onChange={onChange} stale={stale} canRebuild={canRebuild} onRebuild={onRebuild} whatifIds={whatifs.map((w) => w.id)} request={req} full={whatifs.length >= MAX_WHATIFS} />}
+        {plan && <AskBox api={api} profile={profile} plan={plan} onCost={addCost} onWhatIf={onWhatIf} onOpen={open} onAsking={(a) => { if (a.length) setComposing(false); setRerun(a); }} onChange={onChange} stale={stale} canRebuild={canRebuild} onRebuild={onRebuild} whatifIds={whatifs.map((w) => w.id)} onRunEvent={onRunEvent} onRunEnd={onRunEnd} composing={composing} onCancel={cancelCompose} full={whatifs.length >= MAX_WHATIFS} />}
       </div>
-      <TeamPanel team={team} rerun={rerun} ask={ask} session={session} status={status} scenario={view} />
+      <TeamPanel team={team} rerun={rerun} ask={ask} session={session} status={status} scenario={view} run={panelRun} />
     </div>
   );
 }

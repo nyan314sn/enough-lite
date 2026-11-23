@@ -1,0 +1,129 @@
+{
+ "persona_id": "p15",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 38,
+    "truth": 38,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "MA",
+    "truth": "MA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 60,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 169000.0,
+    "truth": 170000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 45000.0,
+    "truth": 460000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 560000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     3
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 107000.0,
+    "truth": 120000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6153846153846154,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "Person never stated a retirement age; app used 65. Truth is 60."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "App asked about savings, but person chose typical numbers instead of answering. App used $45,000; truth is $460,000."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "App listed the home as needed but never asked whether she owns it. Stored null."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "Mortgage was never asked about. App stored 0; truth is $560,000."
+   },
+   {
+    "field": "children",
+    "cause": "never_asked",
+    "note": "App listed children as needed but never asked. It then assumed none; truth is one child, age 3."
+   }
+  ]
+ }
+}

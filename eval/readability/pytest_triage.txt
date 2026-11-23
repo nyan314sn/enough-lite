@@ -1,0 +1,430 @@
+........F...........F..........F.......................................F [  7%]
+......F.................F.......................F........F.............. [ 14%]
+........................................................................ [ 22%]
+...F................................F................................... [ 29%]
+..F...........F...........F...........F..FF............................. [ 37%]
+F....................................................................... [ 44%]
+........................................................F............... [ 51%]
+........................................................................ [ 59%]
+........................................................................ [ 66%]
+........................................................................ [ 74%]
+........................................................................ [ 81%]
+........................................................................ [ 88%]
+...................FFFFF...............F..FF.FF.........F............... [ 96%]
+...................................                                      [100%]
+================================== FAILURES ===================================
+________________ test_ask_whatif_returns_new_plan_and_profile _________________
+
+client = <starlette.testclient.TestClient object at 0x00000166D59F6AD0>
+doctor_profile = {'age': 45, 'partner_age': 43, 'has_partner': True, 'state': 'CT', ...}
+
+    def test_ask_whatif_returns_new_plan_and_profile(client, doctor_profile):
+        r = client.post("/api/ask", json={"question": "What if I retire at 62?", "profile": doctor_profile}).json()
+        assert r["kind"] == "whatif" and r["profile"]["retire_age"] == 62 and r["plan"]["retire_age"] == 62
+>       assert "62" in r["text"] and "of 100 market paths" in r["text"]
+E       AssertionError: assert ('62' in 'If you retire at 62, you can count on $108,900 a year, down from $132,100. Your goal lasts in 73 of 100, down from 94.' and 'of 100 market paths' in 'If you retire at 62, you can count on $108,900 a year, down from $132,100. Your goal lasts in 73 of 100, down from 94.')
+
+tests\test_api.py:129: AssertionError
+_________________ test_short_messages_keep_the_full_readback __________________
+
+    def test_short_messages_keep_the_full_readback():
+        r = run("I'm 45, a doctor in Ohio, with 2 kids, 12 and 9")
+>       assert "facts from your message" not in r.reply
+E       AssertionError: assert 'facts from your message' not in 'I assumed p...n change it.'
+E         
+E         'facts from your message' is contained here:
+E           I noted 4 facts from your message. Check them in the panel on the right. The main ones: you are 45. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.
+E         ?           +++++++++++++++++++++++
+
+tests\test_example_household.py:59: AssertionError
+_________ test_build_line_once_when_ready_and_after_confirm_questions _________
+
+    def test_build_line_once_when_ready_and_after_confirm_questions():
+        r = run("I'm 50, single, in Ohio, earn $90,000, rent, retire at 65, have $300,000 saved, no debts, no kids, no pets, we spend $4,000 a month")
+        p = r.profile
+        for _ in range(8):
+            if "Build my plan" in r.reply:
+                break
+            if not r.question:
+                break
+            r = run("yes" if r.profile.get("asking", "").startswith("confirm") else "skip", r.profile)
+        assert "Build my plan" in r.reply and "check the figures on the right".lower() in r.reply.lower()
+>       assert "ask you to check the figures once before building" in r.reply and "once more" not in r.reply
+E       AssertionError: assert ('ask you to check the figures once before building' in 'Good. I will use Balanced as your own figure for investing style. That is enough to build your plan. Check the figures on the right, then press Build my plan. I will ask you to check them once more first.')
+E        +  where 'Good. I will use Balanced as your own figure for investing style. That is enough to build your plan. Check the figures on the right, then press Build my plan. I will ask you to check them once more first.' = IntakeResponse(profile={'age': 50, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 65, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_example_household.py:133: AssertionError
+__ test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run __
+
+    def test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run():
+        r = ask("what if I work part time until 68", WORKING)
+        assert r["kind"] == "clarify"
+>       assert len(re.findall(r"[.?!](?:\s|$)", r["text"])) == 1
+E       AssertionError: assert 2 == 1
+E        +  where 2 = len(['. ', '.'])
+E        +    where ['. ', '.'] = <function findall at 0x00000166C7945F30>('[.?!](?:\\s|$)', 'Part-time work needs a yearly amount. The closest What If I can run is retiring at 68.')
+E        +      where <function findall at 0x00000166C7945F30> = re.findall
+
+tests\test_round2_ask.py:84: AssertionError
+_______________________ test_spend_less_result_changes ________________________
+
+    def test_spend_less_result_changes():
+        r = ask("spend $500 less a month", RETIRED)
+        lasts_before = plan_of(RETIRED)[1]["markets"]["goal_lasts_of_100"]
+        m = re.search(r"goal lasts in (\d+) of 100", r["text"])
+        assert m and int(m.group(1)) != lasts_before
+>       assert "(now $" not in r["text"] and re.search(r"(?:up|down) from \$", r["text"]), r["text"]
+E       AssertionError: If you spend $6,000 a year less, at $66,000, you can count on $62,500 a year, as before. Your goal lasts in 77 of 100, up from 45.
+E       assert ('(now $' not in 'If you spen... up from 45.'
+E         
+E         '(now $' is contained here:
+E           up from 45. and None)
+E        +  where None = <function search at 0x00000166C7917CC0>('(?:up|down) from \\$', 'If you spend $6,000 a year less, at $66,000, you can count on $62,500 a year, as before. Your goal lasts in 77 of 100, up from 45.')
+E        +    where <function search at 0x00000166C7917CC0> = re.search
+
+tests\test_round2_ask.py:123: AssertionError
+__________________ test_a_plan_figure_is_traced_to_the_plan ___________________
+
+    def test_a_plan_figure_is_traced_to_the_plan():
+        plan, _ = plan_of(RETIRED)
+        per = int(plan["wants"]["per_year"])
+        r = ask(f"where did ${per:,} come from?", RETIRED, plan=plan)
+>       assert "90 of 100" in r["text"] and "not a figure you gave" in r["text"]
+E       AssertionError: assert ('90 of 100' in '$62,500 is the most you can spend a year and still have money in 90 of 100 market paths. The plan works it out from 2,000 market paths. You did not give this figure.' and 'not a figure you gave' in '$62,500 is the most you can spend a year and still have money in 90 of 100 market paths. The plan works it out from 2,000 market paths. You did not give this figure.')
+
+tests\test_round2_ask.py:247: AssertionError
+__ test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes ___
+
+    def test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes():
+        r = play([MORT + ". House is worth around 330k, $45,000 left, payment about $1300 a month"])[-1]
+>       assert "worth about $330,000" in r.reply
+E       AssertionError: assert 'worth about $330,000' in 'Got it. I noted 5 facts from your message. Check them in the panel on the right. The main ones: you are 45 and you have saved $300,000. I filled in 7 more with typical figures. Each is marked in the panel, so you can change it.'
+E        +  where 'Got it. I noted 5 facts from your message. Check them in the panel on the right. The main ones: you are 45 and you have saved $300,000. I filled in 7 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 65, 'pay_pe...'status': 'default', 'note': 'Estimate: $66,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_round2_intake.py:180: AssertionError
+_________ test_starting_points_never_offer_a_point_that_does_nothing __________
+
+    def test_starting_points_never_offer_a_point_that_does_nothing():
+        plan, _ = plan_for(dict(PARENT, spending_now_per_year=61000, spending_per_year=54000))
+        for x in plan["starting_points"]:
+>           assert "(now" in x["result"]
+E           AssertionError: assert '(now' in 'Basics are paid in 99 of 100 market paths, against 24 now. You can count on $34,200 a year, against $31,300 now.'
+
+tests\test_round2_plan.py:109: AssertionError
+__________ test_partner_pension_with_start_age_and_the_right_person ___________
+
+    def test_partner_pension_with_start_age_and_the_right_person():
+        r = step("Hi, I'm Maria, 43, a pediatrician in Massachusetts, married to David who's 46 and is a high school teacher. "
+                 "David will get a teacher pension of about $2,500 a month at 60.", {})
+        pens = r.profile["pensions"]
+        assert len(pens) == 1 and pens[0]["who"] == "partner" and pens[0]["per_year"] == 30000 and pens[0]["start_age"] == 60
+        assert r.profile["sources"]["pensions"] == "you said"
+>       assert "your partner has a pension of $30,000 a year from 60" in r.reply and "you have a pension" not in r.reply
+E       AssertionError: assert ('your partner has a pension of $30,000 a year from 60' in 'Got it. I noted 4 facts from your message. Check them in the panel on the right. The main ones: you are 43. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.')
+E        +  where 'Got it. I noted 4 facts from your message. Check them in the panel on the right. The main ones: you are 43. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 43, 'partner_age': 43, 'has_partner': True, 'state': 'MA', 'retire_age': 65, 'pay_per_y...status': 'default', 'note': 'Estimate: $149,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_round3_intake.py:159: AssertionError
+___________________ test_assumptions_state_the_numbers_used ___________________
+
+    def test_assumptions_state_the_numbers_used():
+        plan, ctx = plan_for(H13)
+        text = " ".join(plan["assumptions"])
+        assert "today's dollars" in text and "5.0%" in text and "1.8%" in text and "85%" in text
+>       assert "no raises" in text and "Yearly saving" in text and "larger of your two" in text
+E       assert ('no raises' in "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...chance that one of you will live that long. This comes from a US life table. People with more money often live longer." and 'Yearly saving' in "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...chance that one of you will live that long. This comes from a US life table. People with more money often live longer." and 'larger of your two' in "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...chance that one of you will live that long. This comes from a US life table. People with more money often live longer.")
+
+tests\test_loop1_engine.py:181: AssertionError
+____________ test_assumptions_say_what_is_fixed_and_offer_changes _____________
+
+    def test_assumptions_say_what_is_fixed_and_offer_changes():
+        prof, base, plan, _ = plan_for("example")
+        text = " ".join(plan["assumptions"])
+>       assert "They are fixed" in text and "This is fixed" in text
+E       assert ('They are fixed' in "All figures are in today's dollars. That is what money buys now. Stocks grow 5.0% a year above inflation on average, ...chance that one of you will live that long. This comes from a US life table. People with more money often live longer.")
+
+tests\test_rules_audit_plan.py:208: AssertionError
+______ test_girl_and_boy_are_linked_to_ages_when_the_sentence_gives_them ______
+
+    def test_girl_and_boy_are_linked_to_ages_when_the_sentence_gives_them():
+        r = run("I'm a single mom, 38, a nurse in Denver, Colorado earning $92,000. I have two kids, a girl of 8 and a boy of 5. I rent for $2,300 a month "
+                "and have $48,000 saved. I want the girl to go to a state college and the boy to a private one. I'd like to retire at 63.")
+        assert _children(r) == {8: "public", 5: "private"}
+        assert [c["sex"] for c in r.profile["children"]] == ["female", "male"]
+>       assert "8-year-old goes to a public in-state college" in r.reply and "5-year-old goes to a private college" in r.reply
+E       AssertionError: assert ('8-year-old goes to a public in-state college' in 'Got it. I noted 9 facts from your message. Check them in the panel on the right. The main ones: you are 38, your pay ... you want to retire at 63. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.')
+E        +  where 'Got it. I noted 9 facts from your message. Check them in the panel on the right. The main ones: you are 38, your pay ... you want to retire at 63. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 38, 'partner_age': None, 'has_partner': False, 'state': 'CO', 'retire_age': 63, 'pay_pe...'status': 'default', 'note': 'Estimate: $71,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_rules_audit_intake.py:168: AssertionError
+_______________ test_saved_editor_edit_is_not_called_unmatched ________________
+
+    def test_saved_editor_edit_is_not_called_unmatched():
+        r = _ready_household()
+        prof = dict(r.profile, pay_per_year=310000)
+        out = run("Updated your pay: $310,000.", prof)
+>       assert "did not match" not in out.reply and out.reply.strip() and ("Saved" in out.reply or "updated them" in out.reply)
+E       AssertionError: assert ('did not match' not in 'I updated s...,000 a year.'
+E         
+E         'did not match' is contained here:
+E           000 a year. and 'I updated some typical figures: spending now at $166,000 a year.' and ('Saved' in 'I updated some typical figures: spending now at $166,000 a year.' or 'updated them' in 'I updated some typical figures: spending now at $166,000 a year.'))
+E        +  where 'I updated some typical figures: spending now at $166,000 a year.' = <built-in method strip of str object at 0x00000166D7761E60>()
+E        +    where <built-in method strip of str object at 0x00000166D7761E60> = 'I updated some typical figures: spending now at $166,000 a year.'.strip
+E        +      where 'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+E        +  and   'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+E        +  and   'I updated some typical figures: spending now at $166,000 a year.' = IntakeResponse(profile={'age': 45, 'partner_age': None, 'has_partner': False, 'state': 'OH', 'retire_age': 60, 'pay_pe...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_rules_audit_intake.py:280: AssertionError
+________________ test_expected_inheritance_is_information_only ________________
+
+    def test_expected_inheritance_is_information_only():
+        r = ask("I may inherit $300,000", WORKING)
+        assert r["kind"] == "answer" and "pending_change" not in r
+>       assert r["text"] == "A possible inheritance of $300,000 is noted for information. It is not counted, because it is not certain."
+E       AssertionError: assert 'A possible i... not certain.' == 'A possible i... not certain.'
+E         
+E         Skipping 70 identical leading characters in diff, use -v to show
+E         -  counted, because it is not certain.
+E         ?           ^ -----
+E         +  counted, since it is not certain.
+E         ?           ^^^^
+
+tests\test_recheck_ask.py:44: AssertionError
+_ test_retiring_past_70_says_social_security_stops_growing[what if I retire at 72] _
+
+q = 'what if I retire at 72'
+
+    @pytest.mark.parametrize("q", ["what if I retire at 72", "what if I retire at 75"])
+    def test_retiring_past_70_says_social_security_stops_growing(q):
+        r = ask(q, WORKING)
+>       assert r["kind"] == "whatif" and "That is past 70; Social Security stops growing at 70." in r["text"]
+E       AssertionError: assert ('whatif' == 'whatif'
+E         
+E           whatif and 'That is past 70; Social Security stops growing at 70.' in 'If you retire at 72, you can count on $133,000 a year, up from $90,100. Your goal lasts in 100 of 100, up from 86. That is past 70. Social Security stops growing at 70.')
+
+tests\test_recheck_ask.py:66: AssertionError
+_ test_retiring_past_70_says_social_security_stops_growing[what if I retire at 75] _
+
+q = 'what if I retire at 75'
+
+    @pytest.mark.parametrize("q", ["what if I retire at 72", "what if I retire at 75"])
+    def test_retiring_past_70_says_social_security_stops_growing(q):
+        r = ask(q, WORKING)
+>       assert r["kind"] == "whatif" and "That is past 70; Social Security stops growing at 70." in r["text"]
+E       AssertionError: assert ('whatif' == 'whatif'
+E         
+E           whatif and 'That is past 70; Social Security stops growing at 70.' in 'If you retire at 75, you can count on $143,800 a year, up from $90,100. Your goal lasts in 100 of 100, up from 86. That is past 70. Social Security stops growing at 70.')
+
+tests\test_recheck_ask.py:66: AssertionError
+_____________ test_p0_3_couple_social_security_keeps_both_figures _____________
+
+    def test_p0_3_couple_social_security_keeps_both_figures():
+        r = run(COUPLE)
+        assert r.profile["social_security_per_year"] == 48000
+>       assert "$34,800" in r.reply and "$13,200" in r.reply
+E       AssertionError: assert ('$34,800' in 'Got it. I noted 11 facts from your message. Check them in the panel on the right. The main ones: you are 71 and you want to retire at 71. I filled in 5 more with typical figures. Each is marked in the panel, so you can change it.')
+E        +  where 'Got it. I noted 11 facts from your message. Check them in the panel on the right. The main ones: you are 71 and you want to retire at 71. I filled in 5 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 71, 'partner_age': 69, 'has_partner': True, 'state': 'FL', 'retire_age': 71, 'pay_per_y...: good health'}, {'section': 'Costs', 'status': 'added'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_ui_audit_intake.py:23: AssertionError
+___________________ test_thin_wants_headline_reads_sensibly ___________________
+
+    def test_thin_wants_headline_reads_sensibly():
+        from app.agents import adviser
+        m = {"safe_spending_per_year": 50400, "wants_per_year": 0}
+        h = adviser.headline(m, 50400)
+>       assert h.startswith("You can count on $50,400 a year, about your basics") and "little room above them yet" in h
+E       AssertionError: assert (True and 'little room above them yet' in 'You can count on $50,400 a year, about your basics. Little is left above them.')
+E        +  where True = <built-in method startswith of str object at 0x00000166D88A1430>('You can count on $50,400 a year, about your basics')
+E        +    where <built-in method startswith of str object at 0x00000166D88A1430> = 'You can count on $50,400 a year, about your basics. Little is left above them.'.startswith
+
+tests\test_backend_fixes7.py:180: AssertionError
+__________ test_stresses_are_never_better_than_the_plan[bus_driver] ___________
+
+name = 'bus_driver'
+
+    @pytest.mark.parametrize("name", NAMES)
+    def test_stresses_are_never_better_than_the_plan(name):
+        plan, ctx = plan_of(name)
+        rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
+        assert {"bad_decade", "inflation"} <= set(rows)
+        for k, x in rows.items():
+>           assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+E           AssertionError: each stress is one plain sentence
+E           assert (1 == 0)
+E            +  where 1 = <built-in method count of str object at 0x00000166D74C8150>('. ')
+E            +    where <built-in method count of str object at 0x00000166D74C8150> = 'Prices rise 1.5 points a year faster than we assume for 10 years. Savings earn that much less.'.count
+
+tests\test_analysis.py:93: AssertionError
+________ test_stresses_are_never_better_than_the_plan[retired_couple] _________
+
+name = 'retired_couple'
+
+    @pytest.mark.parametrize("name", NAMES)
+    def test_stresses_are_never_better_than_the_plan(name):
+        plan, ctx = plan_of(name)
+        rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
+        assert {"bad_decade", "inflation"} <= set(rows)
+        for k, x in rows.items():
+>           assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+E           AssertionError: each stress is one plain sentence
+E           assert (2 == 0)
+E            +  where 2 = <built-in method count of str object at 0x00000166D74F16B0>('. ')
+E            +    where <built-in method count of str object at 0x00000166D74F16B0> = 'Prices rise 1.5 points a year faster than we assume for 10 years. Savings earn that much less. Pensions and annuities with no yearly rise buy less.'.count
+
+tests\test_analysis.py:93: AssertionError
+_________ test_stresses_are_never_better_than_the_plan[single_parent] _________
+
+name = 'single_parent'
+
+    @pytest.mark.parametrize("name", NAMES)
+    def test_stresses_are_never_better_than_the_plan(name):
+        plan, ctx = plan_of(name)
+        rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
+        assert {"bad_decade", "inflation"} <= set(rows)
+        for k, x in rows.items():
+>           assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+E           AssertionError: each stress is one plain sentence
+E           assert (1 == 0)
+E            +  where 1 = <built-in method count of str object at 0x00000166D7526700>('. ')
+E            +    where <built-in method count of str object at 0x00000166D7526700> = 'Prices rise 1.5 points a year faster than we assume for 10 years. Savings earn that much less.'.count
+
+tests\test_analysis.py:93: AssertionError
+_____________ test_stresses_are_never_better_than_the_plan[gap10] _____________
+
+name = 'gap10'
+
+    @pytest.mark.parametrize("name", NAMES)
+    def test_stresses_are_never_better_than_the_plan(name):
+        plan, ctx = plan_of(name)
+        rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
+        assert {"bad_decade", "inflation"} <= set(rows)
+        for k, x in rows.items():
+>           assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+E           AssertionError: each stress is one plain sentence
+E           assert (1 == 0)
+E            +  where 1 = <built-in method count of str object at 0x00000166D7526310>('. ')
+E            +    where <built-in method count of str object at 0x00000166D7526310> = 'Prices rise 1.5 points a year faster than we assume for 10 years. Savings earn that much less.'.count
+
+tests\test_analysis.py:93: AssertionError
+__________ test_stresses_are_never_better_than_the_plan[high_earner] __________
+
+name = 'high_earner'
+
+    @pytest.mark.parametrize("name", NAMES)
+    def test_stresses_are_never_better_than_the_plan(name):
+        plan, ctx = plan_of(name)
+        rows = {x["key"]: x for x in plan["analysis"]["stresses"]["rows"]}
+        assert {"bad_decade", "inflation"} <= set(rows)
+        for k, x in rows.items():
+>           assert x["what"].count(". ") == 0 and x["what"].endswith("."), "each stress is one plain sentence"
+E           AssertionError: each stress is one plain sentence
+E           assert (1 == 0)
+E            +  where 1 = <built-in method count of str object at 0x00000166D75256B0>('. ')
+E            +    where <built-in method count of str object at 0x00000166D75256B0> = 'Prices rise 1.5 points a year faster than we assume for 10 years. Savings earn that much less.'.count
+
+tests\test_analysis.py:93: AssertionError
+_________________ test_bus_driver_sees_the_shortfall_plainly __________________
+
+    def test_bus_driver_sees_the_shortfall_plainly():
+        plan, _ = plan_of("bus_driver")
+        a = plan["analysis"]
+>       assert "no level of spending lasts" in a["how_sure"]["line"]
+E       AssertionError: assert 'no level of spending lasts' in 'No level of spending lasts in half of the market paths. Even with no spending of your own, bills like health cover use up your savings in 100 of 100.'
+
+tests\test_analysis.py:175: AssertionError
+_ test_below_social_security_note_is_two_short_sentences_and_names_a_pay_deficit _
+
+    def test_below_social_security_note_is_two_short_sentences_and_names_a_pay_deficit():
+        from app.agents import adviser
+        m = {"safe_spending_per_year": 10000, "social_security_per_year": 33000, "ss_tax_rate": 0.1, "health_extra_in_retirement": True,
+             "social_security_survivor_per_year": 20000, "ss_starts_later": True, "inputs": {"save_per_year": 5000, "retire_age": 65, "age": 50}}
+        note = adviser.below_ss_note(m).strip()
+        sentences = [s for s in note.split(". ") if s]
+>       assert len(sentences) == 2 and all(len(s.split()) <= 25 for s in sentences), note
+E       AssertionError: That is less than your Social Security of $33,000 a year.
+E       assert (1 == 2)
+E        +  where 1 = len(['That is less than your Social Security of $33,000 a year.'])
+
+tests\test_analysis.py:205: AssertionError
+_________________ test_sentence_template_spending_still_holds _________________
+
+    def test_sentence_template_spending_still_holds():
+        x = _base_row(plan_spend_per_year=191000, count_on_per_year=167000, worst_runs_out_age=88, worst_years_short=7, worst_gap_per_year=24000)
+        s = analysis.sentence(x, couple=False)
+>       assert s == ("Your $191,000 a year still lasts in most paths. In the worst 1 in 10, savings "
+                     "run out at 88, and you would cut about $24,000 a year for 7 years.")      # basics said once after the list
+E       AssertionError: assert 'Your $191,00... for 7 years.' == 'Your $191,00... for 7 years.'
+E         
+E         - Your $191,000 a year still lasts in most paths. In the worst 1 in 10, savings run out at 88, and you would cut about $24,000 a year for 7 years.
+E         ?                                                                                            ^^^^^^^
+E         + Your $191,000 a year still lasts in most market paths. In the worst 1 in 10, savings run out at 88. You would then cut about $24,000 a year for 7 years.
+E         ?                                         +++++++                                                   ^^^         +++++
+
+tests\test_analysis.py:243: AssertionError
+_____________________ test_sentence_template_small_effect _____________________
+
+    def test_sentence_template_small_effect():
+        x = _base_row(key="late_death", stress_years=10, plan_spend_per_year=195000, count_on_per_year=191800)
+>       assert analysis.sentence(x, couple=True) == "The plan still works: you could spend about $192,000 a year instead of $195,000."
+E       AssertionError: assert 'The plan sti... of $195,000.' == 'The plan sti... of $195,000.'
+E         
+E         Skipping 48 identical trailing characters in diff, use -v to show
+E         - The plan still works: you could 
+E         ?                     ^^^
+E         + The plan still works. You could 
+E         ?                     ^^^
+
+tests\test_analysis.py:260: AssertionError
+______________ test_sentence_template_basics_at_risk_comes_first ______________
+
+    def test_sentence_template_basics_at_risk_comes_first():
+        x = _base_row(basics_paid_of_100=86, basics_at_risk=True, plan_spend_per_year=60000, count_on_per_year=52000, typical_runs_out_age=91)
+        s = analysis.sentence(x, couple=False)
+        assert s.startswith("Your basics would go unpaid in 14 of 100 market paths.")
+>       assert "In a typical path your savings run out at 91." in s and s.endswith("about $52,000 a year, down from $60,000.")
+E       AssertionError: assert ('In a typical path your savings run out at 91.' in 'Your basics would go unpaid in 14 of 100 market paths. In a typical path, your savings run out at 91. You could count on about $52,000 a year, down from $60,000.')
+
+tests\test_analysis.py:269: AssertionError
+_________________ test_grouped_form_when_all_shown_risks_hold _________________
+
+    def test_grouped_form_when_all_shown_risks_hold():
+        mk = lambda key, y, age, gap, yrs: _base_row(key=key, stress_years=y, plan_spend_per_year=111000, count_on_per_year=104000,
+                                                      worst_runs_out_age=age, worst_years_short=yrs, worst_gap_per_year=gap)
+        rows = [mk("inflation", 10, 93, 40000, 5), mk("bad_decade", 10, 93, 37000, 5), mk("long_partner", None, 98, 39000, 5)]
+>       assert analysis.group_lead(rows) == "Your $111,000 a year holds up in most market paths under each of these. In the worst 1 in 10:"
+E       AssertionError: assert 'Your $111,00...orst 1 in 10:' == 'Your $111,00...orst 1 in 10:'
+E         
+E         Skipping 40 identical leading characters in diff, use -v to show
+E         - rket paths under each of these. In the worst 1 in 10:
+E         + rket paths. In the worst 1 in 10:
+
+tests\test_analysis.py:333: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_api.py::test_ask_whatif_returns_new_plan_and_profile - Asse...
+FAILED tests/test_example_household.py::test_short_messages_keep_the_full_readback
+FAILED tests/test_example_household.py::test_build_line_once_when_ready_and_after_confirm_questions
+FAILED tests/test_round2_ask.py::test_part_time_without_an_amount_says_so_in_one_sentence_and_offers_a_run
+FAILED tests/test_round2_ask.py::test_spend_less_result_changes - AssertionEr...
+FAILED tests/test_round2_ask.py::test_a_plan_figure_is_traced_to_the_plan - A...
+FAILED tests/test_round2_intake.py::test_home_value_is_acknowledged_and_the_rate_update_says_what_it_changes
+FAILED tests/test_round2_plan.py::test_starting_points_never_offer_a_point_that_does_nothing
+FAILED tests/test_round3_intake.py::test_partner_pension_with_start_age_and_the_right_person
+FAILED tests/test_loop1_engine.py::test_assumptions_state_the_numbers_used - ...
+FAILED tests/test_rules_audit_plan.py::test_assumptions_say_what_is_fixed_and_offer_changes
+FAILED tests/test_rules_audit_intake.py::test_girl_and_boy_are_linked_to_ages_when_the_sentence_gives_them
+FAILED tests/test_rules_audit_intake.py::test_saved_editor_edit_is_not_called_unmatched
+FAILED tests/test_recheck_ask.py::test_expected_inheritance_is_information_only
+FAILED tests/test_recheck_ask.py::test_retiring_past_70_says_social_security_stops_growing[what if I retire at 72]
+FAILED tests/test_recheck_ask.py::test_retiring_past_70_says_social_security_stops_growing[what if I retire at 75]
+FAILED tests/test_ui_audit_intake.py::test_p0_3_couple_social_security_keeps_both_figures
+FAILED tests/test_backend_fixes7.py::test_thin_wants_headline_reads_sensibly
+FAILED tests/test_analysis.py::test_stresses_are_never_better_than_the_plan[bus_driver]
+FAILED tests/test_analysis.py::test_stresses_are_never_better_than_the_plan[retired_couple]
+FAILED tests/test_analysis.py::test_stresses_are_never_better_than_the_plan[single_parent]
+FAILED tests/test_analysis.py::test_stresses_are_never_better_than_the_plan[gap10]
+FAILED tests/test_analysis.py::test_stresses_are_never_better_than_the_plan[high_earner]
+FAILED tests/test_analysis.py::test_bus_driver_sees_the_shortfall_plainly - A...
+FAILED tests/test_analysis.py::test_below_social_security_note_is_two_short_sentences_and_names_a_pay_deficit
+FAILED tests/test_analysis.py::test_sentence_template_spending_still_holds - ...
+FAILED tests/test_analysis.py::test_sentence_template_small_effect - Assertio...
+FAILED tests/test_analysis.py::test_sentence_template_basics_at_risk_comes_first
+FAILED tests/test_analysis.py::test_grouped_form_when_all_shown_risks_hold - ...
+29 failed, 942 passed in 1359.61s (0:22:39)

@@ -2,7 +2,8 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { cents, scrollBehavior, showValue } from "../format";
 import { useCompact } from "./TeamPanel";
 import { MAX_WHATIFS, shortName } from "./WhatIf";
-import type { Api, AskResponse, Plan, Profile } from "../types";
+import { movesOf } from "../readiness";
+import type { Api, AskResponse, Plan, PlanEvent, Profile } from "../types";
 
 // The chat box: the only text box on the plan screen. Answers to rule questions come with their sources; a What If goes up to the plan
 // area (the baseline folds to one line) and the chat keeps a note with a way to reopen it; a refusal is said plainly.
@@ -71,10 +72,20 @@ export function pointless(q: string, age?: number | null, alreadyRetired?: boole
   return false;
 }
 
+export const MAX_IDEAS = 5;
+
 export function ideas(profile: Profile, plan?: Plan | null): { label: string; q: string; why?: string }[] {
   const retired = plan?.already_retired === true;
   const levers = (plan?.levers ?? []).filter((l) => l.whatif_text && !pointless(l.whatif_text, profile.age, retired) && !pointless(l.title, profile.age, retired));
-  if (levers.length > 0) return levers.slice(0, 4).map((l) => ({ label: l.title, q: l.whatif_text as string, why: l.why }));
+  // the plan's own moves come first, by their concrete titles: this is now the only place to try one
+  const own: { label: string; q: string; why?: string }[] = [];
+  if (plan && Array.isArray(plan.actions)) for (const m of movesOf(plan)) {
+    const q = m.tryQ ?? m.points.find((p) => p.whatif_text)?.whatif_text ?? null;
+    if (q && !pointless(q, profile.age, retired) && !pointless(m.title, profile.age, retired)) own.push({ label: m.title, q, why: m.why });
+  }
+  const seen = new Set<string>();
+  const uniq = [...own, ...levers.map((l) => ({ label: l.title, q: l.whatif_text as string, why: l.why }))].filter((x) => { const k = norm(x.q); if (seen.has(k)) return false; seen.add(k); return true; });
+  if (uniq.length > 0) return uniq.slice(0, MAX_IDEAS);
   if ((plan?.levers ?? []).length > 0) return [];
   const out: { label: string; q: string }[] = [];
   const ra = profile.retire_age;
@@ -99,7 +110,7 @@ export const FULL_TEXT = `You have ${MAX_WHATIFS} What Ifs open. Remove one firs
 
 export const ASK_ERROR = "That did not work, and your plan has not changed. Your question is still in the box.";
 
-export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, onAsking, onChange, stale = false, canRebuild = true, onRebuild, whatifIds, request, full = false }: {
+export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, onAsking, onChange, stale = false, canRebuild = true, onRebuild, whatifIds, request, full = false, composing = false, onCancel, onRunEvent, onRunEnd }: {
   api: Api; profile: Profile; plan: Plan; onCost: (usd: number, tokens?: AskResponse["tokens"]) => void;
   onWhatIf?: (e: Omit<WhatIfEntry, "id">) => number | null; onOpen?: (id: number) => void; onAsking?: (agents: string[]) => void; onChange?: (profile: Profile, plan: Plan) => void;
   /** The plan is older than the person's answers: a What If would run on the old plan, so offer a rebuild first. */
@@ -110,6 +121,10 @@ export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, o
   request?: { id: number; q: string } | null;
   /** The most What Ifs are open: a chip that makes a What If says so and sends nothing. A typed message that turns out to be a What If is not added. */
   full?: boolean;
+  /** The person pressed "+ What if" at the top: this section is highlighted and offers Cancel. */
+  composing?: boolean; onCancel?: () => void;
+  /** A What If's run, as it happens: the team's events with the What If's short name (the panel shows them), then onRunEnd when the ask ends. */
+  onRunEvent?: (e: PlanEvent, name: string) => void; onRunEnd?: () => void;
 }) {
   const [draft, setDraft] = useState("");
   const [turns, setTurns] = useState<Turn[]>([]);
@@ -149,15 +164,17 @@ export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, o
     try {
       const sent = pending.current;   // the change the person is answering: its answers are the ones to name, not figures the rebuild derived
       const facts = sent && typeof sent.facts === "object" && sent.facts ? Object.keys(sent.facts) : [];
-      const r = await api.ask(t, profile, plan, sent);
+      // a typed "yes" to an offered What If: name the tab from the sentence the app built, not from "yes"
+      const said = sent && typeof sent.whatif === "string" && sent.whatif && YES.test(t) ? sent.whatif : t;
+      // a What If streams its team's work to the panel (the same events as the plan); other answers send none
+      const runName = shortName(said, said === t ? shown : undefined);
+      const r = onRunEvent ? await api.ask(t, profile, plan, sent, (e) => onRunEvent(e, runName)) : await api.ask(t, profile, plan, sent);
       pending.current = r.pending_change ?? null;
       if (r.cost_usd) onCost(r.cost_usd, r.tokens);
       let whatif: number | undefined;
       let wasFull = false;
       if (r.kind === "whatif" && r.plan && onWhatIf) {
-        // a typed "yes" to an offered What If: name the tab from the sentence the app built, not from "yes"
-        const said = sent && typeof sent.whatif === "string" && sent.whatif && YES.test(t) ? sent.whatif : t;
-        const retireAfter = Number(said.match(/retire (?:at|by) (\d{2})/i)?.[1]) || null;
+        const retireAfter = Number(said.match(/retire\b[^.?!]*?\b(?:at|by) (\d{2})\b/i)?.[1]) || null;
         const id = onWhatIf({ q: said, name: shortName(said, said === t ? shown : undefined), text: r.text, plan: r.plan, retireAfter, citations: r.citations, tokens: r.tokens, cost_usd: r.cost_usd });
         if (id == null) wasFull = true; else whatif = id;
       }
@@ -175,6 +192,7 @@ export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, o
     } finally {
       setBusy(false);
       onAsking?.([]);
+      onRunEnd?.();
     }
   }
   const submit = (e: FormEvent) => { e.preventDefault(); void ask(draft); };
@@ -207,7 +225,12 @@ export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, o
           ))}
         </section>
       )}
-      <div className="ask">
+      <section className={`ask${composing ? " composing" : ""}`} aria-labelledby="ask-h" data-testid="whatif-section">
+        <div className="ask-head">
+          <h2 id="ask-h" className="ask-title">Try a What If</h2>
+          <p className="ask-line">Change one thing and see your plan again. Your baseline stays as it is.</p>
+          {composing && <button type="button" className="btn btn-quiet btn-small ask-cancel" onClick={onCancel}>Cancel</button>}
+        </div>
         {showChips && (
           <div className="chip-scroll" role="group" aria-label="Ideas and What Ifs">
             {ideaList.length > 0 && (
@@ -227,7 +250,7 @@ export default function AskBox({ api, profile, plan, onCost, onWhatIf, onOpen, o
           {compact && <button type="button" className="btn btn-quiet ideas-toggle" aria-expanded={showChips} onClick={() => setIdeasOpen(!showChips)}>Ideas {showChips ? "▾" : "▴"}</button>}
           <button type="submit" className="btn btn-primary" disabled={busy || !draft.trim()}>{busy ? "Checking…" : "Ask"}</button>
         </form>
-      </div>
+      </section>
     </>
   );
 }

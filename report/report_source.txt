@@ -51,7 +51,7 @@ I asked first: does this already exist? Yes, in parts. The table lists the close
 
 ## 4. The agents
 
-![The app after a plan runs, for the example household on the first screen. The baseline plan is on the left (needs, wants, wishes, three things to do); "Your advisory team", Team talk and the token costs are on the right.](img/plan.png)
+![The app after a plan runs, for the example household on the first screen. The baseline plan is on the left (readiness ring at 85, the verdict "Retire at 62? Not yet — short $18,800 a year", the needs, wants and wishes ladder against a $133,000 goal, and "Your next moves", a read-only list of what to do and what each is worth); "Your advisory team" and the token costs ($0.0014 for the plan) are on the right.](img/plan.png)
 
 Enough Lite has one lead adviser and six specialists. Each specialist has **one job and plain-Python tools**. The tools do the arithmetic. The model reads their output and writes it up in plain words. Each tool call streams to the screen as it happens, so the user can watch the team work.
 
@@ -144,28 +144,28 @@ It refuses what the app refuses: hiding money to qualify for Medicaid or SSI, an
 
 The run below is the example on the app's first screen, in the live app: a couple in Connecticut. He is 45, a doctor, on $310,000; she is 43 and stays home. Three children (13, 10, 6) and two dogs. A $850,000 home with $420,000 left on the mortgage; $920,000 saved; the oldest child to a state school, the middle one to a private college; retire at 62. Every figure below is read from the screenshots.
 
-**Step 1. The person types a few lines.** Intake read the paragraph, noted 14 facts and filled 12 more with typical figures, each marked "you said", "estimate" or "assumed". It then asked three things, one at a time: the mortgage payment (its estimate was $2,772; I typed $2,900), other debts ("No other debts") and spending (estimated at $166,000 a year; "Yes, that's about right"). The panel shows pay of $310,000, costs of $166,000 and $144,000 left before tax. Before it builds, the app asks once more for a check of its estimates.
+**Step 1. The person types a few lines.** Intake read the paragraph, noted 14 facts and filled 12 more with typical figures, each marked "you said", "estimate" or "assumed". It asked one thing: whether its split of the $920,000 (60% pre-tax, 10% Roth, 20% taxable, 10% cash) is about right. An indigo hint in the greeting says to press "Build my plan" on the right, and that not everything needs answering first. The panel shows pay of $310,000, costs of $166,000 (an estimate) and $144,000 left before tax. Pressing Build early shows the figures once more for a check ("Looks right, build my plan"); while that note is open, the first Build button dims.
 
-![Step 1. Intake. The chat is on the left; the household, money in and out and the list of fields, each marked "you said", "estimate" or "assumed", are on the right.](img/intake.png)
+![Step 1. Intake, after the first message. The chat is on the left, with the hint about "Build my plan"; the household, "Build my plan", money in and out and the list of fields, each marked "you said", "estimate" or "assumed", are on the right.](img/intake.png)
 
 **Step 2. The team works.** Each adviser lights up as it finishes. Here 4 of 7 have finished; Research is searching ("Medicare Initial Enrollment Period turn 65 late penalty": 3 passages found), and Team talk shows the lead adviser sending questions to Family, Tax and Research.
 
 ![Step 2. The team at work: four of seven advisers finished. Team talk shows the hand-offs as they happen.](img/team.png)
 
-**Step 3. The plan.** The headline says: "You can count on $114,800 a year: $44,500 for basics and $70,300 for the rest." Needs: the basics are paid in 100 of 100 scenarios. Wants: $114,800 a year in 90 of 100. Wishes: the goal of $114,800 is met in 90 of 100, and costs fall by $22,500 a year when the mortgage ends in 2045. Three things to do: cover health costs for the 3 years before Medicare at 65 (about $10,000 a year); use the higher 401(k) catch-up limits before 62; check the plan once a year. The meter under Team talk reads 144 input, 19,907 cached input and 2,011 output tokens, $0.0023 for the plan (section 5). Markets passed back "basics in 100 of 100; safe spending $114,800 a year (simple plan, 15 points less in stocks, claiming at 70)".
+**Step 3. The plan.** The plan screenshot in section 4 and the What If screenshot below come from a later run of the same household on 22 November, after the redesign. I answered nothing after the first message, pressed "Build my plan" and then "Looks right, build my plan". The plan page opens with one verdict line, "Retire at 62? Not yet — short $18,800 a year", in a red box. Beside it is the readiness ring, at 85. Under it the headline reads "You can count on $114,200 a year: $44,500 for needs, $69,700 for wants." The ladder shows the needs ($44,500, safe in 100 of 100 market tests), the wants (+$69,700, sure) and the wishes (+$18,800, open, "only if markets help") against a goal of $133,000 a year. Badges show what the plan has earned (needs safe, wants sure, saving each year) and what it has not (goal not covered yet). "Your next moves" is a read-only list of three, each with what it is worth: spend $19,000 less a year in retirement (closes the gap), plan Medicare sign-up around 65 (about 3 years without it after retiring at 62), and check the plan once a year. The meter under Team talk reads $0.0014 for the plan; the cost table in section 5 comes from an earlier run at $0.0020.
 
-**Step 4. What Ifs, as scenario tabs.** Each What If the person types opens a tab built on the baseline. It changes one thing and keeps the rest, shows the full plan under the tab, and marks every figure against the baseline (▲ better, ▼ worse). The team panel follows the tab and says whose notes it shows. "Compare" puts the baseline and all tabs side by side. Tabs can be closed with ✕. Three What Ifs on this plan:
+**Step 4. What Ifs, in one place.** What Ifs live only in the titled "Try a What If" section at the end of the plan page. Its chips show the plan's own moves first ("Spend $19,000 less a year in retirement"), then common ideas, and a box takes any other. Each What If opens a tab built on the baseline: it changes one thing, keeps the rest, shows the full plan under the tab and marks every figure against the baseline (▲ better, ▼ worse). "+ What if" greys out the plan, and the same seven advisers run the plan again on the changed household. The right panel says "Re-running your plan with: Markets fall 30% — about 5 to 10 seconds", the advisers light up, and Team talk and the token costs switch to "This What If". The screenshot below is taken during that re-run. When it ends, the tab shows the ring at 100 (needs paid in 100 of 100), "short $24,900 a year, $6,100 more short", and a wants card that reads "▼ $6,100 less a year". "Compare" puts the baseline and all tabs side by side; tabs close with ✕. Three What Ifs on this plan:
 
-| What If | Can count on a year | Goal lasts in | Basics paid |
+| What If | Can count on a year | Goal lasts in | Needs paid |
 |---|---|---|---|
-| Baseline (retire at 62) | $114,800 | 90 of 100 | 100 of 100 |
-| Retire at 65 | $140,900 (▲ $26,100) | 100 of 100 (▲ 10) | 100 of 100 |
-| Save $500 more a month | $118,400 (▲ $3,600) | 93 of 100 (▲ 3) | 100 of 100 |
-| Markets fall 30% when I retire | $108,700 (▼ $6,100) | 82 of 100 | 100 of 100; $6,100 short of the goal |
+| Baseline (retire at 62) | $114,200 | 66 of 100 | 100 of 100 |
+| Retire at 65 | $141,000 (▲ $26,800) | 95 of 100 (▲ 29) | 100 of 100 |
+| Save $500 more a month | $117,900 (▲ $3,700) | 73 of 100 (▲ 7) | 100 of 100 |
+| Markets fall 30% when I retire | $108,100 (▼ $6,100) | not tested again | 100 of 100; $24,900 short of the goal |
 
-The meter counts the three What Ifs together at $0.0042 (about $0.0014 each). The Compare view shows the same table, with the change under each figure.
+Each What If is metered on its own, at about $0.001 (this one, $0.0008). The Compare view shows the same table, with the change under each figure.
 
-![Step 4. A What If as a tab. The tab row is on top; "Markets fall 30%" is selected and every figure is marked against the baseline. The advisers' notes on the right are from the baseline run.](img/whatif.png)
+![Step 4. A What If while it runs. The baseline plan is greyed out; the right panel says "Re-running your plan with: Markets fall 30%", the advisers light up and the notes read "This What If".](img/whatif.png)
 
 **Step 5. Correct anything.** Every field has an inline editor. A correction in the chat ("my pay is $210,000 now") is proposed first ("Change your pay to $210,000 and rebuild your plan?") and applied only on "Yes, rebuild".
 
@@ -178,7 +178,7 @@ Every model call is logged by the app's meter: agent, input tokens, cached input
 
 @@token_tables
 
-![The app's own meter, under Team talk, for the run in section 4: 144 input, 19,907 cached input and 2,011 output tokens, $0.0023 for the plan; the three What Ifs together $0.0042; and a table by adviser.](img/token_costs_narrow.png)
+![The app's own meter, under Team talk, for an earlier run of the section 4 household: 120 input, 14,613 cached input and 1,185 output tokens, $0.0020 for the plan; the three What Ifs together $0.0029; and a table by adviser.](img/token_costs_narrow.png)
 
 The lead adviser costs the most (about 40% of a plan); each specialist costs about $0.00025.
 
@@ -286,27 +286,56 @@ The figures on the size of the problem (Federal Reserve SHED 2025: 35% of non-re
 
 **Quality.** Simulated people, not real ones: on the 40-person test the intake reached a plan every time and got 96% of fields right, from 75% (appendix). Treat this as a test of the intake, not as proof of impact.
 
-**Time.** The agents take a median of about 9 seconds a plan on a quiet machine (20 plans in a row, no template fallbacks). With three plans at once the median was 11.0 s and the 90th percentile 32.6 s. How long a person takes to type their household is for the user test below.
+**Time.** The agents take a median of about 9 seconds a plan on a quiet machine (20 plans in a row, no template fallbacks); with three plans at once, 11.0 s median and 32.6 s at the 90th percentile. How long a person takes to type their household is for the user test below.
 
 ### A real user tried it
 
-[[TODO: the real user test. One person, 15 minutes, not the author. Record who they are (no name needed, for example "a 52-year-old teacher"), the question they asked, minutes from start to plan, what confused them, what you changed afterwards, and one quote. Add a screenshot of their run, and a before-and-after time if they had planned before. Until this is filled, the Impact row earns at most half credit.]]
+A real person tried the app on 22 November 2026: a professional woman who had never planned for retirement, not involved in building it. On her first try she found it too complicated. Her words, as I recorded them (the full text is in `PLAN.md`, "Real-user feedback round"):
 
-Raw results sit in the repo under `user_test/`: the protocol (`PROTOCOL.md`), the timed session notes (`SESSION_LOG.md`), the testers' saved answers (`responses/*.json`) and the script that builds the table below (`impact_summary.py`). The testers are not a sample. One or two people, possibly friends, is an anecdote. The "usual way" times are the testers' own estimates, not measured. [[TODO: paste the output of impact_summary.py here: the minutes-to-plan table, the ratings, and one or two quotes.]]
+1. It is not obvious that you can build a plan without answering every question.
+2. "How Enough works" should fold by itself once you start answering.
+3. "Your plan" is too complex. An average person will not read all that text. The words must be shorter and plainer, the plan needs something that draws you in, and a high-school graduate must be able to use it well.
+4. Redo the demo once the app is redone, with transcript, voice and screen agreeing.
+
+I took all four as faults in the app, not in the tester. The changes:
+
+- **Page 1 (points 1 and 2).** "Build my plan" works from the first answer. Typical figures fill the rest and stay on screen for a check; the panel and the chat say so plainly. "How Enough works" folds itself on the first chat message.
+- **Plan page (point 3).** One verdict line ("Yes, you're on track" / "Close" / "Not yet"). A readiness ring. Three next moves, each with what it is worth, to try and to tick (removed after her second try, below). Badges for what the plan has earned. One money ladder in place of three tiles that mixed units. One vocabulary, needs, wants, wishes, in short sentences at reading grade 8 or lower. Details folded. New product rule **R26**: a high-school graduate can use it.
+- **Demo (point 4).** Held until the app is redone, then re-recorded.
+
+**How the new plan page works.** The ring is `min(100, floor(100 × count-on ÷ goal))`: the share of your yearly goal that holds in 90 of 100 market tests. If your needs are not safe, the ring stops at 40, so it never says "ready" beside a plan that cannot pay the basics. The ladder shows needs, wants and wishes in dollars a year; they add up to the goal. A badge is earned only from the plan's own figures (needs safe, wants sure, goal covered, then an employer match and saving each year). Nothing is invented for the game. On test plan `s011` the ring reads 93 (count-on $77,800 of an $83,000 goal) and the ladder shows $52,900 needs, $24,900 wants and $5,200 wishes. On `e11` the needs are paid in 1 of 100 tests, so the ring is held at 40 and the verdict reads "Not yet. First, make your needs safe."
+
+**Reading grade.** The words the page writes are in one file with a test for their grade. Method: Flesch-Kincaid grade, with my own syllable count, on every sentence the app writes (`eval/readability/REPORT.md`). Before the rewrite and after it: all text pooled, grade 6.1 to 4.2 and longest sentence 60 to 32 words; What If replies, grade 12.0 to 4.7; the live AI adviser lines, grade 6.3 to 3.7. Example, a What If reply. Before: "If you save $6,000 more a year and spend that much less now (about $96,634 a year saved in all, 31% of pay), you can count on $115,200 a year, safe in 90 of 100 scenarios (baseline plan: $111,600). ..." After: "If you save $6,000 more a year and spend that much less now, you can count on $115,200 a year, up from $111,600. ..." Plan-chat answers that quote an official passage stay near grade 12, as the source wrote them. A test keeps the caps.
+
+**Her second try, on the redesigned app** (same evening; the feedback form and the note-taker's log, summarised by `user_test/impact_summary.py`):
+
+| Evidence | Result |
+|---|---|
+| Minutes to her first plan (timed) | **10** |
+| Her way today, as she put it | a financial adviser: about **6 hours** and **$2,500** |
+| A plan here | about **$0.002** in AI cost |
+| From memory, without scrolling back: can you retire at the age you wanted? how short a year? first thing to do? | **all three right** ("no"; "38,200"; "retire at 57 and spend $8,000 a year less now", the plan's first move) |
+| Needs, wants and wishes made sense | 4 of 5 |
+| Ease / look / trust / would use again | 2 / 2 / 3 / 4 of 5 |
+| Recommend to a friend | 7 of 10 |
+| Compared with an adviser | "about the same: cheaper and faster but not as comprehensive" |
+
+In her words: *"It is worth to try at least once."* What still confused her: *"too much information and choices"*; she asked for *"more user friendly and affirmation for reliability of analysis."* So the next round removed the plan's "Try it" and "Mark as planned" buttons (What Ifs now live in one titled section at the end), greys out the plan while a What If runs, shows the advisers re-running it, makes every input editable in the panel, and adds a page-1 hint that "Build my plan" is on the right.
+
+**What this is and is not.** One person, tried twice. It shows she understood the redesigned answer and reached it in 10 minutes against an adviser's 6 hours, at a tiny fraction of the cost. It does not show the app is easy for most people (her ease and look scores were 2 of 5), and her time for an adviser is her own estimate. Her answers and notes are in `user_test/`.
 
 ## 8. Limits and next steps
 
 **What does not work yet**
 
 - **Plan quality is not proved.** The intake is measured (95% of fields correct on 48 simulated people), and the engine matches an independent recompute. Plan quality is not: the gap to the optimizer is near zero in the middle but wide at the edges, verdict agreement is 85%, and the AI judge called more plans wrong after the first fixes, not fewer. I claim no pass rate for plan quality.
-- **Not tested by an independent person.** The auditors are AI agents and the testers are simulated. The real-user evidence is one or two people at most.
+- **Not tested by an independent person.** The auditors are AI agents and the testers are simulated. The real-user evidence is one person, tried twice (section 7). The last round of changes after her second try has not been tried by a real user, so I do not know that it is easy to use.
 - **The app is a plan, not an account.** No linked accounts, no trading, no human, not regulated. Every screen says it is not financial advice.
-- **Known gaps in the engine** (reasonableness audit, R1 to R10, not changed): R1 pre-retirement shortfalls are dropped (28 of 299 plans do not respond to savings plus or minus 50%); R2 a retiree's mortgage sits inside spending (adding $300,000 of mortgage raised one plan's count-on from $111,300 to $164,800); R3 a plan that falls short maximises count-on, which can trade away basics; R4 a What If keeps the plan's strategy while basics are safe, up to 15% below a fresh plan; R5 a partner's Social Security that starts before you retire is ignored; R6 retiring later can lower count-on in falls-short plans; R7 withdrawal tax is measured at the goal (up to 3% in count-on); R8 a mortgage payment below typical frees nothing when it ends; R9 debts paid from pre-tax savings are untaxed; R10 fixed payments stay level in today's dollars.
+- **Known gaps in the engine** (reasonableness audit, R1 to R10, not changed): R1 pre-retirement shortfalls are dropped (28 of 299 plans do not respond to savings plus or minus 50%); R2 a retiree's mortgage sits inside spending; R3 a plan that falls short maximises count-on, which can trade away basics; R4 a What If keeps the plan's strategy, up to 15% below a fresh plan; R5 a partner's Social Security that starts before you retire is ignored; R6 retiring later can lower count-on in falls-short plans; R7 withdrawal tax is measured at the goal; R8 a mortgage payment below typical frees nothing when it ends; R9 debts paid from pre-tax savings are untaxed; R10 fixed payments stay level in today's dollars.
 - **Simple models.** A 2,000-path simulation, a mortality table and flat tax rates. No Roth conversion search, no annuity design, no business income.
 - **Estimates for skipped inputs.** The app proposes a figure and asks for approval. It is still a guess.
-- **One display gap.** In Compare, the "goal lasts in" cell for the 30% market fall shows a dash, though the tab shows 82 of 100.
 - **Provider.** The default model runs on my own Anthropic key. With the staff's `OPENAI_API_KEY` the app runs gpt-6-luna: same numbers, but slower plans and more template wording (section 5).
-- **The 10-minute rule.** A dry run on 2026-11-21 copied the repo to a new folder outside OneDrive, put `.env` one level up and followed the README: creating the virtual environment took 8 s, `pip install` 80 s and starting the server under 1 s, about 1.5 minutes in all. The first plan then ran in 23 s. Repeated from the final GitHub repo on 2026-11-22, exactly as the staff will run it: `git clone` of github.com/nyan314sn/enough-lite to a folder outside OneDrive, a `.env` one level up holding only `OPENAI_API_KEY`, then the README steps. Clone 4 s, virtual environment 16 s, `pip install -r requirements.txt` 3 min 3 s; the app was serving the page at 3 min 45 s, on gpt-6-luna (`/api/health`: provider openai, ai_available true). A chat turn took 6 s and the first full plan 23 s, done at 4 min 16 s from the clone, with no error. Well inside the 10-minute rule.
+- **The 10-minute rule.** A first dry run on 2026-11-21 took about 1.5 minutes to a running server. Repeated from the final GitHub repo on 2026-11-22, exactly as the staff will run it (clone to a folder outside OneDrive, a `.env` holding only `OPENAI_API_KEY`, the README steps): clone 4 s, virtual environment 16 s, `pip install` 3 min 3 s, serving at 3 min 45 s on gpt-6-luna, first full plan done at 4 min 16 s, no error. Well inside the 10-minute rule.
 
 **What I would build next, given another month**
 
@@ -320,7 +349,7 @@ Raw results sit in the repo under `user_test/`: the protocol (`PROTOCOL.md`), th
 
 ## Appendix: how we tested and improved it
 
-I did not trust my own checks. After the app worked, I ran a loop: **independent auditors try to break it, I fix what they find, and I measure again.** The auditors are separate Claude agents that did not build the app. Each had its own copy, wrote down what it saw, and rated each finding P0 (a person gets a wrong or dead-end answer), P1 (a clear fault) or P2 (polish). The log is `docs/LOOP_LOG.md`.
+I did not trust my own checks. After the app worked, I ran a loop: **independent auditors try to break it, I fix what they find, and I measure again.** The auditors are separate Claude agents that did not build the app, each rating findings P0 (a wrong or dead-end answer), P1 (a clear fault) or P2 (polish). The log is `docs/LOOP_LOG.md`.
 
 ### Three rounds of audits
 
@@ -334,13 +363,12 @@ Audit **A** recomputes the logic (tax, Social Security, costs) and runs its own 
 | Simulated users: profile accuracy | 96% | 93.8% | **95.1%** |
 | Reached a plan | 40 of 40 | 45 of 48 | **48 of 48** |
 | What If hit rate in plan chat | not tested | 57% | **73%** (67 of 92) |
-| Attacks passed, round 2 kit (107) | not built | 91 (before fixes) | **101** (the other 6 are judged non-defects) |
 | Eval: median gap to optimizer | -1.7% | -6.8% | **-0.8%** |
 | Eval: verdict agreement | 83% | 84% | 85% |
 
-The counts are not like for like: each round the auditors dig deeper. Audit A's recompute matched the app to the dollar for tax and Social Security, and its own 20,000-path simulation landed within 1.5% of the app's safe spending for all 16 households. The gap to the optimizer moved from too cautious (-6.8%) to near zero, but couples sit 3.4% above it and singles 6.2% below. Verdict agreement did not move, and I do not call 85% good. **Stop rule not met:** I wanted two audits in a row with no P0. After round 3, B has 1 P0 and C has 1 real P0 dead end; they were being fixed when this report was built.
+The counts are not like for like: each round the auditors dig deeper. Audit A's recompute matched the app to the dollar for tax and Social Security. The gap to the optimizer moved from too cautious (-6.8%) to near zero, but couples sit 3.4% above it and singles 6.2% below. Verdict agreement did not move, and I do not call 85% good. **Stop rule not met:** I wanted two audits in a row with no P0; after round 3, B has 1 P0 and C has 1 real P0 dead end.
 
-**Two findings that show what the loop is for.** (1) *Partner Social Security overstated by 6 to 11% (A, P0).* The code used one claiming age for both people. A couple of 58 and 52 showed $95,300 a year; the right figure was $89,900. The headline looked fine; only a recompute caught it. (2) *A plan that fails ends at "$0" (B, P0).* A bus driver of 52 with $30,000 saved, retiring at 58, saw "You can count on $0 a year", and four of five What Ifs read "$0 against $0". The plan now says once that it does not work on their numbers and offers starting points with results, without moving their age.
+**Two findings that show what the loop is for.** (1) *Partner Social Security overstated by 6 to 11% (A, P0).* The code used one claiming age for both people; a couple of 58 and 52 showed $95,300 a year, not the right $89,900. Only a recompute caught it. (2) *A plan that fails ends at "$0" (B, P0).* A bus driver of 52 with $30,000 saved saw "You can count on $0 a year". The plan now says once that it does not work on their numbers and offers starting points, without moving their age.
 
 ### Intake, before and after, on the same 40 simulated people
 
@@ -349,15 +377,12 @@ The counts are not like for like: each round the auditors dig deeper. Audit A's 
 | Reached a plan | 36 of 40 | **40 of 40** |
 | Profile fields correct against the hidden truth | 75% | **96%** |
 | Dead ends, P0 / all | 29 / 46 | **0 / 5** |
-| Misunderstandings, P0 / all | 17 / 21 | 4 / 8 |
-| Unstated assumptions, P0 / all | 8 / 14 | 0 / 8 |
-| Ignored corrections, P0 / all | 9 / 9 | 2 / 3 |
 
-Partner pay went from 0 of 5 correct to 5 of 5, mortgage balance from 22% to 100%. The "after" figures come from a simulated tester, not people. The engine fixes, on audit A's findings: the 58/52 couple went from $98,400 to $83,000 once the survivor step-down applied, and one household's federal tax from $10,504 to $2,404. Round 3 tax and Social Security matched an independent recompute on 32 households.
+Partner pay went from 0 of 5 correct to 5 of 5. The "after" figures come from a simulated tester.
 
 ### The 300-household evaluation
 
-`eval/` runs the app end to end on **300 synthetic households** plus 180 variations where one thing changes. It checks each result by rule (needs, wants and wishes present; every number from a tool; family and pet costs; no retirement age past 70; cost under the cap; more savings never lowers what you can count on), compares the app's wants with the **full optimizer's** saved answers, and has an AI judge read a sample. All 480 runs of the final run finished with no error: mean cost $0.0023 a plan ($1.11 in all); 96 of 480 plans (20%) fell back to template text; median time 11.0 s with three at a time, about 9 s on a quiet machine (`eval/EVAL_REPORT.md`).
+`eval/` runs the app end to end on **300 synthetic households** plus 180 variations where one thing changes. It checks each result by rule (every number from a tool, no retirement age past 70, cost under the cap, more savings never lowers what you can count on), compares the app's wants with the **full optimizer's** saved answers, and has an AI judge read a sample. All 480 runs finished with no error: mean cost $0.0023 a plan; 96 of 480 plans (20%) fell back to template text; median time 11.0 s with three at a time (`eval/EVAL_REPORT.md`).
 
 | Measure | Before the first fixes | After (final run) |
 |---|---|---|
@@ -368,11 +393,11 @@ Partner pay went from 0 of 5 correct to 5 of 5, mortgage balance from 22% to 100
 | Direction checks passed, of 180 | 151 | 180 |
 | AI judge, 40 plans: reasonable / questionable / wrong | 6 / 29 / 5 | 1 / 26 / 13 |
 
-Read the last row with care: after the fixes the judge called **more** plans wrong (13, from 5). I did not find out why. It may be a stricter reading of plans that now show real figures, or it may be a fault. I claim nothing about plan quality from the judge, and passing my own checks is not the same as being right: audit A found its P0 in plans that passed all 300 core checks.
+Read the last row with care: after the fixes the judge called **more** plans wrong (13, from 5). I did not find out why, so I claim nothing about plan quality from it. Passing my own checks is not the same as being right: audit A found its P0 in plans that passed all 300 core checks.
 
 ### What If understanding: a held-out test
 
-The plan chat reads What Ifs typed in people's own words. I wrote 413 messages (`eval/whatif_phrasing/`): 324 to build the rules on and **89 held out**, written after the rules were built. The held-out column is the fair one.
+The plan chat reads What Ifs typed in people's own words. I wrote 413 messages (`eval/whatif_phrasing/`): 324 to build the rules on and **89 held out**, written after. The held-out column is the fair one.
 
 | Reading of the message | Tune set (324) | Held-out (89) | Held-out, changes only |
 |---|---|---|---|
@@ -381,31 +406,24 @@ The plan chat reads What Ifs typed in people's own words. I wrote 413 messages (
 | Rules plus AI reader, first live run (clean) | 99% | **91%** | 63 of 70 (90%) |
 | Rules plus AI reader, after fixes (not a fresh test) | 100% | 98% | 67 of 69 (97%) |
 
-Wrong readings matter more than misses, because a rules reading runs at once. The old rules read 27 of the 413 messages wrongly ("save 10 grand more" became $10); the new rules read 2 wrongly. The **AI reading is always confirmed**: the app says "I read that as: you have 5 dogs in all (2 now). Shall I run this What If?" and does nothing without a yes. Code checks every change the model proposes (known fields, numbers that appear in the message, sane ranges). Near-misses and refusals (Medicaid hiding, stock picks, injection): 63 of 63 in the final run. The model is called for 58 of 413 messages, at about $0.0001 and 1.2 s a call. Limits: one person wrote the set, and 89 held-out cases is small.
+Wrong readings matter more than misses, because a rules reading runs at once. The old rules read 27 of the 413 messages wrongly ("save 10 grand more" became $10); the new rules read 2 wrongly. The **AI reading is always confirmed**: the app says "I read that as: you have 5 dogs in all (2 now). Shall I run this What If?" and does nothing without a yes, and code checks every change the model proposes. Limits: one person wrote the set, and 89 held-out cases is small.
 
 ### Reasonableness audit: do changes move the plan the right way?
 
-Tools only, no model call, no cost. 315 baselines (the 300 eval households and the 15 admin samples) times up to 24 changes each: **6,117 variations** (retire earlier or later, spend more or less, a careful or growth mix, pay off the mortgage or a high-rate debt, add a child, a partner stops work, savings and pay up and down, a new mortgage, card debt or pension). Every run uses the same seed and 2,000 paths. A change that should help must never hurt; a What If must equal a fresh plan; no negative money. (`eval/reasonableness/REPORT.md`)
+Tools only, no model call, no cost. 315 baselines times up to 24 changes each (retire earlier or later, spend more or less, pay off the mortgage or a debt, add a child, a partner stops work, and more): **6,117 variations**, one seed. A change that should help must never hurt; a What If must equal a fresh plan; no negative money. (`eval/reasonableness/REPORT.md`)
 
 | Check (fails / checked) | Before | After |
 |---|---|---|
 | Negative or NaN money in a plan | 671 plans | 0 |
-| Crashes | 5 | 0 |
 | A change that should help, never hurts | 45 / 2,628 | 21 / 2,628 |
 | What If equals a fresh plan | 42 / 806 | 17 / 810 |
-| Mean effect of paying off the mortgage on count-on | -$8,116 | -$4,841 |
-| Mean effect of paying off high-rate debt on count-on | -$350 | +$95 |
 | Verdict consistent; count-on below Social Security explained | 0 fails | 0 fails |
 
-Fixes, each with a regression test (12): **P0** the savings chart went below zero; paying off a debt while working saved nothing, so the plan's own top action ("pay off your high-rate debt") lowered count-on; paying off the mortgage put it back into the basics (one household's basics paid fell from 100 to 0); a partner who stopped work could improve the plan. **P1** a What If kept a strategy the change had broken; when nothing lasts, the plan claimed at 67 instead of the earliest age. **Claiming age is checked:** the plan claims after retiring in 172 of 183 plans where the person can still choose, with a median gain of 6.2% in count-on; claiming at retirement pays the basics more often in only 3 plans, all falls-short plans. The remaining limits are R1 to R10 in section 8.
-
-### Admin mode
-
-A hidden screen, `/admin`, holds 15 sample households in three tiers (comfortable, average, struggling). One click opens a household in the app with no model call, or builds its plan. "Run all" builds all 15; "Save as before", a change to the code, and "Run all" again show every household's verdict, basics paid, count-on, gap and savings at retirement with before and after side by side. A table shows the saved Haiku and gpt-6-luna comparison. It is for checking a fix against the same 15 households.
+Twelve fixes, each with a regression test. The worst: paying off a debt while working saved nothing, so the plan's own top action lowered count-on; paying off the mortgage put it back into the basics. The remaining limits are R1 to R10 in section 8.
 
 ### What the audits missed
 
-After three rounds, I found a broken rule by hand: "Not sure, estimate it" on the mortgage question left the mortgage blank. The rule says a skipped input gets a proposed figure, shown and approved, never a blank. The auditors checked what they were told to check, and the simulated-user judge scored against a hidden true value; a skipped field has none. So the 25 product rules are written down (`docs/PRODUCT_RULES.md`) with a check for each, 55 tests cover those code can check, and a live audit that clicks every chip is the final gate. Its first run (22 Nov) found 14 rules passing, 10 partial, 1 failing (R1, propose then approve) and no P0; after fixes, the re-check of the 11 that did not pass found 2 pass, 9 partial, 0 fail. Still open: growth rates and plan age are shown but fixed (R6 of the rules list).
+After three rounds, I found a broken rule by hand: "Not sure, estimate it" on the mortgage question left the mortgage blank. The rule says a skipped input gets a proposed figure, shown and approved, never a blank. The auditors checked what they were told to check, and a skipped field has no hidden true value for the simulated-user judge. So the product rules are written down (`docs/PRODUCT_RULES.md`; R26, usable by a high-school graduate, was added after the real user's feedback) with a check for each, 55 tests cover those code can check, and a live audit that clicks every chip is the final gate. Its first run (22 Nov) found 14 rules passing, 10 partial, 1 failing and no P0; the re-check of the 11 that did not pass found 2 pass, 9 partial, 0 fail.
 
 ### Where the evidence is in the repo
 

@@ -178,7 +178,7 @@ def test_assumptions_state_the_numbers_used():
     plan, ctx = plan_for(H13)
     text = " ".join(plan["assumptions"])
     assert "today's dollars" in text and "5.0%" in text and "1.8%" in text and "85%" in text
-    assert "no raises" in text and "Yearly saving" in text and "larger of your two" in text
+    assert "no raises" in text and "Yearly saving" in text and "larger Social Security check" in text
     sv = plan["saving"]
     assert sv["per_year"] == ctx.results["money"]["save_now"] and sv["unspent_pay_per_year"] >= 0
     assert f"${sv['per_year']:,.0f}" in text
@@ -244,7 +244,9 @@ def test_starting_points_when_basics_are_not_safe():
         if x["title"].startswith("Retire at"):
             assert int(re.match(r"Retire at (\d+)", x["title"]).group(1)) <= 70
     first = plan["actions"][0]
-    assert first["title"] == "Make your basics safe first" and "Start there" not in first["why"] and "$0 a year" not in first["why"]
+    # round 4: the first move is the best starting point itself, said as an action (never "Make your needs safe first")
+    assert first["title"] == pts[0]["action_title"] and first["whatif_text"] == pts[0]["whatif_text"]
+    assert "Start there" not in first["why"] and "$0 a year" not in first["why"]
 
 
 # ------------------------------------------------------------------ B P0-2: already retired
@@ -291,7 +293,8 @@ def test_longevity_grammar():
 def test_count_on_below_social_security_is_explained():
     m = {"safe_spending_per_year": 20000, "social_security_per_year": 22000, "ss_tax_rate": 0.05, "health_extra_in_retirement": True}
     h = adviser.headline(m, 18000)
-    assert "less than your Social Security of $22,000" in h and "tax" in h
+    assert "less than your Social Security of $22,000" in h
+    assert "tax" in adviser.below_ss_why(m)
 
 
 # ------------------------------------------------------------------ eval direction checks after the fix

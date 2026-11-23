@@ -1,0 +1,19 @@
+........................................................................ [ 57%]
+................F.....................................                   [100%]
+================================== FAILURES ===================================
+__________ test_partner_pension_with_start_age_and_the_right_person ___________
+
+    def test_partner_pension_with_start_age_and_the_right_person():
+        r = step("Hi, I'm Maria, 43, a pediatrician in Massachusetts, married to David who's 46 and is a high school teacher. "
+                 "David will get a teacher pension of about $2,500 a month at 60.", {})
+        pens = r.profile["pensions"]
+        assert len(pens) == 1 and pens[0]["who"] == "partner" and pens[0]["per_year"] == 30000 and pens[0]["start_age"] == 60
+        assert r.profile["sources"]["pensions"] == "you said"
+>       assert "your partner has a pension of $30,000 a year from 60" in r.reply and "you have a pension" not in r.reply
+E       AssertionError: assert ('your partner has a pension of $30,000 a year from 60' in 'Got it. I noted 4 facts from your message. Check them in the panel on the right. The main ones: you are 43. Also: you...of $30,000 a year from 60. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.')
+E        +  where 'Got it. I noted 4 facts from your message. Check them in the panel on the right. The main ones: you are 43. Also: you...of $30,000 a year from 60. I filled in 8 more with typical figures. Each is marked in the panel, so you can change it.' = IntakeResponse(profile={'age': 43, 'partner_age': 43, 'has_partner': True, 'state': 'MA', 'retire_age': 65, 'pay_per_y...status': 'default', 'note': 'Estimate: $149,000 a year'}], tokens={'input': 0, 'cached': 0, 'output': 0}, cost_usd=0.0).reply
+
+tests\test_round3_intake.py:159: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_round3_intake.py::test_partner_pension_with_start_age_and_the_right_person
+1 failed, 125 passed in 52.43s

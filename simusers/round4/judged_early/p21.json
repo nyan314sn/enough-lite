@@ -1,0 +1,136 @@
+{
+ "persona_id": "p21",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 45,
+    "truth": 45,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "UT",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 58,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 130000.0,
+    "truth": 130000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 115000.0,
+    "truth": 435000,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": false,
+    "got": null,
+    "truth": true,
+    "source": null
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": false,
+    "got": 0.0,
+    "truth": 300000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": false,
+    "got": [],
+    "truth": [
+     6,
+     9,
+     11
+    ],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 90000.0,
+    "truth": 90000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.5384615384615384,
+  "why": [
+   {
+    "field": "state",
+    "cause": "person_never_said",
+    "note": "App asked twice; persona answered only in digits/k and never gave a state."
+   },
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "App set 65 as a typical value; person never stated retirement age (truth 58)."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "App split a typical $115,000; person never gave balances (truth $435,000)."
+   },
+   {
+    "field": "home_owns",
+    "cause": "never_asked",
+    "note": "App never asked about home ownership; housing was filled with typical costs."
+   },
+   {
+    "field": "mortgage_balance",
+    "cause": "never_asked",
+    "note": "App never asked about the mortgage; stored 0 instead of $300,000."
+   },
+   {
+    "field": "children",
+    "cause": "never_asked",
+    "note": "App assumed no children counted; never asked about children (truth ages 6, 9, 11)."
+   }
+  ]
+ }
+}

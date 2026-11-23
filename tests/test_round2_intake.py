@@ -205,4 +205,4 @@ def test_widow_asking_about_a_husbands_age_gets_a_kind_plain_reply():
 
 def test_notes_and_told_survive_the_round_trip():
     rs = play(["I'm 50 in Illinois, single", "skip"])
-    assert "Until you tell me otherwise" in rs[0].reply and "Until you tell me otherwise" not in rs[1].reply
+    assert "For the rest, I use typical figures" in rs[0].reply and "For the rest, I use typical figures" not in rs[1].reply

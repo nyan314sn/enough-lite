@@ -223,6 +223,10 @@ def rows(p: Profile, offered_none: bool = True) -> list[dict[str, Any]]:
     if p.state:
         from . import parser
         add("state", "State", "Household", p.state, parser.STATE_NAME.get(p.state, p.state), _src(p, "state"), "", {"kind": "text", "ask": "state"})
+    elif p.age is not None and (p.notes.get("skipped_state") == "yes" or p.notes.get("skip_all") == "yes"):
+        # round 4: an assumed state is shown, not left out
+        add("state", "State", "Household", None, "Not given: typical US taxes and costs", "assumed",
+            "You did not say. Give your state for its taxes and costs.", {"kind": "text", "ask": "state"})
     if not (p.sources.get("children") or p.children) and p.notes.get("skipped_children_count") == "yes":
         add("children", "Children", "Household", [], "None counted", "assumed", "You did not say. No children are counted; add them if you have any.", _group("children"))
     if p.sources.get("children") or p.children:

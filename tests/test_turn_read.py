@@ -191,7 +191,7 @@ def test_dont_change_pay_does_not_open_pay():
 
 def test_of_100_is_explained_in_plain_words():
     out = asyncio.run(ask_intent.route("so 92 of 100 is better than 75 right? what does that mean", _base(), None, "s", False))
-    assert out["kind"] == "answer" and "100 different paths" in out["text"]
+    assert out["kind"] == "answer" and "N of 100 market tests" in out["text"]
 
 
 def test_figures_inside_a_why_question_are_not_stored():

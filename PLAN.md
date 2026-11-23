@@ -211,3 +211,19 @@ Open, in order:
 6. Fresh-clone test with only `OPENAI_API_KEY` one folder up; time it (10-minute rule).
 7. Final report and slides pass (must include, per the user: the MCP server — what it is for, its tools, a diagram box and the demo transcript, in both the report and the slides; the scenario tabs; the What If understanding results; the model comparison; the reasonableness audit): audit results, repo link, clone time, retake the 6 teal screenshots (and update the run walkthrough numbers), trim to 15 pages.
 8. From the user: real-user test (one person, 15 minutes, a quote); Canvas upload (repo link, report.html, slides.html, video).
+
+
+## Real-user feedback round (user, 2026-11-22 evening): "the app is too complicated"
+
+Feedback (from the real-user test):
+- It is not obvious that you can build the plan without answering every question.
+- "How Enough works" should fold on its own once the person starts answering in the chat.
+- "Your plan" is too complex: an average person won't read all the text. Language must be shorter and plainer; the plan needs attraction (gamify it); a high-school graduate must be able to use it well.
+- Redo the demo later, with transcript, voice and screen consistent. Hold the demo until the app is redone.
+
+Work (parallel agents, split by files):
+- A. Page 1 (web: IntakeScreen, BuildBlock, HowItWorks, App): "Build my plan" usable early (typical figures for the rest, still shown for checking), said plainly in the panel and the chat from the first answer; How Enough works folds on the first chat message.
+- B. Plan page redesign (web: PlanCard, AnalysisSection, ScenarioTabs/Compare, TeamPanel/CostBlock layout, new gamified components): one glance answer, a readiness score/ring and progress to the goal, three "next steps" as a checklist with what each is worth, details folded away; works with What If tabs and dark mode.
+- C. Plain language (app: adviser prompts and templates, headline, actions, What If and analysis sentences, intake chat replies): short sentences, everyday words, reading grade 8 or lower, measured; numbers unchanged.
+- New product rule R26: usable by a high-school graduate (reading grade ≤ 8; the plan's answer readable in under a minute).
+- Then: full tests, simulated-user re-check, report/slides update (the real-user test and the redesign as evidence), then the demo re-record (consistent transcript, voice and screen).

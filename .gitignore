@@ -74,3 +74,6 @@ demo/samples/
 
 # Intermediate audit run (superseded by results_after.jsonl)
 eval/reasonableness/results_after_pre_mortgagefix.jsonl
+
+# Real testers' raw answers stay local (the report carries the consented summary)
+user_test/responses/feedback_*.json

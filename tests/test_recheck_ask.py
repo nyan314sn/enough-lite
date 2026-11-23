@@ -63,7 +63,7 @@ def test_no_generic_placeholder_text():
 @pytest.mark.parametrize("q", ["what if I retire at 72", "what if I retire at 75"])
 def test_retiring_past_70_says_social_security_stops_growing(q):
     r = ask(q, WORKING)
-    assert r["kind"] == "whatif" and "That is past 70; Social Security stops growing at 70." in r["text"]
+    assert r["kind"] == "whatif" and "That is past 70. Social Security stops growing at 70." in r["text"]
 
 
 def test_retiring_at_68_has_no_past_70_line():

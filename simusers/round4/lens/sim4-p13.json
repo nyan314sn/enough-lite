@@ -1,0 +1,16 @@
+{
+ "id": "p13",
+ "path": "normal",
+ "kind": "close",
+ "gap": 4600,
+ "text": "Readiness: 91 of 100\nClose. A few changes get you there.\nShort $4,600 a year\nNeeds: $27,300 a year. Paid in 100 of 100 market tests. Safe.\nWants: $24,200 a year on top of your needs. You can count on $51,500 in all. Sure.\nWishes: $4,600 a year, the rest of your goal of $56,100. Only if markets help.\nYou can count on $51,500 a year: $27,300 for needs, $24,200 for wants. That is less than your...\nFirst move: Set your spending goal nearer the safe level",
+ "result": {
+  "a": "no",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "Never says if I can retire at 62; 'Close' is vague. 'Market tests', 'Wishes', 'safe level' unclear; text cut off at 'less than your...'",
+  "persona_note": "Why 91? Why those numbers?"
+ },
+ "grade": 1.59,
+ "words": 87
+}

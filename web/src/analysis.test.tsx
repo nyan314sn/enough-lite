@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { act } from "react";
 import AnalysisSection, { mergeSources, sourcesReadout, sureSentence, topChoices, topRisks } from "./components/AnalysisSection";
 import CostsChart, { costsReadout } from "./components/CostsChart";
@@ -51,7 +51,7 @@ const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
 describe("The analysis", () => {
   it("is a closed expander: one sentence, two small tables, one chart", async () => {
-    m = await render(<AnalysisSection analysis={many} onTry={() => {}} />);
+    m = await render(<AnalysisSection analysis={many} />);
     const d = m.el.querySelector("[data-testid=plan-analysis]") as HTMLDetailsElement;
     expect(d.tagName).toBe("DETAILS");
     expect(d.open).toBe(false);
@@ -72,7 +72,7 @@ describe("The analysis", () => {
   it("how sure is one sentence with the plan's own figures, and no chart", async () => {
     m = await render(<AnalysisSection analysis={analysis} />);
     const p = m.el.querySelector("[data-testid=an-sure]")!;
-    expect(p.textContent).toBe("Spending $34,900 a year lasts in 75 of 100 market paths; $30,500 lasts in 95.");
+    expect(p.textContent).toBe("Spending $34,900 a year lasts in 75 of 100 market tests; $30,500 lasts in 95.");
     expect(sureSentence(analysis.how_sure)).toBe(p.textContent);
     expect(m.el.querySelector("[data-testid=sure-chart]")).toBeNull();
     expect(sureSentence({ ...analysis.how_sure, levels: [{ of_100: 75, per_year: 0 }, { of_100: 95, per_year: 0 }] })).toBe(analysis.how_sure.line);
@@ -88,11 +88,11 @@ describe("The analysis", () => {
     expect(m.el.querySelectorAll("[data-at-risk=true]").length).toBe(0);
     expect(m.el.textContent).not.toContain("Spending drops to 75%");   // the early-death sentence shows only when that row is in the top 3
   });
-  it("risks: when basics stay paid in every path for all shown, that is said once after the list", async () => {
+  it("risks: when needs stay paid in every path for all shown, that is said once after the list", async () => {
     const s = (k: string, c: number) => row(k, k, c, 100, -1000, 0, { label: k, sentence: "Your $31,000 a year still lasts in most paths." });
     const a = { ...many, stresses: { line: "", top: ["a", "b", "c"], rows: [s("a", 1), s("b", 2), s("c", 3)] } };
     m = await render(<AnalysisSection analysis={a} />);
-    expect(m.el.querySelector("[data-testid=an-basics-all]")?.textContent).toBe("In all three, your basics stay paid in every path.");
+    expect(m.el.querySelector("[data-testid=an-basics-all]")?.textContent).toBe("In all three, your needs stay paid in every path.");
     expect(m.el.querySelector("[data-testid=an-stresses]")?.textContent).not.toContain("basics");
     m.unmount();
     m = await render(<AnalysisSection analysis={many} />);
@@ -119,21 +119,18 @@ describe("The analysis", () => {
     expect(topChoices(many.levers.rows).map((r) => r.key)).toEqual(["retire", "claim", "spend_now"].sort((a, b) => many.levers.rows.find((r) => r.key === b)!.count_on_change - many.levers.rows.find((r) => r.key === a)!.count_on_change));
     expect(topChoices([row("a", "A", 1, 1, 499, 4), row("b", "B", 1, 1, 0, 0)])).toEqual([]);
     expect(topChoices([row("a", "A", 1, 1, 100, 5)]).length).toBe(1);
-    m = await render(<AnalysisSection analysis={many} onTry={() => {}} />);
+    m = await render(<AnalysisSection analysis={many} />);
     expect(m.el.querySelectorAll("[data-testid=an-levers] tbody tr").length).toBe(3);
     expect(text(m.el.querySelector("[data-testid=an-levers]"))).toContain("+$1,700");
     m.unmount();
-    m = await render(<AnalysisSection analysis={{ ...many, levers: { line: "", rows: [row("save", "Save $100 a month more", 31900, 99, 0, 0)] } }} onTry={() => {}} />);
+    m = await render(<AnalysisSection analysis={{ ...many, levers: { line: "", rows: [row("save", "Save $100 a month more", 31900, 99, 0, 0)] } }} />);
     expect(m.el.querySelector("[data-testid=an-levers]")).toBeNull();
     expect(m.el.textContent).not.toContain("What each choice is worth");
   });
-  it("choices: Try this runs a What If", async () => {
-    const onTry = vi.fn();
-    m = await render(<AnalysisSection analysis={many} onTry={onTry} />);
-    const b = m.el.querySelector("[data-testid=an-levers] tbody tr button") as HTMLButtonElement;
-    expect(b.textContent).toContain("Try this");
-    await act(async () => { b.click(); });
-    expect(onTry).toHaveBeenCalledWith("What if I retire at 67");
+  it("choices have no Try this button", async () => {
+    m = await render(<AnalysisSection analysis={many} />);
+    expect(m.el.querySelector("[data-testid=an-levers] button")).toBeNull();
+    expect(m.el.textContent).not.toContain("Try this");
   });
   it("sources chart: four series, the readout lists each part and they add up", async () => {
     const wide: Analysis["sources"] = { ...analysis.sources, series: [
@@ -183,7 +180,7 @@ describe("Costs chart parts", () => {
 });
 
 describe("The analysis, risks grouped", () => {
-  it("one lead line, then a short line per risk, then the shared basics line; full sentences when verdicts differ", async () => {
+  it("one lead line, then a short line per risk, then the shared needs line; full sentences when verdicts differ", async () => {
     const h = (k: string, label: string, short: string) => row(k, label, 1, 100, -1000, 0, { label, kind: "holds", short, sentence: "Full sentence." });
     const a = { ...many, stresses: { line: "", top: ["a", "b", "c"], lead: "Your $111,000 a year holds up in most market paths under each of these. In the worst 1 in 10:", rows: [
       h("a", "Prices rise faster for 10 years", "savings run out at 93; you would cut about $40,000 a year for 5 years."),
@@ -196,7 +193,7 @@ describe("The analysis, risks grouped", () => {
     expect(items[0].textContent).toBe("Prices rise faster for 10 years: savings run out at 93; you would cut about $40,000 a year for 5 years.");
     expect(items[0].querySelector("strong")?.textContent).toBe("Prices rise faster for 10 years:");
     expect(m.el.textContent?.split("$111,000").length).toBe(2);   // the plan's figure is said once
-    expect(m.el.querySelector("[data-testid=an-basics-all]")?.textContent).toBe("In all three, your basics stay paid in every path.");
+    expect(m.el.querySelector("[data-testid=an-basics-all]")?.textContent).toBe("In all three, your needs stay paid in every path.");
     m.unmount();
     m = await render(<AnalysisSection analysis={{ ...a, stresses: { ...a.stresses, lead: "" } }} />);   // differing verdicts: no lead, full sentences
     expect(m.el.querySelector("[data-testid=an-lead]")).toBeNull();

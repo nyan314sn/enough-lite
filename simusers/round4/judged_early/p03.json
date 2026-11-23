@@ -1,0 +1,105 @@
+{
+ "persona_id": "p03",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 40,
+    "truth": 40,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "CA",
+    "truth": "CA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 60,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 145000.0,
+    "truth": 145000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 365000.0,
+    "truth": 365000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": null,
+    "truth": false,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": false,
+    "got": 0,
+    "truth": 2,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 95000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.8333333333333334,
+  "why": [
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "App said it still needed retirement age but never asked. It used 65 as a typical value, and the truth is 60."
+   },
+   {
+    "field": "pets",
+    "cause": "never_asked",
+    "note": "App never asked about pets and stored 0 with no source. The truth is 2 cats, which the person never mentioned in chat."
+   }
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "id": "s04",
+ "path": "normal",
+ "kind": "close",
+ "gap": 300,
+ "text": "Readiness: 99 of 100\nClose. A few changes get you there.\nShort $300 a year\nNeeds: $41,100 a year. Paid in 98 of 100 market tests. Safe.\nWants: $6,700 a year on top of your needs. You can count on $47,800 in all. Sure.\nWishes: $300 a year, the rest of your goal of $48,100. Only if markets help.\nYou can count on $47,800 a year: $41,100 for needs, $6,700 for wants. That is less than your...\nFirst move: Build an emergency fund of three months",
+ "result": {
+  "a": "no",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "Readiness 99 of 100, \"Close\" vs short $300; no mention of age 63; wishes, wants, needs; \"market tests\"; truncated \"less than your...\"",
+  "_note": ""
+ },
+ "grade": 1.6,
+ "words": 86
+}

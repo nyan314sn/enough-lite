@@ -37,7 +37,7 @@ for _r, _ss in {"NE": "CT ME MA NH RI VT NJ NY PA", "MW": "IL IN MI OH WI IA KS 
                 "W": "AZ CO ID MT NV NM UT WY AK CA HI OR WA"}.items():
     for _s in _ss.split():
         REGION[_s] = _r
-LOW_NOTE = "Few of the example households are like yours, so treat this as a rough guide."
+LOW_NOTE = "Few example households are like yours, so treat this as a rough guide."
 
 
 @lru_cache(maxsize=1)
@@ -221,7 +221,7 @@ def one_change(person: dict, sim: dict, kept: dict, repick: bool) -> tuple[dict,
            "stock_share_at_retirement": r0["stock_share_at_retirement"], "products": s0["products"], "annuity": bool(s0["annuities"])}
     if pick([res["chosen"], row]) is row:
         return s0, {**res, "chosen": {**row, "source": s0["source"]}, "chosen_strategy": s0,
-                    "note": "We tried other plans on the changed numbers; your plan's own mix and claiming age still did best."}
+                    "note": "We tried other plans on the new numbers. Your own mix and claiming age still did best."}
     return res["chosen_strategy"], res
 
 
@@ -314,7 +314,7 @@ def test_strategies(person: dict, sim: dict, products_matter: bool = False, want
     p95 = library()["meta"]["mean_distance_p95"]
     reasons = []
     if (chosen["basics_paid_of_100"] or 0) < SAFE_BASICS:
-        reasons.append("basics are not safe on any strategy we tested")
+        reasons.append("needs are not safe on any strategy we tested")
     if mean_d > p95:
         reasons.append("no household in the library is close to yours")
     kinds = {pr["kind"] for nb, _ in nbs for pr in nb["decisions"]["products"]}
@@ -324,17 +324,17 @@ def test_strategies(person: dict, sim: dict, products_matter: bool = False, want
     used = not chosen["source"].startswith("rule")
     n_similar = sum(1 for c in scored if not c["source"].startswith("rule"))
     n_rule = len(scored) - n_similar
-    tested = f"We tried {n_similar} plans of households like yours and several simple plans on your numbers. "
-    best = "kept your basics safest and left the most to spend"
+    tested = "We tried plans from similar households and some simple plans. "
+    best = "keeps your needs safest and leaves the most to spend"
     if used:
-        note = tested + f"The plan of {chosen['description']} {best}."
+        note = tested + f"The plan of {chosen['description']} did best. It {best}."
     elif chosen["source"].startswith("rule-claim"):
         who = "each of you claiming Social Security" if chosen.get("partner_claim_age") else "Social Security"
-        note = tested + f"A simple plan {best}: stocks at 110 minus your age, with {who} from {chosen['claim_age']}."
+        note = tested + f"A simple plan did best: stocks at 110 minus your age, with {who} from {chosen['claim_age']}. It {best}."
     elif chosen["source"].startswith("rule-stocks"):
-        note = tested + f"A simple plan {best}: stocks at 110 minus your age, {chosen['name'].split(', ', 1)[1]}."
+        note = tested + f"A simple plan did best: stocks at 110 minus your age, {chosen['name'].split(', ', 1)[1]}. It {best}."
     else:
-        note = tested + f"A simple plan {best}: stocks at 110 minus your age."
+        note = tested + f"A simple plan did best: stocks at 110 minus your age. It {best}."
     if low:
         note += " " + LOW_NOTE
     return {"used": used, "note": note, "candidates_tested": scored, "chosen": chosen, "chosen_strategy": strat,

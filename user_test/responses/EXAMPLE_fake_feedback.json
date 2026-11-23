@@ -1,11 +1,19 @@
 {
   "fake": true,
   "note": "EXAMPLE, not real. Made up to test impact_summary.py.",
+  "form_version": 2,
   "session_id": "EXAMPLE-1",
   "tester": "EXAMPLE, not real: a 55-year-old nurse",
-  "ratings": {"clarity": 4, "trust": 3, "usefulness": 5, "look": 4, "reuse": 4},
-  "open": {"confusing": "EXAMPLE: the word wishes", "liked": "EXAMPLE: one clear answer", "change": "EXAMPLE: show how sure it is"},
+  "about": {"experience": "a little"},
+  "usability": {"needed_help": "no", "noticed_early_build": "yes"},
+  "ratings": {"ease": 4, "look": 4, "needs_wants_wishes": 3, "readiness_helpful": 4, "trust": 3, "reuse": 4},
+  "comprehension": {"retire_age": "EXAMPLE: yes at 67, not at 62", "gap_per_year": "EXAMPLE: about 6 thousand short", "first_step": "EXAMPLE: save more", "wrong_number": "EXAMPLE: none"},
+  "baseline": {"method": "online calculator", "time_value": 1.5, "time_unit": "hours", "time_minutes": 90, "cost_usd": 0},
   "compare": {"choice": "better", "note": "EXAMPLE: faster than my spreadsheet"},
+  "recommend_0_10": 8,
+  "would_pay": {"answer": "yes", "per_year_usd": 30},
+  "open": {"confusing": "EXAMPLE: the word wishes", "liked": "EXAMPLE: one clear answer", "change": "EXAMPLE: show how sure it is"},
   "quote": "EXAMPLE, not real: I would have put this off for another year.",
+  "consent": {"quote": true, "screenshot": false},
   "saved_at": "2026-11-22T10:00:00Z"
 }

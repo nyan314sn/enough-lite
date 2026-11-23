@@ -24,7 +24,7 @@ export function chartSummary(title: string, c: Chart, retireAge?: number | null)
   const pk = median.indexOf(Math.max(...median));
   const end = n - 1;
   const atRetire = retireAge != null ? ages.indexOf(retireAge) : -1;
-  return `${title}. Middle path: ${usd(median[0])} at age ${ages[0]}${atRetire > 0 ? `, ${usd(median[atRetire])} at retirement, age ${retireAge}` : ""}, highest ${usd(median[pk])} at age ${ages[pk]}, ${usd(median[end])} at age ${ages[end]}. Range at age ${ages[end]}: ${usd(low[end])} to ${usd(high[end])}. The table below lists every five years.`;
+  return `${title}. Typical market: ${usd(median[0])} at age ${ages[0]}${atRetire > 0 ? `, ${usd(median[atRetire])} at retirement, age ${retireAge}` : ""}, highest ${usd(median[pk])} at age ${ages[pk]}, ${usd(median[end])} at age ${ages[end]}. Range at age ${ages[end]}: ${usd(low[end])} to ${usd(high[end])}. The table below lists every five years.`;
 }
 
 export default function SavingsChart({ chart, retireAge, before, title = "Savings by age" }: { chart: Chart; retireAge?: number | null; before?: Chart | null; title?: string }) {
@@ -86,7 +86,7 @@ export default function SavingsChart({ chart, retireAge, before, title = "Saving
     <figure className="chart">
       <figcaption className="chart-title" id={tid}>{title}
         <span className="legend">
-          <span className="key key-line" aria-hidden="true" /> Middle path
+          <span className="key key-line" aria-hidden="true" /> Typical market
           <span className="key key-band" aria-hidden="true" /> Range, weak to strong markets
           {before && <><span className="key key-dash" aria-hidden="true" /> Baseline</>}
         </span>
@@ -133,7 +133,7 @@ export default function SavingsChart({ chart, retireAge, before, title = "Saving
           </div>
         )}
         <div className="sr-only" aria-live="polite" data-testid="savings-live">
-          {hi != null ? `Age ${ages[hi]}. Middle path ${usd(median[hi])}. Range ${usd(low[hi])} to ${usd(high[hi])}.` : ""}
+          {hi != null ? `Age ${ages[hi]}. Typical market ${usd(median[hi])}. Range ${usd(low[hi])} to ${usd(high[hi])}.` : ""}
         </div>
       </div>
       <details className="table-view">

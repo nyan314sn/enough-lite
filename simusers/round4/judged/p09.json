@@ -1,0 +1,105 @@
+{
+ "persona_id": "p09",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 58,
+    "truth": 58,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "PA",
+    "truth": "PA",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 65,
+    "truth": 65,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": false,
+    "got": 68000.0,
+    "truth": 60000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 300000.0,
+    "truth": 189000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 40000.0,
+    "truth": 40000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 48000.0,
+    "truth": 48000,
+    "source": "you said"
+   }
+  ],
+  "share": 0.8461538461538461,
+  "why": {
+   "field": "pay_per_year",
+   "cause": "assumed_default",
+   "note": "The app stored its typical $68,000 estimate. Linda chose 'Type my real pay' at i8, but the flow ended before she gave the amount, so the true $60,000 was never stored."
+  }
+ }
+}

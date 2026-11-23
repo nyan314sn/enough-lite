@@ -1,0 +1,15 @@
+{
+ "id": "p27",
+ "path": "normal",
+ "kind": "works",
+ "gap": 0,
+ "text": "Readiness: 100 of 100\nYes, you're on track.\n$65,400 a year you can count on.\nNeeds: $26,400 a year. Paid in 100 of 100 market tests. Safe.\nWants: $39,000 a year on top of your needs. You can count on $65,400 in all. Sure.\nWishes: $0 open. Your whole goal is covered.\nYou can count on $65,400 a year: $26,400 for needs, $39,000 for wants.\nFirst move: Use taxable savings first when you withdraw",
+ "result": {
+  "a": "yes",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "\"Paid in 100 of 100 market tests\"; \"Wishes: $0 open\"; \"taxable savings first\" is unclear; the text never mentions age 60."
+ },
+ "grade": 2.1,
+ "words": 74
+}

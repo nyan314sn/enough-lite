@@ -1,0 +1,138 @@
+{
+ "persona_id": "p37",
+ "issues": [
+  {
+   "ref": "i7",
+   "type": "misunderstanding",
+   "severity": "P0",
+   "quote": "Change your savings from $188,000 to $80,000?",
+   "note": "The user only asked a what-if about saving an extra $1,000 a month, not to change savings. The proposed $80,000 figure also matches no number she gave."
+  },
+  {
+   "ref": "i7",
+   "type": "dead_end",
+   "severity": "P1",
+   "quote": "A 401(k) is a retirement account through your employer.",
+   "note": "The reply never answers how an extra $1,000 a month changes her retirement date, and offers only a Yes/No on a wrong change."
+  },
+  {
+   "ref": "i7",
+   "type": "unstated_assumption",
+   "severity": "P1",
+   "quote": "I updated some typical figures: spending in retirement at $48,600 a year.",
+   "note": "Retirement spending was $57,000 and is silently lowered to $48,600 without saying what it was changed from or why."
+  },
+  {
+   "ref": "i7",
+   "type": "confusing",
+   "severity": "P2",
+   "quote": "I do not change a figure you gave without your yes.",
+   "note": "This claim conflicts with the app's own unrequested change to retirement spending in the same reply, and the reply is padded with generic 401(k) explanation."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 39,
+    "truth": 39,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "IL",
+    "truth": "IL",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 63,
+    "truth": 63,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 92000.0,
+    "truth": 92000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 188000.0,
+    "truth": 188000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 250000.0,
+    "truth": 250000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     1,
+     4,
+     7
+    ],
+    "truth": [
+     1,
+     4,
+     7
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 72000.0,
+    "truth": 72000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "id": "p39",
+ "path": "normal",
+ "kind": "works",
+ "gap": 0,
+ "text": "Readiness: 100 of 100\nYes, you're on track.\n$28,900 a year you can count on.\nNeeds: $26,200 a year. Paid in 100 of 100 market tests. Safe.\nWants: $2,700 a year on top of your needs. You can count on $28,900 in all. Sure.\nWishes: $0 open. Your whole goal is covered.\nYou can count on $28,900 a year: $26,200 for needs, $2,700 for wants. That is less than your...\nFirst move: Build an emergency fund of three months",
+ "result": {
+  "a": "yes",
+  "b": "yes",
+  "c": "yes",
+  "confusing": "\"Paid in 100 of 100 market tests\"; the cut-off sentence \"That is less than your...\"; \"Wishes: $0 open\""
+ },
+ "grade": 1.7,
+ "words": 79
+}

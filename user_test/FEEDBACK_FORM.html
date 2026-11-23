@@ -5,82 +5,117 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enough Lite: your feedback</title>
 <style>
-:root{--bg:#f3f5f8;--surface:#fff;--line:#dce2ea;--line-2:#c5cfdb;--text:#14233b;--text-2:#3a4c66;--muted:#566780;--accent:#0f6b78;--accent-2:#0b5560;--accent-soft:#e3f1f3;--accent-ink:#fff;--good:#2b7a57;--good-soft:#e5f3ec;--radius:12px;--shadow:0 1px 2px rgba(20,35,59,.06),0 2px 8px rgba(20,35,59,.04);--font:"Inter","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",sans-serif}
+:root{--bg:#F7F7FC;--surface:#fff;--subtle:#F1F1F9;--line:#E2E2F0;--line-2:#CBD5E1;--text:#0F172A;--text-2:#334155;--muted:#64748B;--brand:#1E1B4B;--accent:#4F46E5;--accent-2:#4338CA;--accent-soft:rgba(79,70,229,.10);--accent-ink:#fff;--good:#15803D;--good-soft:#DCFCE7;--radius:12px;--shadow:0 1px 2px rgba(30,27,75,.06),0 2px 8px rgba(30,27,75,.04);--font:"Inter","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",sans-serif}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 var(--font)}
-main{max-width:680px;margin:0 auto;padding:32px 20px 64px}
-h1{font-size:1.6rem;margin:0 0 6px}
-p.lead{color:var(--text-2);margin:0 0 24px}
-fieldset,.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;margin:0 0 16px}
-legend{font-weight:600;padding:0 6px}
-.scale{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-.scale label{flex:1;min-width:52px;text-align:center;position:relative}
+main{max-width:700px;margin:0 auto;padding:32px 20px 64px}
+h1{font-size:1.6rem;margin:0 0 6px;color:var(--brand)}
+h2{font-size:1.1rem;margin:0 0 12px;color:var(--brand)}
+p.lead{color:var(--text-2);margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;margin:0 0 14px}
+fieldset{border:0;margin:0 0 18px;padding:0;min-width:0}
+legend{font-weight:600;padding:0;margin-bottom:2px}
+.opt{font-weight:400;color:var(--muted);font-size:.88rem}
+.scale{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.scale label{flex:1;min-width:38px;text-align:center;position:relative}
 .scale input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.scale span{display:block;padding:10px 0;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);font-weight:600}
+.scale span{display:block;padding:9px 0;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);font-weight:600}
 .scale input:checked+span{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .scale input:focus-visible+span{outline:3px solid var(--accent-2);outline-offset:2px}
 .ends{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;margin-top:4px}
 .q{margin-bottom:18px}.q:last-child{margin-bottom:0}
 label.f{display:block;font-weight:600;margin-bottom:4px}
-textarea,input[type=text]{width:100%;font:inherit;color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;background:#fff}
-textarea{min-height:80px;resize:vertical}
-textarea:focus,input[type=text]:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}
-.opts label{display:block;padding:6px 0}
+textarea,input[type=text],input[type=number],select{font:inherit;color:var(--text);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;background:#fff;width:100%}
+textarea{min-height:64px;resize:vertical}
+textarea:focus,input:focus,select:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}
+.opts label{display:block;padding:5px 0}
+.row{display:flex;gap:10px}.row>*{flex:1}
 button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:10px;padding:12px 22px;cursor:pointer}
 button:hover{background:var(--accent-2)}
 button:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
 #msg{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--good-soft);color:var(--good);display:none}
-small{color:var(--muted)}
+.note{background:var(--accent-soft);border-radius:10px;padding:10px 14px;color:var(--brand);font-size:.95rem;margin-bottom:14px}
+@media(max-width:480px){.row{flex-direction:column}}
 </style>
 </head>
 <body>
 <main>
 <h1>How was Enough Lite?</h1>
-<p class="lead">Thank you. This takes about three minutes. Be blunt: a harsh answer helps more than a kind one. Do not type real names or account numbers. Nothing leaves this computer. When you press Save, the page makes a file on this machine.</p>
+<p class="lead">Thank you. This takes about five minutes. Be blunt: a harsh answer helps more than a kind one. Do not type real names or account numbers. Nothing leaves this computer. When you press Save, the page makes a file on this machine. Questions marked "optional" can be skipped.</p>
 
 <form id="f">
 <div class="card">
-  <label class="f" for="sid">Session ID (the person running the test will tell you)</label>
-  <input type="text" id="sid" autocomplete="off">
-  <div class="q" style="margin-top:14px">
-    <label class="f" for="who">In a few words, who are you? (optional, no name; for example "a 52-year-old teacher")</label>
-    <input type="text" id="who" autocomplete="off">
-  </div>
+  <h2>A. About you</h2>
+  <div class="q"><label class="f" for="sid">Session ID <span class="opt">(the person running the test will tell you)</span></label>
+  <input type="text" id="sid" autocomplete="off"></div>
+  <div class="q"><label class="f" for="who">Who are you, in a few words? <span class="opt">(optional; no name. For example: "a 52-year-old teacher")</span></label>
+  <input type="text" id="who" autocomplete="off"></div>
+  <fieldset class="q"><legend>Have you planned for retirement before?</legend>
+    <div class="opts" data-radio="experience" data-opts="never|a little|a lot"></div></fieldset>
 </div>
 
-<fieldset data-key="clarity"><legend>1. How clear was it?</legend>
-  <div class="scale"></div><div class="ends"><span>1 = very confusing</span><span>5 = very clear</span></div></fieldset>
-<fieldset data-key="trust"><legend>2. How much did you trust the answer?</legend>
-  <div class="scale"></div><div class="ends"><span>1 = not at all</span><span>5 = completely</span></div></fieldset>
-<fieldset data-key="usefulness"><legend>3. How useful was it to you?</legend>
-  <div class="scale"></div><div class="ends"><span>1 = useless</span><span>5 = very useful</span></div></fieldset>
-<fieldset data-key="look"><legend>4. How did it look?</legend>
-  <div class="scale"></div><div class="ends"><span>1 = poor</span><span>5 = very good</span></div></fieldset>
-<fieldset data-key="reuse"><legend>5. How likely are you to use it again?</legend>
-  <div class="scale"></div><div class="ends"><span>1 = never</span><span>5 = certainly</span></div></fieldset>
+<div class="card">
+  <h2>B. Could you work it out on your own?</h2>
+  <fieldset class="q"><legend>Did you need help to get to your plan?</legend>
+    <div class="opts" data-radio="needed_help" data-opts="no|a little|yes, a lot"></div></fieldset>
+  <fieldset class="q" data-key="ease"><legend>How easy was it?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = very hard</span><span>5 = very easy</span></div></fieldset>
+  <fieldset class="q" data-key="look"><legend>How did it look?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = poor</span><span>5 = very good</span></div></fieldset>
+  <fieldset class="q"><legend>Did you notice you could build your plan before answering every question?</legend>
+    <div class="opts" data-radio="noticed_early_build" data-opts="yes|no"></div></fieldset>
+</div>
 
 <div class="card">
+  <h2>C. Did you understand your answer?</h2>
+  <div class="note">Answer these from memory. Please do not scroll back to look.</div>
+  <div class="q"><label class="f" for="c_retire">Can you retire at the age you wanted?</label><textarea id="c_retire"></textarea></div>
+  <div class="q"><label class="f" for="c_gap">How much are you short or ahead each year?</label><textarea id="c_gap"></textarea></div>
+  <div class="q"><label class="f" for="c_first">What is the first thing you would do?</label><textarea id="c_first"></textarea></div>
+  <fieldset class="q" data-key="needs_wants_wishes"><legend>Did "needs", "wants" and "wishes" make sense?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = not at all</span><span>5 = very clear</span></div></fieldset>
+  <fieldset class="q" data-key="readiness_helpful"><legend>Was the readiness score helpful?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = not at all</span><span>5 = very helpful</span></div></fieldset>
+  <div class="q"><label class="f" for="wrongnum">Did any number look wrong or surprising? <span class="opt">(optional)</span></label><textarea id="wrongnum"></textarea></div>
+</div>
+
+<div class="card">
+  <h2>D. Compared with how you would do this today</h2>
+  <div class="q"><label class="f" for="b_method">How would you answer this question today?</label>
+    <select id="b_method"><option value="">Choose one</option><option>spreadsheet</option><option>online calculator</option><option>financial adviser</option><option>ask family or friends</option><option>guess</option><option>not at all</option></select></div>
+  <div class="q"><label class="f" for="b_time">How long would that take you? <span class="opt">(a number and a unit)</span></label>
+    <div class="row"><input type="number" id="b_time" min="0" step="any" aria-label="Number"><select id="b_unit" aria-label="Unit"><option value="minutes">minutes</option><option value="hours">hours</option></select></div></div>
+  <div class="q"><label class="f" for="b_cost">What would it cost you, in dollars? <span class="opt">(0 if free)</span></label>
+    <input type="number" id="b_cost" min="0" step="any"></div>
+  <fieldset class="q"><legend>Compared with that, this was:</legend>
+    <div class="opts" data-radio="cmp" data-opts="much better|better|about the same|worse|much worse|not sure"></div></fieldset>
+  <div class="q"><label class="f" for="cmpnote">Why? <span class="opt">(time, cost, trust, effort)</span></label><textarea id="cmpnote"></textarea></div>
+</div>
+
+<div class="card">
+  <h2>E. Trust and reach</h2>
+  <fieldset class="q" data-key="trust"><legend>How much do you trust the answer?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = not at all</span><span>5 = completely</span></div></fieldset>
+  <fieldset class="q" data-key="reuse"><legend>Would you use it again?</legend><div class="scale"></div>
+    <div class="ends"><span>1 = never</span><span>5 = certainly</span></div></fieldset>
+  <fieldset class="q" data-key="recommend" data-min="0" data-max="10"><legend>How likely are you to recommend it to a friend?</legend><div class="scale"></div>
+    <div class="ends"><span>0 = not at all</span><span>10 = certainly</span></div></fieldset>
+  <fieldset class="q"><legend>Would you pay for it? <span class="opt">(optional)</span></legend>
+    <div class="opts" data-radio="pay" data-opts="yes|no|not sure"></div>
+    <label class="f" for="pay_amt" style="margin-top:8px">If yes, about how much a year, in dollars? <span class="opt">(optional)</span></label>
+    <input type="number" id="pay_amt" min="0" step="any"></fieldset>
+</div>
+
+<div class="card">
+  <h2>F. Your words</h2>
   <div class="q"><label class="f" for="confusing">What confused you, or made you stop?</label><textarea id="confusing"></textarea></div>
   <div class="q"><label class="f" for="liked">What was the best part?</label><textarea id="liked"></textarea></div>
   <div class="q"><label class="f" for="change">If you could change one thing, what would it be?</label><textarea id="change"></textarea></div>
-</div>
-
-<fieldset><legend>Compared with how you would do this today, this was:</legend>
+  <div class="q"><label class="f" for="quote">In one or two sentences, what would you tell a friend about it?</label><textarea id="quote"></textarea></div>
   <div class="opts">
-    <label><input type="radio" name="cmp" value="much better"> Much better</label>
-    <label><input type="radio" name="cmp" value="better"> Better</label>
-    <label><input type="radio" name="cmp" value="about the same"> About the same</label>
-    <label><input type="radio" name="cmp" value="worse"> Worse</label>
-    <label><input type="radio" name="cmp" value="much worse"> Much worse</label>
-    <label><input type="radio" name="cmp" value="not sure"> Not sure</label>
+    <label><input type="checkbox" id="consent_quote"> You may quote my words in a class report, without my name.</label>
+    <label><input type="checkbox" id="consent_shot"> You may use a screenshot of my session (no personal details).</label>
   </div>
-  <div class="q" style="margin-top:10px"><label class="f" for="cmpnote">Why? (time, cost, trust, effort)</label><textarea id="cmpnote"></textarea></div>
-</fieldset>
-
-<div class="card">
-  <label class="f" for="quote">In your own words: what would you tell a friend about it?</label>
-  <textarea id="quote"></textarea>
-  <small>The person running the test may quote this in a class report, without your name.</small>
 </div>
 
 <button type="submit">Save my answers</button>
@@ -91,24 +126,48 @@ small{color:var(--muted)}
 (function () {
   document.querySelectorAll("fieldset[data-key]").forEach(function (fs) {
     var k = fs.dataset.key, box = fs.querySelector(".scale");
-    for (var i = 1; i <= 5; i++) {
+    var lo = Number(fs.dataset.min || 1), hi = Number(fs.dataset.max || 5);
+    for (var i = lo; i <= hi; i++) {
       var l = document.createElement("label");
-      l.innerHTML = '<input type="radio" name="' + k + '" value="' + i + '" aria-label="' + i + ' out of 5"><span>' + i + '</span>';
+      l.innerHTML = '<input type="radio" name="' + k + '" value="' + i + '" aria-label="' + i + ' out of ' + hi + '"><span>' + i + '</span>';
       box.appendChild(l);
     }
   });
+  document.querySelectorAll("[data-radio]").forEach(function (d) {
+    d.dataset.opts.split("|").forEach(function (o) {
+      var l = document.createElement("label");
+      l.innerHTML = '<input type="radio" name="' + d.dataset.radio + '"> ';
+      l.querySelector("input").value = o;
+      l.appendChild(document.createTextNode(o.charAt(0).toUpperCase() + o.slice(1)));
+      d.appendChild(l);
+    });
+  });
   function rating(k) { var r = document.querySelector('input[name="' + k + '"]:checked'); return r ? Number(r.value) : null; }
+  function choice(k) { var r = document.querySelector('input[name="' + k + '"]:checked'); return r ? r.value : ""; }
   function val(id) { return document.getElementById(id).value.trim(); }
+  function numval(id) { var v = val(id); return v === "" || isNaN(Number(v)) ? null : Number(v); }
   document.getElementById("f").addEventListener("submit", function (e) {
     e.preventDefault();
-    var cmp = document.querySelector('input[name="cmp"]:checked');
     var sid = val("sid") || "unknown";
+    var t = numval("b_time"), unit = val("b_unit");
     var data = {
+      form_version: 2,
       session_id: sid, tester: val("who"),
-      ratings: { clarity: rating("clarity"), trust: rating("trust"), usefulness: rating("usefulness"), look: rating("look"), reuse: rating("reuse") },
+      about: { experience: choice("experience") },
+      usability: { needed_help: choice("needed_help"), noticed_early_build: choice("noticed_early_build") },
+      ratings: {
+        ease: rating("ease"), look: rating("look"),
+        needs_wants_wishes: rating("needs_wants_wishes"), readiness_helpful: rating("readiness_helpful"),
+        trust: rating("trust"), reuse: rating("reuse")
+      },
+      comprehension: { retire_age: val("c_retire"), gap_per_year: val("c_gap"), first_step: val("c_first"), wrong_number: val("wrongnum") },
+      baseline: { method: val("b_method"), time_value: t, time_unit: unit, time_minutes: t === null ? null : (unit === "hours" ? t * 60 : t), cost_usd: numval("b_cost") },
+      compare: { choice: choice("cmp"), note: val("cmpnote") },
+      recommend_0_10: rating("recommend"),
+      would_pay: { answer: choice("pay"), per_year_usd: numval("pay_amt") },
       open: { confusing: val("confusing"), liked: val("liked"), change: val("change") },
-      compare: { choice: cmp ? cmp.value : "", note: val("cmpnote") },
       quote: val("quote"),
+      consent: { quote: document.getElementById("consent_quote").checked, screenshot: document.getElementById("consent_shot").checked },
       saved_at: new Date().toISOString()
     };
     var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });

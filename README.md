@@ -37,10 +37,6 @@ Run these from the repository folder.
 Without a key the app still runs: the tools work out every number, and plain templates replace the AI's wording.
 To check that the key was found, open http://localhost:8020/api/health: `ai_available` is true, and `provider` and `model` say which one is in use.
 
-## Admin mode: sample households
-
-The admin page is hidden: nothing in the app links to it. Type `http://localhost:8020/admin` in the address bar (`?admin` no longer works) to see 15 sample households in three tiers: comfortable, average and struggling (`app/data/sample_households.json`). From a household you opened, the browser's Back button returns to the list. Each one can be opened in the app with every figure filled in, or built straight away. **Run all** builds every plan; **Save as before** keeps those results in the browser, so the next Run all shows before and after side by side. With `ENOUGH_TEST_MODE=1` on the server, a tab opened at /admin is not held to the 6-plans-a-minute limit; the dollar caps still apply. The page also has a "Model comparison" slot, empty until a comparison run is wired in.
-
 ## Settings (.env)
 
 One key is needed: `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`. The rest are optional.
@@ -176,3 +172,8 @@ Config for Claude Desktop (`claude_desktop_config.json`) or a Claude Code `.mcp.
 Claude Code can also add it with `claude mcp add enough -- /path/to/python /path/to/enough-lite/mcp_server.py`.
 
 A recorded session (tool list, a plan check, a rules search, a refusal) is in `docs/mcp/demo_transcript.md`; `docs/mcp/demo_client.py` makes it. Tests: `python -m pytest tests/test_mcp_server.py -q`.
+
+## For developers: sample households (hidden page)
+
+Not part of the app a user sees: nothing links to it. Typing `/admin` after the address opens a developer page with 15 sample households in three tiers (comfortable, average, struggling; `app/data/sample_households.json`). Each can be opened in the app with every figure filled in, or built straight away; **Run all** builds every plan, and **Save as before** keeps those results so the next run shows before and after side by side. It also shows the Claude Haiku 5.5 vs gpt-6-luna comparison (`eval/model_compare/`). With `ENOUGH_TEST_MODE=1` on the server, a tab opened there is not held to the per-minute plan limit; the dollar caps still apply.
+

@@ -126,7 +126,7 @@ def test_ask_refuses_injection_and_medicaid(client, doctor_profile):
 def test_ask_whatif_returns_new_plan_and_profile(client, doctor_profile):
     r = client.post("/api/ask", json={"question": "What if I retire at 62?", "profile": doctor_profile}).json()
     assert r["kind"] == "whatif" and r["profile"]["retire_age"] == 62 and r["plan"]["retire_age"] == 62
-    assert "62" in r["text"] and "of 100 scenarios" in r["text"]
+    assert "62" in r["text"] and "of 100 market tests" in r["text"]
 
 
 def test_rate_limit_and_test_header(client, doctor_profile, monkeypatch):

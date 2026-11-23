@@ -56,6 +56,19 @@ describe("1. How it works", () => {
     expect(m.el.querySelector("[data-testid=how-it-works]")).toBeTruthy();   // opens again from the folded line
   });
 
+  it("folds by itself when the first message is sent, and stays remembered", async () => {
+    mockSpeed.factor = 0;
+    m = await render(<App api={mockApi} mock admin={false} />);
+    expect(m.el.querySelector("[data-testid=how-it-works]")).toBeTruthy();
+    await click(byText(m.el, ".quick button", "Use an example"));
+    await flush();
+    expect(m.el.querySelector("[data-testid=how-it-works]")).toBeNull();
+    expect(m.el.querySelector("[data-testid=how-collapsed]")).toBeTruthy();
+    expect(localStorage.getItem(HOW_KEY)).toBe("1");
+    const btn = byText(m.el, ".side button", "Build my plan") as HTMLButtonElement;
+    expect(btn.disabled).toBe(false);                                        // and the plan can be built from here
+  });
+
   it("lives on page 1 only: no header button, the folded line opens it, and page 2 shows neither", async () => {
     localStorage.setItem(HOW_KEY, "1");
     mockSpeed.factor = 0;
@@ -96,8 +109,8 @@ describe("2. Baseline plan", () => {
 });
 
 describe("3. Shortfalls are loud", () => {
-  it("levels: red below 90 of 100, amber from 90 to 99, calm at 100; the verdict decides for the plan", () => {
-    expect([basicsLevel(70), basicsLevel(90), basicsLevel(99), basicsLevel(100)]).toEqual(["short", "close", "close", "ok"]);
+  it("levels: needs are red below 90 of 100 and safe from 90 (the same rule as the money ladder); the verdict decides close for the plan", () => {
+    expect([basicsLevel(70), basicsLevel(90), basicsLevel(99), basicsLevel(100)]).toEqual(["short", "ok", "ok", "ok"]);
     expect(planLevel(shortPlan())).toBe("short");
     expect(planLevel({ ...base, verdict: "below_goal", needs: { ...base.needs, paid_of_100: 100 } })).toBe("short");
     expect(planLevel({ ...base, verdict: "close", needs: { ...base.needs, paid_of_100: 100 } })).toBe("close");
@@ -105,31 +118,36 @@ describe("3. Shortfalls are loud", () => {
     expect(yearlyGap(shortPlan())).toBe(112500);
   });
 
-  it("a plan that falls short shows a big 'Short $112,500 a year' with an icon, and the Needs card turns red", async () => {
+  it("a plan that falls short shows a big 'Short $112,500 a year' with an icon, and the Needs row turns red, in words and an icon", async () => {
     m = await render(<PlanCard plan={shortPlan()} retireAge={62} />);
     const b = m.el.querySelector("[data-testid=shortfall]")!;
     expect(b.getAttribute("data-level")).toBe("short");
     expect(b.querySelector("[data-testid=shortfall-big]")?.textContent).toBe("Short $112,500 a year");
     expect(b.querySelector(".shortfall-icon")?.getAttribute("aria-hidden")).toBe("true");
-    expect(b.textContent).toMatch(/70 of 100/);
-    expect(m.el.querySelector(".nww-needs")?.className).toMatch(/risk/);
-    expect(m.el.querySelector(".nww-needs .lvl")?.textContent).toMatch(/Short/);   // words, not colour alone
+    const needs = m.el.querySelector(".row-needs")!;
+    expect(needs.getAttribute("data-reached")).toBe("false");
+    expect(needs.className).toMatch(/locked/);
+    expect(needs.textContent).toMatch(/Not safe yet/);   // words and an icon, not colour alone
+    expect(needs.textContent).toMatch(/70 of 100 tests/);
+    expect(needs.querySelector(".lad-mark")?.textContent).toBe("!");
+    expect(m.el.querySelector(".seg-needs")?.className).toMatch(/unsafe/);
   });
 
   it("close is amber, and a plan that works shows no shortfall block", async () => {
     m = await render(<PlanCard plan={shortPlan({ verdict: "close", needs: { ...base.needs, paid_of_100: 95 } })} />);
     expect(m.el.querySelector("[data-testid=shortfall]")?.getAttribute("data-level")).toBe("close");
-    expect(m.el.querySelector(".nww-needs")?.className).toMatch(/close/);
+    expect(m.el.querySelector(".row-needs")?.getAttribute("data-reached")).toBe("true");   // 95 of 100 is safe
+    expect(m.el.querySelector(".row-needs")?.textContent).toMatch(/Safe · 95 of 100 tests/);
     m.unmount();
     m = await render(<PlanCard plan={{ ...base, verdict: "works", needs: { ...base.needs, paid_of_100: 100 } }} />);
     expect(m.el.querySelector("[data-testid=shortfall]")).toBeNull();
-    expect(m.el.querySelector(".nww-needs")?.className).toMatch(/safe/);
+    expect(m.el.querySelector(".row-needs")?.textContent).toMatch(/Safe/);
   });
 
   it("the Compare table marks a short result and shows the yearly gap; the What If tab marks it against the baseline", async () => {
     const ok: Plan = { ...base, verdict: "works", needs: { ...base.needs, paid_of_100: 100 }, analysis: analysisOf(100000, 150000, 100) };
     m = await render(<CompareTable cols={[{ key: "base", label: "Baseline", plan: ok }, { key: "1", label: "Retire at 50", plan: shortPlan() }]} onOpen={() => {}} />);
-    const paid = Array.from(m.el.querySelectorAll(".compare tbody tr")).find((t) => t.textContent?.includes("Basics paid"))!;
+    const paid = Array.from(m.el.querySelectorAll(".compare tbody tr")).find((t) => t.textContent?.includes("Needs paid"))!;
     expect(paid.querySelector("td:last-child")?.className).toMatch(/cell-short/);
     expect(paid.textContent).toMatch(/Short/);
     const gap = m.el.querySelector("[data-testid=gap-row]")!;

@@ -39,10 +39,10 @@ export interface Tokens { input: number; cached: number; output: number }
 
 export interface Plan {
   needs: { basics_per_year: number; paid_of_100: number; line: string };
-  /** per_year: what you can count on a year (safe in 90 of 100 scenarios), basics included; the headline's figure. */
+  /** per_year: what you can count on a year (safe in 90 of 100 market tests), basics included; the headline's figure. */
   wants: { per_year: number; line: string; above_basics_per_year?: number };
   wishes: { line: string };
-  actions: { title: string; why: string }[];
+  actions: { title: string; why: string; /** The lever this action comes from, when the server says. */ key?: string | null; /** The What If that tries this action, when the server worked one out. */ whatif_text?: string | null }[];
   /** Products to look into (term life, disability, income annuity). Information, never priced. Older backends omit it. */
   worth_checking?: { kind: string; title: string; why: string }[];
   family_moments: string[];
@@ -54,6 +54,8 @@ export interface Plan {
   levers?: { key: string; title: string; why: string; whatif_text?: string }[] | null;
   /** One plain sentence for the main line of the plan. Older backends omit it. */
   headline?: string | null;
+  /** The reason behind the headline, shown folded under it. */
+  headline_why?: string | null;
   /** works | close | below_goal (basics safe, goal above what lasts) | falls_short (basics paid in under 90 of 100). */
   verdict?: string | null;
   verdict_words?: string | null;
@@ -83,7 +85,7 @@ export interface AnalysisRow { key: string; title: string; ask?: string; what?: 
   worst_gap_per_year?: number; typical_runs_out_age?: number | null; typical_years_short?: number; typical_gap_per_year?: number;
   typical_income_per_year?: number; typical_income_from?: string; typical_lasts?: boolean }
 
-/** app/analysis.py, all in today's dollars, on the plan's own scenarios. */
+/** app/analysis.py, all in today's dollars, on the plan's own market tests. */
 export interface Analysis {
   paths: number;
   seed: number;
@@ -114,7 +116,10 @@ export type PlanEvent =
   | { type: "plan"; plan: Plan }
   | { type: "cost"; total_tokens: number; total_usd: number; budget_usd: number }
   | { type: "error"; message: string }
-  | { type: "done" };
+  | { type: "done" }
+  /** A streamed What If (POST /api/ask with Accept: text/event-stream): first this, then the plan's events, then the answer. */
+  | { type: "whatif_start"; question: string; agents: string[]; estimate: string }
+  | { type: "result"; result: AskResponse };
 
 export interface AskResponse {
   /** True for the fixed 911/988 pointer: shown alone, with no "can't help" heading. */
@@ -150,7 +155,8 @@ export interface Api {
   intake(text: string, profileSoFar: Profile | null, reset?: string[]): Promise<IntakeResponse>;
   reset(): Promise<void>;
   plan(profile: Profile, onEvent: (e: PlanEvent) => void, signal?: AbortSignal): Promise<void>;
-  ask(question: string, profile: Profile, plan: Plan, pendingChange?: Record<string, unknown> | null): Promise<AskResponse>;
+  /** onEvent: stream a What If's run (the team's events, as for the plan). Other answers come back without events. */
+  ask(question: string, profile: Profile, plan: Plan, pendingChange?: Record<string, unknown> | null, onEvent?: (e: PlanEvent) => void): Promise<AskResponse>;
   /** The session total from /api/costs. Older servers and test doubles may omit it. */
   costs?(): Promise<CostSummary>;
 }

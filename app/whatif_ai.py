@@ -213,7 +213,7 @@ def check(c: ReadChange, p: Profile, nums: set[float], text: str) -> Checked | s
             return "a Social Security age the message does not give"
         new = int(round(a))
         if not lo <= new <= 70:
-            return f"claiming Social Security at {new} (it can start from {lo} to 70)"
+            return f"claiming Social Security at {new}, since it can start from {lo} to 70"
         return Checked(field=f, phrase=f"I claim Social Security at {new}", shown=f"you claim Social Security at {new}")
     if f in ("spending", "spending_now"):
         goal = p.spending_per_year or 0
@@ -479,17 +479,17 @@ async def fallback(text: str, base: Profile, ch: dict, session: str, use_ai: boo
 # ---------------------------------------------------------------- what the plan cannot test, said plainly
 CANNOT = [
     ("pension", r"\bpension\w*|\blump sum\b|\bannuit\w*",
-     "A pension is part of your answers, not a What If, so I can't test that here. To add or change a pension, change your answers.",
+     "A pension is part of your answers, not a What If. To add or change one, change your answers.",
      ["Change an answer", "What if I retire at {r}", "What if markets fall 30%"]),
     ("pay", r"\b(?:(?:get|got|gets|a|my|big)\s+raise|promotion|pay (?:rise|cut|increase|bump)|salary (?:rise|cut|increase|goes|drops|bump)|bonus|"
             r"earn more|paid more|make more|make \$?\d)",
-     "A What If can't change your pay. To change it for good, change your answers. The closest What Ifs are part-time work or a different retirement age.",
+     "A What If can't change your pay. To change it, change your answers. Part-time work or a new retirement age comes close.",
      ["Change an answer", "What if I retire at {r}", "What if I earn $20,000 a year part time until 70"]),
     ("job_loss", r"\b(?:lose|lost|losing) (?:my|our|his|her) jobs?\b|\b(?:laid off|get fired|got fired|unemploy\w*)\b",
      "I can't model losing a job and finding another. The closest What If is retiring now, which stops your pay.",
      ["What if I retire now", "What if markets fall 30%"]),
     ("new_debt", r"\b(?:take out|taking out|took out|borrow\w*|new|get) (?:a |an )?(?:\$?[\d,]+k? )?(?:car |student |personal |home equity )?(?:loan|mortgage|debt)\b|\bborrow\w*\b|\bstop paying\b|\bbankrupt\w*",
-     "A What If can pay off a debt from savings, but it can't add a new one or skip payments. To add a debt, change your answers.",
+     "A What If can pay off a debt from savings. It can't add a new one or skip payments. To add a debt, change your answers.",
      ["Change an answer", "What if I spend $500 less a month"]),
     ("home_purchase", r"\b(?:buy|bought|buying) (?:a |another |our first |a second |a vacation |a bigger )?(?:house|home|condo|vacation home|cabin|place)\b|\bsecond home\b",
      "A What If can't add a home purchase. The closest are spending more each year or downsizing the home you have.",
@@ -617,8 +617,9 @@ async def propose(text: str, base: Profile, ch: dict, session: str, use_ai: bool
     return propose_reply(parts, skipped, base, tk, cost)
 
 
-CAN_MODEL = ("I can test a retirement age, spending, saving, a Social Security start age, part-time work, a move, a child or pet, "
-             "paying off a debt, the investing mix, or a market fall.")
+CAN_MODEL = ("I can test when you retire, how much you spend and save, and when Social Security starts. "
+             "I can also test part-time work, a move, a child or a pet. "
+             "And I can test paying off a debt, your stock mix or a market fall.")
 
 
 def _chips(base: Profile) -> list[str]:
@@ -628,7 +629,7 @@ def _chips(base: Profile) -> list[str]:
 
 def partial_note(missed: list[str]) -> str:
     """When the model is not used: say which part was left out, so the answer never pretends to cover everything."""
-    return f"I did not read the part about {' and '.join(missed[:2])}; ask it on its own and I will run it."
+    return f"I did not read the part about {' and '.join(missed[:2])}. Ask it on its own and I will run it."
 
 
 def pending_whatif(pending: Any) -> str | None:

@@ -1,0 +1,115 @@
+{
+ "persona_id": "s01",
+ "issues": [],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 29,
+    "truth": 29,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": false,
+    "got": null,
+    "truth": "OH",
+    "source": null
+   },
+   {
+    "field": "retire_age",
+    "ok": false,
+    "got": 65,
+    "truth": 62,
+    "source": "assumed"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 40000.0,
+    "truth": 41000,
+    "source": "estimate"
+   },
+   {
+    "field": "savings_total",
+    "ok": false,
+    "got": 19000.0,
+    "truth": 8500,
+    "source": "assumed"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": null,
+    "truth": false,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [],
+    "truth": [],
+    "source": null
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": false,
+    "got": 0,
+    "truth": 9000,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 33000,
+    "truth": 33000,
+    "source": "estimate"
+   }
+  ],
+  "share": 0.6666666666666666,
+  "why": [
+   {
+    "field": "state",
+    "cause": "person_never_said",
+    "note": "App asked the state question; the person never answered it, and the app did not store a value."
+   },
+   {
+    "field": "retire_age",
+    "cause": "assumed_default",
+    "note": "Person never gave a retirement age; app used 65 as a typical value."
+   },
+   {
+    "field": "savings_total",
+    "cause": "assumed_default",
+    "note": "Person never gave balances; app assumed $19,000 and split it. True total is $8,500."
+   },
+   {
+    "field": "debts_total",
+    "cause": "never_asked",
+    "note": "App never asked about debts and stored 0 with no source, though the person has a $9,000 car loan."
+   }
+  ]
+ }
+}

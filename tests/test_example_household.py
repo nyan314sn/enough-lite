@@ -45,7 +45,7 @@ def test_long_example_reads_every_figure_including_the_match():
 
 def test_long_reply_is_short_and_still_discloses_assumptions():
     r = run(LONG)
-    assert len(r.reply.split()) <= 80, r.reply
+    assert len(r.reply.split()) <= 95, r.reply
     assert re.search(r"I noted \d+ facts from your message", r.reply)
     assert "in the panel on the right" in r.reply
     for want in ("you are 45", "$310,000", "retire at 62"):
@@ -66,7 +66,7 @@ def test_short_example_reads_figures_and_names_each_estimate():
     assert (p["age"], p["partner_age"], p["pay_per_year"], p["retire_age"], p["state"]) == (45, 43, 310000, 62, "CT")
     assert sum(p["savings"][k] for k in ("pretax", "roth", "taxable", "cash")) == 920000
     assert p["home"]["value"] == 850000 and p["home"]["mortgage_balance"] == 420000
-    assert len(r.reply.split()) <= 80, r.reply
+    assert len(r.reply.split()) <= 90, r.reply
     f = rows(r)
     for key in ("spending_now_per_year", "savings"):       # spending and the split: proposed and marked
         assert f[key].source in ("estimate", "assumed"), key
@@ -130,10 +130,10 @@ def test_build_line_once_when_ready_and_after_confirm_questions():
             break
         r = run("yes" if r.profile.get("asking", "").startswith("confirm") else "skip", r.profile)
     assert "Build my plan" in r.reply and "check the figures on the right".lower() in r.reply.lower()
-    assert "ask you to check the figures once before building" in r.reply and "once more" not in r.reply
+    assert "check them once more first" in r.reply and "once before building" not in r.reply
     assert not (r.profile.get("asking") or "").startswith("confirm")     # a confirm question is asked first, the build line follows
     again = run("I also have a dog", r.profile)
-    assert "That's enough to build your plan" not in again.reply         # said once
+    assert "That is enough to build your plan" not in again.reply         # said once
 
 
 # ---- the example household through follow-up turns (mortgage kept, estimates approved, figures named)

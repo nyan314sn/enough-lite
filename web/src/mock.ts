@@ -203,13 +203,13 @@ export function examplePlan(p: Profile): Plan {
   const paid = Math.max(40, Math.min(99, 96 - early * 4 - Math.max(0, kids - 3) * 5));
   const wants = Math.round((158000 - early * 9000 - Math.max(0, kids - 3) * 7000) / 1000) * 1000;
   return {
-    needs: { basics_per_year: 112000, paid_of_100: paid, line: `Housing, food, health care and the dogs: about $112,000 a year after tax, paid in ${paid} of 100 market paths.` },
-    wants: { per_year: wants, line: `You can count on spending about $${wants.toLocaleString("en-US")} a year from ${retire} to 95, in 90 of 100 paths.` },
+    needs: { basics_per_year: 112000, paid_of_100: paid, line: `Housing, food, health care and the dogs: about $112,000 a year after tax, paid in ${paid} of 100 market tests.` },
+    wants: { per_year: wants, line: `You can count on spending about $${wants.toLocaleString("en-US")} a year from ${retire} to 95, in 90 of 100 market tests.` },
     wishes: { line: "A lake house or a big trip each year is open if markets do well; it is not part of the plan." },
     actions: [
       { title: "Max out both 401(k) and a spousal IRA", why: "Your wife has no pay, but a spousal IRA lets you save $7,000 more a year for her, tax-deferred." },
       { title: "Open 529 plans for the three children", why: "College for three is the biggest bill before you retire. Connecticut lets you deduct up to $10,000 a year from state tax." },
-      { title: "Buy term life insurance until the youngest is 22", why: "The family depends on one income. If you died early, the plan fails in most paths without it." },
+      { title: "Buy term life insurance until the youngest is 22", why: "The family depends on one income. If you died early, the plan fails in most market tests without it." },
     ],
     family_moments: [
       "2031: your eldest starts college (about $38,000 a year for four years)",
@@ -233,8 +233,8 @@ function planScript(p: Profile): [number, PlanEvent][] {
       finding: { headline: "In retirement you keep about 84 cents of each dollar you draw.", details: ["Connecticut taxes most withdrawals; Social Security is mostly exempt at your income.", "Drawing taxable savings first keeps early tax low."], numbers: { effective_rate: 0.16 } }, t: [2050, 1200, 280] },
     { agent: "research", label: "Research", tools: [["sources", "Sources: 2 passages found on 401(k) and spousal IRA limits"]],
       finding: { headline: "Two official sources back the rules we use.", details: ["IRS limits for 2026 and the spousal IRA rule."], numbers: { passages: 2 } }, t: [1200, 400, 150] },
-    { agent: "markets", label: "Markets", tools: [["simulate", "Simulation: 2,000 market paths, 65% stocks now, 45% at 62"], ["simulate", `Money lasts to 95 in ${plan.needs.paid_of_100} of 100 paths for the basics`], ["simulate", `Most spending that lasts in 90 of 100 paths: $${plan.wants.per_year.toLocaleString("en-US")} a year`]],
-      finding: { headline: `The basics are paid in ${plan.needs.paid_of_100} of 100 paths.`, details: ["Bad markets in the first five years of retirement are the main risk.", "Your savings peak near $4.1 million at 62 in a middle path."], numbers: { paid_of_100: plan.needs.paid_of_100 } }, t: [2610, 1800, 390] },
+    { agent: "markets", label: "Markets", tools: [["simulate", "Simulation: 2,000 market tests, 65% stocks now, 45% at 62"], ["simulate", `Money lasts to 95 in ${plan.needs.paid_of_100} of 100 market tests for the needs`], ["simulate", `Most spending that lasts in 90 of 100 market tests: $${plan.wants.per_year.toLocaleString("en-US")} a year`]],
+      finding: { headline: `Your needs are paid in ${plan.needs.paid_of_100} of 100 market tests.`, details: ["Bad markets in the first five years of retirement are the main risk.", "Your savings peak near $4.1 million at 62 in a middle market test."], numbers: { paid_of_100: plan.needs.paid_of_100 } }, t: [2610, 1800, 390] },
     { agent: "adviser", label: "Lead adviser", tools: [["neighbors", "Similar households: 12 found; 1 step borrowed"], ["number_check", "Number check: all 11 figures match the tools"]],
       finding: { headline: "You can retire at 62 if you keep saving and protect the one income.", details: ["Three steps matter most: spousal IRA, 529 plans and term life insurance."], numbers: {} }, t: [6180, 2400, 910] },
   ];
@@ -261,7 +261,7 @@ function planScript(p: Profile): [number, PlanEvent][] {
   ev.push(say("longevity", "markets", "Plan to age 95."), say("family", "markets", "Children and dogs add about $58,000 a year until 2038."),
     say("tax", "markets", "You keep about 84 cents of each dollar you draw."), say("adviser", "markets", "How much can you spend each year and still last to 95?"));
   for (const r of [mkt, adv]) {
-    if (r === adv) ev.push(say("markets", "adviser", `The basics are paid in ${plan.needs.paid_of_100} of 100 paths.`), say("family", "adviser", "Three family moments to show."), say("research", "adviser", "2 official passages to cite."));
+    if (r === adv) ev.push(say("markets", "adviser", `Your needs are paid in ${plan.needs.paid_of_100} of 100 market tests.`), say("family", "adviser", "Three family moments to show."), say("research", "adviser", "2 official passages to cite."));
     ev.push([500, { type: "agent_start", agent: r.agent, label: r.label }]);
     for (const [tool, summary] of r.tools) ev.push([700, { type: "tool", agent: r.agent, tool, summary }]);
     ev.push(...done(r));

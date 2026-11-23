@@ -1,0 +1,4682 @@
+{
+ "rows": {
+  "action line": {
+   "n": 15,
+   "mean_grade": 2.94,
+   "pooled_grade": 2.79,
+   "mean_wps": 8.2,
+   "mean_words": 15.5,
+   "longest": 14,
+   "share_over_grade8": 0.0,
+   "share_sentence_over_20": 0.0
+  },
+  "action title": {
+   "n": 15,
+   "mean_grade": 2.61,
+   "pooled_grade": 2.72,
+   "mean_wps": 7.27,
+   "mean_words": 7.3,
+   "longest": 8,
+   "share_over_grade8": 0.0,
+   "share_sentence_over_20": 0.0
+  },
+  "analysis": {
+   "n": 36,
+   "mean_grade": 6.03,
+   "pooled_grade": 4.09,
+   "mean_wps": 8.82,
+   "mean_words": 15.6,
+   "longest": 18,
+   "share_over_grade8": 0.22,
+   "share_sentence_over_20": 0.0
+  },
+  "assumptions": {
+   "n": 65,
+   "mean_grade": 5.14,
+   "pooled_grade": 4.74,
+   "mean_wps": 8.89,
+   "mean_words": 28.5,
+   "longest": 17,
+   "share_over_grade8": 0.08,
+   "share_sentence_over_20": 0.0
+  },
+  "headline": {
+   "n": 5,
+   "mean_grade": 3.96,
+   "pooled_grade": 3.91,
+   "mean_wps": 12.73,
+   "mean_words": 17.4,
+   "longest": 13,
+   "share_over_grade8": 0.0,
+   "share_sentence_over_20": 0.0
+  },
+  "needs/wants/wishes": {
+   "n": 15,
+   "mean_grade": 3.71,
+   "pooled_grade": 3.42,
+   "mean_wps": 10.42,
+   "mean_words": 17.5,
+   "longest": 16,
+   "share_over_grade8": 0.0,
+   "share_sentence_over_20": 0.0
+  },
+  "notes": {
+   "n": 88,
+   "mean_grade": 4.67,
+   "pooled_grade": 4.7,
+   "mean_wps": 9.44,
+   "mean_words": 16.0,
+   "longest": 20,
+   "share_over_grade8": 0.16,
+   "share_sentence_over_20": 0.0
+  },
+  "other plan text": {
+   "n": 7,
+   "mean_grade": 3.22,
+   "pooled_grade": 2.86,
+   "mean_wps": 5.71,
+   "mean_words": 5.7,
+   "longest": 17,
+   "share_over_grade8": 0.0,
+   "share_sentence_over_20": 0.0
+  },
+  "specialist detail": {
+   "n": 76,
+   "mean_grade": 5.69,
+   "pooled_grade": 5.43,
+   "mean_wps": 11.97,
+   "mean_words": 13.0,
+   "longest": 19,
+   "share_over_grade8": 0.22,
+   "share_sentence_over_20": 0.0
+  },
+  "specialist headline": {
+   "n": 30,
+   "mean_grade": 5.07,
+   "pooled_grade": 5.06,
+   "mean_wps": 11.72,
+   "mean_words": 11.9,
+   "longest": 18,
+   "share_over_grade8": 0.03,
+   "share_sentence_over_20": 0.0
+  }
+ },
+ "items": [
+  {
+   "type": "other plan text",
+   "label": "horizon_text",
+   "text": "to age 98",
+   "sample": "doctor",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 1.31,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "All figures are in today's dollars. That is what money buys now.",
+   "sample": "doctor",
+   "stats": {
+    "words": 12,
+    "sentences": 2,
+    "grade": 2.48,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are planning figures, not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.",
+   "sample": "doctor",
+   "stats": {
+    "words": 46,
+    "sentences": 5,
+    "grade": 4.42,
+    "wps": 9.2,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A market test is one made-up run of the markets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.",
+   "sample": "doctor",
+   "stats": {
+    "words": 34,
+    "sentences": 3,
+    "grade": 4.79,
+    "wps": 11.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Until you retire you save about $90,634 a year. $23,000 goes into a 401(k) or IRA. Your employer's match adds $9,300. $58,334 is take-home pay left after spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers.",
+   "sample": "doctor",
+   "stats": {
+    "words": 45,
+    "sentences": 5,
+    "grade": 4.44,
+    "wps": 9.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Pay stays the same until you retire. The plan counts no raises, since they are not certain. If your pay changes, update it in your answers.",
+   "sample": "doctor",
+   "stats": {
+    "words": 26,
+    "sentences": 3,
+    "grade": 2.77,
+    "wps": 8.67,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Your retirement spending leaves out the mortgage. Payments after you retire, until 2046, are a separate cost.",
+   "sample": "doctor",
+   "stats": {
+    "words": 17,
+    "sentences": 2,
+    "grade": 7.85,
+    "wps": 8.5,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Social Security uses the figure you gave, as the benefit at 67. Your answers show $62,000 a year from 67. This plan starts it at 70 for each of you. That pays about $76,900 a year.",
+   "sample": "doctor",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 4.64,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A partner with little pay gets half of the other's benefit at 67. It is less if started sooner.",
+   "sample": "doctor",
+   "stats": {
+    "words": 19,
+    "sentences": 2,
+    "grade": 4.88,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "After the first death, the one left keeps the larger Social Security check, about $51,300 a year. Spending falls to 75% of what the two of you spend.",
+   "sample": "doctor",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "If you retire before 65, health cover costs about $10,000 a person a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.",
+   "sample": "doctor",
+   "stats": {
+    "words": 30,
+    "sentences": 3,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Tax uses 2027 federal rates, the standard deduction and your state's rates. While you work, 401(k) saving lowers your taxable pay. The child tax credit applies. In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a little high. Your state taxes part of it too.",
+   "sample": "doctor",
+   "stats": {
+    "words": 58,
+    "sentences": 6,
+    "grade": 5.88,
+    "wps": 9.67,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "The plan runs to age 98. There is about a 1 in 4 chance that one of you will live that long. This comes from a US life table. People with more money often live longer.",
+   "sample": "doctor",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 2.67,
+    "wps": 9.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change the retirement age (62)",
+   "sample": "doctor",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 7.6,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change when Social Security starts (70)",
+   "sample": "doctor",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 8.38,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "needs.line",
+   "text": "Your needs cost about $44,500 a year. They are paid in all 100 market tests.",
+   "sample": "doctor",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "headline",
+   "label": "headline",
+   "text": "You can count on $111,600 a year: $44,500 for needs, $67,100 for wants.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wants.line",
+   "text": "About $111,600 a year can be counted on, which is $67,100 above your needs.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wishes.line",
+   "text": "Your goal is $105,000 a year, and the plan lasts in 94 of 100 market tests. Little is left over for wishes.",
+   "sample": "doctor",
+   "stats": {
+    "words": 22,
+    "sentences": 2,
+    "grade": 4.25,
+    "wps": 11.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Close the gap in your life cover",
+   "sample": "doctor",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "Ten years of pay is about $3,100,000. You have $1,500,000, a gap of $1,600,000.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Plan for Medicare at 65 before you retire",
+   "sample": "doctor",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 6.71,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You retire at 62, so plan for 3 years of health cover before Medicare.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 7.57,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Check your plan once a year",
+   "sample": "doctor",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": -1.45,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "Markets and your needs change. Check again once a year.",
+   "sample": "doctor",
+   "stats": {
+    "words": 10,
+    "sentences": 2,
+    "grade": 0.52,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness or injury stops you working. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "doctor",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 6.44,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your youngest child leaves home when you are about 57.",
+   "sample": "doctor",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 13-year-old (public in-state): about $32,030 a year, when you are 50 to 53.",
+   "sample": "doctor",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 10-year-old (private): about $67,610 a year, when you are 53 to 56.",
+   "sample": "doctor",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 6-year-old (public in-state): about $32,030 a year, when you are 57 to 60.",
+   "sample": "doctor",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your oldest child turns 18 when you are about 50.",
+   "sample": "doctor",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your dogs cost about $6,910 a year, for about 6 more years.",
+   "sample": "doctor",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 4.82,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your costs fall by about $18,900 a year when the mortgage ends in 2046.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.04,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.note",
+   "text": "We tried plans from similar households and some simple plans. A simple plan did best: stocks at 110 minus your age, with each of you claiming Social Security from 70. It keeps your needs safest and leaves the most to spend.",
+   "sample": "doctor",
+   "stats": {
+    "words": 41,
+    "sentences": 3,
+    "grade": 5.86,
+    "wps": 13.67,
+    "longest": 20
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.name",
+   "text": "Simple plan, claiming at 70",
+   "sample": "doctor",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.description",
+   "text": "Stocks at 110 minus your age, claim Social Security at 70, no products",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 8.54,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Long-term care is not in these figures. A private nursing home room costs about $129,575 a year. Care lasts about 3 years on average.",
+   "sample": "doctor",
+   "stats": {
+    "words": 24,
+    "sentences": 3,
+    "grade": 4.25,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Before Medicare at 65, health cover costs about $10,000 a year. This is a guess.",
+   "sample": "doctor",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 11
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Close the gap in your life cover",
+   "sample": "doctor",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Ten years of pay is about $3,100,000. You have $1,500,000, a gap of $1,600,000.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.how_sure.line",
+   "text": "In half of the market tests you could spend $156,000 a year. To be sure in 90 of 100, spend $111,600. For 95 of 100, spend $103,000.",
+   "sample": "doctor",
+   "stats": {
+    "words": 27,
+    "sentences": 3,
+    "grade": 3.22,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.line",
+   "text": "The biggest risk: stocks do badly for 10 years. You could count on $102,500 a year, and your needs are paid in 100 of 100 market tests.",
+   "sample": "doctor",
+   "stats": {
+    "words": 27,
+    "sentences": 2,
+    "grade": 4.53,
+    "wps": 13.5,
+    "longest": 18
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.lead",
+   "text": "Your $112,000 a year holds up in most market tests. In the worst 1 in 10:",
+   "sample": "doctor",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.levers.line",
+   "text": "Retire 1 year later, at 63 adds the most: $9,000 a year to count on.",
+   "sample": "doctor",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 5.99,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, you",
+   "sample": "doctor",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 13.11,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, your partner",
+   "sample": "doctor",
+   "stats": {
+    "words": 4,
+    "sentences": 1,
+    "grade": 12.52,
+    "wps": 4.0,
+    "longest": 4
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.line",
+   "text": "Pay covers your spending until you retire. After that, Social Security, any pension and your savings do.",
+   "sample": "doctor",
+   "stats": {
+    "words": 17,
+    "sentences": 2,
+    "grade": 7.85,
+    "wps": 8.5,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "tax",
+   "text": "About 22% of your pay goes to tax now. In retirement, about 10%.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 5.1,
+    "wps": 6.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Use taxable savings first, then 401(k) and other pre-tax accounts.",
+   "sample": "doctor",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 8.01,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Take out Roth savings last, so they can grow longer.",
+   "sample": "doctor",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 2.47,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "This is a rough guide, not tax advice. Check with a tax pro.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": -0.35,
+    "wps": 6.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "longevity",
+   "text": "Plan for your money to last to age 98.",
+   "sample": "doctor",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Your partner is the one who may live longest, to age 96 at the horizon.",
+   "sample": "doctor",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 5.99,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Plan for 36 years of retirement, starting at age 62, to be safe.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 6.73,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "research",
+   "text": "You plan to retire at 62, but Medicare starts at 65, so plan for 3 years of gap.",
+   "sample": "doctor",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 7.16,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Medicare generally starts when you turn 65.",
+   "sample": "doctor",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 9.05,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Sign up during your 7-month enrollment window to avoid a monthly late penalty.",
+   "sample": "doctor",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 9.26,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "family",
+   "text": "Your family costs run about $48,641 this year and end around age 60.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 6.73,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "College for your three children totals about $526,680 over the coming years.",
+   "sample": "doctor",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 7.77,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Your mortgage ends in 2046, and costs drop by about $18,900 then.",
+   "sample": "doctor",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 4.82,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Once retired, basic needs run about $44,500 a year, or $3,708 a month.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 5.82,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "markets",
+   "text": "Your spending goal lasts in 94 of 100 market tests.",
+   "sample": "doctor",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "The most you can spend and still be safe in 90 of 100 tests is $111,600 a year.",
+   "sample": "doctor",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 5.2,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "We kept a simple plan: hold stocks at 110 minus your age, and claim Social Security at 70.",
+   "sample": "doctor",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 8.47,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Markets are uncertain, so these results are not guarantees.",
+   "sample": "doctor",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 6.28,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "adviser",
+   "text": "You can count on $111,600 a year: $44,500 for needs, $67,100 for wants.",
+   "sample": "doctor",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your needs cost about $44,500 a year.",
+   "sample": "doctor",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your goal is $105,000 a year, and the plan lasts in 94 of 100 market tests.",
+   "sample": "doctor",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 5.4,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "horizon_text",
+   "text": "until your partner is 97",
+   "sample": "s071",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "All figures are in today's dollars. That is what money buys now.",
+   "sample": "s071",
+   "stats": {
+    "words": 12,
+    "sentences": 2,
+    "grade": 2.48,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are planning figures, not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.",
+   "sample": "s071",
+   "stats": {
+    "words": 46,
+    "sentences": 5,
+    "grade": 4.42,
+    "wps": 9.2,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A market test is one made-up run of the markets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.",
+   "sample": "s071",
+   "stats": {
+    "words": 34,
+    "sentences": 3,
+    "grade": 4.79,
+    "wps": 11.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Until you retire you save about $21,405 a year. $6,000 goes into a 401(k) or IRA. Your employer's match adds $2,250. $13,155 is take-home pay left after spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers.",
+   "sample": "s071",
+   "stats": {
+    "words": 45,
+    "sentences": 5,
+    "grade": 4.44,
+    "wps": 9.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Pay stays the same until you retire. The plan counts no raises, since they are not certain. If your pay changes, update it in your answers.",
+   "sample": "s071",
+   "stats": {
+    "words": 26,
+    "sentences": 3,
+    "grade": 2.77,
+    "wps": 8.67,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Social Security uses the figure you gave, as the benefit at 67. Your answers show $57,300 a year from 67. This plan starts it at 69 for each of you. That pays about $66,500 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 4.64,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A partner with little pay gets half of the other's benefit at 67. It is less if started sooner.",
+   "sample": "s071",
+   "stats": {
+    "words": 19,
+    "sentences": 2,
+    "grade": 4.88,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "After the first death, the one left keeps the larger Social Security check, about $37,200 a year. Spending falls to 75% of what the two of you spend.",
+   "sample": "s071",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "If you retire before 65, health cover costs about $10,000 a person a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.",
+   "sample": "s071",
+   "stats": {
+    "words": 30,
+    "sentences": 3,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Tax uses 2027 federal rates, the standard deduction and your state's rates. While you work, 401(k) saving lowers your taxable pay. In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a little high.",
+   "sample": "s071",
+   "stats": {
+    "words": 46,
+    "sentences": 4,
+    "grade": 7.62,
+    "wps": 11.5,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "The plan runs until your partner is 97. There is about a 1 in 4 chance that one of you will live that long. This comes from a US life table. People with more money often live longer.",
+   "sample": "s071",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 3.33,
+    "wps": 9.5,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change the retirement age (62)",
+   "sample": "s071",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 7.6,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change when Social Security starts (69)",
+   "sample": "s071",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 8.38,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "needs.line",
+   "text": "Your needs cost about $59,400 a year. They are paid in all 100 market tests.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "headline",
+   "label": "headline",
+   "text": "You can count on $91,300 a year: $59,400 for needs, $31,900 for wants.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wants.line",
+   "text": "About $91,300 a year can be counted on, which covers your needs, leaving little for wants.",
+   "sample": "s071",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 6.88,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wishes.line",
+   "text": "Your goal of $99,000 a year lasts in 78 of 100 market tests. That is close to your goal. Wishes wait until it is met.",
+   "sample": "s071",
+   "stats": {
+    "words": 25,
+    "sentences": 3,
+    "grade": 2.29,
+    "wps": 8.33,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "s071",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You are $7,700 a year over the safe $91,300. Raise your goal as savings grow.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Save enough to get the full employer match",
+   "sample": "s071",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "Save $5,670 a year in your 401(k) to get the full match. You now miss about $585 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 2.47,
+    "wps": 10.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Pay off your high-rate debt first",
+   "sample": "s071",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 0.52,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You owe $1,400 at up to 28%. Interest costs about $391 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 4.19,
+    "wps": 6.5,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness or injury stops you working. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "s071",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 6.44,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your youngest child leaves home when you are about 51.",
+   "sample": "s071",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 17-year-old (public in-state): about $32,030 a year, when you are 51 to 54.",
+   "sample": "s071",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Car replacement 2030: about $35,000 once.",
+   "sample": "s071",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 10.35,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.note",
+   "text": "We tried plans from similar households and some simple plans. A simple plan did best: stocks at 110 minus your age, with each of you claiming Social Security from 69. It keeps your needs safest and leaves the most to spend.",
+   "sample": "s071",
+   "stats": {
+    "words": 41,
+    "sentences": 3,
+    "grade": 5.86,
+    "wps": 13.67,
+    "longest": 20
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.name",
+   "text": "Simple plan, claiming at 69",
+   "sample": "s071",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.description",
+   "text": "Stocks at 110 minus your age, claim Social Security at 69, no products",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 8.54,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Long-term care is not in these figures. A private nursing home room costs about $129,575 a year. Care lasts about 3 years on average.",
+   "sample": "s071",
+   "stats": {
+    "words": 24,
+    "sentences": 3,
+    "grade": 4.25,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Before Medicare at 65, health cover costs about $10,000 a year. This is a guess.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 11
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "s071",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You are $7,700 a year over the safe $91,300. Raise your goal as savings grow.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Save enough to get the full employer match",
+   "sample": "s071",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Save $5,670 a year in your 401(k) to get the full match. You now miss about $585 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 2.47,
+    "wps": 10.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Pay off your high-rate debt first",
+   "sample": "s071",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 0.52,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You owe $1,400 at up to 28%. Interest costs about $391 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 4.19,
+    "wps": 6.5,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Close the gap in your life cover",
+   "sample": "s071",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Ten years of pay is about $945,000. You have $280,000, a gap of $665,000.",
+   "sample": "s071",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.how_sure.line",
+   "text": "In half of the market tests you could spend $115,300 a year. To be sure in 90 of 100, spend $91,300. For 95 of 100, spend $86,400.",
+   "sample": "s071",
+   "stats": {
+    "words": 27,
+    "sentences": 3,
+    "grade": 3.22,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.line",
+   "text": "The biggest risk: stocks do badly for 10 years. You could count on $84,900 a year, and your needs are paid in 100 of 100 market tests.",
+   "sample": "s071",
+   "stats": {
+    "words": 27,
+    "sentences": 2,
+    "grade": 4.53,
+    "wps": 13.5,
+    "longest": 18
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.lead",
+   "text": "Your $91,000 a year holds up in most market tests. In the worst 1 in 10:",
+   "sample": "s071",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.levers.line",
+   "text": "Retire 1 year later, at 63 adds the most: $2,000 a year to count on.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 5.99,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, you",
+   "sample": "s071",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 13.11,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, your partner",
+   "sample": "s071",
+   "stats": {
+    "words": 4,
+    "sentences": 1,
+    "grade": 12.52,
+    "wps": 4.0,
+    "longest": 4
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.line",
+   "text": "Pay covers your spending until you retire. After that, Social Security, any pension and your savings do.",
+   "sample": "s071",
+   "stats": {
+    "words": 17,
+    "sentences": 2,
+    "grade": 7.85,
+    "wps": 8.5,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "research",
+   "text": "You are 50 and plan to retire at 62, so catch-up limits matter now.",
+   "sample": "s071",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 6.73,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "At 50 or older, you can contribute up to $34,000 a year to a 401(k) starting in 2027.",
+   "sample": "s071",
+   "stats": {
+    "words": 19,
+    "sentences": 1,
+    "grade": 8.59,
+    "wps": 19.0,
+    "longest": 19
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Your 401(k) catch-up limit rises to $11,750 once you reach ages 60 to 63.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "You plan to retire at 62, three years before Medicare at 65. Sign up for Medicare at 65 to avoid a late penalty.",
+   "sample": "s071",
+   "stats": {
+    "words": 23,
+    "sentences": 2,
+    "grade": 6.85,
+    "wps": 11.5,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "tax",
+   "text": "You pay about 21% of pay in tax now, and about 12% in retirement.",
+   "sample": "s071",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 7.57,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Take money out of taxable savings first, then 401(k) and other pre-tax accounts.",
+   "sample": "s071",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 8.41,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Use Roth accounts last, since they are tax-free when you take money out.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "This is a rough guide, not tax advice. Talk with a tax professional before you act.",
+   "sample": "s071",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 3.02,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "longevity",
+   "text": "Plan for your money to last until your partner is 97.",
+   "sample": "s071",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 4.79,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Your partner's health is excellent, so planning to age 97 is sensible.",
+   "sample": "s071",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 7.77,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "family",
+   "text": "Your family costs end at age 54, after about $153,258 in total.",
+   "sample": "s071",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 7.77,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Most of it is college for your 17-year-old, about $32,030 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 5.82,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Once retired, your needs come to about $59,400 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Health costs before Medicare, at age 65, run about $10,000 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 6.79,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "markets",
+   "text": "Your spending goal lasts in 78 of 100 market tests.",
+   "sample": "s071",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "The most you can spend and still be safe in 90 of 100 tests is $91,300 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 5.2,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "The kept plan is simple: hold stocks at 110 minus your age, and claim Social Security at 69.",
+   "sample": "s071",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 8.47,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Markets are uncertain, so these results are not promises. Your goal is $99,000 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "adviser",
+   "text": "You can count on $91,300 a year: $59,400 for needs, $31,900 for wants.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your needs cost about $59,400 a year.",
+   "sample": "s071",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your goal of $99,000 a year lasts in 78 of 100 market tests.",
+   "sample": "s071",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.91,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "horizon_text",
+   "text": "to age 97",
+   "sample": "e24",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 1.31,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "All figures are in today's dollars. That is what money buys now.",
+   "sample": "e24",
+   "stats": {
+    "words": 12,
+    "sentences": 2,
+    "grade": 2.48,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are planning figures, not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.",
+   "sample": "e24",
+   "stats": {
+    "words": 46,
+    "sentences": 5,
+    "grade": 4.42,
+    "wps": 9.2,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A market test is one made-up run of the markets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.",
+   "sample": "e24",
+   "stats": {
+    "words": 34,
+    "sentences": 3,
+    "grade": 4.79,
+    "wps": 11.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Until you retire you save about $30,231 a year. $14,000 goes into a 401(k) or IRA. Your employer's match adds $3,300. $12,931 is take-home pay left after spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers.",
+   "sample": "e24",
+   "stats": {
+    "words": 45,
+    "sentences": 5,
+    "grade": 4.44,
+    "wps": 9.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Pay stays the same until you retire. The plan counts no raises, since they are not certain. If your pay changes, update it in your answers.",
+   "sample": "e24",
+   "stats": {
+    "words": 26,
+    "sentences": 3,
+    "grade": 2.77,
+    "wps": 8.67,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Your retirement spending leaves out the mortgage. Payments after you retire, until 2047, are a separate cost.",
+   "sample": "e24",
+   "stats": {
+    "words": 17,
+    "sentences": 2,
+    "grade": 7.85,
+    "wps": 8.5,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Social Security uses the figure you gave, as the benefit at 67. Your answers show $68,000 a year from 67. This plan starts it at 69 for each of you. That pays about $78,900 a year.",
+   "sample": "e24",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 4.64,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A partner with little pay gets half of the other's benefit at 67. It is less if started sooner.",
+   "sample": "e24",
+   "stats": {
+    "words": 19,
+    "sentences": 2,
+    "grade": 4.88,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "After the first death, the one left keeps the larger Social Security check, about $40,700 a year. Spending falls to 75% of what the two of you spend.",
+   "sample": "e24",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "If you retire before 65, health cover costs about $10,000 a person a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.",
+   "sample": "e24",
+   "stats": {
+    "words": 30,
+    "sentences": 3,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Tax uses 2027 federal rates, the standard deduction and your state's rates. While you work, 401(k) saving lowers your taxable pay. The child tax credit applies. In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a little high.",
+   "sample": "e24",
+   "stats": {
+    "words": 51,
+    "sentences": 5,
+    "grade": 6.67,
+    "wps": 10.2,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "The plan runs to age 97. There is about a 1 in 4 chance that one of you will live that long. This comes from a US life table. People with more money often live longer.",
+   "sample": "e24",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 2.67,
+    "wps": 9.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change the retirement age (65)",
+   "sample": "e24",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 7.6,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change when Social Security starts (69)",
+   "sample": "e24",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 8.38,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "needs.line",
+   "text": "Your needs cost about $39,900 a year. They are paid in all 100 market tests.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "needs.basis",
+   "text": "your budget where given, else typical",
+   "sample": "e24",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 6.42,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "headline",
+   "label": "headline",
+   "text": "You can count on $67,700 a year: $39,900 for needs, $27,800 for wants. That is less than your Social Security of $78,900 a year. It starts at 69 for each of you in this plan.",
+   "sample": "e24",
+   "stats": {
+    "words": 35,
+    "sentences": 3,
+    "grade": 3.79,
+    "wps": 11.67,
+    "longest": 13
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "headline_why",
+   "text": "That is because savings must cover the years before it starts and health costs come on top.",
+   "sample": "e24",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 5.62,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wants.line",
+   "text": "Safe spending is $67,700 a year, about 80% of your goal. Little is left for wants.",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 3.02,
+    "wps": 8.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wishes.line",
+   "text": "Your goal of $85,000 a year lasts in 24 of 100 market tests. Your goal is above what lasts, so wishes wait.",
+   "sample": "e24",
+   "stats": {
+    "words": 22,
+    "sentences": 2,
+    "grade": 3.72,
+    "wps": 11.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "e24",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You are $17,300 a year over the safe $67,700. Raise your goal as savings grow.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "e24",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You hold about 2.2 months of spending in cash. Three months is $34,300, so you are $9,300 short.",
+   "sample": "e24",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Close the gap in your life cover",
+   "sample": "e24",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "Ten years of pay is about $1,100,000. You have $0, a gap of $1,100,000.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.title",
+   "text": "Term life insurance",
+   "sample": "e24",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 5.25,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no life cover. Term life pays your household if you die while you still work. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "e24",
+   "stats": {
+    "words": 37,
+    "sentences": 4,
+    "grade": 4.28,
+    "wps": 9.25,
+    "longest": 12
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness or injury stops you working. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "e24",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 6.44,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your youngest child leaves home when you are about 52.",
+   "sample": "e24",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 15-year-old (private): about $67,610 a year, when you are 52 to 55.",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 17-year-old (private): about $67,610 a year, when you are 50 to 53.",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your oldest child turns 18 when you are about 50.",
+   "sample": "e24",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your costs fall by about $7,500 a year when the mortgage ends in 2047.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.04,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.note",
+   "text": "We tried plans from similar households and some simple plans. A simple plan did best: stocks at 110 minus your age, with each of you claiming Social Security from 69. It keeps your needs safest and leaves the most to spend.",
+   "sample": "e24",
+   "stats": {
+    "words": 41,
+    "sentences": 3,
+    "grade": 5.86,
+    "wps": 13.67,
+    "longest": 20
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.name",
+   "text": "Simple plan, claiming at 69",
+   "sample": "e24",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.description",
+   "text": "Stocks at 110 minus your age, claim Social Security at 69, no products",
+   "sample": "e24",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 8.54,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Long-term care is not in these figures. A private nursing home room costs about $129,575 a year. Care lasts about 3 years on average.",
+   "sample": "e24",
+   "stats": {
+    "words": 24,
+    "sentences": 3,
+    "grade": 4.25,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Before Medicare at 65, health cover costs about $10,000 a year. This is a guess.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 11
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "e24",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You are $17,300 a year over the safe $67,700. Raise your goal as savings grow.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "e24",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You hold about 2.2 months of spending in cash. Three months is $34,300, so you are $9,300 short.",
+   "sample": "e24",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Close the gap in your life cover",
+   "sample": "e24",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Ten years of pay is about $1,100,000. You have $0, a gap of $1,100,000.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.how_sure.line",
+   "text": "In half of the market tests you could spend $77,600 a year. To be sure in 90 of 100, spend $67,700. For 95 of 100, spend $65,900.",
+   "sample": "e24",
+   "stats": {
+    "words": 27,
+    "sentences": 3,
+    "grade": 3.22,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.line",
+   "text": "The biggest risk: the first death comes 10 years early. You could count on $59,700 a year, and your needs are paid in 100 of 100 market tests.",
+   "sample": "e24",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 4.62,
+    "wps": 14.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.lead",
+   "text": "Your $68,000 a year holds up in most market tests. In the worst 1 in 10:",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.levers.line",
+   "text": "Retire 1 year later, at 66 adds the most: $4,300 a year to count on.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 5.99,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, you",
+   "sample": "e24",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 13.11,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, your partner",
+   "sample": "e24",
+   "stats": {
+    "words": 4,
+    "sentences": 1,
+    "grade": 12.52,
+    "wps": 4.0,
+    "longest": 4
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Not covered: savings run out",
+   "sample": "e24",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 2.88,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.line",
+   "text": "In a middle market test, your savings run out at 88. After that, part of your spending is not covered.",
+   "sample": "e24",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 4.24,
+    "wps": 10.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "research",
+   "text": "Your 401(k) limit rises to $25,500 for 2027, which helps you save more.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "At 50 or older, you can contribute up to $34,000 each year starting in 2027.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 7.57,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "At 60 to 63, the catch-up limit rises to $11,750 a year.",
+   "sample": "e24",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 6.79,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Plan to sign up for Medicare at age 65, even if you keep working.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "tax",
+   "text": "You pay about 20% of income in tax now, and about 10% in retirement.",
+   "sample": "e24",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 8.41,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Most of your savings sit in pretax accounts, which are taxed when you take money out.",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 6.14,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Use taxable savings first, then 401(k) and other pretax accounts, and Roth accounts last.",
+   "sample": "e24",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "This is a rough guide, not tax advice. Talk with a tax professional before you act.",
+   "sample": "e24",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 3.02,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "family",
+   "text": "Your children's college is your biggest cost, about $540,880 in total.",
+   "sample": "e24",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 6.94,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Family costs run about $39,587 this year and end at age 55.",
+   "sample": "e24",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 5.81,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "College costs about $67,610 per child each year for private school.",
+   "sample": "e24",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 4.79,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Your mortgage ends in 2047, and costs drop by $7,500 then.",
+   "sample": "e24",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 3.72,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "longevity",
+   "text": "Plan for your money to last to age 97.",
+   "sample": "e24",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Your partner is the one who may live longest, to age 98.",
+   "sample": "e24",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 3.84,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "There is a 60% chance one of you reaches age 90.",
+   "sample": "e24",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 3.72,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "markets",
+   "text": "Your spending goal lasts in only 24 of 100 market tests.",
+   "sample": "e24",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 5.86,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "The most you can spend and still be safe in 90 of 100 tests is $67,700 a year.",
+   "sample": "e24",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 5.2,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Your kept plan is a simple plan: stocks at 110 minus your age, claiming Social Security at 69.",
+   "sample": "e24",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 9.13,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Markets are uncertain, so these results are not promises. Your $85,000 goal is above the safe amount.",
+   "sample": "e24",
+   "stats": {
+    "words": 17,
+    "sentences": 2,
+    "grade": 5.77,
+    "wps": 8.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "adviser",
+   "text": "You can count on $67,700 a year: $39,900 for needs, $27,800 for wants.",
+   "sample": "e24",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your needs cost about $39,900 a year.",
+   "sample": "e24",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your goal of $85,000 a year lasts in 24 of 100 market tests.",
+   "sample": "e24",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.91,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "horizon_text",
+   "text": "to age 98",
+   "sample": "young",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 1.31,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "All figures are in today's dollars. That is what money buys now.",
+   "sample": "young",
+   "stats": {
+    "words": 12,
+    "sentences": 2,
+    "grade": 2.48,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are planning figures, not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.",
+   "sample": "young",
+   "stats": {
+    "words": 46,
+    "sentences": 5,
+    "grade": 4.42,
+    "wps": 9.2,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A market test is one made-up run of the markets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.",
+   "sample": "young",
+   "stats": {
+    "words": 34,
+    "sentences": 3,
+    "grade": 4.79,
+    "wps": 11.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Until you retire you save about $20,771 a year. $9,000 goes into a 401(k) or IRA. Your employer's match adds $2,340. $9,431 is take-home pay left after spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers.",
+   "sample": "young",
+   "stats": {
+    "words": 45,
+    "sentences": 5,
+    "grade": 4.44,
+    "wps": 9.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Pay stays the same until you retire. The plan counts no raises, since they are not certain. If your pay changes, update it in your answers.",
+   "sample": "young",
+   "stats": {
+    "words": 26,
+    "sentences": 3,
+    "grade": 2.77,
+    "wps": 8.67,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Social Security uses the figure you gave, as the benefit at 67. Your answers show $46,000 a year from 67. This plan starts it at 69 for each of you. That pays about $53,400 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 4.64,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A partner with little pay gets half of the other's benefit at 67. It is less if started sooner.",
+   "sample": "young",
+   "stats": {
+    "words": 19,
+    "sentences": 2,
+    "grade": 4.88,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "After the first death, the one left keeps the larger Social Security check, about $30,400 a year. Spending falls to 75% of what the two of you spend.",
+   "sample": "young",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "If you retire before 65, health cover costs about $10,000 a person a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.",
+   "sample": "young",
+   "stats": {
+    "words": 30,
+    "sentences": 3,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Tax uses 2027 federal rates, the standard deduction and your state's rates. While you work, 401(k) saving lowers your taxable pay. The child tax credit applies. In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a little high.",
+   "sample": "young",
+   "stats": {
+    "words": 51,
+    "sentences": 5,
+    "grade": 6.67,
+    "wps": 10.2,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "The plan runs to age 98. There is about a 1 in 4 chance that one of you will live that long. This comes from a US life table. People with more money often live longer.",
+   "sample": "young",
+   "stats": {
+    "words": 36,
+    "sentences": 4,
+    "grade": 2.67,
+    "wps": 9.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change the retirement age (65)",
+   "sample": "young",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 7.6,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change when Social Security starts (69)",
+   "sample": "young",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 8.38,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "needs.line",
+   "text": "Your needs cost about $41,100 a year. They are paid in all 100 market tests.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "headline",
+   "label": "headline",
+   "text": "You can count on $59,100 a year: $41,100 for needs, $18,000 for wants.",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wants.line",
+   "text": "About $59,100 a year can be counted on, so little is left for wants.",
+   "sample": "young",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.04,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wishes.line",
+   "text": "Your goal of $88,000 a year lasts in 30 of 100 market tests. Your goal is above what lasts, so wishes wait.",
+   "sample": "young",
+   "stats": {
+    "words": 22,
+    "sentences": 2,
+    "grade": 3.72,
+    "wps": 11.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "young",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You are $28,900 a year over the safe $59,100. Raise your goal as savings grow.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Pay off your high-rate debt first",
+   "sample": "young",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 0.52,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You owe $14,000 at up to 7%. Interest costs about $980 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 4.19,
+    "wps": 6.5,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "young",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You hold about 1.9 months of spending in cash. Three months is $24,000, so you are $9,000 short.",
+   "sample": "young",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness or injury stops you working. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "young",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 6.44,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your youngest child leaves home when you are about 51.",
+   "sample": "young",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 4-year-old (public in-state): about $32,030 a year, when you are 48 to 51.",
+   "sample": "young",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "College for the 1-year-old (public in-state): about $32,030 a year, when you are 51 to 54.",
+   "sample": "young",
+   "stats": {
+    "words": 17,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 17.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your oldest child turns 18 when you are about 48.",
+   "sample": "young",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your costs fall by about $12,100 a year when the mortgage ends in 2047.",
+   "sample": "young",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.04,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.note",
+   "text": "We tried plans from similar households and some simple plans. A simple plan did best: stocks at 110 minus your age, with each of you claiming Social Security from 69. It keeps your needs safest and leaves the most to spend.",
+   "sample": "young",
+   "stats": {
+    "words": 41,
+    "sentences": 3,
+    "grade": 5.86,
+    "wps": 13.67,
+    "longest": 20
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.name",
+   "text": "Simple plan, claiming at 69",
+   "sample": "young",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.description",
+   "text": "Stocks at 110 minus your age, claim Social Security at 69, no products",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 8.54,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Long-term care is not in these figures. A private nursing home room costs about $129,575 a year. Care lasts about 3 years on average.",
+   "sample": "young",
+   "stats": {
+    "words": 24,
+    "sentences": 3,
+    "grade": 4.25,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Before Medicare at 65, health cover costs about $10,000 a year. This is a guess.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 11
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "young",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You are $28,900 a year over the safe $59,100. Raise your goal as savings grow.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Pay off your high-rate debt first",
+   "sample": "young",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 0.52,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You owe $14,000 at up to 7%. Interest costs about $980 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 4.19,
+    "wps": 6.5,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "young",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You hold about 1.9 months of spending in cash. Three months is $24,000, so you are $9,000 short.",
+   "sample": "young",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Close the gap in your life cover",
+   "sample": "young",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Ten years of pay is about $780,000. You have $500,000, a gap of $280,000.",
+   "sample": "young",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.how_sure.line",
+   "text": "In half of the market tests you could spend $77,500 a year. To be sure in 90 of 100, spend $59,100. For 95 of 100, spend $56,000.",
+   "sample": "young",
+   "stats": {
+    "words": 27,
+    "sentences": 3,
+    "grade": 3.22,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.line",
+   "text": "The biggest risk: the first death comes 10 years early. You could count on $56,000 a year, and your needs are paid in 100 of 100 market tests.",
+   "sample": "young",
+   "stats": {
+    "words": 28,
+    "sentences": 2,
+    "grade": 4.62,
+    "wps": 14.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.lead",
+   "text": "Your $59,000 a year holds up in most market tests. In the worst 1 in 10:",
+   "sample": "young",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.levers.line",
+   "text": "Retire 1 year later, at 66 adds the most: $3,800 a year to count on.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 5.99,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, you",
+   "sample": "young",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 13.11,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Social Security, your partner",
+   "sample": "young",
+   "stats": {
+    "words": 4,
+    "sentences": 1,
+    "grade": 12.52,
+    "wps": 4.0,
+    "longest": 4
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Not covered: savings run out",
+   "sample": "young",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 2.88,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.line",
+   "text": "In a middle market test, your savings run out at 88. After that, part of your spending is not covered.",
+   "sample": "young",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 4.24,
+    "wps": 10.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "research",
+   "text": "You can put up to $25,500 into a 401(k) in 2027.",
+   "sample": "young",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 4.82,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Your IRA limit stays at $7,500 for 2027.",
+   "sample": "young",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 5.23,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Signing up for Medicare at 65 keeps your coverage on time and avoids higher costs.",
+   "sample": "young",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Waiting past 65 to claim Social Security raises your monthly check until age 70.",
+   "sample": "young",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 10.1,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "tax",
+   "text": "You pay about 12% of your income in tax now.",
+   "sample": "young",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "In retirement, tax on withdrawals is about 7% a year.",
+   "sample": "young",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 8.37,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Take out taxable and cash savings first. Then take out 401(k) money. Roth money comes last.",
+   "sample": "young",
+   "stats": {
+    "words": 17,
+    "sentences": 3,
+    "grade": 2.58,
+    "wps": 5.67,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "This is a rough guide, not tax advice. Talk with a tax pro before you act.",
+   "sample": "young",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 0.8,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "family",
+   "text": "Your family costs total $831,208 and end when you are 54.",
+   "sample": "young",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 5.86,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "College for both children costs $256,240, about $32,030 per child each year.",
+   "sample": "young",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 5.81,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Once retired, plan for about $41,100 a year in needs, before wants.",
+   "sample": "young",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 4.82,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Health costs before Medicare, at 65, are about $10,000 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 6.94,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "longevity",
+   "text": "Plan for your money to last to age 98.",
+   "sample": "young",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Your partner is the one who reaches 97, so plan for partner age 97.",
+   "sample": "young",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.88,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "markets",
+   "text": "Your spending goal lasts in only 30 of 100 market tests.",
+   "sample": "young",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 5.86,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "The most you can spend and still be safe in 90 of 100 tests is $59,100 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 18,
+    "sentences": 1,
+    "grade": 5.2,
+    "wps": 18.0,
+    "longest": 18
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "We kept the simple plan: stocks at 110 minus your age, claiming Social Security at 69.",
+   "sample": "young",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Markets are uncertain. No plan can promise these results will happen.",
+   "sample": "young",
+   "stats": {
+    "words": 11,
+    "sentences": 2,
+    "grade": 4.79,
+    "wps": 5.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "adviser",
+   "text": "You can count on $59,100 a year: $41,100 for needs, $18,000 for wants.",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your needs cost about $41,100 a year.",
+   "sample": "young",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your goal of $88,000 a year lasts in 30 of 100 market tests.",
+   "sample": "young",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.91,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "other plan text",
+   "label": "horizon_text",
+   "text": "to age 96",
+   "sample": "e09",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 1.31,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "All figures are in today's dollars. That is what money buys now.",
+   "sample": "e09",
+   "stats": {
+    "words": 12,
+    "sentences": 2,
+    "grade": 2.48,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Stocks grow 5.0% a year above inflation on average, and bonds 1.8%. Some years are good and some are bad. These are planning figures, not a forecast. They stay fixed, so every plan faces the same markets. To see a bad stretch, try 'markets fall 30%'.",
+   "sample": "e09",
+   "stats": {
+    "words": 46,
+    "sentences": 5,
+    "grade": 4.42,
+    "wps": 9.2,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "A market test is one made-up run of the markets, year by year. We test many of them. 'Safe in 90 of 100 market tests' means your money lasts in 90 of every 100.",
+   "sample": "e09",
+   "stats": {
+    "words": 34,
+    "sentences": 3,
+    "grade": 4.79,
+    "wps": 11.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Until you retire you save about $2,374 a year. $1,500 goes into a 401(k) or IRA. Your employer's match adds $750. $124 is take-home pay left after spending, which the plan assumes you save. If that is wrong, change 'Yearly saving' in your answers.",
+   "sample": "e09",
+   "stats": {
+    "words": 45,
+    "sentences": 5,
+    "grade": 4.44,
+    "wps": 9.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Pay stays the same until you retire. The plan counts no raises, since they are not certain. If your pay changes, update it in your answers.",
+   "sample": "e09",
+   "stats": {
+    "words": 26,
+    "sentences": 3,
+    "grade": 2.77,
+    "wps": 8.67,
+    "longest": 10
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Social Security uses the figure you gave, as the benefit at 67. Your answers show $24,000 a year from 67. This plan starts it at 70. That pays about $29,800 a year.",
+   "sample": "e09",
+   "stats": {
+    "words": 32,
+    "sentences": 4,
+    "grade": 4.86,
+    "wps": 8.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "If you retire before 65, health cover costs about $10,000 a person a year until Medicare starts. This is a guess. Other health costs follow US government figures by age.",
+   "sample": "e09",
+   "stats": {
+    "words": 30,
+    "sentences": 3,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 17
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "Tax uses 2027 federal rates, the standard deduction and your state's rates. While you work, 401(k) saving lowers your taxable pay. The child tax credit applies. In retirement we count 85% of Social Security as taxed. That is the most the law allows, so tax may run a little high.",
+   "sample": "e09",
+   "stats": {
+    "words": 51,
+    "sentences": 5,
+    "grade": 6.67,
+    "wps": 10.2,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumptions",
+   "text": "The plan runs to age 96. There is about a 1 in 4 chance that you will live that long. This comes from a US life table. People with more money often live longer.",
+   "sample": "e09",
+   "stats": {
+    "words": 34,
+    "sentences": 4,
+    "grade": 2.65,
+    "wps": 8.5,
+    "longest": 14
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change the retirement age (66)",
+   "sample": "e09",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 7.6,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "assumptions",
+   "label": "assumption_changes.label",
+   "text": "Change when Social Security starts (70)",
+   "sample": "e09",
+   "stats": {
+    "words": 6,
+    "sentences": 1,
+    "grade": 8.38,
+    "wps": 6.0,
+    "longest": 6
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "needs.line",
+   "text": "Your needs cost about $28,900 a year. They are paid in 99 of 100 market tests.",
+   "sample": "e09",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 3.02,
+    "wps": 8.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "headline",
+   "label": "headline",
+   "text": "You can count on $31,900 a year: $28,900 for needs, $3,000 for wants.",
+   "sample": "e09",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wants.line",
+   "text": "About $31,900 a year can be counted on, so little is left for wants.",
+   "sample": "e09",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 5.04,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "needs/wants/wishes",
+   "label": "wishes.line",
+   "text": "Your goal of $40,000 a year lasts in 48 of 100 market tests. Your goal is above what lasts, so wishes wait.",
+   "sample": "e09",
+   "stats": {
+    "words": 22,
+    "sentences": 2,
+    "grade": 3.72,
+    "wps": 11.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "e09",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You are $8,100 a year over the safe $31,900. Raise your goal as savings grow.",
+   "sample": "e09",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Save enough to get the full employer match",
+   "sample": "e09",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "Save $3,120 a year in your 401(k) to get the full match. You now miss about $810 a year.",
+   "sample": "e09",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 2.47,
+    "wps": 10.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "action title",
+   "label": "actions.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "e09",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "action line",
+   "label": "actions.why",
+   "text": "You hold about 0.7 months of spending in cash. Three months is $11,525, so you are $9,025 short.",
+   "sample": "e09",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.title",
+   "text": "Term life insurance",
+   "sample": "e09",
+   "stats": {
+    "words": 3,
+    "sentences": 1,
+    "grade": 5.25,
+    "wps": 3.0,
+    "longest": 3
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no life cover. Term life pays your household if you die while you still work. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "e09",
+   "stats": {
+    "words": 37,
+    "sentences": 4,
+    "grade": 4.28,
+    "wps": 9.25,
+    "longest": 12
+   }
+  },
+  {
+   "type": "notes",
+   "label": "worth_checking.why",
+   "text": "People depend on your pay, and you have no disability cover. It replaces part of your pay if illness or injury stops you working. This is something to look into, not a recommendation. I have not priced it.",
+   "sample": "e09",
+   "stats": {
+    "words": 38,
+    "sentences": 4,
+    "grade": 6.44,
+    "wps": 9.5,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your youngest child leaves home when you are about 49.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 3.65,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "family_moments",
+   "text": "Your oldest child turns 18 when you are about 45.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.note",
+   "text": "We tried plans from similar households and some simple plans. A simple plan did best: stocks at 110 minus your age, with Social Security from 70. It keeps your needs safest and leaves the most to spend.",
+   "sample": "e09",
+   "stats": {
+    "words": 37,
+    "sentences": 3,
+    "grade": 5.48,
+    "wps": 12.33,
+    "longest": 16
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.name",
+   "text": "Simple plan, claiming at 70",
+   "sample": "e09",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 5.24,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "notes",
+   "label": "neighbors.chosen.description",
+   "text": "Stocks at 110 minus your age, claim Social Security at 70, no products",
+   "sample": "e09",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 8.54,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Long-term care is not in these figures. A private nursing home room costs about $129,575 a year. Care lasts about 3 years on average.",
+   "sample": "e09",
+   "stats": {
+    "words": 24,
+    "sentences": 3,
+    "grade": 4.25,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "notes",
+   "label": "costs_by_age.notes",
+   "text": "Before Medicare at 65, health cover costs about $10,000 a year. This is a guess.",
+   "sample": "e09",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 4.64,
+    "wps": 7.5,
+    "longest": 11
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Set your spending goal nearer the safe level",
+   "sample": "e09",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 3.76,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You are $8,100 a year over the safe $31,900. Raise your goal as savings grow.",
+   "sample": "e09",
+   "stats": {
+    "words": 15,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 7.5,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Save enough to get the full employer match",
+   "sample": "e09",
+   "stats": {
+    "words": 8,
+    "sentences": 1,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 8
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Save $3,120 a year in your 401(k) to get the full match. You now miss about $810 a year.",
+   "sample": "e09",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 2.47,
+    "wps": 10.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Build an emergency fund of three months",
+   "sample": "e09",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "You hold about 0.7 months of spending in cash. Three months is $11,525, so you are $9,025 short.",
+   "sample": "e09",
+   "stats": {
+    "words": 18,
+    "sentences": 2,
+    "grade": 3.0,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.title",
+   "text": "Close the gap in your life cover",
+   "sample": "e09",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 0.63,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "notes",
+   "label": "levers.why",
+   "text": "Ten years of pay is about $520,000. You have $0, a gap of $520,000.",
+   "sample": "e09",
+   "stats": {
+    "words": 14,
+    "sentences": 2,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.how_sure.line",
+   "text": "In half of the market tests you could spend $39,600 a year. To be sure in 90 of 100, spend $31,900. For 95 of 100, spend $30,500.",
+   "sample": "e09",
+   "stats": {
+    "words": 27,
+    "sentences": 3,
+    "grade": 3.22,
+    "wps": 9.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.line",
+   "text": "The biggest risk: stocks do badly for 10 years. You could count on $31,200 a year, and your needs are paid in 98 of 100 market tests.",
+   "sample": "e09",
+   "stats": {
+    "words": 27,
+    "sentences": 2,
+    "grade": 4.53,
+    "wps": 13.5,
+    "longest": 18
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.stresses.lead",
+   "text": "Your $32,000 a year holds up in most market tests. In the worst 1 in 10:",
+   "sample": "e09",
+   "stats": {
+    "words": 16,
+    "sentences": 2,
+    "grade": 2.28,
+    "wps": 8.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.levers.line",
+   "text": "Save $100 a month more adds the most: $1,800 a year to count on.",
+   "sample": "e09",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 3.36,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.series.label",
+   "text": "Not covered: savings run out",
+   "sample": "e09",
+   "stats": {
+    "words": 5,
+    "sentences": 1,
+    "grade": 2.88,
+    "wps": 5.0,
+    "longest": 5
+   }
+  },
+  {
+   "type": "analysis",
+   "label": "analysis.sources.line",
+   "text": "In a middle market test, your savings run out at 94. After that, part of your spending is not covered.",
+   "sample": "e09",
+   "stats": {
+    "words": 20,
+    "sentences": 2,
+    "grade": 4.24,
+    "wps": 10.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "tax",
+   "text": "About 8% of your pay goes to tax now.",
+   "sample": "e09",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "In retirement, about 9% of what you take out goes to tax.",
+   "sample": "e09",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 5.81,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Use taxable and cash savings first, then your 401(k) and other pre-tax accounts.",
+   "sample": "e09",
+   "stats": {
+    "words": 14,
+    "sentences": 1,
+    "grade": 7.57,
+    "wps": 14.0,
+    "longest": 14
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "tax",
+   "text": "Save Roth accounts for last. This is a rough guide, not tax advice.",
+   "sample": "e09",
+   "stats": {
+    "words": 13,
+    "sentences": 2,
+    "grade": 0.56,
+    "wps": 6.5,
+    "longest": 8
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "longevity",
+   "text": "Plan for your money to last to age 96.",
+   "sample": "e09",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "longevity",
+   "text": "Plan for 30 years of retirement, starting at age 66.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 7.19,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "family",
+   "text": "Your children's costs end at age 48, about 14 years from now.",
+   "sample": "e09",
+   "stats": {
+    "words": 12,
+    "sentences": 1,
+    "grade": 4.82,
+    "wps": 12.0,
+    "longest": 12
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Your family costs this year add up to about $35,714.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Your needs in retirement would cost about $28,900 per year.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "family",
+   "text": "Your children have no college costs in this plan.",
+   "sample": "e09",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 2.34,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "research",
+   "text": "You are 34 and plan to retire at 66, so the 401(k) limit matters most.",
+   "sample": "e09",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 6.88,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "The 401(k) yearly limit rises to $25,500 for 2027, up from $24,500 for 2026.",
+   "sample": "e09",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Your IRA yearly limit stays at $7,500 for 2027.",
+   "sample": "e09",
+   "stats": {
+    "words": 9,
+    "sentences": 1,
+    "grade": 6.28,
+    "wps": 9.0,
+    "longest": 9
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "research",
+   "text": "Social Security grows each month you wait past full retirement age, up to age 70.",
+   "sample": "e09",
+   "stats": {
+    "words": 15,
+    "sentences": 1,
+    "grade": 8.35,
+    "wps": 15.0,
+    "longest": 15
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "markets",
+   "text": "Your spending goal lasts in only 48 of 100 market tests.",
+   "sample": "e09",
+   "stats": {
+    "words": 11,
+    "sentences": 1,
+    "grade": 5.86,
+    "wps": 11.0,
+    "longest": 11
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Safe spending is $31,900 a year, below your $40,000 goal.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 4.83,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "We kept a simple plan: stocks at 110 minus your age, claiming Social Security at 70.",
+   "sample": "e09",
+   "stats": {
+    "words": 16,
+    "sentences": 1,
+    "grade": 9.09,
+    "wps": 16.0,
+    "longest": 16
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "markets",
+   "text": "Markets are uncertain, so no plan can promise these results.",
+   "sample": "e09",
+   "stats": {
+    "words": 10,
+    "sentences": 1,
+    "grade": 6.01,
+    "wps": 10.0,
+    "longest": 10
+   }
+  },
+  {
+   "type": "specialist headline",
+   "label": "adviser",
+   "text": "You can count on $31,900 a year: $28,900 for needs, $3,000 for wants.",
+   "sample": "e09",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.0,
+    "wps": 13.0,
+    "longest": 13
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your needs cost about $28,900 a year.",
+   "sample": "e09",
+   "stats": {
+    "words": 7,
+    "sentences": 1,
+    "grade": 2.31,
+    "wps": 7.0,
+    "longest": 7
+   }
+  },
+  {
+   "type": "specialist detail",
+   "label": "adviser",
+   "text": "Your goal of $40,000 a year lasts in 48 of 100 market tests.",
+   "sample": "e09",
+   "stats": {
+    "words": 13,
+    "sentences": 1,
+    "grade": 4.91,
+    "wps": 13.0,
+    "longest": 13
+   }
+  }
+ ]
+}

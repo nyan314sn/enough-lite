@@ -10,9 +10,9 @@ class Family(Specialist):
     name = "family"
     label = "Family costs"
     tool_name = "family_costs"
-    tool_doc = "Work out yearly costs for children, college and pets, and the typical basics of this household once retired."
+    tool_doc = "Work out yearly costs for children, college and pets, and the typical needs of this household once retired."
     instructions = ("You are the family specialist in a retirement-planning team. The family_costs tool has run. Say what the "
-                    "family costs are, when they end, and what the basics will cost once retired.")
+                    "family costs are, when they end, and what the needs will cost once retired.")
 
     def compute(self, ctx: RunCtx) -> dict:
         p = ctx.profile
@@ -63,13 +63,13 @@ class Family(Specialist):
             head = f"Family costs come to about {money(r['this_year'])} this year and end around age {r['ends_at_age']}."
         else:
             head = "You have no child or pet costs to plan for."
-        details = [f"Once retired, your basics (housing, food, transport, health) cost about {money(b['basics_per_year'])} a year."]
+        details = [f"Once retired, your basics cost about {money(b['basics_per_year'])} a year. That covers housing, food, travel and health."]
         if r["college_total"]:
             details.append(f"College adds about {money(r['college_total'])} in all, at your share.")
         if c["mortgage"]:
             m = c["mortgage"]
-            details.append(f"Your costs fall by about {money(m['drop_per_year'])} a year when the mortgage ends in {m['end_year']}.")
-        details.append(f"Before Medicare at 65, a retired person pays about {money(costs.PRE_MEDICARE_PREMIUM)} a year for health cover (an assumption).")
+            details.append(f"Your costs drop about {money(m['drop_per_year'])} a year when the mortgage ends in {m['end_year']}.")
+        details.append(f"Before Medicare at 65, health cover costs about {money(costs.PRE_MEDICARE_PREMIUM)} a year. This is a guess.")
         return head, details[:4]
 
 

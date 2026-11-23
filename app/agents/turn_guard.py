@@ -398,7 +398,7 @@ def _to_facts(vals: dict, quotes: dict, corr: set, p: Profile, asking: str | Non
                 vals[f"savings.{free[0]}"] = total - s
                 quotes[f"savings.{free[0]}"] = quotes.get("savings.total", "")
                 name = {"taxable": "taxable investments", "cash": "cash", "roth": "Roth", "pretax": "pre-tax accounts"}[free[0]]
-                g.breakdown_note = (f"The accounts you named add to ${s:,.0f}, and you said ${total:,.0f} in all, so I put the other "
+                g.breakdown_note = (f"The accounts you named add to ${s:,.0f}. You said ${total:,.0f} in all, so I put the other "
                                     f"${total - s:,.0f} in {name}. Tell me if it belongs elsewhere.")
             else:
                 g.breakdown_note = f"Your accounts add to ${s:,.0f}, so I used that, not ${total:,.0f}."

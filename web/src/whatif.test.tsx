@@ -18,14 +18,14 @@ const after = { ...examplePlan({ ...profile, retire_age: 60 }), actions: [...bef
 describe("What If tab: the full plan view with markers against the baseline", () => {
   it("lists the old and new figures, marks only what changed, says what changed", async () => {
     const rows = changes(before, after);
-    expect(rows.find((r) => r.label === "Basics paid")).toMatchObject({ before: 96, after: 88 });
+    expect(rows.find((r) => r.label === "Needs paid")).toMatchObject({ before: 96, after: 88 });
     m = await render(<PlanCard plan={after} retireAge={60} scenario={{ name: "Retire at 60", baseline: before, change: changeLine("Retire at 60", before, 62, 60), text: "Retiring at 60 means fewer years of saving.", citations: [{ title: "SSA rules", url: "https://ssa.gov/x" }] }} />);
     expect(m.el.querySelector("#plan-h")?.textContent).toMatch(/^What if: Retire at 60/);
     expect(m.el.querySelector("[data-testid=wi-change] .wi-line")?.textContent).toBe("What changed: Retire at 60 instead of 62");
     expect(m.el.querySelector(".wi-why .wi-text")?.textContent).toBe("Retiring at 60 means fewer years of saving.");   // the reply once, under Why
     expect(m.el.querySelector("[data-testid=wi-sources] a")?.textContent).toBe("SSA rules");
     // the same plan view as the baseline: headline, needs, wants, wishes, three things to do, family moments, charts
-    for (const sel of [".nww-needs", ".nww-wants", ".nww-wishes", ".actions", ".moments"]) expect(m.el.querySelector(sel), sel).toBeTruthy();
+    for (const sel of [".row-needs", ".row-wants", ".lad-bar", ".actions", ".moments"]) expect(m.el.querySelector(sel), sel).toBeTruthy();
     expect(m.el.querySelector("[data-testid=vs-paid]")?.textContent).toMatch(/▼ 8 fewer of 100.*vs baseline/);
     expect(m.el.querySelector("[data-testid=vs-paid] .sr-only")?.textContent).toMatch(/worse/);   // words, not colour alone
     const newOnes = Array.from(m.el.querySelectorAll(".actions li.new, .moments li.new")).map((l) => l.textContent);
@@ -160,7 +160,7 @@ describe("Plan screen: scenario tabs", () => {
     expect(tabs().map((t) => t.textContent?.replace("✓", "").trim())).toEqual(["Baseline", "Retire at 60", "Another child"]);
     expect(sel()[0]).toContain("Another child");
     expect(m!.el.querySelector("#plan-h")?.textContent).toContain("What if: Another child");
-    expect(m!.el.querySelector(".plan .nww")).toBeTruthy();
+    expect(m!.el.querySelector(".plan .ladder")).toBeTruthy();
     expect(m!.el.querySelector(".plan [data-testid=wi-change]")?.textContent).toMatch(/Another child/);
     expect(m!.el.querySelectorAll("[role=tab][aria-controls=scenario-panel]")).toHaveLength(3);
     expect(m!.el.querySelector("[role=tabpanel]#scenario-panel")).toBeTruthy();
@@ -300,9 +300,9 @@ describe("Plan screen: scenario tabs", () => {
     const heads = Array.from(view.querySelectorAll("thead th")).map((t) => t.textContent);
     expect(heads).toEqual(["Measure", "Baseline", "Retire at 60", "Another child"]);
     const rowOf = (label: string) => Array.from(view.querySelectorAll("tbody tr")).find((r) => r.textContent?.startsWith(label))!;
-    expect(rowOf("Basics paid").children[1].textContent).toMatch(/^96 of 100/);
-    expect(rowOf("Basics paid").children[2].textContent).toMatch(/88 of 100.*▼ 8 fewer/);
-    expect(rowOf("You can count on").children).toHaveLength(4);
+    expect(rowOf("Needs paid").children[1].textContent).toMatch(/^96 of 100/);
+    expect(rowOf("Needs paid").children[2].textContent).toMatch(/88 of 100.*▼ 8 fewer/);
+    expect(rowOf("Count on").children).toHaveLength(4);
     expect(view.textContent).not.toMatch(/make this my baseline/i);
     await click(byText(view, ".cmp-open", "Retire at 60"));
     expect(m!.el.querySelector("[data-testid=compare-view]")).toBeNull();

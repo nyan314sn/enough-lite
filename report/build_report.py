@@ -355,7 +355,7 @@ mark.todo{{background:#ffd23f;color:#111;padding:1px 4px;border-radius:3px;font-
  html,body{{background:#fff}} body{{max-width:none;padding:0;font-size:9.5pt;line-height:1.3}}
  h1{{font-size:30pt}} h2{{font-size:15pt;break-after:avoid}} h3,h4{{break-after:avoid}}
  pre{{font-size:7.2pt;padding:5px 7px;margin:.5em 0}} table{{font-size:7.3pt}} th,td{{padding:3px 5px}} p,li{{margin:.3em 0}} h2{{margin:1.1em 0 .3em}} h3{{margin:.8em 0 .25em}}
- figure.shot img{{max-height:2.5in;box-shadow:none}} figure.narrow img{{max-height:2.0in}}
+ figure.shot img{{max-height:2.2in;box-shadow:none}} figure.narrow img{{max-height:2.0in}}
  .banner{{display:none}}
  mark.todo{{background:#fff3b0;border:1px solid #d9b800}}
  .svgfig svg,img{{-webkit-print-color-adjust:exact;print-color-adjust:exact}}

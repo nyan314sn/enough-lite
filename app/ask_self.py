@@ -88,7 +88,7 @@ def includes(q: str, base: Profile, plan: dict) -> dict | None:
     topics = [name for name, rx in TOPICS if rx.search(low)]
     per = _per_year(plan)
     head = (f"The {_m(per)} a year you can count on" if per else "The amount you can count on") + \
-           " is what you can spend a year, from every source, with your money lasting in 90 of 100 scenarios."
+           " is what you can spend a year, from every source. Your money lasts in 90 of 100 market tests."
     sources = ["Social Security", "pensions" if base.pensions else None, "pay while you work", "withdrawals from your savings"]
     head += " It draws on " + ", ".join(s for s in sources if s).replace(", withdrawals", " and withdrawals", 1) + "."
     extra = []
@@ -100,12 +100,12 @@ def includes(q: str, base: Profile, plan: dict) -> dict | None:
         extra.append("Your savings are spent down over the years, in the order that usually keeps tax lowest.")
     if "housing" in topics:
         b = (plan.get("needs") or {}).get("basics_per_year")
-        extra.append("Housing, a mortgage payment or rent, is part of your basics" + (f" ({_m(b)} a year)" if b else "") +
+        extra.append("Housing, a mortgage payment or rent, is part of your needs" + (f" ({_m(b)} a year)" if b else "") +
                      ", so it is already inside the figure, not on top of it.")
     if "tax" in topics:
         extra.append("The plan counts income tax with the 2027 federal brackets and your state's rates.")
     if "health" in topics:
-        extra.append("Health care is part of your basics, so it is inside the figure.")
+        extra.append("Health care is part of your needs, so it is inside the figure.")
     if "pay" in topics and not base.pay_per_year == 0:
         extra.append("Your pay counts until you retire.")
     if not extra:

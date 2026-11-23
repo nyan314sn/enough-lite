@@ -200,7 +200,7 @@ def test_goal_gap_leads_then_debt_and_no_lever_repeats_the_plan():
     plan = plan_for(p)[0]
     keys = [x["key"] for x in plan["levers"]]
     assert keys[0] == "goal" and keys.index("debt") < keys.index("emergency")
-    assert plan["actions"][0]["title"].startswith("Set your spending goal")
+    assert plan["actions"][0]["title"].startswith("Spend $") and "less a year" in plan["actions"][0]["title"]      # round 4: an action with its figure
     assert not any(f"retire at {plan['retire_age']}" in (x["whatif_text"] or "").lower() for x in plan["levers"])
 
 

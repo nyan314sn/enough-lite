@@ -3,7 +3,7 @@ import AgentPortrait, { type AgentKey } from "../figure/Advisers";
 import { cents } from "../format";
 import RosterLines, { type Pulse } from "./RosterLines";
 import type { AgentCard, Handoff, TeamState } from "../sse";
-import CostBlock, { noAsk, type AskUse, type ScenarioUse } from "./CostBlock";
+import CostBlock, { noAsk, runTotals, type AskUse, type ScenarioUse } from "./CostBlock";
 import type { CostSummary } from "../types";
 
 // "Your advisory team": the right-hand panel. Seven portraits, each idle (dim), working (a teal ring that breathes) or done (a check).
@@ -79,9 +79,25 @@ function Detail({ a, state, name }: { a: AgentCard | undefined; state: NodeState
 /** On a What If tab: what the server sent back for it. It sends the reply and its cost, not new findings or talk from each adviser. */
 export interface ScenarioView extends ScenarioUse { text: string }
 
-export default function TeamPanel({ team, intakeDone = true, rerun = [], ask = noAsk, session = null, status, scenario = null }: {
+/** A What If's own run of the team, streamed from the server like the plan's: live while it works, kept with its tab after. */
+export interface RunView { label: string; estimate?: string | null; team: TeamState; working: boolean }
+
+/** "Re-running your plan with: Retire at 64 — about 10 to 20 seconds. 4 s so far." The estimate comes from the server's timings. */
+function RunWait({ label, estimate }: { label: string; estimate?: string | null }) {
+  const [s, setS] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setS((x) => x + 1), 1000);
+    return () => clearInterval(t);
+  }, []);
+  return <p className="small muted num run-wait" data-testid="run-wait">Re-running your plan with: {label}{estimate ? ` — ${estimate}` : ""}.{s > 0 ? ` ${s} s so far.` : ""}</p>;
+}
+
+export default function TeamPanel({ team, intakeDone = true, rerun = [], ask = noAsk, session = null, status, scenario = null, run = null }: {
   team: TeamState; intakeDone?: boolean; rerun?: string[]; ask?: AskUse; session?: CostSummary | null; status: string; scenario?: ScenarioView | null;
+  /** A What If's run of the team: while it works and on its tab, the panel shows this run instead of the baseline's. */
+  run?: RunView | null;
 }) {
+  const shown = run?.team ?? team;    // the run the roster, the lines, the tool line and the adviser details follow
   const compact = useCompact();
   const [open, setOpen] = useState(true);
   const [pick, setPick] = useState<AgentKey | null>(null);
@@ -94,25 +110,33 @@ export default function TeamPanel({ team, intakeDone = true, rerun = [], ask = n
 
   // the newest tool call shows for a few seconds; a handoff pings its recipient
   const [tool, setTool] = useState<{ agent: string; summary: string } | null>(null);
+  // switching between runs (a What If tab and the baseline) shows nothing old as new: only a new event in the same run animates
+  const key = run ? `run:${run.label}` : "base";
+  const lastKey = useRef(key);
+  const switched = lastKey.current !== key;
+  lastKey.current = key;
+  const fresh = useRef(true);
+  fresh.current = !switched || !shown.done;     // a run still at work animates from its first event, even on the switch to it
   useEffect(() => {
-    if (!team.lastTool) { setTool(null); return; }
-    setTool({ agent: team.lastTool.agent, summary: team.lastTool.summary });
+    if (!shown.lastTool || !fresh.current) { setTool(null); return; }
+    setTool({ agent: shown.lastTool.agent, summary: shown.lastTool.summary });
     const t = setTimeout(() => setTool(null), 4500);
     return () => clearTimeout(t);
-  }, [team.lastTool?.seq]);
+  }, [shown.lastTool?.seq, key]); // eslint-disable-line react-hooks/exhaustive-deps
   const [ping, setPing] = useState<string | null>(null);
   const [pulse, setPulse] = useState<Pulse | null>(null);
   useEffect(() => {
-    const h = team.handoffs[team.handoffs.length - 1];
-    if (!h) { setPing(null); setPulse(null); return; }
+    const h = shown.handoffs[shown.handoffs.length - 1];
+    if (!h || !fresh.current) { setPing(null); setPulse(null); return; }
     setPulse({ from: h.from, to: h.to, n: h.id, text: h.message });
     setPing(h.to);
     const t = setTimeout(() => setPing(null), 1200);
     const t2 = setTimeout(() => setPulse(null), 3200);
     return () => { clearTimeout(t); clearTimeout(t2); };
-  }, [team.handoffs.length]);
+  }, [shown.handoffs.length, key]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const stateOf = (k: string): NodeState => (rerun.includes(k) ? "working" : nodeState(team, k, intakeDone));
+  // a What If's run shows its advisers' real states; the guess (rerun) is only for a server that does not stream What Ifs
+  const stateOf = (k: string): NodeState => (run ? nodeState(run.team, k, true) : rerun.includes(k) ? "working" : nodeState(team, k, intakeDone));
   const working = ROSTER.filter((r) => stateOf(r.key) === "working").map((r) => r.name);
   const show = !compact || open;
 
@@ -123,6 +147,7 @@ export default function TeamPanel({ team, intakeDone = true, rerun = [], ask = n
         : <h2 id="team-h" className="h-panel">Your advisory team</h2>}
       <div id="team-body" hidden={!show}>
         <p className="muted small team-status" role="status">{status}</p>
+        {run?.working && <RunWait key={run.label} label={run.label} estimate={run.estimate} />}
         <RosterLines advisers={ROSTER.filter((r) => r.key !== "adviser").map((r) => r.key)} states={Object.fromEntries(ROSTER.map((r) => [r.key, stateOf(r.key)]))} pulse={pulse}>
         <ul className="roster">
           {ROSTER.map((r) => {
@@ -143,22 +168,30 @@ export default function TeamPanel({ team, intakeDone = true, rerun = [], ask = n
           })}
         </ul>
         </RosterLines>
-        {tool && <p key={team.lastTool?.seq} className="now" data-testid="node-tool"><span className="now-who">{nameOf(tool.agent)}</span> {tool.summary}</p>}
-        {scenario && (
+        {tool && <p key={shown.lastTool?.seq} className="now" data-testid="node-tool"><span className="now-who">{nameOf(tool.agent)}</span> {tool.summary}</p>}
+        {scenario && !run && (
           <div className="detail-box scen-said" data-testid="scenario-said">
             <p className="h-mini">This What If</p>
             <p className="muted small">The advisers' findings and Team talk were not repeated for it. What you read below is from the baseline run. The reason is under "Why" in the tab.</p>
           </div>
         )}
         {pick
-          ? <div className="detail-box"><p className="h-mini">{nameOf(pick)}<span className="muted"> · {ROSTER.find((r) => r.key === pick)?.role}{scenario ? " · baseline run" : ""}</span></p><Detail a={team.agents.find((a) => a.agent === pick)} state={stateOf(pick)} name={nameOf(pick)} /></div>
+          ? <div className="detail-box"><p className="h-mini">{nameOf(pick)}<span className="muted"> · {ROSTER.find((r) => r.key === pick)?.role}{run ? " · this What If" : scenario ? " · baseline run" : ""}</span></p><Detail a={shown.agents.find((a) => a.agent === pick)} state={stateOf(pick)} name={nameOf(pick)} /></div>
           : <p className="muted small hint">Select an adviser to read their finding.</p>}
-        <TeamTalk handoffs={team.handoffs} caption={scenario ? "Team talk, baseline run" : undefined} />
-        <CostBlock team={team} ask={ask} session={session} scenario={scenario} />
+        {run && <TeamTalk id="talk-run" handoffs={run.team.handoffs} caption="This What If" fold={!run.working} testId="talk-run" />}
+        <TeamTalk handoffs={team.handoffs} caption={scenario || run ? "Team talk, baseline run" : undefined} fold={!!team.plan || !!run} />
+        <CostBlock team={run ? run.team : team} ask={ask} session={session} scenario={run ? runUse(run, scenario) : scenario} />
         <p className="sr-only" role="status">{working.length ? `Working now: ${working.join(", ")}.` : ""}</p>
       </div>
     </aside>
   );
+}
+
+/** The What If's tokens and cost: what the server reported for it once done, else the run's own events so far. */
+function runUse(run: RunView, scenario: ScenarioView | null): ScenarioUse {
+  if (scenario && !run.working && (scenario.tokens != null || scenario.usd != null)) return scenario;
+  const t = runTotals(run.team);
+  return { label: run.label, tokens: { input: t.input, cached: t.cached, output: t.output }, usd: t.usd };
 }
 
 /** The height for the talk log so that it shows only whole rows: from the top of the first row that fits (with every later row) to the end.
@@ -170,7 +203,8 @@ export function wholeRowsHeight(tops: number[], total: number, max: number): { h
   return { height: total - tops[i], scrollTo: tops[i] };
 }
 
-export function TeamTalk({ handoffs, caption = "Team talk" }: { handoffs: Handoff[]; caption?: string }) {
+/** fold: the log sits in a closed expander (on the plan page, once the plan is there), so the plan stays the main thing. */
+export function TeamTalk({ handoffs, caption = "Team talk", fold = false, id = "talk-h", testId }: { handoffs: Handoff[]; caption?: string; fold?: boolean; id?: string; testId?: string }) {
   const box = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const fit = () => {
@@ -188,11 +222,9 @@ export function TeamTalk({ handoffs, caption = "Team talk" }: { handoffs: Handof
     if (box.current) delete box.current.dataset.fit;
     if (ro && box.current) ro.observe(box.current);
     return () => { window.removeEventListener("resize", fit); ro?.disconnect(); };
-  }, [handoffs.length]);
-  return (
-    <section className="talk" aria-labelledby="talk-h">
-      <h3 id="talk-h" className="h-mini">{caption}</h3>
-      {handoffs.length === 0
+  }, [handoffs.length, fold]);
+  const head = <h3 id={id} className="h-mini">{caption}</h3>;
+  const body = handoffs.length === 0
         ? <p className="muted small talk-empty">The advisers will pass notes to each other here.</p>
         : (
           <div className="talk-log" ref={box} role="log" aria-label="Team talk" tabIndex={0}>
@@ -205,7 +237,21 @@ export function TeamTalk({ handoffs, caption = "Team talk" }: { handoffs: Handof
               ))}
             </ol>
           </div>
-        )}
+        );
+  if (fold) {
+    return (
+      <section className="talk" aria-labelledby={id} data-testid={testId}>
+        <details className="talk-fold" data-testid="talk-fold">
+          <summary>{head}{handoffs.length > 0 && <span className="muted small talk-n"> ({handoffs.length} notes)</span>}</summary>
+          {body}
+        </details>
+      </section>
+    );
+  }
+  return (
+    <section className="talk" aria-labelledby={id} data-testid={testId}>
+      {head}
+      {body}
     </section>
   );
 }

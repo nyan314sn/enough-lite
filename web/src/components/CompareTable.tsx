@@ -42,18 +42,22 @@ export default function CompareTable({ cols, onOpen }: { cols: Col[]; onOpen: (k
               <tr><th scope="row">Retire at</th>{cols.map((c) => <td key={c.key} className="num">{c.retire ?? "—"}</td>)}</tr>
             )}
             <tr>
-              <th scope="row">Basics paid, of 100</th>
+              <th scope="row">Needs paid, of 100</th>
               {cols.map((c, i) => {
                 const lv = basicsLevel(figs[i].paid);
                 return <td key={c.key} className={`num${lv !== "ok" ? ` cell-${lv}` : ""}`}><span>{figs[i].paid} of 100</span> <LevelMark level={lv} />{i > 0 && <Chg d={figs[i].paid - bf.paid} fmt={(n, up) => `${n} ${up ? "more" : "fewer"}`} />}</td>;
               })}
             </tr>
             <tr>
-              <th scope="row">You can count on, a year</th>
+              <th scope="row">Count on, a year</th>
               {cols.map((c, i) => <td key={c.key} className="num"><span>{usd(figs[i].countOn)}</span>{i > 0 && <Chg d={figs[i].countOn - bf.countOn} fmt={(n, up) => `${usd(n)} ${up ? "more" : "less"}`} />}</td>)}
             </tr>
             <tr>
-              <th scope="row">Basics a year</th>
+              <th scope="row">Wants, a year</th>
+              {cols.map((c, i) => <td key={c.key} className="num"><span>{usd(figs[i].wants)}</span>{i > 0 && <Chg d={figs[i].wants - bf.wants} fmt={(n, up) => `${usd(n)} ${up ? "more" : "less"}`} />}</td>)}
+            </tr>
+            <tr>
+              <th scope="row">Needs, a year</th>
               {cols.map((c, i) => <td key={c.key} className="num"><span>{usd(figs[i].basics)}</span></td>)}
             </tr>
             {hasGoal && (
@@ -70,7 +74,7 @@ export default function CompareTable({ cols, onOpen }: { cols: Col[]; onOpen: (k
                 <th scope="row">Goal lasts in, of 100</th>
                 {cols.map((c, i) => {
                   const g = figs[i].goalLasts;
-                  return <td key={c.key} className="num"><span>{g == null ? "—" : `${g} of 100`}</span>{g != null && bf.goalLasts != null && i > 0 && <Chg d={g - bf.goalLasts} fmt={(n, up) => `${n} ${up ? "more" : "fewer"}`} />}</td>;
+                  return <td key={c.key} className="num"><span>{g == null ? "Not tested" : `${g} of 100`}</span>{g == null && <span className="muted small"> A market What If is not tested again.</span>}{g != null && bf.goalLasts != null && i > 0 && <Chg d={g - bf.goalLasts} fmt={(n, up) => `${n} ${up ? "more" : "fewer"}`} />}</td>;
                 })}
               </tr>
             )}

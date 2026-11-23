@@ -1,0 +1,120 @@
+{
+ "persona_id": "p01",
+ "issues": [
+  {
+   "ref": "i3",
+   "type": "ignored_correction",
+   "severity": "P0",
+   "quote": "Got it: savings of $267,000, not $250,000.",
+   "note": "The user gave an exact split (210k pretax, 30k Roth, 15k taxable, 12k cash), but the app only acknowledged the total and never confirmed or applied the breakdown, so the assumed 60/10/20/10 split may stay stored silently."
+  },
+  {
+   "ref": "i10",
+   "type": "contradiction",
+   "severity": "P1",
+   "quote": "I assumed you will spend about 80% of today's $63,600, not counting the mortgage, in retirement, $44,100 a year.",
+   "note": "80% of $63,600 is about $50,900, not $44,100 (about 69%), so the stated assumption does not match the figure used."
+  }
+ ],
+ "accuracy": {
+  "fields": [
+   {
+    "field": "age",
+    "ok": true,
+    "got": 51,
+    "truth": 51,
+    "source": "you said"
+   },
+   {
+    "field": "partner_age",
+    "ok": true,
+    "got": null,
+    "truth": null,
+    "source": null
+   },
+   {
+    "field": "state",
+    "ok": true,
+    "got": "TX",
+    "truth": "TX",
+    "source": "you said"
+   },
+   {
+    "field": "retire_age",
+    "ok": true,
+    "got": 62,
+    "truth": 62,
+    "source": "you said"
+   },
+   {
+    "field": "pay_per_year",
+    "ok": true,
+    "got": 78000.0,
+    "truth": 78000,
+    "source": "you said"
+   },
+   {
+    "field": "savings_total",
+    "ok": true,
+    "got": 267000.0,
+    "truth": 267000,
+    "source": "you said"
+   },
+   {
+    "field": "home_owns",
+    "ok": true,
+    "got": true,
+    "truth": true,
+    "source": "you said"
+   },
+   {
+    "field": "mortgage_balance",
+    "ok": true,
+    "got": 140000.0,
+    "truth": 140000,
+    "source": null
+   },
+   {
+    "field": "children",
+    "ok": true,
+    "got": [
+     17
+    ],
+    "truth": [
+     17
+    ],
+    "source": "you said"
+   },
+   {
+    "field": "pets",
+    "ok": true,
+    "got": 1,
+    "truth": 1,
+    "source": null
+   },
+   {
+    "field": "debts_total",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "pension_per_year",
+    "ok": true,
+    "got": 0,
+    "truth": 0,
+    "source": null
+   },
+   {
+    "field": "spending_now",
+    "ok": true,
+    "got": 63600.0,
+    "truth": 64000,
+    "source": "you said"
+   }
+  ],
+  "share": 1.0,
+  "why": null
+ }
+}

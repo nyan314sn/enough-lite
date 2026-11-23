@@ -71,6 +71,6 @@ class Longevity(Specialist):
                 [f"There is about a {round(r['chance_alive_at_horizon'] * 100)}% chance that {who} will still be alive then.",
                  f"The chance that {reach} 90 is about {round(r['chance_someone_reaches_90'] * 100)}%.",
                  "Planning for a long life is safer than planning for an average one."]
-                + ([f"You said your health is {r['health_you']}. That moves the horizon by about {abs(r['years_shift_from_health'])} years "
-                    f"{'earlier' if r['years_shift_from_health'] < 0 else 'later'}. This is a simple adjustment, not a medical forecast."]
+                + ([f"You said your health is {r['health_you']}. That moves the age about {abs(r['years_shift_from_health'])} years "
+                    f"{'earlier' if r['years_shift_from_health'] < 0 else 'later'}. It is a rough guess, not a medical forecast."]
                    if r.get("years_shift_from_health") else []))

@@ -193,7 +193,7 @@ def edit_question(key: str, p: Profile) -> Question:
         return Question(text="What does your Social Security statement say you will get, for the household?",
                         quick_answers=[x for x in [cur and f"Keep {cur}", "Use the estimate", "Type an amount"] if x])
     if key == "savings_split":
-        return Question(text="Give the four amounts in one message, for example: pre-tax 400k, Roth 100k, taxable 200k, cash 50k.",
+        return Question(text="Give the four amounts in one message. For example: pre-tax 400k, Roth 100k, taxable 200k, cash 50k.",
                         quick_answers=["Mostly in a 401(k)", "Mostly in a bank account", "Half and half"])
     if key == "savings":
         return Question(text="About how much have you saved in all, counting 401(k)s, IRAs, other investments and cash?",
@@ -227,7 +227,7 @@ def which_question() -> Question:
 
 # ------------------------------------------------------------------ optional groups
 GROUP_QUESTIONS = {
-    "debts": ("Do you owe anything besides a mortgage? Give the kind, the balance and the rate if you know them, for example: 30k on student loans at 6%.",
+    "debts": ("Do you owe anything besides a mortgage? Give the kind, the balance and the rate, for example: 30k on student loans at 6%.",
               ["No other debts", "Student loans", "Car loan", "Credit card"]),
     "debts_detail": ("How much is left, and at what rate?", ["$10k at 5%", "$30k at 6%", "$60k at 7%"]),
     "pension": ("Does anyone have a pension? Say how much a year or a month and from what age, for example: $2,000 a month at 65.",

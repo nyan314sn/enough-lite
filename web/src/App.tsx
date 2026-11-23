@@ -116,7 +116,7 @@ export default function App({ api, mock = false, admin = adminFromUrl() }: { api
         {!how && stage === "intake" && <HowSummary onOpen={() => { howByHand.current = true; setHow(true); }} />}
         {admin && <div hidden={stage !== "admin"}><AdminScreen api={api} onOpen={(s) => openSample(s, false)} onBuild={(s) => openSample(s, true)} /></div>}
         <div hidden={stage !== "intake"}>
-          <IntakeScreen key={epoch} api={api} patch={patch} load={load} planSS={stale ? null : planSS ?? null} returned={returned} onBuild={build} onProfile={(profile, canBuild) => setLive({ profile, canBuild })} />
+          <IntakeScreen key={epoch} api={api} patch={patch} load={load} planSS={stale ? null : planSS ?? null} returned={returned} onBuild={build} onFirstSend={() => { if (how) closeHow(); }} onProfile={(profile, canBuild) => setLive({ profile, canBuild })} />
         </div>
         {built && (
           <div hidden={stage !== "team"}>
