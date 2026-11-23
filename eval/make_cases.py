@@ -14,7 +14,7 @@ Every persona field the new schema holds is mapped: sex, health, partner retire 
 (Pension events, owned income annuities), saving now (contributions, match, other), life cover owned, legacy, college type per
 child, spending now with a split, emergency fund. The persona set has no big costs, parents' help, part-time work or inheritance,
 so a seeded share of cases gets them; each is named in "additions" and "synthetic" (the benchmark reports those cases apart,
-since the optimizer never saw those inputs). The 2025-shape cases are kept in cases_v1.jsonl.
+since the optimizer never saw those inputs). The 2025-shape cases (cases_v1.jsonl) are archived, not in the repo.
 
 Run:  python eval\\make_cases.py [--n 300] [--direction 30] [--seed 409]
 """

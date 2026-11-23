@@ -56,4 +56,4 @@ Scenes now: title, intro, send, edit (state pencil, list opened then Esc), early
 (verdict "Retire at 60? Not yet - short $20,900 a year"), ladder, moves (read only), whatif ("+ What if..." greys the plan; first "Worth trying" chip = the closing move),
 run (team panel "Working on", "Re-running your plan with"), tab (level up, 30 points, closes the gap), compare (then back to Baseline), rule, stock, cost, end.
 The household no longer says the retirement age in the typed text (the early Build asks it). Dropped: Try it, Mark as planned, tick scene.
-Result: demo/enough_demo.mp4, 167 s, 8.7 MB; the v2 video is demo/enough_demo_v2.mp4.
+Result: enough_demo.mp4 (project root), 167 s, 8.7 MB.

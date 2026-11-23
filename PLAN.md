@@ -178,7 +178,7 @@ Done today: "How Enough works" (folds to one line), "Baseline plan" naming, loud
 
 Open, in order:
 1. Reasonableness audit (running): 300+ baselines x ~20 What Ifs, tools only; fix the logic; report in `eval/reasonableness/REPORT.md`.
-2. Demo video (running): nova voice (OpenAI TTS, key `OPENAI_TTS_API_KEY`), app only, no name or course; `demo/enough_demo.mp4`.
+2. Demo video (running): nova voice (OpenAI TTS, key `OPENAI_TTS_API_KEY`), app only, no name or course; `enough_demo.mp4` (project root).
 3. **What If as scenario tabs (designed, NOT to be built until the user says go):**
    - Tabs above the plan: `Baseline` · one tab per What If · `+ What if…`; switch back and forth; the baseline folds to its tab.
    - Every What If is built on the baseline only, never on another What If (one change each).

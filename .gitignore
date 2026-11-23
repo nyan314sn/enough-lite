@@ -77,3 +77,8 @@ eval/reasonableness/results_after_pre_mortgagefix.jsonl
 
 # Real testers' raw answers stay local (the report carries the consented summary)
 user_test/responses/feedback_*.json
+
+# Files the project no longer needs, kept locally (never committed)
+ARCHIVE/
+# The demo video sits at the root for the Canvas upload; not committed
+/enough_demo.mp4

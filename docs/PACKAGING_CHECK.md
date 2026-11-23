@@ -1,5 +1,7 @@
 # Packaging check (2026-11-21)
 
+> Note (2026-11-23): working files this check mentions (build scripts, packaging scripts, mock and v1 results) have since been moved out of the repo.
+
 Scan script: `docs/packaging_scripts/scan_paths_secrets.py` (prints file:line and the kind, never a value). Run it again after any edit.
 Scanned the whole project (then in `lite/`, now the root) except `.venv`, `node_modules`, `web/dist`, `docs/screens`, `report/img` (web/dist, screens, img, web/src and tests were grepped separately for `C:\Users`, `OneDrive` and `sk-ant-`: clean).
 
