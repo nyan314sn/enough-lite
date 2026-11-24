@@ -1,0 +1,560 @@
+{
+ "model": "claude-haiku-5-5",
+ "total_cost_usd": 0.0267,
+ "per_agent": {
+  "longevity": {
+   "first_try_pass": 9,
+   "first_try_fail": 1,
+   "retries": 0,
+   "fallbacks": 1,
+   "runs": 10
+  },
+  "family": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "tax": {
+   "first_try_pass": 4,
+   "first_try_fail": 6,
+   "retries": 0,
+   "fallbacks": 6,
+   "runs": 10
+  },
+  "research": {
+   "first_try_pass": 5,
+   "first_try_fail": 5,
+   "retries": 0,
+   "fallbacks": 5,
+   "runs": 10
+  },
+  "markets": {
+   "first_try_pass": 4,
+   "first_try_fail": 6,
+   "retries": 0,
+   "fallbacks": 6,
+   "runs": 10
+  },
+  "adviser": {
+   "first_try_pass": 4,
+   "first_try_fail": 6,
+   "retries": 6,
+   "fallbacks": 2,
+   "runs": 10
+  }
+ },
+ "failure_kinds": {
+  "rounding/format (within 8% of a real figure)": [
+   "tax:$74,000",
+   "research:$25,500",
+   "research:$25,500",
+   "markets:$108,300",
+   "adviser:$35,900",
+   "markets:$40,800",
+   "tax:$15,500",
+   "tax:$39,000",
+   "markets:$87,300",
+   "adviser:$12,200",
+   "adviser:$12,200",
+   "markets:$44,500",
+   "adviser:$1,800",
+   "adviser:$1,800",
+   "tax:$14,100",
+   "tax:$9,936",
+   "research:$25,500",
+   "research:$25,500"
+  ],
+  "small number/age": [
+   "markets:27",
+   "longevity:29",
+   "adviser:40",
+   "adviser:96",
+   "markets:17",
+   "research:16",
+   "markets:78",
+   "markets:78",
+   "markets:99"
+  ],
+  "age": [
+   "markets:92",
+   "markets:88",
+   "research:64",
+   "markets:$9,300"
+  ],
+  "year": [
+   "research:1959",
+   "markets:2,000"
+  ],
+  "percent": [
+   "tax:79%"
+  ],
+  "derived or invented": [
+   "adviser:$13,400"
+  ]
+ },
+ "runs": [
+  {
+   "case": "doctor",
+   "cost": 0.0026,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "tax": "template (number check failed: $74,000)",
+    "research": "template (number check failed: $25,500, $25,500)",
+    "markets": "template (number check failed: $108,300)",
+    "adviser": "ai (second try)"
+   },
+   "failures": [
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$74,000",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "About 26% of your pay goes to tax now; about 15% in retirement. Now, federal, state and payroll tax take about $74,000 of your $286,000 pay. In retirement, tax on withdrawals is about $11,900 a year at the estimated $78,000 withdrawal. Draw first from taxable and cash accounts, then pre-tax accounts, and Roth last. Keep the Roth money for later. This is a rough guide, not tax advice; check it with a tax professional."
+    },
+    {
+     "agent": "research",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$25,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      },
+      {
+       "fig": "$25,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your 401(k) limit is $34,000 a year from 2027 once you are 50 or older. Under age 50, the IRS says the 401(k) limit for 2027 is $25,500, and the IRA limit stays at $7,500. You are 45, so the $25,500 limit applies to you until you turn 50. Medicare generally starts when you turn 65, during a 7-month Initial Enrollment Period. You plan to retire at 65, so sign up for Medicare at 65 to avoid possible delays and higher costs. Social Security can start as early as 62, but benefits are full only at full retirement age. Each year you delay past full retirement age, up to 70, adds 8% to your benefit. Your partner's age of 43 is well before these ages, so plan for both of you."
+    },
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$108,300",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "The $148,000 spending goal lasted in 48 of 100 market scenarios under the kept plan, so the goal is at real risk. The kept plan paid the basic bills in all 100 scenarios, and the most it can spend and still be safe in 90 of 100 scenarios is about $112,100 a year. That is below your $148,000 goal. The kept plan was a similar couple's strategy, chosen because it paid the basics most often and left the most to spend. Its safe spending was $112,100, versus $108,300 under the rule of thumb, but the goal still lasts only 48 of 100 times. Markets are uncertain. These results come from simulated scenarios, not promises, so a lower spending level or a later retirement may be worth reviewing with the team."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$35,900",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your basics cost about $59,500 a year once retired, paid every year, and the plan covers them in all 100 scenarios. Safe spending is about $112,100 a year, so about $52,600 a year can go to wants on top of the basics and still be safe in 90 of 100 scenarios. Your spending goal is $148,000 a year, which is about $35,900 more than safe spending, and it lasts in only 48 of 100 scenarios, so the goal falls short; wishes are whatever remains after wants, and at this goal there is no room left for them. Lower the yearly spending goal toward about $112,100. Your goal of $148,000 lasts in only 48 of 100 scenarios, while about $112,100 a year is safe in 90 of 100. Spending less, saving more, or changing the mix are the starting points; a similar couple aged 38 and 36 with about $453,000 saved kept basics safest and left the most to spend, so that approach was borrowed from them and tested on your numbers. Plan around the college years from about age 51 to 61. College adds about $384,360 in total, about $32,030 a year for each child in college, and that money overlaps with the years you are still saving. Family costs end around age 61, which frees money for later years. Review Social Security timing and the tax order before you retire at 65. Social Security is about $101,600 a year if you claim at 70, and in retirement tax takes about 15% of withdrawals, so draw taxable savings first, then pre-tax accounts, then Roth accounts."
+    }
+   ]
+  },
+  {
+   "case": "retiree",
+   "cost": 0.00227,
+   "sources": {
+    "family": "ai",
+    "longevity": "ai",
+    "tax": "ai",
+    "research": "ai",
+    "markets": "template (number check failed: 27, 92, $40,800)",
+    "adviser": "ai"
+   },
+   "failures": [
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "27",
+       "kind": "small number/age"
+      },
+      {
+       "fig": "92",
+       "kind": "age"
+      },
+      {
+       "fig": "$40,800",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "At $48,000 a year, the spending goal lasts in only 27 of 100 scenarios. The plan pays the basic bills in all 100 scenarios, but the full $48,000 a year runs out in most of them. Savings are usually gone by about age 92. The most this household can spend and still be safe in 90 of 100 scenarios is $40,800 a year, based on the rule of thumb. This first check did not test other strategies; the similar-household test has not been run yet. Markets are uncertain, so these results are estimates, not promises."
+    }
+   ]
+  },
+  {
+   "case": "young_renter",
+   "cost": 0.00291,
+   "sources": {
+    "family": "ai",
+    "tax": "template (number check failed: $15,500)",
+    "research": "ai",
+    "longevity": "template (number check failed: 29)",
+    "markets": "ai",
+    "adviser": "ai (second try)"
+   },
+   "failures": [
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$15,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "About 21.5% of your pay goes to tax now; about 15.2% in retirement. Now, on $72,000 of pay, taxes take about $15,500 (federal, New York state, and payroll). You keep about $56,500. In retirement, the tool estimates about $3,500 a year in tax on withdrawals, which is 15.2% of the money you take out. Draw on taxable and cash accounts first, then pre-tax accounts, and leave Roth for last. This is a rough guide, not tax advice; check with a tax professional before you act."
+    },
+    {
+     "agent": "longevity",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "29",
+       "kind": "small number/age"
+      }
+     ],
+     "text": "Plan for money to last to age 94. At age 94, there is about a 1 in 4 chance you are still alive. Plan for that age, not for your life expectancy. That is 67 years of planning from your age of 27. Your money must cover retirement at 65 through age 94, which is about 29 years. Your odds of reaching 90 are about 39 in 100, and about 5 in 100 for reaching 100. Your life expectancy shown is 55.7, which is a average, not a limit."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "40",
+       "kind": "small number/age"
+      }
+     ],
+     "text": "Your basics cost about $41,600 a year in retirement, paid every year, with rent the largest part at $25,200. Safe spending in 90 of 100 scenarios is $43,800 a year, which leaves about $2,200 a year for wants above the basics. Your $52,000 yearly goal lasted in only 63 of 100 scenarios, so the goal falls short; after the safe level, nothing is left for wishes, and you would need to cut spending or save more to make room. Keep your spending near $43,800 a year, not $52,000. The full goal lasted in 63 of 100 scenarios, while $43,800 is safe in 90 of 100. This is a first run only, so the final figures may change. Save more now, while you have 40 years until 65. You have $37,000 saved and put in $7,200 a year, and the median balance at 65 is $644,000 in these runs. The 401(k) limit rises to $25,500 for 2027, so you can save more each year as the limit allows. Similar households were tested with other plans, and the rule of thumb kept your basics safest, so this plan uses it. Plan for Social Security and Medicare at the right times. Claiming at 62 can cut the benefit by about 30% compared with 67, so waiting can help. Enroll in Medicare at 65 even if you wait on Social Security, or your coverage may cost more."
+    }
+   ]
+  },
+  {
+   "case": "couple_kids_pets",
+   "cost": 0.00312,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "research": "ai",
+    "tax": "ai",
+    "markets": "ai",
+    "adviser": "ai (second try)"
+   },
+   "failures": [
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "96",
+       "kind": "small number/age"
+      }
+     ],
+     "text": "Needs safe: The basics cost about $57,300 a year in retirement, and the plan pays them in all 100 scenarios. Wants sure: On top of the basics, about $18,200 a year is safe in 90 of 100 scenarios, which brings safe spending to about $75,500 a year. Wishes open: The $120,000 a year goal lasted in only 4 of 100 scenarios, so the goal falls short; anything above about $75,500 a year is not safe, and wishes depend on what the next strategy test shows. Lower the spending goal from $120,000 toward about $75,500 a year. The full goal ran out in 96 of 100 scenarios, while about $75,500 a year is safe in 90 of 100. Spending less is the most direct fix. Check the strategy test results before you choose a final plan. The rule of thumb kept your basics safest and left the most to spend, and it is the only method used so far. Several strategies from similar households were also tested, and the plan may borrow one of them; the rule of thumb shown here is not yet compared against those results. Plan for Medicare at 65 and for Social Security at 67 when you decide when to claim. Medicare generally starts at 65, and waiting past full retirement age raises Social Security by 8% a year up to 70. Claiming later is one lever that can raise safe spending, and the plan already assumes a claim at 67."
+    }
+   ]
+  },
+  {
+   "case": "near_retiree_mortgage",
+   "cost": 0.003,
+   "sources": {
+    "family": "ai",
+    "tax": "template (number check failed: $39,000)",
+    "longevity": "ai",
+    "research": "ai",
+    "markets": "template (number check failed: 17, $87,300, 88)",
+    "adviser": "template (number check failed twice: $12,200)"
+   },
+   "failures": [
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$39,000",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your household pays about 22% of working income in tax, and about 18% of withdrawals in retirement. Now, tax takes about $39,000 of your $175,000 pay (federal, state, and payroll). In retirement, tax is about $8,000 a year on about $44,000 of withdrawals. Draw on taxable accounts and cash first, then pre-tax accounts, and keep Roth money last. Pre-tax savings are most of your nest egg, so plan those withdrawals with care. This is a rough guide, not tax advice. Talk with a tax professional before you act."
+    },
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "17",
+       "kind": "small number/age"
+      },
+      {
+       "fig": "$87,300",
+       "kind": "rounding/format (within 8% of a real figure)"
+      },
+      {
+       "fig": "88",
+       "kind": "age"
+      }
+     ],
+     "text": "At $105,000 a year, the spending goal lasted in only 17 of 100 market scenarios. The rule of thumb plan paid the basic bills in all 100 of 100 scenarios, but the full $105,000 goal ran out in most of them. The safe spending level on this plan is about $87,300 a year. The household's savings were about $750,000 at age 61 in this run. The median balance reaches zero by about age 88, so the plan needs a closer look before retirement at 65. Markets are uncertain, and these figures are estimates, not promises. The strategy test on similar households has not been run yet in this step."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$12,200",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your basics cost about $53,700 a year, paid every year, and they are covered in all 100 scenarios. Safe spending is about $92,800 a year, so about $39,100 a year can go to wants on top of the basics and still be safe in 90 of 100 scenarios. Your $105,000 spending goal is about $12,200 above safe spending and lasts in only 32 of 100 scenarios, so the goal falls short; you would have no room for wishes unless you spend less, save more, delay Social Security, or change your mix. Plan spending near $92,800 a year, not $105,000. That gap is the difference between a goal that lasts in 32 of 100 scenarios and one that is safe in 90 of 100. Holding to about $92,800 keeps the basics and most wants covered. Plan to age 97, and use the 60-to-63 catch-up while you can. At 97 there is about a 1 in 4 chance that at least one of you is alive, so the money must last about 36 years. At 61 you qualify for the $11,750 401(k) catch-up limit for 2027, which is higher than the $8,500 limit for ages 50 and older. Draw taxable savings first, then pre-tax accounts, then Roth, and check Social Security at 70. Retirement tax takes about 18% of withdrawals, so the order matters. Your plan shows Social Security at age 70 for about $85,600 a year; this is a strategy borrowed from similar households, which is the one that kept basics safest and left the most to spend."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 2,
+     "bad": [
+      {
+       "fig": "$12,200",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Needs safe: the basics cost $53,700 a year, paid every year, and the safe plan covers them in 100 of 100 scenarios. Wants sure: on top of the basics, about $39,100 a year is safe in 90 of 100 scenarios, so safe spending is about $92,800 a year. Wishes open: your $105,000 goal lasts in only 32 of 100 scenarios, so it falls short by about $12,200 a year; the gap is what you may need to trim, and anything beyond $92,800 is not sure. Set spending near $92,800 a year, not $105,000. Your goal lasts in only 32 of 100 scenarios, while $92,800 is safe in 90 of 100. Spending less is the most direct way to close the gap. Review the mix, since stocks are about 50% now and 38% at retirement. Your plan keeps similar households' mix, and a couple aged 54 and 52, still working, with about $1,830,000 saved kept basics safest and left the most to spend. Borrowing that approach is a starting point, not a promise; the test used their numbers, not yours. Use the higher 401(k) catch-up limit of $11,750 while you work. At 61 you qualify for $11,750 a year, above the $8,500 catch-up limit for ages 50 and older. Saving more now helps the plan last to age 97."
+    }
+   ]
+  },
+  {
+   "case": "E04_no_savings_no_ss",
+   "cost": 0.0023,
+   "sources": {
+    "longevity": "ai",
+    "tax": "ai",
+    "family": "ai",
+    "research": "template (number check failed: 1959)",
+    "markets": "template (number check failed: 2,000)",
+    "adviser": "ai"
+   },
+   "failures": [
+    {
+     "agent": "research",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "1959",
+       "kind": "year"
+      }
+     ],
+     "text": "You are 58 and plan to retire at 66, so three rules matter most now. Catch-up rule: if you are 50 or older and in a 401(k), you can contribute more than the basic limit each year. For 2027 the general catch-up is $8,500, and it rises to $11,750 at ages 60 to 63, which covers you for the next few years. The IRA limit stays at $7,500 with a $1,100 catch-up. Medicare at 65: Medicare generally starts when you turn 65, and your 7-month sign-up window runs from 3 months before to 3 months after that birthday. You plan to retire at 66, so you will need to sign up for Medicare at 65 even if you keep working, or you may face a late penalty that grows the longer you wait. Social Security: you can claim as early as 62, but you get full benefits only at full retirement age. Benefits rise for each month you delay past full retirement age, up to age 70. Waiting until 66 means you will be past full retirement age if you were born in 1959 or later, or close to it, so check your own full retirement age on the SSA site."
+    },
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "2,000",
+       "kind": "year"
+      }
+     ],
+     "text": "With no savings, the $24,000 yearly spending goal lasts in none of 2,000 market scenarios. The first run used the rule of thumb. It showed the money runs out in every case, and the basics were paid in 0 of 100 scenarios. The safe spending level was about $19,100 a year. I did not run the similar-household test in this session, so the strategy-tested figures are not available. The results above come only from the first run. Markets are uncertain. These results show what could happen under the assumptions used, not what will happen. The household should plan for more savings or a lower spending goal."
+    }
+   ]
+  },
+  {
+   "case": "S053",
+   "cost": 0.00233,
+   "sources": {
+    "family": "ai",
+    "tax": "ai",
+    "longevity": "ai",
+    "research": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "S128",
+   "cost": 0.00286,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "research": "template (number check failed: 16)",
+    "tax": "template (number check failed: 79%)",
+    "markets": "template (number check failed: 78, 78, 99)",
+    "adviser": "template (number check failed twice: $1,800)"
+   },
+   "failures": [
+    {
+     "agent": "research",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "16",
+       "kind": "small number/age"
+      }
+     ],
+     "text": "You turn 65 in 16 years, so plan for Medicare enrollment at that age. Medicare generally starts when you turn 65. Your Initial Enrollment Period lasts 7 months, from 3 months before to 3 months after the month you turn 65. Sign up for Medicare at 65 even if you delay Social Security, because waiting may delay coverage and raise its cost. Social Security can start as early as 62, but benefits are reduced for each month before full retirement age; for someone turning 62 in 2026, the benefit is about 30% lower than at age 67."
+    },
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "79%",
+       "kind": "percent"
+      }
+     ],
+     "text": "Your household pays about 12.9% of pay in tax now, and about 1.9% of withdrawals in retirement. Florida has no state income tax, so your tax bill is mostly federal tax and payroll tax. Today that is about $3,484 federal and $5,087 payroll tax on $66,500 of pay. In retirement the tax on your withdrawals is small, about $259 a year at the planned draw of about $13,459. Your Social Security is not included in that draw. The tool suggests drawing first from taxable and cash savings, then pre-tax accounts, then Roth. Most of your savings (about 79%) sit in pre-tax accounts, so plan carefully when you start to draw on them."
+    },
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "78",
+       "kind": "small number/age"
+      },
+      {
+       "fig": "78",
+       "kind": "small number/age"
+      },
+      {
+       "fig": "99",
+       "kind": "small number/age"
+      },
+      {
+       "fig": "$44,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "The $47,000 yearly spending goal lasts in 78 of 100 market scenarios. In 78 of 100 scenarios, the money lasts to age 95, and the basic bills are paid in 99 of 100. The most this household can spend and still be safe in 90 of 100 scenarios is about $44,500 a year, under the $47,000 goal (rule of thumb strategy). I have not yet run the similar-household strategy test, so these figures come from the rule-of-thumb plan only. Markets are uncertain, and these results are estimates, not promises."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$1,800",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Needs safe: The basics cost about $40,500 a year, and the plan pays them in 98 of 100 scenarios. Wants sure: Safe spending is about $45,200 a year, so about $4,700 a year can go to wants on top of the basics in 90 of 100 scenarios. Wishes open: Your $47,000 goal lasts in 84 of 100 scenarios, which falls short of the 90 mark, so the goal is close but not yet safe; anything left after the $45,200 safe level is open, and the goal needs about $1,800 a year less spending to reach that 90 mark. Trim the spending goal from $47,000 toward $45,200 a year. This closes the gap to the 90-in-100 safe level, and the basics stay covered either way. A similar couple aged 42 and 45 kept their basics safest and left the most to spend, so we borrowed their approach of testing strategies this way; this is a planning guide, not a promise. Plan for withdrawals to last to age 95, with a partner horizon of 97. There is a 24% chance someone is still alive at 95, and a 6% chance at least one of you reaches 100. Your partner's horizon is 97, so plan for the longer one. Delay Social Security to age 70 and save more while working. Social Security is $41,900 a year at age 70, and claiming later raises the safe spending level. Saving more than $6,650 a year would also add to the $210,500 you have now."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 2,
+     "bad": [
+      {
+       "fig": "$1,800",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your basic living costs are about $40,500 a year, and the plan covers them in 98 of 100 scenarios. Safe spending is about $45,200 a year, so about $4,700 a year can go to wants on top of the basics in 90 of 100 scenarios. Your goal is $47,000 a year, which is $1,800 more than the safe level, so it lasts in only 84 of 100 scenarios; nothing is left for wishes at that level, so the goal is close but short. Trim the spending goal toward $45,200 a year. At $45,200 a year, the plan is safe in 90 of 100 scenarios, while $47,000 lasts in only 84 of 100. The gap is small, so a modest cut closes it. Plan for Social Security at age 70, which is $41,900 a year. Waiting to claim at 70 gives the largest yearly income figure in this plan. Check your own benefit statement before you decide. Follow a plan borrowed from a similar couple, aged 42 and 45, still working, with about $53,000 saved. This strategy came from similar households, not from your own records. It kept basics safest and left the most to spend in our tests, so use it as a starting point and review it yearly."
+    }
+   ]
+  },
+  {
+   "case": "S208",
+   "cost": 0.00248,
+   "sources": {
+    "family": "ai",
+    "tax": "template (number check failed: $14,100)",
+    "longevity": "ai",
+    "research": "template (number check failed: 64)",
+    "markets": "template (number check failed: $9,300)",
+    "adviser": "ai"
+   },
+   "failures": [
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$14,100",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "Your household pays about 16.4% of pay in tax now, and about 2.4% of withdrawals in retirement. Now, with $86,000 in pay, tax takes about $14,100 a year (federal, state, and payroll). Retirement tax looks much lower, about $820 a year on the withdrawals shown. Draw on your cash and taxable savings first, then pre-tax accounts, and Roth accounts last. You have no pre-tax or Roth savings listed today, so this order mainly matters if you add them. This is a rough guide, not tax advice. Check it with a tax professional before you act."
+    },
+    {
+     "agent": "research",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "64",
+       "kind": "age"
+      }
+     ],
+     "text": "At 60 to 63, the 401(k) catch-up limit is higher: $11,750 for 2027. For 2027, the standard 401(k) catch-up limit for workers 50 and older is $8,500, but workers aged 60 to 63 may contribute $11,750 in catch-up amounts, according to the IRS. Since you are 61 and still working, this higher limit applies to you if your plan is a 401(k), 403(b), governmental 457, or Thrift Savings Plan. Social Security can start as early as age 62, but benefits are reduced for each month before full retirement age. SSA says a claim at 62 can be about 30% lower than at full retirement age of 67, which applies to someone who turns 62 in 2026. Your retirement at 63 is after the earliest claiming age, so the reduction would still apply if you claim before full retirement age. Medicare generally starts when you turn 65. Your 7-month Initial Enrollment Period runs from 3 months before to 3 months after the month you turn 65. Missing it can lead to a late enrollment penalty that grows the longer you wait. Your retirement at 63 means you will need other coverage for ages 63 and 64."
+    },
+    {
+     "agent": "markets",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$9,300",
+       "kind": "age"
+      }
+     ],
+     "text": "On these numbers, the $72,000 yearly spending goal lasted in 0 of 100 scenarios. The kept strategy was a similar household's plan (S003-fast, claim Social Security at 63). It also paid the basic bills in 0 of 100 scenarios, so it is not safe on these numbers. The most it could spend safely is $30,300 a year, well below the $72,000 goal. The rule of thumb left the safe spending at $9,300 a year. Savings are only $23,600, so the plan depends heavily on Social Security and future work income. Markets are uncertain. These results come from simulated scenarios, not promises, and the match to similar households is rough."
+    }
+   ]
+  },
+  {
+   "case": "E11_growing_card_debt__savings_up",
+   "cost": 0.00281,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "tax": "template (number check failed: $9,936)",
+    "research": "template (number check failed: $25,500, $25,500)",
+    "markets": "ai",
+    "adviser": "ai (second try)"
+   },
+   "failures": [
+    {
+     "agent": "tax",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$9,936",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "About 17 cents of each dollar you earn goes to tax now, and about 12 cents in retirement. Now, on $58,000 of pay, taxes and payroll tax take about $9,936 in total. You keep about $48,064. In retirement, the estimate puts tax near $2,503 a year on withdrawals, about 12 cents of each dollar drawn. The tool suggests drawing from taxable and cash first, then pre-tax accounts, and Roth last. Almost all your savings are pre-tax, so that order is worth a closer look with a tax professional."
+    },
+    {
+     "agent": "research",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$25,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      },
+      {
+       "fig": "$25,500",
+       "kind": "rounding/format (within 8% of a real figure)"
+      }
+     ],
+     "text": "At 45 and working, the 401(k) limit is $25,500 for 2027, and you can also use an IRA up to $7,500. The IRS says the 401(k) limit rises to $25,500 for 2027, and the IRA limit stays at $7,500. The IRA catch-up of $1,100 applies only at age 50 and over. Social Security can start as early as age 62, but full benefits begin at full retirement age. Benefits rise 8% for each full year you delay past full retirement age, up to age 70. Medicare generally starts when you turn 65, and your Initial Enrollment Period runs 7 months around that birthday. You plan to retire at 66, so sign up for Medicare at 65 even if you still work, to avoid possible late costs."
+    },
+    {
+     "agent": "adviser",
+     "attempt": 1,
+     "bad": [
+      {
+       "fig": "$13,400",
+       "kind": "derived or invented"
+      }
+     ],
+     "text": "The basics cost about $28,700 a year, and they are paid every year, and the basics were paid in all 100 market scenarios. Safe spending is about $30,600 a year in 90 of 100 scenarios, so wants can add about $1,900 a year on top of the basics. Your spending goal is $44,000 a year, which lasted in only 2 of 100 scenarios, so the goal falls short and nothing is left for wishes at that level; closing the gap of about $13,400 a year is the work ahead. Plan your yearly spending at about $30,600, not $44,000. At $30,600 a year, your basics of $28,700 are covered with about $1,900 for wants. The $44,000 goal lasted in only 2 of 100 scenarios, so it is not safe on your current savings of $18,600. Test a lower spending goal or a bigger savings rate before you retire at 66. Spending less or saving more are the two main ways to close the gap. Your savings of $18,600 and yearly saving of $5,800 are small against a plan that must last to age 93. Ask about a later Social Security claim and a mix change, and test them with a planner. Your planned claim age is 67 and the stock share falls from 65% now to 44% at retirement. The similar-household strategy test has not yet been run on your numbers, so these results may change, and the rule of thumb is the one tested so far."
+    }
+   ]
+  }
+ ]
+}

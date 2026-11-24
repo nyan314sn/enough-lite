@@ -65,3 +65,12 @@ Gaps:
 ## Checks run
 
 `py_compile` of every edited script and an import of `eval/common.py` and `eval/report.py` passed (`docs/packaging_scripts/check_imports.py`). No server started, no AI call.
+
+## Fresh-clone timing (the 10-minute rule)
+
+Cloned from the public GitHub repo into a new folder outside OneDrive, with a `.env` one folder up holding only `OPENAI_API_KEY`, then followed the README step by step.
+
+| Date | Clone | Virtual environment | `pip install` | Serving | First full plan (gpt-6-luna) |
+|---|---|---|---|---|---|
+| 2026-11-22 | 4 s | 16 s | 3 min 3 s | 3 min 45 s | 4 min 16 s, no error |
+| 2026-11-23 | | | | | 4 min 46 s, no error |

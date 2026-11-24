@@ -1,0 +1,181 @@
+{
+ "model": "claude-haiku-5-5",
+ "total_cost_usd": 0.0157,
+ "per_agent": {
+  "research": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "family": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "longevity": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "tax": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "markets": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  },
+  "adviser": {
+   "first_try_pass": 10,
+   "first_try_fail": 0,
+   "retries": 0,
+   "fallbacks": 0,
+   "runs": 10
+  }
+ },
+ "failure_kinds": {},
+ "runs": [
+  {
+   "case": "doctor",
+   "cost": 0.0015,
+   "sources": {
+    "research": "ai",
+    "family": "ai",
+    "longevity": "ai",
+    "tax": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "retiree",
+   "cost": 0.00151,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "tax": "ai",
+    "research": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "young_renter",
+   "cost": 0.00137,
+   "sources": {
+    "research": "ai",
+    "tax": "ai",
+    "family": "ai",
+    "longevity": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "couple_kids_pets",
+   "cost": 0.0015,
+   "sources": {
+    "research": "ai",
+    "tax": "ai",
+    "family": "ai",
+    "longevity": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "near_retiree_mortgage",
+   "cost": 0.00186,
+   "sources": {
+    "longevity": "ai",
+    "tax": "ai",
+    "family": "ai",
+    "research": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "E04_no_savings_no_ss",
+   "cost": 0.00145,
+   "sources": {
+    "research": "ai",
+    "tax": "ai",
+    "longevity": "ai",
+    "family": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "S053",
+   "cost": 0.00182,
+   "sources": {
+    "longevity": "ai",
+    "family": "ai",
+    "tax": "ai",
+    "research": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "S128",
+   "cost": 0.00142,
+   "sources": {
+    "family": "ai",
+    "research": "ai",
+    "tax": "ai",
+    "longevity": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "S208",
+   "cost": 0.00187,
+   "sources": {
+    "family": "ai",
+    "tax": "ai",
+    "longevity": "ai",
+    "research": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  },
+  {
+   "case": "E11_growing_card_debt__savings_up",
+   "cost": 0.00143,
+   "sources": {
+    "research": "ai",
+    "tax": "ai",
+    "longevity": "ai",
+    "family": "ai",
+    "markets": "ai",
+    "adviser": "ai"
+   },
+   "failures": []
+  }
+ ]
+}
